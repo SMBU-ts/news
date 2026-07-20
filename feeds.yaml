@@ -1,0 +1,66 @@
+# ============================================================
+# 每日新闻 · RSS 订阅源配置
+# ------------------------------------------------------------
+# 每个一级键是一个「分类」（子文件夹名，需与 build_archive.py
+# 中 CATEGORY_LABELS 的键一致）。目前启用的三个分类：
+#   tech    科技
+#   finance 财经
+#   world   国际
+# （sports / health / culture 已在归档系统预置，按需在此添加即可）
+#
+# 每个分类下是订阅源列表，每项含：
+#   name: 来源显示名（会作为卡片上的来源 chip）
+#   url:  RSS 2.0 或 Atom 订阅地址
+#
+# 维护说明：
+#   - 加源 = 在对应分类下追加 "- name / url" 两项；
+#   - 删源 = 删掉对应两行；
+#   - 加新分类 = 新增一个一级键，并确保 build_archive.py 的
+#     CATEGORY_LABELS / CAT_COLORS / CAT_ICONS 里也有对应条目
+#     （tech/finance/world 已内置）。
+#   - 抓取失败的单个源会被自动跳过并告警，不影响其他源与分类。
+# ============================================================
+
+tech:
+  - name: 少数派
+    url: https://sspai.com/feed
+  - name: 爱范儿
+    url: https://www.ifanr.com/feed
+  - name: 36氪
+    url: https://36kr.com/feed
+  - name: 量子位
+    url: https://www.qbitai.com/feed
+  - name: 钛媒体
+    url: https://www.tmtpost.com/rss.xml
+  - name: Hacker News
+    url: https://hnrss.org/frontpage
+  - name: The Verge
+    url: https://www.theverge.com/rss/index.xml
+
+finance:
+  # 注：国内财经站（华尔街见闻/财联社/东方财富等）大多已停用公开 RSS，
+  # 目前以国际源为主。若找到可用中文源，按下方格式追加即可。
+  - name: Seeking Alpha
+    url: https://seekingalpha.com/market_currents.xml
+  - name: MarketWatch
+    url: https://feeds.marketwatch.com/marketwatch/topstories/
+  - name: CNBC
+    url: https://www.cnbc.com/id/100003114/device/rss/rss.html
+
+world:
+  - name: BBC World
+    url: https://feeds.bbci.co.uk/news/world/rss.xml
+  - name: Al Jazeera
+    url: https://www.aljazeera.com/xml/rss/all.xml
+  - name: NYT World
+    url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+  - name: Sky News World
+    url: https://feeds.skynews.com/feeds/rss/world.xml
+  - name: France 24
+    url: https://www.france24.com/en/rss
+  - name: NPR
+    url: https://feeds.npr.org/1004/rss.xml
+  - name: Fox News World
+    url: https://moxie.foxnews.com/google-publisher/world.xml
+  - name: DW
+    url: https://www.dw.com/en/rss/rss-en-all

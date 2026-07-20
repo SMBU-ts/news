@@ -8,7 +8,7 @@
 .
 ├── .github/workflows/deploy.yml   # GitHub Actions：推送即自动部署
 ├── .nojekyll                      # 禁用 Jekyll，保留原始目录结构
-├── CNAME                          # 自定义域名（替换为你的域名）
+├── CNAME                          # 仅自定义域名时由 build_archive.py 生成（见下文）
 ├── robots.txt                     # 由 build_archive.py 生成
 ├── sitemap.xml                    # 由 build_archive.py 生成（绝对 URL）
 ├── index.html                     # 首页：按日期倒序的导航入口（生成）
@@ -19,7 +19,10 @@
 │   ├── index.html                 # 当日汇总页：可点击新闻链接（生成）
 │   └── ai-daily/                  # 分类子文件夹
 │       └── ai-daily-2026-07-20.html   # 新闻原文
-├── build_dashboard.py             # 生成单日新闻报文（数据源）
+├── build_dashboard.py             # 生成 AI 日报报文（数据源：AI HOT）
+├── feeds.yaml                     # RSS 订阅源配置（分类 → 源清单）
+├── build_rss.py                   # 读取 feeds.yaml，生成各分类 RSS 报文
+├── build_all.py                   # 一键编排：dashboard + rss + archive
 └── build_archive.py               # 生成首页/归档/汇总/sitemap（站点构建器）
 ```
 
@@ -29,15 +32,39 @@
 python build_archive.py     # 重新生成 index.html / archive.html / 各日 index.html / sitemap.xml / robots.txt
 ```
 
-> 链接使用相对于站点根的路径（首页 `/`、当日 `/2026-07-20/`），因此站点既可作为用户站点
-> （`<user>.github.io`）部署，也可配合自定义域名部署在根路径下。
+> 链接使用相对于站点根的路径（首页 `/`、当日 `/2026-07-20/`），由 `build_archive.py` 自动加发布前缀。
+> 默认构建目标为 GitHub 项目页 `https://smbu-ts.github.io/news/`（链接前缀 `/news/`）；设 `CUSTOM_DOMAIN`
+> 环境变量后改为自定义域名、站点部署在根路径 `/`。
 
 ## 新增一天的新闻
 
+最简便：直接运行一键编排脚本，它会依次生成 AI 日报、所有 RSS 分类，并重建全站：
+
+```bash
+python build_all.py              # 默认今天
+python build_all.py 2026-07-20   # 指定日期
+```
+
+若想手动分步：
+
 1. 运行 `build_dashboard.py` 生成当日报文（如 `ai-daily-2026-07-20.html`）。
-2. 放入 `YYYY-MM-DD/<分类>/` 目录（分类即子文件夹名，如 `ai-daily`）。
+2. 运行 `build_rss.py` 按 `feeds.yaml` 生成各分类报文（如 `tech-2026-07-20.html` 等），自动写入 `YYYY-MM-DD/<分类>/`。
 3. 运行 `build_archive.py` 重建全部页面与站点地图。
 4. 提交并推送。
+
+## 扩展更多新闻分类（RSS 订阅源）
+
+除 AI 日报（`build_dashboard.py` 调用 AI HOT）外，其余分类由 RSS 订阅源聚合生成，数据源完全可配置、零 API Key。
+
+- **`feeds.yaml`**：分类 → 订阅源清单（每个源含 `name` 与 `url`）。当前启用 `tech`（科技）/`finance`（财经）/`world`（国际）三个分类，每个分类下列出若干 RSS 2.0 / Atom 源。
+- **`build_rss.py`**：读取 `feeds.yaml`，抓取并解析各源，去重后保留每分类最新的 20 条，写入 `YYYY-MM-DD/<分类>/<分类>-YYYY-MM-DD.html`。抓取失败的单个源会被自动跳过并告警，不影响其他源与分类。
+
+新增一个分类只需两步：
+
+1. 在 `feeds.yaml` 增加一级键（如 `sports:`）并列出其订阅源；
+2. 在 `build_archive.py` 的 `CATEGORY_LABELS` / `CAT_COLORS` / `CAT_ICONS` 中补上对应中文名、配色与图标（`tech`/`finance`/`world`/`sports`/`health`/`culture` 已内置）。
+
+之后 `build_archive.py` 会自动扫描新分类所在的子文件夹并渲染到首页、归档页与当日汇总页，无需改动归档逻辑。
 
 ## 发布到 GitHub Pages
 
@@ -55,8 +82,9 @@ python build_archive.py     # 重新生成 index.html / archive.html / 各日 in
    ```
 4. 仓库 **Settings → Pages → Build and deployment → Source** 选择
    **GitHub Actions**。推送后 Actions 会自动部署，约 1 分钟生效。
-5. 自定义域名：编辑根目录 `CNAME` 为你的域名（如 `news.example.com`），重新运行
-   `build_archive.py` 让 `sitemap.xml` / `robots.txt` 使用新域名，然后提交推送。
+5. 自定义域名：设环境变量 `CUSTOM_DOMAIN` 后运行 `build_archive.py`，脚本会写入根目录 `CNAME`
+   并让 `sitemap.xml` / `robots.txt` 使用新域名（例：`CUSTOM_DOMAIN=news.example.com python build_archive.py`）；
+   不设则按 GitHub 项目页 `https://smbu-ts.github.io/news/`（链接前缀 `/news/`）构建，且不生成 CNAME。之后提交推送。
    并在域名 DNS 处：
    - 子域名（`news.example.com`）：添加 CNAME 记录指向 `<user>.github.io`
    - 顶级域名（`example.com`）：添加 A 记录指向 GitHub Pages IP

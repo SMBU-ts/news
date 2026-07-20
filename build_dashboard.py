@@ -5,6 +5,9 @@ import json
 import urllib.request
 import html
 import datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
 
 BASE = "https://aihot.virxact.com"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -310,9 +313,12 @@ def main():
 </body>
 </html>'''
 
-    out = f"C:/Users/16148/Desktop/每日新闻/ai-daily-{used_date}.html"
-    with open(out, "w", encoding="utf-8") as f:
-        f.write(html_doc)
+    # 输出到 <ROOT>/YYYY-MM-DD/ai-daily/，与 build_archive.py 的扫描目录一致，
+    # 并使用相对 ROOT 的路径以保证可移植（CI / 其他机器均可运行）。
+    out_dir = ROOT / used_date / "ai-daily"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / f"ai-daily-{used_date}.html"
+    out.write_text(html_doc, encoding="utf-8")
     print("WROTE", out)
     print("date:", used_date, "| total:", total, "| fell_back:", fell_back)
     for lbl, c in cards_by_section:
