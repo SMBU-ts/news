@@ -21,8 +21,31 @@ import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-ASSET_CSS = "/assets/css/style.css"
-ASSET_JS = "/assets/js/main.js"
+
+# ---- 发布模式配置 ----
+# 设置环境变量 CUSTOM_DOMAIN（如 news.example.com）即走自定义域名（站点在根 /）；
+# 留空则使用 GitHub 项目页地址 https://smbu-ts.github.io/news/（链接前缀 /news/）。
+CUSTOM_DOMAIN = os.environ.get("CUSTOM_DOMAIN", "").strip()
+if CUSTOM_DOMAIN:
+    _dom = CUSTOM_DOMAIN.replace("https://", "").replace("http://", "").strip().rstrip("/")
+    BASE_PATH = "/"            # 自定义域名下站点在根路径
+    SITE_URL = "https://" + _dom
+    CNAME_CONTENT = _dom
+else:
+    BASE_PATH = "/news/"      # GitHub 项目页子路径
+    SITE_URL = "https://smbu-ts.github.io/news"
+    CNAME_CONTENT = ""        # 不使用自定义域名（保留 github.io 默认地址）
+
+def bp(url):
+    """给站内根相对链接加发布前缀（/news/ 或 /）。"""
+    if not url.startswith("/"):
+        return url
+    if BASE_PATH == "/":
+        return url
+    return BASE_PATH.rstrip("/") + url
+
+ASSET_CSS = bp("/assets/css/style.css")
+ASSET_JS = bp("/assets/js/main.js")
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 NEWS_RE = re.compile(r"^(?P<cat>.+?)-(?P<date>\d{4}-\d{2}-\d{2})\.html$")
@@ -70,14 +93,8 @@ def cat_icon(key):
 
 
 def site_url():
-    """站点绝对基址，取自 CNAME（自定义域名），缺省用占位域名。"""
-    cname = ROOT / "CNAME"
-    if cname.exists():
-        dom = cname.read_text(encoding="utf-8").strip().splitlines()
-        dom = dom[0].strip() if dom else ""
-        if dom:
-            return dom if dom.startswith("http") else "https://" + dom
-    return "https://your-domain.example"
+    """站点绝对基址，用于 canonical / sitemap / robots。"""
+    return SITE_URL
 
 
 def weekday_cn(date_str):
@@ -152,7 +169,7 @@ def seo_head(title, description, canonical, json_ld=None):
 <meta name="twitter:description" content="{d}">{ld}'''
 
 
-NAV = [("首页", "/", "home"), ("归档", "/archive.html", "archive"), ("关于", "/about.html", "about")]
+NAV = [("首页", bp("/"), "home"), ("归档", bp("/archive.html"), "archive"), ("关于", bp("/about.html"), "about")]
 
 
 def site_header(active=""):
@@ -161,7 +178,7 @@ def site_header(active=""):
         for t, u, k in NAV
     )
     return (f'<header class="site-head"><div class="site-head-inner">'
-            f'<a class="brand" href="/"><span class="logo">📰</span>'
+            f'<a class="brand" href="{bp("/")}"><span class="logo">📰</span>'
             f'<span class="brand-text">每日新闻</span></a>'
             f'<nav class="site-nav">{links}</nav></div></header>')
 
@@ -171,7 +188,7 @@ def site_footer():
     return f'''<footer class="site-foot"><div class="site-foot-inner">
 <div class="foot-brand">📰 每日新闻</div>
 <p>基于 GitHub Pages 的静态新闻档案 · 按日期归档 · 自动部署</p>
-<nav><a href="/">首页</a>·<a href="/archive.html">归档</a>·<a href="/about.html">关于</a></nav>
+<nav><a href="{bp('/')}">首页</a>·<a href="{bp('/archive.html')}">归档</a>·<a href="{bp('/about.html')}">关于</a></nav>
 <p style="margin-top:10px;opacity:.7">© {year} 每日新闻</p>
 </div></footer>'''
 
@@ -218,7 +235,7 @@ def render_home(days, base):
         for c, cnt in lcats.items()
     )
     featured = f'''
-    <a class="featured reveal" href="/{latest['date']}/">
+    <a class="featured reveal" href="{bp('/' + latest['date'] + '/')}">
       <span class="tag">✦ 最新一期</span>
       <h3>{latest['date']} · {latest['weekday']}</h3>
       <p>共 {len(latest['news'])} 篇报道，覆盖 {len(lcats)} 个分类</p>
@@ -237,7 +254,7 @@ def render_home(days, base):
             for c, cnt in cats.items()
         )
         cards += f'''
-    <a class="day-card reveal" href="/{date}/">
+    <a class="day-card reveal" href="{bp('/' + date + '/')}">
       <div class="day-top">
         <div class="day-date">{date}</div>
         <span class="day-badge">{d['weekday']}</span>
@@ -301,7 +318,7 @@ def render_day(day, base):
       <div class="kicker">✦ 当日汇总</div>
       <h1>{date} · {day['weekday']}</h1>
       <div class="sub">共 {len(day['news'])} 篇报道 · {len(groups)} 个分类</div>
-      <div class="back"><a href="/">← 返回新闻主页</a></div>
+      <div class="back"><a href="{bp('/')}">← 返回新闻主页</a></div>
     </div></section>
     <div class="page">{sections}
     </div>'''
@@ -353,7 +370,7 @@ def render_archive(days, base):
         items = ""
         entries = sorted(by_cat[cat], key=lambda x: x[0], reverse=True)
         for date, n in entries:
-            link = "/" + n["file"]
+            link = bp("/" + n["file"])
             desc = html.escape(n["desc"]) if n["desc"] else "点击查看完整报道"
             items += f'''
         <article class="news-card reveal" style="--c:{color}">
@@ -399,6 +416,57 @@ def render_archive(days, base):
     return page
 
 
+def render_about(base):
+    body = f'''<section class="hero"><div class="hero-inner">
+      <div class="kicker">✦ 关于本站</div>
+      <h1>为长期维护而生的新闻档案</h1>
+      <div class="sub">纯静态、零构建依赖、按日期归档，配合 GitHub Pages 实现自动部署与自定义域名。</div>
+    </div></section>
+    <main class="page">
+      <section class="prose">
+        <h2>技术特性</h2>
+        <div class="feature-grid">
+          <div class="feature-item reveal"><div class="fi-ico">🧭</div><h3>多页导航</h3><p>首页、归档页、关于页与每日汇总页通过统一顶部导航互联。</p></div>
+          <div class="feature-item reveal"><div class="fi-ico">🚀</div><h3>自动部署</h3><p>每次向 <code>main</code> 分支提交，GitHub Actions 自动构建并发布。</p></div>
+          <div class="feature-item reveal"><div class="fi-ico">🌐</div><h3>自定义域名</h3><p>根目录 <code>CNAME</code> 文件 + DNS 配置即可绑定自有域名并启用 HTTPS。</p></div>
+          <div class="feature-item reveal"><div class="fi-ico">🔍</div><h3>SEO 基础</h3><p>每页含 canonical、Open Graph、Twitter Card 与 JSON-LD，并附 sitemap 与 robots。</p></div>
+        </div>
+        <h2>如何新增一天的新闻</h2>
+        <ol>
+          <li>用 <code>build_dashboard.py</code> 生成当日报文，例如 <code>ai-daily-2026-07-20.html</code>。</li>
+          <li>将其放入 <code>YYYY-MM-DD/&lt;分类&gt;/</code> 目录，例如 <code>2026-07-20/ai-daily/</code>。</li>
+          <li>运行 <code>build_archive.py</code> 重建首页、归档页、当日汇总页与站点地图。</li>
+          <li>提交并推送，站点会自动更新。</li>
+        </ol>
+        <h2>目录结构</h2>
+        <ul>
+          <li><code>index.html</code> — 首页，按日期倒序导航</li>
+          <li><code>archive.html</code> — 归档页，跨日期按分类汇总</li>
+          <li><code>YYYY-MM-DD/index.html</code> — 当日汇总页</li>
+          <li><code>YYYY-MM-DD/&lt;分类&gt;/*.html</code> — 新闻原文</li>
+          <li><code>assets/</code> — 共享样式与脚本</li>
+        </ul>
+      </section>
+    </main>'''
+    ld = {"@context": "https://schema.org", "@type": "AboutPage",
+          "name": "关于每日新闻", "url": base + "/about.html"}
+    return f'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 · 每日新闻</title>
+{seo_head("关于 · 每日新闻", "基于 GitHub Pages 的静态新闻档案，按日期归档，支持自定义域名与自动部署。", base + "/about.html", json_ld=ld)}
+<link rel="stylesheet" href="{ASSET_CSS}">
+{scripts()}
+</head>
+<body>
+{site_header(active="about")}
+{body}
+{site_footer()}
+</body></html>'''
+
+
 def render_sitemap(days, base):
     urls = [("/")] + [("/archive.html"), ("/about.html")]
     for d in days:
@@ -434,11 +502,13 @@ def main():
         out.write_text(render_day(day, base), encoding="utf-8")
         print(f"WROTE {out}  ({len(day['news'])} news, {day['date']})")
 
-    # 首页 / 归档页
+    # 首页 / 归档页 / 关于页
     (ROOT / "index.html").write_text(render_home(days, base), encoding="utf-8")
     print("WROTE index.html")
     (ROOT / "archive.html").write_text(render_archive(days, base), encoding="utf-8")
     print("WROTE archive.html")
+    (ROOT / "about.html").write_text(render_about(base), encoding="utf-8")
+    print("WROTE about.html")
 
     # SEO 文件
     (ROOT / "sitemap.xml").write_text(render_sitemap(days, base), encoding="utf-8")
@@ -446,7 +516,16 @@ def main():
     (ROOT / "robots.txt").write_text(render_robots(base), encoding="utf-8")
     print("WROTE robots.txt")
 
-    print("SITE_URL =", base)
+    # CNAME：自定义域名时写入，否则删除占位文件
+    cname_path = ROOT / "CNAME"
+    if CNAME_CONTENT:
+        cname_path.write_text(CNAME_CONTENT + "\n", encoding="utf-8")
+        print("WROTE CNAME ->", CNAME_CONTENT)
+    elif cname_path.exists():
+        cname_path.unlink()
+        print("REMOVED CNAME (using github.io default)")
+
+    print("SITE_URL =", base, "| BASE_PATH =", BASE_PATH)
     print("DONE")
 
 

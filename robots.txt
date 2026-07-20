@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://news.example.com/sitemap.xml
+Sitemap: https://smbu-ts.github.io/news/sitemap.xml
