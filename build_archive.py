@@ -166,7 +166,8 @@ def seo_head(title, description, canonical, json_ld=None):
 <meta property="og:site_name" content="每日新闻">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{t}">
-<meta name="twitter:description" content="{d}">{ld}'''
+<meta name="twitter:description" content="{d}">{ld}
+<noscript><style>.reveal{{opacity:1!important;transform:none!important}}</style></noscript>'''
 
 
 NAV = [("首页", bp("/"), "home"), ("归档", bp("/archive.html"), "archive"), ("关于", bp("/about.html"), "about")]
@@ -264,6 +265,8 @@ def render_home(days, base):
       <div class="day-go">查看当日汇总 →</div>
     </a>'''
 
+    # 注意：Hero 必须是 <body> 直接子元素（全宽），不能包进 <main class="page">，
+    # 否则 Hero 渐变会被 1120px 容器截断、左右留白，出现布局偏移/样式错乱。
     body = f'''
     <section class="hero"><div class="hero-inner">
       <div class="kicker">✦ 每日新闻档案</div>
@@ -275,14 +278,29 @@ def render_home(days, base):
         <div class="stat"><div class="ico">🏷️</div><div><div class="n">{len(all_cats)}</div><div class="l">新闻分类</div></div></div>
       </div>
     </div></section>
+    <main class="page">
     {featured}
     <div class="sec-head"><h2>按日期浏览</h2><span class="sec-sub">时间倒序 · 最新在最前</span></div>
     <div class="grid">{cards}
-    </div>'''
+    </div>
+    </main>'''
     ld = {"@context": "https://schema.org", "@type": "WebSite",
           "name": "每日新闻", "url": base + "/"}
-    return shell("每日新闻档案", "按日期归档的每日新闻汇总，最新日期在最前，点击日期查看当日全部新闻。",
-                 base + "/", body, active="home", json_ld=ld)
+    return f'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日新闻档案</title>
+{seo_head("每日新闻档案", "按日期归档的每日新闻汇总，最新日期在最前，点击日期查看当日全部新闻。", base + "/", json_ld=ld)}
+<link rel="stylesheet" href="{ASSET_CSS}">
+{scripts()}
+</head>
+<body>
+{site_header(active="home")}
+{body}
+{site_footer()}
+</body></html>'''
 
 
 def render_day(day, base):
