@@ -22,6 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 ASSET_CSS = "/assets/css/style.css"
+ASSET_JS = "/assets/js/main.js"
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 NEWS_RE = re.compile(r"^(?P<cat>.+?)-(?P<date>\d{4}-\d{2}-\d{2})\.html$")
@@ -45,6 +46,15 @@ CAT_COLORS = {
     "health": "#14b8a6",
     "culture": "#ec4899",
 }
+CAT_ICONS = {
+    "ai-daily": "🤖",
+    "tech": "💻",
+    "finance": "📈",
+    "world": "🌍",
+    "sports": "⚽",
+    "health": "🩺",
+    "culture": "🎬",
+}
 
 
 def cat_label(key):
@@ -53,6 +63,10 @@ def cat_label(key):
 
 def cat_color(key):
     return CAT_COLORS.get(key, "#64748b")
+
+
+def cat_icon(key):
+    return CAT_ICONS.get(key, "📰")
 
 
 def site_url():
@@ -147,15 +161,23 @@ def site_header(active=""):
         for t, u, k in NAV
     )
     return (f'<header class="site-head"><div class="site-head-inner">'
-            f'<a class="brand" href="/">每日新闻</a>'
+            f'<a class="brand" href="/"><span class="logo">📰</span>'
+            f'<span class="brand-text">每日新闻</span></a>'
             f'<nav class="site-nav">{links}</nav></div></header>')
 
 
 def site_footer():
-    return '''<footer class="site-foot"><div class="site-foot-inner">
-<p>每日新闻 · 基于 GitHub Pages 的静态新闻档案</p>
-<nav><a href="/">首页</a> · <a href="/archive.html">归档</a> · <a href="/about.html">关于</a></nav>
+    year = datetime.date.today().year
+    return f'''<footer class="site-foot"><div class="site-foot-inner">
+<div class="foot-brand">📰 每日新闻</div>
+<p>基于 GitHub Pages 的静态新闻档案 · 按日期归档 · 自动部署</p>
+<nav><a href="/">首页</a>·<a href="/archive.html">归档</a>·<a href="/about.html">关于</a></nav>
+<p style="margin-top:10px;opacity:.7">© {year} 每日新闻</p>
 </div></footer>'''
+
+
+def scripts():
+    return f'<script src="{ASSET_JS}" defer></script>'
 
 
 def shell(title, description, canonical, body, active="", json_ld=None):
@@ -167,6 +189,7 @@ def shell(title, description, canonical, body, active="", json_ld=None):
 <title>{html.escape(title)}</title>
 {seo_head(title, description, canonical, json_ld)}
 <link rel="stylesheet" href="{ASSET_CSS}">
+{scripts()}
 </head>
 <body>
 {site_header(active)}
@@ -176,38 +199,67 @@ def shell(title, description, canonical, body, active="", json_ld=None):
 
 
 # ---------------- 页面渲染 ----------------
+def _day_cats(d):
+    cats = {}
+    for n in d["news"]:
+        cats[n["cat"]] = cats.get(n["cat"], 0) + 1
+    return dict(sorted(cats.items(), key=lambda kv: (kv[0] != "ai-daily", kv[0])))
+
+
 def render_home(days, base):
     total = sum(len(d["news"]) for d in days)
+    all_cats = set(n["cat"] for d in days for n in d["news"])
+
+    # 最新一期 Featured 横幅
+    latest = days[0]
+    lcats = _day_cats(latest)
+    fpills = "".join(
+        f'<span class="pill on-dark"><i></i>{cat_icon(c)} {html.escape(cat_label(c))} · {cnt}</span>'
+        for c, cnt in lcats.items()
+    )
+    featured = f'''
+    <a class="featured reveal" href="/{latest['date']}/">
+      <span class="tag">✦ 最新一期</span>
+      <h3>{latest['date']} · {latest['weekday']}</h3>
+      <p>共 {len(latest['news'])} 篇报道，覆盖 {len(lcats)} 个分类</p>
+      <span class="go">进入当日汇总 →</span>
+      <div class="fpills">{fpills}</div>
+    </a>'''
+
+    # 日期卡片
     cards = ""
     for d in days:
         date = d["date"]
-        cats = {}
-        for n in d["news"]:
-            cats[n["cat"]] = cats.get(n["cat"], 0) + 1
+        cats = _day_cats(d)
         chips = "".join(
             f'<span class="pill" style="--c:{cat_color(c)}">'
-            f'<i style="background:{cat_color(c)}"></i>{html.escape(cat_label(c))} · {cnt}</span>'
-            for c, cnt in sorted(cats.items(), key=lambda kv: (kv[0] != "ai-daily", kv[0]))
+            f'<i></i>{cat_icon(c)} {html.escape(cat_label(c))} · {cnt}</span>'
+            for c, cnt in cats.items()
         )
         cards += f'''
-    <a class="day-card" href="/{date}/" style="--c:{cat_color('ai-daily')}">
-      <div class="day-date">{date}</div>
-      <div class="day-week">{d['weekday']}</div>
-      <div class="day-count">{len(d['news'])} 篇 · {len(cats)} 类</div>
+    <a class="day-card reveal" href="/{date}/">
+      <div class="day-top">
+        <div class="day-date">{date}</div>
+        <span class="day-badge">{d['weekday']}</span>
+      </div>
+      <div class="day-count">📰 {len(d['news'])} 篇 · {len(cats)} 个分类</div>
       <div class="day-pills">{chips}</div>
       <div class="day-go">查看当日汇总 →</div>
     </a>'''
+
     body = f'''
     <section class="hero"><div class="hero-inner">
-      <div class="kicker">每日新闻档案</div>
-      <h1>每日新闻汇总</h1>
-      <div class="sub">按日期归档 · 最新日期在最前 · 点击任意日期查看当日全部新闻</div>
+      <div class="kicker">✦ 每日新闻档案</div>
+      <h1>每日新闻，一处尽览</h1>
+      <div class="sub">按日期归档，最新在前。点击任意日期，即可查看当天全部新闻的分类汇总。</div>
       <div class="stats">
-        <div class="stat"><div class="n">{len(days)}</div><div class="l">归档天数</div></div>
-        <div class="stat"><div class="n">{total}</div><div class="l">新闻总数</div></div>
+        <div class="stat"><div class="ico">🗓️</div><div><div class="n">{len(days)}</div><div class="l">归档天数</div></div></div>
+        <div class="stat"><div class="ico">📰</div><div><div class="n">{total}</div><div class="l">新闻总数</div></div></div>
+        <div class="stat"><div class="ico">🏷️</div><div><div class="n">{len(all_cats)}</div><div class="l">新闻分类</div></div></div>
       </div>
     </div></section>
-    <h2 class="sec-head">日期导航（倒序）</h2>
+    {featured}
+    <div class="sec-head"><h2>按日期浏览</h2><span class="sec-sub">时间倒序 · 最新在最前</span></div>
     <div class="grid">{cards}
     </div>'''
     ld = {"@context": "https://schema.org", "@type": "WebSite",
@@ -229,8 +281,8 @@ def render_day(day, base):
             rel_day = n["full"].relative_to(ROOT / date).as_posix()
             desc = html.escape(n["desc"]) if n["desc"] else "点击查看完整报道"
             items += f'''
-        <article class="news-card" style="--c:{color}">
-          <div class="news-cat" style="--c:{color}">{html.escape(cat_label(cat))}</div>
+        <article class="news-card reveal" style="--c:{color}">
+          <div class="news-cat" style="--c:{color}">{cat_icon(cat)} {html.escape(cat_label(cat))}</div>
           <h3 class="news-title"><a href="{rel_day}" target="_blank" rel="noopener noreferrer">{html.escape(n['title'])}</a></h3>
           <p class="news-desc">{desc}</p>
           <a class="news-link" href="{rel_day}" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
@@ -238,15 +290,15 @@ def render_day(day, base):
         sections += f'''
     <section class="cat-section">
       <h2 class="cat-title" style="--c:{color}">
-        <span class="dot" style="background:{color}"></span>{html.escape(cat_label(cat))}
-        <span class="cat-count">{len(groups[cat])}</span>
+        <span class="cat-ico" style="--c:{color}">{cat_icon(cat)}</span>{html.escape(cat_label(cat))}
+        <span class="cat-count">{len(groups[cat])} 篇</span>
       </h2>
       <div class="grid">{items}
       </div>
     </section>'''
     body = f'''
     <section class="hero"><div class="hero-inner">
-      <div class="kicker">每日新闻 · 当日汇总</div>
+      <div class="kicker">✦ 当日汇总</div>
       <h1>{date} · {day['weekday']}</h1>
       <div class="sub">共 {len(day['news'])} 篇报道 · {len(groups)} 个分类</div>
       <div class="back"><a href="/">← 返回新闻主页</a></div>
@@ -262,6 +314,7 @@ def render_day(day, base):
 <title>每日新闻 · {date}</title>
 {seo_head("每日新闻 · " + date, f"{date} 当日新闻汇总，共 {len(day['news'])} 篇报道、{len(groups)} 个分类。", base + "/" + date + "/", json_ld=day_ld(day, base))}
 <link rel="stylesheet" href="{ASSET_CSS}">
+{scripts()}
 </head>
 <body>
 {site_header(active="")}
@@ -303,25 +356,25 @@ def render_archive(days, base):
             link = "/" + n["file"]
             desc = html.escape(n["desc"]) if n["desc"] else "点击查看完整报道"
             items += f'''
-        <article class="news-card" style="--c:{color}">
-          <div class="news-cat" style="--c:{color}">{html.escape(cat_label(cat))}</div>
+        <article class="news-card reveal" style="--c:{color}">
+          <div class="news-cat" style="--c:{color}">{cat_icon(cat)} {html.escape(cat_label(cat))}</div>
           <h3 class="news-title"><a href="{link}" target="_blank" rel="noopener noreferrer">{html.escape(n['title'])}</a></h3>
           <p class="news-desc">{desc}</p>
-          <div class="day-week">{date} · {html.escape(n['name'])}</div>
+          <div class="news-meta">🗓️ {date}<span class="sep">·</span>{html.escape(n['name'])}</div>
         </article>'''
             all_items.append({"@type": "NewsArticle", "headline": n["title"], "url": base + "/" + n["file"]})
         sections += f'''
     <section class="cat-section">
       <h2 class="cat-title" style="--c:{color}">
-        <span class="dot" style="background:{color}"></span>{html.escape(cat_label(cat))}
-        <span class="cat-count">{len(entries)}</span>
+        <span class="cat-ico" style="--c:{color}">{cat_icon(cat)}</span>{html.escape(cat_label(cat))}
+        <span class="cat-count">{len(entries)} 篇</span>
       </h2>
       <div class="grid">{items}
       </div>
     </section>'''
     body = f'''
     <section class="hero"><div class="hero-inner">
-      <div class="kicker">每日新闻 · 全站归档</div>
+      <div class="kicker">✦ 全站归档</div>
       <h1>新闻归档</h1>
       <div class="sub">跨日期、按分类汇总全部 {sum(len(v) for v in by_cat.values())} 篇报道</div>
     </div></section>
@@ -336,6 +389,7 @@ def render_archive(days, base):
 <title>归档 · 每日新闻</title>
 {seo_head("新闻归档 · 每日新闻", "跨日期、按分类汇总每日新闻的全部报道。", base + "/archive.html", json_ld=ld)}
 <link rel="stylesheet" href="{ASSET_CSS}">
+{scripts()}
 </head>
 <body>
 {site_header(active="archive")}

@@ -1,9 +1,9 @@
 name: Deploy GitHub Pages
 
-# 每次向 main 分支推送都会自动构建并部署到 GitHub Pages。
+# 每次向 main / master 分支推送都会自动构建并部署到 GitHub Pages。
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
 
 # 赋予 Pages 部署所需的最小权限。

@@ -16,31 +16,45 @@
 <meta name="twitter:description" content="按日期归档的每日新闻汇总，最新日期在最前，点击日期查看当日全部新闻。">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "每日新闻", "url": "https://news.example.com/"}</script>
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
 </head>
 <body>
-<header class="site-head"><div class="site-head-inner"><a class="brand" href="/">每日新闻</a><nav class="site-nav"><a href="/" class="active">首页</a><a href="/archive.html">归档</a><a href="/about.html">关于</a></nav></div></header>
+<header class="site-head"><div class="site-head-inner"><a class="brand" href="/"><span class="logo">📰</span><span class="brand-text">每日新闻</span></a><nav class="site-nav"><a href="/" class="active">首页</a><a href="/archive.html">归档</a><a href="/about.html">关于</a></nav></div></header>
 <main class="page">
     <section class="hero"><div class="hero-inner">
-      <div class="kicker">每日新闻档案</div>
-      <h1>每日新闻汇总</h1>
-      <div class="sub">按日期归档 · 最新日期在最前 · 点击任意日期查看当日全部新闻</div>
+      <div class="kicker">✦ 每日新闻档案</div>
+      <h1>每日新闻，一处尽览</h1>
+      <div class="sub">按日期归档，最新在前。点击任意日期，即可查看当天全部新闻的分类汇总。</div>
       <div class="stats">
-        <div class="stat"><div class="n">1</div><div class="l">归档天数</div></div>
-        <div class="stat"><div class="n">1</div><div class="l">新闻总数</div></div>
+        <div class="stat"><div class="ico">🗓️</div><div><div class="n">1</div><div class="l">归档天数</div></div></div>
+        <div class="stat"><div class="ico">📰</div><div><div class="n">1</div><div class="l">新闻总数</div></div></div>
+        <div class="stat"><div class="ico">🏷️</div><div><div class="n">1</div><div class="l">新闻分类</div></div></div>
       </div>
     </div></section>
-    <h2 class="sec-head">日期导航（倒序）</h2>
+    
+    <a class="featured reveal" href="/2026-07-20/">
+      <span class="tag">✦ 最新一期</span>
+      <h3>2026-07-20 · 星期一</h3>
+      <p>共 1 篇报道，覆盖 1 个分类</p>
+      <span class="go">进入当日汇总 →</span>
+      <div class="fpills"><span class="pill on-dark"><i></i>🤖 AI 日报 · 1</span></div>
+    </a>
+    <div class="sec-head"><h2>按日期浏览</h2><span class="sec-sub">时间倒序 · 最新在最前</span></div>
     <div class="grid">
-    <a class="day-card" href="/2026-07-20/" style="--c:#6366f1">
-      <div class="day-date">2026-07-20</div>
-      <div class="day-week">星期一</div>
-      <div class="day-count">1 篇 · 1 类</div>
-      <div class="day-pills"><span class="pill" style="--c:#6366f1"><i style="background:#6366f1"></i>AI 日报 · 1</span></div>
+    <a class="day-card reveal" href="/2026-07-20/">
+      <div class="day-top">
+        <div class="day-date">2026-07-20</div>
+        <span class="day-badge">星期一</span>
+      </div>
+      <div class="day-count">📰 1 篇 · 1 个分类</div>
+      <div class="day-pills"><span class="pill" style="--c:#6366f1"><i></i>🤖 AI 日报 · 1</span></div>
       <div class="day-go">查看当日汇总 →</div>
     </a>
     </div></main>
 <footer class="site-foot"><div class="site-foot-inner">
-<p>每日新闻 · 基于 GitHub Pages 的静态新闻档案</p>
-<nav><a href="/">首页</a> · <a href="/archive.html">归档</a> · <a href="/about.html">关于</a></nav>
+<div class="foot-brand">📰 每日新闻</div>
+<p>基于 GitHub Pages 的静态新闻档案 · 按日期归档 · 自动部署</p>
+<nav><a href="/">首页</a>·<a href="/archive.html">归档</a>·<a href="/about.html">关于</a></nav>
+<p style="margin-top:10px;opacity:.7">© 2026 每日新闻</p>
 </div></footer>
 </body></html>
