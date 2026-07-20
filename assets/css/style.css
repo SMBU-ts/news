@@ -150,7 +150,8 @@ img { max-width: 100%; }
 /* ---------- 最新一期 Featured 横幅 ---------- */
 .featured {
   position: relative; overflow: hidden; border-radius: var(--radius-lg);
-  padding: 26px 28px; margin-bottom: 34px; color: #fff;
+  display: flex; flex-direction: column;
+  padding: 26px 28px; margin-top: 28px; margin-bottom: 34px; color: #fff;
   background: linear-gradient(120deg, #0f172a 0%, #4338ca 55%, #7c3aed 100%);
   box-shadow: var(--shadow-md);
 }
