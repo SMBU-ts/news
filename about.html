@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 · 每日新闻</title>
+<meta name="description" content="关于「每日新闻」站点：基于 GitHub Pages 的静态新闻档案，按日期归档，支持自定义域名与自动部署。">
+<link rel="canonical" href="https://news.example.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于 · 每日新闻">
+<meta property="og:description" content="基于 GitHub Pages 的静态新闻档案，按日期归档，支持自定义域名与自动部署。">
+<meta property="og:url" content="https://news.example.com/about.html">
+<meta property="og:site_name" content="每日新闻">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="关于 · 每日新闻">
+<meta name="twitter:description" content="基于 GitHub Pages 的静态新闻档案，按日期归档，支持自定义域名与自动部署。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"关于每日新闻","url":"https://news.example.com/about.html"}</script>
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<header class="site-head"><div class="site-head-inner">
+  <a class="brand" href="/">每日新闻</a>
+  <nav class="site-nav">
+    <a href="/">首页</a>
+    <a href="/archive.html">归档</a>
+    <a href="/about.html" class="active">关于</a>
+  </nav>
+</div></header>
+<main class="page">
+  <section class="prose">
+    <h1>关于本站</h1>
+    <p>「每日新闻」是一个基于 <strong>GitHub Pages</strong> 的纯静态新闻档案站点。所有内容按日期归档，结构清晰，便于长期维护与扩展。</p>
+    <h2>技术特性</h2>
+    <ul>
+      <li><strong>多页结构</strong>：首页、归档页、关于页，以及每天的汇总页与新闻原文页，页面间通过统一导航互联。</li>
+      <li><strong>自动部署</strong>：每次向 <code>main</code> 分支提交，GitHub Actions 会自动构建并发布。</li>
+      <li><strong>自定义域名</strong>：通过仓库根目录的 <code>CNAME</code> 文件与 DNS 配置即可绑定自有域名。</li>
+      <li><strong>SEO 基础</strong>：每页具备标题、描述、规范链接（canonical）、Open Graph、Twitter Card 与 JSON-LD 结构化数据，并附带 <code>sitemap.xml</code> 与 <code>robots.txt</code>。</li>
+    </ul>
+    <h2>如何新增一天的新闻</h2>
+    <ol>
+      <li>用 <code>build_dashboard.py</code> 生成当日报文，例如 <code>ai-daily-2026-07-20.html</code>。</li>
+      <li>将其放入 <code>YYYY-MM-DD/&lt;分类&gt;/</code> 目录，例如 <code>2026-07-20/ai-daily/</code>。</li>
+      <li>运行 <code>build_archive.py</code> 重建首页、归档页、当日汇总页与站点地图。</li>
+      <li>提交并推送，站点会自动更新。</li>
+    </ol>
+  </section>
+</main>
+<footer class="site-foot"><div class="site-foot-inner">
+  <p>每日新闻 · 基于 GitHub Pages 的静态新闻档案</p>
+  <nav><a href="/">首页</a> · <a href="/archive.html">归档</a> · <a href="/about.html">关于</a></nav>
+</div></footer>
+</body>
+</html>
