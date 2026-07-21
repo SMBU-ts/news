@@ -12,6 +12,12 @@
   知乎       https://60s.viki.moe/v2/zhihu           （聚合兜底，直连需鉴权）
   哔哩哔哩   https://api.bilibili.com/x/web-interface/popular
 
+配置要点（改这几项即生效，下次运行采用新值）：
+  · 每平台仅抓取榜单前 PER_PLATFORM_LIMIT=10 条；
+  · 微博 / 今日头条接口无描述字段 → 方案1：入选后对其缺摘要条目用标题调 Bing 搜
+    索抓首条结果摘要，得到真实中文摘要（失败则保留兜底文案）；
+  · 哔哩哔哩摘要字段刻意留空（不取视频简介 desc）。
+
 用法：
   python build_hotsearch.py             # 今天
   python build_hotsearch.py 2026-07-21  # 指定日期
@@ -33,8 +39,10 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 TIMEOUT = 20
 TOP_N = 15            # 汇总保留的热点条数
+PER_PLATFORM_LIMIT = 10   # 每个平台仅抓取榜单前 N 条
 SUMMARY_MAX = 50      # 摘要最大字数
 CROSS_BONUS = 0.18    # 跨平台重复报道的评分加成系数
+ENRICH_TIMEOUT = 10   # 方案1：微博/头条二次抓取（Bing 摘要）超时秒数
 
 CAT = "hotsearch"
 BRAND = "#f43f5e"     # 版块主色（与 build_archive.py 的 CAT_COLORS["hotsearch"] 一致）
@@ -55,19 +63,19 @@ PLATFORM_WEIGHTS = {
     "知乎": 1.0,
     "哔哩哔哩": 0.9,
 }
-# 「按平台」排序时的平台先后顺序
-PLATFORM_ORDER = ["微博", "百度", "今日头条", "知乎", "哔哩哔哩"]
+# 「按平台」排序时的平台先后顺序（与配置覆盖顺序一致：百度/知乎/微博/今日头条/哔哩哔哩）
+PLATFORM_ORDER = ["百度", "知乎", "微博", "今日头条", "哔哩哔哩"]
 
 
 # ==================== 抓取工具 ====================
-def _get(url, headers=None):
+def _get(url, headers=None, timeout=TIMEOUT):
     req = urllib.request.Request(
         url,
         headers={"User-Agent": UA,
                  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
                  **(headers or {})},
     )
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+    with urllib.request.urlopen(req, timeout=timeout) as r:
         data = r.read()
     if data[:2] == b"\x1f\x8b":
         data = gzip.decompress(data)
@@ -225,7 +233,7 @@ def fetch_bilibili():
         url = f"https://www.bilibili.com/video/{bvid}" if bvid else (it.get("short_link_v2") or "")
         out.append({
             "title": title,
-            "summary": it.get("desc") or "",
+            "summary": "",   # 按配置：不包含视频简介（desc）字段
             "url": url,
             "hot": float(view or 0),
             "hot_display": _fmt_hot(view) + "播放",
@@ -364,6 +372,51 @@ def finalize(items):
             "score": round(it.get("score", 0), 2),
         })
     return out
+
+
+# ==================== 方案1：微博/头条二次抓取真实摘要 ====================
+# 微博、今日头条的热榜接口只返回标题 + 热度，没有描述字段。
+# 方案1：对最终入选结果中这两家、且仍缺摘要的条目，用标题调一次 Bing 搜索，
+# 抓取首条结果摘要作为真实中文摘要（替代兜底文案）。抓取失败则保留兜底文案。
+def _bing_snippet(query, n=SUMMARY_MAX):
+    """用标题调 Bing 搜索，返回首条结果摘要（已截断/去噪）。失败返回空串。"""
+    q = urllib.parse.quote(query)
+    url = f"https://www.bing.com/search?q={q}&setlang=zh-CN"
+    try:
+        txt = _get(url, {"Accept-Language": "zh-CN,zh;q=0.9"},
+                   timeout=ENRICH_TIMEOUT).decode("utf-8", "ignore")
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError):
+        return ""
+    m = (re.search(r'class="[^"]*b_lineclamp[0-9]*[^"]*"[^>]*>(.*?)</p>', txt, re.S)
+         or re.search(r'<div class="b_caption"[^>]*>.*?<p[^>]*>(.*?)</p>', txt, re.S))
+    if not m:
+        return ""
+    s = _TAG_RE.sub("", m.group(1))
+    s = html.unescape(s)
+    # 去掉摘要开头常见的时间/署名噪前缀（如「6 小时之前 · 作者 | 肖瑶」「1 天前 · 央视网消息」）
+    s = re.sub(r'^\s*\d+\s*(秒|分钟|小时|天|周|个月)之?前\s*[·•]?\s*', "", s)
+    s = re.sub(r'^\s*\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日\s*[·•]?\s*', "", s)
+    s = re.sub(r'^\s*(作者|记者)\s*[|｜:：]\s*', "", s)
+    s = re.sub(r'^\s*[·•]\s*', "", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    # 相关性粗筛：数字开头等易误匹配（如「9」→「9是自然数」）。
+    # 摘要须至少含标题中的 2 个非数字字符，否则视为无关结果，回退兜底。
+    key_chars = set(re.sub(r"[\d\s\W_]", "", query))
+    if key_chars and len(key_chars & set(s)) < 2:
+        return ""
+    if len(s) > n:
+        s = s[: n - 1] + "…"
+    return s
+
+
+def enrich_scheme1(items):
+    """方案1：为『微博/今日头条』来源且仍无摘要的条目补真实摘要（Bing 片段）。"""
+    for it in items:
+        if it["source"] in ("微博", "今日头条") and not (it.get("summary") or "").strip():
+            s = _bing_snippet(it["title"])
+            if s:
+                it["summary"] = s
+    return items
 
 
 # ==================== 渲染 ====================
@@ -597,9 +650,9 @@ def main():
     platform_items = {}
     for name, fn in FETCHERS:
         try:
-            items = fn()
+            items = fn()[:PER_PLATFORM_LIMIT]   # 每个平台仅取榜单前 N 条
             platform_items[name] = items
-            print(f"  {name}: {len(items)} 条")
+            print(f"  {name}: {len(items)} 条（上限 {PER_PLATFORM_LIMIT}）")
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
                 OSError, ValueError, KeyError) as e:
             platform_items[name] = []
@@ -607,6 +660,7 @@ def main():
 
     merged = normalize_and_merge(platform_items)
     diversified = ensure_diversity(merged, TOP_N, min_per=2)
+    diversified = enrich_scheme1(diversified)   # 方案1：微博/头条补真实摘要
     items = finalize(diversified)
 
     # 统计入选条目的各平台数（按主来源计）
