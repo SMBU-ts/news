@@ -57,6 +57,17 @@
       └───────────────┘
 ```
 
+## 热度排名系统（2026-07-21 新增）
+
+`ranking.py` + `engagement.py` 实现多因子评分排名，在 `build_rss.py` 去重后、渲染前介入：
+
+- **评分公式**：SCORE = w_e×S_e + w_r×S_r + w_a×S_a + w_i×S_i + w_c×S_c（各因子 [0,1]，加权和 ×100）
+- **5 个因子**：互动数据（HN Firebase API 获取真实 score/comments）、时效性衰减（指数半衰期可配）、信源权威权重、标题信息量、跨源报道加成
+- **排名方法**：`top_n`（保留前N条）/ `percentile`（前X%）/ `threshold`（最低分），分类级可配
+- **配置**：集中在 `feeds.yaml` 的 `_ranking` 节，含 defaults + 分类级覆盖；源级新增 `weight` / `engagement` / `max_articles` 字段
+- **向后兼容**：无 `_ranking` 配置时保持原有行为（按时间排序 + Top 20）
+- `_ensure_diversity()` 保障来源多样性（每源至少保留1条）
+
 ## 构建管道详解
 
 ### 1. build_dashboard.py — AI 日报
@@ -76,7 +87,7 @@
 **处理流程**：
 1. 读取 `feeds.yaml`，遍历每个分类的订阅源列表
 2. 用 `urllib` + `xml.etree.ElementTree` 抓取并解析 RSS 2.0 / Atom
-3. 按标题去重，每分类保留最新 20 条
+3. 按标题去重，然后经热度排名系统筛选（`ranking.py`）
 4. 对每篇文章调用 `summary_lib.summarize()` 生成摘要
 5. 渲染 HTML → 输出到 `YYYY-MM-DD/<cat>/`
 
@@ -206,8 +217,10 @@ AI 助手工作流：
 | `extract_articles.py` | 从 HTML 卡片提取文章链接，抓取正文存 `summaries/raw/` |
 | `fetch_new_articles.py` | 批量抓取已知可破的文章 |
 | `inject_summary_button.py` | 向已有 HTML 注入「原文概括」按钮+面板（幂等） |
-| `patch_summaries.py` | 外科替换 HTML 中的回退摘要文本 |
 | `playwright_fetch.py` | Playwright 反检测抓取（破 Cloudflare 等） |
+| `api_push.py` / `api_push_all.py` | 通过 GitHub Git Data API 推送（沙箱内 HTTPS git push 被阻止时的备用方案） |
+| `repair_html.py` | HTML 卡片修复：从污染页面提取干净字段后用原模板重建 |
+| `patch_summaries.py` | 外科替换 HTML 中的回退摘要文本（推荐用 `repair_html.py` 代替） |
 
 ## 目录约定
 

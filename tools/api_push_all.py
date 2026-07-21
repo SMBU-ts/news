@@ -19,7 +19,7 @@ BRANCH = "main"
 ROOT = Path(__file__).resolve().parent.parent
 
 # Files to exclude (same as .gitignore + binary patterns)
-EXCLUDE_DIRS = {".workbuddy", "__pycache__", ".git", "output"}
+EXCLUDE_DIRS = {".workbuddy", "__pycache__", ".git", "output", ".backup_0721"}
 EXCLUDE_EXTS = {".pyc", ".pyo", ".log", ".DS_Store"}
 
 
@@ -114,7 +114,15 @@ def main():
     print(f"Tree: {tree_result['sha'][:8]}")
 
     # Create commit
-    commit_msg = "feat: 热度排名系统 + 2026-07-21摘要补全\n\n- ranking.py: 5因子评分引擎\n- engagement.py: HN API互动数据\n- build_rss.py: 排名管道+来源多样性\n- feeds.yaml: _ranking配置\n- 摘要覆盖率: tech 100%, finance 100%, world 95%"
+    commit_msg = (
+        "fix: 0721三板块排版修复 + 清理冗余脚本 + 同步文档\n\n"
+        "- 修复 2026-07-21 tech/finance/world 三板块卡片排版\n"
+        "  * 英文源卡片去除中文污染、来源标签(未知来源)修正\n"
+        "  * world[12/13/17/19] 预览文本与标题订正\n"
+        "- 删除冗余一次性脚本: merge_new16 / merge_summaries / patch_final / patch_summaries_v2\n"
+        "- 新增 tools/repair_html.py（卡片结构重建）与 tools/api_push_all.py（Git Data API 推送）\n"
+        "- 同步 CLAUDE.md 与 docs/ARCHITECTURE.md（排名系统说明）"
+    )
     commit_result = gh_api(f"repos/{REPO}/git/commits", method="POST", input_data={
         "message": commit_msg,
         "tree": tree_result["sha"],

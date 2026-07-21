@@ -37,6 +37,7 @@ feeds.yaml (RSS源配置)          AI HOT API
 ```
 
 - **数据源**：科技/财经/国际 → RSS/Atom（`feeds.yaml`）；AI 日报 → AI HOT API
+- **排名系统**：`ranking.py` + `engagement.py` 多因子评分（互动/时效/权威/信息量/跨源），`_ensure_diversity()` 保障来源多样性。HN Firebase API 获取真实互动数据，其他源使用代理指标。`feeds.yaml` 的 `_ranking` 节配置权重/方法/阈值，无配置时向后兼容。
 - **输出**：`YYYY-MM-DD/<cat>/<cat>-YYYY-MM-DD.html` + 每日 `index.html`
 - **站点前缀**：统一用 `/news/`（GitHub 项目页子路径），sitemap 用绝对 URL
 - **摘要**：由 AI 助手逐篇阅读原文正文，生成 100–200 字中文摘要，写入 `summaries/<date>.json` 提交仓库。构建时 `summary_lib.py` 读取 JSON 复用，点击按钮仅展开/收起。
@@ -102,6 +103,7 @@ feeds.yaml (RSS源配置)          AI HOT API
 - BBC / Al Jazeera / NYT / DW 等部分 RSS 源被沙箱网络策略屏蔽
 - `gh` CLI 不在 PATH，需全路径 `"C:/Program Files/GitHub CLI/gh.exe"`
 - 沙箱内 GitHub 可访问（git ls-remote 成功），但部分外网受限制
+- 沙箱阻止 HTTPS git push → 使用 `tools/api_push.py` 或 `tools/api_push_all.py` 通过 GitHub Git Data API 推送
 - 本机 / CI 环境无上述限制
 
 ## 深入文档
@@ -109,6 +111,6 @@ feeds.yaml (RSS源配置)          AI HOT API
 | 文档 | 内容 |
 |------|------|
 | [README.md](README.md) | 项目介绍、本地构建、发布指南、SEO 说明 |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | 系统架构、构建管道、反爬策略、摘要引擎、部署流程 |
-| [feeds.yaml](feeds.yaml) | RSS 订阅源配置（分类 → 源清单） |
-| [tools/](tools/) | 离线辅助脚本目录 |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | 系统架构、构建管道、排名系统、反爬策略、摘要引擎、部署流程 |
+| [feeds.yaml](feeds.yaml) | RSS 订阅源配置 + `_ranking` 排名参数 |
+| [tools/](tools/) | 离线辅助脚本目录（爬虫、正文提取、摘要修补、API 推送） |
