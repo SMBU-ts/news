@@ -42,8 +42,6 @@ finance:
   # 目前以国际源为主。若找到可用中文源，按下方格式追加即可。
   - name: Seeking Alpha
     url: https://seekingalpha.com/market_currents.xml
-  - name: MarketWatch
-    url: https://feeds.marketwatch.com/marketwatch/topstories/
   - name: CNBC
     url: https://www.cnbc.com/id/100003114/device/rss/rss.html
 
