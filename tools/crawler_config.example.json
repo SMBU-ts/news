@@ -1,0 +1,50 @@
+{
+  "_note": "爬虫配置示例。命令行参数可覆盖本文件的 urls/output/delay/retries/no_verify。",
+
+  "urls": [
+    "https://example.com/news"
+  ],
+
+  "delay": 2.5,
+  "jitter": 1.5,
+  "retries": 3,
+  "backoff": 1.5,
+  "timeout": 20,
+
+  "respect_robots": false,
+  "verify_ssl": true,
+  "extra_headers": {
+    "_note": "宽松抓取时可在此注入 Cookie / Referer / Authorization，例如：\"Cookie\": \"session=xxx\"",
+    "Referer": "https://www.google.com/"
+  },
+
+  "output": "output/result.json",
+  "logfile": "output/crawler.log",
+
+  "mode": "items",
+  "item_rule": {
+    "pattern": "<article[^>]*>(.*?)</article>",
+    "flags": "IS"
+  },
+  "fields": [
+    {
+      "name": "title",
+      "pattern": "<h[23][^>]*>(.*?)</h[23]>",
+      "flags": "IS",
+      "group": 1
+    },
+    {
+      "name": "link",
+      "pattern": "href=\"([^\"]+)\"",
+      "flags": "",
+      "group": 1
+    },
+    {
+      "name": "summary",
+      "pattern": "<p[^>]*>(.*?)</p>",
+      "flags": "IS",
+      "group": 1,
+      "default": ""
+    }
+  ]
+}
