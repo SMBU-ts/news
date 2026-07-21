@@ -5,6 +5,7 @@ import json
 import urllib.request
 import html
 import datetime
+import sys
 from pathlib import Path
 
 from summary_lib import summarize, SUMMARY_FAIL, load_precomputed
@@ -76,7 +77,7 @@ def truncate(s, n=60):
 
 
 def main():
-    today = datetime.date.today().isoformat()
+    today = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
     data, used_date, fell_back = load_daily(today)
 
     # 载入预生成摘要（url -> 摘要，见 summaries/<date>.json）。
