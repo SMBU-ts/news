@@ -59,6 +59,13 @@
       font-size:13px; border-top:1px solid var(--line); text-align:center; }
   footer a { color:#3b82f6; font-weight:600; }
   @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
+
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:1.2; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
 </style>
 </head>
 <body>
@@ -83,7 +90,11 @@
           </h3>
           <p class="card-sum">如果你重复交代同一件事两次，意味着你的管理失败了</p>
           <div class="card-meta">🕒 2026-07-20 18:42</div>
-          <a class="read" href="https://www.tmtpost.com/8071908.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8071908.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Y Combinator掌门人Garry Tan在演讲中指出，AI时代的真正红利在于重构工作流，而非微调模型权重；把组织编码为「技能手册」与「企业大脑」，用15–40人的极简团队撬动数千万至上亿美元ARR。他称自身效率提升约400倍，核心杠杆不在模型权重，而在工作流串联；并强调把重复性成功经验「技能化」，构建AI原生公司。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -95,7 +106,11 @@
           </h3>
           <p class="card-sum">真系猴赛雷。</p>
           <div class="card-meta">🕒 2026-07-20 18:41</div>
-          <a class="read" href="https://www.tmtpost.com/8072155.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8072155.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>实验猴价格飙至20万元一只，昭衍新药因存栏猴资产重估利润暴增最高13倍，带动整个CXO板块炒作，被冠以「猴茅」称号。普通打工人年薪不及半只猴，引发A股脱离基本面的题材炒作——从昭衍新药到宏辉果蔬、峨眉山A均被资金跟风，凸显研发产业链成本压力。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -107,7 +122,11 @@
           </h3>
           <p class="card-sum">芯片越卖越贵，花钱越来越快。</p>
           <div class="card-meta">🕒 2026-07-20 18:41</div>
-          <a class="read" href="https://www.tmtpost.com/8072223.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8072223.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>台积电Q2营收402亿美元同比增33.7%，净利约224亿美元增77.4%，毛利率67.7%创历史新高；单价上涨（单片9271美元环比+7.8%）与AI芯片变大是主要推力，HPC营收占比升至66%。资本开支上修至600–640亿美元，市场关注点正从「收入增速」转向「毛利率能否稳定」。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -119,7 +138,11 @@
           </h3>
           <p class="card-sum">越野是留给家庭出行的余量。 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。</p>
           <div class="card-meta">🕒 2026-07-20 18:35</div>
-          <a class="read" href="https://www.ifanr.com/1672622?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.ifanr.com/1672622?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>长城H10开启预售，21.48万元起，五座/六座同一起步价。全系搭第二代Hi4混动、42.8kWh电池、激光雷达与Coffee Pilot 3智驾，综合功率440kW、零百4.9秒。方盒子造型主打「大家庭SUV」，兼顾城市通勤与轻越野，与同日上市的新坦克300形成「家庭vs硬核」对照。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -131,7 +154,11 @@
           </h3>
           <p class="card-sum">所有图片都是 one shot #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。</p>
           <div class="card-meta">🕒 2026-07-20 18:29</div>
-          <a class="read" href="https://www.ifanr.com/1672547?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.ifanr.com/1672547?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>商汤在WAIC发布日日新SenseNova U1 Pro，业内首个将「理解·生成·行动」原生统一的多模态设计智能体，支持原生8K输出，主打交付级高精度中文视觉。实测世界杯长图、暴雨避险图、UI、学术海报与工业图解，能一次生成可直接投产的成品，而非单纯好看的图。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -143,7 +170,11 @@
           </h3>
           <p class="card-sum">坦克 300 不想只活在山野里。 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。</p>
           <div class="card-meta">🕒 2026-07-20 18:28</div>
-          <a class="read" href="https://www.ifanr.com/1672613?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.ifanr.com/1672613?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>全新坦克300上市，19.98万元起共5款。标轴汽/柴油版守住原有山野用户，两款长轴插混（Hi4-T/Hi4-Z）把纯电续航拉到105/200km、进军城市日常；全系预留40处拓展点位、最高6kW外放电。同一名字下，坦克300正从硬核越野分化为小型产品家族。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -155,7 +186,11 @@
           </h3>
           <p class="card-sum">物理世界Agent网络的第一步，走出去了。</p>
           <div class="card-meta">🕒 2026-07-20 18:20</div>
-          <a class="read" href="https://www.tmtpost.com/8072253.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8072253.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>支付宝「碰一下」完成AI升级，数百万商家设备整体变为「碰设备Agent」，结合线上的AI版「阿宝」，形成全球首个线下AI经营网络。曹操充电、顺网云电竞舱等已落地无人值守服务——用户轻碰即可完成核验、充电/开机与结算，Agent正真实改造服务业工作流。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -167,7 +202,11 @@
           </h3>
           <p class="card-sum">在这场全球递送技术的竞赛中，“慢”下来，或许才是最快的出路。</p>
           <div class="card-meta">🕒 2026-07-20 18:20</div>
-          <a class="read" href="https://www.tmtpost.com/8072145.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8072145.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>2026上半年全球肝外递送BD交易达百亿元级，MNC与本土Biotech重金下注。中美瑞康死磕原创，自研SCAD™（中枢神经）、LiCO™等自主知识产权递送平台，攻入膀胱、CNS等肝外组织；创始人强调，只有攥住自主可控的底层递送技术，才有穿越行业周期的底气。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -179,7 +218,11 @@
           </h3>
           <p class="card-sum">China&#x27;s leading AI companies are ramping up the pressure on Silicon Valley, as Moonshot and Alibaba…</p>
           <div class="card-meta">🕒 2026-07-20 18:16</div>
-          <a class="read" href="https://www.theverge.com/ai-artificial-intelligence/967781/chinese-ai-models-open-source-moonshot-kimi-k3-alibaba-qwen" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/ai-artificial-intelligence/967781/chinese-ai-models-open-source-moonshot-kimi-k3-alibaba-qwen" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>中国AI打出「组合拳」：月之暗面发布Kimi K3（号称世界最大开源AI，2.8万亿参数，对标GPT-5.6与Claude Fable 5）；阿里紧随预览Qwen3.8，强调开源。中国厂商以低成本、开放权重直逼美国前沿，显示硅谷在AI领先地位的窗口正快速收窄。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -191,7 +234,11 @@
           </h3>
           <p class="card-sum">把每一分钱都花出价值。</p>
           <div class="card-meta">🕒 2026-07-20 17:57</div>
-          <a class="read" href="https://www.tmtpost.com/8071888.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8071888.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>西班牙时隔16年重夺世界杯，场外品牌营销也分出胜负。阿迪达斯借双方共同赞助提前锁定；海信、联想以VAR显示、AI智能体等技术嵌入赛事，成为「AI底座」；王老吉、泡泡玛特用社媒玩梗破圈；百威打通「曝光—场景—下单」转化链路。品牌正从单向曝光转向嵌入式、可转化营销。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -203,7 +250,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 17:54</div>
-          <a class="read" href="https://www.qbitai.com/2026/07/455791.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.qbitai.com/2026/07/455791.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>大米小米RICE AI系统辅助特需儿童康复：评估从数小时缩至分钟级，并为年轻康复师提供接近资深督导的决策参考。平顶山向日葵机构引入后评估效率提升10倍、上半年利润增40%；目前已服务300+机构，正从连锁机构转向行业基础设施，推动康复普惠。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -215,7 +266,11 @@
           </h3>
           <p class="card-sum">酷宝支付增资罕见被否；浙江稠州商业银行被罚555万元；摩宝支付被“双罚”超3000万元；消费金融ABS上半年发行4000亿元；多家银行美元定存利率突破3%；全国首单低空经济跨境保险落地；顺德农商行两…</p>
           <div class="card-meta">🕒 2026-07-20 17:53</div>
-          <a class="read" href="https://www.tmtpost.com/8071260.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8071260.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>【Fintech周报】监管与行业动态汇总：年内第三方支付机构被罚超3亿元（摩宝、瀚银等千万级）；酷宝支付增资罕见被否、年底续展存疑；四大行提示「存100万解锁5.25%利息」为虚假高息诈骗信息；超500只银行理财破净，固收+成重灾区。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -227,7 +282,11 @@
           </h3>
           <p class="card-sum">The manosphere influencers Andrew and Tristan Tate were arrested Saturday in Miami by US Marshals i…</p>
           <div class="card-meta">🕒 2026-07-20 17:46</div>
-          <a class="read" href="https://www.theverge.com/policy/967651/us-marshals-arrest-the-tate-brothers-in-miami" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/policy/967651/us-marshals-arrest-the-tate-brothers-in-miami" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>美国法警在迈阿密逮捕Andrew与Tristan Tate兄弟。二人正面临英国方面提出的强奸、性贩卖及「极端色情」等新指控，案件持续受到国际关注。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -239,7 +298,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 17:41</div>
-          <a class="read" href="https://www.qbitai.com/2026/07/455729.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.qbitai.com/2026/07/455729.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>WAIC上，中科院发布全球首创「AI for ADANES」技术路线，以「数据+物理模型+专家经验」三重驱动，破解AI黑箱不可控与核工业零容错的核心矛盾；同时成立AI for ADANES全域创新联盟，推动先进核能智能化，服务能源安全与零碳算力。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -251,7 +314,11 @@
           </h3>
           <p class="card-sum">According to the The New York Times, federal agents have been told that the FBI will no longer be i…</p>
           <div class="card-meta">🕒 2026-07-20 17:40</div>
-          <a class="read" href="https://www.theverge.com/policy/967674/fbi-wont-investigate-ice-assaults" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/policy/967674/fbi-wont-investigate-ice-assaults" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>据报道，FBI将不再调查移民海关执法局（ICE）。这一变动实质上让ICE自查，执法人员被问责的可能性大幅降低，引发对执法监督缺位的担忧。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -263,7 +330,11 @@
           </h3>
           <p class="card-sum">I would never go so far as to say there&#x27;s no place for AI in music (I&#x27;m a fan of Holly Herndon, aft…</p>
           <div class="card-meta">🕒 2026-07-20 17:37</div>
-          <a class="read" href="https://www.theverge.com/entertainment/967678/1010benja-semiramis-dream-suno-ai-music" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/entertainment/967678/1010benja-semiramis-dream-suno-ai-music" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>音乐人1010Benja用AI工具Suno创作的《Semiramis&#x27; Dream》显示，AI在懂行的人手中不只是「垃圾生成器」。作品真诚动人，证明当创作意图明确时，AI也能产出有感染力的音乐。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -275,7 +346,11 @@
           </h3>
           <p class="card-sum">长鑫科技上市引发韩国股市暴跌，叠加AI资金撤离，全球资本市场动荡。</p>
           <div class="card-meta">🕒 2026-07-20 17:36</div>
-          <a class="read" href="https://www.tmtpost.com/8071895.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.tmtpost.com/8071895.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>长鑫科技启动上市，叠加AI资金撤离，引发中、美、韩三国股市动荡，韩国KOSPI月内回撤超25%。市场将其视为打破海外存储定价霸权的标志；但真正导火索是AI科技股一年半积累的天量杠杆，在流动性边际收紧时的集中出清。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -287,7 +362,11 @@
           </h3>
           <p class="card-sum">从理论探索到体系构建</p>
           <div class="card-meta">🕒 2026-07-20 17:21</div>
-          <a class="read" href="https://www.qbitai.com/2026/07/455730.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.qbitai.com/2026/07/455730.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>启鸣达人在WAIC首发《世界模型驱动的教育AGI白皮书》，以认知世界模型（CWM）为核心，构建教育仿真器、规划器、渲染器与LAM学习闭环；其智能体实践入选中国信通院案例，标志教育AGI迈入体系化探索新阶段。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -299,7 +378,11 @@
           </h3>
           <p class="card-sum">Following the success of its $99 Kodak-branded Snapic A1, Reto Project is releasing the Kodak EC35,…</p>
           <div class="card-meta">🕒 2026-07-20 17:11</div>
-          <a class="read" href="https://www.theverge.com/gadgets/967687/kodak-ec35-point-and-shoot-film-camera" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/gadgets/967687/kodak-ec35-point-and-shoot-film-camera" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-19" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-19" hidden>柯达推出便宜的便携胶片相机EC35，延续并进一步降低胶片摄影的门槛，顺应近年胶片复兴的潮流。</div>
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -311,7 +394,11 @@
           </h3>
           <p class="card-sum">Just why? ʅ͡͡͡͡͡͡͡͡͡͡͡(̸̢̛̼̞̭͋ͅ)̸͚̰͛̔̾̀̿͒͂:̴͓̞̑̌̂̆̊͋̀:̸͎̟̯̂̓̌ ҉ ͡ ͞ ͞ ͞ ҉● ࿀ ● ࿀ ● ҉⃝ ⃝͢ ͞ ͘ ͞⃝̕ ͢ …</p>
           <div class="card-meta">🕒 2026-07-20 17:09</div>
-          <a class="read" href="https://www.theverge.com/entertainment/967696/four-tet-wingdings-album-review" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/entertainment/967696/four-tet-wingdings-album-review" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-20" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-20" hidden>Four Tet（Kieran Hebden）以一串神秘符号为名的side project《Wingdings》正式发行。作品旋律抓耳、制作精良，偏向律动而非高强度rave，适合写作或家务时聆听，是他极具完成度的一次个人表达。</div>
         </article>
         </div>
     </section>
@@ -319,4 +406,12 @@
   <footer>
     本页由 RSS 订阅源自动聚合生成 · 数据来源以各卡片标注为准 · 点击「阅读原文」跳转原始报道
   </footer>
-</body></html>
+<script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+</script></body></html>

@@ -1,0 +1,65 @@
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest Startups Venture Apple Security AI Apps Disrupt 2026
+Events Podcasts Newsletters
+Search Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Crunchboard
+Contact Us
+Image Credits: David Mareuil/Anadolu Agency / Getty Images
+AI
+What to watch for after Jensen Huang’s Japan visit
+Kate Park
+2:16 PM PDT · July 19, 2026
+Nvidia’s chief Jensen Huang spent two days — July 15 and 16 — in Tokyo, courting Japan’s industrial and chip-supply elite, weeks after a keynote in Taiwan, and months after a visit to South Korea . He left with deals spanning Japan’s entire tech ecosystem: a national AI factory, partnerships with the country’s leading robotics companies, and agreements with the chip-material suppliers powering Nvidia’s next generation of AI chips. His message was clear. Nvidia is targeting Japan’s factory floor, and many of the country’s biggest manufacturers are joining in. AI’s next chapter, Huang said, belongs to factory floors, robots, and machines, and he wants Japan to build it.
+Thirty years ago, a $5 million Sega investment helped keep a near-bankrupt Nvidia afloat; today, Nvidia and Japan’s industrial giants need each other again — this time to build the physical-AI era, starting with these three projects:
+Noetra — Japan’s sovereign-AI play. The country doesn’t want to run its factories and robots on American or Chinese AI. So, the government pulled together roughly 44 domestic firms, with SoftBank, Sony, NEC, and Honda at the core, to build its own AI for robots, vehicles, and factory floors. Tokyo is committing up to 1 trillion yen ($6.2 billion) over five years , a bet on homegrown “physical AI,”  foundation models built to run machines. Japan wants to own the software brain. The hardware to build it, though, still comes from Nvidia. The U.S. chip giant is building “a Vera Rubin AI factory,” a massive data center packed with its next-generation chips, expected to launch in 2028, with 13,750 Vera CPUs and 27,500 Rubin GPUs , delivering 140 megawatts. Noetra will oversee the effort, with plans to build the data center. Noetra’s plan runs in three stages : a reasoning model heavy on Japanese-language skills starting in fiscal 2026; an omni-modal version handling text, images, video, and audio by 2028; and “Real-world Native AI” built to run robots by 2030, released to outside Noetra developers in phases.
+The robotics coalition  — Japan’s industrial giants line up behind Cosmos. Nvidia is targeting Japan’s factory floor, and many of the country’s top robotics and manufacturing players are signing on. Fanuc, Yaskawa, Kawasaki Heavy, Fujitsu, Hitachi, NEC, Sony, SoftBank, Kubota, and robotics group AIRoA say they plan to build on Nvidia’s Cosmos models, an open-model effort Nvidia started in May with a handful of global AI labs. In Tokyo, Nvidia gave them a reason to commit, unveiling Cosmos 3 Edge , a version of the model that runs on its Jetson Thor chips inside the machines themselves. Some are already testing a shared control system; others, like Honda R&D and Omron, are building on the tools now. “The next frontier of AI is in the physical world, and this is a once-in-a-generation opportunity for Japan,” Huang said in the company’s statement. “Japan invented modern manufacturing. Now, it has the opportunity to reinvent it for the age of intelligent industries.”
+Toyota — cars and physical AI. Toyota uses Nvidia chips across much of its stack. It committed its next-generation vehicles to Nvidia’s Drive platform at CES in January 2025 ; the newer work extends Nvidia into its manufacturing, where simulations are used to design production lines, into the software that runs its vehicles, and into systems that read road traffic. Toyota’s cars will run advanced driver assistance, which steers and brakes but still requires a driver, a more conservative approach than Waymo and Tesla, which are developing systems that rely less on a human driver.
+Why it matters
+Huang’s visit put physical AI at the center of Japan’s industrial strategy, and Tokyo is spending to back it. Facing a shrinking workforce, Japan wants 10 million AI-equipped robots across 18 sectors by 2040, backed by $65 billion in public and private physical-AI investment .
+The longer game is bigger. Japan’s AI Robotics Strategy, released in March, aims to capture more than 30% of the global AI robotics market by 2040, a market Tokyo values at roughly ¥20 trillion, or about $133 billion. METI is funding a domestic foundation model to run the machines, and Noetra’s Nvidia-powered fact

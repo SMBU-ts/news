@@ -7,6 +7,8 @@ import html
 import datetime
 from pathlib import Path
 
+from summary_lib import summarize, SUMMARY_FAIL, load_precomputed
+
 ROOT = Path(__file__).resolve().parent
 
 BASE = "https://aihot.virxact.com"
@@ -77,6 +79,10 @@ def main():
     today = datetime.date.today().isoformat()
     data, used_date, fell_back = load_daily(today)
 
+    # 载入预生成摘要（url -> 摘要，见 summaries/<date>.json）。
+    # 即使未配置 DeepSeek API Key，本机重跑构建也能复用真实摘要。
+    load_precomputed(ROOT / "summaries" / f"{used_date}.json")
+
     sections_in = {s["label"]: s.get("items", []) for s in data.get("sections", [])}
 
     # Build the fixed 5-section structure (missing => empty list).
@@ -117,6 +123,7 @@ def main():
         )
 
     sections_html = ""
+    n = 0
     for idx, (label, cards) in enumerate(cards_by_section):
         color = SECTION_COLORS.get(label, "#64748b")
         anchor = "sec-" + str(idx)
@@ -126,6 +133,8 @@ def main():
         else:
             grid = ""
             for c in cards:
+                n += 1
+                sum_text = summarize(c['url'], c['title'])
                 grid += f'''
         <article class="card" style="--c:{color}">
           <div class="card-top">
@@ -136,7 +145,11 @@ def main():
             <a href="{c['url']}" target="_blank" rel="noopener noreferrer">{c['title']}</a>
           </h3>
           <p class="card-sum">{c['summary']}</p>
-          <a class="read" href="{c['url']}" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="{c['url']}" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-{n}" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-{n}" hidden>{html.escape(sum_text)}</div>
         </article>'''
             body = f'<div class="grid">{grid}\n        </div>'
 
@@ -267,6 +280,12 @@ def main():
     padding:6px 12px; transition:.15s;
   }}
   .read:hover {{ background:var(--c); color:#fff; }}
+  .card-actions {{ display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }}
+  .summary-btn {{ font-family:inherit; line-height:1.2; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }}
+  .summary-btn:focus-visible {{ outline:2px solid var(--c); outline-offset:2px; }}
+  .summary {{ margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }}
   .empty {{
     background:var(--card); border:1px dashed var(--line); border-radius:16px;
     padding:28px; text-align:center; color:var(--muted); font-size:14px;
@@ -310,6 +329,15 @@ def main():
     本日报共 <strong>{total}</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
     {f' · 回退自 {used_date}' if fell_back else ''}
   </footer>
+  <script>
+  document.addEventListener('click', function(e){{
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){{ el.removeAttribute('hidden'); }} else {{ el.setAttribute('hidden',''); }}
+    b.setAttribute('aria-expanded', String(open));
+  }});
+  </script>
 </body>
 </html>'''
 

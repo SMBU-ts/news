@@ -126,6 +126,13 @@
     .stat { min-width:calc(50% - 7px); }
     .grid { grid-template-columns:1fr; }
   }
+
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:1.2; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
 </style>
 </head>
 <body>
@@ -164,7 +171,12 @@
             <a href="https://x.com/Alibaba_Qwen/status/2078754377473601787" target="_blank" rel="noopener noreferrer">Qwen3.8 开源发布，2.4T 参数模型上线</a>
           </h3>
           <p class="card-sum">Qwen3.8 即将发布并很快开源权重！🌐 该模型拥有 2.4T 海量参数，正在持续进化。我们相信它是目前最强大的模型…</p>
-          <a class="read" href="https://x.com/Alibaba_Qwen/status/2078754377473601787" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/Alibaba_Qwen/status/2078754377473601787" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>暂无法生成概括</div>
+        
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -175,7 +187,12 @@
             <a href="https://mp.weixin.qq.com/s/LidvGePhOOoUY3KTor_w9g" target="_blank" rel="noopener noreferrer">昆仑万维宣布2026为“世界模型元年”，发布Matrix-Game 3.5等模型</a>
           </h3>
           <p class="card-sum">昆仑万维董事长方汉在WAIC上宣布2026年为“世界模型元年”，并发布Matrix-Game 3.5世界模型、Mure…</p>
-          <a class="read" href="https://mp.weixin.qq.com/s/LidvGePhOOoUY3KTor_w9g" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/LidvGePhOOoUY3KTor_w9g" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>昆仑万维在WAIC宣布2026为「世界模型元年」，发布Matrix-Game 3.5世界模型、Mureka v9.5与O3音乐模型。方汉指出AI核心从「生成」转向「理解与交互」；Matrix-Game 3.5实现Patch级记忆注入，5B模型720p下单卡20FPS实时生成、具1分钟记忆，定位具身智能的「无限数据引擎」。</div>
+        
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -186,7 +203,12 @@
             <a href="https://x.com/OpenBMB/status/2078839529591759025" target="_blank" rel="noopener noreferrer">面壁智能开源 MiniCPM-Robot 具身智能模型系列</a>
           </h3>
           <p class="card-sum">面壁智能开源首个具身AI模型系列 MiniCPM-Robot，包含 1.5B 参数的通用视觉-语言-动作（VLA）模型…</p>
-          <a class="read" href="https://x.com/OpenBMB/status/2078839529591759025" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/OpenBMB/status/2078839529591759025" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>暂无法生成概括</div>
+        
         </article>
         <article class="card" style="--c:#3b82f6">
           <div class="card-top">
@@ -197,7 +219,12 @@
             <a href="https://mp.weixin.qq.com/s/rjFxrUylyGMqa5QtgypCdw" target="_blank" rel="noopener noreferrer">MiniCPM5-2B发布：4B以下全球性能第一，适配9款芯片</a>
           </h3>
           <p class="card-sum">面壁智能联合OpenBMB发布端侧模型MiniCPM5-2B，以2B参数量在AA-Index榜单取得4B以下模型最高分…</p>
-          <a class="read" href="https://mp.weixin.qq.com/s/rjFxrUylyGMqa5QtgypCdw" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/rjFxrUylyGMqa5QtgypCdw" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>面壁智能联合OpenBMB发布端侧模型MiniCPM5-2B（2B参数），在Artificial Analysis榜单4B以下模型居首；原生支持混合思考、512K超长上下文，覆盖通用/数学/代码/智能体等任务。联手FlagOS完成华为昇腾、海光、英伟达等9款芯片Day0适配，实现「一套代码跨架构」。</div>
+        
         </article>
         </div>
     </section>
@@ -216,7 +243,12 @@
             <a href="https://workshop.cjpais.com/projects/transcribe-cpp" target="_blank" rel="noopener noreferrer">transcribe.cpp 发布：基于 ggml 的跨平台语音转录库，支持 16 个 ASR 模型族</a>
           </h3>
           <p class="card-sum">transcribe.cpp v0.1.0 发布，一个基于 ggml 的语音转录库，支持 16 个 ASR 模型族（6…</p>
-          <a class="read" href="https://workshop.cjpais.com/projects/transcribe-cpp" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://workshop.cjpais.com/projects/transcribe-cpp" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>基于ggml的跨平台语音转录库transcribe.cpp发布v0.1.0，支持16个ASR模型族（60+模型），经Vulkan/Metal/CUDA加速，每个模型都经数值校验与WER测试。它近似whisper.cpp的即插即用替代，提供Python/JS/Rust/ObjC四种语言绑定，便于嵌入桌面与移动应用。</div>
+        
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -227,7 +259,12 @@
             <a href="https://x.com/thsottiaux/status/2078697631019303273" target="_blank" rel="noopener noreferrer">ChatGPT Work 功能：建站、邮件、文档处理</a>
           </h3>
           <p class="card-sum">ChatGPT Work 适用于 ✅ 创建和托管网站 ✅ 为你管理电子邮件 ✅ 总结海量文档 ✅ 制作一流的文档、表格…</p>
-          <a class="read" href="https://x.com/thsottiaux/status/2078697631019303273" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/thsottiaux/status/2078697631019303273" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>暂无法生成概括</div>
+        
         </article>
         </div>
     </section>
@@ -246,7 +283,12 @@
             <a href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit" target="_blank" rel="noopener noreferrer">黄仁勋访日：Nvidia 联手日本打造物理 AI 时代，Noetra 主权 AI 工厂与 Cosmos 机器人联盟落地</a>
           </h3>
           <p class="card-sum">Nvidia CEO 黄仁勋在 7 月 15-16 日访日期间，宣布为日本建设“Vera Rubin AI 工厂”，配…</p>
-          <a class="read" href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>黄仁勋7月访日，推动英伟达深度绑定日本制造业：牵头主权AI项目Noetra（44家日企、政府5年最高1万亿日元，建Vera Rubin AI工厂）、拉拢发那科/安川/川崎等机器人巨头基于Cosmos模型、并拓展与丰田在制造与智驾上的合作，押注「物理AI」时代。</div>
+        
         </article>
         </div>
     </section>
@@ -272,7 +314,12 @@
             <a href="https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making" target="_blank" rel="noopener noreferrer">AI 热潮正在瓦解全球决策机制</a>
           </h3>
           <p class="card-sum">一位拥有 300 多次行业交流经验的从业者观察到，全球公私机构正陷入集体性 AI 狂热，决策层要么没有计划，要么只能低…</p>
-          <a class="read" href="https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>暂无法生成概括</div>
+        
         </article>
         </div>
     </section>
@@ -304,5 +351,13 @@
       sections.forEach(function (s) { if (s) io.observe(s); });
     })();
   </script>
-</body>
+<script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+</script></body>
 </html>

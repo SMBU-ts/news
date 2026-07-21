@@ -27,6 +27,8 @@ import urllib.error
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from summary_lib import summarize, SUMMARY_FAIL, load_precomputed
+
 ROOT = Path(__file__).resolve().parent
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -235,6 +237,7 @@ def render_html(cat, date, items):
             summary = html.escape(it["summary"]) or "点击查看完整报道"
             src = html.escape(it["source"])
             when = beijing_human(it["dt"])
+            sum_text = summarize(it["link"], it["title"])
             cards += f'''
         <article class="card" style="--c:{color}">
           <div class="card-top">
@@ -246,7 +249,11 @@ def render_html(cat, date, items):
           </h3>
           <p class="card-sum">{summary}</p>
           <div class="card-meta">🕒 {when or "时间未知"}</div>
-          <a class="read" href="{url}" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="{url}" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-{i}" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-{i}" hidden>{html.escape(sum_text)}</div>
         </article>'''
         body = f'<div class="grid">{cards}\n        </div>'
 
@@ -308,6 +315,12 @@ def render_html(cat, date, items):
       border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
       padding:6px 12px; transition:.15s; }}
   .read:hover {{ background:var(--c); color:#fff; }}
+  .card-actions {{ display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }}
+  .summary-btn {{ font-family:inherit; line-height:1.2; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }}
+  .summary-btn:focus-visible {{ outline:2px solid var(--c); outline-offset:2px; }}
+  .summary {{ margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }}
   .empty {{ background:var(--card); border:1px dashed var(--line); border-radius:16px;
       padding:28px; text-align:center; color:var(--muted); font-size:14px; }}
   footer {{ max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
@@ -333,11 +346,23 @@ def render_html(cat, date, items):
   <footer>
     本页由 RSS 订阅源自动聚合生成 · 数据来源以各卡片标注为准 · 点击「阅读原文」跳转原始报道
   </footer>
+  <script>
+  document.addEventListener('click', function(e){{
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){{ el.removeAttribute('hidden'); }} else {{ el.setAttribute('hidden',''); }}
+    b.setAttribute('aria-expanded', String(open));
+  }});
+  </script>
 </body></html>'''
 
 
 def main():
     date = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
+    # 载入预生成摘要（url -> 摘要，见 summaries/<date>.json）。
+    # 这样即使未配置 DeepSeek API Key，本机重跑构建也能复用真实摘要、不丢失。
+    load_precomputed(ROOT / "summaries" / f"{date}.json")
     cfg = load_config()
     if not cfg:
         return

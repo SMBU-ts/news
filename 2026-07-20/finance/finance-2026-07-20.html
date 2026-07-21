@@ -59,6 +59,13 @@
       font-size:13px; border-top:1px solid var(--line); text-align:center; }
   footer a { color:#10b981; font-weight:600; }
   @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
+
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:1.2; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
 </style>
 </head>
 <body>
@@ -83,7 +90,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 18:51</div>
-          <a class="read" href="https://seekingalpha.com/news/4615192-the-great-bust-the-soaring-cost-of-living-the-american-dream?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://seekingalpha.com/news/4615192-the-great-bust-the-soaring-cost-of-living-the-american-dream?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -95,7 +106,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 18:50</div>
-          <a class="read" href="https://seekingalpha.com/news/4615191-kandis-subsidiary-china-battery-exchange-secures-18-station-procurement-order-from-contemporary-amperex-technology?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://seekingalpha.com/news/4615191-kandis-subsidiary-china-battery-exchange-secures-18-station-procurement-order-from-contemporary-amperex-technology?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -107,7 +122,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 18:47</div>
-          <a class="read" href="https://seekingalpha.com/news/4615145-brookfield-cpp-investments-to-buy-lxp-trust-for-52b-cash?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://seekingalpha.com/news/4615145-brookfield-cpp-investments-to-buy-lxp-trust-for-52b-cash?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -119,7 +138,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 18:45</div>
-          <a class="read" href="https://seekingalpha.com/news/4615188-jersey-mikes-looks-to-raise-more-than-1b-as-its-ipo-roadshow-begins?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://seekingalpha.com/news/4615188-jersey-mikes-looks-to-raise-more-than-1b-as-its-ipo-roadshow-begins?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -131,7 +154,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 18:38</div>
-          <a class="read" href="https://seekingalpha.com/news/4615186-vertical-aerospace-adds-a-new-customer-for-its-valo-aircraft?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://seekingalpha.com/news/4615186-vertical-aerospace-adds-a-new-customer-for-its-valo-aircraft?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -143,7 +170,11 @@
           </h3>
           <p class="card-sum">Semiconductors have fallen into a bear market, prompting some investors to look elsewhere</p>
           <div class="card-meta">🕒 2026-07-20 18:36</div>
-          <a class="read" href="https://www.marketwatch.com/story/scared-of-the-ai-trade-here-are-three-investment-themes-instead-says-goldman-sachs-e620a510?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/scared-of-the-ai-trade-here-are-three-investment-themes-instead-says-goldman-sachs-e620a510?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -155,7 +186,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 18:33</div>
-          <a class="read" href="https://seekingalpha.com/news/4615189-star-group-declares-01975-dividend?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://seekingalpha.com/news/4615189-star-group-declares-01975-dividend?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -167,7 +202,11 @@
           </h3>
           <p class="card-sum">点击查看完整报道</p>
           <div class="card-meta">🕒 2026-07-20 18:30</div>
-          <a class="read" href="https://seekingalpha.com/news/4615133-world-record-mile-run-puts-berkshires-brooks-brand-in-the-spotlight?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://seekingalpha.com/news/4615133-world-record-mile-run-puts-berkshires-brooks-brand-in-the-spotlight?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -179,7 +218,11 @@
           </h3>
           <p class="card-sum">“The strongest argument for claiming benefits earlier goes beyond the traditional break-even analys…</p>
           <div class="card-meta">🕒 2026-07-20 18:30</div>
-          <a class="read" href="https://www.marketwatch.com/story/i-will-claim-social-security-early-why-do-so-few-people-talk-about-the-elephant-in-the-room-64820675?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/i-will-claim-social-security-early-why-do-so-few-people-talk-about-the-elephant-in-the-room-64820675?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -191,7 +234,11 @@
           </h3>
           <p class="card-sum">The yield on the 10-year U.S. Treasury note — the key benchmark for U.S. government borrowing — ros…</p>
           <div class="card-meta">🕒 2026-07-20 18:23</div>
-          <a class="read" href="https://www.cnbc.com/2026/07/20/treasury-yields-wall-street-iran-war-tensions.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.cnbc.com/2026/07/20/treasury-yields-wall-street-iran-war-tensions.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>周一美债收益率走高：10年期升逾5个基点至4.594%，2年期至4.211%，30年期至5.115%。背景是中东紧张升级、美军连续第九夜空袭伊朗。上周通胀数据降温曾令收益率回落，周五市场将关注标普全球PMI。</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -203,7 +250,11 @@
           </h3>
           <p class="card-sum">The prospect of Burnham, considered more left-leaning than Starmer, replacing the incumbent prime m…</p>
           <div class="card-meta">🕒 2026-07-20 18:20</div>
-          <a class="read" href="https://www.cnbc.com/2026/07/20/uk-prime-minister-burnham-trump-poverty-stricken-disaster.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.cnbc.com/2026/07/20/uk-prime-minister-burnham-trump-poverty-stricken-disaster.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>英国迎来十年内第七位首相：工党的安迪·伯纳姆周一宣誓就职，接替辞职的基尔·斯塔默。特朗普欢迎其加速北海油气勘探的计划，并抨击英国为「贫困灾难」；伯纳姆称要让这一刻成为英国的「断路开关」。</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -215,7 +266,11 @@
           </h3>
           <p class="card-sum">Magnificent Seven as a group is underperforming the broader market this year, but strategists at Ci…</p>
           <div class="card-meta">🕒 2026-07-20 18:02</div>
-          <a class="read" href="https://www.marketwatch.com/story/no-one-talks-about-faang-anymore-now-its-time-to-retire-magnificent-seven-as-well-citigroup-argues-ddf312c5?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/no-one-talks-about-faang-anymore-now-its-time-to-retire-magnificent-seven-as-well-citigroup-argues-ddf312c5?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -227,7 +282,11 @@
           </h3>
           <p class="card-sum">“I’m wondering whether I should ask to work with someone closer to our generation.”</p>
           <div class="card-meta">🕒 2026-07-20 18:00</div>
-          <a class="read" href="https://www.marketwatch.com/story/my-husband-and-i-are-retired-our-financial-adviser-who-is-in-his-30s-called-us-you-guyses-is-that-unprofessional-ccddaa9f?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/my-husband-and-i-are-retired-our-financial-adviser-who-is-in-his-30s-called-us-you-guyses-is-that-unprofessional-ccddaa9f?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -239,7 +298,11 @@
           </h3>
           <p class="card-sum">CuspAI is part of a new wave of companies looking to use AI to solve challenges in the physical wor…</p>
           <div class="card-meta">🕒 2026-07-20 17:58</div>
-          <a class="read" href="https://www.cnbc.com/2026/07/20/bezos-cuspai-new-chip-materials-nvidia.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.cnbc.com/2026/07/20/bezos-cuspai-new-chip-materials-nvidia.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>贝索斯的投资公司参投英国AI材料初创CuspAI，该公司用AI寻找新材料，并与英伟达等合作在芯片等领域搜寻材料。CuspAI属于「用AI解决物理世界问题」的新一波公司，旨在加速材料发现。</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -251,7 +314,11 @@
           </h3>
           <p class="card-sum">American forces have started ninth consecutive night of strikes against Iranian targets.</p>
           <div class="card-meta">🕒 2026-07-20 17:55</div>
-          <a class="read" href="https://www.cnbc.com/2026/07/20/oil-prices-today-brent-wti-crude-us-iran-centcom-hormuz.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.cnbc.com/2026/07/20/oil-prices-today-brent-wti-crude-us-iran-centcom-hormuz.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>油价周一上涨，因特朗普称伊朗将为三名美军死亡「付出代价」。美已连续九夜轰炸伊朗，报复其对霍尔木兹海峡油轮的袭击；也门胡塞宣布对沙特海上禁运。基准原油一度突破每桶90美元。</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -263,7 +330,11 @@
           </h3>
           <p class="card-sum">CEO Kelly Ortberg signalled Boeing is focused more on stabilizing its existing business than rushin…</p>
           <div class="card-meta">🕒 2026-07-20 17:55</div>
-          <a class="read" href="https://www.cnbc.com/2026/07/20/boeing-ceo-ortberg-airbus-farnborough-737max.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.cnbc.com/2026/07/20/boeing-ceo-ortberg-airbus-farnborough-737max.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>波音CEO奥特伯格称，公司还需「几年」修复财务才能推出新客机；航司客户更希望其先提升现有机型的可靠性与产量。未来与空客A320家族竞争的新机型，对保住波音市场地位至关重要。</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -275,7 +346,11 @@
           </h3>
           <p class="card-sum">JPMorgan says a summer buying opportunity is coming for chip stocks, but Morgan Stanley says the se…</p>
           <div class="card-meta">🕒 2026-07-20 17:35</div>
-          <a class="read" href="https://www.marketwatch.com/story/is-an-opportunity-to-buy-chip-stocks-nearing-these-two-big-wall-street-banks-are-divided-ba1b03af?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/is-an-opportunity-to-buy-chip-stocks-nearing-these-two-big-wall-street-banks-are-divided-ba1b03af?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -287,7 +362,11 @@
           </h3>
           <p class="card-sum">During his Congressional testimony last week, new Fed Chair Kevin Warsh emphasized that one of his …</p>
           <div class="card-meta">🕒 2026-07-20 17:32</div>
-          <a class="read" href="https://www.marketwatch.com/story/inflation-is-broadening-out-says-goldman-economist-44fa437f?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/inflation-is-broadening-out-says-goldman-economist-44fa437f?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -299,7 +378,11 @@
           </h3>
           <p class="card-sum">“We would rather pay taxes upfront than pay mortgage interest.”</p>
           <div class="card-meta">🕒 2026-07-20 17:30</div>
-          <a class="read" href="https://www.marketwatch.com/story/we-have-8-million-in-traditional-iras-should-we-tap-them-to-buy-a-house-and-take-the-tax-hit-c2478daa?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/we-have-8-million-in-traditional-iras-should-we-tap-them-to-buy-a-house-and-take-the-tax-hit-c2478daa?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-19" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-19" hidden>暂无法生成概括</div>
         </article>
         <article class="card" style="--c:#10b981">
           <div class="card-top">
@@ -311,7 +394,11 @@
           </h3>
           <p class="card-sum">The S&amp;P 500 is primed to climb during the third, fourth and fifth weeks of the financial reporting …</p>
           <div class="card-meta">🕒 2026-07-20 17:18</div>
-          <a class="read" href="https://www.marketwatch.com/story/if-history-is-a-guide-theres-still-another-week-before-earnings-will-start-to-move-the-stock-market-52baccad?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+          <div class="card-actions">
+            <a class="read" href="https://www.marketwatch.com/story/if-history-is-a-guide-theres-still-another-week-before-earnings-will-start-to-move-the-stock-market-52baccad?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-20" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-20" hidden>暂无法生成概括</div>
         </article>
         </div>
     </section>
@@ -319,4 +406,12 @@
   <footer>
     本页由 RSS 订阅源自动聚合生成 · 数据来源以各卡片标注为准 · 点击「阅读原文」跳转原始报道
   </footer>
-</body></html>
+<script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+</script></body></html>
