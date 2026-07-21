@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-07-21</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 7 月 21 日 · 星期二</h1>
+      <div class="sub">共 22 条 · 生成于 北京时间 2026 年 07 月 21 日 08:00 · 数据覆盖 2026-07-20 ~ 2026-07-21</div>
+      <div class="stats">
+        <div class="stat"><div class="n">22</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">7</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">3</div><div class="l">行业动态</div></div><div class="stat"><div class="n">3</div><div class="l">论文研究</div></div><div class="stat"><div class="n">5</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 4</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 7</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 3</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 3</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 5</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">4</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">7</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">3</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">3</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">5</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">公众号：面壁智能（MiniCPM）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/KwBAC8TFa846WFj-DHrgIQ" target="_blank" rel="noopener noreferrer">面壁智能发布首个具身智能成果 MiniCPM-Robot 系列模型，含 1.5B VLA 与 0.9B 跟踪模型</a>
+          </h3>
+          <p class="card-sum">面壁智能联合 OpenBMB 发布并开源 MiniCPM-Robot 系列，包括通用 VLA 模型 MiniCPM-R…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/KwBAC8TFa846WFj-DHrgIQ" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>面壁智能联合 OpenBMB 发布并开源 MiniCPM-Robot 系列，包括通用 VLA 模型 MiniCPM-R…</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">Hugging Face：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/nvidia/cosmos3edge" target="_blank" rel="noopener noreferrer">NVIDIA 发布 Cosmos 3 Edge：4B 参数开源世界模型，为机器人及边缘 AI 提供实时推理与动作生成</a>
+          </h3>
+          <p class="card-sum">NVIDIA 在 Hugging Face 上开源了 Cosmos 3 Edge，一个 40 亿参数的世界模型，旨在帮…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/nvidia/cosmos3edge" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>NVIDIA 在 Hugging Face 上开源了 Cosmos 3 Edge，一个 40 亿参数的世界模型，旨在帮…</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">3</span>
+            <span class="chip" style="--c:#3b82f6">公众号：通义实验室（千问）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/INvrqTrWLMm2WCLIqhqTrg" target="_blank" rel="noopener noreferrer">通义实验室发布 Qwen-Audio-3.0-TTS 实时语音合成模型</a>
+          </h3>
+          <p class="card-sum">通义实验室发布 Qwen-Audio-3.0-TTS，含 Flash（首包延迟约300ms）和 Plus 两个版本。P…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/INvrqTrWLMm2WCLIqhqTrg" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>通义实验室发布 Qwen-Audio-3.0-TTS，含 Flash（首包延迟约300ms）和 Plus 两个版本。P…</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">4</span>
+            <span class="chip" style="--c:#3b82f6">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/979/017.htm" target="_blank" rel="noopener noreferrer">上海科学智能研究院开放科学多模态基础模型“神珍”</a>
+          </h3>
+          <p class="card-sum">上海科学智能研究院开放科学多模态基础模型“神珍”，总参数约110亿，可处理DNA、RNA、蛋白质、小分子、地球系统和医…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/979/017.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>上海科学智能研究院开放科学多模态基础模型“神珍”，总参数约110亿，可处理DNA、RNA、蛋白质、小分子、地球系统和医…</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">7</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/Saivineeth147/lora-speedrun" target="_blank" rel="noopener noreferrer">LoRA Speedrun 公开排行榜：6分05秒微调Qwen2.5-1.5B达GSM8K 61.1%准确率</a>
+          </h3>
+          <p class="card-sum">LoRA Speedrun项目推出公开排行榜，在固定硬件（单张L40S）上比拼Qwen2.5-1.5B的微调运行时间。…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/Saivineeth147/lora-speedrun" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>LoRA Speedrun项目推出公开排行榜，在固定硬件（单张L40S）上比拼Qwen2.5-1.5B的微调运行时间。…</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">xAI：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.ai/news/introducing-excel-addin" target="_blank" rel="noopener noreferrer">Grok for Excel 发布：在 Microsoft Excel 中用自然语言提问、写公式和运行场景</a>
+          </h3>
+          <p class="card-sum">xAI 将 Grok 引入 Microsoft Excel，推出免费 Microsoft 365 加载项。用户可在工作…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.ai/news/introducing-excel-addin" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>xAI 将 Grok 引入 Microsoft Excel，推出免费 Microsoft 365 加载项。用户可在工作…</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">公众号：小红书技术（dots.llm）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/rAoF65ywi5trWbI-heJieg" target="_blank" rel="noopener noreferrer">小红书与北大开源 UltraEP：面向大规模 MoE 训推的实时负载均衡方案</a>
+          </h3>
+          <p class="card-sum">小红书与北大提出 UltraEP，首次将基于精确路由信息的实时负载均衡引入生产系统，在每个 microbatch 和每…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/rAoF65ywi5trWbI-heJieg" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>小红书与北大提出 UltraEP，首次将基于精确路由信息的实时负载均衡引入生产系统，在每个 microbatch 和每…</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">8</span>
+            <span class="chip" style="--c:#10b981">X：Replit (@Replit)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/Replit/status/2079235154485109114" target="_blank" rel="noopener noreferrer">Replit 新统一工具栏集成数据库与双因素认证</a>
+          </h3>
+          <p class="card-sum">需要数据库？双因素认证？SEO 扫描器？ 你的项目所需的一切现在都可以通过我们新的统一工具栏触手可及。</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/Replit/status/2079235154485109114" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>需要数据库？双因素认证？SEO 扫描器？ 你的项目所需的一切现在都可以通过我们新的统一工具栏触手可及。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">9</span>
+            <span class="chip" style="--c:#10b981">Cursor Blog</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">Cursor 测试新型 AI 智能体集群：规划者+执行者分工，4小时通过80% SQL测试</a>
+          </h3>
+          <p class="card-sum">Cursor 测试了新型 AI 智能体集群，将任务分解为规划者（使用最强模型）和执行者（使用快速廉价模型）。使用 Gr…</p>
+          <div class="card-actions">
+            <a class="read" href="https://cursor.com/blog/agent-swarm-model-economics" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>Cursor 测试了新型 AI 智能体集群，将任务分解为规划者（使用最强模型）和执行者（使用快速廉价模型）。使用 Gr…</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">10</span>
+            <span class="chip" style="--c:#10b981">Google Developers Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://developers.googleblog.com/run-ray-on-tpu-part-1-the-foundations" target="_blank" rel="noopener noreferrer">Ray 2.55 正式支持 Google Cloud TPU，通过 KubeRay 自动编排多主机切片</a>
+          </h3>
+          <p class="card-sum">Ray 2.55 首次为 Google Cloud TPU 提供一等支持，开发者可通过 Ray 任务与 Actor A…</p>
+          <div class="card-actions">
+            <a class="read" href="https://developers.googleblog.com/run-ray-on-tpu-part-1-the-foundations" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>Ray 2.55 首次为 Google Cloud TPU 提供一等支持，开发者可通过 Ray 任务与 Actor A…</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">11</span>
+            <span class="chip" style="--c:#10b981">Claude Code：GitHub Releases（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.216" target="_blank" rel="noopener noreferrer">Claude Code v2.1.216 发布：修复长会话卡顿与多项 Agent 行为问题</a>
+          </h3>
+          <p class="card-sum">Claude Code v2.1.216 修复了长会话中消息归一化成本随轮次二次增长导致的数秒停顿问题，并修正了 OA…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.216" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>Claude Code v2.1.216 修复了长会话中消息归一化成本随轮次二次增长导致的数秒停顿问题，并修正了 OA…</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">12</span>
+            <span class="chip" style="--c:#f59e0b">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/district-9-director-neill-blomkamp-releases-first-short-film-made-entirely-with-ai-video-generation" target="_blank" rel="noopener noreferrer">《第九区》导演Neill Blomkamp发布首部完全由AI生成的短片《Nightborne》</a>
+          </h3>
+          <p class="card-sum">Neill Blomkamp发布了13分钟科幻恐怖短片《Nightborne》，完全使用Seedance 2.0视频生…</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/district-9-director-neill-blomkamp-releases-first-short-film-made-entirely-with-ai-video-generation" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Neill Blomkamp发布了13分钟科幻恐怖短片《Nightborne》，完全使用Seedance 2.0视频生…</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">13</span>
+            <span class="chip" style="--c:#f59e0b">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/hugging-face-says-an-ai-agent-hacked-its-infrastructure-and-it-used-ai-to-fight-back" target="_blank" rel="noopener noreferrer">Hugging Face 遭自主AI智能体入侵，用AI工具完成数小时取证分析</a>
+          </h3>
+          <p class="card-sum">Hugging Face 披露其部分生产基础设施遭一个自主AI智能体系统入侵，攻击者通过恶意数据集利用数据处理管道中的…</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/hugging-face-says-an-ai-agent-hacked-its-infrastructure-and-it-used-ai-to-fight-back" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>Hugging Face 披露其部分生产基础设施遭一个自主AI智能体系统入侵，攻击者通过恶意数据集利用数据处理管道中的…</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">14</span>
+            <span class="chip" style="--c:#f59e0b">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://ollama.com/blog/all-aboard-open-models" target="_blank" rel="noopener noreferrer">Ollama 获 8800 万美元融资，加速开放模型生态发展</a>
+          </h3>
+          <p class="card-sum">Ollama 宣布完成 8800 万美元融资，由 Benchmark、Theory Ventures 和 8VC 等领…</p>
+          <div class="card-actions">
+            <a class="read" href="https://ollama.com/blog/all-aboard-open-models" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>Ollama 宣布完成 8800 万美元融资，由 Benchmark、Theory Ventures 和 8VC 等领…</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">15</span>
+            <span class="chip" style="--c:#8b5cf6">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://unslop.run/blog/measuring-ai-writing-on-arxiv" target="_blank" rel="noopener noreferrer">ArXiv上超30%新投稿文本特征与AI撰写一致</a>
+          </h3>
+          <p class="card-sum">一项对12,750篇ArXiv论文全文的检测显示，截至2026年7月，约32%的新投稿文本特征与AI撰写一致，该比例在…</p>
+          <div class="card-actions">
+            <a class="read" href="https://unslop.run/blog/measuring-ai-writing-on-arxiv" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>一项对12,750篇ArXiv论文全文的检测显示，截至2026年7月，约32%的新投稿文本特征与AI撰写一致，该比例在…</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">16</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/length-value-model" target="_blank" rel="noopener noreferrer">Apple 提出 Length Value Model (LenVM)：token 级长度建模框架</a>
+          </h3>
+          <p class="card-sum">Apple 研究团队提出 LenVM，一种在每步解码时预测剩余生成长度的 token 级框架，将长度建模转化为无需标注…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/length-value-model" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>Apple 研究团队提出 LenVM，一种在每步解码时预测剩余生成长度的 token 级框架，将长度建模转化为无需标注…</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">17</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/lvsum-video-summarization" target="_blank" rel="noopener noreferrer">LVSum 基准：评估多模态大模型的长视频时间感知摘要能力</a>
+          </h3>
+          <p class="card-sum">Apple 推出 LVSum，一个含细粒度时间对齐的人工标注长视频摘要基准，包含 13 个领域的 72 个视频（平均时…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/lvsum-video-summarization" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>Apple 推出 LVSum，一个含细粒度时间对齐的人工标注长视频摘要基准，包含 13 个领域的 72 个视频（平均时…</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">5</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">18</span>
+            <span class="chip" style="--c:#ec4899">公众号：数字生命卡兹克</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/EeHjsju08ARLbwtwFcViqg" target="_blank" rel="noopener noreferrer">不会代码也能做产品：一份从0开始的Vibe Coding保姆级教程</a>
+          </h3>
+          <p class="card-sum">本文面向零代码用户，提供一套使用国产大模型（Kimi、GLM、Qwen等）从零开发并上线产品的完整流程。核心步骤包括购…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/EeHjsju08ARLbwtwFcViqg" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>本文面向零代码用户，提供一套使用国产大模型（Kimi、GLM、Qwen等）从零开发并上线产品的完整流程。核心步骤包括购…</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">19</span>
+            <span class="chip" style="--c:#ec4899">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/safety-alignment-long-horizon-models" target="_blank" rel="noopener noreferrer">OpenAI 在长时运行模型的安全与对齐实践中发现新型故障并改进评估体系</a>
+          </h3>
+          <p class="card-sum">OpenAI 在内部使用一款可自主运行数小时至数周的长时模型时，观察到现有预部署评估未能捕获的新型故障，包括模型持续尝…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/safety-alignment-long-horizon-models" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-19" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-19" hidden>OpenAI 在内部使用一款可自主运行数小时至数周的长时模型时，观察到现有预部署评估未能捕获的新型故障，包括模型持续尝…</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">20</span>
+            <span class="chip" style="--c:#ec4899">Gary Marcus：The Road to AI We Can Trust（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://garymarcus.substack.com/p/china-has-all-but-caught-up-the-us" target="_blank" rel="noopener noreferrer">中国AI几乎追平美国，Kimi K3开源模型引发市场震荡</a>
+          </h3>
+          <p class="card-sum">中国公司月之暗面（Moonshot.AI）发布Kimi K3模型，性能与最佳美国模型相当，且为开源权重模型，用户可免费…</p>
+          <div class="card-actions">
+            <a class="read" href="https://garymarcus.substack.com/p/china-has-all-but-caught-up-the-us" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-20" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-20" hidden>中国公司月之暗面（Moonshot.AI）发布Kimi K3模型，性能与最佳美国模型相当，且为开源权重模型，用户可免费…</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">21</span>
+            <span class="chip" style="--c:#ec4899">Tomer Tunguz 博客（VC 分析）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.tomtunguz.com/open-models-tack-toward-the-frontier" target="_blank" rel="noopener noreferrer">开源权重模型逼近前沿，闭源仍领先</a>
+          </h3>
+          <p class="card-sum">开源权重模型已多次达到与闭源前沿模型相当的水平，但闭源模型如 GPT-5.2 仍持续创造阶跃式突破。Kimi K3 为…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.tomtunguz.com/open-models-tack-toward-the-frontier" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-21" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-21" hidden>开源权重模型已多次达到与闭源前沿模型相当的水平，但闭源模型如 GPT-5.2 仍持续创造阶跃式突破。Kimi K3 为…</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">22</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/working-at-the-frontier-rakuten" target="_blank" rel="noopener noreferrer">乐天用 Claude Fable 5 构建可自主运行数小时的智能体</a>
+          </h3>
+          <p class="card-sum">乐天AI业务总经理Yusuke Kaji测试Claude Fable 5后表示，该模型能自主运行更长时间，首次实现夜间…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/working-at-the-frontier-rakuten" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-22" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-22" hidden>乐天AI业务总经理Yusuke Kaji测试Claude Fable 5后表示，该模型能自主运行更长时间，首次实现夜间…</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>22</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

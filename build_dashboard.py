@@ -281,7 +281,7 @@ def main():
   }}
   .read:hover {{ background:var(--c); color:#fff; }}
   .card-actions {{ display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }}
-  .summary-btn {{ font-family:inherit; line-height:1.2; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }}
+  .summary-btn {{ font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }}
   .summary-btn:focus-visible {{ outline:2px solid var(--c); outline-offset:2px; }}
   .summary {{ margin-top:10px; padding:12px 14px; background:#f8fafc;
       border-left:3px solid var(--c); border-radius:0 10px 10px 0;
