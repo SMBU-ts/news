@@ -83,42 +83,155 @@ def load_config():
         import yaml  # type: ignore
         data = yaml.safe_load(text)
         if isinstance(data, dict):
-            return {k: v for k, v in data.items() if isinstance(v, list)}
+            result = {}
+            for k, v in data.items():
+                if isinstance(v, list):
+                    result[k] = v
+                elif isinstance(v, dict) and k == "_ranking":
+                    result[k] = v
+            return result
     except ImportError:
         pass
     return _mini_parse(text)
 
 
 def _mini_parse(text):
-    """极简 feeds.yaml 解析器，仅支持本项目使用的简单结构。"""
-    cfg, cur, pending = {}, None, None
-    for raw in text.splitlines():
+    """极简 feeds.yaml 解析器，支持列表分类和 _ranking 嵌套字典。"""
+    cfg = {}
+    lines = text.splitlines()
+    i = 0
+    while i < len(lines):
+        raw = lines[i]
         line = raw.rstrip()
         if not line.strip() or line.strip().startswith("#"):
+            i += 1
             continue
-        if (not raw.startswith(" ")) and (not raw.startswith("\t")) and ":" in line and not line.strip().startswith("-"):
-            cur = line.split(":", 1)[0].strip()
-            cfg[cur] = []
-            pending = None
+        # 顶层键（无缩进）
+        if not raw[0].isspace() and ":" in line and not line.strip().startswith("-"):
+            key = line.split(":", 1)[0].strip()
+            if key == "_ranking":
+                # 嵌套字典段落
+                cfg[key], i = _mini_parse_dict(lines, i + 1)
+            else:
+                # 列表段落
+                cfg[key], i = _mini_parse_list(lines, i + 1)
+        else:
+            i += 1
+    return {k: v for k, v in cfg.items() if v or k == "_ranking"}
+
+
+def _indent_of(raw):
+    """返回行的前导空格数（tab 按 4 计）。"""
+    n = 0
+    for ch in raw:
+        if ch == " ":
+            n += 1
+        elif ch == "\t":
+            n += 4
+        else:
+            break
+    return n
+
+
+def _mini_parse_list(lines, start):
+    """解析列表段落（如 tech/finance/world），返回 (list, next_line_index)。"""
+    result = []
+    pending = None
+    i = start
+    while i < len(lines):
+        raw = lines[i]
+        line = raw.rstrip()
+        if not line.strip() or line.strip().startswith("#"):
+            i += 1
             continue
+        # 遇到顶层键（无缩进） -> 段落结束
+        if not raw[0].isspace():
+            break
         stripped = line.strip()
         if stripped.startswith("- "):
             rest = stripped[2:].strip()
             pending = {}
             if ":" in rest:
                 k, v = rest.split(":", 1)
-                pending[k.strip()] = _stripq(v)
-            if cur is not None:
-                cfg[cur].append(pending)
+                pending[k.strip()] = _smart_value(v)
+            result.append(pending)
+            i += 1
             continue
         if ":" in line and pending is not None:
             k, v = line.split(":", 1)
-            pending[k.strip()] = _stripq(v)
-    return {k: v for k, v in cfg.items() if v}
+            pending[k.strip()] = _smart_value(v)
+        i += 1
+    return result, i
 
 
-def _stripq(v):
-    return v.strip().strip('"').strip("'")
+def _mini_parse_dict(lines, start, base_indent=None):
+    """解析嵌套字典段落（如 _ranking），返回 (dict, next_line_index)。"""
+    if base_indent is None:
+        # 确定首行缩进
+        for j in range(start, len(lines)):
+            raw = lines[j]
+            if raw.strip() and not raw.strip().startswith("#"):
+                base_indent = _indent_of(raw)
+                break
+        if base_indent is None:
+            return {}, len(lines)
+
+    result = {}
+    i = start
+    while i < len(lines):
+        raw = lines[i]
+        line = raw.rstrip()
+        if not line.strip() or line.strip().startswith("#"):
+            i += 1
+            continue
+        indent = _indent_of(raw)
+        if indent < base_indent:
+            break  # 回到更高层级 -> 段落结束
+
+        stripped = line.strip()
+        if ":" not in stripped:
+            i += 1
+            continue
+
+        key, val = stripped.split(":", 1)
+        key = key.strip()
+        val = val.strip()
+
+        if val:
+            # 标量值
+            result[key] = _smart_value(val)
+            i += 1
+        else:
+            # 嵌套字典或空值
+            # 检查下一行是否缩进更深
+            if i + 1 < len(lines):
+                next_indent = _indent_of(lines[i + 1])
+                if next_indent > indent and lines[i + 1].strip() and not lines[i + 1].strip().startswith("#"):
+                    sub_dict, i = _mini_parse_dict(lines, i + 1, next_indent)
+                    result[key] = sub_dict
+                    continue
+            result[key] = None
+            i += 1
+
+    return result, i
+
+
+def _smart_value(v):
+    """智能值解析：支持字符串、数字、布尔值和 null/None。"""
+    v = v.strip().strip('"').strip("'")
+    if v.lower() in ("true",):
+        return True
+    if v.lower() in ("false",):
+        return False
+    if v.lower() in ("null", "none", ""):
+        return None
+    try:
+        if "." in v or "e" in v.lower():
+            return float(v)
+        return int(v)
+    except ValueError:
+        pass
+    return v
 
 
 # ---------------- 抓取 ----------------
@@ -358,6 +471,79 @@ def render_html(cat, date, items):
 </body></html>'''
 
 
+def _ensure_diversity(top, all_articles, scores, max_total):
+    """确保来源多样性：每个有文章的源至少出现 1 条。
+
+    策略:
+      1. 统计 top 中各来源的文章数
+      2. 找出未出现的来源
+      3. 从全量文章中为每个缺失来源取分数最高的 1 条
+      4. 替换 top 中分数最低的等量文章（保持总数不变）
+
+    参数:
+      top:           排名后的文章列表
+      all_articles:  全量去重文章列表
+      scores:        对应 all_articles 的评分
+      max_total:     最大保留条数
+
+    返回:
+      调整后的文章列表
+    """
+    if not top or not all_articles:
+        return top
+
+    # 统计 top 中的来源
+    top_sources = set()
+    for art in top:
+        top_sources.add(art.get("source", ""))
+
+    # 找出全量中有但 top 中没有的来源
+    all_sources = set()
+    for art in all_articles:
+        all_sources.add(art.get("source", ""))
+
+    missing_sources = all_sources - top_sources
+    if not missing_sources:
+        return top  # 所有来源都已覆盖
+
+    # 为每个缺失来源找分数最高的文章
+    paired = list(zip(scores, all_articles))
+    to_add = []
+    for src in missing_sources:
+        best = None
+        best_score = -1
+        for score, art in paired:
+            if art.get("source", "") == src and art not in top and art not in to_add:
+                if score > best_score:
+                    best_score = score
+                    best = art
+        if best:
+            to_add.append(best)
+
+    if not to_add:
+        return top
+
+    # 替换 top 中分数最低的等量文章
+    # 按 top 在原 scores 中的分数排序，移除最低的
+    top_with_scores = []
+    for art in top:
+        for score, all_art in paired:
+            if all_art is art:
+                top_with_scores.append((score, art))
+                break
+    top_with_scores.sort(key=lambda x: x[0])
+
+    # 移除最低的 len(to_add) 条，加入新来源的文章
+    keep_count = len(top) - len(to_add)
+    if keep_count < len(top) // 2:
+        # 不移除超过一半
+        keep_count = len(top) // 2
+        to_add = to_add[:len(top) - keep_count]
+
+    result = [art for _, art in top_with_scores[-keep_count:]] + to_add
+    return result
+
+
 def main():
     date = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
     # 载入预生成摘要（url -> 摘要，见 summaries/<date>.json）。
@@ -366,6 +552,21 @@ def main():
     cfg = load_config()
     if not cfg:
         return
+
+    # 提取 _ranking 配置（不影响现有分类遍历）
+    ranking_raw = cfg.pop("_ranking", None)
+
+    # 按需导入排名模块
+    ranking_mod = None
+    engagement_mod = None
+    if ranking_raw:
+        try:
+            import ranking as ranking_mod
+            import engagement as engagement_mod
+        except ImportError as e:
+            print(f"  [排名系统] 模块导入失败，回退到按时间排序: {e}")
+            ranking_raw = None
+
     for cat, feeds in cfg.items():
         collected = []
         for f in feeds:
@@ -376,6 +577,10 @@ def main():
             try:
                 data = fetch(url)
                 items = parse_feed(data, name)
+                # 应用单源最大条目数限制
+                max_art = f.get("max_articles")
+                if max_art and isinstance(max_art, int) and len(items) > max_art:
+                    items = items[:max_art]
                 print(f"  {cat}/{name}: {len(items)} 条")
                 collected.extend(items)
             except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as e:
@@ -388,8 +593,59 @@ def main():
                 continue
             seen.add(key)
             uniq.append(it)
-        uniq.sort(key=_sortkey, reverse=True)
-        top = uniq[:MAX_PER_CAT]
+
+        # ====== 热度排名管线 ======
+        if ranking_mod and ranking_raw:
+            ranking_config = ranking_mod.resolve_ranking_config(cat, ranking_raw)
+        else:
+            ranking_config = None
+
+        if ranking_config:
+            try:
+                # 获取互动数据
+                now = datetime.datetime.now(datetime.timezone.utc)
+                engagement_map = {}
+                if engagement_mod:
+                    poll_timeout = ranking_config.get("engagement_poll_timeout", 15)
+                    for f in feeds:
+                        eng = f.get("engagement", "none")
+                        if eng != "none" and eng in engagement_mod.ENGAGEMENT_FETCHERS:
+                            try:
+                                partial = engagement_mod.fetch_for_source(eng, timeout=poll_timeout)
+                                engagement_map.update(partial)
+                                if partial:
+                                    print(f"  [互动] {cat}/{f.get('name', '?')}: 获取 {len(partial)} 条")
+                            except Exception as e:
+                                print(f"  [互动跳过] {cat}/{f.get('name', '?')}: {e}")
+
+                # 构建来源权重映射
+                source_weights = {f.get("name"): f.get("weight", 1.0) for f in feeds if f.get("name")}
+
+                # 计算评分
+                scores = ranking_mod.score_articles(uniq, engagement_map, ranking_config, source_weights, now)
+
+                # 应用排名筛选
+                top = ranking_mod.apply_ranking(uniq, scores, ranking_config)
+                
+                # 来源多样性保障：确保每个有文章的源至少出现 1-2 条
+                top = _ensure_diversity(top, uniq, scores, ranking_config.get("top_n", 20))
+                
+                print(f"  {cat}: 排名后保留 {len(top)}/{len(uniq)} 条")
+
+                # 如果排名结果太少，回退补充
+                if len(top) < 5 and len(uniq) > len(top):
+                    fallback = [it for it in uniq if it not in top][:5 - len(top)]
+                    top.extend(fallback)
+                    print(f"  {cat}: 补充 {len(fallback)} 条至最低5条")
+
+            except Exception as e:
+                print(f"  [排名异常] {cat}: {e}，回退到按时间排序")
+                uniq.sort(key=_sortkey, reverse=True)
+                top = uniq[:MAX_PER_CAT]
+        else:
+            # 无排名配置 -> 旧行为
+            uniq.sort(key=_sortkey, reverse=True)
+            top = uniq[:MAX_PER_CAT]
 
         out_dir = ROOT / date / cat
         out_dir.mkdir(parents=True, exist_ok=True)

@@ -3,16 +3,19 @@
 
 已包含反检测（隐藏 webdriver、模拟插件、真实 UA、人类滚动）。
 用法：
-    python tools/playwright_fetch.py
-    python tools/playwright_fetch.py --only-remaining   # 只抓剩余 6 篇
+    python tools/playwright_fetch.py [YYYY-MM-DD]
+    python tools/playwright_fetch.py [YYYY-MM-DD] --only-remaining   # 只抓剩余篇
 """
 import asyncio, re, json, time, sys
 from pathlib import Path
+from datetime import date as dt
 from playwright.async_api import async_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-RAW_DIR = ROOT / "summaries" / "raw"
-SUMMARY_JSON = ROOT / "summaries" / "2026-07-20.json"
+DATE = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else dt.today().strftime("%Y-%m-%d")
+RAW_DIR = ROOT / "summaries" / "raw" / DATE
+RAW_DIR.mkdir(parents=True, exist_ok=True)
+SUMMARY_JSON = ROOT / "summaries" / f"{DATE}.json"
 
 # ── 剩余 6 篇难啃 URL ──────────────────────────────────
 REMAINING_URLS = [

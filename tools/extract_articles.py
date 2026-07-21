@@ -2,9 +2,12 @@
 # -*- coding: utf-8 -*-
 """从已生成的分类页 HTML 中解析文章条目，尝试抓取并提取正文到本地文件。
 
+用法：
+  python tools/extract_articles.py [YYYY-MM-DD]   # 默认今天
+
 输出：
-  summaries/raw/index.json   [{url,title,source,date,category,rawfile,ok}]
-  summaries/raw/<n>.txt       提取后的正文（仅 ok=True 时有内容）
+  summaries/raw/<date>/index.json  [{url,title,source,date,category,rawfile,ok}]
+  summaries/raw/<date>/<n>.txt     提取后的正文（仅 ok=True 时有内容）
 
 不可达（403/超时等）的条目 rawfile 为空、ok=False，交由「原文概括」回退提示处理。
 """
@@ -13,19 +16,22 @@ import re
 import html
 import sys
 from pathlib import Path
+from datetime import date as dt
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from summary_lib import fetch, extract_text  # noqa: E402
 
+DATE = sys.argv[1] if len(sys.argv) > 1 else dt.today().strftime("%Y-%m-%d")
+
 PAGES = {
-    "tech": ROOT / "2026-07-20" / "tech" / "tech-2026-07-20.html",
-    "finance": ROOT / "2026-07-20" / "finance" / "finance-2026-07-20.html",
-    "world": ROOT / "2026-07-20" / "world" / "world-2026-07-20.html",
-    "ai-daily": ROOT / "2026-07-20" / "ai-daily" / "ai-daily-2026-07-20.html",
+    "tech": ROOT / DATE / "tech" / f"tech-{DATE}.html",
+    "finance": ROOT / DATE / "finance" / f"finance-{DATE}.html",
+    "world": ROOT / DATE / "world" / f"world-{DATE}.html",
+    "ai-daily": ROOT / DATE / "ai-daily" / f"ai-daily-{DATE}.html",
 }
 
-RAW_DIR = ROOT / "summaries" / "raw"
+RAW_DIR = ROOT / "summaries" / "raw" / DATE
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 _card_re = re.compile(r'<article class="card".*?</article>', re.S)
@@ -74,6 +80,7 @@ def main():
             index.append({
                 "url": url, "title": title, "source": source,
                 "date": date, "category": cat, "rawfile": rawfile, "ok": ok,
+                "round": 1 if ok else 0,
             })
             print(f"[{cat}] {'OK ' if ok else 'FAIL'} {n:03d} {title[:40]}")
     (RAW_DIR / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -68,32 +68,15 @@ python build_all.py 2026-07-20   # 指定日期
 
 ## 原文概括（自动摘要）
 
-科技 / 财经 / 国际 / AI 日报四类文章页中，每篇文章的「阅读原文」旁都有一个 **「原文概括」** 按钮。点击后会在按钮下方展开一段约 100–200 字的中文摘要；若原文无法访问或提取失败，则显示友好提示 **「暂无法生成概括」**。摘要为**构建时预生成**——本地运行 `build_rss.py` / `build_dashboard.py` 时，脚本会抓取原文、提取正文并调用大模型生成摘要，再嵌入页面；点击按钮只负责展开/收起，因此无跨域限制、移动端与桌面端通用。
+科技 / 财经 / 国际 / AI 日报四类文章页中，每篇文章的「阅读原文」旁都有一个 **「原文概括」** 按钮。点击后会在按钮下方展开一段约 100–200 字的中文摘要；若摘要缺失，则显示友好提示 **「暂无法生成概括」**。
 
-启用方式（构建前设置环境变量，二选一即可）：
+摘要采用 **AI 助手离线生成 + 构建时复用** 的模式：
 
-```bash
-export DEEPSEEK_API_KEY="sk-..."        # 推荐：DeepSeek
-# 或自定义任意 OpenAI 兼容端点：
-export SUMMARY_API_KEY="sk-..."         # 与 DEEPSEEK_API_KEY 等效
-export SUMMARY_API_BASE="https://api.deepseek.com/v1"
-export SUMMARY_MODEL="deepseek-chat"
-python build_rss.py 2026-07-20
-python build_dashboard.py
-python build_archive.py
-```
+1. AI 助手阅读已抓取的原文正文（`summaries/raw/<date>/`），逐篇生成中文摘要
+2. 摘要写入 `summaries/<date>.json`（`{url: summary}` 映射）并提交仓库
+3. 构建时 `summary_lib.py` 直接读取 JSON 复用，**无需任何 API Key**
 
-- 摘要逻辑集中在 `summary_lib.py`（标准库实现，**零第三方依赖**），由 `build_rss.py` / `build_dashboard.py` 共用。
-- **未配置密钥**时，所有文章仍照常渲染出按钮，面板统一显示「暂无法生成概括」，站点功能不受影响。
-- 部分原文为 JS 渲染 / 付费墙（如 X、微信公众号）导致文本过短时，会自动回退到友好提示。
-
-### 预生成摘要（无需密钥复用真实摘要）
-
-`summary_lib.summarize()` 会**优先**读取 `summaries/<date>.json`（键为文章 URL、值为已生成的中文摘要）。因此：
-
-- 只要把 `summaries/<date>.json` 一并提交进仓库，本机重跑 `build_rss.py 2026-07-20` / `build_dashboard.py` 时就会**自动复用其中的真实摘要**，无需配置任何 API Key，重构建也不丢失。
-- 缺失的 URL 才会回退到「暂无法生成概括」。
-- 本仓库已附带 `summaries/2026-07-20.json`（32 篇真实摘要）以及 `tools/`（抓取原文、注入按钮的离线脚本），可直接重跑或作为后续批次的参考。
+> 摘要逻辑集中在 `summary_lib.py`（标准库实现，零第三方依赖），由 `build_rss.py` / `build_dashboard.py` 共用。部分原文为 JS 渲染 / 付费墙导致正文无法提取时，对应摘要显示「暂无法生成概括」。
 
 ## 发布到 GitHub Pages
 

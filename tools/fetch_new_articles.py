@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
-"""抓取 13 篇宽带头破解成功的文章正文 -> summaries/raw/068-080.txt"""
-import json, re, html as hlib, urllib.request, random, gzip, time
+"""抓取 13 篇宽带头破解成功的文章正文 -> summaries/raw/<date>/NNN.txt
+
+用法：
+  python tools/fetch_new_articles.py [YYYY-MM-DD]   # 默认今天
+"""
+import json, re, html as hlib, urllib.request, random, gzip, time, sys
 from pathlib import Path
+from datetime import date as dt
 
 UAS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
@@ -46,8 +51,10 @@ def extract_text(html_bytes):
     lines = [ln.strip() for ln in text.split("\n") if len(ln.strip()) > 1]
     return "\n".join(lines)[:MAX_TEXT]
 
-raw_dir = Path(__file__).resolve().parent.parent / "summaries" / "raw"
-existing = max(int(f.stem) for f in raw_dir.glob("*.txt") if f.stem.isdigit())
+DATE = sys.argv[1] if len(sys.argv) > 1 else dt.today().strftime("%Y-%m-%d")
+raw_dir = Path(__file__).resolve().parent.parent / "summaries" / "raw" / DATE
+raw_dir.mkdir(parents=True, exist_ok=True)
+existing = max(int(f.stem) for f in raw_dir.glob("*.txt") if f.stem.isdigit()) if list(raw_dir.glob("*.txt")) else 0
 print(f"Existing max: {existing:03d}")
 
 mapping = {}

@@ -9,6 +9,9 @@ __pycache__/
 # 爬虫输出（默认产物目录）
 output/
 
+# 正文缓存（不提交，仅保留索引和README）
+summaries/raw/**/*.txt
+
 # 系统文件
 .DS_Store
 Thumbs.db
