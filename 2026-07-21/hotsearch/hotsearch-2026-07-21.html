@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日热搜 · 2026-07-21</title>
+<meta name="description" content="2026-07-21 每日热搜汇总：聚合微博、百度、今日头条、知乎、哔哩哔哩等平台，精选前 15 条热点，含热度指数、来源与原文链接。">
+<style>
+  :root { --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#f43f5e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg);
+      color:var(--ink); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+
+  .hero { position:relative; overflow:hidden; color:#fff; padding:48px 24px 42px;
+      background:linear-gradient(125deg,#f43f5e 0%,#fb7185 45%,#f59e0b 120%); }
+  .hero::after { content:"🔥"; position:absolute; right:20px; top:-6px; font-size:150px;
+      opacity:.14; transform:rotate(8deg); }
+  .hero-inner { position:relative; z-index:1; max-width:1080px; margin:0 auto; }
+  .kicker { display:inline-flex; align-items:center; gap:8px; font-size:12.5px;
+      letter-spacing:2px; font-weight:700; text-transform:uppercase;
+      background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.32);
+      padding:6px 14px; border-radius:999px; }
+  .hero h1 { margin:14px 0 6px; font-size:clamp(26px,5vw,42px); font-weight:850; line-height:1.15; }
+  .hero .sub { opacity:.95; font-size:14.5px; }
+  .hero .sub b { font-weight:700; }
+  .pstats { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+  .pstat { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600;
+      background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.3);
+      border-radius:999px; padding:6px 13px; }
+  .pstat i { width:8px; height:8px; border-radius:50%; background:var(--pc); display:inline-block;
+      box-shadow:0 0 0 2px rgba(255,255,255,.5); }
+
+  main { max-width:1080px; margin:0 auto; padding:24px 16px 60px; }
+  .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:20px; }
+  .sortgroup { display:inline-flex; background:var(--card); border:1px solid var(--line);
+      border-radius:999px; padding:3px; }
+  .sort-btn { font:inherit; cursor:pointer; border:0; background:transparent; color:var(--muted);
+      font-size:13.5px; font-weight:700; padding:7px 15px; border-radius:999px; transition:.15s; }
+  .sort-btn.active { background:var(--brand); color:#fff; }
+  .expand-all { margin-left:auto; font:inherit; cursor:pointer; font-size:13.5px; font-weight:700;
+      color:var(--brand); background:var(--card); border:1px solid color-mix(in srgb,var(--brand) 35%,#fff);
+      border-radius:11px; padding:8px 15px; transition:.15s; }
+  .expand-all:hover { background:var(--brand); color:#fff; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid var(--line);
+      border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:11px;
+      box-shadow:0 1px 2px rgba(15,23,42,.04); border-top:3px solid var(--c); transition:.18s; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+  .num { color:#fff; font-weight:850; font-size:14px; min-width:26px; height:26px; border-radius:8px;
+      display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+      background:linear-gradient(135deg,var(--brand),#fb7185); }
+  .card:nth-child(1) .num, .card:nth-child(2) .num, .card:nth-child(3) .num {
+      background:linear-gradient(135deg,#f59e0b,#f43f5e); box-shadow:0 3px 10px rgba(244,63,94,.4); }
+  .chip { font-size:12px; font-weight:700; color:var(--c);
+      background:color-mix(in srgb,var(--c) 12%,#fff); border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+      border-radius:999px; padding:3px 10px; }
+  .chip .multi { opacity:.7; font-weight:600; }
+  .hot { margin-left:auto; font-size:12.5px; font-weight:800; color:#c2410c;
+      background:#fff7ed; border:1px solid #fed7aa; border-radius:999px; padding:3px 10px; white-space:nowrap; }
+  .card-title { margin:0; font-size:16.5px; font-weight:750; line-height:1.42; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:auto; }
+  .read { font-size:13.5px; font-weight:700; color:var(--c);
+      border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px; padding:6px 12px; transition:.15s; }
+  .read:hover { background:var(--c); color:#fff; }
+  .sum-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer;
+      margin:0; appearance:none; -webkit-appearance:none; }
+  .sum-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { padding:12px 14px; background:#fff7f8; border-left:3px solid var(--brand);
+      border-radius:0 10px 10px 0; font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty { background:var(--card); border:1px dashed var(--line); border-radius:16px;
+      padding:30px; text-align:center; color:var(--muted); font-size:14px; }
+
+  .backline { max-width:1080px; margin:16px auto 0; padding:0 16px; }
+  .backline a { font-size:13.5px; font-weight:600; color:var(--brand); }
+  footer { max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+      font-size:13px; border-top:1px solid var(--line); text-align:center; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; }
+      .expand-all { margin-left:0; } .hot { margin-left:0; } }
+</style>
+</head>
+<body>
+  <header class="hero"><div class="hero-inner">
+    <div class="kicker">🔥 每日热搜汇总</div>
+    <h1>2026 年 7 月 21 日 · 全网热点 TOP 15</h1>
+    <div class="sub">统计范围 <b>07-20 22:11 ~ 07-21 22:11</b> · 更新于北京时间 <b>2026-07-21 22:11</b> · 聚合 5 个平台</div>
+    <div class="pstats"><span class="pstat" style="--pc:#ff8200"><i></i>微博 · 5</span><span class="pstat" style="--pc:#2932e1"><i></i>百度 · 4</span><span class="pstat" style="--pc:#f04142"><i></i>今日头条 · 2</span><span class="pstat" style="--pc:#0084ff"><i></i>知乎 · 2</span><span class="pstat" style="--pc:#fb7299"><i></i>哔哩哔哩 · 2</span></div>
+  </div></header>
+  <div class="backline"><a href="../index.html">← 返回当日汇总</a></div>
+  <main>
+    <div class="toolbar">
+      <div class="sortgroup">
+        <button type="button" class="sort-btn active" data-sort="hot">按热度</button>
+        <button type="button" class="sort-btn" data-sort="platform">按平台</button>
+      </div>
+      <button type="button" class="expand-all" data-state="collapsed">展开全部摘要</button>
+    </div>
+    <div class="grid" id="grid">
+        <article class="card" data-hot="1132429.0" data-rank="1" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">1</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 113.2万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E5%A5%B3%E5%AD%A9%E4%B9%9F%E5%BE%88%E5%A5%BD%E4%BD%86%E6%96%B0%E7%94%9F%E7%94%B7%E5%AD%A9%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%23" target="_blank" rel="noopener noreferrer">女孩也很好但新生男孩越来越多</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E5%A5%B3%E5%AD%A9%E4%B9%9F%E5%BE%88%E5%A5%BD%E4%BD%86%E6%96%B0%E7%94%9F%E7%94%B7%E5%AD%A9%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-1" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-1" hidden>该话题正在微博热榜引发广泛关注，点击查看完整内容</div>
+        </article>
+        <article class="card" data-hot="837170.0" data-rank="2" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">2</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 83.7万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E9%9F%A9%E7%BA%A2%E5%9F%BA%E9%87%91%E4%BC%9A%E5%9B%9E%E5%BA%94%E7%BD%91%E4%BC%A0%E6%95%91%E6%8A%A4%E8%BD%A6%E8%B6%8A%E9%87%8E%23" target="_blank" rel="noopener noreferrer">韩红基金会回应网传救护车越野</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E9%9F%A9%E7%BA%A2%E5%9F%BA%E9%87%91%E4%BC%9A%E5%9B%9E%E5%BA%94%E7%BD%91%E4%BC%A0%E6%95%91%E6%8A%A4%E8%BD%A6%E8%B6%8A%E9%87%8E%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-2" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-2" hidden>该话题正在微博热榜引发广泛关注，点击查看完整内容</div>
+        </article>
+        <article class="card" data-hot="733786.0" data-rank="3" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">3</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 73.4万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%239%E5%9B%BE%E7%9C%8B%E6%88%91%E5%9B%BD%E6%96%B0%E5%85%B4%E4%BA%A7%E4%B8%9A%E7%A7%AF%E5%8E%9A%E6%88%90%E5%8A%BF%23" target="_blank" rel="noopener noreferrer">9图看我国新兴产业积厚成势</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%239%E5%9B%BE%E7%9C%8B%E6%88%91%E5%9B%BD%E6%96%B0%E5%85%B4%E4%BA%A7%E4%B8%9A%E7%A7%AF%E5%8E%9A%E6%88%90%E5%8A%BF%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-3" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-3" hidden>该话题正在微博热榜引发广泛关注，点击查看完整内容</div>
+        </article>
+        <article class="card" data-hot="7904524.0" data-rank="4" data-platform="百度" style="--c:#2932e1">
+          <div class="card-top">
+            <span class="num">4</span>
+            <span class="chip">百度</span>
+            <span class="hot" title="热度指数">🔥 790.5万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%9E%A9%E6%9C%9B%E7%9A%84%E2%80%9C%E4%BA%BA%E6%B0%91%E5%9F%8E%E5%B8%82%E2%80%9D" target="_blank" rel="noopener noreferrer">习近平瞩望的“人民城市”</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%9E%A9%E6%9C%9B%E7%9A%84%E2%80%9C%E4%BA%BA%E6%B0%91%E5%9F%8E%E5%B8%82%E2%80%9D" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-4" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-4" hidden>在中国大地上，数百座城市星罗棋布，数亿人生活在城镇。城市如何建设、更新，习近平总书记有着许多生动而…</div>
+        </article>
+        <article class="card" data-hot="666168.0" data-rank="5" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">5</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 66.6万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E8%BF%99%E4%B8%80%E7%A7%92%E8%BF%87%E7%81%AB%E6%9B%BF%E6%8D%A2%E7%89%87%E5%A4%B4%23" target="_blank" rel="noopener noreferrer">这一秒过火替换片头</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E8%BF%99%E4%B8%80%E7%A7%92%E8%BF%87%E7%81%AB%E6%9B%BF%E6%8D%A2%E7%89%87%E5%A4%B4%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-5" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-5" hidden>该话题正在微博热榜引发广泛关注，点击查看完整内容</div>
+        </article>
+        <article class="card" data-hot="7809256.0" data-rank="6" data-platform="百度" style="--c:#2932e1">
+          <div class="card-top">
+            <span class="num">6</span>
+            <span class="chip">百度</span>
+            <span class="hot" title="热度指数">🔥 780.9万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.baidu.com/s?wd=3%E4%BA%BF%E4%B8%8A%E7%8F%AD%E6%97%8F%E8%BF%8E%E5%88%A9%E5%A5%BD" target="_blank" rel="noopener noreferrer">3亿上班族迎利好</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.baidu.com/s?wd=3%E4%BA%BF%E4%B8%8A%E7%8F%AD%E6%97%8F%E8%BF%8E%E5%88%A9%E5%A5%BD" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-6" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-6" hidden>每天约有3亿人次在都市圈内通勤，耗时长、换乘多、体验差的问题较为突出，提升都市圈城际通勤效率是解决…</div>
+        </article>
+        <article class="card" data-hot="7331878.0" data-rank="7" data-platform="百度" style="--c:#2932e1">
+          <div class="card-top">
+            <span class="num">7</span>
+            <span class="chip">百度 <span class="multi">+1</span></span>
+            <span class="hot" title="热度指数">🔥 733.2万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.baidu.com/s?wd=%E5%8F%B0%E9%A3%8E%E2%80%9C%E7%BA%A2%E9%9C%9E%E2%80%9D%E8%A6%81%E6%9D%A5%E4%BA%86" target="_blank" rel="noopener noreferrer">台风“红霞”要来了</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.baidu.com/s?wd=%E5%8F%B0%E9%A3%8E%E2%80%9C%E7%BA%A2%E9%9C%9E%E2%80%9D%E8%A6%81%E6%9D%A5%E4%BA%86" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-7" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-7" hidden>台风“红霞”来了！据中央气象台中期预报，未来10天，西北太平洋和南海将有2～3个台风生成，其中1个…</div>
+        </article>
+        <article class="card" data-hot="650613.0" data-rank="8" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">8</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 65.1万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E5%9B%BD%E4%BA%A7%E5%89%A7%E7%BB%88%E4%BA%8E%E4%B8%8D%E5%BC%BA%E8%A1%8C%E5%9C%86%E5%9B%9E%E6%9D%A5%E4%BA%86%23" target="_blank" rel="noopener noreferrer">国产剧终于不强行圆回来了</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E5%9B%BD%E4%BA%A7%E5%89%A7%E7%BB%88%E4%BA%8E%E4%B8%8D%E5%BC%BA%E8%A1%8C%E5%9C%86%E5%9B%9E%E6%9D%A5%E4%BA%86%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-8" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-8" hidden>该话题正在微博热榜引发广泛关注，点击查看完整内容</div>
+        </article>
+        <article class="card" data-hot="7713149.0" data-rank="9" data-platform="百度" style="--c:#2932e1">
+          <div class="card-top">
+            <span class="num">9</span>
+            <span class="chip">百度</span>
+            <span class="hot" title="热度指数">🔥 771.3万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.baidu.com/s?wd=BBA%E9%9B%86%E4%BD%93%E9%99%8D%E4%BB%B7+%E9%94%80%E5%94%AE%EF%BC%9A%E4%BB%B7%E6%A0%BC%E8%BF%98%E8%83%BD%E8%B0%88" target="_blank" rel="noopener noreferrer">BBA集体降价 销售：价格还能谈</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.baidu.com/s?wd=BBA%E9%9B%86%E4%BD%93%E9%99%8D%E4%BB%B7+%E9%94%80%E5%94%AE%EF%BC%9A%E4%BB%B7%E6%A0%BC%E8%BF%98%E8%83%BD%E8%B0%88" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-9" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-9" hidden>2026年以来，奔驰、宝马和奥迪的价格防线在松动，竞争正从经销商暗降走向官方调价和公开权益价。参与…</div>
+        </article>
+        <article class="card" data-hot="95964607.0" data-rank="10" data-platform="今日头条" style="--c:#f04142">
+          <div class="card-top">
+            <span class="num">10</span>
+            <span class="chip">今日头条</span>
+            <span class="hot" title="热度指数">🔥 9596.5万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.toutiao.com/trending/7664890677129547274/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227664890677129547274%22%2C%22hot_board_impr_id%22%3A%22202607212211277F6129E6BD3C1FFE8953%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%8F%B2%E6%96%B9%E6%81%B6%E6%84%8F%E6%94%BB%E5%87%BB%E8%87%B4%E4%B8%AD%E6%96%B9%E4%BA%BA%E5%91%98%E5%8F%97%E4%BC%A4%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7664890677129547274" target="_blank" rel="noopener noreferrer">菲方恶意攻击致中方人员受伤</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.toutiao.com/trending/7664890677129547274/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227664890677129547274%22%2C%22hot_board_impr_id%22%3A%22202607212211277F6129E6BD3C1FFE8953%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%8F%B2%E6%96%B9%E6%81%B6%E6%84%8F%E6%94%BB%E5%87%BB%E8%87%B4%E4%B8%AD%E6%96%B9%E4%BA%BA%E5%91%98%E5%8F%97%E4%BC%A4%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7664890677129547274" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-10" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-10" hidden>该话题正在今日头条热榜引发广泛关注，点击查看完整内容</div>
+        </article>
+        <article class="card" data-hot="86832367.0" data-rank="11" data-platform="今日头条" style="--c:#f04142">
+          <div class="card-top">
+            <span class="num">11</span>
+            <span class="chip">今日头条</span>
+            <span class="hot" title="热度指数">🔥 8683.2万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.toutiao.com/trending/7664544012321295915/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227664544012321295915%22%2C%22hot_board_impr_id%22%3A%22202607212211277F6129E6BD3C1FFE8953%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AA%92%E4%BD%93%E6%8E%A2%E8%AE%BF%E4%BB%8E%E5%B0%8F%E6%A0%91%E6%9E%97%E5%87%BA%E5%9C%88%E7%9A%84%E2%80%9C26%E7%89%88%E8%A5%BF%E6%B8%B8%E8%AE%B0%E2%80%9D%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7664544012321295915" target="_blank" rel="noopener noreferrer">媒体探访从小树林出圈的“26版西游记”</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.toutiao.com/trending/7664544012321295915/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227664544012321295915%22%2C%22hot_board_impr_id%22%3A%22202607212211277F6129E6BD3C1FFE8953%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AA%92%E4%BD%93%E6%8E%A2%E8%AE%BF%E4%BB%8E%E5%B0%8F%E6%A0%91%E6%9E%97%E5%87%BA%E5%9C%88%E7%9A%84%E2%80%9C26%E7%89%88%E8%A5%BF%E6%B8%B8%E8%AE%B0%E2%80%9D%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7664544012321295915" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-11" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-11" hidden>该话题正在今日头条热榜引发广泛关注，点击查看完整内容</div>
+        </article>
+        <article class="card" data-hot="3990000.0" data-rank="12" data-platform="知乎" style="--c:#0084ff">
+          <div class="card-top">
+            <span class="num">12</span>
+            <span class="chip">知乎</span>
+            <span class="hot" title="热度指数">🔥 399 万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.zhihu.com/question/2062763580878071282" target="_blank" rel="noopener noreferrer">如何看待旭旭宝宝回应网暴风波，称「一句一地鸡毛被黑切片利用，自己绝不向造谣者妥协」？</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.zhihu.com/question/2062763580878071282" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-12" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-12" hidden>旭旭宝宝在7月20日的视频中还原了事件过程：从最初一句普通的观影偏好被曲解为不爱国，到自己反击黑粉…</div>
+        </article>
+        <article class="card" data-hot="2700000.0" data-rank="13" data-platform="知乎" style="--c:#0084ff">
+          <div class="card-top">
+            <span class="num">13</span>
+            <span class="chip">知乎</span>
+            <span class="hot" title="热度指数">🔥 270 万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.zhihu.com/question/2061301718021886552" target="_blank" rel="noopener noreferrer">如何看待 26 年 7 月DDR5内存价格再次暴涨，出现「一天两变、提货被拒、商家劝退用户」的怪象？</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.zhihu.com/question/2061301718021886552" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-13" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-13" hidden>TrendForce集邦咨询7月3日发布的调查显示，2026年第三季度DRAM市场仍处于供应紧张状…</div>
+        </article>
+        <article class="card" data-hot="5214422.0" data-rank="14" data-platform="哔哩哔哩" style="--c:#fb7299">
+          <div class="card-top">
+            <span class="num">14</span>
+            <span class="chip">哔哩哔哩</span>
+            <span class="hot" title="热度指数">🔥 521.4万播放</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.bilibili.com/video/BV1h4KU66ENd" target="_blank" rel="noopener noreferrer">树恨你</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.bilibili.com/video/BV1h4KU66ENd" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-14" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-14" hidden>树恨你 Game：Trees Hate You ⛔请勿相信其他任何自称是我（鲤鱼Ace）的言论或求…</div>
+        </article>
+        <article class="card" data-hot="1545927.0" data-rank="15" data-platform="哔哩哔哩" style="--c:#fb7299">
+          <div class="card-top">
+            <span class="num">15</span>
+            <span class="chip">哔哩哔哩</span>
+            <span class="hot" title="热度指数">🔥 154.6万播放</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.bilibili.com/video/BV18XK46VE3k" target="_blank" rel="noopener noreferrer">承认吧，你也无法拒绝陈都灵这样的队友！</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.bilibili.com/video/BV18XK46VE3k" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-15" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-15" hidden>✨英雄联盟手游灵韵代言人陈都灵空降，招牌英雄集结！ 🔥当@陈都灵 遇上LOLM4周年，峡谷的&quot;招牌…</div>
+        </article>
+        </div>
+  </main>
+  <footer>
+    数据来源：微博 / 百度 / 今日头条 / 知乎 / 哔哩哔哩 公开热榜 · 热度指数为各平台原始热度值 ·
+    点击「阅读原文」跳转对应平台
+  </footer>
+  <script>
+  (function(){
+    var PORDER = ["微博", "百度", "今日头条", "知乎", "哔哩哔哩"];
+    // 单条摘要展开/收起
+    document.addEventListener('click', function(e){
+      var b = e.target.closest('.sum-btn'); if(!b) return;
+      var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+      var open = el.hasAttribute('hidden');
+      if(open){ el.removeAttribute('hidden'); b.textContent='收起摘要'; }
+      else { el.setAttribute('hidden',''); b.textContent='展开摘要'; }
+      b.setAttribute('aria-expanded', String(open));
+    });
+    // 一键展开/收起全部
+    var ea = document.querySelector('.expand-all');
+    if(ea){ ea.addEventListener('click', function(){
+      var collapsed = ea.getAttribute('data-state') === 'collapsed';
+      document.querySelectorAll('.summary').forEach(function(s){
+        if(collapsed) s.removeAttribute('hidden'); else s.setAttribute('hidden','');
+      });
+      document.querySelectorAll('.sum-btn').forEach(function(b){
+        b.textContent = collapsed ? '收起摘要' : '展开摘要';
+        b.setAttribute('aria-expanded', String(collapsed));
+      });
+      ea.setAttribute('data-state', collapsed ? 'expanded' : 'collapsed');
+      ea.textContent = collapsed ? '收起全部摘要' : '展开全部摘要';
+    }); }
+    // 排序切换
+    var grid = document.getElementById('grid');
+    function resort(mode){
+      if(!grid) return;
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+      cards.sort(function(a,b){
+        if(mode==='platform'){
+          var pa=PORDER.indexOf(a.getAttribute('data-platform'));
+          var pb=PORDER.indexOf(b.getAttribute('data-platform'));
+          if(pa!==pb) return pa-pb;
+          return (+a.getAttribute('data-rank')) - (+b.getAttribute('data-rank'));
+        }
+        return (+a.getAttribute('data-rank')) - (+b.getAttribute('data-rank'));
+      });
+      cards.forEach(function(c){ grid.appendChild(c); });
+    }
+    document.querySelectorAll('.sort-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.sort-btn').forEach(function(x){ x.classList.remove('active'); });
+        btn.classList.add('active');
+        resort(btn.getAttribute('data-sort'));
+      });
+    });
+  })();
+  </script>
+</body></html>

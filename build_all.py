@@ -5,7 +5,8 @@
 依次运行：
     1. build_dashboard.py   生成 AI 日报（ai-daily）
     2. build_rss.py         生成 feeds.yaml 中配置的分类（tech/finance/world …）
-    3. build_archive.py     重建首页 / 归档页 / 当日汇总页 / sitemap / robots
+    3. build_hotsearch.py   生成每日热搜汇总（hotsearch，微博/百度/头条/知乎/B站）
+    4. build_archive.py     重建首页 / 归档页 / 当日汇总页 / sitemap / robots
 
 用法：
     python build_all.py
@@ -19,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PY = sys.executable
-STEPS = ("build_dashboard.py", "build_rss.py", "build_archive.py")
+STEPS = ("build_dashboard.py", "build_rss.py", "build_hotsearch.py", "build_archive.py")
 
 
 def main():
@@ -27,7 +28,7 @@ def main():
     for script in STEPS:
         print(f"\n========== {script} ==========")
         cmd = [PY, str(ROOT / script)]
-        if date_arg and script in ("build_rss.py", "build_dashboard.py"):
+        if date_arg and script in ("build_rss.py", "build_dashboard.py", "build_hotsearch.py"):
             cmd.append(date_arg)
         rc = subprocess.run(cmd, cwd=ROOT).returncode
         if rc != 0:

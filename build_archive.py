@@ -53,6 +53,7 @@ NEWS_RE = re.compile(r"^(?P<cat>.+?)-(?P<date>\d{4}-\d{2}-\d{2})\.html$")
 # 已知分类的友好名称与配色（未知分类回退为标题化名称）。
 CATEGORY_LABELS = {
     "ai-daily": "AI 日报",
+    "hotsearch": "每日热搜",
     "tech": "科技",
     "finance": "财经",
     "world": "国际",
@@ -62,6 +63,7 @@ CATEGORY_LABELS = {
 }
 CAT_COLORS = {
     "ai-daily": "#6366f1",
+    "hotsearch": "#f43f5e",
     "tech": "#3b82f6",
     "finance": "#10b981",
     "world": "#f59e0b",
@@ -71,6 +73,7 @@ CAT_COLORS = {
 }
 CAT_ICONS = {
     "ai-daily": "🤖",
+    "hotsearch": "🔥",
     "tech": "💻",
     "finance": "📈",
     "world": "🌍",
@@ -78,6 +81,13 @@ CAT_ICONS = {
     "health": "🩺",
     "culture": "🎬",
 }
+
+# 分类展示优先级（越小越靠前）：AI 日报、每日热搜置顶，其余按名称
+CAT_ORDER = {"ai-daily": 0, "hotsearch": 1}
+
+
+def cat_sort_key(key):
+    return (CAT_ORDER.get(key, 99), key)
 
 
 def cat_label(key):
@@ -221,7 +231,7 @@ def _day_cats(d):
     cats = {}
     for n in d["news"]:
         cats[n["cat"]] = cats.get(n["cat"], 0) + 1
-    return dict(sorted(cats.items(), key=lambda kv: (kv[0] != "ai-daily", kv[0])))
+    return dict(sorted(cats.items(), key=lambda kv: cat_sort_key(kv[0])))
 
 
 def render_home(days, base):
@@ -309,7 +319,7 @@ def render_day(day, base):
     for n in day["news"]:
         groups.setdefault(n["cat"], []).append(n)
     sections = ""
-    for cat in sorted(groups, key=lambda c: (c != "ai-daily", c)):
+    for cat in sorted(groups, key=cat_sort_key):
         color = cat_color(cat)
         items = ""
         for n in groups[cat]:
@@ -383,7 +393,7 @@ def render_archive(days, base):
             by_cat.setdefault(n["cat"], []).append((d["date"], n))
     sections = ""
     all_items = []
-    for cat in sorted(by_cat, key=lambda c: (c != "ai-daily", c)):
+    for cat in sorted(by_cat, key=cat_sort_key):
         color = cat_color(cat)
         items = ""
         entries = sorted(by_cat[cat], key=lambda x: x[0], reverse=True)
