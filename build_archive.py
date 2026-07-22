@@ -3,9 +3,8 @@
 """Build a date-based, multi-page news site for GitHub Pages.
 
 Produces (all links are root-relative, served at the site root):
-    index.html       首页：按日期倒序的导航入口
+    index.html       首页：按日期倒序的导航入口，分类标签直达新闻原文
     archive.html     归档页：跨日期、按分类汇总全部新闻
-    2026-MM-DD/index.html   当日汇总页：可点击新闻链接
     sitemap.xml / robots.txt  SEO 基础
     2026-MM-DD/<cat>/...html 新闻原文（分类子文件夹）
 
@@ -60,6 +59,7 @@ CATEGORY_LABELS = {
     "sports": "体育",
     "health": "健康",
     "culture": "文娱",
+    "daily20": "每日20条",
 }
 CAT_COLORS = {
     "ai-daily": "#6366f1",
@@ -70,6 +70,7 @@ CAT_COLORS = {
     "sports": "#ef4444",
     "health": "#14b8a6",
     "culture": "#ec4899",
+    "daily20": "#8b5cf6",
 }
 CAT_ICONS = {
     "ai-daily": "🤖",
@@ -80,10 +81,11 @@ CAT_ICONS = {
     "sports": "⚽",
     "health": "🩺",
     "culture": "🎬",
+    "daily20": "📋",
 }
 
 # 分类展示优先级（越小越靠前）：AI 日报、每日热搜置顶，其余按名称
-CAT_ORDER = {"ai-daily": 0, "hotsearch": 1}
+CAT_ORDER = {"ai-daily": 0, "hotsearch": 1, "daily20": 2}
 
 
 def cat_sort_key(key):
@@ -234,46 +236,57 @@ def _day_cats(d):
     return dict(sorted(cats.items(), key=lambda kv: cat_sort_key(kv[0])))
 
 
+def _day_cat_links(d):
+    """返回分类 -> 首个文章相对路径（从 ROOT 算起）的映射。"""
+    first = {}
+    for n in d["news"]:
+        cat = n["cat"]
+        if cat not in first:
+            first[cat] = n["file"]
+    return first
+
+
 def render_home(days, base):
     total = sum(len(d["news"]) for d in days)
     all_cats = set(n["cat"] for d in days for n in d["news"])
 
-    # 最新一期 Featured 横幅
+    # 最新一期 Featured 横幅（分类标签直接链接到对应文章）
     latest = days[0]
     lcats = _day_cats(latest)
+    llinks = _day_cat_links(latest)
     fpills = "".join(
-        f'<span class="pill on-dark"><i></i>{cat_icon(c)} {html.escape(cat_label(c))} · {cnt}</span>'
-        for c, cnt in lcats.items()
+        f'<a class="pill on-dark" href="{bp('/' + llinks[c])}">'
+        f'<i></i>{cat_icon(c)} {html.escape(cat_label(c))}</a>'
+        for c in lcats
     )
     featured = f'''
-    <a class="featured reveal" href="{bp('/' + latest['date'] + '/')}">
+    <div class="featured reveal">
       <span class="tag">✦ 最新一期</span>
       <h3>{latest['date']} · {latest['weekday']}</h3>
       <p>共 {len(latest['news'])} 篇报道，覆盖 {len(lcats)} 个分类</p>
-      <span class="go">进入当日汇总 →</span>
       <div class="fpills">{fpills}</div>
-    </a>'''
+    </div>'''
 
-    # 日期卡片
+    # 日期卡片（分类标签直接链接到对应文章，不再跳转日期索引页）
     cards = ""
     for d in days:
         date = d["date"]
         cats = _day_cats(d)
+        cat_links = _day_cat_links(d)
         chips = "".join(
-            f'<span class="pill" style="--c:{cat_color(c)}">'
-            f'<i></i>{cat_icon(c)} {html.escape(cat_label(c))} · {cnt}</span>'
-            for c, cnt in cats.items()
+            f'<a class="pill" style="--c:{cat_color(c)}" href="{bp('/' + cat_links[c])}">'
+            f'<i></i>{cat_icon(c)} {html.escape(cat_label(c))}</a>'
+            for c in cats
         )
         cards += f'''
-    <a class="day-card reveal" href="{bp('/' + date + '/')}">
+    <div class="day-card reveal">
       <div class="day-top">
         <div class="day-date">{date}</div>
         <span class="day-badge">{d['weekday']}</span>
       </div>
       <div class="day-count">📰 {len(d['news'])} 篇 · {len(cats)} 个分类</div>
       <div class="day-pills">{chips}</div>
-      <div class="day-go">查看当日汇总 →</div>
-    </a>'''
+    </div>'''
 
     # 注意：Hero 必须是 <body> 直接子元素（全宽），不能包进 <main class="page">，
     # 否则 Hero 渐变会被 1120px 容器截断、左右留白，出现布局偏移/样式错乱。
@@ -281,7 +294,7 @@ def render_home(days, base):
     <section class="hero"><div class="hero-inner">
       <div class="kicker">✦ 每日新闻档案</div>
       <h1>每日新闻，一处尽览</h1>
-      <div class="sub">按日期归档，最新在前。点击任意日期，即可查看当天全部新闻的分类汇总。</div>
+      <div class="sub">按日期归档，最新在前。点击任意分类标签，即可直达当天对应的新闻报道。</div>
       <div class="stats">
         <div class="stat"><div class="ico">🗓️</div><div><div class="n">{len(days)}</div><div class="l">归档天数</div></div></div>
         <div class="stat"><div class="ico">📰</div><div><div class="n">{total}</div><div class="l">新闻总数</div></div></div>
@@ -302,7 +315,7 @@ def render_home(days, base):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>每日新闻档案</title>
-{seo_head("每日新闻档案", "按日期归档的每日新闻汇总，最新日期在最前，点击日期查看当日全部新闻。", base + "/", json_ld=ld)}
+{seo_head("每日新闻档案", "按日期归档的每日新闻汇总，最新日期在最前，点击分类标签即可直达当天新闻报道。", base + "/", json_ld=ld)}
 <link rel="stylesheet" href="{ASSET_CSS}">
 {scripts()}
 </head>
@@ -468,9 +481,8 @@ def render_about(base):
         </ol>
         <h2>目录结构</h2>
         <ul>
-          <li><code>index.html</code> — 首页，按日期倒序导航</li>
+          <li><code>index.html</code> — 首页，按日期倒序展示，点击分类标签直达报道</li>
           <li><code>archive.html</code> — 归档页，跨日期按分类汇总</li>
-          <li><code>YYYY-MM-DD/index.html</code> — 当日汇总页</li>
           <li><code>YYYY-MM-DD/&lt;分类&gt;/*.html</code> — 新闻原文</li>
           <li><code>assets/</code> — 共享样式与脚本</li>
         </ul>
@@ -498,7 +510,6 @@ def render_about(base):
 def render_sitemap(days, base):
     urls = [("/")] + [("/archive.html"), ("/about.html")]
     for d in days:
-        urls.append("/" + d["date"] + "/")
         for n in d["news"]:
             urls.append("/" + n["file"])
     today = datetime.date.today().isoformat()
@@ -524,11 +535,12 @@ def main():
         return
     base = site_url()
 
-    # 当日汇总页
+    # 不再生成当日汇总页；如存在历史文件则清理
     for day in days:
         out = ROOT / day["date"] / "index.html"
-        out.write_text(render_day(day, base), encoding="utf-8")
-        print(f"WROTE {out}  ({len(day['news'])} news, {day['date']})")
+        if out.exists():
+            out.unlink()
+            print(f"REMOVED {out}")
 
     # 首页 / 归档页 / 关于页
     (ROOT / "index.html").write_text(render_home(days, base), encoding="utf-8")
