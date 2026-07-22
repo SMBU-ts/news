@@ -76,6 +76,14 @@ def main():
         ["git", "diff", "--name-status", base_sha, local_sha],
         capture_output=True, text=True, cwd=ROOT
     )
+    # 若远程基准对象不在本地（行尾差异导致 GitHub 重算 SHA 时常见），
+    # 回退到本地父 commit 相对当前 HEAD 的差异。
+    if result.returncode != 0 or not result.stdout.strip():
+        print("NOTE: 本地无远程基准对象，回退用 HEAD~1 比对")
+        result = subprocess.run(
+            ["git", "diff", "--name-status", "HEAD~1", local_sha],
+            capture_output=True, text=True, cwd=ROOT
+        )
     changes = []
     for line in result.stdout.strip().split("\n"):
         if not line: continue
