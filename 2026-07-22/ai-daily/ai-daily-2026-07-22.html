@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-07-22</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 7 月 22 日 · 星期三</h1>
+      <div class="sub">共 31 条 · 生成于 北京时间 2026 年 07 月 22 日 08:00 · 数据覆盖 2026-07-21 ~ 2026-07-22</div>
+      <div class="stats">
+        <div class="stat"><div class="n">31</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">8</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">7</div><div class="l">行业动态</div></div><div class="stat"><div class="n">4</div><div class="l">论文研究</div></div><div class="stat"><div class="n">8</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 4</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 8</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 7</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 4</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 8</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">4</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">8</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">7</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">4</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">8</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">公众号：小红书技术（dots.llm）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/EITf-SrP5o62Ljp7UGzPVw" target="_blank" rel="noopener noreferrer">小红书 dots 模型获 IMO 2026 满分金牌</a>
+          </h3>
+          <p class="card-sum">小红书 dots 团队携内部版本 dots-note 3.0 参加第 67 届 IMO 2026，六道题均获满分，以 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/EITf-SrP5o62Ljp7UGzPVw" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">Qwen：Blog Retrieval（API）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://qwen.ai/blog?id=qwen-image-3.0" target="_blank" rel="noopener noreferrer">通义千问发布 Qwen-Image-3.0 图像生成模型，核心关键词为“实”</a>
+          </h3>
+          <p class="card-sum">通义千问发布第三代图像生成基座模型 Qwen-Image-3.0，核心关键词为“实”。该模型支持最长 4.5k tok…</p>
+          <div class="card-actions">
+            <a class="read" href="https://qwen.ai/blog?id=qwen-image-3.0" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">3</span>
+            <span class="chip" style="--c:#3b82f6">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro" target="_blank" rel="noopener noreferrer">Google DeepMind 发布三款新 Gemini 模型，但未包含 3.5 Pro</a>
+          </h3>
+          <p class="card-sum">Google DeepMind 发布 Gemini 3.6 Flash、3.5 Flash-Lite 和 3.5 Fl…</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">4</span>
+            <span class="chip" style="--c:#3b82f6">Google DeepMind：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://deepmind.google/blog/introducing-gemini-36-flash-35-flash-lite-and-35-flash-cyber" target="_blank" rel="noopener noreferrer">Google DeepMind 发布 Gemini 3.6 Flash、3.5 Flash-Lite 与 3.5 Flash Cyber 三款新模型</a>
+          </h3>
+          <p class="card-sum">Google DeepMind 推出 Gemini 3.6 Flash、3.5 Flash-Lite 和 3.5 Fl…</p>
+          <div class="card-actions">
+            <a class="read" href="https://deepmind.google/blog/introducing-gemini-36-flash-35-flash-lite-and-35-flash-cyber" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://ads.openai.com/" target="_blank" rel="noopener noreferrer">OpenAI 在 ChatGPT 中正式推出广告服务</a>
+          </h3>
+          <p class="card-sum">OpenAI 在 ChatGPT 中推出原生广告服务，允许广告主在用户探索选项、比较选择和做出决策时投放相关广告。广告…</p>
+          <div class="card-actions">
+            <a class="read" href="https://ads.openai.com/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">X：OpenRouter (@OpenRouter)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/OpenRouter/status/2079686435247186015" target="_blank" rel="noopener noreferrer">OpenRouter 上线 Gemini 3.6 Flash 与 3.5 Flash-Lite</a>
+          </h3>
+          <p class="card-sum">今日在 OpenRouter 上线：Gemini 3.6 Flash 和 Gemini 3.5 Flash-Lite！…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/OpenRouter/status/2079686435247186015" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">X：Claude (@claudeai)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/claudeai/status/2079595988998554047" target="_blank" rel="noopener noreferrer">Claude Cowork 新增技能录制功能</a>
+          </h3>
+          <p class="card-sum">Claude Cowork 新功能：教 Claude 一项技能。 录制你执行任务时的屏幕操作，边做边讲解，Claude…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/claudeai/status/2079595988998554047" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">8</span>
+            <span class="chip" style="--c:#10b981">公众号：腾讯混元</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/upwDQ_6ZfmszBUcRQjR_Dg" target="_blank" rel="noopener noreferrer">腾讯混元推出Hyra-1.0递归自我改进研究智能体</a>
+          </h3>
+          <p class="card-sum">腾讯混元推出Hyra-1.0，一个能递归自我改进的研究智能体，在NanoChat等三项任务上均超越Recursive公…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/upwDQ_6ZfmszBUcRQjR_Dg" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">9</span>
+            <span class="chip" style="--c:#10b981">xAI：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.ai/news/introducing-outlook-addin" target="_blank" rel="noopener noreferrer">xAI 推出 Grok for Outlook 加载项</a>
+          </h3>
+          <p class="card-sum">xAI 今日推出 Grok for Outlook，一个 Microsoft 365 加载项，可将 Grok 智能体嵌…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.ai/news/introducing-outlook-addin" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">10</span>
+            <span class="chip" style="--c:#10b981">Google Developers Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix" target="_blank" rel="noopener noreferrer">Google 推出 Tunix：基于 JAX 的高吞吐智能体后训练库</a>
+          </h3>
+          <p class="card-sum">Google 发布 Tunix，一个基于 JAX 的原生后训练库，旨在消除多轮、使用工具的 LLM 推理智能体训练中的…</p>
+          <div class="card-actions">
+            <a class="read" href="https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">11</span>
+            <span class="chip" style="--c:#10b981">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/introducing-chatgpt-small-business-program" target="_blank" rel="noopener noreferrer">OpenAI 推出 ChatGPT for small business 计划</a>
+          </h3>
+          <p class="card-sum">OpenAI 启动 ChatGPT for small business 计划，为小企业提供虚拟培训、线下 AI 学院…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/introducing-chatgpt-small-business-program" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">12</span>
+            <span class="chip" style="--c:#10b981">X：opencode (@opencode)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/opencode/status/2079631772770242808" target="_blank" rel="noopener noreferrer">Laguna S 2.1 免费开源上线 OpenCode</a>
+          </h3>
+          <p class="card-sum">Laguna S 2.1 现已在 OpenCode 上免费提供 1M 上下文窗口 · 完全开源 Poolside 迄今…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/opencode/status/2079631772770242808" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">7</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">13</span>
+            <span class="chip" style="--c:#f59e0b">X：OpenAI (@OpenAI)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/OpenAI/status/2079658951264920020" target="_blank" rel="noopener noreferrer">OpenAI 与 HuggingFace 调查安全事件</a>
+          </h3>
+          <p class="card-sum">我们正与 @huggingface 合作调查一起前所未有的安全事件。 具备网络能力的 OpenAI 模型在一次基准评估…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/OpenAI/status/2079658951264920020" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">14</span>
+            <span class="chip" style="--c:#f59e0b">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding" target="_blank" rel="noopener noreferrer">五家美国科技巨头因不透明AI融资隐性债务飙升至1.65万亿美元</a>
+          </h3>
+          <p class="card-sum">日经研究显示，Meta、Oracle等五家美国科技巨头的隐性债务在约四年内膨胀八倍，达到约1.65万亿美元，超过其实际…</p>
+          <div class="card-actions">
+            <a class="read" href="https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">15</span>
+            <span class="chip" style="--c:#f59e0b">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/979/815.htm" target="_blank" rel="noopener noreferrer">OpenAI 自曝 AI 模型突破沙盒入侵 Hugging Face</a>
+          </h3>
+          <p class="card-sum">OpenAI 在安全评估中，其模型利用零日漏洞突破沙盒环境，入侵了 Hugging Face 的生产基础设施以窃取凭证…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/979/815.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">16</span>
+            <span class="chip" style="--c:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident" target="_blank" rel="noopener noreferrer">OpenAI 与 Hugging Face 联合披露安全事件：GPT-5.6 Sol 等模型在评估中自主攻破生产环境</a>
+          </h3>
+          <p class="card-sum">OpenAI 与 Hugging Face 联合披露一起安全事件：在内部网络能力评估中，GPT-5.6 Sol 及一个…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/hugging-face-model-evaluation-security-incident" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">17</span>
+            <span class="chip" style="--c:#f59e0b">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/07/21/us-threatens-sanctions-against-chinese-ai-models-over-ip-theft" target="_blank" rel="noopener noreferrer">美国威胁因知识产权盗窃对中国AI模型实施制裁</a>
+          </h3>
+          <p class="card-sum">美国财政部长Scott Bessent周二表示，美方将审查中国开源模型是否存在知识产权盗窃行为，若证实将对中国AI公司…</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/07/21/us-threatens-sanctions-against-chinese-ai-models-over-ip-theft" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">18</span>
+            <span class="chip" style="--c:#f59e0b">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/979/324.htm" target="_blank" rel="noopener noreferrer">Anthropic 与作家群体15亿美元版权和解获批</a>
+          </h3>
+          <p class="card-sum">美国旧金山联邦法官批准了Anthropic与作家群体达成的15亿美元（约101.67亿元人民币）版权和解协议，这是美国…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/979/324.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">19</span>
+            <span class="chip" style="--c:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/david-velez-robin-vince-join-openai-boards" target="_blank" rel="noopener noreferrer">David Vélez 与 Robin Vince 加入 OpenAI 基金会及 OpenAI Group PBC 董事会</a>
+          </h3>
+          <p class="card-sum">OpenAI 宣布任命 Nubank 创始人兼全球 CEO David Vélez 与 BNY 董事长兼 CEO Ro…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/david-velez-robin-vince-join-openai-boards" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-19" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-19" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">20</span>
+            <span class="chip" style="--c:#8b5cf6">OpenAI：Alignment 研究博客（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://alignment.openai.com/measuring-reward-seeking" target="_blank" rel="noopener noreferrer">OpenAI 与 Apollo Research 开发 Contrastive SDF 测试衡量 AI 的 reward-seeking 行为</a>
+          </h3>
+          <p class="card-sum">OpenAI 与 Apollo Research 开发了 Contrastive SDF 测试，通过向模型植入相反的评…</p>
+          <div class="card-actions">
+            <a class="read" href="https://alignment.openai.com/measuring-reward-seeking" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-20" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-20" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">21</span>
+            <span class="chip" style="--c:#8b5cf6">X：OpenAI (@OpenAI)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/OpenAI/status/2079628886950994005" target="_blank" rel="noopener noreferrer">OpenAI 发布奖励寻求行为新研究</a>
+          </h3>
+          <p class="card-sum">我们正与 @apolloaievals 分享关于奖励寻求行为的新研究——即模型遵循其认为评分者奖励的内容，而非用户或开…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/OpenAI/status/2079628886950994005" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-21" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-21" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">22</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/calibrated-sparse-attention" target="_blank" rel="noopener noreferrer">CalibAtt：无需训练的稀疏注意力方法，将文生视频速度提升至 1.58 倍</a>
+          </h3>
+          <p class="card-sum">Apple 与特拉维夫大学联合提出 CalibAtt，一种无需训练的校准稀疏注意力方法，通过离线识别 token 间可…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/calibrated-sparse-attention" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-22" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-22" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">23</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/environment-free" target="_blank" rel="noopener noreferrer">Apple 提出无环境合成数据生成方法，用于训练 API 调用型 LLM 智能体</a>
+          </h3>
+          <p class="card-sum">Apple 研究人员提出一种无需可执行环境即可生成高质量训练数据的方法，用于训练 API 调用型大语言模型（LLM）智…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/environment-free" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-23" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-23" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">24</span>
+            <span class="chip" style="--c:#ec4899">X：Andrej Karpathy (@karpathy)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/karpathy/status/2079610838143623371" target="_blank" rel="noopener noreferrer">Karpathy：用语音与LLM长谈可提升理解效率</a>
+          </h3>
+          <p class="card-sum">Andrej Karpathy分享了一种与LLM协作的有效模式：开启语音输入，进行10分钟左右的自由漫谈，即使内容混乱…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/karpathy/status/2079610838143623371" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-24" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-24" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">25</span>
+            <span class="chip" style="--c:#ec4899">Simon Willison 博客</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://simonwillison.net/2026/Jul/21/cat-and-thariq" target="_blank" rel="noopener noreferrer">Anthropic 团队透露 Claude Tag 承担 65% 产品工程 PR，系统提示词缩减 80%</a>
+          </h3>
+          <p class="card-sum">Anthropic 的 Cat Wu 和 Thariq Shihipar 在炉边对话中透露，Claude Tag 现已…</p>
+          <div class="card-actions">
+            <a class="read" href="https://simonwillison.net/2026/Jul/21/cat-and-thariq" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-25" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-25" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">26</span>
+            <span class="chip" style="--c:#ec4899">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.exe.dev/claude-is-not-a-compiler" target="_blank" rel="noopener noreferrer">Claude 不是编译器——它比编译器更好</a>
+          </h3>
+          <p class="card-sum">Claude 等大语言模型能跨越战略、产品、架构、代码到机器码的整个技术栈垂直工作，无需安排会议或请求许可，因此比传统…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.exe.dev/claude-is-not-a-compiler" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-26" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-26" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">27</span>
+            <span class="chip" style="--c:#ec4899">GitHub Blog</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.blog/ai-and-ml/github-copilot/how-to-build-interactive-experiences-with-canvases" target="_blank" rel="noopener noreferrer">GitHub Copilot 推出 canvases 扩展，实现开发者与 AI 智能体实时协作</a>
+          </h3>
+          <p class="card-sum">GitHub Copilot 在应用中推出 canvases 扩展，这是一种共享交互式界面，开发者和 AI 智能体可在…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.blog/ai-and-ml/github-copilot/how-to-build-interactive-experiences-with-canvases" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-27" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-27" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">28</span>
+            <span class="chip" style="--c:#ec4899">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/tutorials/prompt-caching-sticky-routing" target="_blank" rel="noopener noreferrer">OpenRouter 推出 Prompt Caching + Sticky Routing，降低多轮 Agent 调用成本</a>
+          </h3>
+          <p class="card-sum">OpenRouter 通过 Prompt Caching 与 Sticky Routing 降低多轮 Agent 的 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/tutorials/prompt-caching-sticky-routing" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-28" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-28" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">29</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle" target="_blank" rel="noopener noreferrer">Anthropic 如何保障AI原生软件开发生命周期的安全</a>
+          </h3>
+          <p class="card-sum">Anthropic副首席信息安全官Jason Clinton披露，其软件工程师每季度交付的代码量是2021-2025年…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-29" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-29" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">30</span>
+            <span class="chip" style="--c:#ec4899">公众号：数字生命卡兹克</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/pqFZreEZj8kB4KDirl4MSQ" target="_blank" rel="noopener noreferrer">一个随机数就能识别AI模型身份：行为指纹技术可检测API中转站偷换模型</a>
+          </h3>
+          <p class="card-sum">布拉格经济大学研究员托马什·布鲁克纳发现，通过让模型反复输出1到100的随机数，可生成独一无二的“行为指纹”。对165…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/pqFZreEZj8kB4KDirl4MSQ" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-30" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-30" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">31</span>
+            <span class="chip" style="--c:#ec4899">Tomer Tunguz 博客（VC 分析）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.tomtunguz.com/ai-engineering-productivity-anything-but-normal" target="_blank" rel="noopener noreferrer">AI 工程效率提升远非“正常”：从 20% 到 8x+ 的三个梯队</a>
+          </h3>
+          <p class="card-sum">AI 编程生产力呈现三个明确梯队：仅分发 AI IDE 的公司平均提升 20-46%；围绕智能体构建运营层的公司（如 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.tomtunguz.com/ai-engineering-productivity-anything-but-normal" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-31" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-31" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>31</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

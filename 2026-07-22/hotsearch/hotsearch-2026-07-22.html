@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日热搜 · 2026-07-22</title>
+<meta name="description" content="2026-07-22 每日热搜汇总：聚合微博、百度、今日头条、知乎、哔哩哔哩等平台，精选前 15 条热点，含热度指数、来源与原文链接。">
+<style>
+  :root { --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#f43f5e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg);
+      color:var(--ink); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+
+  .hero { position:relative; overflow:hidden; color:#fff; padding:48px 24px 42px;
+      background:linear-gradient(125deg,#f43f5e 0%,#fb7185 45%,#f59e0b 120%); }
+  .hero::after { content:"🔥"; position:absolute; right:20px; top:-6px; font-size:150px;
+      opacity:.14; transform:rotate(8deg); }
+  .hero-inner { position:relative; z-index:1; max-width:1080px; margin:0 auto; }
+  .kicker { display:inline-flex; align-items:center; gap:8px; font-size:12.5px;
+      letter-spacing:2px; font-weight:700; text-transform:uppercase;
+      background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.32);
+      padding:6px 14px; border-radius:999px; }
+  .hero h1 { margin:14px 0 6px; font-size:clamp(26px,5vw,42px); font-weight:850; line-height:1.15; }
+  .hero .sub { opacity:.95; font-size:14.5px; }
+  .hero .sub b { font-weight:700; }
+  .pstats { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+  .pstat { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600;
+      background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.3);
+      border-radius:999px; padding:6px 13px; }
+  .pstat i { width:8px; height:8px; border-radius:50%; background:var(--pc); display:inline-block;
+      box-shadow:0 0 0 2px rgba(255,255,255,.5); }
+
+  main { max-width:1080px; margin:0 auto; padding:24px 16px 60px; }
+  .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:20px; }
+  .sortgroup { display:inline-flex; background:var(--card); border:1px solid var(--line);
+      border-radius:999px; padding:3px; }
+  .sort-btn { font:inherit; cursor:pointer; border:0; background:transparent; color:var(--muted);
+      font-size:13.5px; font-weight:700; padding:7px 15px; border-radius:999px; transition:.15s; }
+  .sort-btn.active { background:var(--brand); color:#fff; }
+  .expand-all { margin-left:auto; font:inherit; cursor:pointer; font-size:13.5px; font-weight:700;
+      color:var(--brand); background:var(--card); border:1px solid color-mix(in srgb,var(--brand) 35%,#fff);
+      border-radius:11px; padding:8px 15px; transition:.15s; }
+  .expand-all:hover { background:var(--brand); color:#fff; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid var(--line);
+      border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:11px;
+      box-shadow:0 1px 2px rgba(15,23,42,.04); border-top:3px solid var(--c); transition:.18s; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+  .num { color:#fff; font-weight:850; font-size:14px; min-width:26px; height:26px; border-radius:8px;
+      display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+      background:linear-gradient(135deg,var(--brand),#fb7185); }
+  .card:nth-child(1) .num, .card:nth-child(2) .num, .card:nth-child(3) .num {
+      background:linear-gradient(135deg,#f59e0b,#f43f5e); box-shadow:0 3px 10px rgba(244,63,94,.4); }
+  .chip { font-size:12px; font-weight:700; color:var(--c);
+      background:color-mix(in srgb,var(--c) 12%,#fff); border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+      border-radius:999px; padding:3px 10px; }
+  .chip .multi { opacity:.7; font-weight:600; }
+  .hot { margin-left:auto; font-size:12.5px; font-weight:800; color:#c2410c;
+      background:#fff7ed; border:1px solid #fed7aa; border-radius:999px; padding:3px 10px; white-space:nowrap; }
+  .card-title { margin:0; font-size:16.5px; font-weight:750; line-height:1.42; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:auto; }
+  .read { font-size:13.5px; font-weight:700; color:var(--c);
+      border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px; padding:6px 12px; transition:.15s; }
+  .read:hover { background:var(--c); color:#fff; }
+  .sum-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer;
+      margin:0; appearance:none; -webkit-appearance:none; }
+  .sum-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { padding:12px 14px; background:#fff7f8; border-left:3px solid var(--brand);
+      border-radius:0 10px 10px 0; font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty { background:var(--card); border:1px dashed var(--line); border-radius:16px;
+      padding:30px; text-align:center; color:var(--muted); font-size:14px; }
+
+  .backline { max-width:1080px; margin:16px auto 0; padding:0 16px; }
+  .backline a { font-size:13.5px; font-weight:600; color:var(--brand); }
+  footer { max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+      font-size:13px; border-top:1px solid var(--line); text-align:center; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; }
+      .expand-all { margin-left:0; } .hot { margin-left:0; } }
+</style>
+</head>
+<body>
+  <header class="hero"><div class="hero-inner">
+    <div class="kicker">🔥 每日热搜汇总</div>
+    <h1>2026 年 7 月 22 日 · 全网热点 TOP 15</h1>
+    <div class="sub">统计范围 <b>07-21 10:33 ~ 07-22 10:33</b> · 更新于北京时间 <b>2026-07-22 10:33</b> · 聚合 5 个平台</div>
+    <div class="pstats"><span class="pstat" style="--pc:#2932e1"><i></i>百度 · 3</span><span class="pstat" style="--pc:#0084ff"><i></i>知乎 · 3</span><span class="pstat" style="--pc:#ff8200"><i></i>微博 · 4</span><span class="pstat" style="--pc:#f04142"><i></i>今日头条 · 3</span><span class="pstat" style="--pc:#fb7299"><i></i>哔哩哔哩 · 2</span></div>
+  </div></header>
+  <div class="backline"><a href="../index.html">← 返回当日汇总</a></div>
+  <main>
+    <div class="toolbar">
+      <div class="sortgroup">
+        <button type="button" class="sort-btn active" data-sort="hot">按热度</button>
+        <button type="button" class="sort-btn" data-sort="platform">按平台</button>
+      </div>
+      <button type="button" class="expand-all" data-state="collapsed">展开全部摘要</button>
+    </div>
+    <div class="grid" id="grid">
+        <article class="card" data-hot="1558052.0" data-rank="1" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">1</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 155.8万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E7%88%B6%E4%BA%B2%E5%9C%A8%E5%AE%B6%E9%95%BF%E7%BE%A4%E5%85%AC%E5%BC%80%E5%A4%AB%E5%A6%BB%E7%9F%9B%E7%9B%BE%E8%A2%AB%E8%AE%A4%E5%AE%9A%E5%AE%B6%E6%9A%B4%23" target="_blank" rel="noopener noreferrer">父亲在家长群公开夫妻矛盾被认定家暴</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E7%88%B6%E4%BA%B2%E5%9C%A8%E5%AE%B6%E9%95%BF%E7%BE%A4%E5%85%AC%E5%BC%80%E5%A4%AB%E5%A6%BB%E7%9F%9B%E7%9B%BE%E8%A2%AB%E8%AE%A4%E5%AE%9A%E5%AE%B6%E6%9A%B4%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-1" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-1" hidden>26-07-21 23:22 来自 微博视频号 【#父亲在家长群公开夫妻矛盾被认定家暴#】因夫妻矛…</div>
+        </article>
+        <article class="card" data-hot="7904571.0" data-rank="2" data-platform="百度" style="--c:#2932e1">
+          <div class="card-top">
+            <span class="num">2</span>
+            <span class="chip">百度</span>
+            <span class="hot" title="热度指数">🔥 790.5万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%9E%A9%E6%9C%9B%E7%9A%84%E2%80%9C%E4%BA%BA%E6%B0%91%E5%9F%8E%E5%B8%82%E2%80%9D" target="_blank" rel="noopener noreferrer">习近平瞩望的“人民城市”</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%9E%A9%E6%9C%9B%E7%9A%84%E2%80%9C%E4%BA%BA%E6%B0%91%E5%9F%8E%E5%B8%82%E2%80%9D" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-2" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-2" hidden>在中国大地上，数百座城市星罗棋布，数亿人生活在城镇。城市如何建设、更新，习近平总书记有着许多生动而…</div>
+        </article>
+        <article class="card" data-hot="65613356.0" data-rank="3" data-platform="今日头条" style="--c:#f04142">
+          <div class="card-top">
+            <span class="num">3</span>
+            <span class="chip">今日头条</span>
+            <span class="hot" title="热度指数">🔥 6561.3万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.toutiao.com/trending/7665155080382909998/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227665155080382909998%22%2C%22hot_board_impr_id%22%3A%222026072210335144EAA3C110BB689255EF%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9C%80%E5%90%8E%E4%B8%80%E4%BD%8D%E9%95%BF%E5%BE%81%E5%A5%B3%E7%BA%A2%E5%86%9B%E9%80%9D%E4%B8%96%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7665155080382909998" target="_blank" rel="noopener noreferrer">最后一位长征女红军逝世</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.toutiao.com/trending/7665155080382909998/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227665155080382909998%22%2C%22hot_board_impr_id%22%3A%222026072210335144EAA3C110BB689255EF%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9C%80%E5%90%8E%E4%B8%80%E4%BD%8D%E9%95%BF%E5%BE%81%E5%A5%B3%E7%BA%A2%E5%86%9B%E9%80%9D%E4%B8%96%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7665155080382909998" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-3" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-3" hidden>今日，记者从家属了解到，7月22日凌晨0时30分，全国最后一位长征女红军王全英在医院与世长辞，享年…</div>
+        </article>
+        <article class="card" data-hot="1099296.0" data-rank="4" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">4</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 109.9万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E5%94%AF%E4%B8%80%E9%9D%A2%E6%9C%9D%E8%A5%BF%E7%8F%AD%E7%89%99%E7%9A%84%E9%98%BF%E6%A0%B9%E5%BB%B7%E7%90%83%E5%91%98%23" target="_blank" rel="noopener noreferrer">唯一面朝西班牙的阿根廷球员</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E5%94%AF%E4%B8%80%E9%9D%A2%E6%9C%9D%E8%A5%BF%E7%8F%AD%E7%89%99%E7%9A%84%E9%98%BF%E6%A0%B9%E5%BB%B7%E7%90%83%E5%91%98%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-4" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-4" hidden>裁判将他直接罚下。 被罚下后，帕雷德斯当众落泪。 有视频显示阿根廷助教阿亚拉也打了西班牙队的球员。…</div>
+        </article>
+        <article class="card" data-hot="12970000.0" data-rank="5" data-platform="知乎" style="--c:#0084ff">
+          <div class="card-top">
+            <span class="num">5</span>
+            <span class="chip">知乎</span>
+            <span class="hot" title="热度指数">🔥 1297 万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.zhihu.com/question/2062883128381633703" target="_blank" rel="noopener noreferrer">如何看待网传甘肃 656 分考生被福耀科技大学录取？</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.zhihu.com/question/2062883128381633703" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-5" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-5" hidden>甘肃庄浪一中李晓晨同学以672分的成绩被清华大学录取，董睿卿同学以668分成绩被北大录取，程明同学…</div>
+        </article>
+        <article class="card" data-hot="7809041.0" data-rank="6" data-platform="百度" style="--c:#2932e1">
+          <div class="card-top">
+            <span class="num">6</span>
+            <span class="chip">百度</span>
+            <span class="hot" title="热度指数">🔥 780.9万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.baidu.com/s?wd=%E5%B7%A8%E6%B5%AA%E5%87%BB%E6%B2%89%E6%B8%B8%E8%BD%AE%E6%B8%B8%E5%AE%A2%E6%BC%82%E6%B5%815%E5%B0%8F%E6%97%B6+%E6%9C%89%E4%BA%BA%E5%90%93%E5%90%90" target="_blank" rel="noopener noreferrer">巨浪击沉游轮游客漂流5小时 有人吓吐</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.baidu.com/s?wd=%E5%B7%A8%E6%B5%AA%E5%87%BB%E6%B2%89%E6%B8%B8%E8%BD%AE%E6%B8%B8%E5%AE%A2%E6%BC%82%E6%B5%815%E5%B0%8F%E6%97%B6+%E6%9C%89%E4%BA%BA%E5%90%93%E5%90%90" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-6" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-6" hidden>7月16日，一艘印尼游轮在西努沙登加拉省比马县海域沉没，船上44人搭乘救生筏在海上漂流数小时后获救…</div>
+        </article>
+        <article class="card" data-hot="59369419.0" data-rank="7" data-platform="今日头条" style="--c:#f04142">
+          <div class="card-top">
+            <span class="num">7</span>
+            <span class="chip">今日头条</span>
+            <span class="hot" title="热度指数">🔥 5936.9万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.toutiao.com/trending/7664963780593323563/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227664963780593323563%22%2C%22hot_board_impr_id%22%3A%222026072210335144EAA3C110BB689255EF%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%8F%B2%E5%BE%8B%E5%AE%BE%E4%B8%BA%E4%BD%95%E6%80%BB%E7%B2%BE%E5%87%86%E5%8D%A1%E7%82%B9%E6%8C%91%E8%A1%85%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7664963780593323563" target="_blank" rel="noopener noreferrer">菲律宾为何总精准卡点挑衅</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.toutiao.com/trending/7664963780593323563/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227664963780593323563%22%2C%22hot_board_impr_id%22%3A%222026072210335144EAA3C110BB689255EF%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%8F%B2%E5%BE%8B%E5%AE%BE%E4%B8%BA%E4%BD%95%E6%80%BB%E7%B2%BE%E5%87%86%E5%8D%A1%E7%82%B9%E6%8C%91%E8%A1%85%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7664963780593323563" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-7" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-7" hidden>菲律宾作为南海周边国家，与中国在南海部分岛礁存在主权争议。 2025年初，菲律宾在南海问题上的动作…</div>
+        </article>
+        <article class="card" data-hot="956189.0" data-rank="8" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">8</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 95.6万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E6%A2%A6%E6%83%B3%E5%90%AF%E7%A8%8B%E4%B8%94%E6%AD%8C%E4%B8%94%E8%A1%8C%23" target="_blank" rel="noopener noreferrer">梦想启程且歌且行</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E6%A2%A6%E6%83%B3%E5%90%AF%E7%A8%8B%E4%B8%94%E6%AD%8C%E4%B8%94%E8%A1%8C%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-8" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-8" hidden>一、歌曲《梦想启程》的原唱身份 《梦想启程》由歌手马如龙与安永生共同演唱并首发，两位创作者以充满力…</div>
+        </article>
+        <article class="card" data-hot="3540000.0" data-rank="9" data-platform="知乎" style="--c:#0084ff">
+          <div class="card-top">
+            <span class="num">9</span>
+            <span class="chip">知乎</span>
+            <span class="hot" title="热度指数">🔥 354 万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.zhihu.com/question/2062587249968129781" target="_blank" rel="noopener noreferrer">情侣用AI判断菌子毒性采了10余斤，被本地小孩哥筛选只剩2斤，AI和小孩哥谁的判断更准？为啥会有不同？</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.zhihu.com/question/2062587249968129781" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-9" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-9" hidden>近日，一对来自四川雅安的年轻情侣前往康定市甲根坝镇旅游，由于平日里刷到各类采菌短视频，便想亲身体验…</div>
+        </article>
+        <article class="card" data-hot="2496317.0" data-rank="10" data-platform="哔哩哔哩" style="--c:#fb7299">
+          <div class="card-top">
+            <span class="num">10</span>
+            <span class="chip">哔哩哔哩</span>
+            <span class="hot" title="热度指数">🔥 249.6万播放</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.bilibili.com/video/BV17rKb68EQ7" target="_blank" rel="noopener noreferrer">一条老奶奶</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.bilibili.com/video/BV17rKb68EQ7" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-10" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-10" hidden>「青浦模子」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+        </article>
+        <article class="card" data-hot="7712432.0" data-rank="11" data-platform="百度" style="--c:#2932e1">
+          <div class="card-top">
+            <span class="num">11</span>
+            <span class="chip">百度</span>
+            <span class="hot" title="热度指数">🔥 771.2万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.baidu.com/s?wd=92%E5%B2%81%E6%97%A0%E5%84%BF%E6%97%A0%E5%A5%B3%E8%80%81%E4%BA%BA%E7%A6%BB%E4%B8%96%E7%95%99500%E4%B8%87%E9%81%97%E4%BA%A7" target="_blank" rel="noopener noreferrer">92岁无儿无女老人离世留500万遗产</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.baidu.com/s?wd=92%E5%B2%81%E6%97%A0%E5%84%BF%E6%97%A0%E5%A5%B3%E8%80%81%E4%BA%BA%E7%A6%BB%E4%B8%96%E7%95%99500%E4%B8%87%E9%81%97%E4%BA%A7" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-11" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-11" hidden>上海92岁的顾梅娣老太终身未婚、无儿无女，一辈子极致节俭，默默攒下了近500万元巨额遗产，晚年入住…</div>
+        </article>
+        <article class="card" data-hot="53719672.0" data-rank="12" data-platform="今日头条" style="--c:#f04142">
+          <div class="card-top">
+            <span class="num">12</span>
+            <span class="chip">今日头条</span>
+            <span class="hot" title="热度指数">🔥 5372.0万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.toutiao.com/article/7664780601328714255" target="_blank" rel="noopener noreferrer">世界人工智能大会达成丰硕成果</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.toutiao.com/article/7664780601328714255" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-12" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-12" hidden>央视网消息 （新闻联播）：2026世界人工智能大会7月20日下午在上海落下帷幕，为期四天的大会取得…</div>
+        </article>
+        <article class="card" data-hot="5645396.0" data-rank="13" data-platform="哔哩哔哩" style="--c:#fb7299">
+          <div class="card-top">
+            <span class="num">13</span>
+            <span class="chip">哔哩哔哩</span>
+            <span class="hot" title="热度指数">🔥 564.5万播放</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.bilibili.com/video/BV1h4KU66ENd" target="_blank" rel="noopener noreferrer">树恨你</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.bilibili.com/video/BV1h4KU66ENd" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-13" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-13" hidden>「鲤鱼Ace」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+        </article>
+        <article class="card" data-hot="836768.0" data-rank="14" data-platform="微博" style="--c:#ff8200">
+          <div class="card-top">
+            <span class="num">14</span>
+            <span class="chip">微博</span>
+            <span class="hot" title="热度指数">🔥 83.7万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://s.weibo.com/weibo?q=%23%E6%9B%9D%E8%A9%B9%E5%A7%86%E6%96%AF%E7%AA%81%E7%84%B6%E6%94%B9%E5%8F%98%E6%83%B3%E6%B3%95%23" target="_blank" rel="noopener noreferrer">曝詹姆斯突然改变想法</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://s.weibo.com/weibo?q=%23%E6%9B%9D%E8%A9%B9%E5%A7%86%E6%96%AF%E7%AA%81%E7%84%B6%E6%94%B9%E5%8F%98%E6%83%B3%E6%B3%95%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-14" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-14" hidden>北京时间7月22日，湖人名记麦克米纳明做客《体育中心》节目，探讨詹姆斯何时将宣布新下家。麦克米纳明…</div>
+        </article>
+        <article class="card" data-hot="3000000.0" data-rank="15" data-platform="知乎" style="--c:#0084ff">
+          <div class="card-top">
+            <span class="num">15</span>
+            <span class="chip">知乎</span>
+            <span class="hot" title="热度指数">🔥 300 万</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.zhihu.com/question/2062545559978598939" target="_blank" rel="noopener noreferrer">阿根廷全队球员赛后集体拒绝采访，媒体等待近两小时无果，阿根廷足协或因此受罚，如何看待这一行为？</a>
+          </h3>
+          <div class="card-actions">
+            <a class="read" href="https://www.zhihu.com/question/2062545559978598939" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read sum-btn" data-target="hs-15" aria-expanded="false">展开摘要</button>
+          </div>
+          <div class="summary" id="hs-15" hidden>2026年美加墨世界杯决赛中，阿根廷0∶1不敌西班牙，获得亚军。颁奖典礼结束后，阿根廷全队没有接受…</div>
+        </article>
+        </div>
+  </main>
+  <footer>
+    数据来源：微博 / 百度 / 今日头条 / 知乎 / 哔哩哔哩 公开热榜 · 热度指数为各平台原始热度值 ·
+    点击「阅读原文」跳转对应平台
+  </footer>
+  <script>
+  (function(){
+    var PORDER = ["百度", "知乎", "微博", "今日头条", "哔哩哔哩"];
+    // 单条摘要展开/收起
+    document.addEventListener('click', function(e){
+      var b = e.target.closest('.sum-btn'); if(!b) return;
+      var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+      var open = el.hasAttribute('hidden');
+      if(open){ el.removeAttribute('hidden'); b.textContent='收起摘要'; }
+      else { el.setAttribute('hidden',''); b.textContent='展开摘要'; }
+      b.setAttribute('aria-expanded', String(open));
+    });
+    // 一键展开/收起全部
+    var ea = document.querySelector('.expand-all');
+    if(ea){ ea.addEventListener('click', function(){
+      var collapsed = ea.getAttribute('data-state') === 'collapsed';
+      document.querySelectorAll('.summary').forEach(function(s){
+        if(collapsed) s.removeAttribute('hidden'); else s.setAttribute('hidden','');
+      });
+      document.querySelectorAll('.sum-btn').forEach(function(b){
+        b.textContent = collapsed ? '收起摘要' : '展开摘要';
+        b.setAttribute('aria-expanded', String(collapsed));
+      });
+      ea.setAttribute('data-state', collapsed ? 'expanded' : 'collapsed');
+      ea.textContent = collapsed ? '收起全部摘要' : '展开全部摘要';
+    }); }
+    // 排序切换
+    var grid = document.getElementById('grid');
+    function resort(mode){
+      if(!grid) return;
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+      cards.sort(function(a,b){
+        if(mode==='platform'){
+          var pa=PORDER.indexOf(a.getAttribute('data-platform'));
+          var pb=PORDER.indexOf(b.getAttribute('data-platform'));
+          if(pa!==pb) return pa-pb;
+          return (+a.getAttribute('data-rank')) - (+b.getAttribute('data-rank'));
+        }
+        return (+a.getAttribute('data-rank')) - (+b.getAttribute('data-rank'));
+      });
+      cards.forEach(function(c){ grid.appendChild(c); });
+    }
+    document.querySelectorAll('.sort-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.sort-btn').forEach(function(x){ x.classList.remove('active'); });
+        btn.classList.add('active');
+        resort(btn.getAttribute('data-sort'));
+      });
+    });
+  })();
+  </script>
+</body></html>
