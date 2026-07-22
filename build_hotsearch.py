@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""每日热搜汇总：抓取国内平台实时热榜 → 跨平台归一化合并去重 → 取前 15 条 →
-渲染自包含卡片页面（融入现有站点的 hotsearch 分类）。
+"""每日热搜汇总：抓取国内平台实时热榜 → 每平台取 24 小时内综合排名前 10 →
+按平台分栏渲染自包含卡片页面（融入现有站点的 hotsearch 分类）。
 
 零第三方依赖（仅标准库），风格对齐 build_rss.py。
 
@@ -13,9 +13,9 @@
   哔哩哔哩   https://api.bilibili.com/x/web-interface/popular
 
 配置要点（改这几项即生效，下次运行采用新值）：
-  · 每平台仅抓取榜单前 PER_PLATFORM_LIMIT=10 条；
-  · 微博 / 今日头条接口无描述字段 → 方案1：入选后对其缺摘要条目用标题调 Bing 搜
-    索抓首条结果摘要，得到真实中文摘要（失败则保留兜底文案）；
+  · 抓取各平台【完整热榜，不限条数】；展示时每平台仅取自身综合排名前 PER_PLATFORM_TOP=10 条；
+  · 微博 / 今日头条接口无描述字段 → 方案1：对其缺摘要条目用标题调 Bing 搜索
+    抓首条结果摘要，得到真实中文摘要（失败则保留兜底文案）；
   · 哔哩哔哩摘要字段刻意留空（不取视频简介 desc）。
 
 用法：
@@ -38,16 +38,14 @@ ROOT = Path(__file__).resolve().parent
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 TIMEOUT = 20
-TOP_N = 15            # 汇总保留的热点条数
-PER_PLATFORM_LIMIT = 10   # 每个平台仅抓取榜单前 N 条
+PER_PLATFORM_TOP = 10   # 每平台展示的条数（取该平台综合排名前 N）
 SUMMARY_MAX = 50      # 摘要最大字数
-CROSS_BONUS = 0.18    # 跨平台重复报道的评分加成系数
 ENRICH_TIMEOUT = 10   # 方案1：微博/头条二次抓取（Bing 摘要）超时秒数
 
 CAT = "hotsearch"
 BRAND = "#f43f5e"     # 版块主色（与 build_archive.py 的 CAT_COLORS["hotsearch"] 一致）
 
-# 平台展示名 → 主题色（卡片 chip / 顶部条）
+# 平台展示名 → 主题色（卡片 chip / 顶部条 / 分栏标题）
 PLATFORM_COLORS = {
     "微博": "#ff8200",
     "百度": "#2932e1",
@@ -55,15 +53,7 @@ PLATFORM_COLORS = {
     "知乎": "#0084ff",
     "哔哩哔哩": "#fb7299",
 }
-# 平台权威度权重（影响跨平台排序，可按需调整）
-PLATFORM_WEIGHTS = {
-    "微博": 1.15,
-    "百度": 1.10,
-    "今日头条": 1.05,
-    "知乎": 1.0,
-    "哔哩哔哩": 0.9,
-}
-# 「按平台」排序时的平台先后顺序（与配置覆盖顺序一致：百度/知乎/微博/今日头条/哔哩哔哩）
+# 分栏展示时的平台先后顺序（与配置覆盖顺序一致：百度/知乎/微博/今日头条/哔哩哔哩）
 PLATFORM_ORDER = ["百度", "知乎", "微博", "今日头条", "哔哩哔哩"]
 
 
@@ -252,114 +242,26 @@ FETCHERS = [
 ]
 
 
-# ==================== 归一化 · 合并 · 排名 ====================
-def _norm_title(t):
-    return re.sub(r"[\s\W_#]+", "", t or "").lower()
-
-
-def normalize_and_merge(platform_items):
-    """跨平台 rank-based 归一化 + 标题去重合并，返回按分数降序的列表。"""
-    scored = []
-    for source, items in platform_items.items():
-        n = len(items)
-        if n == 0:
-            continue
-        w = PLATFORM_WEIGHTS.get(source, 1.0)
-        for rank, it in enumerate(items):
-            norm = (n - rank) / n * 100.0     # 榜首≈100，榜尾接近 0
-            row = dict(it)
-            row["score"] = norm * w
-            row["rank_in_source"] = rank + 1
-            scored.append(row)
-
-    merged = {}
-    order = []
-    for it in scored:
-        key = _norm_title(it["title"])
-        if not key:
-            continue
-        found = None
-        for k in merged:
-            # 完全相同，或较长标题相互包含 -> 视为同一热点
-            if k == key or (min(len(k), len(key)) >= 6 and (k in key or key in k)):
-                found = k
-                break
-        if found:
-            m = merged[found]
-            if it["source"] not in m["sources"]:
-                m["sources"].append(it["source"])
-            # 跨平台重复 -> 取较高分并给加成
-            m["score"] = max(m["score"], it["score"]) + it["score"] * CROSS_BONUS
-            if not (m.get("summary") or "").strip() and (it.get("summary") or "").strip():
-                m["summary"] = it["summary"]
-        else:
-            row = dict(it)
-            row["sources"] = [it["source"]]
-            merged[key] = row
-            order.append(key)
-
-    result = [merged[k] for k in order]
-    result.sort(key=lambda x: x["score"], reverse=True)
-    return result
-
+# ==================== 每平台取自身综合排名前 N ====================
+# 按平台分栏展示：抓取各平台【完整热榜，不限条数】后，直接取每个平台返回顺序
+# （即其自身综合排名）的前 PER_PLATFORM_TOP 条，不做跨平台合并。
+# 微博 / 今日头条经方案1 补真实摘要；哔哩哔哩摘要留空。
 
 # 平台的单字/状态标签，不适合当摘要
 _STATUS_LABELS = {"新", "热", "沸", "爆", "荐", "商", "hot", "new", "boom", "recommend"}
 
 
-def ensure_diversity(ranked, top_n=TOP_N, min_per=2):
-    """保障平台多样性：每个有数据的平台在入选结果中至少出现 min_per 条。
-
-    从超额平台里剔除分数最低者，替换为缺席平台的最高分条目，保持总数不变。
-    """
-    if len(ranked) <= top_n:
-        return list(ranked)
-    sel = list(ranked[:top_n])
-    sel_ids = {id(x) for x in sel}
-
-    avail = {}
-    for it in ranked:
-        avail.setdefault(it["source"], []).append(it)
-
-    def counts():
-        c = {}
-        for it in sel:
-            c[it["source"]] = c.get(it["source"], 0) + 1
-        return c
-
-    for src, items in avail.items():
-        target = min(min_per, len(items))
-        while counts().get(src, 0) < target:
-            cand = next((x for x in items if id(x) not in sel_ids), None)
-            if cand is None:
-                break
-            cnts = counts()
-            removable = [x for x in sel
-                         if x["source"] != src
-                         and cnts.get(x["source"], 0) > min(min_per, len(avail.get(x["source"], [])))]
-            if not removable:
-                break
-            removable.sort(key=lambda x: x["score"])
-            worst = removable[0]
-            sel.remove(worst); sel_ids.discard(id(worst))
-            sel.append(cand); sel_ids.add(id(cand))
-
-    sel.sort(key=lambda x: x["score"], reverse=True)
-    return sel
-
-
-def finalize(items):
-    """截断/兜底摘要，赋排名序号。"""
+def finalize_section(items, source):
+    """截断/兜底摘要，赋该平台内排名序号（1..N）。"""
     out = []
-    for i, it in enumerate(items[:TOP_N], 1):
+    for i, it in enumerate(items[:PER_PLATFORM_TOP], 1):
         summary = _clean(it.get("summary") or "")
         if not summary:
             label = (it.get("label") or "").strip()
-            src = it["source"]
             if label and label.lower() not in _STATUS_LABELS and len(label) >= 2:
-                summary = _clean(f"「{label}」相关话题，正在{src}热榜引发热议，点击查看详情")
+                summary = _clean(f"「{label}」相关话题，正在{source}热榜引发热议，点击查看详情")
             else:
-                summary = _clean(f"该话题正在{src}热榜引发广泛关注，点击查看完整内容")
+                summary = _clean(f"该话题正在{source}热榜引发广泛关注，点击查看完整内容")
         out.append({
             "rank": i,
             "title": it["title"],
@@ -367,16 +269,14 @@ def finalize(items):
             "url": it.get("url") or "",
             "hot": it.get("hot", 0),
             "hot_display": it.get("hot_display") or "—",
-            "source": it["source"],
-            "sources": it.get("sources", [it["source"]]),
-            "score": round(it.get("score", 0), 2),
+            "source": source,
         })
     return out
 
 
 # ==================== 方案1：微博/头条二次抓取真实摘要 ====================
 # 微博、今日头条的热榜接口只返回标题 + 热度，没有描述字段。
-# 方案1：对最终入选结果中这两家、且仍缺摘要的条目，用标题调一次 Bing 搜索，
+# 方案1：对这两家、且仍缺摘要的条目，用标题调一次 Bing 搜索，
 # 抓取首条结果摘要作为真实中文摘要（替代兜底文案）。抓取失败则保留兜底文案。
 def _bing_snippet(query, n=SUMMARY_MAX):
     """用标题调 Bing 搜索，返回首条结果摘要（已截断/去噪）。失败返回空串。"""
@@ -424,8 +324,8 @@ def _bj_now():
     return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
 
 
-def render_html(date, items, per_platform):
-    total = len(items)
+def render_html(date, sections):
+    total = sum(len(s["items"]) for s in sections)
     now = _bj_now()
     win_start = now - datetime.timedelta(hours=24)
     gen_human = now.strftime("%Y-%m-%d %H:%M")
@@ -434,52 +334,59 @@ def render_html(date, items, per_platform):
 
     # 平台统计 chips
     plat_stats = ""
-    for p in PLATFORM_ORDER:
-        c = per_platform.get(p, 0)
-        if c <= 0:
-            continue
+    for s in sections:
+        p = s["source"]
         col = PLATFORM_COLORS.get(p, "#64748b")
         plat_stats += (f'<span class="pstat" style="--pc:{col}">'
-                       f'<i></i>{html.escape(p)} · {c}</span>')
+                       f'<i></i>{html.escape(p)} · {len(s["items"])}</span>')
 
     if total == 0:
         body = ('<div class="empty">暂未抓取到热搜数据——可能是各平台源暂时不可达。'
                 '请稍后重试或检查网络。</div>')
     else:
-        cards = ""
-        for it in items:
-            pcolor = PLATFORM_COLORS.get(it["source"], "#64748b")
-            title = html.escape(it["title"])
-            url = html.escape(it["url"] or "#")
-            summary = html.escape(it["summary"])
-            src = html.escape(it["source"])
-            multi = ""
-            if len(it["sources"]) > 1:
-                others = [s for s in it["sources"] if s != it["source"]]
-                if others:
-                    multi = f' <span class="multi">+{len(others)}</span>'
-            hot_disp = html.escape(it["hot_display"])
-            rank = it["rank"]
-            cards += f'''
-        <article class="card" data-hot="{it['hot']}" data-rank="{rank}" data-platform="{html.escape(it['source'])}" style="--c:{pcolor}">
-          <div class="card-top">
-            <span class="num">{rank}</span>
-            <span class="chip">{src}{multi}</span>
-            <span class="hot" title="热度指数">🔥 {hot_disp}</span>
+        gid = 0
+        sections_html = ""
+        for s in sections:
+            p = s["source"]
+            pcolor = PLATFORM_COLORS.get(p, "#64748b")
+            cards = ""
+            for it in s["items"]:
+                gid += 1
+                title = html.escape(it["title"])
+                url = html.escape(it["url"] or "#")
+                summary = html.escape(it["summary"])
+                rank = it["rank"]
+                hot_disp = html.escape(it["hot_display"])
+                cards += f'''
+          <article class="card" data-hot="{it['hot']}" data-rank="{rank}" data-platform="{html.escape(p)}" style="--c:{pcolor}">
+            <div class="card-top">
+              <span class="num">{rank}</span>
+              <span class="chip">{html.escape(p)}</span>
+              <span class="hot" title="热度指数">🔥 {hot_disp}</span>
+            </div>
+            <h3 class="card-title">
+              <a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="{url}" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-{gid}" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-{gid}" hidden>{summary}</div>
+          </article>'''
+            sections_html += f'''
+        <section class="psec" data-platform="{html.escape(p)}" style="--c:{pcolor}">
+          <div class="psec-h">
+            <span class="dot"></span>{html.escape(p)} 热榜
+            <span class="psec-count">TOP {len(s['items'])}</span>
           </div>
-          <h3 class="card-title">
-            <a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>
-          </h3>
-          <div class="card-actions">
-            <a class="read" href="{url}" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
-            <button type="button" class="read sum-btn" data-target="hs-{rank}" aria-expanded="false">展开摘要</button>
+          <div class="grid">{cards}
           </div>
-          <div class="summary" id="hs-{rank}" hidden>{summary}</div>
-        </article>'''
-        body = f'<div class="grid" id="grid">{cards}\n        </div>'
+        </section>'''
+        body = f'<div id="wrap">{sections_html}\n        </div>'
 
-    desc = (f"{date} 每日热搜汇总：聚合微博、百度、今日头条、知乎、哔哩哔哩等平台，"
-            f"精选前 {total} 条热点，含热度指数、来源与原文链接。")
+    nplat = len(sections)
+    desc = (f"{date} 每日热搜汇总：分 {nplat} 个平台各取 24 小时内综合排名前 {PER_PLATFORM_TOP}，"
+            f"共 {total} 条热点，含热度指数、来源与原文链接。")
 
     return f'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -528,6 +435,15 @@ def render_html(date, items, per_platform):
       border-radius:11px; padding:8px 15px; transition:.15s; }}
   .expand-all:hover {{ background:var(--brand); color:#fff; }}
 
+  .psec {{ margin-bottom:28px; }}
+  .psec-h {{ display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;
+      color:var(--ink); margin:0 0 14px; padding-left:12px; border-left:5px solid var(--c); }}
+  .psec-h .dot {{ width:10px; height:10px; border-radius:50%; background:var(--c); display:inline-block; }}
+  .psec-count {{ font-size:12.5px; font-weight:700; color:var(--muted);
+      background:#eef0f6; border-radius:999px; padding:2px 10px; }}
+  #wrap.flat .psec {{ margin-bottom:0; }}
+  #wrap.flat .psec-h {{ display:none; }}
+
   .grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }}
   .card {{ position:relative; background:var(--card); border:1px solid var(--line);
       border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:11px;
@@ -542,7 +458,6 @@ def render_html(date, items, per_platform):
   .chip {{ font-size:12px; font-weight:700; color:var(--c);
       background:color-mix(in srgb,var(--c) 12%,#fff); border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
       border-radius:999px; padding:3px 10px; }}
-  .chip .multi {{ opacity:.7; font-weight:600; }}
   .hot {{ margin-left:auto; font-size:12.5px; font-weight:800; color:#c2410c;
       background:#fff7ed; border:1px solid #fed7aa; border-radius:999px; padding:3px 10px; white-space:nowrap; }}
   .card-title {{ margin:0; font-size:16.5px; font-weight:750; line-height:1.42; }}
@@ -570,28 +485,27 @@ def render_html(date, items, per_platform):
 <body>
   <header class="hero"><div class="hero-inner">
     <div class="kicker">🔥 每日热搜汇总</div>
-    <h1>{date_human} · 全网热点 TOP {total}</h1>
-    <div class="sub">统计范围 <b>{range_human}</b> · 更新于北京时间 <b>{gen_human}</b> · 聚合 {len([p for p in PLATFORM_ORDER if per_platform.get(p,0)>0])} 个平台</div>
+    <h1>{date_human} · 共 {total} 条热点</h1>
+    <div class="sub">统计范围 <b>{range_human}</b> · 更新于北京时间 <b>{gen_human}</b> · 聚合 {nplat} 个平台，每平台各取综合排名前 {PER_PLATFORM_TOP}</div>
     <div class="pstats">{plat_stats}</div>
   </div></header>
   <div class="backline"><a href="../index.html">← 返回当日汇总</a></div>
   <main>
     <div class="toolbar">
       <div class="sortgroup">
-        <button type="button" class="sort-btn active" data-sort="hot">按热度</button>
-        <button type="button" class="sort-btn" data-sort="platform">按平台</button>
+        <button type="button" class="sort-btn active" data-view="section">分栏查看</button>
+        <button type="button" class="sort-btn" data-view="flat">平铺全部</button>
       </div>
       <button type="button" class="expand-all" data-state="collapsed">展开全部摘要</button>
     </div>
     {body}
   </main>
   <footer>
-    数据来源：微博 / 百度 / 今日头条 / 知乎 / 哔哩哔哩 公开热榜 · 热度指数为各平台原始热度值 ·
+    数据来源：微博 / 百度 / 今日头条 / 知乎 / 哔哩哔哩 公开热榜 · 每平台展示其 24 小时内综合排名前 {PER_PLATFORM_TOP} 条 ·
     点击「阅读原文」跳转对应平台
   </footer>
   <script>
   (function(){{
-    var PORDER = {json.dumps(PLATFORM_ORDER, ensure_ascii=False)};
     // 单条摘要展开/收起
     document.addEventListener('click', function(e){{
       var b = e.target.closest('.sum-btn'); if(!b) return;
@@ -615,27 +529,13 @@ def render_html(date, items, per_platform):
       ea.setAttribute('data-state', collapsed ? 'expanded' : 'collapsed');
       ea.textContent = collapsed ? '收起全部摘要' : '展开全部摘要';
     }}); }}
-    // 排序切换
-    var grid = document.getElementById('grid');
-    function resort(mode){{
-      if(!grid) return;
-      var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
-      cards.sort(function(a,b){{
-        if(mode==='platform'){{
-          var pa=PORDER.indexOf(a.getAttribute('data-platform'));
-          var pb=PORDER.indexOf(b.getAttribute('data-platform'));
-          if(pa!==pb) return pa-pb;
-          return (+a.getAttribute('data-rank')) - (+b.getAttribute('data-rank'));
-        }}
-        return (+a.getAttribute('data-rank')) - (+b.getAttribute('data-rank'));
-      }});
-      cards.forEach(function(c){{ grid.appendChild(c); }});
-    }}
+    // 分栏 / 平铺 切换
+    var wrap = document.getElementById('wrap');
     document.querySelectorAll('.sort-btn').forEach(function(btn){{
       btn.addEventListener('click', function(){{
         document.querySelectorAll('.sort-btn').forEach(function(x){{ x.classList.remove('active'); }});
         btn.classList.add('active');
-        resort(btn.getAttribute('data-sort'));
+        if(wrap) wrap.classList.toggle('flat', btn.getAttribute('data-view') === 'flat');
       }});
     }});
   }})();
@@ -650,42 +550,57 @@ def main():
     platform_items = {}
     for name, fn in FETCHERS:
         try:
-            items = fn()[:PER_PLATFORM_LIMIT]   # 每个平台仅取榜单前 N 条
+            items = fn()                       # 抓取各平台【完整热榜，不限条数】
             platform_items[name] = items
-            print(f"  {name}: {len(items)} 条（上限 {PER_PLATFORM_LIMIT}）")
+            print(f"  {name}: 抓到 {len(items)} 条")
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
                 OSError, ValueError, KeyError) as e:
             platform_items[name] = []
             print(f"  [跳过] {name}: {e}")
 
-    merged = normalize_and_merge(platform_items)
-    diversified = ensure_diversity(merged, TOP_N, min_per=2)
-    diversified = enrich_scheme1(diversified)   # 方案1：微博/头条补真实摘要
-    items = finalize(diversified)
+    # 每平台取自身综合排名前 PER_PLATFORM_TOP，依次分栏
+    sections = []
+    for name in PLATFORM_ORDER:
+        items = platform_items.get(name, [])
+        if not items:
+            continue
+        # 平台内轻量去重（避免同平台重复条目）
+        dedup = []
+        keys = set()
+        for it in items:
+            k = re.sub(r"[\s\W_#]+", "", it.get("title") or "").lower()
+            if k and k in keys:
+                continue
+            keys.add(k)
+            dedup.append(it)
+        top = dedup[:PER_PLATFORM_TOP]
+        if not top:
+            continue
+        top = enrich_scheme1(top)             # 方案1：微博/头条补真实摘要
+        items_out = finalize_section(top, name)
+        sections.append({"source": name, "items": items_out})
 
-    # 统计入选条目的各平台数（按主来源计）
-    per_platform = {}
-    for it in items:
-        per_platform[it["source"]] = per_platform.get(it["source"], 0) + 1
+    total = sum(len(s["items"]) for s in sections)
+    per_platform = {s["source"]: len(s["items"]) for s in sections}
 
     # 写页面
     out_dir = ROOT / date / CAT
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{CAT}-{date}.html"
-    out.write_text(render_html(date, items, per_platform), encoding="utf-8")
-    print(f"WROTE {out}  ({len(items)} 条热点)")
+    out.write_text(render_html(date, sections), encoding="utf-8")
+    print(f"WROTE {out}  ({total} 条热点 / {len(sections)} 平台)")
 
     # 存档 JSON（便于复查 / 重渲染）
     arch_dir = ROOT / "summaries" / "hotsearch"
     arch_dir.mkdir(parents=True, exist_ok=True)
     (arch_dir / f"{date}.json").write_text(
         json.dumps({"date": date, "generated_at": _bj_now().isoformat(),
-                    "items": items, "per_platform": per_platform},
+                    "total": total, "sections": sections, "per_platform": per_platform},
                    ensure_ascii=False, indent=2),
         encoding="utf-8")
     print(f"WROTE {arch_dir / (date + '.json')}")
-    for p in PLATFORM_ORDER:
-        print(f"  入选 {p}: {per_platform.get(p, 0)}")
+    for s in sections:
+        print(f"  {s['source']}: {len(s['items'])}")
 
 
 if __name__ == "__main__":
