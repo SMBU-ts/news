@@ -1,0 +1,862 @@
+[
+  {
+    "url": "https://blog.jimgrey.net/2026/07/21/its-a-shame-whats-happened-to-radio-3/",
+    "title": "It's a shame what's happened to radio",
+    "source": "Hacker News",
+    "date": "2026-07-22 07:33",
+    "category": "tech",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.getcomputable.com/",
+    "title": "Show HN: Computable – Buy, sell, and redeem GPU for the exact weeks you want",
+    "source": "Hacker News",
+    "date": "2026-07-22 05:48",
+    "category": "tech",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://support.apple.com/guide/certifications/apple-private-cloud-compute-soc-3-audit-apc95a31b9d8/web",
+    "title": "Apple Private Cloud Compute SoC 3 audit reports",
+    "source": "Hacker News",
+    "date": "2026-07-22 01:58",
+    "category": "tech",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git",
+    "title": "Jack Dorsey launches Buzz to combine team chat, AI agents and Git hosting",
+    "source": "Hacker News",
+    "date": "2026-07-22 01:14",
+    "category": "tech",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://apnews.com/article/ai-anthropic-copyright-settlement-claude-books-bartz-74b140444023898aeba8579b6e9f0d63",
+    "title": "Judge approves $1.5B Anthropic settlement for pirated books used to train Claude",
+    "source": "Hacker News",
+    "date": "2026-07-22 03:04",
+    "category": "tech",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://freeink.org/",
+    "title": "FreeInk: Open ecosystem for e-readers",
+    "source": "Hacker News",
+    "date": "2026-07-22 02:39",
+    "category": "tech",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/",
+    "title": "A digestion of the Jacobian conjecture counterexample",
+    "source": "Hacker News",
+    "date": "2026-07-22 05:09",
+    "category": "tech",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.techradar.com/vpn/vpn-privacy-security/vpns-are-lawful-technical-tools-says-eu-court-in-landmark-anne-frank-copyright-ruling",
+    "title": "'VPNs are lawful technical tools,' says EU Court in landmark copyright ruling",
+    "source": "Hacker News",
+    "date": "2026-07-22 03:43",
+    "category": "tech",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://ads.openai.com/",
+    "title": "Advertise in ChatGPT",
+    "source": "Hacker News",
+    "date": "2026-07-22 02:58",
+    "category": "tech",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://buildkite.engineering/how-a-flaky-test-exposed-a-redis-use-after-free/",
+    "title": "A flaky test exposed a Redis client use-after-free",
+    "source": "Hacker News",
+    "date": "2026-07-22 08:27",
+    "category": "tech",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.tryai.dev/blog/ai-drawing-arena-colored-pencils-claude-gpt-grok",
+    "title": "\"Drawing\" the Mona Lisa with GPT-5.6, Claude, Gemini, and Grok",
+    "source": "Hacker News",
+    "date": "2026-07-22 05:13",
+    "category": "tech",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.aventos.dev/our-process?view=blog",
+    "title": "How an AI Anime Is Created",
+    "source": "Hacker News",
+    "date": "2026-07-22 08:53",
+    "category": "tech",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "http://hintjens.com/blog:99",
+    "title": "Ten Steps Towards Happiness",
+    "source": "Hacker News",
+    "date": "2026-07-22 09:17",
+    "category": "tech",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "title": "OpenAI and Hugging Face address security incident during model evaluation",
+    "source": "Hacker News",
+    "date": "2026-07-22 04:09",
+    "category": "tech",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://fireworks.ai/blog/kimik3-fable",
+    "title": "Kimi K3 Is Competitive with Fable; Kimi K3 and Fable Is SoTA",
+    "source": "Hacker News",
+    "date": "2026-07-22 06:35",
+    "category": "tech",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.theverge.com/ai-artificial-intelligence/968988/openai-hugging-face-hack-ai",
+    "title": "OpenAI says it accidentally hacked Hugging Face with a new AI system",
+    "source": "The Verge",
+    "date": "2026-07-22 06:00",
+    "category": "tech",
+    "rawfile": "016.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.qbitai.com/2026/07/456178.html",
+    "title": "酷哇科技亮相WAIC 2026，解密行业首个双层智能体世界模型",
+    "source": "量子位",
+    "date": "2026-07-22 09:46",
+    "category": "tech",
+    "rawfile": "017.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.tmtpost.com/8074772.html",
+    "title": "被误伤的A股：韧性、预期与底气",
+    "source": "钛媒体",
+    "date": "2026-07-22 10:17",
+    "category": "tech",
+    "rawfile": "018.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://36kr.com/p/3905042192189318?f=rss",
+    "title": "10秒就能抽 IPhone 17 Pro！36氪企业全情报小程序福利抽奖来了！",
+    "source": "36氪",
+    "date": "时间未知",
+    "category": "tech",
+    "rawfile": "019.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://sspai.com/post/112597",
+    "title": "派早报：Google 推出 Gemini 3.6 Flash、Unity 7 引擎发布等",
+    "source": "少数派",
+    "date": "2026-07-22 08:30",
+    "category": "tech",
+    "rawfile": "020.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/21/new-jersey-deli-fraud-james-patten-sentenced.html",
+    "title": "$100M New Jersey deli fraudster James Patten sentenced to 21 months in prison",
+    "source": "CNBC",
+    "date": "2026-07-22 10:04",
+    "category": "finance",
+    "rawfile": "021.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/22/japanese-ai-winners-toilets-fiberglass-and-seasoning.html",
+    "title": "These Japanese AI winners don’t make chips. They make toilets, glass fiber and seasoning",
+    "source": "CNBC",
+    "date": "2026-07-22 10:25",
+    "category": "finance",
+    "rawfile": "022.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://seekingalpha.com/news/4616278-east-west-projects-2026-loan-growth-of-6-percent-to-8-percent-as-it-raises-nii-growth-outlook?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "title": "East West projects 2026 loan growth of 6% to 8% as it raises NII growth outlook to 7% to 9%",
+    "source": "Seeking Alpha",
+    "date": "2026-07-22 09:16",
+    "category": "finance",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/21/google-gemini-flash-ai-mythos-rival.html",
+    "title": "Google expands Gemini lineup with cheaper models and new Mythos rival",
+    "source": "CNBC",
+    "date": "2026-07-22 10:21",
+    "category": "finance",
+    "rawfile": "024.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/22/japan-june-exports-trade-data.html",
+    "title": "Japan exports and imports grow at fastest pace in June since November 2022, beating estimates",
+    "source": "CNBC",
+    "date": "2026-07-22 08:36",
+    "category": "finance",
+    "rawfile": "025.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/22/trump-generic-drugs-tariffs-medicine-trade-.html",
+    "title": "Trump plans steep tariffs on generic drugs starting in 2028 to spur U.S. production",
+    "source": "CNBC",
+    "date": "2026-07-22 09:17",
+    "category": "finance",
+    "rawfile": "026.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/20/trump-netanyahu-arrest-mamdani-new-york-israel.html",
+    "title": "Mamdani says New York lacks authority to arrest Netanyahu, calls him ‘war criminal’",
+    "source": "CNBC",
+    "date": "2026-07-22 09:20",
+    "category": "finance",
+    "rawfile": "027.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://seekingalpha.com/news/4616276-hancock-whitney-outlines-2026-outlook-with-one-florida-including-8-percentminus-9-percent-net?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "title": "Hancock Whitney outlines 2026 outlook with One Florida, including 8%-9% net interest income growth",
+    "source": "Seeking Alpha",
+    "date": "2026-07-22 07:44",
+    "category": "finance",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/22/sonys-playstation-disc-decision-threatens-a-7-billion-resale-market-.html",
+    "title": "Sony’s 'ironic' PlayStation disc decision upends gamer conventions and threatens a $7 billion resale market",
+    "source": "CNBC",
+    "date": "2026-07-22 08:30",
+    "category": "finance",
+    "rawfile": "029.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/22/axiom-aiosciences-ipo-listing-hong-kong.html",
+    "title": "Wall Street can wait: Why one U.S. biotech firm is listing in Hong Kong first",
+    "source": "CNBC",
+    "date": "2026-07-22 08:15",
+    "category": "finance",
+    "rawfile": "030.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://seekingalpha.com/news/4616277-coal-group-urges-trump-administration-to-provide-financing-help?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "title": "Coal group urges Trump administration to provide financing help",
+    "source": "Seeking Alpha",
+    "date": "2026-07-22 08:19",
+    "category": "finance",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/21/nike-to-cut-off-thousands-of-online-distributors-in-china.html",
+    "title": "Nike to cut off thousands of online distributors in China, restructure digital footprint",
+    "source": "CNBC",
+    "date": "2026-07-22 08:00",
+    "category": "finance",
+    "rawfile": "032.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.cnbc.com/2026/07/21/prediction-market-kalshi-polymarket-casino-gaming-lobby-congress.html",
+    "title": "Prediction markets and their opponents are spending more to influence Congress in 2026",
+    "source": "CNBC",
+    "date": "2026-07-22 06:38",
+    "category": "finance",
+    "rawfile": "033.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://seekingalpha.com/news/4616274-hanmi-outlines-low-to-mid-single-digit-2026-loan-growth-while-targeting-stable-net-interest?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "title": "Hanmi outlines low to mid-single-digit 2026 loan growth while targeting stable net interest margin",
+    "source": "Seeking Alpha",
+    "date": "2026-07-22 07:24",
+    "category": "finance",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://seekingalpha.com/news/4616275-brookfield-companies-unveil-simplification-plans?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "title": "Brookfield companies unveil simplification plans",
+    "source": "Seeking Alpha",
+    "date": "2026-07-22 08:08",
+    "category": "finance",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/europe/20260722-fast-moving-wildfire-forces-hundreds-of-evacuations-in-southern-france",
+    "title": "Fast-moving wildfire forces hundreds of evacuations in southern France",
+    "source": "France 24",
+    "date": "2026-07-22 10:25",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/americas/20260722-trump-announces-100-tariffs-on-imported-generic-pharmaceutical-drugs",
+    "title": "Trump announces 100% tariffs on imported generic pharmaceutical drugs",
+    "source": "France 24",
+    "date": "2026-07-22 09:38",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/middle-east/20260722-middle-east-live-us-launches-11th-night-of-iran-strikes-as-diplomacy-falters",
+    "title": "Middle East live: US launches 11th night of Iran strikes as diplomacy falters",
+    "source": "France 24",
+    "date": "2026-07-22 09:01",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.npr.org/2026/07/21/g-s1-134849/ukraine-military-chief-fired-protests",
+    "title": "Ukraine's Zelenskyy fires his military chief after protests and names a new one",
+    "source": "NPR",
+    "date": "2026-07-22 05:30",
+    "category": "world",
+    "rawfile": "039.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://news.sky.com/story/france-approves-blanket-social-media-ban-for-under-15s-13565790",
+    "title": "France approves blanket social media ban for under-15s",
+    "source": "Sky News World",
+    "date": "2026-07-22 03:53",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.foxnews.com/world/canada-reportedly-scraps-joint-bridge-celebration-us-trump-renews-tariff-threat",
+    "title": "Canada reportedly scraps joint bridge celebration with US after Trump renews tariff threat",
+    "source": "Fox News World",
+    "date": "2026-07-22 09:58",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://news.sky.com/story/why-zelenskyy-has-sacked-ukraines-armed-forces-chief-13565831",
+    "title": "Zelenskyy left with little choice but to sack his army chief - and it's a spectacular fall from grace",
+    "source": "Sky News World",
+    "date": "2026-07-22 08:16",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/middle-east/20260721-trump-says-us-not-finished-attacking-iran-as-conflict-widens",
+    "title": "Trump says US 'not finished' attacking Iran as conflict widens",
+    "source": "France 24",
+    "date": "2026-07-22 07:22",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.npr.org/2026/07/21/nx-s1-5901973/former-canadian-finance-minister-on-trumps-tariff-plan-and-its-impact",
+    "title": "Former Canadian finance minister on Trump's tariff plan and its impact",
+    "source": "NPR",
+    "date": "2026-07-22 03:57",
+    "category": "world",
+    "rawfile": "044.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.npr.org/2026/07/21/nx-s1-5902228/nicaragua-ortega-no-elections",
+    "title": "Nicaragua's President Ortega says no more elections, extending his 20-year rule",
+    "source": "NPR",
+    "date": "2026-07-22 03:10",
+    "category": "world",
+    "rawfile": "045.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.france24.com/en/ukraine-s-zelensky-fires-military-chief-after-protests-and-names-a-replacement",
+    "title": "Ukraine's Zelensky fires military chief after protests and names a replacement",
+    "source": "France 24",
+    "date": "2026-07-22 04:12",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/trump-says-will-be-hitting-iran-s-pickaxe-mountain-nuclear-complex-pretty-soon",
+    "title": "Trump says will be hitting Iran's Pickaxe Mountain nuclear complex 'pretty soon'",
+    "source": "France 24",
+    "date": "2026-07-22 05:47",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/french-parliament-backs-social-media-ban-for-under-15s-in-eu-first",
+    "title": "French parliament backs social media ban for under-15s in EU first",
+    "source": "France 24",
+    "date": "2026-07-22 02:23",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/canada-evaluating-all-options-after-fresh-us-tariffs-threat",
+    "title": "Canada evaluating 'all options' after fresh US tariffs threat",
+    "source": "France 24",
+    "date": "2026-07-22 05:49",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/europe/20260721-zelensky-fires-ukraine-army-chief-oleksandr-syrsky",
+    "title": "🔴 Zelensky fires Ukraine army chief Oleksandr Syrsky",
+    "source": "France 24",
+    "date": "2026-07-22 04:00",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.npr.org/2026/07/21/g-s1-134722/indias-youth-led-cockroach-movement-vows-to-continue-protest-after-police-crackdown",
+    "title": "India's youth-led Cockroach movement vows to continue protest after police crackdown",
+    "source": "NPR",
+    "date": "2026-07-21 20:00",
+    "category": "world",
+    "rawfile": "051.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.france24.com/en/zelensky-fires-army-chief-oleksandr-syrsky-a-victory-for-protestors",
+    "title": "Zelensky fires army chief Oleksandr Syrsky, ‌a 'victory for protestors'",
+    "source": "France 24",
+    "date": "2026-07-22 04:22",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/senegal-u-turns-to-back-ex-president-sall-to-lead-un",
+    "title": "Senegal u-turns to back ex-president Sall to lead UN",
+    "source": "France 24",
+    "date": "2026-07-22 04:16",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/video/20260721-joseph-aoun-in-washington-bilal-saab-firmly-believes-this-meeting-couldn-t-have-gone-any-better",
+    "title": "Joseph Aoun in Washington: Bilal Saab firmly believes 'this meeting couldn't have gone any better'",
+    "source": "France 24",
+    "date": "2026-07-22 03:15",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.france24.com/en/video/20260721-it-has-to-work-france-nears-approval-of-under-15-social-media-ban",
+    "title": "'It has to work': France nears approval of under-15 social media ban",
+    "source": "France 24",
+    "date": "2026-07-21 23:38",
+    "category": "world",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/EITf-SrP5o62Ljp7UGzPVw",
+    "title": "小红书 dots 模型获 IMO 2026 满分金牌",
+    "source": "公众号：小红书技术（dots.llm）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "056.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://qwen.ai/blog?id=qwen-image-3.0",
+    "title": "通义千问发布 Qwen-Image-3.0 图像生成模型，核心关键词为“实”",
+    "source": "Qwen：Blog Retrieval（API）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro",
+    "title": "Google DeepMind 发布三款新 Gemini 模型，但未包含 3.5 Pro",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "058.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://deepmind.google/blog/introducing-gemini-36-flash-35-flash-lite-and-35-flash-cyber",
+    "title": "Google DeepMind 发布 Gemini 3.6 Flash、3.5 Flash-Lite 与 3.5 Flash Cyber 三款新模型",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://ads.openai.com/",
+    "title": "OpenAI 在 ChatGPT 中正式推出广告服务",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://x.com/OpenRouter/status/2079686435247186015",
+    "title": "OpenRouter 上线 Gemini 3.6 Flash 与 3.5 Flash-Lite",
+    "source": "X：OpenRouter (@OpenRouter)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://x.com/claudeai/status/2079595988998554047",
+    "title": "Claude Cowork 新增技能录制功能",
+    "source": "X：Claude (@claudeai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/upwDQ_6ZfmszBUcRQjR_Dg",
+    "title": "腾讯混元推出Hyra-1.0递归自我改进研究智能体",
+    "source": "公众号：腾讯混元",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "063.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.ai/news/introducing-outlook-addin",
+    "title": "xAI 推出 Grok for Outlook 加载项",
+    "source": "xAI：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix",
+    "title": "Google 推出 Tunix：基于 JAX 的高吞吐智能体后训练库",
+    "source": "Google Developers Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://openai.com/index/introducing-chatgpt-small-business-program",
+    "title": "OpenAI 推出 ChatGPT for small business 计划",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "066.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/opencode/status/2079631772770242808",
+    "title": "Laguna S 2.1 免费开源上线 OpenCode",
+    "source": "X：opencode (@opencode)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://x.com/OpenAI/status/2079658951264920020",
+    "title": "OpenAI 与 HuggingFace 调查安全事件",
+    "source": "X：OpenAI (@OpenAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding",
+    "title": "五家美国科技巨头因不透明AI融资隐性债务飙升至1.65万亿美元",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.ithome.com/0/979/815.htm",
+    "title": "OpenAI 自曝 AI 模型突破沙盒入侵 Hugging Face",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "070.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+    "title": "OpenAI 与 Hugging Face 联合披露安全事件：GPT-5.6 Sol 等模型在评估中自主攻破生产环境",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "071.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/07/21/us-threatens-sanctions-against-chinese-ai-models-over-ip-theft",
+    "title": "美国威胁因知识产权盗窃对中国AI模型实施制裁",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "072.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.ithome.com/0/979/324.htm",
+    "title": "Anthropic 与作家群体15亿美元版权和解获批",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "073.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
+    "title": "David Vélez 与 Robin Vince 加入 OpenAI 基金会及 OpenAI Group PBC 董事会",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://alignment.openai.com/measuring-reward-seeking",
+    "title": "OpenAI 与 Apollo Research 开发 Contrastive SDF 测试衡量 AI 的 reward-seeking 行为",
+    "source": "OpenAI：Alignment 研究博客（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "075.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenAI/status/2079628886950994005",
+    "title": "OpenAI 发布奖励寻求行为新研究",
+    "source": "X：OpenAI (@OpenAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/calibrated-sparse-attention",
+    "title": "CalibAtt：无需训练的稀疏注意力方法，将文生视频速度提升至 1.58 倍",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "077.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/environment-free",
+    "title": "Apple 提出无环境合成数据生成方法，用于训练 API 调用型 LLM 智能体",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "078.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/karpathy/status/2079610838143623371",
+    "title": "Karpathy：用语音与LLM长谈可提升理解效率",
+    "source": "X：Andrej Karpathy (@karpathy)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://simonwillison.net/2026/Jul/21/cat-and-thariq",
+    "title": "Anthropic 团队透露 Claude Tag 承担 65% 产品工程 PR，系统提示词缩减 80%",
+    "source": "Simon Willison 博客",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "080.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.exe.dev/claude-is-not-a-compiler",
+    "title": "Claude 不是编译器——它比编译器更好",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "081.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.blog/ai-and-ml/github-copilot/how-to-build-interactive-experiences-with-canvases",
+    "title": "GitHub Copilot 推出 canvases 扩展，实现开发者与 AI 智能体实时协作",
+    "source": "GitHub Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "082.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/tutorials/prompt-caching-sticky-routing",
+    "title": "OpenRouter 推出 Prompt Caching + Sticky Routing，降低多轮 Agent 调用成本",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "083.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle",
+    "title": "Anthropic 如何保障AI原生软件开发生命周期的安全",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "084.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/pqFZreEZj8kB4KDirl4MSQ",
+    "title": "一个随机数就能识别AI模型身份：行为指纹技术可检测API中转站偷换模型",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "085.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.tomtunguz.com/ai-engineering-productivity-anything-but-normal",
+    "title": "AI 工程效率提升远非“正常”：从 20% 到 8x+ 的三个梯队",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "086.txt",
+    "ok": true,
+    "round": 1
+  }
+]
