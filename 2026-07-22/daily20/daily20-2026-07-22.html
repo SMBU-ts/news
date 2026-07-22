@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-07-22</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-07-22</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A053TK00?scene=news-skill" target="_blank" rel="noopener">视频丨人力资源社会保障部：今年上半年就业形势保持总体平稳</a></div>
+                <div class="item-summary">今天（22日）上午，人力资源社会保障部举行新闻发布会。今年上半年，全国城镇新增就业695万人，同比持平，城镇调查失业率平均值为5.2%，就业形势保持总体平稳。1-6月，发放失业保险稳岗返还资金36亿元、一次性扩岗补助9亿元、技能提升补贴12亿元。（总台央视记者 李欣 唐蕾）</div>
+                <div class="item-meta">央视新闻 · 2026-07-22 10:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0AAJH00?scene=news-skill" target="_blank" rel="noopener">外交部：有关导弹试射是中国军队例行军事训练活动，不针对任何特定国家和目标</a></div>
+                <div class="item-summary">【环球时报-环球网报道 记者 张晗】外交部发言人林剑主持7月22日例行记者会。会上有记者就“澳大利亚批评中方导弹试射”进行提问。林剑表示，关于有关的试射活动，中方已多次阐明立场，这是中国军队的例行军事训练活动，不针对任何特定国家和目标，事先已向包括澳大利亚在内的国家作出了通报，符合国际法和国际社会惯例。...</div>
+                <div class="item-meta">环球网 · 2026-07-22 15:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0BHTR00?scene=news-skill" target="_blank" rel="noopener">起势有力、增势强劲 外贸稳规模优结构迈出新步伐</a></div>
+                <div class="item-summary">编者按：近日，海关总署公布今年上半年我国货物贸易进出口数据，上半年我国外贸起势有力、增势强劲，稳规模优结构迈出新步伐，为“十五五”开好局起好步打下了良好基础，提供了有力支撑。 来源：国新办新闻发布会 编辑/设计：杨迪 郭思邈...</div>
+                <div class="item-meta">人民网 · 2026-07-22 16:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A06ZXR00?scene=news-skill" target="_blank" rel="noopener">“电视剧情节成真”，爷爷藏了70多年的借粮证，如今政府还7万</a></div>
+                <div class="item-summary">孟夏时节一场特殊的捐赠仪式在安徽省潜山市烈士陵园举行“终于了却了我们家族的一个心愿！”捐赠仪式现场村民丁光义将爷爷丁万民留下的借粮证郑重交到市退役军人事务局相关负责同志手中1947年刘邓大军千里挺进大别山部队粮草紧缺、物资匮乏丁万民将家中留存的1700多斤粮食全部借给子弟兵这张由晋冀鲁豫边区政府开具的借粮证...</div>
+                <div class="item-meta">北京日报客户端 · 2026-07-22 17:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A089K800?scene=news-skill" target="_blank" rel="noopener">云南永善发现疑似金丝楠木？当地自然资源局：还不确定品种，已采取保护措施并送样鉴定</a></div>
+                <div class="item-summary">近日，一则关于“云南昭通永善大厂坝发现金丝楠木”的传闻引发广泛关注。红星新闻记者从网络上传播的相关视频看到，在一条绕山公路的溪流河道低洼处，多名群众正在对一根巨大的整体呈不规则圆柱形的疑似木材进行清理，公路上还停放着吊车和拖挂车。 ▲网友发布的视频显示，吊车正运送古木记者联系吊车司机希望了解现场情况...</div>
+                <div class="item-meta">红星新闻 · 2026-07-22 13:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A04AO700?scene=news-skill" target="_blank" rel="noopener">全国最后一位长征女红军王全英逝世，享年105岁</a></div>
+                <div class="item-summary">今日，记者从家属了解到，7月22日凌晨0时30分，全国最后一位长征女红军王全英在医院与世长辞，享年105岁。1921年出生的王全英，与中国共产党同龄。14岁时，王全英参加红军，成为红四方面军妇女独立团的一名战地卫生员，曾翻越雪山、踏上长征路；此后又在四川汶川隐姓埋名数十年。新中国成立后，她将名字由“桂香”改为“全...</div>
+                <div class="item-meta">红星新闻 · 2026-07-22 09:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0A06V00?scene=news-skill" target="_blank" rel="noopener">财政部：上半年证券交易印花税1549亿元，同比增长97.3%</a></div>
+                <div class="item-summary">财政部公布2026年上半年财政收支情况。一、全国一般公共预算收支情况 （一）一般公共预算收入情况。 上半年，全国一般公共预算收入121047亿元，同比增长4.7%。其中，全国税收收入97865亿元，同比增长5.3%；非税收入23182亿元，同比增长2.3%。分中央和地方看，中央一般公共预算收入52240亿元，同比增长7.5%；地方一般公共预算本级收入68807亿元，同比增长2.7%。 主要税...</div>
+                <div class="item-meta">界面新闻 · 2026-07-22 15:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722V0B2D500?scene=news-skill" target="_blank" rel="noopener">“又酷又飒的中国女保镖”射击夺冠！现场解说直呼：惊为天人</a></div>
+                <div class="item-summary">“又酷又飒的中国女保镖”射击夺冠！现场解说直呼：惊为天人</div>
+                <div class="item-meta">海客见闻 · 2026-07-22 16:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A02N4F00?scene=news-skill" target="_blank" rel="noopener">高市内阁支持率首次被不支持率反超，执政蜜月期已然终结</a></div>
+                <div class="item-summary">7月10日，在位于日本东京的国会议事堂前，民众手持标语参加抗议集会。 新华社发近日，日本多家主流媒体陆续发布全国民意调查结果，高市早苗内阁支持率继6月后又迎来新一轮大幅下跌。全日本新闻网的民调结果显示，高市内阁支持率掉到了49.2%，单月狂跌10.9个百分点，不支持率为34.8%，创了新高。《每日新闻》的民调结果更难...</div>
+                <div class="item-meta">上观新闻 · 2026-07-22 07:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0CYML00?scene=news-skill" target="_blank" rel="noopener">网传“广西水灾一老人被困泥潭”不实（2026·07·22）</a></div>
+                <div class="item-summary">辟 谣 网传“广西水灾一老人被困泥潭”不实 详情：近日，有网民在某互联网平台发布图文称“广西水灾让老百姓受苦了”，配图中一人侧卧在泥潭中，引发网民误解和担忧。 经....</div>
+                <div class="item-meta">2026-07-22 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0BS4Z00?scene=news-skill" target="_blank" rel="noopener">国家体育总局：加强体育“饭圈”乱象整治，杜绝竞技体育“饭圈”化、运动员“网红”化，严查青少年比赛冒名顶替、年龄造假问题</a></div>
+                <div class="item-summary">日前，经国务院批复，国家体育总局正式发布《体育强国建设十五五规划》。其中明确，要加强赛场文明培育。加强赛场文明宣传教育，制定出台赛场文明行为准则，培育健康向上的球迷文化、赛事文化。加强赛场文明治理，压实各方责任，依法处置赛场不文明行为。加强体育“饭圈”乱象整治，杜绝竞技体育“饭圈”化、运动员“网红”...</div>
+                <div class="item-meta">红星新闻 · 2026-07-22 17:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A05C1Z00?scene=news-skill" target="_blank" rel="noopener">航运史上荒诞一幕上演：亚洲要买沙特石油，得绕行非洲</a></div>
+                <div class="item-summary">财联社7月22日讯（编辑 潇湘）随着霍尔木兹海峡和红海曼德海峡正面临“双峡”同时沦陷的局面，全球能源和航运史上的一幕荒诞景象也正在眼下出现：亚洲炼油商正寻求通过苏伊士运河运输沙特石油……据业内人士表示，在本周也门胡塞武装宣布对沙特阿拉伯实施海上封锁后，亚洲炼油商正在寻求新路线，计划将沙特红海港口的原油经...</div>
+                <div class="item-meta">财联社 · 2026-07-22 17:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0DZSH00?scene=news-skill" target="_blank" rel="noopener">中央考核巡查组指出问题，当地互相推诿</a></div>
+                <div class="item-summary">6月中下旬，中央安全生产考核巡查第十八组对海南省安全生产进行明查暗访，在海南超能量船舶服务公司，考核巡查组发现有游艇未按规定年检仍在航行。该问题被考核巡查组指出后，当地发生了互相推诿的一幕。华润置地海南公司安全总监称，“这份资料是没有，赶紧把它拿过来。什么情况？肯定是后面有个东西的。”南超能量船舶服...</div>
+                <div class="item-meta">新京报 · 2026-07-22 20:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A00RTS00?scene=news-skill" target="_blank" rel="noopener">詹姆斯：会尽力融入新球队，倾囊相授23年经验</a></div>
+                <div class="item-summary">虎扑07月21日讯 詹姆斯在个人播客《Mind the Game》中谈到自己下赛季加盟新球队后的心态。 詹姆斯说道：“我会尽力去融入我将要加入的任何球队，同时把我这23年来掌握的所有工具和....</div>
+                <div class="item-meta">虎扑体育内容 · 2026-07-22 16:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0D02Y00?scene=news-skill" target="_blank" rel="noopener">商务部新闻发言人就法国“反超快时尚”法有关问题答记者问</a></div>
+                <div class="item-summary">新京报讯 据商务部消息，商务部新闻发言人就法国“反超快时尚”法有关问题答记者问。问：近日法国出台了“反超快时尚”法，针对“超快时尚”服饰产业及平台提出了一系列限制性要求。法国政府官员明确表示，立法首要管控对象是希音、特木、速卖通等跨境电商平台。请问商务部对此有何评论？答：中方注意到，法国近日出台的“...</div>
+                <div class="item-meta">新京报 · 2026-07-22 18:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0A9SD00?scene=news-skill" target="_blank" rel="noopener">联合国警告：东南亚诈骗集团迈向特许经营模式，迅速扩展全球</a></div>
+                <div class="item-summary">联合国毒品和犯罪问题办公室（UNODC）星期二（7月21日）发布最新报告估计，东亚、东南亚、澳大利亚和新西兰的跨国网络诈骗受害者去年损失介于883亿至1141亿美元，远超2023年估计的180亿至370亿美元，甚至比区域一些经济体的经济产值更高。过去两年诈骗损失最惨重的是中国大陆、韩国和台湾地区，各自损失了数十亿美元。UNOD...</div>
+                <div class="item-meta">观察者网 · 2026-07-22 15:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722V0BMHH00?scene=news-skill" target="_blank" rel="noopener">台风红霞基本锁定我国，会在周末登陆吗？</a></div>
+                <div class="item-summary">台风红霞基本锁定我国了！科普航发现，它进入我国南海的时间恰好是本周末。红霞会不会在周末登陆，周一广东会停工吗？</div>
+                <div class="item-meta">科普航 · 2026-07-22 16:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A03RVH00?scene=news-skill" target="_blank" rel="noopener">动画电影《八仙！》成暑期档黑马，导演郭帆称好看到“汗毛直立”</a></div>
+                <div class="item-summary">2026暑期档电影正在热映中大家看了哪几部呀？这几天动画电影《八仙！》一马当先交出了令人惊艳的首周末成绩单：豆瓣评分开创了今年暑期档新片最高分8.3分截至今天下午五点全国累计票房已近3.5亿影片以家喻户晓的传统民间故事“八仙过海”为灵感，但又跳出了传统神话修仙的固有套路，讲述了八仙成仙之前的故事。电影一上映就...</div>
+                <div class="item-meta">多彩贵州网 · 2026-07-22 17:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0B0VG00?scene=news-skill" target="_blank" rel="noopener">中国最大运动鞋服零售商被逼到墙角</a></div>
+                <div class="item-summary">（作者｜周琦 编辑｜吕栋）7月22日，滔搏在发布公告，确认收到耐克正式通知，自2027年1月1日起，滔搏在中国内地的耐克产品线上平台销售将全面终止。滔搏是中国最大的运动零售运营商之一，也是耐克在华最大的零售合作伙伴。消息落地，滔搏股价盘中一度跌超25%，收盘跌幅收窄至24%，报1.45港元/股，市值约90亿港元。对滔搏而...</div>
+                <div class="item-meta">观察者网 · 2026-07-22 16:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A090KT00?scene=news-skill" target="_blank" rel="noopener">辽宁丹东一顾客投诉女浴室有人与狗同浴，店方：已当场制止并全面消杀</a></div>
+                <div class="item-summary">7月21日，网友“果果1111”在社交平台反映，在辽宁丹东东港市一洗浴中心内，有顾客带狗进入女浴室一同洗澡，工作人员知晓后未及时制止，且该顾客用人用毛巾给狗擦拭。7月22日，涉事洗浴中心负责人回应称，发现顾客在淋浴间给狗洗澡并用吹风机吹毛后，已当场制止；事后当着该网友的面，对所有浴区进行了消毒，相关毛巾也已丢...</div>
+                <div class="item-meta">潇湘晨报 · 2026-07-22 17:06</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-07-22 21:58</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
