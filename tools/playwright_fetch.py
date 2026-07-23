@@ -1,43 +1,53 @@
 #!/usr/bin/env python3
-"""Playwright 反检测抓取剩余难啃 URL：x.com / sky.com / france24-live / mataroa.blog。
+# -*- coding: utf-8 -*-
+"""Round 3 动态兜底抓取：用 Playwright（真实浏览器、反检测）抓取
+summaries/raw/<date>/index.json 中前两轮（Round 1/2）均未成功的难啃 URL
+（ok=False 且 round==2），如 x.com / sky.com / france24 直播页 / mataroa.blog 等。
 
-已包含反检测（隐藏 webdriver、模拟插件、真实 UA、人类滚动）。
+成功后写入 NNN.txt，并把该条目在 index.json 中标记为 ok=True / rawfile=NNN.txt /
+round=3；仍失败的交由「原文概括」回退提示处理（标记 round=3，不再重试）。
+
+要点：
+  - 不再硬编码任何 URL，目标完全由 index.json 决定。
+  - 按域名选用不同 UA / 视口 / 超时 / 等待策略（x.com 走移动端 UA）。
+  - 复用 clean_text 做域名相关去噪。
+  - 幂等：round==3 的条目不会被再次选中。
+  - 依赖第三方包 playwright（本机已安装 Chromium）；无 playwright 时给出明确提示后退出。
+
 用法：
-    python tools/playwright_fetch.py [YYYY-MM-DD]
-    python tools/playwright_fetch.py [YYYY-MM-DD] --only-remaining   # 只抓剩余篇
+  python tools/playwright_fetch.py [YYYY-MM-DD]      # 默认今天
 """
-import asyncio, re, json, time, sys
+import asyncio
+import json
+import re
+import sys
+import time
+import urllib.parse
 from pathlib import Path
 from datetime import date as dt
+
 from playwright.async_api import async_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
 DATE = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else dt.today().strftime("%Y-%m-%d")
 RAW_DIR = ROOT / "summaries" / "raw" / DATE
+INDEX = RAW_DIR / "index.json"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
-SUMMARY_JSON = ROOT / "summaries" / f"{DATE}.json"
 
-# ── 剩余 6 篇难啃 URL ──────────────────────────────────
-REMAINING_URLS = [
-    # x.com (3) — 本机不会被封 IP，沙箱封 x.com TCP
-    "https://x.com/Alibaba_Qwen/status/2078754377473601787",
-    "https://x.com/OpenBMB/status/2078839529591759025",
-    "https://x.com/thsottiaux/status/2078697631019303273",
-    # sky.com (1) — Akamai CDN，本机可能通过
-    "https://news.sky.com/story/ebola-deaths-in-dr-congo-rise-to-930-amid-attacks-on-health-workers-13565139",
-    # mataroa.blog (1) — 沙箱超时，本机大概率通
-    "https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making",
-    # france24 那篇直播页（之前超时，加长 timeout）
-    "https://www.france24.com/en/middle-east/20260719-middle-east-live-us-launches-strikes-to-punish-iran-after-troops-killed",
-]
-
-# 各 URL 的超时和等待策略（秒）
+# 各域名的超时 / 等待策略（毫秒）
 URL_CONFIG = {
     "france24.com": {"timeout": 45000, "wait_after": 3000, "wait_until": "domcontentloaded"},
     "x.com":        {"timeout": 35000, "wait_after": 5000, "wait_until": "networkidle"},
     "sky.com":      {"timeout": 30000, "wait_after": 4000, "wait_until": "domcontentloaded"},
     "mataroa.blog": {"timeout": 25000, "wait_after": 3000, "wait_until": "domcontentloaded"},
 }
+
+
+def _domain(url):
+    try:
+        return urllib.parse.urlparse(url).netloc.replace("www.", "")
+    except Exception:
+        return ""
 
 
 def clean_text(text, domain):
@@ -68,7 +78,7 @@ def clean_text(text, domain):
         "x.com": [
             'Log in', 'Sign up', 'Terms of Service', 'Privacy Policy',
             'Cookie Policy', 'Accessibility', 'Ads info', '©',
-            'More', 'Who to follow', 'Trending', 'What\'s happening',
+            'More', 'Who to follow', 'Trending', "What's happening",
             'Show more', 'Back', 'Home', 'Explore', 'Notifications',
             'Messages', 'Bookmarks', 'Lists', 'Profile', 'Verified',
             'Post', 'Repost', 'Like', 'View', 'New tweets', 'Pinned',
@@ -141,51 +151,66 @@ async def fetch_one(browser, url, domain):
         await ctx.close()
 
 
+def _next_index(index):
+    nums = []
+    for e in index:
+        rf = e.get("rawfile") or ""
+        if rf[:3].isdigit():
+            nums.append(int(rf[:3]))
+    for f in RAW_DIR.glob("*.txt"):
+        if f.stem.isdigit():
+            nums.append(int(f.stem))
+    return max(nums) if nums else 0
+
+
 async def main():
-    only = "--only-remaining" in sys.argv
-    existing = max(int(f.stem) for f in RAW_DIR.glob("*.txt") if f.stem.isdigit())
+    if not INDEX.exists():
+        print(f"✗ 找不到 {INDEX}，请先运行 tools/extract_articles.py（Round 1）。")
+        return
+    index = json.loads(INDEX.read_text(encoding="utf-8"))
 
-    # 跳过已在 JSON 中有摘要的 URL
-    try:
-        done_urls = set(json.loads(SUMMARY_JSON.read_text(encoding="utf-8")).keys())
-    except Exception:
-        done_urls = set()
-
-    urls = [(u, u.split("/")[2].replace("www.", "")) for u in REMAINING_URLS]
-    urls = [(u, d) for u, d in urls if u not in done_urls]
-
-    if not urls:
-        print("所有 URL 已有摘要，无需重复抓取。")
+    # 目标：Round 1/2 都失败（ok=False 且 round==2）的条目
+    targets = [e for e in index if (not e.get("ok")) and e.get("round", 0) == 2]
+    if not targets:
+        total_ok = sum(1 for e in index if e.get("ok"))
+        print(f"Round 3: 没有需要 Playwright 兜底的条目（累计 ok={total_ok}/{len(index)}）。")
         return
 
-    print(f"待抓取: {len(urls)} 篇 (已有 {len(done_urls)} 篇摘要)")
+    print(f"待 Playwright 抓取: {len(targets)} 篇")
     async with async_playwright() as p:
         browser = await p.chromium.launch(
             headless=True,
             args=["--disable-blink-features=AutomationControlled", "--no-sandbox",
                   "--disable-dev-shm-usage"],
         )
-        results = {}
-        n = existing
-        for i, (url, domain) in enumerate(urls, 1):
+        nxt = _next_index(index)
+        ok_new = 0
+        for i, e in enumerate(targets, 1):
+            url = e.get("url", "")
+            domain = _domain(url)
             slug = url.split("/")[-1][:50]
-            print(f"[{i}/{len(urls)}] {domain}: {slug}...", end=" ", flush=True)
+            print(f"[{i}/{len(targets)}] {domain}: {slug}...", end=" ", flush=True)
             ok, body, title, raw_len = await fetch_one(browser, url, domain)
             if ok:
-                n += 1
-                fn = f"{n:03d}.txt"
+                nxt += 1
+                fn = f"{nxt:03d}.txt"
                 (RAW_DIR / fn).write_text(body[:5000], encoding="utf-8")
-                results[url] = {"file": fn, "len": len(body), "title": title[:60]}
+                e["rawfile"] = fn
+                e["ok"] = True
+                e["round"] = 3
+                ok_new += 1
                 print(f"OK ({len(body)} chars) -> {fn}")
             else:
+                e["round"] = 3       # 仍失败，标记已尝试 Round 3，交给回退提示
                 print(f"FAIL ({body[:80]})")
             await asyncio.sleep(1.5)
         await browser.close()
 
-    if results:
-        out = RAW_DIR / "playwright_remaining.json"
-        out.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\nDone: {len(results)}/{len(urls)} new bodies saved")
+    INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
+    total_ok = sum(1 for e in index if e.get("ok"))
+    print(f"\nRound 3 完成：新增成功 {ok_new} 篇，累计 ok={total_ok}/{len(index)}，"
+          f"仍失败 {len(index) - total_ok} 篇（走回退提示）。")
+    print(f"回写 -> {INDEX.name}")
 
 
 if __name__ == "__main__":

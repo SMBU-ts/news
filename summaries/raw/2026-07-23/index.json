@@ -1,0 +1,242 @@
+[
+  {
+    "url": "https://mp.weixin.qq.com/s/qQhq9nxoeCD68iMwQoEVFQ",
+    "title": "腾讯设计Agent平台Miora全面开放",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.com/marcelroed/gigatoken",
+    "title": "GigaToken 发布：语言模型分词速度最高提升约 1000 倍，可无缝替代 HuggingFace Tokenizers",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "016.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://x.com/MSFTResearch/status/2079989338994069511",
+    "title": "微软 MagenticLite 模型全面开源",
+    "source": "X：Microsoft Research (@MSFTResearch)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+    "title": "Claude 新增 Anthropic Economic Index 连接器，可直接查询 AI 对经济与职业的影响数据",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://cursor.com/blog/router",
+    "title": "Cursor 发布智能模型路由系统 Cursor Router",
+    "source": "Cursor Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/tNJARtn1jIayL5URg87Row",
+    "title": "小红书开源 BigMac：多模态大模型训练新范式",
+    "source": "公众号：小红书技术（dots.llm）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
+    "title": "Claude Code v2.1.218 发布",
+    "source": "Claude Code：GitHub Releases（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026",
+    "title": "三星 Galaxy Unpacked 2026：Gemini Intelligence 1 任务自动化、Gemini Notebook 及智能眼镜等三项更新",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/anthropics-1-5b-piracy-settlement-with-book-authors-is-a-record-loss-that-hands-ai-labs-their-biggest-legal-win",
+    "title": "Anthropic 因盗版书籍支付 15 亿美元和解金，创下集体诉讼版权赔偿纪录",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/SemiAnalysis_/status/2079929602429141215",
+    "title": "AMD 投资 50 亿，Anthropic 采购 2GW GPU",
+    "source": "X：SemiAnalysis (@SemiAnalysis_)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.ithome.com/0/980/322.htm",
+    "title": "OpenAI 拟投资 200 亿美元在美新建数据中心，2030 年算力支出预期上调至近 7500 亿美元",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/sundarpichai/status/2080021408856293584",
+    "title": "Alphabet Q2：AI 投资推动营收增长 24%，Gemini 月活达 9.5 亿",
+    "source": "X：Sundar Pichai (@sundarpichai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+    "title": "Anthropic 设立 2 亿美元经济未来研究基金，支持外部研究",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
+    "title": "OpenAI 在佐治亚州 Effingham 县启动 Project Camellia 数据中心项目",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "017.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://openai.com/index/advancing-the-next-era-of-national-science",
+    "title": "OpenAI 与美国能源部及国家实验室合作，推动前沿 AI 加速科学发现",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission",
+    "title": "Google DeepMind 为 Genesis Mission 提供 4000 万美元 AI tokens 和 credits",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/omarsar0/status/2079982491578827214",
+    "title": "从提示词到任务：多模态交互单元提升AI智能体效率",
+    "source": "X：Elvis Saravia (@omarsar0, DAIR.AI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/openais-disconcerting-hack-of-huggingface",
+    "title": "OpenAI 系统利用零日漏洞入侵 HuggingFace 安全基准测试",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://openrouter.ai/blog/tutorials/transcription-on-openrouter",
+    "title": "OpenRouter 新增音频转写 API，支持 Whisper 与 token 计价 STT 模型",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/PnXGmmDYejrHBSpoRBOHkg",
+    "title": "实测Qwen-Image-3.0：19大场景挑战GPT Image2，中文长文本与多图融合表现亮眼",
+    "source": "公众号：卡尔的AI沃茨",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3",
+    "title": "开源模型季度盘点：Kimi K3、Qwen 3.8、WAIC 演讲、知识蒸馏与开源闭源差距",
+    "source": "Nathan Lambert：Interconnects（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://claude.com/blog/building-verification-loops-in-claude-code-with-skills",
+    "title": "在 Claude Code 中使用技能构建验证循环",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for",
+    "title": "Copilot vs. 直接 API 调用：你实际在为什么付费？",
+    "source": "GitHub Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude",
+    "title": "Outtake 在 Claude 上构建自主网络调查智能体 Recon Agent",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  }
+]

@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PY = sys.executable
-STEPS = ("build_dashboard.py", "build_rss.py", "build_hotsearch.py", "build_archive.py")
+STEPS = ("build_dashboard.py", "build_rss.py", "build_daily20.py", "build_hotsearch.py", "build_archive.py")
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
     for script in STEPS:
         print(f"\n========== {script} ==========")
         cmd = [PY, str(ROOT / script)]
-        if date_arg and script in ("build_rss.py", "build_dashboard.py", "build_hotsearch.py"):
+        if date_arg and script in ("build_rss.py", "build_dashboard.py", "build_daily20.py", "build_hotsearch.py"):
             cmd.append(date_arg)
         rc = subprocess.run(cmd, cwd=ROOT).returncode
         if rc != 0:

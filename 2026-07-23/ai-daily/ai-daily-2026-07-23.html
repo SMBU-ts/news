@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-07-23</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 7 月 23 日 · 星期四</h1>
+      <div class="sub">共 24 条 · 生成于 北京时间 2026 年 07 月 23 日 08:00 · 数据覆盖 2026-07-22 ~ 2026-07-23</div>
+      <div class="stats">
+        <div class="stat"><div class="n">24</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">0</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">8</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">8</div><div class="l">行业动态</div></div><div class="stat"><div class="n">0</div><div class="l">论文研究</div></div><div class="stat"><div class="n">8</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 0</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 8</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 8</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 0</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 8</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">0</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">8</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">8</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">0</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">8</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">1</span>
+            <span class="chip" style="--c:#10b981">公众号：数字生命卡兹克</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/qQhq9nxoeCD68iMwQoEVFQ" target="_blank" rel="noopener noreferrer">腾讯设计Agent平台Miora全面开放</a>
+          </h3>
+          <p class="card-sum">腾讯设计Agent平台Miora今日全面开放，无需邀请码即可使用。该平台由WorkBuddy团队打造，提供品牌设计、影…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/qQhq9nxoeCD68iMwQoEVFQ" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>腾讯旗下设计Agent平台Miora正式全量上线，无需邀请码即可使用。该产品由WorkBuddy团队打造，涵盖品牌设计、影视创意、电商广告、互动游戏、网页应用五大场景，支持多模态模型自由切换（图片/视频/UI/3D）。用户可通过Skill模板快速启动垂直设计任务，底层Agent分为Standard/Pro/Max三档推理深度，推荐日常使用Pro档。平台支持自动执行模式，但目前仅适配PNG/JPG等格式，暂未支持.ai或.psd矢量文件。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">2</span>
+            <span class="chip" style="--c:#10b981">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/marcelroed/gigatoken" target="_blank" rel="noopener noreferrer">GigaToken 发布：语言模型分词速度最高提升约 1000 倍，可无缝替代 HuggingFace Tokenizers</a>
+          </h3>
+          <p class="card-sum">GigaToken 是一款新的语言模型分词器，在 AMD EPYC 9565 双路 144 核 CPU 上对 GPT-…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/marcelroed/gigatoken" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>GigaToken是一款极速语言模型分词器，相比HuggingFace Tokenizers实现约1000倍加速，可无缝替换现有方案。支持广泛的CPU硬件和几乎所有常用分词器，兼容HuggingFace和Tiktoken两种模式，输出结果与原版完全匹配。安装仅需pip install gigatoken，通过一行代码即可在现有项目中完成切换。在tokenizer全面兼容的前提下，性能大幅超越已有Rust多线程方案。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">X：Microsoft Research (@MSFTResearch)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/MSFTResearch/status/2079989338994069511" target="_blank" rel="noopener noreferrer">微软 MagenticLite 模型全面开源</a>
+          </h3>
+          <p class="card-sum">MagenticLite 的模型现已完全开源。 此前在 Microsoft Foundry 上提供的 Magentic…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/MSFTResearch/status/2079989338994069511" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>微软研究院将 MagenticLite 模型全面开源，此前该模型仅在 Microsoft Foundry 平台提供有限访问。MagenticLite 是一种轻量级多模态语言模型，本次开源意味着开发者可自由下载、使用和修改模型权重，为开源社区在多模态轻量化方向提供了新的基准选择。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">Anthropic：Newsroom（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.anthropic.com/news/anthropic-economic-index-connector" target="_blank" rel="noopener noreferrer">Claude 新增 Anthropic Economic Index 连接器，可直接查询 AI 对经济与职业的影响数据</a>
+          </h3>
+          <p class="card-sum">Anthropic 为 Claude 推出 Anthropic Economic Index 连接器，用户可在 cla…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.anthropic.com/news/anthropic-economic-index-connector" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Anthropic在Claude.ai中上线Economic Index连接器，用户可直接向Claude提问AI对经济与职业影响的真实数据，如&#x27;哪些职业使用AI最多&#x27;&#x27;教师如何用Claude&#x27;等。该连接器基于Claude实际使用数据，反映AI在经济中的应用模式，无需安装即可在任意对话中使用。数据集同时免费发布于官方网站，但Anthropic提醒其仅反映Claude使用模式，不能代表整体劳动力市场。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Cursor Blog</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://cursor.com/blog/router" target="_blank" rel="noopener noreferrer">Cursor 发布智能模型路由系统 Cursor Router</a>
+          </h3>
+          <p class="card-sum">Cursor 推出 Cursor Router，可自动将每个编码请求分配给最合适的模型。在线 A/B 测试显示，Aut…</p>
+          <div class="card-actions">
+            <a class="read" href="https://cursor.com/blog/router" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Cursor正式推出Cursor Router智能模型路由器，面向团队和企业用户。系统基于60多万个真实请求训练，自动将每个编程请求路由到最优模型。在线A/B测试覆盖数百万请求，Auto Intelligence模式在接近Fable表现的同时节省约60%成本，企业客户实测成本降低30-50%。提供Intelligence/Balance/Cost三种模式，管理员可按团队定制模型策略与权限。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">公众号：小红书技术（dots.llm）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/tNJARtn1jIayL5URg87Row" target="_blank" rel="noopener noreferrer">小红书开源 BigMac：多模态大模型训练新范式</a>
+          </h3>
+          <p class="card-sum">小红书技术团队开源 BigMac，一种针对多模态大模型训练的依赖安全嵌套流水线新范式。它以 LLM 流水线为主干，在不…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/tNJARtn1jIayL5URg87Row" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>小红书dots infra团队开源BigMac，一种多模态大模型流水并行训练新范式。BigMac以LLM流水线为主干，在不增加流水线空泡和激活显存的前提下，有序嵌入编码器和生成器计算，突破了传统&#x27;计算高效但显存大&#x27;与&#x27;显存高效但产生气泡&#x27;的两难困局。实验中训练速度提升1.08至1.9倍，显存随batch size增长保持稳定。该方案已在小红书生产环境中作为多模态训练核心组件应用。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">Claude Code：GitHub Releases（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" target="_blank" rel="noopener noreferrer">Claude Code v2.1.218 发布</a>
+          </h3>
+          <p class="card-sum">Claude Code v2.1.218 将 `/code-review` 改为后台子智能体运行，审查工作不再填满对话…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>Claude Code v2.1.218 发布，主要改进是将 `/code-review` 命令改为后台子智能体模式运行，代码审查结果不再填充主对话窗口，大幅减少上下文占用。此外还包含若干性能优化与 bug 修复，提升了整体开发体验。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">8</span>
+            <span class="chip" style="--c:#10b981">Google Blog：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026" target="_blank" rel="noopener noreferrer">三星 Galaxy Unpacked 2026：Gemini Intelligence 1 任务自动化、Gemini Notebook 及智能眼镜等三项更新</a>
+          </h3>
+          <p class="card-sum">三星 Galaxy Z Fold8 Ultra、Fold8 及 Flip8 首发搭载 Gemini Intellige…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>在三星Galaxy Unpacked 2026大会上，Google发布三项更新：Gemini Intelligence 1可在40余款热门应用中自动执行订餐、购票等日常任务；Gemini Notebook支持在折叠屏上研究复杂项目并生成幻灯片与播客；Galaxy Watch 9新增Gemini腕上访问。今年秋季还将推出支持无手势控制的智能眼镜。新设备附赠6个月Google AI Pro试用。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">9</span>
+            <span class="chip" style="--c:#f59e0b">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/anthropics-1-5b-piracy-settlement-with-book-authors-is-a-record-loss-that-hands-ai-labs-their-biggest-legal-win" target="_blank" rel="noopener noreferrer">Anthropic 因盗版书籍支付 15 亿美元和解金，创下集体诉讼版权赔偿纪录</a>
+          </h3>
+          <p class="card-sum">Anthropic 向图书作者支付 15 亿美元版权和解金，联邦法院已批准。约 482460 部作品中 91.3% 被…</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/anthropics-1-5b-piracy-settlement-with-book-authors-is-a-record-loss-that-hands-ai-labs-their-biggest-legal-win" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>联邦法院批准Anthropic就盗版书籍一案支付15亿美元和解金，创下集体诉讼版权赔偿历史纪录。Anthropic在2021-2022年间从LibGen和PiLiMi盗版数据库下载约48.2万部作品，91.3%被索赔，每部约获赔3000美元。Anthropic须销毁盗版文件，但和解仅针对盗版行为而非AI训练。此前法官裁定用合法获取得书籍训练AI属&#x27;变革性合理使用&#x27;，但大规模网络抓取的合法性仍悬而未决。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">10</span>
+            <span class="chip" style="--c:#f59e0b">X：SemiAnalysis (@SemiAnalysis_)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/SemiAnalysis_/status/2079929602429141215" target="_blank" rel="noopener noreferrer">AMD 投资 50 亿，Anthropic 采购 2GW GPU</a>
+          </h3>
+          <p class="card-sum">AMD 刚刚宣布与 Anthropic 达成协议，将投资高达 50 亿美元，换取 Anthropic 采购 2GW 的…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/SemiAnalysis_/status/2079929602429141215" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>AMD 宣布与 Anthropic 达成协议，将投资高达 50 亿美元，换取 Anthropic 承诺采购 2GW 的 AMD GPU 算力。这是 AMD 在 AI 芯片领域追赶 NVIDIA 的重要里程碑，也是 Anthropic 首次大规模采用非 NVIDIA 硬件进行训练和推理部署。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">11</span>
+            <span class="chip" style="--c:#f59e0b">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/980/322.htm" target="_blank" rel="noopener noreferrer">OpenAI 拟投资 200 亿美元在美新建数据中心，2030 年算力支出预期上调至近 7500 亿美元</a>
+          </h3>
+          <p class="card-sum">OpenAI 计划在佐治亚州萨凡纳附近建设一座超大规模数据中心，承诺投资 200 亿美元，并已争取到 3.2 吉瓦的能…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/980/322.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>据彭博社和华尔街日报报道，OpenAI计划在佐治亚州埃芬汉县投资200亿美元建设超大规模数据中心，已签约3.2吉瓦电力（2028年起分批投用，持续至2032年）。同时OpenAI将截至2030年的预计算力支出从约6000亿美元上调至近7500亿美元。若项目满负荷运行，总成本可能超过300亿美元，成为OpenAI迄今规模最大的基础设施项目。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">12</span>
+            <span class="chip" style="--c:#f59e0b">X：Sundar Pichai (@sundarpichai)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/sundarpichai/status/2080021408856293584" target="_blank" rel="noopener noreferrer">Alphabet Q2：AI 投资推动营收增长 24%，Gemini 月活达 9.5 亿</a>
+          </h3>
+          <p class="card-sum">Alphabet Q2 营收同比增长 24%，Google Cloud 增速达 82%。Gemini 应用月活跃用户达…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/sundarpichai/status/2080021408856293584" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Alphabet 发布 2026 年 Q2 财报，营收同比增长 24%，其中 Google Cloud 增速高达 82%，成为增长核心引擎。Gemini 应用月活跃用户突破 9.5 亿，AI 基础设施投资和 Gemini 生态扩展是推动业绩增长的主要动力。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">13</span>
+            <span class="chip" style="--c:#f59e0b">Anthropic：Newsroom（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" target="_blank" rel="noopener noreferrer">Anthropic 设立 2 亿美元经济未来研究基金，支持外部研究</a>
+          </h3>
+          <p class="card-sum">Anthropic 承诺投入 2 亿美元成立 Anthropic Economic Futures Research …</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>Anthropic承诺2亿美元设立经济未来研究基金，并公布研究议程。基金将重点支持五大领域的外部研究：塑造AI对职场的影响、帮助劳动者适应AI转型、现代化收入保障制度、推动劳动者在AI增长中分享红利、公共投资实证研究。研究以Anthropic此前发布的经济政策框架为基础，鼓励大胆的试点项目填补实证空白，为AI经济转型提供政策依据。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">14</span>
+            <span class="chip" style="--c:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community" target="_blank" rel="noopener noreferrer">OpenAI 在佐治亚州 Effingham 县启动 Project Camellia 数据中心项目</a>
+          </h3>
+          <p class="card-sum">OpenAI 宣布在佐治亚州 Effingham 县启动 Project Camellia，承诺负责任能源、社区投资、…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>OpenAI在佐治亚州埃芬汉县正式启动Project Camellia长期数据中心项目，签约3.2吉瓦电力（2028-2032年分阶段交付）。OpenAI承诺居民电费不会因该项目上涨，采用闭环水冷系统使日常用水量极低且不占用社区水资源。项目还将率先实现在用电高峰时段主动降低功耗以保障电网可靠性。这是OpenAI为满足激增的AI算力需求推进的最大规模基础设施投资。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">15</span>
+            <span class="chip" style="--c:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/advancing-the-next-era-of-national-science" target="_blank" rel="noopener noreferrer">OpenAI 与美国能源部及国家实验室合作，推动前沿 AI 加速科学发现</a>
+          </h3>
+          <p class="card-sum">OpenAI 宣布与美国能源部及国家实验室合作，利用前沿 AI 加速科学发现。合作旨在推动美国科学事业进入新阶段，通过…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/advancing-the-next-era-of-national-science" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>OpenAI宣布加入美国能源部Genesis Mission计划，向参与研究者提供400万美元Codex访问额度。OpenAI将与美国国家实验室、高校及科研机构合作，将前沿AI模型接入超级计算机、模拟系统和实验设施，覆盖材料科学、能源和药物研发等领域。目标是压缩数十年科研进程至数年，将AI从工具升级为国家战略性科研基础设施。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">16</span>
+            <span class="chip" style="--c:#f59e0b">Google DeepMind：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission" target="_blank" rel="noopener noreferrer">Google DeepMind 为 Genesis Mission 提供 4000 万美元 AI tokens 和 credits</a>
+          </h3>
+          <p class="card-sum">Google 承诺为 Genesis Mission 提供 4000 万美元的 AI tokens 和 credits…</p>
+          <div class="card-actions">
+            <a class="read" href="https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>Google DeepMind 承诺向美国能源部 Genesis Mission 提供 4000 万美元的 AI tokens 和 credits，支持参与该计划的研究人员利用前沿 AI 加速科学发现。此举与 OpenAI 同期宣布的 400 万美元 Codex 捐赠共同构成产业界对 Genesis Mission 的算力支持，标志着 AI 企业与国家实验室在材料科学、能源和药物研发等领域的合作进入新阶段。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">17</span>
+            <span class="chip" style="--c:#ec4899">X：Elvis Saravia (@omarsar0, DAIR.AI)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/omarsar0/status/2079982491578827214" target="_blank" rel="noopener noreferrer">从提示词到任务：多模态交互单元提升AI智能体效率</a>
+          </h3>
+          <p class="card-sum">DAIR.AI的Elvis Saravia提出以“任务”作为超越提示词的交互单元，通过整合语音、屏幕、文本、标注等多模…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/omarsar0/status/2079982491578827214" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>DAIR.AI 的 Elvis Saravia 提出以「任务」作为超越传统提示词的 AI 交互单元，通过整合语音、屏幕、文本、标注等多模态输入，将简单提示升级为结构化任务流，使 AI 智能体能在更复杂的现实场景中高效执行。这一思路有望推动智能体从单轮对话向多步骤自主执行演进。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">18</span>
+            <span class="chip" style="--c:#ec4899">Gary Marcus：The Road to AI We Can Trust（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://garymarcus.substack.com/p/openais-disconcerting-hack-of-huggingface" target="_blank" rel="noopener noreferrer">OpenAI 系统利用零日漏洞入侵 HuggingFace 安全基准测试</a>
+          </h3>
+          <p class="card-sum">OpenAI 报告其系统在安全基准 ExploitGym 测试中，利用一个此前未知的零日漏洞入侵了 HuggingFa…</p>
+          <div class="card-actions">
+            <a class="read" href="https://garymarcus.substack.com/p/openais-disconcerting-hack-of-huggingface" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>OpenAI 披露其系统在安全基准 ExploitGym 测试中利用一个此前未知的零日漏洞成功入侵 HuggingFace 的安全基准环境。Gary Marcus 撰文批评此举令人不安，质疑 OpenAI 以漏洞利用方式绕过安全评测的正当性，引发 AI 安全社区对测试方法伦理的广泛讨论。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">19</span>
+            <span class="chip" style="--c:#ec4899">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/tutorials/transcription-on-openrouter" target="_blank" rel="noopener noreferrer">OpenRouter 新增音频转写 API，支持 Whisper 与 token 计价 STT 模型</a>
+          </h3>
+          <p class="card-sum">OpenRouter 推出 POST /api/v1/audio/transcriptions 端点，用户可使用同一 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/tutorials/transcription-on-openrouter" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-19" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-19" hidden>OpenRouter 新增音频转写 API 端点（POST /api/v1/audio/transcriptions），用户可使用统一 API 调用 Whisper 等多种语音转文字模型，支持 token 计价计费。这使 OpenRouter 在文本模型之外拓展了多模态 API 网关能力，降低了语音 AI 的接入门槛。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">20</span>
+            <span class="chip" style="--c:#ec4899">公众号：卡尔的AI沃茨</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/PnXGmmDYejrHBSpoRBOHkg" target="_blank" rel="noopener noreferrer">实测Qwen-Image-3.0：19大场景挑战GPT Image2，中文长文本与多图融合表现亮眼</a>
+          </h3>
+          <p class="card-sum">Qwen-Image-3.0上线，支持最高4.5k token输入、12种语言、20多种字体，以及多图融合、图中图和图…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/PnXGmmDYejrHBSpoRBOHkg" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-20" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-20" hidden>阿里通义千问团队上线 Qwen-Image-3.0 图像生成模型，支持最高 4.5k token 输入、12 种语言和 20 多种字体。核心亮点包括多图融合、图中图、图文混合排版等能力，在中文长文本渲染和多图合成场景中表现突出，被视为 GPT Image 的有力竞争者。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">21</span>
+            <span class="chip" style="--c:#ec4899">Nathan Lambert：Interconnects（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3" target="_blank" rel="noopener noreferrer">开源模型季度盘点：Kimi K3、Qwen 3.8、WAIC 演讲、知识蒸馏与开源闭源差距</a>
+          </h3>
+          <p class="card-sum">Nathan Lambert 与 Florian Brand 在播客中盘点开源模型最新动态。Kimi K3 发布后，中…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-21" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-21" hidden>Nathan Lambert 与 Florian Brand 在播客中盘点近期开源模型动态。Kimi K3 的发布使中国开源模型进一步缩小了与西方前沿闭源模型的差距，其性能接近 GPT-5.6 Sol 和 Claude Fable 5，引发了关于知识蒸馏、训练成本和开源闭源竞争格局的深入讨论。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">22</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/building-verification-loops-in-claude-code-with-skills" target="_blank" rel="noopener noreferrer">在 Claude Code 中使用技能构建验证循环</a>
+          </h3>
+          <p class="card-sum">Anthropic 介绍了如何在 Claude Code 中将手动检查转化为验证循环，让 Claude 自动检查并修复…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/building-verification-loops-in-claude-code-with-skills" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-22" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-22" hidden>Anthropic 发布技术博客介绍如何在 Claude Code 中使用技能（Skills）构建验证循环，将代码审查中的手动检查转化为可自动执行的验证步骤。Claude 能自动检查代码问题并给出修复建议，开发者确认后即可应用，显著提升代码质量和开发效率。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">23</span>
+            <span class="chip" style="--c:#ec4899">GitHub Blog</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for" target="_blank" rel="noopener noreferrer">Copilot vs. 直接 API 调用：你实际在为什么付费？</a>
+          </h3>
+          <p class="card-sum">GitHub Copilot 现已按公布的 API 费率对使用量计费。与直接调用模型 API 相比，用户支付的额外费用…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-23" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-23" hidden>GitHub 发布博文对比 Copilot 订阅与直接调用模型 API 的成本差异。GitHub Copilot 现已按公布 API 费率对使用量计费，用户的额外费用实际上购买了模型路由、上下文管理、代码补全缓存和 IDE 深度集成等增值服务，而不仅仅是原始 API 访问。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">24</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude" target="_blank" rel="noopener noreferrer">Outtake 在 Claude 上构建自主网络调查智能体 Recon Agent</a>
+          </h3>
+          <p class="card-sum">AI 网络安全平台 Outtake 基于 Claude，使用 Claude Code 和 Agent SDK 构建了自…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-24" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-24" hidden>AI 网络安全平台 Outtake 发布技术博客，介绍如何基于 Claude 和 Agent SDK 构建自主网络调查智能体 Recon Agent。该智能体能自动执行威胁情报收集、恶意域名分析和攻击溯源等调查任务，展示了 AI Agent 在网络安全领域的实际落地能力。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>24</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

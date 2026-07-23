@@ -1,32 +1,34 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""每日热搜汇总：抓取国内平台实时热榜 → 每平台取 24 小时内综合排名前 10 →
+"""每日热搜汇总：聚合 5 个国内平台实时热榜 → 每平台取综合排名前 10 →
 按平台分栏渲染自包含卡片页面（融入现有站点的 hotsearch 分类）。
 
 零第三方依赖（仅标准库），风格对齐 build_rss.py。
 
-平台与端点：
-  微博       https://weibo.com/ajax/side/hotSearch   （需 Referer 头）
-  百度       https://top.baidu.com/board?tab=realtime （HTML 内嵌 s-data JSON）
+数据源（与本地 5 个热榜技能一致，稳定公开接口，无需 API Key）：
+  微博       https://v2.xxapi.cn/api/weibohot            （JSON API）
+  百度       https://top.baidu.com/api/board?platform=wise&tab=realtime  （JSON API，替代原 s-data HTML 注释解析）
   今日头条   https://www.toutiao.com/hot-event/hot-board/?origin=toutiao_pc
-  知乎       https://60s.viki.moe/v2/zhihu           （聚合兜底，直连需鉴权）
+  知乎       https://raw.githubusercontent.com/SnailDev/zhihu-hot-hub/main  （README/archives，替代原 60s.viki.moe 第三方）
   哔哩哔哩   https://api.bilibili.com/x/web-interface/popular
 
 配置要点（改这几项即生效，下次运行采用新值）：
-  · 抓取各平台【完整热榜，不限条数】；展示时每平台仅取自身综合排名前 PER_PLATFORM_TOP=10 条；
-  · 微博 / 今日头条接口无描述字段 → 方案1：对其缺摘要条目用标题调 Bing 搜索
-    抓首条结果摘要，得到真实中文摘要（失败则保留兜底文案）；
+  · 抓取各平台【完整热榜，不限条数】；展示时每平台仅取综合排名前 PER_PLATFORM_TOP=10 条；
+  · 微博 / 今日头条接口无描述字段 → 由自动化里的 agent 预生成 100–200 字中文摘要（替代原易失效的 Bing 抓取）；
   · 哔哩哔哩摘要字段刻意留空（不取视频简介 desc）。
 
 用法：
-  python build_hotsearch.py             # 今天
-  python build_hotsearch.py 2026-07-21  # 指定日期
+  python build_hotsearch.py                  # 今天：抓取 → 模板兜底摘要 → 渲染
+  python build_hotsearch.py 2026-07-21      # 指定日期
+  python build_hotsearch.py --emit-raw [日期]   # 仅抓取并输出归一化 sections JSON（摘要可能为空，供 agent 补摘要）
+  python build_hotsearch.py --from-json sections.json [日期]  # 用已填好摘要的 sections JSON 渲染（agent 预生成摘要后调用）
 """
 import re
 import sys
 import json
 import html
 import gzip
+import argparse
 import datetime
 import urllib.parse
 import urllib.request
@@ -37,10 +39,11 @@ ROOT = Path(__file__).resolve().parent
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+UA_MAC = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36")
 TIMEOUT = 20
 PER_PLATFORM_TOP = 10   # 每平台展示的条数（取该平台综合排名前 N）
-SUMMARY_MAX = 50      # 摘要最大字数
-ENRICH_TIMEOUT = 10   # 方案1：微博/头条二次抓取（Bing 摘要）超时秒数
+SUMMARY_MAX = 200     # 摘要最大字数（agent 预生成摘要为 100–200 字，兜底模板较短）
 
 CAT = "hotsearch"
 BRAND = "#f43f5e"     # 版块主色（与 build_archive.py 的 CAT_COLORS["hotsearch"] 一致）
@@ -53,7 +56,7 @@ PLATFORM_COLORS = {
     "知乎": "#0084ff",
     "哔哩哔哩": "#fb7299",
 }
-# 分栏展示时的平台先后顺序（与配置覆盖顺序一致：百度/知乎/微博/今日头条/哔哩哔哩）
+# 分栏展示时的平台先后顺序
 PLATFORM_ORDER = ["百度", "知乎", "微博", "今日头条", "哔哩哔哩"]
 
 
@@ -94,20 +97,6 @@ def _fmt_hot(n):
     return str(int(n))
 
 
-def _parse_hot_text(s):
-    """从「397 万热度」这类文本解析出数值。"""
-    m = re.search(r"([\d.]+)\s*(亿|万)?", s or "")
-    if not m:
-        return 0.0
-    v = float(m.group(1))
-    unit = m.group(2)
-    if unit == "亿":
-        v *= 1e8
-    elif unit == "万":
-        v *= 1e4
-    return v
-
-
 def _clean(s, n=SUMMARY_MAX):
     s = _TAG_RE.sub("", s or "")
     s = html.unescape(s)
@@ -117,57 +106,84 @@ def _clean(s, n=SUMMARY_MAX):
     return s
 
 
-# ==================== 各平台抓取器 ====================
+# ==================== 各平台抓取器（稳定公开接口） ====================
+def _parse_hot_num(v):
+    """把热度值（可能是 '238万' / '1.2亿' / 12345 / 数字字符串）解析为 float。"""
+    if v is None:
+        return 0.0
+    if isinstance(v, (int, float)):
+        return float(v)
+    s = str(v).strip()
+    try:
+        return float(s)
+    except ValueError:
+        pass
+    m = re.search(r"([\d.]+)\s*(亿|万)?", s)
+    if not m:
+        return 0.0
+    n = float(m.group(1))
+    unit = m.group(2)
+    if unit == "亿":
+        n *= 1e8
+    elif unit == "万":
+        n *= 1e4
+    return n
+
+
 def fetch_weibo():
-    d = _get_json("https://weibo.com/ajax/side/hotSearch",
-                  {"Referer": "https://weibo.com/", "Accept": "application/json"})
+    """微博热搜（xxapi.cn 公开接口，与 weibo-hot 技能同源）。无需 API Key。"""
+    d = _get_json("https://v2.xxapi.cn/api/weibohot")
+    if d.get("code") != 200:
+        return []
     out = []
-    for it in (d.get("data", {}) or {}).get("realtime", []):
-        if it.get("is_ad") or it.get("adid"):
-            continue
-        word = it.get("word") or it.get("note")
+    for it in (d.get("data") or []):
+        word = it.get("title") or it.get("word")
         if not word:
             continue
-        num = it.get("num") or it.get("raw_hot") or 0
+        hot = _parse_hot_num(it.get("hot"))
         q = urllib.parse.quote(f"#{word}#")
         out.append({
             "title": word,
             "summary": "",
             "url": f"https://s.weibo.com/weibo?q={q}",
-            "hot": float(num or 0),
-            "hot_display": _fmt_hot(num),
+            "hot": hot,
+            "hot_display": _fmt_hot(hot),
             "source": "微博",
-            "label": it.get("label_name", "") or "",
+            "label": it.get("label", "") or "",
         })
     return out
 
 
 def fetch_baidu():
-    txt = _get("https://top.baidu.com/board?tab=realtime").decode("utf-8", "ignore")
-    m = re.search(r"<!--s-data:(.*?)-->", txt, re.S)
-    if not m:
+    """百度热搜（top.baidu.com JSON API，替代原 s-data HTML 注释解析）。"""
+    d = _get_json("https://top.baidu.com/api/board?platform=wise&tab=realtime",
+                  {"Referer": "https://top.baidu.com/"})
+    if not d.get("success"):
         return []
-    data = json.loads(m.group(1))
+    cards = (d.get("data") or {}).get("cards") or []
     out = []
-    for card in data.get("data", {}).get("cards", []):
-        for it in card.get("content", []):
-            word = it.get("word") or it.get("query")
-            if not word:
-                continue
-            score = it.get("hotScore") or 0
-            out.append({
-                "title": word,
-                "summary": it.get("desc") or "",
-                "url": it.get("rawUrl") or it.get("url") or "",
-                "hot": float(score or 0),
-                "hot_display": _fmt_hot(score),
-                "source": "百度",
-                "label": it.get("hotTag", "") or "",
-            })
+    for card in cards:
+        for col in card.get("content") or []:
+            for it in col.get("content") or []:
+                word = it.get("word") or it.get("query")
+                if not word:
+                    continue
+                score = it.get("hotScore") or 0
+                out.append({
+                    "title": word,
+                    "summary": it.get("desc") or "",
+                    "url": it.get("rawUrl") or it.get("url") or "",
+                    "hot": float(score or 0),
+                    "hot_display": _fmt_hot(score),
+                    "source": "百度",
+                    "label": (it.get("labelTag") or {}).get("day", {}).get("text", "")
+                             or it.get("hotTag", "") or "",
+                })
     return out
 
 
 def fetch_toutiao():
+    """今日头条热榜（官方 hot-board 接口，与 toutiao-news-trends 技能同源）。"""
     d = _get_json("https://www.toutiao.com/hot-event/hot-board/?origin=toutiao_pc")
     out = []
     for it in d.get("data", []):
@@ -191,20 +207,32 @@ def fetch_toutiao():
 
 
 def fetch_zhihu():
-    d = _get_json("https://60s.viki.moe/v2/zhihu")
+    """知乎热搜（zhihu-hot-hub 公开仓库，替代原 60s.viki.moe 第三方单点）。"""
+    date = datetime.date.today().strftime("%Y-%m-%d")
+    bj = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
+    today = bj.strftime("%Y-%m-%d")
+    url = ("https://raw.githubusercontent.com/SnailDev/zhihu-hot-hub/main/README.md"
+           if date == today else
+           f"https://raw.githubusercontent.com/SnailDev/zhihu-hot-hub/main/archives/{date}.md")
+    try:
+        content = _get(url, {"Accept": "text/plain"}).decode("utf-8", "ignore")
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError):
+        return []
+    sec = re.search(r"##\s*热门搜索\s*\n(.+?)(?=\n##\s|\Z)", content, re.S)
+    if not sec:
+        return []
     out = []
-    for it in d.get("data", []):
-        title = it.get("title")
-        if not title:
-            continue
-        hvd = it.get("hot_value_desc") or ""
-        hot = _parse_hot_text(hvd)
+    for title, link in re.findall(r"\d+\.\s*\[([^\]]+)\]\(([^)]+)\)", sec.group(1)):
+        try:
+            link = urllib.parse.unquote(link)
+        except Exception:
+            pass
         out.append({
-            "title": title,
-            "summary": it.get("detail") or "",
-            "url": it.get("link") or "",
-            "hot": hot,
-            "hot_display": hvd.replace("热度", "").strip() or _fmt_hot(hot),
+            "title": title.strip(),
+            "summary": "",
+            "url": link,
+            "hot": 0.0,
+            "hot_display": "—",
             "source": "知乎",
             "label": "",
         })
@@ -212,7 +240,9 @@ def fetch_zhihu():
 
 
 def fetch_bilibili():
-    d = _get_json("https://api.bilibili.com/x/web-interface/popular?ps=30&pn=1")
+    """哔哩哔哩热门（官方 popular 接口，与 bilibili-hot-daily 技能同源）。"""
+    d = _get_json("https://api.bilibili.com/x/web-interface/popular?ps=30&pn=1",
+                  {"Referer": "https://www.bilibili.com/"})
     out = []
     for it in (d.get("data", {}) or {}).get("list", []):
         title = it.get("title")
@@ -234,10 +264,10 @@ def fetch_bilibili():
 
 
 FETCHERS = [
-    ("微博", fetch_weibo),
     ("百度", fetch_baidu),
-    ("今日头条", fetch_toutiao),
     ("知乎", fetch_zhihu),
+    ("微博", fetch_weibo),
+    ("今日头条", fetch_toutiao),
     ("哔哩哔哩", fetch_bilibili),
 ]
 
@@ -245,7 +275,8 @@ FETCHERS = [
 # ==================== 每平台取自身综合排名前 N ====================
 # 按平台分栏展示：抓取各平台【完整热榜，不限条数】后，直接取每个平台返回顺序
 # （即其自身综合排名）的前 PER_PLATFORM_TOP 条，不做跨平台合并。
-# 微博 / 今日头条经方案1 补真实摘要；哔哩哔哩摘要留空。
+# 微博 / 今日头条缺摘要由自动化里的 agent 预生成（见 --emit-raw / --from-json）；
+# 若直接运行本脚本（无 agent 补摘要），finalize_section 用模板文案兜底。
 
 # 平台的单字/状态标签，不适合当摘要
 _STATUS_LABELS = {"新", "热", "沸", "爆", "荐", "商", "hot", "new", "boom", "recommend"}
@@ -272,51 +303,6 @@ def finalize_section(items, source):
             "source": source,
         })
     return out
-
-
-# ==================== 方案1：微博/头条二次抓取真实摘要 ====================
-# 微博、今日头条的热榜接口只返回标题 + 热度，没有描述字段。
-# 方案1：对这两家、且仍缺摘要的条目，用标题调一次 Bing 搜索，
-# 抓取首条结果摘要作为真实中文摘要（替代兜底文案）。抓取失败则保留兜底文案。
-def _bing_snippet(query, n=SUMMARY_MAX):
-    """用标题调 Bing 搜索，返回首条结果摘要（已截断/去噪）。失败返回空串。"""
-    q = urllib.parse.quote(query)
-    url = f"https://www.bing.com/search?q={q}&setlang=zh-CN"
-    try:
-        txt = _get(url, {"Accept-Language": "zh-CN,zh;q=0.9"},
-                   timeout=ENRICH_TIMEOUT).decode("utf-8", "ignore")
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError):
-        return ""
-    m = (re.search(r'class="[^"]*b_lineclamp[0-9]*[^"]*"[^>]*>(.*?)</p>', txt, re.S)
-         or re.search(r'<div class="b_caption"[^>]*>.*?<p[^>]*>(.*?)</p>', txt, re.S))
-    if not m:
-        return ""
-    s = _TAG_RE.sub("", m.group(1))
-    s = html.unescape(s)
-    # 去掉摘要开头常见的时间/署名噪前缀（如「6 小时之前 · 作者 | 肖瑶」「1 天前 · 央视网消息」）
-    s = re.sub(r'^\s*\d+\s*(秒|分钟|小时|天|周|个月)之?前\s*[·•]?\s*', "", s)
-    s = re.sub(r'^\s*\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日\s*[·•]?\s*', "", s)
-    s = re.sub(r'^\s*(作者|记者)\s*[|｜:：]\s*', "", s)
-    s = re.sub(r'^\s*[·•]\s*', "", s)
-    s = re.sub(r"\s+", " ", s).strip()
-    # 相关性粗筛：数字开头等易误匹配（如「9」→「9是自然数」）。
-    # 摘要须至少含标题中的 2 个非数字字符，否则视为无关结果，回退兜底。
-    key_chars = set(re.sub(r"[\d\s\W_]", "", query))
-    if key_chars and len(key_chars & set(s)) < 2:
-        return ""
-    if len(s) > n:
-        s = s[: n - 1] + "…"
-    return s
-
-
-def enrich_scheme1(items):
-    """方案1：为『微博/今日头条』来源且仍无摘要的条目补真实摘要（Bing 片段）。"""
-    for it in items:
-        if it["source"] in ("微博", "今日头条") and not (it.get("summary") or "").strip():
-            s = _bing_snippet(it["title"])
-            if s:
-                it["summary"] = s
-    return items
 
 
 # ==================== 渲染 ====================
@@ -544,27 +530,13 @@ def render_html(date, sections):
 
 
 # ==================== 主流程 ====================
-def main():
-    date = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
-
-    platform_items = {}
-    for name, fn in FETCHERS:
-        try:
-            items = fn()                       # 抓取各平台【完整热榜，不限条数】
-            platform_items[name] = items
-            print(f"  {name}: 抓到 {len(items)} 条")
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
-                OSError, ValueError, KeyError) as e:
-            platform_items[name] = []
-            print(f"  [跳过] {name}: {e}")
-
-    # 每平台取自身综合排名前 PER_PLATFORM_TOP，依次分栏
+def build_sections(platform_items):
+    """把各平台抓取结果按 PLATFORM_ORDER 组装为 sections（含 finalize_section 兜底摘要）。"""
     sections = []
     for name in PLATFORM_ORDER:
         items = platform_items.get(name, [])
         if not items:
             continue
-        # 平台内轻量去重（避免同平台重复条目）
         dedup = []
         keys = set()
         for it in items:
@@ -576,21 +548,36 @@ def main():
         top = dedup[:PER_PLATFORM_TOP]
         if not top:
             continue
-        top = enrich_scheme1(top)             # 方案1：微博/头条补真实摘要
         items_out = finalize_section(top, name)
         sections.append({"source": name, "items": items_out})
+    return sections
 
+
+def fetch_all():
+    """抓取全部 5 个平台（单平台失败不阻塞其余）。返回 {平台: [条目]}。"""
+    platform_items = {}
+    for name, fn in FETCHERS:
+        try:
+            items = fn()
+            platform_items[name] = items
+            print(f"  {name}: 抓到 {len(items)} 条")
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
+                OSError, ValueError, KeyError) as e:
+            platform_items[name] = []
+            print(f"  [跳过] {name}: {e}")
+    return platform_items
+
+
+def write_outputs(date, sections):
     total = sum(len(s["items"]) for s in sections)
     per_platform = {s["source"]: len(s["items"]) for s in sections}
 
-    # 写页面
     out_dir = ROOT / date / CAT
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{CAT}-{date}.html"
     out.write_text(render_html(date, sections), encoding="utf-8")
     print(f"WROTE {out}  ({total} 条热点 / {len(sections)} 平台)")
 
-    # 存档 JSON（便于复查 / 重渲染）
     arch_dir = ROOT / "summaries" / "hotsearch"
     arch_dir.mkdir(parents=True, exist_ok=True)
     (arch_dir / f"{date}.json").write_text(
@@ -601,6 +588,50 @@ def main():
     print(f"WROTE {arch_dir / (date + '.json')}")
     for s in sections:
         print(f"  {s['source']}: {len(s['items'])}")
+    return total
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("date", nargs="?", default=datetime.date.today().isoformat())
+    ap.add_argument("--emit-raw", action="store_true",
+                    help="仅抓取并输出归一化 sections JSON（摘要可能为空），不渲染页面")
+    ap.add_argument("--from-json", metavar="PATH",
+                    help="用已填好摘要的 sections JSON 渲染页面（agent 预生成摘要后调用）")
+    args = ap.parse_args()
+
+    date = args.date
+
+    if args.from_json:
+        sections = json.loads(Path(args.from_json).read_text(encoding="utf-8"))
+        # 兼容两种传入结构
+        if isinstance(sections, dict) and "sections" in sections:
+            sections = sections["sections"]
+        # 归一化：确保每条有 rank/summary/hot_display
+        for s in sections:
+            for i, it in enumerate(s.get("items", []), 1):
+                it.setdefault("rank", i)
+                it["summary"] = _clean(it.get("summary") or "")
+                it.setdefault("hot_display", "—")
+                it.setdefault("source", s.get("source", ""))
+        write_outputs(date, sections)
+        return
+
+    platform_items = fetch_all()
+    sections = build_sections(platform_items)
+
+    if args.emit_raw:
+        raw = {"date": date, "generated_at": _bj_now().isoformat(),
+               "sections": sections}
+        out_path = ROOT / "summaries" / "hotsearch" / f"{date}.raw.json"
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"WROTE {out_path}  ({sum(len(s['items']) for s in sections)} 条, 摘要待 agent 补)")
+        for s in sections:
+            print(f"  {s['source']}: {len(s['items'])}")
+        return
+
+    write_outputs(date, sections)
 
 
 if __name__ == "__main__":

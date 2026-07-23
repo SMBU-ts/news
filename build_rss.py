@@ -44,10 +44,11 @@ CAT_COLORS = {
     "sports": "#ef4444",
     "health": "#14b8a6",
     "culture": "#ec4899",
+    "daily20": "#8b5cf6",
 }
 CAT_LABELS = {
     "tech": "科技", "finance": "财经", "world": "国际", "ai-daily": "AI 日报",
-    "sports": "体育", "health": "健康", "culture": "文娱",
+    "sports": "体育", "health": "健康", "culture": "文娱", "daily20": "每日20条",
 }
 
 MAX_PER_CAT = 20      # 每个分类保留的最新条目数
@@ -232,6 +233,34 @@ def _smart_value(v):
     except ValueError:
         pass
     return v
+
+
+def _parse_paused(raw):
+    """解析 paused_categories（兼容 PyYAML 列表与内置 mini 解析器）。
+
+    支持两种写法：
+      paused_categories:            # PyYAML -> 列表
+        - tech
+        - finance
+      paused_categories:            # mini 解析器 -> 逐项是 {"tech": None}
+        - tech:
+        - finance:
+    返回需要跳过的分类名集合。
+    """
+    paused = set()
+    if not raw:
+        return paused
+    if isinstance(raw, str):
+        paused.update(x.strip() for x in raw.split(",") if x.strip())
+    elif isinstance(raw, list):
+        for item in raw:
+            if isinstance(item, str):
+                paused.add(item.strip())
+            elif isinstance(item, dict):
+                for k in item.keys():
+                    if k:
+                        paused.add(k.strip())
+    return paused
 
 
 # ---------------- 抓取 ----------------
@@ -556,6 +585,11 @@ def main():
     # 提取 _ranking 配置（不影响现有分类遍历）
     ranking_raw = cfg.pop("_ranking", None)
 
+    # 提取暂停的分类（paused_categories）：构建时跳过，不抓取/不生成/不展示
+    paused = _parse_paused(cfg.pop("paused_categories", None))
+    if paused:
+        print(f"暂停的分类（不生成）：{', '.join(sorted(paused))}")
+
     # 按需导入排名模块
     ranking_mod = None
     engagement_mod = None
@@ -568,6 +602,9 @@ def main():
             ranking_raw = None
 
     for cat, feeds in cfg.items():
+        if cat in paused:
+            print(f"  [暂停] 跳过分类 {cat}（paused_categories）")
+            continue
         collected = []
         for f in feeds:
             name = f.get("name", "?")

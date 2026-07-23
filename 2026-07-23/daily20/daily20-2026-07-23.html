@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-07-23</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-07-23</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0DXG700?scene=news-skill" target="_blank" rel="noopener">视频丨日媒播出专题片 揭露731部队罪行</a></div>
+                <div class="item-summary">侵华战争期间，日军在哈尔滨设立731部队，秘密研制细菌武器，开展人体实验，策划实施细菌战。时至今日，日本右翼势力拒不反省战争罪责，不断篡改扭曲侵略历史、侵华日军细菌战罪行也长期未被追究。当地时间21日夜间，日本广播协会播出侵华日军731部队相关专题片，题为《被隐藏的部队：沉默的战后》。该片结合有关侵华日军731部队的历史照片和日本国立公文书馆公开的《留守名簿》，采访了多名731部队队员遗属并...</div>
+                <div class="item-meta">央视新闻 · 2026-07-22 17:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0E6KU00?scene=news-skill" target="_blank" rel="noopener">前所未有的人工智能失控事故！中方救场</a></div>
+                <div class="item-summary">近日，美国人惊恐地得知，类似科幻电影《终结者》中人工智能失控攻击人类的情况，居然真的在美国上演了。更令他们吃惊的是，救场的居然是中国的人工智能。 这一让美国科技界惊掉下巴的事件，始于上周。....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-07-22 20:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0BHTR00?scene=news-skill" target="_blank" rel="noopener">起势有力、增势强劲 外贸稳规模优结构迈出新步伐</a></div>
+                <div class="item-summary">编者按：近日，海关总署公布今年上半年我国货物贸易进出口数据，上半年我国外贸起势有力、增势强劲，稳规模优结构迈出新步伐，为“十五五”开好局起好步打下了良好基础，提供了有力支撑。 来源：国新办新闻发布会 编辑/设计：杨迪 郭思邈...</div>
+                <div class="item-meta">人民网 · 2026-07-22 16:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A03AJ700?scene=news-skill" target="_blank" rel="noopener">今日15时将举行重要发布会 商务部负责人介绍情况</a></div>
+                <div class="item-summary">国务院新闻办公室将于2026年7月23日（星期四）下午3时举行新闻发布会，请商务部副部长鄢东介绍2026年上半年商务工作及运行情况，并答记者问。 2026中央广播电视总台版权所有。未经许可，请勿转载使用。...</div>
+                <div class="item-meta">央视新闻 · 2026-07-23 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260721A09KKA00?scene=news-skill" target="_blank" rel="noopener">刷短剧总觉得 AI 脸怪怪的？明明脸很精致，为什么我们会觉得别扭？</a></div>
+                <div class="item-summary">近期，“对 AI 脸感到不适”相关话题接连冲上社交平台热搜。打开短视频平台刷微短剧，连续刷几部后，主角个个是高颅顶、大眼窄鼻、冷白皮，精致得挑不出错，可表情僵硬空洞，看着看着心里一阵发毛，关掉手机却说不清到底哪里不对。图源：社交媒体这种说不清道不明的“不舒服”到底是什么？为什么会让人不适？越像人越别扭的...</div>
+                <div class="item-meta">科普中国 · 2026-07-21 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A033C800?scene=news-skill" target="_blank" rel="noopener">印度外长：印方在台湾、西藏等问题上的立场没有改变</a></div>
+                <div class="item-summary">据外交部网站消息，7月22日，中共中央政治局委员、外交部长王毅在马尼拉会见印度外长苏杰生。王毅表示，过去两年，习近平主席同莫迪总理成功举行喀山、天津会晤，两国领导人一致认为中印是合作伙伴而非竞争对手，互为发展机遇而不是威胁，引领中印关系走上改善发展正轨。在双方共同努力下，两国机制性交往逐步恢复，边境地...</div>
+                <div class="item-meta">观察者网 · 2026-07-23 06:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A09ML200?scene=news-skill" target="_blank" rel="noopener">国台办就香港个别书店问题回应台媒：煽动分裂、动乱从来不为中华文化所提倡</a></div>
+                <div class="item-summary">国务院台办22日上午举行例行新闻发布会，发言人张晗回答记者提问。台湾《中国时报》记者提问，近期，香港“田园书屋”“留下书舍”等书店被执法部门查访，部分书店已被查处或结业。大陆方面近年来反复强调，希望两岸同胞共同弘扬中华文化。有台湾舆论质疑，“中华文化的定义权”以及如何弘扬是否仅限于大陆官方认定？张晗说...</div>
+                <div class="item-meta">北京日报客户端 · 2026-07-22 14:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722V0B2D500?scene=news-skill" target="_blank" rel="noopener">“又酷又飒的中国女保镖”射击夺冠！现场解说直呼：惊为天人</a></div>
+                <div class="item-summary">“又酷又飒的中国女保镖”射击夺冠！现场解说直呼：惊为天人</div>
+                <div class="item-meta">海客见闻 · 2026-07-22 16:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A034CF00?scene=news-skill" target="_blank" rel="noopener">不只“榴莲自由”！未来5年“买全球”还有这些好消息</a></div>
+                <div class="item-summary">眼下正值东南亚榴莲集中上市旺季这个夏天你吃榴莲了吗？今年的榴莲更新鲜、更便宜继“车厘子自由”之后我们又迎来了“榴莲自由”01榴莲进口有啥变化？来源多了、选择多了、价格低了 来源多了2022年以来海关总署先后完成越南、马来西亚、老挝等5国榴莲输华准入进口来源持续拓宽选择多了去年榴莲进口达到186.8万吨数量比2022...</div>
+                <div class="item-meta">央视新闻 · 2026-07-23 06:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0CYML00?scene=news-skill" target="_blank" rel="noopener">网传“广西水灾一老人被困泥潭”不实（2026·07·22）</a></div>
+                <div class="item-summary">辟 谣 网传“广西水灾一老人被困泥潭”不实 详情：近日，有网民在某互联网平台发布图文称“广西水灾让老百姓受苦了”，配图中一人侧卧在泥潭中，引发网民误解和担忧。 经....</div>
+                <div class="item-meta">2026-07-22 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0DZSH00?scene=news-skill" target="_blank" rel="noopener">中央考核巡查组指出问题，当地互相推诿</a></div>
+                <div class="item-summary">6月中下旬，中央安全生产考核巡查第十八组对海南省安全生产进行明查暗访，在海南超能量船舶服务公司，考核巡查组发现有游艇未按规定年检仍在航行。该问题被考核巡查组指出后，当地发生了互相推诿的一幕。华润置地海南公司安全总监称，“这份资料是没有，赶紧把它拿过来。什么情况？肯定是后面有个东西的。”南超能量船舶服...</div>
+                <div class="item-meta">新京报 · 2026-07-22 20:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A07X1G00?scene=news-skill" target="_blank" rel="noopener">装修工友被“封”进钢板夹层，下班清点才发现少个人</a></div>
+                <div class="item-summary">7月14日，四川德阳。装修工人下班时发现工友失踪，返回工地寻找时发现工友被封在4楼与5楼的钢板夹层中，急忙报警求助。救援人员踏入现场，听见钢板隔间传来隐约呼喊声，最终决定从5楼通风口施救，15分钟后被困工人被平安救出，身体状态平稳。————————————来 源：深圳卫视、纵览新闻编 辑：宋聪俐校 对：温冠森...</div>
+                <div class="item-meta">大河报 · 2026-07-22 17:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0FDV100?scene=news-skill" target="_blank" rel="noopener">知名水果品牌，被曝农药残留？</a></div>
+                <div class="item-summary">怡颗莓，摊上事了。 图源：微博 近日，#怡颗莓 致癌物#等话题登上微博热搜榜，因其美国产区常规草莓被检出永久性化学物含量超标，一时间，怡颗莓陷入争议。 与此同时，山姆、....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-07-22 22:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0FWA800?scene=news-skill" target="_blank" rel="noopener">女子身份证丢失后名下出现“吸毒记录”和近590万流水社保卡 警方：吸毒行政处罚已撤销</a></div>
+                <div class="item-summary">四川籍的庞女士定居浙江宁波多年，她怎么也没想到，因丢失身份证一事，竟让她陷入长达7年“自证清白”的困局。从2019年11月在杭州出差时被民警上门核查“吸毒”、注册网约车司机被驳回，到今年初发现名下凭空冒出一张流水近590万元、归属地为福建莆田的社保卡，庞女士的生活被打乱了。为撤销名下的“吸毒”违法记录，7月初...</div>
+                <div class="item-meta">红星新闻 · 2026-07-22 23:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A02Y4Z00?scene=news-skill" target="_blank" rel="noopener">视频丨“镐山”之后美再威胁袭伊基础设施 伊朗：编造借口、将以牙还牙</a></div>
+                <div class="item-summary">截至7月22日，美军已连续11晚对伊朗发动袭击，伊方对美中东地区军事基地的反击也未停止。与此同时，美国还不断释放“盯上”伊朗“镐山”核设施的信号；对此，伊朗将美方对“镐山”的“痴迷”称作“为其侵略、摧毁和蓄意破坏所编造的借口”。而在当天稍晚时，美国总统特朗普又继续发出威胁，这次把枪口对准了伊朗的民用基础...</div>
+                <div class="item-meta">央视新闻 · 2026-07-23 05:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0FRDY00?scene=news-skill" target="_blank" rel="noopener">武汉地下试管机构爆雷老板被抓，各地上百户求子家庭深陷骗局</a></div>
+                <div class="item-summary">生育的希望第一次破灭，是公立医院告诉他们，做试管婴儿排队得排两三年。 第二次破灭，是他们给武汉贝旺医疗咨询服务有限公司（以下简称：贝旺公司）。十多万元做地下试管，从外地赶来武汉，经历促排、....</div>
+                <div class="item-meta">大风新闻 · 2026-07-22 23:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A06ZXR00?scene=news-skill" target="_blank" rel="noopener">“电视剧情节成真”，爷爷藏了70多年的借粮证，如今政府还7万</a></div>
+                <div class="item-summary">孟夏时节一场特殊的捐赠仪式在安徽省潜山市烈士陵园举行“终于了却了我们家族的一个心愿！”捐赠仪式现场村民丁光义将爷爷丁万民留下的借粮证郑重交到市退役军人事务局相关负责同志手中1947年刘邓大军千里挺进大别山部队粮草紧缺、物资匮乏丁万民将家中留存的1700多斤粮食全部借给子弟兵这张由晋冀鲁豫边区政府开具的借粮证...</div>
+                <div class="item-meta">北京日报客户端 · 2026-07-22 17:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0D02Y00?scene=news-skill" target="_blank" rel="noopener">商务部新闻发言人就法国“反超快时尚”法有关问题答记者问</a></div>
+                <div class="item-summary">新京报讯 据商务部消息，商务部新闻发言人就法国“反超快时尚”法有关问题答记者问。问：近日法国出台了“反超快时尚”法，针对“超快时尚”服饰产业及平台提出了一系列限制性要求。法国政府官员明确表示，立法首要管控对象是希音、特木、速卖通等跨境电商平台。请问商务部对此有何评论？答：中方注意到，法国近日出台的“...</div>
+                <div class="item-meta">新京报 · 2026-07-22 18:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A07TS300?scene=news-skill" target="_blank" rel="noopener">石家庄一商场厕所壁画被指低俗，壁画中男子仅穿内裤摆挑逗姿势引家长担忧，该商场2016年曾因同类问题被报道</a></div>
+                <div class="item-summary">张竹影、周泽涵、江南都市报全媒体记者喻妍 近日，有网友反映，其于7月18日晚7时许在河北省石家庄市西美·花街生活工场二楼女卫生间内，发现墙上壁画非常低俗。该帖文发布后，迅速引发网友广泛关注。评论区有网友质疑“这种设计怎么通过的？第一眼就生理不适”，还有网友询问投诉渠道，并表示“这个商场有很多家长带孩子去...</div>
+                <div class="item-meta">大河报 · 2026-07-22 15:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260722A0C44V00?scene=news-skill" target="_blank" rel="noopener">运动员身体未必有普通人好？亚运会冠军退役不到一年查出三高和脂肪肝</a></div>
+                <div class="item-summary">近日，杭州亚运会田径女子4X100米冠军、短跑名将袁琦琦发视频称自己退役不到一年后体检测出三高和脂肪肝，尽管体脂率低于10%。10月3日，中国选手韦永丽（右二）、袁琦琦（右一）在比赛中。袁琦琦调侃运动员身体未必有普通人好，怀疑可能是退役后运动量减少但饮食结构未能改变导致代谢出现问题，目前正通过饮食结合运动进行...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-07-22 23:16</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-07-23 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

@@ -115,13 +115,11 @@ def main():
 
     # Create commit
     commit_msg = (
-        "fix: 0721三板块排版修复 + 清理冗余脚本 + 同步文档\n\n"
-        "- 修复 2026-07-21 tech/finance/world 三板块卡片排版\n"
-        "  * 英文源卡片去除中文污染、来源标签(未知来源)修正\n"
-        "  * world[12/13/17/19] 预览文本与标题订正\n"
-        "- 删除冗余一次性脚本: merge_new16 / merge_summaries / patch_final / patch_summaries_v2\n"
-        "- 新增 tools/repair_html.py（卡片结构重建）与 tools/api_push_all.py（Git Data API 推送）\n"
-        "- 同步 CLAUDE.md 与 docs/ARCHITECTURE.md（排名系统说明）"
+        "hotsearch 2026-07-23\n\n"
+        "- 每日热搜：五平台（微博/百度/今日头条/知乎/哔哩哔哩）各综合排名前10热点，共50条；"
+        "agent 预生成 100-200 字中文摘要替代易失效的 Bing 抓取\n"
+        "- 重建站点聚合页（index/archive/sitemap），热搜分类融入首页与归档\n"
+        "- 同步当日 daily20 与每日新闻生成产物"
     )
     commit_result = gh_api(f"repos/{REPO}/git/commits", method="POST", input_data={
         "message": commit_msg,
