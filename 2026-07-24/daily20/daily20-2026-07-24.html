@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-07-24</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-07-24</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A058N300?scene=news-skill" target="_blank" rel="noopener">北大“双菲”：天才们的鲜活人生</a></div>
+                <div class="item-summary">程浅 发自 凹非寺 量子位 | 公众号 QbitAI 没有意外，没有反转，果然是王虹、邓煜。 就在刚刚，美国费城，ICM（国际数学家大会）现场，四年一度菲尔兹奖名单公布....</div>
+                <div class="item-meta">量子位 · 2026-07-24 09:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A0546V00?scene=news-skill" target="_blank" rel="noopener">韦东奕曾连续多天听王虹讲座，课下主动向王虹请教问题</a></div>
+                <div class="item-summary">35岁王虹获数学界诺奖，成第3位女性菲尔兹奖得主，韦东奕曾连续多天听王虹讲座，课下还主动请教问题。新闻多看点中国籍数学家首摘菲尔兹奖，一次两枚，历史性突破！35岁王虹、37岁邓煜获奖，两人本科均毕业于北京大学来源 潇湘晨报编辑 肖旭审核 张倩 王晨郁校对 金秋往期回顾BREAK AWAY“男子采血站采血后口吐白沫、神志不...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-07-24 09:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A0D9CU00?scene=news-skill" target="_blank" rel="noopener">APEC数字和人工智能部长会议通过成都声明</a></div>
+                <div class="item-summary">新华社成都7月23日电（记者周圆、李倩薇）2026年亚太经合组织（APEC）数字和人工智能部长会议23日在成都举行。会议通过《2026年APEC数字和人工智能部长声明（成都声明）》，一致同意共同推动数字和人工智能技术赋能亚太共同体，为未来一段时期APEC深化数字和人工智能领域合作搭建了行动框架。 数字和人工智能部长会议是APE...</div>
+                <div class="item-meta">新华社新闻 · 2026-07-23 22:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A0CGGE00?scene=news-skill" target="_blank" rel="noopener">故宫博物院7月27日免费开放</a></div>
+                <div class="item-summary">新京报讯（记者张建林）据故宫博物院消息，为庆祝北京中轴线申遗成功两周年，满足广大观众文化需求，故宫博物院将于2026年7月27日（周一）免费开放一天。8:30开馆，16:00停止入馆，17:00闭馆。 故宫博物院表示，此次参观仅可通过“故宫博物院”微信小程序进行实名预约，7月24日20:00开始预约大门票和钟表馆、珍宝馆门票，约...</div>
+                <div class="item-meta">新京报 · 2026-07-23 21:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A03U4V00?scene=news-skill" target="_blank" rel="noopener">视频丨中国海警对多艘菲律宾非法活动船只采取管制措施</a></div>
+                <div class="item-summary">7月24日，中国海警依法对位中国黄岩岛管辖海域非法活动的菲律宾多艘船只采取管制措施。（总台央视记者 国鹏）</div>
+                <div class="item-meta">央视新闻 · 2026-07-24 08:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A0B30T00?scene=news-skill" target="_blank" rel="noopener">辽宁省委书记：坚决调整“躺平”不作为、工作简单粗暴“一刀切”、弄虚作假的干部</a></div>
+                <div class="item-summary">辽宁日报消息，7月23日，辽宁省委书记许昆林主持召开沈阳县（市、区）党政主要负责同志座谈会。他强调，沈阳要深入学习贯彻习近平总书记对辽宁的重要讲话和重要指示精神，牢固树立和践行正确政绩观，鼓足干劲、转变作风、奋勇争先，扎实推动高质量发展，加快提升城市能级，以新气象新担当新作为助推辽宁全面振兴取得新突破...</div>
+                <div class="item-meta">政事儿 · 2026-07-23 18:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A03A6V00?scene=news-skill" target="_blank" rel="noopener">四预警齐发！台风“红霞”将在粤闽一带沿海登陆</a></div>
+                <div class="item-summary">今天（24日）6时，中央气象台发布高温黄色预警、暴雨蓝色预警、强对流天气蓝色预警、台风橙色预警。 高温黄色预警中央气象台7月24日6时继续发布高温黄色预警。预计7月24日白天，新疆东部和南疆盆地、内蒙古西部、甘肃中西部、宁夏北部、四川盆地、重庆西部、陕西中南部以及河南中南部、安徽西北部和南部、江苏南部、上海大部、湖北大部、湖南北部和东部、江西、浙江大部、福建中西部、广西东南部、广东大部、海南...</div>
+                <div class="item-meta">央视新闻 · 2026-07-24 06:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A03GND00?scene=news-skill" target="_blank" rel="noopener">视频丨中国汽车加速全球化布局！今年上半年我国汽车出口同比增长48.3%</a></div>
+                <div class="item-summary">今年上半年，我国汽车出口6358.2亿元，同比增长48.3%，销往全球210多个国家和地区。其中，新能源汽车出口3606.8亿元，同比增长68.7%。 相关阅读技术实力+智能体验 中国新能源汽车出口强劲增长</div>
+                <div class="item-meta">央视新闻 · 2026-07-24 07:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A0B73A00?scene=news-skill" target="_blank" rel="noopener">大学，正在往县城“跑”</a></div>
+                <div class="item-summary">记者 刘亚宁一些“双一流”高校已不再是一二线城市的专属。过去，高考生选学校有个心照不宣的排序，一线城市优先于省会城市，省会城市优先于地级市。至于县城，很少有人会把它放进志愿表里。但风向正在变。如今，越来越多“双一流”分校区、普通本科院校等开始在县城甚至小镇落脚。不少考生的目的地，也不再是清一色的直辖市或省会城市，而是变成了沿海的一些县城。大学为何“往下走”？2025年，教育部将“优本扩容”列...</div>
+                <div class="item-meta">经济观察报 · 2026-07-23 18:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/UWLlI7xsnLnlEczf1UWUWQ?scene=news-skill" target="_blank" rel="noopener">“汛”息随手转发，竟然差点闯祸！</a></div>
+                
+                <div class="item-meta">2026-07-24 10:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A03BNL00?scene=news-skill" target="_blank" rel="noopener">马克龙致电菲尔兹奖得主王虹：干得好</a></div>
+                <div class="item-summary">7月23日，有数学领域“诺贝尔奖”之称的菲尔兹奖正式揭晓。四位获奖者分别是John Pardon、Jacob Tsimerman，以及中国数学家邓煜（Yu Deng）和王虹（Hong Wang）。其中，王虹现为法国高等科学研究所（IHES）数学学科终身教授。结果揭晓后，法国总统马克龙亲自致电王虹，向她表达祝贺。“恭喜王虹，菲尔兹奖得主！”马克龙在...</div>
+                <div class="item-meta">观察者网 · 2026-07-24 06:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A0505Z00?scene=news-skill" target="_blank" rel="noopener">重大转向！俄罗斯宣布不再支持朝鲜半岛无核化呼声</a></div>
+                <div class="item-summary">据凤凰卫视报道，俄罗斯外长拉夫罗夫在东盟部长会议期间宣布，鉴于朝鲜面临的压力日益加大，俄罗斯不再支持朝鲜半岛无核化的呼声。</div>
+                <div class="item-meta">凤凰网 · 2026-07-24 09:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260723A0DA0C00?scene=news-skill" target="_blank" rel="noopener">北京大学祝贺两位校友获菲尔兹奖，称是“历史性时刻”，王虹高考成绩公开：16岁考了653分</a></div>
+                <div class="item-summary">极目新闻记者 谢茂 丁伟当地时间7月23日早晨，2026年国际数学家大会（International Congress of Mathematicians, ICM）在美国费城开幕。开幕式上第二十一届菲尔兹奖（Fields Medal）得主名单公布，北京大学2007级本科校友王虹、邓煜均榜上有名。据悉，这是中国籍数学家首次获得菲尔兹奖，且在同一届获得两枚奖章。来源：北...</div>
+                <div class="item-meta">极目新闻 · 2026-07-24 07:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A065F500?scene=news-skill" target="_blank" rel="noopener">公安部：反诈联盟即将成立</a></div>
+                <div class="item-summary">7月24日，国务院新闻办公室举行“开局起步‘十五五’”系列主题新闻发布会。公安部分管日常工作的副部长亓延军。图源：国新网公安部分管日常工作的副部长亓延军在发布会上介绍，全国刑事发案持续下降，电信网络诈骗犯罪高发态势实现基本扭转，毒品治理体系不断健全，黑恶犯罪得到有效遏制，未成年人违法犯罪预防治理成效显...</div>
+                <div class="item-meta">长安街知事 · 2026-07-24 10:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A05RDJ00?scene=news-skill" target="_blank" rel="noopener">人民锐评：深圳地铁安检引争议，城市治理要有“三度”</a></div>
+                <div class="item-summary">“人民锐评”微信公众号7月24发布评论《深圳地铁安检引争议，城市治理要有“三度”》。以下为全文：近日，在深圳，从地铁实施进站安检全覆盖，到多个站点安检口高峰时段出现排队拥堵，再到听取建议迅速推出优化措施，回溯这一过程与热议焦点，留下不少治理思考。公共安全是底线，尤其是在超大城市的地铁空间。强化安检，有...</div>
+                <div class="item-meta">新京报 · 2026-07-24 10:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A05J7G00?scene=news-skill" target="_blank" rel="noopener">河北老牌乳企，停在港交所门外</a></div>
+                <div class="item-summary">作者｜周琦 编辑｜吕栋7月19日，距离君乐宝向港交所递交招股书正好六个月。按港交所规则，招股书有效期为6个月，未在期限内完成聆讯即自动失效。这意味着，这家年营收逼近200亿元、稳居国内乳企“第三”的河北老牌乳企，在港交所门外徘徊半年后，仍未拿到入场券。招股书失效不等于上市终止，企业可补充最新财务数据后重新递...</div>
+                <div class="item-meta">观察者网 · 2026-07-24 10:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A03WQW00?scene=news-skill" target="_blank" rel="noopener">智己汽车经销商危机背后：单店平均月销17辆、卖一辆亏4万多</a></div>
+                <div class="item-summary">记者 王帅国7月以来，智己汽车在昆明、珠海两地的多家授权经销商门店因资金链断裂突然闭店，导致数百位车主无法取得车辆合格证、延迟交付，并引发员工薪资纠纷。上述两地的涉事门店属同一经销商主体。智己汽车官方称已进驻现场协调恢复交付，并指定替代售后服务网点。此外，智己汽车上海某门店近期出现店长携车主预付款失联事件。这些事件，折射出智己汽车在经销商管理体系中的风险管控短板。作为上汽集团旗下高端新能源品...</div>
+                <div class="item-meta">经济观察报 · 2026-07-24 08:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A05TAO00?scene=news-skill" target="_blank" rel="noopener">最贵580一场，脱口秀的票，怎么越来越贵了？</a></div>
+                <div class="item-summary">你是否疑惑过，脱口秀线下演出的门票，怎么越来越贵了？点开购票软件，近几年的脱口秀专场、拼盘演出，都能卖到380、480、甚至 680元的高价。在这个快乐稀缺的年代，为了笑出声来，人们似乎愿意支付一定的溢价，但当贵价演出越来越多，再苦闷的年轻人也忍不住先捂住钱包——不能没有了快乐，也没有了钱。票价走高，做脱口秀理应赚得盆满钵满，但现实并非如此。作为一门牢牢绑在人身上的生意，段子很难流水线批量生...</div>
+                <div class="item-meta">每日人物 · 2026-07-24 10:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A05FOU00?scene=news-skill" target="_blank" rel="noopener">俄外长警告美方：对乌供武“不可接受”</a></div>
+                <div class="item-summary">新华社北京7月24日电 俄罗斯外交部长拉夫罗夫23日对美国国务卿鲁比奥表示，持续向乌克兰提供武器“不可接受”。 拉夫罗夫与鲁比奥当天在菲律宾参加东盟外长会议及系列会议间隙举行会谈。俄外交部发言人扎哈罗娃说，会谈由美方提议。据俄外交部发表的声明，拉夫罗夫在会谈中说，持续向乌克兰提供武器“不可接受”。他还表示...</div>
+                <div class="item-meta">新华社新闻 · 2026-07-24 10:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260724A044X400?scene=news-skill" target="_blank" rel="noopener">江西省原省长黄智权同志逝世</a></div>
+                <div class="item-summary">据江西日报7月24日消息，江西省委原副书记、省人民政府原省长黄智权同志，因病于2026年7月22日在南昌逝世，享年85岁。 黄智权同志，1942年2月生，浙江桐乡人。1963年9月参加工作....</div>
+                <div class="item-meta">政知见 · 2026-07-24 08:39</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-07-24 12:35</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
