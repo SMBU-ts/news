@@ -5,9 +5,9 @@
     "source": "Hacker News 热门（buzzing.cc 中文翻译）",
     "date": "",
     "category": "ai-daily",
-    "rawfile": "015.txt",
-    "ok": true,
-    "round": 2
+    "rawfile": "",
+    "ok": false,
+    "round": 0
   },
   {
     "url": "https://x.com/OpenAI/status/2080378182469857576",
@@ -17,7 +17,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 3
+    "round": 0
   },
   {
     "url": "https://claude.com/blog/think-through-hard-problems-in-voice-mode",
@@ -27,7 +27,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 3
+    "round": 0
   },
   {
     "url": "https://openai.com/index/health-in-chatgpt",
@@ -57,7 +57,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 3
+    "round": 0
   },
   {
     "url": "https://techcrunch.com/2026/07/23/google-closes-in-on-another-billion-user-product-with-gemini",
@@ -107,7 +107,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 3
+    "round": 0
   },
   {
     "url": "https://www.theverge.com/podcast/968787/apple-openai-trade-secrets-lawsuit-ai-hardware-smartphone-jony-ive",
@@ -147,6 +147,6 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 3
+    "round": 0
   }
 ]

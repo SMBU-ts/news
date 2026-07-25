@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-07-25</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 7 月 25 日 · 星期六</h1>
+      <div class="sub">共 18 条 · 生成于 北京时间 2026 年 07 月 25 日 08:00 · 数据覆盖 2026-07-24 ~ 2026-07-25</div>
+      <div class="stats">
+        <div class="stat"><div class="n">18</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">4</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">3</div><div class="l">行业动态</div></div><div class="stat"><div class="n">2</div><div class="l">论文研究</div></div><div class="stat"><div class="n">4</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 5</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 4</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 3</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 2</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 4</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">5</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">4</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">3</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">2</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">4</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">5</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">Anthropic：Newsroom（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">Anthropic 发布 Claude Opus 5</a>
+          </h3>
+          <p class="card-sum">Anthropic 发布 Claude Opus 5，其智能水平接近 Claude Fable 5，但价格减半。该模型…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Anthropic 发布 Claude Opus 5 模型，以接近 Fable 5 的前沿智能水平、但仅一半的价格提供服务。Opus 5 在编码和知识工作评测（Frontier-Bench、GDPval-AA）中达到新 SOTA，编程能力较前代 Opus 4.8 提升一倍以上，成本反而降低。该模型在 ARC-AGI 3 得分是其他最优模型的 3 倍，在 Zapier AutomationBench 通过率约为次优模型的 1.5 倍，在 OSWorld 2.0 计算机使用基准中也大幅领先。Opus 5 已成为 Claude Max 的默认模型和 Claude Pro 最强模型，支持多档 effort 设置以在智能与成本间灵活调节。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">公众号：蚂蚁百灵（Ling）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/5ic54FCsy334JJsQcyBr1g" target="_blank" rel="noopener noreferrer">蚂蚁百灵发布Ling-3.0-flash原生混合推理模型</a>
+          </h3>
+          <p class="card-sum">蚂蚁百灵发布新一代原生混合推理模型Ling-3.0-flash，总参数量124B，激活参数量仅5.1B，在传统推理、指…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/5ic54FCsy334JJsQcyBr1g" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>蚂蚁百灵发布 Ling-3.0-flash 原生混合推理模型，总参数 124B、激活参数仅 5.1B，却全面对标甚至超越上一代 1T 级旗舰 Ring-2.6-1T。核心升级包括：原生混合线性注意力架构（5:1 交替堆叠 KDA 与 MLA）、升级细粒度对角门控 KDA 状态记忆、1/64 稀疏 MoE 专家路由。模型面向 Agent 场景定向打磨，扩展超 10,000 个可交互训练环境，实现 Coding、General 与 Deep Research Agent 任务全程闭环。同时接入 SGLang HiCache + Mooncake 分级缓存架构，长输入下首 Token 延迟降低 60% 至 80% 以上。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">3</span>
+            <span class="chip" style="--c:#3b82f6">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://bfl.ai/blog/flux-3-mimic" target="_blank" rel="noopener noreferrer">FLUX 3 x mimic：新一代视频动作模型</a>
+          </h3>
+          <p class="card-sum">Black Forest Labs 发布多模态基础模型 FLUX 3，联合训练图像、视频和音频，其中视频预测占训练算力…</p>
+          <div class="card-actions">
+            <a class="read" href="https://bfl.ai/blog/flux-3-mimic" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>Black Forest Labs 宣布 FLUX 3 的早期版本已在机器人上运行。FLUX 3 是与 mimic robotics 合作开发的新一代视频动作模型，已在奥迪工厂测试部署。FLUX 3 是统一的多模态基础模型，从零开始联合训练图像、视频和音频，其中视频预测占训练计算量的 95% 以上。为生成逼真视频，模型必须学习接触、运动、重量、因果等物理规律，因此它本质上是一个世界行为模型，而内容创作只是其能力之一。该模型代表了从图像生成向物理世界理解的重大跨越。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">4</span>
+            <span class="chip" style="--c:#3b82f6">Midjourney：Updates（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://updates.midjourney.com/version-8-2" target="_blank" rel="noopener noreferrer">Midjourney V8.2 发布：专注美学提升与个性化理解</a>
+          </h3>
+          <p class="card-sum">Midjourney 今日推出 V8.2 图像模型，重点提升美学质量、图像创意与个性化表现。低质量图像出现频率将显著降…</p>
+          <div class="card-actions">
+            <a class="read" href="https://updates.midjourney.com/version-8-2" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Midjourney 发布 V8.2 图像模型，重点提升美学质量与个性化理解能力。新版本生成图像更具创意、大胆、精致且富有新鲜感，低质量图像的随机出现频率大幅降低。个性化系统能更准确理解用户审美偏好，尤其是评分数据丰富的用户画像受益更大。V8.2 的个性化画像创建使用了更大规模且改进后的图像池。官方鼓励用户同时尝试新旧个性化画像以获得最佳效果。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">5</span>
+            <span class="chip" style="--c:#3b82f6">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/981/137.htm" target="_blank" rel="noopener noreferrer">Black Forest Labs 发布 FLUX 3 多模态模型，支持单次生成 20 秒视频与原生音频</a>
+          </h3>
+          <p class="card-sum">Black Forest Labs 以 Early Access 方式推出 FLUX 3 多模态基础模型，采用统一架构…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/981/137.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Black Forest Labs 以 Early Access 方式推出 FLUX 3 多模态基础模型，采用统一架构联合学习图像、视频和音频。该模型基于 Self-Flow 自监督流匹配框架，单次生成最长支持 20 秒视频并附带原生音频，支持文生视频、图生视频、视频续写、关键帧转视频和多镜头串联等功能。在带声音的 10 秒 720p 视频人工评测中，FLUX 3 对比 Grok Imagine Video 胜率 69%，对比 Seedance 2.0 和 Gemini Omni Flash 胜率均为 52%。公司还与 Mimic Robotics 合作探索将 FLUX 3 用作机器人行为预测模型。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">X：Runway (@runwayml)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/runwayml/status/2080649234672439389" target="_blank" rel="noopener noreferrer">Runway Agent 推出自然语言工作流功能</a>
+          </h3>
+          <p class="card-sum">在 Runway Agent 中引入工作流。现在你可以通过自然语言构建、运行或编辑基于节点的工作流。工作流可大规模解锁…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/runwayml/status/2080649234672439389" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>Runway 宣布在 Runway Agent 中引入自然语言工作流功能。用户现在可以通过自然语言描述直接构建、运行和编辑基于节点的复杂工作流，无需手动操作节点连接。这一功能将视频生成流程（如 Gen-4 视频生成、动作笔刷、音频生成等）串联为自动化流水线，大幅降低专业视频制作的门槛，使非技术用户也能构建端到端的创作流程。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">公众号：百度智能云（文心）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/HRySK1LU53clPe2I_M-Fug" target="_blank" rel="noopener noreferrer">百度搭子更新：电脑手机接力、桌面端内嵌浏览器上线，复杂任务可跨端连续执行</a>
+          </h3>
+          <p class="card-sum">百度搭子在近期AI Day上推出多项升级，支持电脑与手机双端互联，同步任务上下文与执行进度，用户可跨设备接力完成复杂工…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/HRySK1LU53clPe2I_M-Fug" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>百度搭子迎来重要更新，核心新功能包括：电脑手机双端互联，任务上下文、执行进度和长期记忆跨端同步，支持随时随地接力推进复杂工作；桌面端内嵌浏览器正式上线，可连续打开多个网站完成竞品调研、数据筛选等网页任务，关键操作可随时人工接管；智能路由自动匹配模型与执行方式，平均任务耗时降低 20%、Token 利用率提升 25%；Skill 生态深度整合百度搜索、网盘、地图等核心能力，可按需协同调用。此外首 Token 耗时降低 50%，简单任务完成度 100%，复杂任务高交付率 94%，积分消耗最高降低 75%。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">8</span>
+            <span class="chip" style="--c:#10b981">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/announcements/classifiers" target="_blank" rel="noopener noreferrer">OpenRouter 推出 Classifiers 测试版：自动标记 AI 请求的用途与成本归属</a>
+          </h3>
+          <p class="card-sum">OpenRouter 上线 Classifiers 测试版，允许用户通过自定义分类法（最多 8 个维度）自动标记每次 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/announcements/classifiers" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>OpenRouter 推出 Classifiers 测试版，允许用户为 API 调用自动添加结构化分类标签。用户可自定义分类维度（最多 8 个维度，如部门、任务类型、Agent 复杂度、合规类别等），选择一个分类模型读取每次请求并进行标记，结果异步写入日志，不影响推理延迟。提供 6 个预设模板，支持按采样率控制分类成本。分类结果可在 Activity Explorer 中聚合分析，按维度查看不同任务或部门的模型使用和费用分布，便于 AI 使用治理和成本归属。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">9</span>
+            <span class="chip" style="--c:#10b981">Claude Code：GitHub Releases（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.219" target="_blank" rel="noopener noreferrer">Claude Code v2.1.219 发布：新增 Claude Opus 5，支持 1M 上下文与嵌套子智能体</a>
+          </h3>
+          <p class="card-sum">Claude Code v2.1.219 新增 Claude Opus 5 作为默认 Opus 模型，支持 1M 上下…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.219" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>Claude Code v2.1.219 发布，主要更新包括：新增 Claude Opus 5 模型（1M 上下文，fast 模式 $10/$50 每百万 Token），成为新的默认 Opus 模型；新增 sandbox.network.strictAllowlist 设置以限制沙箱命令的网络访问；新增 DirectoryAdded 钩子；支持嵌套子智能体在 stream-json 中的转发；修复了 -p 文本输出在 API 中途错误时丢失内容的问题；优化了 MCP 配置校验提示和自托管 runner 的稳定性。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">10</span>
+            <span class="chip" style="--c:#f59e0b">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html" target="_blank" rel="noopener noreferrer">英伟达、微软和Meta联合警告：应避免对开放权重模型过度监管</a>
+          </h3>
+          <p class="card-sum">英伟达、微软和Meta联合签署公开信，警告对开放权重AI模型的过度监管将削弱美国在AI领域的竞争力。信中指出，开放权重…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>25 家科技公司联名致信美国政策制定者，呼吁避免对开放权重 AI 模型施加「过早限制」。联名方包括英伟达、微软和 Meta，主要担忧中国开源模型竞争力持续增强但不应因竞争压力而限制美国开源生态。值得注意的是，OpenAI 和 Anthropic 未签署该信——两家公司正筹备大规模 IPO，旗下模型均为闭源。此事正值中美 AI 竞赛加剧、开源与闭源路线之争白热化的关键节点。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">11</span>
+            <span class="chip" style="--c:#f59e0b">X：Satya Nadella (@satyanadella)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/satyanadella/status/2080646162483417097" target="_blank" rel="noopener noreferrer">微软阐述开源模型助力美国竞争力路径</a>
+          </h3>
+          <p class="card-sum">开放权重模型对健康的 AI 生态系统至关重要。我们与行业同仁一道，正在规划一条路径，让开放权重模型在保护国家安全的同时…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/satyanadella/status/2080646162483417097" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>微软 CEO 萨提亚·纳德拉在 X 平台发文强调开放权重模型对健康 AI 生态系统的关键作用。他表示微软正与英伟达、Meta 等 25 家科技公司一道，制定一条既能保持开放模型创新活力、又能保护国家安全的路径，呼吁美国政策制定者避免「过早限制」开放权重模型的开发和分发。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">12</span>
+            <span class="chip" style="--c:#f59e0b">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/kimi-k3-trails-frontier-us-models-by-a-wide-margin-on-cyber-exploits-and-distillation-may-explain-why" target="_blank" rel="noopener noreferrer">Kimi K3 在网络安全漏洞利用测试中大幅落后美国前沿模型，知识蒸馏或为原因</a>
+          </h3>
+          <p class="card-sum">英国AI安全研究所与美国AI标准与创新中心联合评估显示，月之暗面的Kimi K3在ExploitBench基准上得分3…</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/kimi-k3-trails-frontier-us-models-by-a-wide-margin-on-cyber-exploits-and-distillation-may-explain-why" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>英国 AI 安全研究所与美国 AI 标准与创新中心联合评测月之暗面 Kimi K3 模型在网络攻击任务中的表现。结果显示 Kimi K3 在 ExploitBench 漏洞利用基准中仅得 32.2%，远低于美国前沿模型的 76.2%，且未能在任一任务中达到最高级别（任意代码执行）。在模拟企业网络攻击「TLO」测试中，Kimi K3 平均推进至 32 步中的第 17 步，而美国模型可达 28.5 步。报告指出结果与月之暗面可能通过知识蒸馏学习更强模型的指控一致。不过 Kimi K3 仍优于智谱 GLM-5.2，代表中国开源模型在持续进步。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">13</span>
+            <span class="chip" style="--c:#8b5cf6">Anthropic：Research（发表成果 · 网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.anthropic.com/research/project-pilot" target="_blank" rel="noopener noreferrer">Anthropic 联合 Andon Labs 发布 Drone-Bench，评估 AI 模型自主操控无人机执行定位追踪任务的能力</a>
+          </h3>
+          <p class="card-sum">Anthropic 与 Andon Labs 合作推出 Drone-Bench，用于测试 AI 模型自主操控四旋翼无人…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.anthropic.com/research/project-pilot" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>Anthropic 与 Andon Labs 合作发布 Drone-Bench，评估 AI 模型自主操控无人机执行定位追踪任务的能力。这是 Frontier Red Team 系列项目的最新成果，继 Project Vend（AI 经营商店）和 Project Fetch（机器人操控）后进一步探索 AI 与物理世界的交互。研究指出无人机是典型军民两用技术，理解 AI 操控无人机的能力边界对评估安全风险至关重要。Drone-Bench 通过实际飞行演示配合可复现评估体系，为追踪这一能力的快速演进提供基准。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">14</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/lead-no-recovery-bottleneck" target="_blank" rel="noopener noreferrer">Apple 提出 LEAD 方法，破解长程推理中的“不可恢复瓶颈”</a>
+          </h3>
+          <p class="card-sum">Apple 研究发现，大语言模型在长程执行中即使有高层策略也不稳定，极端分解会导致“不可恢复瓶颈”——少数“困难”步骤…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/lead-no-recovery-bottleneck" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>Apple 提出 LEAD（Lookahead-Enhanced Atomic Decomposition）方法，解决大模型长程推理中的「不可恢复瓶颈」问题。研究发现，虽然问题分解对稳定性至关重要，但极端分解会在少数「困难」步骤上产生不可逆的连续错误。LEAD 通过融入短程前瞻验证和聚合重叠推理路径，在保持稳定性的同时保留足够的局部上下文来纠正错误。实验表明该方法使 o4-mini 模型解决 Checkers Jumping 问题的复杂度上限从 n=11 提升至 n=13。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">15</span>
+            <span class="chip" style="--c:#ec4899">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/izeigerman/claude-thermos" target="_blank" rel="noopener noreferrer">Claude-thermos：保持 Claude 会话缓存热度，避免重新编码费用</a>
+          </h3>
+          <p class="card-sum">Claude-thermos 通过本地反向代理监控 Claude Code 会话，在主智能体因等待子智能体而空闲超过 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/izeigerman/claude-thermos" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>Claude-thermos 是一个开源工具，用于解决 Claude Code 会话缓存过期导致的额外费用问题。当主智能体等待子智能体超过 5 分钟时，提示缓存会静默失效，下一轮需要重新编码整个对话而非廉价读取，在长会话中约占账单的 20%。claude-thermos 通过在后台定期发送请求保持缓存热度，用法简单：用 uvx claude-thermos 替代 claude 命令即可，也支持 daemon 模式为 IDE 和多终端提供共享代理。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">16</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener noreferrer">Claude 5 代模型上下文工程新规则：Claude Code 系统提示词精简超 80%</a>
+          </h3>
+          <p class="card-sum">Anthropic 为 Claude Opus 5 和 Claude Fable 5 等新一代模型删除了 Claude…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>Anthropic 工程团队针对 Claude Opus 5 和 Fable 5 等新一代模型发布了全新的上下文工程规则。由于新一代模型对提示词的理解方式与旧模型存在根本差异，团队将 Claude Code 的系统提示词精简了超过 80%，移除了大量冗余指令。这篇博客分享了为 Claude 5 代模型设计提示词的最佳实践。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">17</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them" target="_blank" rel="noopener noreferrer">Claude Design 产品设计师 Nate Parrott 分享如何用其探索视觉创意</a>
+          </h3>
+          <p class="card-sum">Anthropic 产品设计师 Nate Parrott 分享了他在 Claude Design（beta 版）中利用…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>Anthropic 产品设计师 Nate Parrott 分享了如何使用 Claude Design（测试版）在正式开发前快速探索视觉创意的工作流。作为该工具的设计者，他展示了从概念草图到交互原型的完整 AI 辅助设计流程，为设计师提供了利用 AI 加速创意验证和迭代的实践参考。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">18</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/claude-models-explained-choosing-the-best-model-for-your-use-case" target="_blank" rel="noopener noreferrer">Claude 模型家族详解：如何为工作负载选择最佳模型</a>
+          </h3>
+          <p class="card-sum">Anthropic 发布 Claude 模型选择指南，将模型分为 Mythos/Fable（最强能力，用于前沿编码与智…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/claude-models-explained-choosing-the-best-model-for-your-use-case" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>Anthropic 发布 Claude 模型选择官方指南，帮助用户根据工作负载选择最合适的模型。指南将模型分为三个层级：Mythos 和 Fable 面向前沿编码与最强智能任务，Opus 5 适合日常编码与知识工作（性价比最优），Sonnet 和 Haiku 则针对特定场景提供更高效率。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>18</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>
