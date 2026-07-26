@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-07-26</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-07-26</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A03D9300?scene=news-skill" target="_blank" rel="noopener">多预警齐发！台风“红霞”已登陆 多地将有大风暴雨</a></div>
+                <div class="item-summary">今天（26日）6时，中央气象台发布台风橙色预警、暴雨红色预警、强对流天气黄色预警。 台风橙色预警今年第12号台风“红霞”已于今天（26日）凌晨3点50分前后在广东省惠州市惠东县平海镇沿海登陆，登陆时中心附近最大风力有14级（45米/秒，强台风级），中心最低气压955百帕，今天早晨其强度由强台风级减弱为台风级，早晨5点钟...</div>
+                <div class="item-meta">央视新闻 · 2026-07-26 06:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726V05VR000?scene=news-skill" target="_blank" rel="noopener">台风把6岁女孩连人带床卷出屋，一路翻滚被吹到绿化带，家长：孩子自己跑了回来</a></div>
+                <div class="item-summary">台风“红霞”登陆深圳 6岁女孩连人带婴儿床被卷出室内 被吹飞到绿化带，自己跑了回来 家长：后怕！孩子没受伤</div>
+                <div class="item-meta">红星视频 · 2026-07-26 12:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A04NS800?scene=news-skill" target="_blank" rel="noopener">夏粮首破3000亿斤彰显农业韧性</a></div>
+                <div class="item-summary">国家统计局数据显示，今年夏粮生产克服冬小麦大面积晚播、强降水等不利因素影响，实现增产丰收。夏粮产量达到3014.9亿斤，首次突破3000亿斤大关，比上年增产20亿斤。夏粮首破3000亿斤，为稳定全年粮食生产奠定了坚实基础，也为应对复杂严峻国际形势、推动经济稳中向好提供了有力支撑。突破3000亿斤，是我国夏粮生产的历史性...</div>
+                <div class="item-meta">央广网 · 2026-07-26 10:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A062MJ00?scene=news-skill" target="_blank" rel="noopener">上海交大医学院：针对仇某某发表医学论文及新华医院开展临床研究事件，进行全面调查</a></div>
+                <div class="item-summary">上海交通大学医学院7月26日发布情况说明：针对近日网络上关于我院研究人员仇某某发表的相关医学研究论文，以及附属新华医院开展的一例临床研究的相关报道，医学院高度重视，已成立专项工作组，对事件进行全面调....</div>
+                <div class="item-meta">界面新闻 · 2026-07-26 13:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260725A0BU2R00?scene=news-skill" target="_blank" rel="noopener">视频丨日方拆解宇树机器人后坦言：我们短期内赶不上中国</a></div>
+                <div class="item-summary">日本日经xTECH网站7月23日发布了一段日本技术人员拆解中国宇树科技G1人形机器人的视频，尝试探究其内部结构与技术水平。在这段视频中，日方技术人员和媒体记者边拆边感叹中国人形机器人的技术水平之高，并最终得出结论：中国机器人研发显然已超越了“只会展示”的阶段，在人形机器人领域，日本想在短时间内缩小与中国的差距...</div>
+                <div class="item-meta">央视新闻 · 2026-07-25 22:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A04UL700?scene=news-skill" target="_blank" rel="noopener">A股重磅新规，明起实施！事关内幕交易</a></div>
+                <div class="item-summary">7月24日，最高人民法院、最高人民检察院联合发布《关于修改〈最高人民法院、最高人民检察院关于办理内幕交易、泄露内幕信息刑事案件具体应用法律若干问题的解释〉的决定》（法释〔2026〕13号）（下称《解释》），自2026年7月27日起施行。据悉，这是该司法解释自2012年施行以来的首次系统性修改。受访律师向券商中国记者表示...</div>
+                <div class="item-meta">红星新闻 · 2026-07-26 11:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260725V0A61Q00?scene=news-skill" target="_blank" rel="noopener">10岁小学生写作业累到阳台休息，竟发现对楼着火！冷静求助救了一栋楼</a></div>
+                <div class="item-summary">近日，江苏泰州。10岁的钱凌杰写作业累了，到阳台上休息，发现对面楼有火光，他叫醒了父母。钱凌杰的父亲确认火情，立即拨打了119报警。随后，钱凌杰按照父亲安排到保安室通知值班人员，并到小区入口等待消防车辆；他的父亲赶到起火住户门前，拍门叫醒住户，合力灭火。消防人员赶到后，钱凌杰又引导他们找到起火楼栋，对现场进行处置。</div>
+                <div class="item-meta">掌闻视讯 · 2026-07-25 18:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A063YL00?scene=news-skill" target="_blank" rel="noopener">录取了！阜阳这对双胞胎：康祺睿（698分，北京大学）、康祺智（697分，清华大学）</a></div>
+                <div class="item-summary">日前，安徽普通本科录取结果陆续出炉，来自太和一中的双胞胎康祺睿、康祺智相继查到了自己的录取信息。此前报道：巧了！698分和697分！安徽这对双胞胎高考仅差一分！哥哥康祺睿，高考698分，被北京大学口腔医学（八年制）专业录取。弟弟康祺智，高考697分，被清华大学工科试验班（水木书院）录取。兄弟俩向大家分享了他们的...</div>
+                <div class="item-meta">安徽商报 · 2026-07-26 13:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A05XUY00?scene=news-skill" target="_blank" rel="noopener">台风天，深圳2名工人被困高空！幸已平稳落地，官方介入调查</a></div>
+                <div class="item-summary">此前，“红霞”即将登陆时 深圳天气曾发布提醒 非必要不外出！ 然而，有市民反映，就在全市台风黄色预警发布前后，福田区沙头街道中洲滨海华府小区，仍有施工人员冒险开展高空作....</div>
+                <div class="item-meta">南方都市报 · 2026-07-26 12:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A05LMM00?scene=news-skill" target="_blank" rel="noopener">广西横州应急辟谣：“横州独竹两个水库刚塌了”消息不实，发现渗漏问题，已开挖专用排水通道</a></div>
+                <div class="item-summary">7月25日，横州应急发布辟谣： 近日，一张微信群聊天截图在短视频平台流传，图中显示有人在微信群里发布“独竹两个水库刚塌了，大水又准备来了，大家尽快上高处”。 经核实，2026年7月21日上午11时20分，横州市云表镇在开展水库安全巡查工作中， 发现甲俭村委独竹村白坟山塘堤坝出现渗漏问题 。为快速遏制险情、消除安全隐患...</div>
+                <div class="item-meta">武汉辟谣 · 2026-07-26 12:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726V04I0700?scene=news-skill" target="_blank" rel="noopener">男子用身体压帐篷，差点被吹飞！受台风“红霞”影响，东莞遭遇大风天气</a></div>
+                <div class="item-summary">7月25日，受台风“红霞”影响广东东莞遭遇‌大风天气，全市阵风达‌8 到 10 级‌，两名男子用身体压住帐篷时一名男子差点被吹飞。目击者称，当时他们在拆卸该移动帐篷，帐篷被吹翻时白色男子忘了松手，事故未造成人员伤亡，被吹翻帐篷受损。</div>
+                <div class="item-meta">新京报我们视频 · 2026-07-26 09:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A04WIZ00?scene=news-skill" target="_blank" rel="noopener">25岁男星被曝高铁占座？主办方回应</a></div>
+                <div class="item-summary">7月25日，乐华旗下艺人李权哲因被曝“高铁占座”引发热议，活动主办方鹰之娱乐发布声明，称本次行程车票由活动主办方统一预订，出票信息确认无误，未提前收到座位变更通知，座位调整为票务突发状况。现场工作人员及时沟通，第一时间主动上前沟通协调，网传视频剪辑片段，未能还原完整经过，造成误解。 此次事件打扰到同行旅...</div>
+                <div class="item-meta">观察者网 · 2026-07-26 10:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A05YAG00?scene=news-skill" target="_blank" rel="noopener">16年前命案告破！甘肃白银警方在四川抓获嫌疑人</a></div>
+                <div class="item-summary">7月26日，甘肃省公安厅官方微信公众号文章披露，近日，白银市公安局平川分局成功侦破一起16年前的命案积案，抓获犯罪嫌疑人4名。7月23日下午，涉案犯罪嫌疑人被顺利押解回平川。图源：甘肃公安2010年4月7日，白银市平川区发生一起故意伤害致人死亡案件。案发地较为偏僻，无任何视频监控信息，加之现场能够提取到的有效线索...</div>
+                <div class="item-meta">长安街知事 · 2026-07-26 12:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A05KCU00?scene=news-skill" target="_blank" rel="noopener">百万粉丝“女网红”落网，向直播间的刷榜大哥私下贩卖定制私密视频牟利，两人被依法执行逮捕</a></div>
+                <div class="item-summary">极目新闻通讯员 陈科先坐拥百万粉丝的顶流网红，竟然靠贩卖私密视频牟利？近日，武汉洪山警方雷霆出击，捣毁一条依托直播引流、贩卖私密视频的黑色产业链，抓获2名嫌疑人，查获36部私密视频。一段行业黑话，牵出一个涉黄女网红6月15日凌晨，武汉市公安局洪山区分局网络安全保卫大队办公室依旧灯火通明，民警饶勇、李迪紧盯...</div>
+                <div class="item-meta">极目新闻 · 2026-07-26 11:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A06BN100?scene=news-skill" target="_blank" rel="noopener">出租车司机中途甩客以骗取机场“短途票”资格，已被警方行政拘留</a></div>
+                <div class="item-summary">2026年7月26日，澎湃新闻（www.thepaper.cn）记者从上海市公安局获悉，近日，上海机场警方会同交通执法部门严厉打击机场区域发生的“恶意甩客”违法行为，一名违法人员被行政拘留。记者了解到，该名违法人员为涉案出租车驾驶员张某亮。该案源于2026年7月25日，博主“花式足球克里斯”发布短视频反映称，其在浦东国际机场乘...</div>
+                <div class="item-meta">澎湃新闻 · 2026-07-26 13:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A04Q3000?scene=news-skill" target="_blank" rel="noopener">特朗普“按下暂停键”，原因曝光</a></div>
+                <div class="item-summary">参考消息网7月26日报道 据俄罗斯卫星通讯社7月26日报道，美国《纽约时报》援引消息人士的话称，因担心局势升级可能危及中东地区已减少的“爱国者”拦截导弹及其他防空弹药储备，美国总统特朗普推迟了大幅加强对伊朗军事行动的计划。此前，美国阿克西奥斯新闻网站报道称，美军仍在制订计划，以备重启针对伊朗的大规模军事行...</div>
+                <div class="item-meta">参考消息 · 2026-07-26 10:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A05PG900?scene=news-skill" target="_blank" rel="noopener">无视严禁闯入标识，游客在黑独山禁区拍照，当地：部分地质被破坏，一个脚印十年难恢复</a></div>
+                <div class="item-summary">7月25日，网友爆料青海茫崖市黑独山景区，有游客无视禁游区告示进入内部拍照。引发网友关注，不少人指出当地生态环境脆弱，如果都擅自进入，恐会给当地生态环境带来更大破坏。7月26日，景区工作人员告诉潇湘晨报·晨视频记者，视频中的位置确实在黑独山，禁游区和游览区看起来可能差别不大，但禁游区内系生态保护区。“会处...</div>
+                <div class="item-meta">潇湘晨报 · 2026-07-26 12:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A0571I00?scene=news-skill" target="_blank" rel="noopener">史无前例！美国出现人工智能失控事故，更多内幕曝光</a></div>
+                <div class="item-summary">7月25日，路透社援引知情人士消息刊发独家报道称，OpenAI一款AI Agent在入侵人工智能平台Hugging Face后，连续数天实施攻击，而OpenAI直到事件得到控制、Hugging Fa....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-07-26 11:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A04WOQ00?scene=news-skill" target="_blank" rel="noopener">24岁女孩称做正颌手术反成“鞋拔子脸”，后退2毫米变前移13毫米，恢复至少要花30万；医生表示自己喜欢这种面型，比之前洋气，卫健委介入</a></div>
+                <div class="item-summary">武汉24岁女孩小雨为改善轻微地包天做正颌手术，反成“鞋拔子脸”。近期小雨反映，她2025年在武汉大学口腔医院接受正颌手术后出现严重并发症，多方权威医疗机构评估认为该手术存在误诊、过度医疗、术中操作失误、术后护理疏漏等多项问题，但她维权至今始终未能得到妥善解决。小雨此前自身仅存在侧面轻微骨性下颌前突，正面外...</div>
+                <div class="item-meta">红星新闻 · 2026-07-26 10:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260726A05ZBD00?scene=news-skill" target="_blank" rel="noopener">胖东来花200万元购买国际顶级音响供市民免费点唱，现场秒变户外KTV，工作人员：每周三场，会动态调节音量避免扰民</a></div>
+                <div class="item-summary">极目新闻记者 马浩然近日，多名网友发视频称，河南许昌胖东来天使城店在门外广场安装了音响设备，可供市民免费点唱。7月26日，该门店客服工作人员介绍，户外音响只有在每周五、六、日三天的晚上播放，每场持续1小时30分，同时会动态调整音量避免扰民。市民在唱歌 来源：视频截图多段视频显示，在商超的室外广场，市民拿着话...</div>
+                <div class="item-meta">极目新闻 · 2026-07-26 12:54</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-07-26 15:49</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
