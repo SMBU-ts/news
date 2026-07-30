@@ -27,7 +27,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://x.com/thsottiaux/status/2082241164850364555",
@@ -37,7 +37,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks",
@@ -45,9 +45,9 @@
     "source": "Google Blog：AI（RSS）",
     "date": "",
     "category": "ai-daily",
-    "rawfile": "",
-    "ok": false,
-    "round": 0
+    "rawfile": "025.txt",
+    "ok": true,
+    "round": 3
   },
   {
     "url": "https://x.com/perplexity_ai/status/2082103880155046176",
@@ -57,7 +57,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://mp.weixin.qq.com/s/1nZqQHYqclsIF6__WLscgA",
@@ -87,7 +87,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://x.com/AndrewYNg/status/2082199333920027009",
@@ -97,7 +97,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://x.com/AISafetyMemes/status/2082223372214448303",
@@ -107,7 +107,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://www.ithome.com/0/982/520.htm",
@@ -127,7 +127,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://arxiv.org/abs/2510.26692",
@@ -147,7 +147,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://machinelearning.apple.com/research/audio-synthesis-diffusion-transformers",
@@ -177,7 +177,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips",
@@ -217,7 +217,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://www.langchain.com/blog/agent-data-stack",

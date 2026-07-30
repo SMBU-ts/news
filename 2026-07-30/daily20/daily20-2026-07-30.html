@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-07-30</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-07-30</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A09WZT00?scene=news-skill" target="_blank" rel="noopener">人民锐评：“王的猜想”击中了坚守的自我</a></div>
+                <div class="item-summary">一张报纸一时“洛阳纸贵”，在二手平台甚至炒到60多元一份，“已经在加急赶印啦！机器都要冒烟了”。这两天，广西日报一篇关于菲尔兹奖数学家王虹的特稿《王的猜想》在网上刷屏，引发广大网友共鸣。在新媒体产品层出不穷、智能算法引导流量的环境下，一篇传统媒体的深度报道为何引发网友追捧？多数人恐怕都难以理解“三维挂...</div>
+                <div class="item-meta">人民日报 · 2026-07-29 18:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0BMV700?scene=news-skill" target="_blank" rel="noopener">全国汽车标准化技术委员会：将进一步规范车辆灯具安装使用</a></div>
+                <div class="item-summary">新京报讯 据中国汽车标准化研究院消息，部分车辆产品安装使用“小蓝灯”，向其他道路参与者显示本车驾驶辅助系统处于工作状态。但当前“小蓝灯”存在灯光滥用情况，易引发安全风险。夜间开启的“小蓝灯”容易让其他道路参与者产生眩光，观感刺眼，特别是干扰周边驾驶员对路况的判断；带有该指示灯的车辆更容易被其他车主借...</div>
+                <div class="item-meta">新京报 · 2026-07-29 21:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A07FX700?scene=news-skill" target="_blank" rel="noopener">多地用电负荷攀升迎峰度夏电力保供有序推进</a></div>
+                <div class="item-summary">人民网记者 王绍绍供电公司调度大厅里，电子监控屏幕上，电力负荷曲线总体上扬，变电站运行状态、线路潮流数据实时更新。受高温天气影响，今年夏天，各地用电负荷集中释放，叠加工业、服务业用能扩张，电力负荷持续增长。 国家统计局数据显示，6月份，全社会用电量8981亿千瓦时，同比增长3.7%。7月14日全国用电负荷再创新高...</div>
+                <div class="item-meta">人民网 · 2026-07-29 15:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0C0O100?scene=news-skill" target="_blank" rel="noopener">沈敏娟履新外交部亚洲司司长</a></div>
+                <div class="item-summary">外交部网站显示，沈敏娟已接替刘劲松，履新外交部亚洲司司长。</div>
+                <div class="item-meta">界面新闻 · 2026-07-29 22:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0A0O300?scene=news-skill" target="_blank" rel="noopener">四预警齐发！这些地方有暴雨大暴雨</a></div>
+                <div class="item-summary">中央气象台7月29日18时继续发布暴雨黄色预警：预计，7月29日20时至30日20时，四川盆地中西部和北部、甘肃南部、华南中西部、华北南部、黄淮西部以及青海北部、内蒙古东北部等地部分地区有大到暴雨，其中，四川盆地西部、广西东部、广东西南部、河南中北部等地部分地区有大暴雨（100～200毫米）。上述部分地区伴有短时强降水...</div>
+                <div class="item-meta">央视新闻 · 2026-07-29 18:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A09I8600?scene=news-skill" target="_blank" rel="noopener">伊朗要求霍尔木兹海峡通行船只须经伊朗水域</a></div>
+                <div class="item-summary">新华社德黑兰7月29日电 据路透社29日援引伊朗高级官员的话报道，伊朗已拒绝阿曼提出的联合管理霍尔木兹海峡航运的地区机制。伊朗还提出，通过海峡的船只的进出港航线中，一条须完全经过伊朗水域，另一条也须部分经过伊朗水域。 路透社报道说，一名伊朗高级官员表示，伊朗坚持认为，通过海峡的整条入港航线以及部分出港航线...</div>
+                <div class="item-meta">新华社新闻 · 2026-07-29 17:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A09UTT00?scene=news-skill" target="_blank" rel="noopener">《中华人民共和国反网络暴力法（征求意见稿）》公开征求意见</a></div>
+                <div class="item-summary">据网信中国官微7月29日消息，《中华人民共和国反网络暴力法（征求意见稿）》公开征求意见。《反网络暴力法（征求意见稿）》共七章六十条，拟规定以下内容： （一）明确网络暴力概念定义和治理原则。....</div>
+                <div class="item-meta">界面新闻 · 2026-07-29 18:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729V09S7200?scene=news-skill" target="_blank" rel="noopener">1 分钟认识一个厨师丨“莫氏鸡煲”参加比赛，谁料首轮就被淘汰</a></div>
+                <div class="item-summary">1 分钟认识一个厨师丨“莫氏鸡煲”参加比赛，谁料首轮就被淘汰</div>
+                <div class="item-meta">一饭封神2 · 2026-07-29 18:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0BNEF00?scene=news-skill" target="_blank" rel="noopener">上海大师赛：赵心童五连鞭横扫丁俊晖进八强，中国一哥遭遇四连败</a></div>
+                <div class="item-summary">北京时间2026年7月29日刚刚结束的世界斯诺克上海大师赛第二轮比赛中，中国一哥丁俊晖与中国首位世界冠军赵心童完成了双方职业生涯第八次交锋。 在本场比赛之前，赵心童在双方前七次交手中以三胜....</div>
+                <div class="item-meta">世界体坛观察家 · 2026-07-29 22:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0A1M900?scene=news-skill" target="_blank" rel="noopener">突然过敏就是因为抵抗力降低了？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-07-29 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A02JR000?scene=news-skill" target="_blank" rel="noopener">“当欧洲还在犹豫，中国已经开始行动了”</a></div>
+                <div class="item-summary">据环保组织Transport & Environment（T&E）7月30日发布的分析报告称，欧洲目前已有69个可服务航运业的电力合成燃料（e-fuel）项目，但真正投入运营的仅有6个。相比之下，中国仅有3个相关项目运行，但产能已达到欧洲运营项目总和的10倍。T&E警告，如果欧洲推进速度继续落后，可能在这一战略性新兴市场失去竞争优势。电力合成...</div>
+                <div class="item-meta">观察者网 · 2026-07-30 07:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0CGIT00?scene=news-skill" target="_blank" rel="noopener">南非标注“中国台湾”，台当局破防了</a></div>
+                <div class="item-summary">民进党当局又破防了。多家台湾媒体发现，继要求中国台湾地区驻南非机构迁离首都比勒陀利亚，并将其降格、更名后，南非政府近日又在电子签证系统中将台湾标注为“中国台湾”。 据“中央社”、联合新闻网....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-07-30 07:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0BK2A00?scene=news-skill" target="_blank" rel="noopener">一场“借名买房”风波，牵出兄弟反目的“冒名顶替上大学”疑案丨红星深度</a></div>
+                <div class="item-summary">2017年，哥哥唐向东（化名）起诉弟弟唐向西（化名），主张双方存在口头借名买房约定，要求将房产过户至其名下，法院一审支持了唐向东的过户诉求。房产官司一审败诉当年年末，弟弟唐向西向湘潭大学寄出一封举报信，指控哥哥当年冒用他的高考录取身份就读本科。“旧事”被一封举报信拽回日光之下？事情没有想象中那么简单。2...</div>
+                <div class="item-meta">红星新闻 · 2026-07-29 21:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0BJN200?scene=news-skill" target="_blank" rel="noopener">时隔21年，上海地铁将调价</a></div>
+                <div class="item-summary">7月29日，上海市发改委官网更新一则公告，计划调整全市轨道交通价格并召开听证会。这将是上海21年来首次调整地铁价格。公告截图公告显示，上海市发改委拟于2026年9月7日组织召开优化上海市轨道交通票价机制听证会，该票价机制适用于全市轨道交通，不含磁浮线、金山铁路、市域机场线及以后开通的市域线。上海上一次调整轨道...</div>
+                <div class="item-meta">上观新闻 · 2026-07-29 21:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0C14900?scene=news-skill" target="_blank" rel="noopener">央企南水北调集团严正声明</a></div>
+                <div class="item-summary">7月29日，中国南水北调集团有限公司发布严正声明——近期，有不法分子冒用中国南水北调集团有限公司名义虚构工程项目，设置所谓“中国南水北调集团柴达木盆地水资源配置荒漠化综合治理项目”。为维护社会公众合法权益，南水北调集团严正声明如下：南水北调集团及所属企业从未投资、建设该项目，任何宣称与南水北调集团及所...</div>
+                <div class="item-meta">长安街知事 · 2026-07-29 22:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0BSVJ00?scene=news-skill" target="_blank" rel="noopener">郑州市长：2030年，力争GDP破2万亿</a></div>
+                <div class="item-summary">微信公众号“河南发布”消息，7月29日，河南省政府新闻办召开河南省“开局起步‘十五五’ 奋力谱写新篇章”系列郑州专场新闻发布会，介绍郑州市“加快建设国家中心城市，在全省‘十五五’发展中展现新担当新作为”的有关情况，并回答记者提问。郑州市委副书记、市长庄建球在发布会上介绍，“十五五”时期是基本实现社会主义...</div>
+                <div class="item-meta">观察者网 · 2026-07-29 22:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729V06ZFL00?scene=news-skill" target="_blank" rel="noopener">宁波一男子拿数个西瓜砸向摊主头部，砸完称“全部给你买了”，派出所回应</a></div>
+                <div class="item-summary">7月28日晚，有网友发布视频称，浙江宁波一摊贩被一男子用多个西瓜砸头。视频显示，事发路口一名男子不断拿起摊位上的西瓜砸向坐在地上的摊贩。30秒内，10个西瓜接连砸在摊贩的头上，瓜瓤四溅。旁边一名女子情绪激动。砸完西瓜后，男子又指着一旁其他的西瓜说道：“全部给你买了”、“多少钱一斤”。</div>
+                <div class="item-meta">掌闻视讯 · 2026-07-29 14:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0C0NY00?scene=news-skill" target="_blank" rel="noopener">前董秘公开“讨薪”，360集团回应</a></div>
+                <div class="item-summary">（文/赖家琪 编辑/吕栋）针对前董秘张帆公开发布维权实录、追讨股权激励权益一事，360集团7月29日向观察者网回应称，张帆本身就是专业律师，也深度参与，甚至主导了当时的交易结构和规则设计，“她比谁都清楚该找谁主张权利、依据什么主张权利”。360集团表示，如果张帆认为自己的诉求没有得到解决，最直接、有效的方式是走...</div>
+                <div class="item-meta">观察者网 · 2026-07-29 22:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0A8W700?scene=news-skill" target="_blank" rel="noopener">日本公布地震遇难人数</a></div>
+                <div class="item-summary">当地时间29日，日本熊本县宇城市市长末松直洋表示，接到报告称，该市市内有两名男性因前一日发生的地震死亡。至此，此次地震遇难人数升至14人。来源：央视新闻</div>
+                <div class="item-meta">红星新闻 · 2026-07-29 18:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260729A0BQE400?scene=news-skill" target="_blank" rel="noopener">C929最新进展！</a></div>
+                <div class="item-summary">近日，香港民航处处长廖志勇接受《大公报》专访时表示，香港民航处将延续以往C919型飞机型号审定的合作，派员参与C929型飞机型号的审定工作，为国家航空发展作出积极贡献。廖志勇表示，早于2018年，香港民航处已派员加入国家民航局的专业委员会，参与国产大型客机C919的适航审核合作。在今年4月，香港、内地及澳门三地民航...</div>
+                <div class="item-meta">民航资源网 · 2026-07-30 07:28</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-07-30 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
