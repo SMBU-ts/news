@@ -1,0 +1,242 @@
+[
+  {
+    "url": "https://x.com/GoogleDeepMind/status/2082844162928381956",
+    "title": "Google DeepMind 发布 Gemini Robotics 2 物理 AI",
+    "source": "X：Google DeepMind (@GoogleDeepMind)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+    "title": "GPT-5.6 如何推进性价比前沿",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration",
+    "title": "Gemini Robotics ER 2：用视频理解、任务编排与多机器人协作赋能机器人",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
+    "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展",
+    "source": "MarkTechPost（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/GeminiApp/status/2082923048362299629",
+    "title": "Gemini Spark 集成 Chrome 自动浏览功能",
+    "source": "X：Gemini (@GeminiApp)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://x.com/GoogleAI/status/2082902334984609936",
+    "title": "Google Earth 集成 Nano Banana 2 图像生成",
+    "source": "X：Google AI (@GoogleAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://x.com/AravSrinivas/status/2082872551538380939",
+    "title": "Perplexity Computer 推出 Projects 功能",
+    "source": "X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app",
+    "title": "GitHub Copilot 应用新增堆叠会话与拉取请求功能",
+    "source": "GitHub Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.langchain.com/blog/introducing-align-evals",
+    "title": "LangSmith 推出 Align Evals：校准 LLM 评估器以匹配人类偏好",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.langchain.com/blog/introducing-llm-gateway",
+    "title": "LangSmith LLM Gateway：将运行时治理内置于智能体生命周期",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://cloud.google.com/blog/products/databases/alloydb-adds-group-authentication-to-secure-enterprise-scale-and-ai-agents",
+    "title": "AlloyDB 推出 IAM 群组认证预览版，强化企业级与 AI 智能体安全",
+    "source": "Google Cloud：Databases（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://techcrunch.com/2026/07/30/judge-says-trump-admin-still-lacks-evidence-for-anthropic-supply-chain-risk-label",
+    "title": "法官称特朗普政府仍缺乏证据将Anthropic列为供应链风险",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/fcc-bans-new-chinese-robots-and-power-inverters-to-protect-us-ai-buildout-from-foreign-threats",
+    "title": "FCC 禁止进口中国新型机器人与联网逆变器",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/AnthropicAI/status/2082965101083320543",
+    "title": "Anthropic 披露 Claude 在安全评估中入侵真实系统",
+    "source": "X：Anthropic (@AnthropicAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.lmsys.org/blog/2026-07-30-sglang-google-tpu",
+    "title": "RadixArk 与 Google Cloud 合作，将完整 SGLang 功能引入 TPU",
+    "source": "LMSYS：Blog（Chatbot Arena 团队）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/TencentHunyuan/status/2082655737541726636",
+    "title": "腾讯混元Hyra破解50年数学难题",
+    "source": "X：腾讯混元 (@TencentHunyuan)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/umap-knn-graph-sensemaking",
+    "title": "降维遇见网络科学：UMAP的kNN图在数据理解中的应用",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "017.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/momo-motion-mode-manipulation",
+    "title": "MoMo：通过时空动作分词实现机器人操作中的运动模式控制",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "018.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.ithome.com/0/983/444.htm",
+    "title": "OpenAI 总裁布罗克曼承认新版 ChatGPT 桌面应用“有点乱”，目标年底实现“零标签”",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "019.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://developers.googleblog.com/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance",
+    "title": "如何使用 Google TPU 微基准测试评估 TPU 性能",
+    "source": "Google Developers Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://cursor.com/blog/cloud-agent-environment",
+    "title": "Cursor 如何为云智能体构建开发环境",
+    "source": "Cursor Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "021.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.cloudflare.com/cdnjs-dev-platform-migration",
+    "title": "cdnjs 迁移至 Cloudflare 开发者平台",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "022.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.databricks.com/blog/foundations-ai-forward-healthcare-organization",
+    "title": "Databricks：构建AI优先医疗组织的基础",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "023.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://runwayml.com/news/customers/skyscanner",
+    "title": "Skyscanner 如何用 Runway 消除前期制作中的猜测",
+    "source": "Runway：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "024.txt",
+    "ok": true,
+    "round": 1
+  }
+]

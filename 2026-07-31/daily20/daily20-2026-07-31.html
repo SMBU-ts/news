@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-07-31</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-07-31</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A00F9O00?scene=news-skill" target="_blank" rel="noopener">推进“六张网”建设、发展智能经济新形态 下半年经济工作这样干</a></div>
+                <div class="item-summary">今天（30日），中共中央政治局召开会议，分析研究当前经济形势，并对下半年经济工作进行了部署。会议释放哪些重磅信号？下半年经济工作如何发力？来看一组解读。 下半年将及时谋划出台务实管用的增量政策中央政治局会议在分析当前经济形势时指出，今年以来，我国有效应对各种外部冲击和内部困难，我国经济呈现动能向新、结构向优的发展态势。专家表示，当前，新旧动能转换处于关键阶段。以高技术制造业，人工智能为代表的...</div>
+                <div class="item-meta">央视新闻 · 2026-07-31 00:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A02TQB00?scene=news-skill" target="_blank" rel="noopener">暴雨+强对流天气双预警齐发 黑龙江、四川等地将有大暴雨</a></div>
+                <div class="item-summary">今天（31日）6时，中央气象台发布暴雨黄色预警和强对流天气蓝色预警。 暴雨预警中央气象台7月31日6时继续发布暴雨黄色预警：预计，7月31日8时至8月1日8时，黑龙江中北部、甘肃南部、陕西南部、四川盆地中西部和南部及山西北部、河南西部、广西南部、广东南部沿海和西北部、海南岛东南部等地部分地区有大到暴雨，其中，黑龙江中部、四川盆地西北部和南部、广西南部沿海等地部分地区有大暴雨（100～180毫...</div>
+                <div class="item-meta">央视新闻 · 2026-07-31 07:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A0352600?scene=news-skill" target="_blank" rel="noopener">夏日中国活力升腾</a></div>
+                <div class="item-summary">本报记者 叶 子 图：7月21日，游客在黑龙江哈尔滨冰雪大世界梦幻冰雪馆内游玩。 新华社记者 那宇奇摄 图：7月17日，在2026世界人工智能大会现场，宇树机器人舞蹈技能演示吸引观众目光。 吴 雪摄 (人民视觉) 图：7月26日，在山西省运城市夏县水头镇洛沱湾村，村民正在田间采收成熟的油葵。 张秀峰摄(人民视觉) 图：...</div>
+                <div class="item-meta">人民网 · 2026-07-30 09:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730V0AZBP00?scene=news-skill" target="_blank" rel="noopener">中国军队国际形象网宣片《当红》正式发布</a></div>
+                <div class="item-summary">中国军队国际形象网宣片《当红》正式发布</div>
+                <div class="item-meta">海客军事 · 2026-07-30 20:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A06FKP00?scene=news-skill" target="_blank" rel="noopener">马上评｜“唐朝不存在”？伪史论的歪风一定要刹住</a></div>
+                <div class="item-summary">近日，网上出现了不少“唐朝根本不存在”的言论，让人大跌眼镜。更令人担忧的是，一些未成年人在短视频平台接触类似内容后，已经出现了历史认知混乱。网络截图不少评论将此视为历史虚无主义的典型。这一判断是对的，但还值得进一步思考的是：我们究竟应该依据什么来判断历史是真是假？面对层出不穷的各种“伪史论”，社会究竟需要一种什么样的认知能力？答案或许只有两个字：理性。历史研究从来不是信仰，也不是立场，而是一...</div>
+                <div class="item-meta">澎湃新闻 · 2026-07-30 14:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A090UR00?scene=news-skill" target="_blank" rel="noopener">玉渊谭天丨日本自卫队自称“日本海军” 中国军队：注意你的言辞！</a></div>
+                <div class="item-summary">近期，中俄海军组织开展海上联合巡航任务。巡航期间，日方抹黑中方在冲之鸟礁附近海域开展的演练危及航行安全。在一段中俄舰艇编队巡航途中的录音中，日本自卫队竟公开自称“海军”。中国军队发出两次警告：“注意你的言辞！” 2026中央广播电视总台版权所有。未经许可，请勿转载使用。...</div>
+                <div class="item-meta">央视新闻 · 2026-07-30 17:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A02QBI00?scene=news-skill" target="_blank" rel="noopener">特朗普称已就哈马斯“全面解除武装”达成协议</a></div>
+                <div class="item-summary">当地时间7月30日，美国总统特朗普表示，由美国发起的所谓“和平委员会”当天达成一项“历史性协议”，哈马斯及加沙地带其他所有武装团体将全面解除武装。特朗普称，这项协议是落实其“加沙20点计划”的重要里程碑。根据协议，加沙地带将逐步由新的巴勒斯坦政府接管，该政府将与“和平委员会”合作，负责当地治理。加沙今后不得再被用作发动袭击的基地，以色列也将获得其所需的安全保障。协议将分阶段实施。随着解除武装...</div>
+                <div class="item-meta">央视新闻 · 2026-07-31 06:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A02MFR00?scene=news-skill" target="_blank" rel="noopener">日本自卫队在太平洋首次试射“战斧”导弹</a></div>
+                <div class="item-summary">新华社东京7月31日电 据日本防卫省消息，日本自卫队日前在太平洋首次进行美国“战斧”巡航导弹试射。（完）...</div>
+                <div class="item-meta">新华社新闻 · 2026-07-31 06:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A02AOO00?scene=news-skill" target="_blank" rel="noopener">视频丨破100亿次！中国开源模型下载量全球第一</a></div>
+                <div class="item-summary">随着上市公司半年报和业绩预告陆续披露，上半年，AI产业链上市公司大面积预喜，不少企业的净利润同比大幅增长，多项指标远超市场预期。数据显示，截至目前已有248家AI产业链上市公司披露了半年报或业绩预告，其中159家预喜。随着全国智能算力新基建提速，算力基建产业链的各个环节都在兑现订单。分析人士认为，2026年上半年AI产业链上市公司的亮眼业绩，印证了我国AI产业已从技术试点、概念培育期，逐步迈...</div>
+                <div class="item-meta">央视新闻 · 2026-07-31 07:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A0A43K00?scene=news-skill" target="_blank" rel="noopener">某些特定血型更招蚊子？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-07-30 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A02PTM00?scene=news-skill" target="_blank" rel="noopener">重磅官宣！我国“黄金大外环”要来了，有哪些利好</a></div>
+                <div class="item-summary">交通运输部近日介绍，“十五五”时期，沿边G219、G331和沿海G228三条骨干通道将全面贯通，形成一个环绕我国沿边沿海的“黄金大外环”。这条交通大环线，不仅将给公众带来自驾游新体验，更将在产业联动、固边兴边等方面释放多重价值。一起来欣赏三条骨干通道的绝美风光 G219国道 喀纳斯—东兴三条线路中的G219国道海拔落差最大，生态地理景观最为丰富，沿途有：亚洲内陆干旱、半干旱荒漠准噶尔盆地中国...</div>
+                <div class="item-meta">央视新闻 · 2026-07-31 06:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A00IMG00?scene=news-skill" target="_blank" rel="noopener">乒超联赛7月31日赛程：开启积分循环赛争4强！孙颖莎可能出场</a></div>
+                <div class="item-summary">2026年7月31日，中国乒乓球俱乐部超级联赛即将继续进行，目前单循环赛阶段的6天对决已经全部结束，接下来各球队将迎来乒坛罕见的积分循环赛，本阶段的结果将直接决定年底总决赛的资格归属，王楚钦等已经上....</div>
+                <div class="item-meta">全言 · 2026-07-31 06:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A0BYK500?scene=news-skill" target="_blank" rel="noopener">冲击“两万亿GDP”，腰部城市“混战”</a></div>
+                <div class="item-summary">青岛超天津，合肥超济南编者按：作为“十五五”时期的首场半年考，中国城市经济“期中答卷”次第展开。每一座城市都在用数据回应同一个追问：新五年的增长动力，从哪里来？聚焦GDP十强城市，重庆广州交替领先，苏蓉杭汉贴身竞速。排位微调背后，是城市发展动能的重塑——当规模比拼的边际收益递减，创新驱动正成为决定位次...</div>
+                <div class="item-meta">城市进化论 · 2026-07-30 22:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A02LSH00?scene=news-skill" target="_blank" rel="noopener">国际油价30日下跌</a></div>
+                <div class="item-summary">国际油价30日下跌。截至当天收盘，纽约商品交易所9月交货的轻质原油期货价格下跌87美分，收于每桶83.59美元，跌幅为1.03%；9月交货的伦敦布伦特原油期货价格下跌1.71美元，收于每桶89.03美元，跌幅为1.88%。...</div>
+                <div class="item-meta">央视新闻 · 2026-07-31 07:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A01FEV00?scene=news-skill" target="_blank" rel="noopener">伊朗军队称打击美军在巴林空军基地</a></div>
+                <div class="item-summary">当地时间7月30日晚，伊朗军队发布公告称，军队使用无人机袭击了美军位于巴林的谢赫伊萨空军基地的发电机、导航系统以及行政和后勤保障建筑。公告称，谢赫伊萨空军基地是美国在海湾地区的重要军事基地，也是侦察机部署及直升机、无人机零部件维修保障中心，多轮袭击已削弱该基地的作战和保障能力。伊朗近日打击中东多国境内美军目标。公告表示，尽管美军基地拥有众多防御系统和装备，但近日针对该地区美军基地的袭击，已对...</div>
+                <div class="item-meta">央视新闻 · 2026-07-31 01:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A0BX1J00?scene=news-skill" target="_blank" rel="noopener">20岁女孩和男友吵架后从18楼跳下奇迹生还，女孩最新发声：挺后悔</a></div>
+                <div class="item-summary">7月30日，@九派新闻：近日，嘉兴市民李先生反映，7月12号凌晨四点多，自己20岁的女儿从秀洲区一个小区的18楼坠落，多亏被一棵大树缓冲了一下，掉在绿化带里，小李被紧急送到新安国际医院，先是在重症监护室抢救，前两天刚转到重症康复科，万幸命保住了，现在意识清醒。 李先生说，小李的伤势非常严重，头上外伤，胸部、肺部...</div>
+                <div class="item-meta">九派新闻 · 2026-07-30 23:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A0C3QO00?scene=news-skill" target="_blank" rel="noopener">日本政府正式设立“国家情报局”</a></div>
+                <div class="item-summary">△日本首相官邸（资料图）当地时间7月31日，日本政府正式设立“国家情报局”。首任局长为原和也。原和也曾历任警察厅外事课课长、警备局局长等职务，自2023年起担任内阁情报官。根据此前在日本国会通过的法案，日本将构建以“国家情报会议”为核心、“国家情报局”为执行机构的情报体系，负责统筹安全保障、反恐等领域的情...</div>
+                <div class="item-meta">央视新闻 · 2026-07-30 23:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260730A05W8D00?scene=news-skill" target="_blank" rel="noopener">长白山景区一女子翻越警戒线冲向天池，现场游客：工作人员第一时间追赶制止；景区：涉事女子已被公安机关带走</a></div>
+                <div class="item-summary">近日，有网友发帖称，长白山西坡景区内，一名女子情绪失控，翻越警戒线后径直冲向天池湖边。现场游客向潇湘晨报 ·晨视频记者回忆，事发7月28日，女子冲下后，工作人员第一时间追赶制止，但女子剧烈挣扎反抗，直至另一名工作人员赶来，才成功将其控制。7月30日，长白山景区工作人员回应称，涉事女子当日已被公安机关带走。...</div>
+                <div class="item-meta">潇湘晨报 · 2026-07-30 12:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A02RN600?scene=news-skill" target="_blank" rel="noopener">以媒：以色列一军事基地超百名士兵“抗命”离营</a></div>
+                <div class="item-summary">新华社耶路撒冷7月30日电（记者庞昕熠 陈君清）以色列第12频道电视台30日报道说，以色列国防军一军事基地当天约120名士兵“抗命”，将武器留在营地后集体离开。 据以媒报道，该事件起因是以军指挥官当天试图移除营地内一些标语和标志物，随后与士兵发生冲突。不满的士兵随后集体“擅离职守”，以抗议指挥官做法。 第12频道...</div>
+                <div class="item-meta">新华社新闻 · 2026-07-31 06:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260731A00IPR00?scene=news-skill" target="_blank" rel="noopener">始祖鸟之后，瑞士高端百年品牌猛犸象也要被中国资本买了</a></div>
+                <div class="item-summary">每经记者：丁舟洋 每经编辑：程鹏,黄博文记者|丁舟洋 编辑|程鹏 黄博文 杜恒峰 校对|梁露月 7月30日晚间，具有中资背景的投资机构“CPE源峰”，宣布将全资收购瑞士高端户外百年品牌猛犸象。 《每日经济新闻》记者从CPE源峰方面获悉，CPE源峰已与欧洲私募股权机构Jacobs Capital正式签署股权购买协议，收购Mammut Sports Gr...</div>
+                <div class="item-meta">每日经济新闻 · 2026-07-31 00:28</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-07-31 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
