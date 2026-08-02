@@ -39,7 +39,8 @@ def _check_cli():
 
     r = subprocess.run(
         [str(CLI), "apikey-get"],
-        capture_output=True, text=True, timeout=15, cwd=ROOT
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+        timeout=15, cwd=ROOT
     )
     if r.returncode != 0 or "未设置" in (r.stdout + r.stderr):
         print("[错误] API Key 未配置", file=sys.stderr)
@@ -53,7 +54,8 @@ def _fetch_hot(limit=20):
     """调用 CLI hot 命令，返回原始文本。"""
     r = subprocess.run(
         [str(CLI), "hot", "--limit", str(limit)],
-        capture_output=True, text=True, timeout=30, cwd=ROOT
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+        timeout=30, cwd=ROOT
     )
     stdout = r.stdout.strip()
     stderr = r.stderr.strip()

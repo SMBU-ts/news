@@ -7,7 +7,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://www.minimax.io/blog/minimax-h3",
@@ -27,7 +27,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://x.com/Replit/status/2082979584799060267",
@@ -37,7 +37,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://developers.googleblog.com/enable-on-demand-expertise-with-agent-skills-in-genkit-go",
@@ -47,7 +47,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://developers.googleblog.com/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga",
@@ -57,7 +57,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench",
@@ -147,7 +147,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
@@ -157,7 +157,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   },
   {
     "url": "https://simonwillison.net/2026/Jul/31/smevals",
@@ -217,6 +217,6 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 0
+    "round": 3
   }
 ]

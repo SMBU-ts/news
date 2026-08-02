@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
+    "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/gdb/status/2083457463337287721",
+    "title": "OpenAI Astra 以约2000美元证明10项数学难题",
+    "source": "X：Greg Brockman (@gdb)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]
