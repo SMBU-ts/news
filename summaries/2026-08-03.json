@@ -1,0 +1,7 @@
+{
+  "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21": "开源模型生态持续扩张，与业界此前预测的行业整合趋势相反。更多公司投入数亿至数十亿美元训练大模型并开放权重，其中Thinking Machines的开放微调服务年收入已达数亿美元。本期盘点亮点：Thinking Machines发布975B参数的MoE多模态模型Inkling；腾讯Hy3改用Apache 2.0许可；Poolside推出Laguna S2.1并采用OpenMDW许可；深度求索更新V4 Flash版本在帕累托前沿超越Luna；月之暗面Kimi K3以非商业许可发布，引发关于中美AI监管的讨论。",
+  "https://x.com/elonmusk/status/2083800942927839307": "xAI 旗下 Grok 新增视频分析能力，用户可上传任意视频内容，Grok 将对其进行理解、总结和问答交互。这一功能进一步扩展了多模态 AI 助手的应用边界，使视频内容成为可直接查询和分析的信息源，而非仅能处理文本和图像。",
+  "https://x.com/AYi_AInotes/status/2083867265179537565": "Codex CLI 的高阶技巧：利用内置的 Sol 智能体在配置目录下自动创建 Luna Max worker，通过合理的 agent 编排策略在节省 API 调用额度的同时实现翻倍的编码产出。该方法展示了多智能体协作在降本增效方面的实用价值。",
+  "https://garymarcus.substack.com/p/openais-amazing-but-vastly-oversold": "OpenAI 内部测试的新模型 Astra 在数学推理基准上表现惊艳，但认知科学家 Gary Marcus 指出外界对该模型的讨论犯了「合成谬误」——将单一领域的出色表现过度外推为通用能力的突破，忽视了模型在其他任务上的局限性和可靠性问题。",
+  "https://blog.cloudflare.com/agents-week-welcome": "Cloudflare 启动为期五天的 Agents Week 系列活动，核心探讨面向 AI 智能体的「Agent Cloud」基础设施应具备的形态。Cloudflare 认为未来的 AI Agent 需要专门的云平台支持，包括持久化状态管理、安全沙箱执行环境和全球分布式部署能力，其 Workers 平台正在向这一方向演进。"
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "url": "https://x.com/elonmusk/status/2083800942927839307",
+    "title": "Grok 支持分析任意视频",
+    "source": "X：Elon Musk (@elonmusk, xAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.cloudflare.com/agents-week-welcome",
+    "title": "Cloudflare 开启 Agents Week：探讨面向智能体的 Agent Cloud 形态",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/AYi_AInotes/status/2083867265179537565",
+    "title": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+    "source": "X：阿易 AI Notes (@AYi_AInotes)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/openais-amazing-but-vastly-oversold",
+    "title": "OpenAI 新模型 Astra 数学表现出色，但被过度吹捧",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+    "title": "最新开源模型盘点（#23）：Laguna S2.1、Inkling 与 Kimi K3 展现开源模型在帕累托前沿的价值",
+    "source": "Nathan Lambert：Interconnects（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  }
+]
