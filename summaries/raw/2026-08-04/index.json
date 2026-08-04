@@ -1,0 +1,212 @@
+[
+  {
+    "url": "https://qwen.ai/blog?id=qwen3.8",
+    "title": "Qwen3.8-Max 发布：开源最强编码与协作模型，2.4T 参数",
+    "source": "Qwen：Blog Retrieval（API）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://x.com/SenseTime_AI/status/2084288424236782073",
+    "title": "商汤发布 SenseNova U1.5-Lite-Preview 开源模型",
+    "source": "X：商汤 SenseTime (@SenseTime_AI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://blog.cloudflare.com/billable-usage-api",
+    "title": "Cloudflare 推出 Billable Usage API：为自助账户提供按产品与计费周期的程序化成本可见性",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenRouter/status/2084301100078027143",
+    "title": "OpenRouter 推出 Ori Eval 简化评估流程",
+    "source": "X：OpenRouter (@OpenRouter)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://blog.cloudflare.com/cloudflare-computer",
+    "title": "Cloudflare 推出 @cloudflare/computer 预览版：为智能体提供虚拟文件系统与多执行环境",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/gdb/status/2084405421041963356",
+    "title": "GPT-Live实时音频新架构发布",
+    "source": "X：Greg Brockman (@gdb)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://x.com/MSFTResearch/status/2084364547142418722",
+    "title": "微软开源 Orchard 智能体训练框架",
+    "source": "X：Microsoft Research (@MSFTResearch)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://blog.cloudflare.com/grpc-workers",
+    "title": "Cloudflare Workers 与 Containers 现已支持入站 TCP 连接和 gRPC",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://cloud.google.com/blog/products/databases/unify-public-and-private-data-with-data-commons-on-spanner-graph",
+    "title": "Data Commons on Spanner Graph 正式可用：统一公共与私有数据构建知识图谱",
+    "source": "Google Cloud：Databases（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://www.databricks.com/blog/ingest-semi-structured-data-faster-and-more-efficiently-variant-now-generally-available",
+    "title": "Databricks 推出 Variant 通用可用版本，加速半结构化数据摄取",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.theverge.com/ai-artificial-intelligence/974571/eu-ai-act-transparency-labels-rules-deepfakes",
+    "title": "欧盟《人工智能法案》透明度规则生效，违规最高罚 1500 万欧元",
+    "source": "The Verge：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.databricks.com/blog/databricks-completes-acquisition-panther-accelerating-security-lakehouse-era",
+    "title": "Databricks 完成对 Panther 的收购，加速安全湖仓时代",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/alignment-multimodal-llms",
+    "title": "多模态大语言模型对齐的全面研究：Apple 团队独立拆解偏好对齐各环节",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.com/lyogavin/airllm",
+    "title": "AirLLM 实现单块 4GB GPU 运行 70B 模型推理",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/08/03/after-killer-quarter-palantir-ceo-alex-karp-calls-ai-industry-marxist",
+    "title": "Palantir 强劲季度后，CEO Alex Karp 称 AI 行业“马克思主义”",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/Kimi_Moonshot/status/2084245860339298423",
+    "title": "Kimi Work 幻灯片制作教程发布",
+    "source": "X：Kimi.ai (@Kimi_Moonshot)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://x.com/trq212/status/2084387303959740449",
+    "title": "Claude Code 连接器可复用至 Artifacts",
+    "source": "X：Thariq (@trq212)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://runwayml.com/news/company-news/electronic-arts-ai-summit-2026",
+    "title": "EA 首席战略官谈生成式 AI 如何进入可游玩的实时游戏世界",
+    "source": "Runway：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "018.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://dev.to/googleai/behind-the-scenes-how-we-build-test-and-scale-google-agent-skills-1am5",
+    "title": "Google Agent Skills 幕后：如何构建、测试与规模化",
+    "source": "Google AI：DEV 作者专属（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "019.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/two-critical-updates-re-astra-and",
+    "title": "关于 Astra 与数学的两则重要更新：Anthropic 数学家 24 小时复现 OpenAI 半数结果",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  },
+  {
+    "url": "https://runwayml.com/news/customers/paramount-nyc-summit-2026",
+    "title": "Paramount CTO Phil Wiser：AI 属于史上最伟大技术趋势，但“iPhone 时刻”尚未到来",
+    "source": "Runway：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "021.txt",
+    "ok": true,
+    "round": 1
+  }
+]

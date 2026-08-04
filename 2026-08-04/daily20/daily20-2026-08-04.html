@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-04</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-04</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BP7I00?scene=news-skill" target="_blank" rel="noopener">韩媒称“韩国赌场应把中国游客当作博彩业主要客源”，我大使馆严正批驳</a></div>
+                <div class="item-summary">据中国驻韩国大使馆消息，8月3日，我馆负责领侨事务的唐亮参赞在韩国《韩国时报》发表题为《己所不欲，勿施于人》的署名文章，针对韩国媒体宣扬中国游客是韩国赌场核心增长动力进行批驳。文章深刻揭示赌博社会危害，阐释中韩两国禁赌拒赌法律法规，呼吁韩方从中韩友好大局出发，监管规范赌场经营，杜绝针对中国游客的招赌行...</div>
+                <div class="item-meta">长安街知事 · 2026-08-03 23:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260804A03H6W00?scene=news-skill" target="_blank" rel="noopener">暴雨+强对流双预警 部分地区将有10级以上雷暴大风</a></div>
+                <div class="item-summary">8月4日6时，中央气象台继续发布暴雨黄色预警、强对流天气蓝色预警。 暴雨黄色预警预计，8月4日8时至5日8时，黑龙江中南部、陕西东南部、山西南部、河南西部、重庆东部、湖北西部、湖南西部、贵州东部和南部、云南西部和南部、广西北部和东南部、广东西南部、海南岛等地的部分地区有大到暴雨，其中重庆东部、湖北西南部、湖南西北部、云南西部、广西东南部沿海、广东西南部、海南岛北部和西南部等地局地有大暴雨（1...</div>
+                <div class="item-meta">央视新闻 · 2026-08-04 06:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0398100?scene=news-skill" target="_blank" rel="noopener">我国轻工业经济运行稳中有进</a></div>
+                <div class="item-summary">央视网消息（新闻联播）：中国轻工业联合会数据显示，今年上半年，我国轻工业生产总体平稳，国内消费市场提质扩容，轻工业商品出口较快增长，结构持续优化。数据显示，上半年，规模以上轻工业增加值同比增长5.0%，实现营业收入11.2万亿元，91种主要轻工产品中54种产量实现增长，锂离子电池、电冰箱等14种产品产量保持两位数增长，轻工生产总体平稳。得益于提振消费专项行动等政策支持，今年以来，轻工消费市场...</div>
+                <div class="item-meta">央视网 · 2026-08-03 09:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BO1100?scene=news-skill" target="_blank" rel="noopener">中国科学家首获威廉·诺德伯格奖章</a></div>
+                <div class="item-summary">当地时间8月3日，在意大利佛罗伦萨举办的第46届国际空间研究委员会（COSPAR）科学大会上，中国气象局王劲松研究员荣获威廉·诺德伯格奖章。威廉·诺德伯格奖章用以表彰获奖者在空间科学应用领域的突出成就与卓越贡献。自1988年奖章设立以来，王劲松是首位获此殊荣的中国科学家，并同步获得一颗小行星命名。此次获奖，表明我国空间科学与应用领域研究成果获得国际学术界高度认可。王劲松现任国家卫星气象中心（...</div>
+                <div class="item-meta">央视新闻 · 2026-08-03 23:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0B19900?scene=news-skill" target="_blank" rel="noopener">你吃的贵价鹅肝，全都是用鸭肝冒充的？</a></div>
+                <div class="item-summary">鹅腿阿姨的风波才过去两个月，又出了一起“指鸭为鹅”。近日，据看看新闻Knews独家报道，上海徐汇某网红汉堡店所售卖的138元“黑松露鹅肝和牛汉堡”，被查出其原材料用的都是“鸭肥肝”。以鸭之肝，售鹅之价。汉堡138，买了一局味蕾上的“鹅鸭杀”。难怪网友吐槽：“这下不知道又有多少鸭鸭，要代替大鹅赴死了。”而这几年，诸如此类“以鸭代鹅”的事例，也确实是屡见不鲜。除了你熟悉的鹅腿阿姨，还有用“干锅鸭...</div>
+                <div class="item-meta">凤凰WEEKLY · 2026-08-03 21:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260804A036N200?scene=news-skill" target="_blank" rel="noopener">美国25州联合起诉特朗普政府301关税政策</a></div>
+                <div class="item-summary">新华社纽约8月3日电（记者刘亚南）美国国际贸易法院一份法庭文件显示，美国25个由民主党主政的州3日在该法院进行联合起诉，要求法庭裁定特朗普政府日前以所谓“强迫劳动”为由对60个经济体征收的301关税措施违法、予以废止；在司法审查期间，裁定暂停执行该关税措施。（完）...</div>
+                <div class="item-meta">新华社新闻 · 2026-08-04 05:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260804A03NO400?scene=news-skill" target="_blank" rel="noopener">今年上半年1535名纪检监察干部被处分</a></div>
+                <div class="item-summary">2026年上半年，各级纪检监察机关坚持以习近平新时代中国特色社会主义思想为指导，深入学习贯彻习近平党建思想，认真落实二十届中央纪委五次全会工作部署，扎实开展树立和践行正确政绩观学习教育，以更高标准、更实举措持续加强纪检监察干部队伍建设，以钉钉子精神纵深推进“三化”建设年行动，坚定不移强化制度治权、依规用权，不断提升监督执纪执法质效，着力锻造政治过硬、能力过硬、作风过硬、廉洁过硬的纪检监察铁军...</div>
+                <div class="item-meta">央视新闻 · 2026-08-04 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260804A03TYU00?scene=news-skill" target="_blank" rel="noopener">军事爱好者爆料国产航母密件获刑！警惕境外间谍这些套路</a></div>
+                <div class="item-summary">以为自己只是普通人，不会被境外间谍盯上——可别小看了自己，也千万不要低估境外间谍情报机构的无孔不入。当前，境外间谍情报机构的策略早已不是只针对身居要职的“高官”或掌握核心机密的“专家”，他们广泛撒网，任何人都可能成为潜在目标。原因有三：汇聚效应。尽管单个普通公民能接触的信息有限，但无数普通公民提供的信息碎片拼接起来，就可能形成极具价值的情报。旁敲侧击。普通公民可能不直接接触国家秘密，但其同事...</div>
+                <div class="item-meta">央视新闻 · 2026-08-04 07:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260804A021US00?scene=news-skill" target="_blank" rel="noopener">高温津贴领取链接千万别点！有人已中招</a></div>
+                <div class="item-summary">近日浙江嘉兴某企业员工高先生收到一条高温津贴领取链接他一看消息是来自企业微信里的同事想想现在正是高温季节顿时放下防备点击链接按步骤填写了自己的身份证、银行卡等信息可下一秒……高先生没等来补贴却收到了三笔莫名其妙的扣款信息共计约1800元这时他突然意识到刚才申领时不仅填写了自己的身份信息、银行账号还把支付密码和验证码也填进去了意识到被骗的高先生马上报警反诈队员赶到现场后第一时间向高先生的企业微...</div>
+                <div class="item-meta">央视新闻 · 2026-08-04 03:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A09THC00?scene=news-skill" target="_blank" rel="noopener">辐照过的食品有核辐射，不能吃？</a></div>
+                <div class="item-summary">并非如此。图库版权图片，转载使用可能引发版权纠纷核辐射，也叫电离辐射，人体接收的电离辐射达到一定剂量（即数值）后才会受到伤害。而受到的剂量，是和暴露在电离辐射区域的时间成正比的，时间越长，受到的电离辐射也就越多。在我们的日常生活中电离辐射无处不在。按其来源可分为天然辐射和人工辐射。联合国原子辐射影响...</div>
+                <div class="item-meta">科学辟谣 · 2026-08-03 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BM4Y00?scene=news-skill" target="_blank" rel="noopener">一辆电动摩托撞上200万的迈凯伦，车主发声：电瓶车比我车高，他撞飞到了草坪上；目击者：挡风玻璃撞碎，它后面还有一辆1300万的兰博基尼</a></div>
+                <div class="item-summary">近日，江苏南京一辆逆行的电动摩托，撞上200万的迈凯伦引发网友热议。 8月3日，目击者许先生告诉记者，迈凯伦和其他车辆都是正常行驶，突然冲出来一辆电摩，逆行撞到了迈凯伦上面。迈凯伦的挡风玻....</div>
+                <div class="item-meta">经视直播 · 2026-08-04 07:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BG3700?scene=news-skill" target="_blank" rel="noopener">男子在上海住酒店时半夜被咬醒，发现房间爬满床虱，还被反呛“40多岁不会自己去房间看看吗”，酒店：已跟进协商好，并给客人退款</a></div>
+                <div class="item-summary">把“浙江之声”设为星标，更容易找到我们来源：都市现场、齐鲁晚报、青岛新闻网、江苏疾控版权归原作者所有，如有侵权请及时联系据媒体报道，7月31日，在辽宁大连工作的邓先生告诉记者，7月28日，他在上海出差期间入住维也纳国际酒店青浦路店。当晚感觉身上发痒，开灯后发现床上、地板上散布着多只床虱。他立即致电前台，等...</div>
+                <div class="item-meta">浙江之声 · 2026-08-04 07:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260804A03A7M00?scene=news-skill" target="_blank" rel="noopener">古巴国家电网瘫痪</a></div>
+                <div class="item-summary">总台记者当地时间8月3日获悉，当天，古巴国家电网发生瘫痪。受美国制裁影响，古巴长期以来难以进口燃料及发电厂设备，发电厂设备老旧难更新，全国电力供应紧张。2024年10月以来，因电力设施故障、飓风侵袭等原因，古巴曾多次全国大停电。（总台记者 马天静） 2026中央广播电视总台版权所有。未经许可，请勿转载使用。...</div>
+                <div class="item-meta">央视新闻 · 2026-08-04 05:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BHSF00?scene=news-skill" target="_blank" rel="noopener">48元6只小笼包、人均消费131元，鼎泰丰再闭店！坐拥米其林标签，为何海外高歌猛进、本土遇冷？</a></div>
+                <div class="item-summary">每经记者：郑欣蔚 每经编辑：张益铭“米其林小笼包”的光环不灵了？8月3日，知名餐饮品牌鼎泰丰官宣上海港汇店因租赁合同到期正式停止营业。《每日经济新闻》记者（以下简称每经记者）现场走访发现，原门店已进入装修状态，将由一家江西菜餐厅接手经营。围挡外的鼎泰丰告示牌显示，顾客可就近前往徐家汇中心店用餐。鼎泰丰...</div>
+                <div class="item-meta">每日经济新闻 · 2026-08-04 07:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A08I2Q00?scene=news-skill" target="_blank" rel="noopener">“地表最强男人”，遇难</a></div>
+                <div class="item-summary">奇迹没有发生，在经过几天的救援之后，正式消息发出，世界著名登山家尼尔马尔·普尔贾（Nirmal Purja）率领的10人国际登山队在巴基斯坦布洛阿特峰（Broad Peak）遭遇雪崩，队员全部遇难。8月2日，巴基斯坦阿尔卑斯俱乐部发布通报，救援队又回收了4具遗体，其中包括普尔贾和中国登山者王钟。上图尼尔马尔·普尔贾 下图 中国登山家 王钟当地时间7月30日清晨，这支10人队伍启程攀登海拔约8...</div>
+                <div class="item-meta">中国新闻周刊 · 2026-08-03 16:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0AFD000?scene=news-skill" target="_blank" rel="noopener">海风：台湾“维持现状”幻想正在破灭</a></div>
+                <div class="item-summary">“维持现状”这一叙事过去在岛内拥有市场，不是因为这套方案本身行得通、站得住，而是因为不少人心中预设了一个前提：美国会长期把中国视为头号战略对手，并愿意持续投入资源为台海现状“托底”。但如今，这个前提正在松动。如果说过去几年国际局势的主线之一，是美国持续升级对华竞争、推动台海议题外部化；那么进入2026年...</div>
+                <div class="item-meta">环球网 · 2026-08-04 07:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BNEI00?scene=news-skill" target="_blank" rel="noopener">瑙鲁，正式更改国名</a></div>
+                <div class="item-summary">新华社8月3日报道，亚伦消息：瑙鲁共和国政府日前在社交媒体上发布公告说，该国国名已由“Nauru”正式更改为“Naoero”。联合国已接到瑙鲁的相关通知并在其官网进行了更改，其中涉及英语、法语等语言，但该国中文名“瑙鲁”维持不变。公告说，瑙鲁总统阿迪昂于7月20日在议会发表讲话说，在经过广泛讨论后决定恢复国家传统名...</div>
+                <div class="item-meta">农民日报 · 2026-08-03 23:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BEFE00?scene=news-skill" target="_blank" rel="noopener">电影《功夫女足》上映24天票房逆跌</a></div>
+                <div class="item-summary">北京商报讯（记者 卢扬 实习记者 张继文）8月3日，据灯塔专业版实时数据，周星驰执导影片《功夫女足》上映第24天实现票房逆跌。截至发稿时，累计票房为21.83亿元，逼近22亿元。当前暑期档新片持续入市，影片排片份额持续遭到分流，在此背景下票房逆势上涨，市场表现颇具韧性。该片7月11日登陆全国院线，不同于多数影片首周...</div>
+                <div class="item-meta">北京商报 · 2026-08-04 07:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260804A00FD900?scene=news-skill" target="_blank" rel="noopener">“千面女郎”葛兰去世，享年93岁！曾是香港最红歌舞明星，《卡门》《我要你的爱》等歌曲传唱至今</a></div>
+                <div class="item-summary">香港传奇影星葛兰于8月3日下午安详离世，享年93岁。据悉，葛兰出生于1933年，是华语影坛著名歌手及演员，活跃于上世纪50至60年代，以集唱歌、演戏和舞蹈于一身的全能才华闻名，曾主演多部经典华语歌舞片，被誉为一代歌舞巨星。葛兰，本名张玉芳，祖籍江苏，1933年生于上海，1949年随家人一同迁居香港。她的代表作包括《曼波...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-08-04 07:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260803A0BM3D00?scene=news-skill" target="_blank" rel="noopener">在台海周边频繁演习，美军在怕什么？</a></div>
+                <div class="item-summary">据台湾媒体报道，美军近期纠集盟友于台海周边频繁演习，在具体战术层面暴露出了对解放军实力发展的担忧。评论认为，若在台海与解放军对阵，美军将在多个方面陷入被动。 对于美军在台海周边频繁举行跳岛....</div>
+                <div class="item-meta">海峡导报社 · 2026-08-03 23:09</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-04 08:40</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
