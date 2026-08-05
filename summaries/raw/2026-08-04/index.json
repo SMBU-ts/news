@@ -5,9 +5,9 @@
     "source": "Qwen：Blog Retrieval（API）",
     "date": "",
     "category": "ai-daily",
-    "rawfile": "",
-    "ok": false,
-    "round": 2
+    "rawfile": "022.txt",
+    "ok": true,
+    "round": 3
   },
   {
     "url": "https://x.com/SenseTime_AI/status/2084288424236782073",
@@ -17,7 +17,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://blog.cloudflare.com/billable-usage-api",
@@ -37,7 +37,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://blog.cloudflare.com/cloudflare-computer",
@@ -57,7 +57,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://x.com/MSFTResearch/status/2084364547142418722",
@@ -67,7 +67,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://blog.cloudflare.com/grpc-workers",
@@ -87,7 +87,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://www.databricks.com/blog/ingest-semi-structured-data-faster-and-more-efficiently-variant-now-generally-available",
@@ -157,7 +157,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://x.com/trq212/status/2084387303959740449",
@@ -167,7 +167,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://runwayml.com/news/company-news/electronic-arts-ai-summit-2026",
@@ -197,7 +197,7 @@
     "category": "ai-daily",
     "rawfile": "",
     "ok": false,
-    "round": 2
+    "round": 3
   },
   {
     "url": "https://runwayml.com/news/customers/paramount-nyc-summit-2026",
