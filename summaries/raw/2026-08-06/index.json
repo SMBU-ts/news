@@ -1,0 +1,242 @@
+[
+  {
+    "url": "https://x.com/Alibaba_Qwen/status/2084831888729072121",
+    "title": "Qwen-Image-3.0-Pro 上线 Qwen Cloud",
+    "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.cloudflare.com/cloudflare-os",
+    "title": "Cloudflare OS：面向智能体、应用与工作的开放平台",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/elonmusk/status/2084857373555101726",
+    "title": "Grok 4.5 免费体验，推荐 Build 工具链",
+    "source": "X：Elon Musk (@elonmusk, xAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.cloudflare.com/identity-aware-ai-gateway",
+    "title": "Cloudflare 用身份感知分析捕捉失控 AI 行为",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://engineering.fb.com/2026/08/05/ml-applications/from-user-sequences-to-scaling-laws-a-multi-stage-architecture-for-metas-ads-ranking",
+    "title": "Meta 广告排序的多阶段序列模型：从用户序列到 LLM 式扩展定律",
+    "source": "Meta Engineering Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://platform.claude.com/docs/en/release-notes/overview#august-5-2026",
+    "title": "Claude Platform 发布 8 月 5 日版本说明：推理钩子进入 Beta 测试",
+    "source": "Claude Platform：开发者版本说明（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
+    "title": "Atlassian Rovo 被曝存在数据窃取漏洞，可绕过安全控制",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/JeffDean/status/2085083442669318443",
+    "title": "Jeff Dean 宣布离开谷歌，创办 DiscoLoop AI",
+    "source": "X：Jeff Dean (@JeffDean)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.wired.com/story/meta-ran-ads-that-contained-ai-generated-child-sexual-abuse-imagery",
+    "title": "Meta 在 Facebook 和 Instagram 等平台投放了含 AI 生成儿童性虐待图像的广告",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.ithome.com/0/986/174.htm",
+    "title": "Google Assistant 下月起逐步退场，“Hey Google”将由谷歌 Gemini 接棒",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/demishassabis/status/2085034334914769203",
+    "title": "Demis Hassabis 转任 Google DeepMind 主席与 Alphabet 首席科学家",
+    "source": "X：Demis Hassabis (@demishassabis)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/AISafetyMemes/status/2085129043956097299",
+    "title": "OpenAI 披露智能体集群秘密协作事件",
+    "source": "X：AI Safety Memes (@AISafetyMemes)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/AYi_AInotes/status/2085010659150852220",
+    "title": "SpaceX 宣布 AI 算力上太空，独家采用 Nvidia Vera Rubin",
+    "source": "X：阿易 AI Notes (@AYi_AInotes)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://the-decoder.com/us-appeals-court-allows-perplexitys-ai-shopping-agent-back-on-amazon",
+    "title": "美国上诉法院推翻禁令，Perplexity AI 购物智能体重返 Amazon",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.cloudflare.com/the-agent-access-model",
+    "title": "Cloudflare 提出智能体访问模型（Agent Access Model）",
+    "source": "Cloudflare Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/taming-outlier-tokens",
+    "title": "驯服扩散 Transformer 中的离群 token：Dual-Stage Registers 干预",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "016.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647684946&idx=1&sn=ae7edcc572b998dc4e1ac3591977aa85",
+    "title": "开源「活人感写作.skill」：一个帮你写出没有AI味的文字的通用写作技能",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://simonwillison.net/2026/Aug/5/incident-report",
+    "title": "英国AI安全研究所事故报告：关闭安全过滤器的AI智能体在真实互联网上发起未授权攻击",
+    "source": "Simon Willison 博客",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "018.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw%3D%3D&mid=2247509161&idx=1&sn=bd9aa077bbc46a6049ad66af6d15af0f",
+    "title": "烧了5亿token后，我给Codex和Claude Code做Skill上下文瘦身的新技巧",
+    "source": "公众号：卡尔的AI沃茨",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.marktechpost.com/2026/08/05/end-to-end-bayesian-marketing-mix-modeling-with-google-meridian-media-measurement-roi-analysis-and-budget-optimization",
+    "title": "用 Google Meridian 构建端到端贝叶斯营销组合模型：媒体测量、ROI 分析与预算优化",
+    "source": "MarkTechPost（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "020.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://simonwillison.net/2026/Aug/5/raccoon-heist",
+    "title": "用 Claude Fable 5 一次性生成完整《Raccoon Heist》游戏",
+    "source": "Simon Willison 博客",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "021.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.tomtunguz.com/the-newest-hyperscaler",
+    "title": "SpaceXAI 单季资本开支 183.7 亿美元，AI 投入接近微软总资本开支四成",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "022.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/elon-musks-preposterous-and-possibly",
+    "title": "马斯克关于机器人手术的荒谬且可能有害的预测",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.langchain.com/blog/how-we-build-an-autonomous-sre-agent-for-kubernetes-deployments",
+    "title": "LangChain 如何为 Kubernetes 构建自主 SRE 智能体",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "024.txt",
+    "ok": true,
+    "round": 1
+  }
+]

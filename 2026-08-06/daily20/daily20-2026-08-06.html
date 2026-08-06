@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-06</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-06</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0AWUU00?scene=news-skill" target="_blank" rel="noopener">中国宣布5项对美反制措施</a></div>
+                <div class="item-summary">8月5日，商务部宣布四项反制措施，包括加强无人机相关两用物项对美国出口管制、对应用DNA科学公司等6家美国实体采取反制措施、对美国合规性测试公司采取反制措施，以及对相关进口打印复印办公设备发起对外贸....</div>
+                <div class="item-meta">界面新闻 · 2026-08-05 23:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A090U900?scene=news-skill" target="_blank" rel="noopener">央视曝光午夜色情直播间乱象：用暗语规避监管，加好友引流至站外非法交易，宣称“转200元除了脸哪都能看”；有人裸聊2分钟被敲诈14笔</a></div>
+                <div class="item-summary">据CCTV法治在线报道：很多人习惯在睡觉前刷手机，您有没有刷到过这样的网络直播间：网络主播只出声音不出头像，评论区里全是暗语，但是一旦发言，就会有人私信，后续的操作也出奇一致，竟然是要将人引流至站外私域。记者观察到，从进入这个网络直播间开始，直到添加个人社交账号，整个过程都显得异常神秘，私信中的短短几句话，充斥着大量的谐音字，这都是规避平台审核的行为。在添加对方好友的过程中，手机App操作界...</div>
+                <div class="item-meta">红星新闻 · 2026-08-05 14:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A03MN500?scene=news-skill" target="_blank" rel="noopener">中国饭碗端得更稳成色更足</a></div>
+                <div class="item-summary">农稳社稷，粮安天下。今年夏粮再获丰收，秋粮长势喜人，全年粮食丰收基础扎实。从田间到餐桌，粮食供给结构更加优化，收储调控能力持续增强，大国粮仓的成色更足。全年粮食丰收基础较好夏粮是全年粮食生产的“第一仗”。今年全国夏粮产量达到3014.9亿斤，首次突破3000亿斤，比上年增加20.0亿斤，增长0.7%。这份沉甸甸的收获...</div>
+                <div class="item-meta">中国经济网 · 2026-08-05 08:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0DFT200?scene=news-skill" target="_blank" rel="noopener">你常吃的兰州拉面要改名了，或改名青海拉面</a></div>
+                <div class="item-summary">近日，兰州拉面在多地试点改名“青海拉面”引发热议。据悉，改名背后藏着一场近40年的品牌错位。兰州本地并无 “兰州拉面” 叫法，正宗本土面食称作兰州牛肉面。上世纪80年代，青海化隆、尖扎群众外出谋生，借用兰州牛肉面名气打出“兰州拉面” 招牌开店，在全国开出超3万家门店，年创收超240亿元。但各地门店工艺口味参差不齐，持续消耗兰州牛肉面的品牌口碑，两地品牌矛盾逐步凸显。今年6月，天津72家拉面馆...</div>
+                <div class="item-meta">红星新闻 · 2026-08-05 19:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A06JJO00?scene=news-skill" target="_blank" rel="noopener">大逆转！全球突然抢建核电站，什么信号？</a></div>
+                <div class="item-summary">文|凯风AI的尽头是算力，算力的尽头是电力。01全球，正在拼命建核电站。日前，国常会一次性核准浙江金七门、广东太平岭、辽宁庄河、山东莱阳核电等四个核电项目，共计8台机组，总投资超1700亿元。这是继去年核准广东台山等5个核电项目后的又一大动作。2022年以来，我国累计核准49台机组，合计总投资近万亿。万亿投资砸向核电，势必重塑电力格局，也将带动核电装备产业爆发，更在全球抢得先机。不只是中国，...</div>
+                <div class="item-meta">国民经略 · 2026-08-05 11:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0CU8H00?scene=news-skill" target="_blank" rel="noopener">45天地震32次 专家：宜宾地震不是页岩气开采造成的</a></div>
+                <div class="item-summary">记者 张铃据中国地震台网正式测定，8月4日23时，四川省宜宾市高县发生3.7级地震，震源深度5公里。不到两小时后，高县又发生3.0级地震，震源深度7公里。据四川省地震局数据，自6月21日宜宾市江安县发生3.2级地震后，一个半月内，宜宾境内已发生32次3级以上地震，其中30次发生在高县。4次震感较强烈的地震也都发生在高县：6月29日的5.5级地震，造成15人受伤；7月8日，高县一天内发生两次5...</div>
+                <div class="item-meta">经济观察报 · 2026-08-05 18:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A04MYA00?scene=news-skill" target="_blank" rel="noopener">长安航空通报旅客所带充电宝自燃：航班备降武汉，无人员受伤</a></div>
+                <div class="item-summary">8月4日晚，长安航空就“旅客携带的充电宝发生自燃”发布情况通报称，9H8470航班备降武汉，飞机状况良好，机上无人员受伤。通报称，2026年8月4日22时30分左右，由南京飞往贵阳的9H8470航班上，一名旅客携带的充电宝发生自燃。乘务组严格按照机上锂电池冒烟失火应急程序专业高效完成处置，机上无人员受伤，飞机状况良好。经机...</div>
+                <div class="item-meta">澎湃新闻 · 2026-08-05 09:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0CXST00?scene=news-skill" target="_blank" rel="noopener">费大厨“全国小炒肉大王”称号，仅凭视频评出？中国烹饪协会回应</a></div>
+                <div class="item-summary">近日，中国烹饪协会连发公告，全面清理并撤销此前颁发的“大师”“名师”及“美食地标城市”等各类称号，以响应8月1日正式施行的《社会组织评比表彰活动管理办法》。 有网友发现，费大厨的“全国小炒....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-08-05 18:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A07FI500?scene=news-skill" target="_blank" rel="noopener">河南发布带薪休假新政：领导干部要带头休假，推动全员应休尽休、休满休足；鼓励3-7天弹性长假，构建“周五半天+周末+年假”短途度假模式</a></div>
+                <div class="item-summary">近日，河南省委组织部、省人力资源社会保障厅、省商务厅、省文化和旅游厅、省政府国资委、省总工会联合印发《关于进一步推动落实职工带薪错峰休假的通知》，旨在加强全省职工休息休假权益保护，激活假期消费潜力，助力河南文旅强省、消费大省建设。其中提到，用人单位应严格执行带薪年休假规定，凡连续工作满12个月的职工，...</div>
+                <div class="item-meta">极目新闻 · 2026-08-05 12:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/GTVp7mU-Mzxv6O-DGH9K5A?version=5.0.8.99856&platform=mac&scene=news-skill" target="_blank" rel="noopener">有图≠真相！汛期五大谣言套路曝光</a></div>
+                
+                <div class="item-meta">2026-08-05 16:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0E1VQ00?scene=news-skill" target="_blank" rel="noopener">游客旅游时因房间不够睡在车里，离店时竟被店家索要150元“住宿费”</a></div>
+                <div class="item-summary">7月底，重庆的王先生一行到伊犁旅游，两名同行女士因酒店仅剩一间大床房而无法入住，被迫在车内蜷缩了两晚，离店时竟被索要150元“住宿费”。 记者采访了解到，当地监管部门也认为，这笔收费不合理....</div>
+                <div class="item-meta">北京青年报官网 · 2026-08-05 20:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805V072R000?scene=news-skill" target="_blank" rel="noopener">泰国一球赛遭雷击，闪电伴随巨响击中24岁球员致死，骇人一幕曝光</a></div>
+                <div class="item-summary">8月4日，泰国那拉提瓦府一名24岁球员参加哥乐足总杯足球赛四强赛被雷电击中身亡。当时突然下起雨，雷电击中球场中央。事故还造成包括球员在内至少9人受伤。身亡球员近期刚刚签约新俱乐部，警方已介入调查。</div>
+                <div class="item-meta">世面 · 2026-08-05 23:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0F17W00?scene=news-skill" target="_blank" rel="noopener">香港殿堂级填词人黎彼得因病离世 终年76岁</a></div>
+                <div class="item-summary">8月5日，据香港无线演员钟志光透露，香港乐坛殿堂级填词人、资深演员黎彼得（Peter，原名黎成就）于今早（5日）因病离世，终年76岁。钟志光接受访问的时候语气沉重，谈及黎彼得晚年身体一直不好，今年年初入住护老院。3月1日凌晨，黎彼得在护老院内中风晕倒，之后便一直卧床。钟志光回忆，5月13日黎彼得生日当天，自己前去探望，还为他唱生日歌，但当时黎彼得已经没有任何反应。黎彼得出生于1950年，原名...</div>
+                <div class="item-meta">娱阿大 · 2026-08-05 23:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0EOUS00?scene=news-skill" target="_blank" rel="noopener">24999元电脑报成2499元，余承东：我口误了</a></div>
+                <div class="item-summary">8月5日下午，在尊界时代旗舰MPV及华为全场景新品发布会上，华为常务董事、终端BG董事长余承东介绍折叠电脑新品华为MateBook Fold非凡大师时发生口误，将售价“24999元起”说成“2499元起”，引发现场哗然。随后，华为终端BG CEO何刚上台演讲，并再次强调，该款产品实际售价为24999元起。当天傍晚，余承东发布微博称：我刚才...</div>
+                <div class="item-meta">奔流新闻 · 2026-08-05 22:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805V0EZPL00?scene=news-skill" target="_blank" rel="noopener">湖南一车辆高速行驶，前车挡风玻璃掉落迎面飞来，玻璃瞬间被砸裂</a></div>
+                <div class="item-summary">8月5日，行车记录仪拍下湖南益阳一车辆在高速上被前车掉落的物品砸中。车主告诉记者，他的车刚买一周，系前车挡风玻璃掉落砸中他的车，车内人无大碍，目前正在走保险程序理赔。</div>
+                <div class="item-meta">新京报我们视频 · 2026-08-05 23:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0EURY00?scene=news-skill" target="_blank" rel="noopener">牛仔裤工厂里的第八个暑假</a></div>
+                <div class="item-summary">在广州东郊的新塘镇，四川人王永伦拥有一间月产50万条牛仔裤的工厂。运转高效的秘诀，是七百多个员工和一套从瑞典进口的智能吊挂系统。2026年夏天，像两个巨型纸盒的厂房里，一下子多了五十多个孩子，最小的只有1岁——显然，他们不是来缝制牛仔裤的暑期工。王永伦雇佣了孩子们的爸妈，现在，又要管理他们的孩子。2026年7月...</div>
+                <div class="item-meta">南方周末 · 2026-08-05 23:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0DB4H00?scene=news-skill" target="_blank" rel="noopener">石宝源同志逝世</a></div>
+                <div class="item-summary">石宝源同志遗像新华社北京8月5日电 副大军区职退休干部、原沈阳军区副司令员石宝源同志，因病医治无效，于7月25日在北京逝世，享年90岁。石宝源是河北省通县（今北京市通州区）人，1954年入伍，1955年加入中国共产党。革命生涯中，他历任学员、班长、副排长、参谋、副处长、团长、师参谋长、副师长、师长、副军长等职，为部队革命化、现代化、正规化建设作出了贡献。石宝源是中国共产党第十三次全国代表大会...</div>
+                <div class="item-meta">新华网 · 2026-08-06 00:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260806A00P8V00?scene=news-skill" target="_blank" rel="noopener">搞迷信活动，对抗组织审查，刘旸被“双开”</a></div>
+                <div class="item-summary">8月5日，据河南省纪委监委消息： 经中共河南省委批准，河南省纪委监委对河南种业集团有限公司原党委副书记、总经理刘旸严重违纪违法问题进行了立案审查调查。经查，刘旸丧失理想信念，背弃初心使命，搞迷信活动，对抗组织审查；无视中央八项规定精神，收受可能影响公正执行公务的礼品；违背组织原则，利用职权为他人谋取人...</div>
+                <div class="item-meta">中国青年报 · 2026-08-06 01:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260805A0C6ND00?scene=news-skill" target="_blank" rel="noopener">长鑫拒绝苹果压价：坚持要求不低于三星电子和SK海力士，甚至更高</a></div>
+                <div class="item-summary">中新经纬8月5日电 5日，据韩国媒体《Digital Daily》报道，苹果公司曾试图与长鑫存储(CXMT)商谈更低的DRAM(动态随机存取存储器)采购价格，但遭到拒绝。长鑫存储坚持要求报价不低于三星电子和SK海力士，甚至更高。 原因很简单，华为和小米等中国本土企业已通过长期合同锁定了长鑫存储的产能，因此长鑫存储无需迁就苹果公司苛...</div>
+                <div class="item-meta">中新经纬 · 2026-08-06 00:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260806A02DZB00?scene=news-skill" target="_blank" rel="noopener">“暗杀未遂”，俄乌拉尔无人机厂负责人遭遇炸弹袭击</a></div>
+                <div class="item-summary">据俄罗斯《生意人报》8月5日报道，俄罗斯乌拉尔无人机厂负责人弗拉基米尔·特卡丘克4日晚间遭遇炸弹袭击，特卡丘克本人身受重伤，他的司机兼保镖在爆炸中身亡。爆炸事件发生在俄罗斯中部斯维尔德洛夫斯克州首府叶卡捷琳堡市郊一处村庄，特卡丘克乘坐的奔驰汽车底部被安装了威力强大的爆炸装置，在一处居民区的停车场内被炸...</div>
+                <div class="item-meta">观察者网 · 2026-08-06 07:04</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-06 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
