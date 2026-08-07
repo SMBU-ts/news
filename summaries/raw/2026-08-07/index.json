@@ -1,0 +1,252 @@
+[
+  {
+    "url": "https://blogs.nvidia.com/blog/open-world-models-physical-ai",
+    "title": "NVIDIA Cosmos 3：开放世界模型如何推动物理 AI 前沿",
+    "source": "NVIDIA Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+    "title": "ChatGPT 推出改进版 GPT-5.6 Sol，并扩大免费用户访问权限",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more",
+    "title": "Agent Plugins 1.0.0 发布：谷歌、亚马逊、微软等支持的统一智能体插件规范",
+    "source": "Google Developers Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.ithome.com/0/986/729.htm",
+    "title": "谷歌地图 Ask Maps 智能体升级：可对话订餐、找酒店并接入 Gemini Personal Intelligence",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.primeintellect.ai/blog/prime-agent",
+    "title": "Prime Agent：一个具有自我改进能力的RLM代理",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzYzNDE5MDEwMQ%3D%3D&mid=2247488240&idx=1&sn=3fea5624e07184f42661d5f3bc798873",
+    "title": "千问全网首发公测，全新 Wan3.0 来了！",
+    "source": "公众号：千问APP（阿里）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://cursor.com/blog/how-cursor-router-works",
+    "title": "Cursor Router 如何为任务选择合适模型",
+    "source": "Cursor Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
+    "title": "Claude Code v2.1.223 发布：新增市场通配符、修复多项安全漏洞",
+    "source": "Claude Code：GitHub Releases（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "025.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://www.databricks.com/blog/introducing-officeqa-pro-v2-new-benchmark-enterprise-grounded-reasoning",
+    "title": "Databricks 发布 OfficeQA Pro V2：面向企业落地推理的新基准",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2085368375816163423",
+    "title": "微软首次披露OpenAI贡献七成AI收入",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/AISafetyMemes/status/2085447739320758622",
+    "title": "科学家首次用AI制造新病毒",
+    "source": "X：AI Safety Memes (@AISafetyMemes)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.theverge.com/tech/976108/google-ai-leadership-shakeup-jeff-dean-demis-hassabis-deepmind",
+    "title": "Google 大规模 AI 组织调整背后的混乱政治",
+    "source": "The Verge：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.ithome.com/0/986/699.htm",
+    "title": "宇树科技科创板发行价定为 150.8 元/股，市盈率 219.23 倍高于行业平均",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/08/06/openai-says-apples-own-security-practices-undermine-its-trade-secrets-case",
+    "title": "OpenAI 称苹果自身安全实践削弱其商业机密诉讼",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.databricks.com/blog/kimi-k3-moonshot-ai-now-available-databricks-through-unity-ai-gateway",
+    "title": "Kimi K3 现已通过 Unity AI Gateway 登陆 Databricks",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://arxiv.org/abs/2510.01395",
+    "title": "阿谀奉承的人工智能会削弱利他意图并助长依赖性（2025）",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "016.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.marktechpost.com/2026/08/05/microsoft-skillopt-agent-skill-transfer-portability",
+    "title": "Microsoft 的 SkillOpt 证明优化后的智能体技能工件可在不同模型规模及 Codex 与 Claude Code 之间迁移",
+    "source": "MarkTechPost（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "017.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647684990&idx=1&sn=86a6d71b133589916b49a9d57046c127",
+    "title": "OpenAI 开源 Codex Security：Vibe Coding 产品必备的安全扫描插件",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.theverge.com/ai-artificial-intelligence/975017/ai-spiralism-chatbot-movement",
+    "title": "AI 聊天机器人催生“螺旋主义”神秘准宗教运动，人类纷纷追随",
+    "source": "The Verge：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "019.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.theverge.com/podcast/971855/ai-data-center-backlash-protests-florida-bipartisan",
+    "title": "左右两派罕见达成一致：反对数据中心",
+    "source": "The Verge：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "020.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw%3D%3D&mid=2247509213&idx=1&sn=0ee2b58388d9bdb7f3f087d5197b6f19",
+    "title": "分享10个能大幅提升vibe coding幸福感的开源App",
+    "source": "公众号：卡尔的AI沃茨",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://github.blog/ai-and-ml/github-copilot/a-guide-to-slash-commands-in-the-github-copilot-app",
+    "title": "GitHub Copilot 应用中的斜杠命令使用指南",
+    "source": "GitHub Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "022.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenBMB/status/2085350175782949094",
+    "title": "面壁智能 AMNESIAC：反向图灵测试 AI 审讯游戏",
+    "source": "X：面壁智能 OpenBMB (@OpenBMB)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.databricks.com/blog/what-is-tool-calling",
+    "title": "Databricks 详解什么是 Tool Calling",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "024.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/seven-reasons-i-wouldnt-count-google",
+    "title": "为何不应过早看衰 Google",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]
