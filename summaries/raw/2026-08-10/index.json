@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw%3D%3D&mid=2247509275&idx=1&sn=48cc15b0f9b22173ce93350da61f15dc",
+    "title": "Seedance 2.5 上线一周新增六种创意玩法",
+    "source": "公众号：卡尔的AI沃茨",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/bcherny/status/2086520950259118464",
+    "title": "Anthropic 称已基本解决提示注入攻击",
+    "source": "X：Boris Cherny (@bcherny)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.marktechpost.com/2026/08/09/imdb-sentiment-analysis-with-distilbert-lora-tf-idf-baselines-calibration-interpretability-robustness-testing-and-semi-supervised-learning",
+    "title": "用DistilBERT LoRA与TF-IDF基线做IMDb情感分析：校准、可解释性与半监督学习",
+    "source": "MarkTechPost（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "title": "从黑客事件中汲取的教训：前沿模型攻击暴露激励与治理失衡",
+    "source": "Nathan Lambert：Interconnects（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  }
+]

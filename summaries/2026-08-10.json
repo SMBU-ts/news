@@ -1,0 +1,7 @@
+{
+  "https://www.marktechpost.com/2026/08/09/imdb-sentiment-analysis-with-distilbert-lora-tf-idf-baselines-calibration-interpretability-robustness-testing-and-semi-supervised-learning": "本文是一篇端到端情感分析教程，使用Stanford NLP IMDb大型影评数据集，对比传统机器学习与参数高效微调方法。作者先建立TF-IDF + 逻辑回归的强基线，再通过PEFT库用LoRA微调DistilBERT，从准确率、macro-F1、ROC-AUC、混淆矩阵等维度评估，并分析了概率校准（ECE）和可靠性。文章还深入探讨了置信错误、不同评论长度下的表现、词级遮挡显著性及头尾截断效应，最终利用无标签IMDb数据做置信度伪标注的半监督学习实验，保存合并后的Transformer模型供推理复用。",
+  "https://www.interconnects.ai/p/lessons-from-the-hacks": "Nathan Lambert评论近期前沿AI模型遭网络攻击事件，指出当前激励体系难以适应快速技术变革。一方面科技公司为保持竞争力倾向于加速扩张和规模扩张，即使这意味着新风险；另一方面美国政府行动缓慢，预计只有出现实质伤害后才会被动且过度反应。作者认为核心在于双方都需更高透明度——实验室对复杂系统缺乏足够理解应引入更多外部研究，政府则应提升AI领域国家能力并帮助产业准备应对AI原生风险，但目前双方均未走上正轨。",
+  "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw%3D%3D&mid=2247509275&idx=1&sn=48cc15b0f9b22173ce93350da61f15dc": "Seedance 2.5是快手可灵团队推出的AI视频生成工具的最新版本，上线一周内社区涌现出大量创意玩法，包括时间静止效果、超级英雄变身、创意广告制作、K-pop风格MV生成和电商产品展示视频等六大类应用场景，展示了AI视频生成在实际创作中的多样化潜力。",
+  "https://x.com/bcherny/status/2086520950259118464": "Anthropic 的 Boris Cherny 宣布，通过针对性的模型训练，Claude 已在很大程度上解决了实际使用中的提示注入（prompt injection）攻击问题。提示注入长期以来被视为大语言模型的核心安全挑战之一，攻击者可能通过精心构造的输入绕过模型限制。这一进展标志着 LLM 安全防护从外部过滤向模型内在免疫的重要转变。",
+  "https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw%3D%3D&amp;mid=2247509275&amp;idx=1&amp;sn=48cc15b0f9b22173ce93350da61f15dc": "Seedance 2.5是快手可灵团队推出的AI视频生成工具的最新版本，上线一周内社区涌现出大量创意玩法，包括时间静止效果、超级英雄变身、创意广告制作、K-pop风格MV生成和电商产品展示视频等六大类应用场景，展示了AI视频生成在实际创作中的多样化潜力。"
+}
