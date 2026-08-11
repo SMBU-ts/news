@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-11</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-11</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A027ZS00?scene=news-skill" target="_blank" rel="noopener">多家中小银行上调存款利率 业内人士称与5年期大额存单重启无直接关联</a></div>
+                <div class="item-summary">人民财讯8月11日电，8月以来，湖北、广东等地多家中小银行纷纷上调存款利率，引发市场关注。进入8月，多地城商行、农商行及村镇银行发布公告，表示对挂牌存款利率或特色存款产品利率进行上调。总体来看，各家银行的上调幅度在10—33个基点（BP）不等。在宏观市场利率整体下行、银行业持续压降负债成本的背景下，中小银行针...</div>
+                <div class="item-meta">证券时报e公司 · 2026-08-11 07:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A029QM00?scene=news-skill" target="_blank" rel="noopener">北京今天夜间至明天雨势较强 部分地区或现大暴雨</a></div>
+                <div class="item-summary">今天（8月11日）白天，北京将现降雨，夜间至明天雨势增强，阴有暴雨，局地或现大暴雨；后天，雨势将减弱，但降雨仍会持续，仍需做好防雨措施。昨天，北京以晴或多云为主，云量逐渐增多，最高气温升至31.9℃，午后体感较热。△今晨，北京多云间晴。今天白天，北京将现降雨，夜间至明天雨势增强；后天降雨减弱。北京市气象台预计，今天白天，北京多云转阴有雷阵雨，东转南风3级左右，最高气温32℃。今天夜间至明天夜...</div>
+                <div class="item-meta">央视新闻 · 2026-08-11 07:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A03NT000?scene=news-skill" target="_blank" rel="noopener">视频丨油气产区稳产提效 筑牢夏季用气基本盘</a></div>
+                <div class="item-summary">连日来，全国多地持续高温天气，部分地区气温突破40℃，用气需求持续攀升。国家管网集团数据显示，全国天然气管网日最高输气量达到6.56亿立方米，较去年夏季高峰值增长1.2%。面对持续走高的用能需求，从海上平台、沙漠场站到各大油气田生产现场，油气企业多措并举提产能、强运维，全力守牢天然气保供上游主阵地。位于珠江口盆地的番禺34-1气田，是粤港澳大湾区重要的天然气生产基地，年产天然气超10亿立方米...</div>
+                <div class="item-meta">央视新闻 · 2026-08-10 09:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A01C6M00?scene=news-skill" target="_blank" rel="noopener">台风刚过，浙江台州又发龙卷风险提示 收好这份防御指南</a></div>
+                <div class="item-summary">8月10日晚间刚刚经历台风“白海豚”冲击的浙江台州又发布了龙卷风险提示！“受台风外围雨带影响，预计未来3小时温岭东部、路桥、椒江、台州湾新区、临海东部等沿海地区可能出现龙卷天气，请做好相关防御工作。”收到该信息后当地很多网友都有同一疑问：为何台风刚过，龙卷又来？实际上，这并非“巧合”，作为两种破坏力很强...</div>
+                <div class="item-meta">央视新闻 · 2026-08-11 02:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A024AJ00?scene=news-skill" target="_blank" rel="noopener">车身动辄2米宽，频遇停车难，新能源车为何越造越大？</a></div>
+                <div class="item-summary">随着中大型新能源车市场快速扩容，不少市民驾车去商场时常遭遇“车大位窄”的停车尴尬：车辆勉强能驶入车位，车门却难以正常打开。 当前，商场停车位仍沿用多年前适配传统燃油车的建设标准，与持续加宽的新能源车型形成明显错位。车主希望商场能将停车位尺寸再划大些，而更多汽车业内声音却指向行业内部：新能源车大型化造...</div>
+                <div class="item-meta">北京日报客户端 · 2026-08-11 06:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A06M9J00?scene=news-skill" target="_blank" rel="noopener">扎哈罗娃批高市早苗：背叛历史</a></div>
+                <div class="item-summary">参考消息网8月10日报道 据俄新社8月9日报道，俄罗斯外交部发言人扎哈罗娃称，日本对美国在广岛原子弹轰炸事件中扮演的角色保持沉默，这是对历史的背叛。日本首相高市早苗和广岛市市长松井一实早些时候在纪念广岛原子弹爆炸81周年的仪式上发表讲话时，均未点名指出1945年8月6日向这座城市投下原子弹的国家。扎哈罗娃在“电报...</div>
+                <div class="item-meta">参考消息 · 2026-08-10 14:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A0213I00?scene=news-skill" target="_blank" rel="noopener">地面晃动 建筑倒塌 民众奔逃 视频记录哥伦比亚强震瞬间</a></div>
+                <div class="item-summary">哥伦比亚西部10日上午发生7.5级地震，全国多地震感强烈。现场视频记录下地震发生的瞬间，地面剧烈晃动，多座建筑受损倒塌，现场烟雾四起，有民众在避难时摔倒。哥伦比亚总统德拉埃斯普列亚10日在首都波哥大通报说，该国西部当天发生的强震已造成全国111人死亡、87人受伤。哥伦比亚政府已宣布进入“国家灾难状态”，应对地震灾情。（总台记者 雷湘平 马天静） 更多阅读视频丨7.5级强震已致百余人遇难 哥伦...</div>
+                <div class="item-meta">央视新闻 · 2026-08-11 06:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A02BF100?scene=news-skill" target="_blank" rel="noopener">日本战犯东条英机笔记曝光：至死仍在狡辩，毫无反思之意</a></div>
+                <div class="item-summary">据日本共同社8月10日消息，近期，侵华战争以及第二次世界大战甲级战犯、日本前首相东条英机的后代将约300件史料捐赠给日本国立国会图书馆，其中包括东条英机的亲笔笔记和书信等。报道称，在东京审判中，东条与检察官的直接对峙备受关注。史料显示，东条当时在笔记中仍在狡辩，声称这是“为正义呐喊的最后机会”“如同奔赴战...</div>
+                <div class="item-meta">观察者网 · 2026-08-11 07:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A01Y5P00?scene=news-skill" target="_blank" rel="noopener">视频丨7.5级强震已致百余人遇难 哥伦比亚进入“国家灾难状态”</a></div>
+                <div class="item-summary">据中国地震台网正式测定，当地时间8月10日7时34分，哥伦比亚发生7.5级地震，震源深度80公里。震中位于哥伦比亚西北部乔科省圣何塞-德尔帕尔马市附近，首都波哥大震感明显。此次强震已致超百人遇难，多地建筑物受损或倒塌，多座机场停运。哥伦比亚政府当天宣布进入“国家灾难状态”，以应对灾情。 首都波哥大晃动时间超30秒...</div>
+                <div class="item-meta">央视新闻 · 2026-08-11 06:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A0ASLU00?scene=news-skill" target="_blank" rel="noopener">夏天爬山不会失温？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-08-10 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A01IZP00?scene=news-skill" target="_blank" rel="noopener">已致13死78伤！这是乌方对俄本土发动的最致命袭击之一</a></div>
+                <div class="item-summary">俄罗斯方面通报，当地时间8月10日，乌克兰无人机对俄腹地一座工业城市发动袭击，已造成13人死亡，78人受伤。 基辅方面称，此次打击的目标是位于下卡姆斯克市（Nizhnekamsk）的塔内科....</div>
+                <div class="item-meta">凤凰网 · 2026-08-11 07:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A01DLW00?scene=news-skill" target="_blank" rel="noopener">伊朗总统与最高领袖会谈七八个小时</a></div>
+                <div class="item-summary">【伊朗总统与最高领袖会谈七八个小时】财联社8月11日电，伊朗总统佩泽希齐扬8月10日表示，他近日与伊朗最高领袖穆杰塔巴·哈梅内伊举行会谈，“会谈持续了七八个小时，穆杰塔巴哈健康状况很好”。据伊朗国家媒体8月9日报道，穆杰塔巴与佩泽希齐扬举行了会谈，深入探讨了伊朗当前面临的各项挑战，包括民生需求、伊朗所遭遇的...</div>
+                <div class="item-meta">财联社 · 2026-08-11 02:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A021U500?scene=news-skill" target="_blank" rel="noopener">莫迪政府“去殖民化”12年，印度发生哪些变化？</a></div>
+                <div class="item-summary">【环球时报驻印度特约记者 米小丫 环球时报记者 赵霜】编者的话：印度即将迎来8月15日独立纪念日，按照惯例，在这一天，印度总理将在位于德里地区的红堡发表讲话。这座始建于莫卧儿王朝时期的建筑，如今是印度从英国手中争取自由的象征。自1947年独立以来，印度一方面批判殖民统治，另一方面则保留了殖民时期的许多制度。莫...</div>
+                <div class="item-meta">环球网 · 2026-08-11 06:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A0DOVB00?scene=news-skill" target="_blank" rel="noopener">一瓶芬达180元？游客称甘肃月牙泉景区现“天价汽水”，自助机售价为外面零售价的60倍，景区：正在安排核实</a></div>
+                <div class="item-summary">据纵览新闻，8月9日，有网友在短视频平台吐槽，在甘肃鸣沙山月牙泉景区一台自助零售机上看到，日常在超市售价3元1瓶的汽水，机器上标价为180元。10日上午，记者致电鸣沙山月牙泉景区，接线人员表示，已经收到游客关于自助零售机芬达标价180元一事的反映，也留意到网络流传的相关视频。目前，问题已经上报，相关负责人正在安...</div>
+                <div class="item-meta">大河报 · 2026-08-10 23:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260811A01CV200?scene=news-skill" target="_blank" rel="noopener">WTT瑞典大满贯：国乒首日6胜2负输埃及 小将爆冷逆转日本奥运冠军</a></div>
+                <div class="item-summary">2026年8月11日凌晨，国乒结束WTT欧洲大满贯（瑞典站）首日的最后一场较量，小将覃予萱在0-1落后的情况下爆冷3-2逆转日本奥运冠军伊藤美诚：目前国乒已有6位运动员晋级单打32强，另外2人一轮游....</div>
+                <div class="item-meta">全言 · 2026-08-11 02:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A0BU7V00?scene=news-skill" target="_blank" rel="noopener">内蒙古一警车被指擅自更换车标引关注，警方回应：已核实，正在整改</a></div>
+                <div class="item-summary">近日，有网友在社交平台发布视频称，在内蒙古自治区鄂尔多斯市有一辆车牌号为“蒙K30**警”的警车，存在擅自将其他品牌汽车车标更换为“长城汽车”车标的情况，此事引发关注。8月10日，鄂尔多斯市公安局相....</div>
+                <div class="item-meta">新黄河 · 2026-08-10 19:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A06E9300?scene=news-skill" target="_blank" rel="noopener">母子三人从四川乘动车去湖南郴州，阴差阳错到了陕西彬州，当事人：买票时打错字了，难怪越走越冷</a></div>
+                <div class="item-summary">极目新闻记者 丁伟“一下车，天塌了，‘彬’和‘郴’就差个偏旁，结果我要去湖南（郴州）给我干到陕西（彬州）了，真想抽自己。”8月9日，一位网友在社交平台分享自己的离奇经历，引网友围观。8月10日，极目新闻记者联系到了当事人尤女士。网络截图（来自受访人社交账号）尤女士向极目新闻记者介绍，她的娘家在四川达州，婆...</div>
+                <div class="item-meta">极目新闻 · 2026-08-10 14:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A0C57N00?scene=news-skill" target="_blank" rel="noopener">中央有关部门祝贺团赴贵州</a></div>
+                <div class="item-summary">政知君注意到，近日，中央有关部门祝贺团再次赴贵州，担任团长的是国家民委副主任、党组成员沈阳。 据贵州日报消息，8月8日，黔南布依族苗族自治州成立70周年庆祝大会在都匀市隆重举行。全国人大常....</div>
+                <div class="item-meta">政知见 · 2026-08-10 22:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A0D0NA00?scene=news-skill" target="_blank" rel="noopener">四川15岁男孩骑电瓶车独自进藏，身上200块，骑20多天抵达拉萨，渴了喝自来水，晚上睡公厕和商铺，进藏是去看在外务工的父亲</a></div>
+                <div class="item-summary">200块经费，一辆续航70公里的电瓶车，15岁小孩哥骑行2000公里抵达拉萨。返程时被摩友拍火，不少网友发视频偶遇，怕冷给他送上冲锋衣，钱和吃的使劲塞，路费越用越多。8月10日，潇湘晨报 ·晨视频记者联系到在路上为他提供过帮助的摩友浩先生，他表示男孩去西藏并不是旅游，而是去看望在拉萨务工的父亲。少年在上初二，此前...</div>
+                <div class="item-meta">潇湘晨报 · 2026-08-10 22:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260810A0AYDI00?scene=news-skill" target="_blank" rel="noopener">台风“白海豚”致上海打破75年单日降水量纪录，在沪学生：外卖配送费涨4倍舍不得点</a></div>
+                <div class="item-summary">据央视新闻报道，今年第13号台风“白海豚”于8月9日先后两次在浙江沿海登陆。登陆后，“白海豚”向西偏南方向移动，强度逐渐减弱。截至10日早晨5时，其中心已移至浙江省丽水市庆元县境内，最大风力9级（热带风暴级）。预计台风将以每小时20至25公里的速度向西北方向移动并继续减弱。△图源自上海发布。据中国天气网报道，8...</div>
+                <div class="item-meta">潇湘晨报 · 2026-08-11 07:49</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-11 08:33</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

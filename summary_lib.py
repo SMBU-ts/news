@@ -43,7 +43,19 @@ def load_precomputed(path):
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         if isinstance(data, dict):
-            _PRECOMP.update({str(k): str(v) for k, v in data.items() if v})
+            for k, v in data.items():
+                if not v:
+                    continue
+                k_str = str(k)
+                v_str = str(v)
+                _PRECOMP[k_str] = v_str
+                # 双向注册，兼容 HTML 转义（& ↔ &amp;）与反转义
+                escaped = k_str.replace("&", "&amp;")
+                if escaped != k_str:
+                    _PRECOMP[escaped] = v_str
+                unescaped = html.unescape(k_str)
+                if unescaped != k_str:
+                    _PRECOMP[unescaped] = v_str
     except Exception:
         pass
 

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日热搜 · 2026-08-11</title>
+<meta name="description" content="2026-08-11 每日热搜汇总：分 5 个平台各取 24 小时内综合排名前 10，共 50 条热点，含热度指数、来源与原文链接。">
+<style>
+  :root { --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#f43f5e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg);
+      color:var(--ink); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+
+  .hero { position:relative; overflow:hidden; color:#fff; padding:48px 24px 42px;
+      background:linear-gradient(125deg,#f43f5e 0%,#fb7185 45%,#f59e0b 120%); }
+  .hero::after { content:"🔥"; position:absolute; right:20px; top:-6px; font-size:150px;
+      opacity:.14; transform:rotate(8deg); }
+  .hero-inner { position:relative; z-index:1; max-width:1080px; margin:0 auto; }
+  .kicker { display:inline-flex; align-items:center; gap:8px; font-size:12.5px;
+      letter-spacing:2px; font-weight:700; text-transform:uppercase;
+      background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.32);
+      padding:6px 14px; border-radius:999px; }
+  .hero h1 { margin:14px 0 6px; font-size:clamp(26px,5vw,42px); font-weight:850; line-height:1.15; }
+  .hero .sub { opacity:.95; font-size:14.5px; }
+  .hero .sub b { font-weight:700; }
+  .pstats { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+  .pstat { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600;
+      background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.3);
+      border-radius:999px; padding:6px 13px; }
+  .pstat i { width:8px; height:8px; border-radius:50%; background:var(--pc); display:inline-block;
+      box-shadow:0 0 0 2px rgba(255,255,255,.5); }
+
+  main { max-width:1080px; margin:0 auto; padding:24px 16px 60px; }
+  .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:20px; }
+  .sortgroup { display:inline-flex; background:var(--card); border:1px solid var(--line);
+      border-radius:999px; padding:3px; }
+  .sort-btn { font:inherit; cursor:pointer; border:0; background:transparent; color:var(--muted);
+      font-size:13.5px; font-weight:700; padding:7px 15px; border-radius:999px; transition:.15s; }
+  .sort-btn.active { background:var(--brand); color:#fff; }
+  .expand-all { margin-left:auto; font:inherit; cursor:pointer; font-size:13.5px; font-weight:700;
+      color:var(--brand); background:var(--card); border:1px solid color-mix(in srgb,var(--brand) 35%,#fff);
+      border-radius:11px; padding:8px 15px; transition:.15s; }
+  .expand-all:hover { background:var(--brand); color:#fff; }
+
+  .psec { margin-bottom:28px; }
+  .psec-h { display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;
+      color:var(--ink); margin:0 0 14px; padding-left:12px; border-left:5px solid var(--c); }
+  .psec-h .dot { width:10px; height:10px; border-radius:50%; background:var(--c); display:inline-block; }
+  .psec-count { font-size:12.5px; font-weight:700; color:var(--muted);
+      background:#eef0f6; border-radius:999px; padding:2px 10px; }
+  #wrap.flat .psec { margin-bottom:0; }
+  #wrap.flat .psec-h { display:none; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid var(--line);
+      border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:11px;
+      box-shadow:0 1px 2px rgba(15,23,42,.04); border-top:3px solid var(--c); transition:.18s; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+  .num { color:#fff; font-weight:850; font-size:14px; min-width:26px; height:26px; border-radius:8px;
+      display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+      background:linear-gradient(135deg,var(--brand),#fb7185); }
+  .card:nth-child(1) .num, .card:nth-child(2) .num, .card:nth-child(3) .num {
+      background:linear-gradient(135deg,#f59e0b,#f43f5e); box-shadow:0 3px 10px rgba(244,63,94,.4); }
+  .chip { font-size:12px; font-weight:700; color:var(--c);
+      background:color-mix(in srgb,var(--c) 12%,#fff); border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+      border-radius:999px; padding:3px 10px; }
+  .hot { margin-left:auto; font-size:12.5px; font-weight:800; color:#c2410c;
+      background:#fff7ed; border:1px solid #fed7aa; border-radius:999px; padding:3px 10px; white-space:nowrap; }
+  .card-title { margin:0; font-size:16.5px; font-weight:750; line-height:1.42; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:auto; }
+  .read { font-size:13.5px; font-weight:700; color:var(--c);
+      border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px; padding:6px 12px; transition:.15s; }
+  .read:hover { background:var(--c); color:#fff; }
+  .sum-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer;
+      margin:0; appearance:none; -webkit-appearance:none; }
+  .sum-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { padding:12px 14px; background:#fff7f8; border-left:3px solid var(--brand);
+      border-radius:0 10px 10px 0; font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty { background:var(--card); border:1px dashed var(--line); border-radius:16px;
+      padding:30px; text-align:center; color:var(--muted); font-size:14px; }
+
+  .backline { max-width:1080px; margin:16px auto 0; padding:0 16px; }
+  .backline a { font-size:13.5px; font-weight:600; color:var(--brand); }
+  footer { max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+      font-size:13px; border-top:1px solid var(--line); text-align:center; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; }
+      .expand-all { margin-left:0; } .hot { margin-left:0; } }
+</style>
+</head>
+<body>
+  <header class="hero"><div class="hero-inner">
+    <div class="kicker">🔥 每日热搜汇总</div>
+    <h1>2026 年 8 月 11 日 · 共 50 条热点</h1>
+    <div class="sub">统计范围 <b>08-10 09:06 ~ 08-11 09:06</b> · 更新于北京时间 <b>2026-08-11 09:06</b> · 聚合 5 个平台，每平台各取综合排名前 10</div>
+    <div class="pstats"><span class="pstat" style="--pc:#2932e1"><i></i>百度 · 10</span><span class="pstat" style="--pc:#0084ff"><i></i>知乎 · 10</span><span class="pstat" style="--pc:#ff8200"><i></i>微博 · 10</span><span class="pstat" style="--pc:#f04142"><i></i>今日头条 · 10</span><span class="pstat" style="--pc:#fb7299"><i></i>哔哩哔哩 · 10</span></div>
+  </div></header>
+  <div class="backline"><a href="../index.html">← 返回当日汇总</a></div>
+  <main>
+    <div class="toolbar">
+      <div class="sortgroup">
+        <button type="button" class="sort-btn active" data-view="section">分栏查看</button>
+        <button type="button" class="sort-btn" data-view="flat">平铺全部</button>
+      </div>
+      <button type="button" class="expand-all" data-state="collapsed">展开全部摘要</button>
+    </div>
+    <div id="wrap">
+        <section class="psec" data-platform="百度" style="--c:#2932e1">
+          <div class="psec-h">
+            <span class="dot"></span>百度 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="0.0" data-rank="1" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E6%88%91%E6%98%AF%E4%BA%BA%E6%B0%91%E7%9A%84%E5%8B%A4%E5%8A%A1%E5%91%98&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">我是人民的勤务员</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E6%88%91%E6%98%AF%E4%BA%BA%E6%B0%91%E7%9A%84%E5%8B%A4%E5%8A%A1%E5%91%98&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-1" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-1" hidden>人民日报等重温治国理政故事：2013年11月，习近平总书记在湘西十八洞村握住苗族大姐石拔三的手说“我是人民的勤务员”，首次提出“精准扶贫”。这句话成为我们党坚持以人民为中心的生动写照，近日在百度热榜引发广泛共鸣。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="2" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A7%81%E6%9C%89%E4%BA%BA%E6%92%B8%E5%8F%B0%E9%A3%8E%E7%BE%8A%E6%AF%9B&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">第一次见有人撸台风羊毛</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A7%81%E6%9C%89%E4%BA%BA%E6%92%B8%E5%8F%B0%E9%A3%8E%E7%BE%8A%E6%AF%9B&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-2" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-2" hidden>台风“白海豚”携强降雨影响长三角，多地大风暴雨。有网友拍到有人趁着台风天去海边、风口“打卡”，甚至有人借机摆摊卖雨具、接台风天的“生意”，被调侃为“撸台风羊毛”。气象部门提醒，台风天非必要不外出，跟风逐风存在极大安全隐患。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="3" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E6%9B%BE%E5%B9%B4%E9%94%80%E8%B6%8576%E4%B8%87%E7%9A%84%E7%A5%9E%E8%BD%A6%E8%A6%81%E9%80%80%E5%9C%BA%E4%BA%86&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">曾年销超76万的神车要退场了</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E6%9B%BE%E5%B9%B4%E9%94%80%E8%B6%8576%E4%B8%87%E7%9A%84%E7%A5%9E%E8%BD%A6%E8%A6%81%E9%80%80%E5%9C%BA%E4%BA%86&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-3" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-3" hidden>雪佛兰多款主力燃油车型在华销量持续大幅下滑，这家曾年销超76万辆（2014年峰值）的合资品牌，如今月销仅剩个位数甚至仅3台。随着新能源转型加速与自主品牌崛起，雪佛兰正逐步缩减在华产品线，多款经典“神车”面临退场。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="4" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E5%86%9C%E4%B8%9A%E2%80%9C%E5%8F%98%E9%85%B7%E2%80%9D%E5%8F%AA%E6%98%AF%E7%AC%AC%E4%B8%80%E6%AD%A5&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">农业“变酷”只是第一步</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E5%86%9C%E4%B8%9A%E2%80%9C%E5%8F%98%E9%85%B7%E2%80%9D%E5%8F%AA%E6%98%AF%E7%AC%AC%E4%B8%80%E6%AD%A5&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-4" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-4" hidden>人民日报评论指出，无人机播种、智能农机、农业机器人正让种地变得“炫酷”，极飞科技等培养的14万名智慧农业人才多为90后、00后。年轻人返乡搞无人机种植、订单农业，农业从“留不住人”变成“吸引人”的赛道。但农机成本高、数字基建不足等仍待破解。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="5" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E7%8E%8B%E5%AE%9D%E5%BC%BA%E9%A6%96%E6%AC%A1%E5%85%A5%E5%9B%B4%E7%99%BE%E8%8A%B1%E5%A5%96%E5%8D%B4%E4%BB%A50%E7%A5%A8%E6%94%B6%E5%9C%BA&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">王宝强首次入围百花奖却以0票收场</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E7%8E%8B%E5%AE%9D%E5%BC%BA%E9%A6%96%E6%AC%A1%E5%85%A5%E5%9B%B4%E7%99%BE%E8%8A%B1%E5%A5%96%E5%8D%B4%E4%BB%A50%E7%A5%A8%E6%94%B6%E5%9C%BA&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-5" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-5" hidden>第38届百花奖，王宝强凭借《八角笼中》首次入围最佳男主角，最终却以0票落选，引发广泛热议。同届易烊千玺凭《小小的我》封影帝、卫诗雅凭《破·地狱》夺影后，沈腾三大奖亦颗粒无收，网友感慨其“无冕影帝”，成为当晚最大冷门。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="6" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%8A%B13%E4%B8%87%E5%85%A8%E6%AC%BE%E8%B4%AD%E5%85%A5%E5%AE%9D%E9%B8%A140%E5%B9%B3%E7%B1%B3%E4%BD%8F%E6%88%BF&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">女子花3万全款购入宝鸡40平米住房</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%8A%B13%E4%B8%87%E5%85%A8%E6%AC%BE%E8%B4%AD%E5%85%A5%E5%AE%9D%E9%B8%A140%E5%B9%B3%E7%B1%B3%E4%BD%8F%E6%88%BF&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-6" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-6" hidden>陕西宝鸡陈仓区一名吕姓女子花3万元全款购入一套约40平方米的老旧住房（建于1989年），引发关注。当地同年代小户型房价较低，该交易引发网友对低房价城市与“鹤岗化”现象的再度讨论，类似低价房源在部分三四线城市并不鲜见。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="7" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E8%B1%86%E5%8C%85%E5%9B%9E%E5%BA%94%E2%80%9C%E6%8E%A8%E8%8D%90%E9%85%92%E5%BA%97%E6%8A%BD%E5%8F%9612%25%E4%BD%A3%E9%87%91%E2%80%9D&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">豆包回应“推荐酒店抽取12%佣金”</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E8%B1%86%E5%8C%85%E5%9B%9E%E5%BA%94%E2%80%9C%E6%8E%A8%E8%8D%90%E9%85%92%E5%BA%97%E6%8A%BD%E5%8F%9612%25%E4%BD%A3%E9%87%91%E2%80%9D&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-7" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-7" hidden>针对“推荐酒店抽取12%渠道佣金”的质疑，字节旗下AI助手豆包回应称，其酒店推荐接入第三方平台，按行业惯例收取渠道服务费，比例透明合规，并非额外加价。事件引发公众对AI推荐类服务商业化与利益披露边界的讨论。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="8" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E6%AF%8D%E5%AD%90%E4%B8%89%E4%BA%BA%E6%83%B3%E5%8E%BB%E9%83%B4%E5%B7%9E%E7%BB%93%E6%9E%9C%E5%88%B0%E4%BA%86%E5%BD%AC%E5%B7%9E&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">母子三人想去郴州结果到了彬州</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E6%AF%8D%E5%AD%90%E4%B8%89%E4%BA%BA%E6%83%B3%E5%8E%BB%E9%83%B4%E5%B7%9E%E7%BB%93%E6%9E%9C%E5%88%B0%E4%BA%86%E5%BD%AC%E5%B7%9E&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-8" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-8" hidden>一名尤姓女子带家人出行，因使用笔画输入法误将目的地“郴州”（chēn）打成“彬州”（bīn），母子三人一路辗转竟到了另一个地方，闹出乌龙。网友调侃“差一点就南辕北辙”，也提醒出行购票、导航时务必核对地名与同音形近字。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="9" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E9%AB%98%E9%93%81%E5%8F%8C%E4%BA%BA%E5%BA%A7%E8%A2%AB%E5%85%8D%E7%A5%A8%E5%84%BF%E7%AB%A5%E6%8C%A4%E6%88%903%E4%BA%BA%E5%BA%A7&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">高铁双人座被免票儿童挤成3人座</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E9%AB%98%E9%93%81%E5%8F%8C%E4%BA%BA%E5%BA%A7%E8%A2%AB%E5%85%8D%E7%A5%A8%E5%84%BF%E7%AB%A5%E6%8C%A4%E6%88%903%E4%BA%BA%E5%BA%A7&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-9" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-9" hidden>8月8日，一名乘客在徐州东站换乘的高铁上，原DF双人座被邻座免票儿童挤成“三人座”，孩子扭动往里挤、手扒窗边，因带娃的是老人且自己内向未交涉。12306回应：6周岁以下免票儿童不占座，可坐大人身上，不能占他人座位。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="10" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E5%8D%AB%E8%AF%97%E9%9B%85%E8%8E%B7%E7%99%BE%E8%8A%B1%E5%A5%96%E6%9C%80%E4%BD%B3%E5%A5%B3%E4%B8%BB%E8%A7%92&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">卫诗雅获百花奖最佳女主角</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E5%8D%AB%E8%AF%97%E9%9B%85%E8%8E%B7%E7%99%BE%E8%8A%B1%E5%A5%96%E6%9C%80%E4%BD%B3%E5%A5%B3%E4%B8%BB%E8%A7%92&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-10" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-10" hidden>第38届大众电影百花奖在北京国家速滑馆“冰丝带”揭晓，香港演员卫诗雅凭电影《破·地狱》夺得最佳女主角，成为焦点。同届最佳影片为《哪吒之魔童闹海》，易烊千玺凭《小小的我》获最佳男主角，陈丽君获最佳新人。</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="知乎" style="--c:#0084ff">
+          <div class="psec-h">
+            <span class="dot"></span>知乎 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="11550000.0" data-rank="1" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 1155 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2070241074514224234" target="_blank" rel="noopener noreferrer">易烊千玺、卫诗雅分封影帝、影后，如何评价第 38 届大众电影百花奖获奖名单？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2070241074514224234" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-11" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-11" hidden>第38届百花奖：最佳影片《哪吒之魔童闹海》、最佳导演大鹏《长安的荔枝》、最佳男主易烊千玺《小小的我》、最佳女主卫诗雅《破·地狱》、最佳新人陈丽君、最佳男配王骁、最佳女配萨日娜。王宝强入围男主却0票、沈腾三大奖颗粒无收成热议焦点。</div>
+          </article>
+          <article class="card" data-hot="5580000.0" data-rank="2" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 558 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2069799083045287916" target="_blank" rel="noopener noreferrer">于东来回应关闭胖东来生活广场店，因早年租约失误造成租户租金失衡，门店盈利上亿仍闭店，如何看待他的选择？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2069799083045287916" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-12" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-12" hidden>8月7日于东来直播宣布许昌生活广场店将于2026年12月关闭。他回应称，2015年因负责人员失误未统一签租约，导致个别租户租金畸高、有失公平，成其心结。该店2002年开业、年销售约20亿、利润超1亿，仍因“信仰和开心第一”决定闭店。</div>
+          </article>
+          <article class="card" data-hot="5040000.0" data-rank="3" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 504 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2069804922732860138" target="_blank" rel="noopener noreferrer">央视首次曝光 055 遵义舰演习遭潜艇伏击「击沉」，这一操作的意图是什么？算暴露055的短板吗？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2069804922732860138" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-13" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-13" hidden>央视《制胜》披露，055型驱逐舰107遵义舰在一次无预案背靠背反潜对抗中，被己方常规潜艇伏击，按规则判“击沉”。舰长张美玉复盘称“防空反潜守不住，前出打击就是送死”。官方主动揭短，意在正视远海反潜体系短板、推进实战化训练。</div>
+          </article>
+          <article class="card" data-hot="2100000.0" data-rank="4" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 210 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2025229966229485529" target="_blank" rel="noopener noreferrer">为什么那么多年轻人得了尿毒症？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2025229966229485529" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-14" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-14" hidden>多家医院与科普指出，尿毒症年轻化与长期熬夜、高盐高糖饮食、滥用止痛药与保健品、忽视体检等多因素有关。不少患者早期无明显症状，确诊已属晚期。专家呼吁年轻人规律作息、控盐控糖、慎用肾毒性药物，并定期查尿常规与肾功能。</div>
+          </article>
+          <article class="card" data-hot="1800000.0" data-rank="5" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 180 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2070182701299152586" target="_blank" rel="noopener noreferrer">如何评价《欢迎来龙餐馆》这部电影？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2070182701299152586" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-15" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-15" hidden>文牧野执导、沈腾领衔主演的《欢迎来龙餐馆》8月11日上映，讲述中国厨师徐福（沈腾饰）远赴中东经营“龙餐馆”，突遭战火、被迫卷入时代动荡的故事。影片融合美食与战争，是文牧野继《药神》后对现实题材的类型突破，被视为暑期档压轴大片。</div>
+          </article>
+          <article class="card" data-hot="1740000.0" data-rank="6" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 174 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2069476448205812044" target="_blank" rel="noopener noreferrer">山东一中学让新生填家长职务和车价，校方称用于贫困补助甄别，学校该不该收集这类信息？你遇到过类似情况吗？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2069476448205812044" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-16" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-16" hidden>山东东营市第一中学在2026级新生入学采集中，要求填家长职务、家庭车辆品牌型号及购置价格甚至负债情况，引发隐私争议。东营市教育局已责令停采并删除超范围信息，将在全市排查。教育部早已明确严禁采集家长职务和收入信息。</div>
+          </article>
+          <article class="card" data-hot="1620000.0" data-rank="7" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 162 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2070152087481083737" target="_blank" rel="noopener noreferrer">因儿子说「大不了送外卖」，爸爸三伏天带他送外卖，竟意外修复父子关系，这一实践式教育怎么样？值得效仿吗？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2070152087481083737" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-17" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-17" hidden>浙江义乌一位父亲因儿子一句“以后大不了去送外卖”，真带他在三伏天跑起外卖，100元启动资金交儿子全权负责。近20天下来，吃苦教育未让孩子爱上学习，却意外修复了僵持多年的父子关系，相关短视频引发对“实践式教育”的讨论。</div>
+          </article>
+          <article class="card" data-hot="1460000.0" data-rank="8" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 146 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2068757535138566295" target="_blank" rel="noopener noreferrer">因为给我买车买房没提前跟我弟说，我弟把我全家都拉黑了快7年了，父子都不愿低头，怎么破冰？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2068757535138566295" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-18" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-18" hidden>一网友发帖：早年家贫，自己辍学打工八年补贴家用、帮家里还清外债并攒下本钱做生意翻身；2018年手头宽裕后给自买房车未提前告知弟弟，弟遂将全家拉黑近7年，父子互不低头。帖文引发对原生家庭、公平感与亲情破裂的广泛讨论。</div>
+          </article>
+          <article class="card" data-hot="1420000.0" data-rank="9" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 142 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2069868469005326051" target="_blank" rel="noopener noreferrer">原字节跳动机器人一号位加入小米，负责基座模型研发，这透露出小米在人工智能领域的哪些战略意图？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2069868469005326051" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-19" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-19" hidden>多方信源确认，原字节跳动机器人团队负责人孔涛已加盟小米，任机器人基座模型团队负责人。他于2025年夏加入，并带来部分原字节员工。小米机器人事业部约200人，此举被视为小米加码人工智能与具身智能、自研基座模型战略意图的体现。</div>
+          </article>
+          <article class="card" data-hot="1420000.0" data-rank="10" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 142 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2069355924951667964" target="_blank" rel="noopener noreferrer">为什么立秋以后天气一下子就凉快起来了，这里有什么说法吗？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2069355924951667964" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-20" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-20" hidden>今年8月7日立秋后，多地迎来明显降温，体感由闷热转清爽。二十四节气立秋本指“暑去凉来”，但真正凉爽通常要到处暑与“秋老虎”过后。今年副高减弱、冷空气与台风“白海豚”外围环流带来降水，加速了暑热消退，让“立秋凉”提前兑现。</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="微博" style="--c:#ff8200">
+          <div class="psec-h">
+            <span class="dot"></span>微博 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="2610000.0" data-rank="1" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 261.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E7%99%BE%E4%B8%87%E7%B2%89%E4%B8%9D%E5%A5%B3%E7%BD%91%E7%BA%A2%E5%A7%9C%E5%B0%8F%E6%9F%94%E5%9B%A0%E8%BD%A6%E7%A5%B8%E5%8E%BB%E4%B8%96%23" target="_blank" rel="noopener noreferrer">百万粉丝女网红姜小柔因车祸去世</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E7%99%BE%E4%B8%87%E7%B2%89%E4%B8%9D%E5%A5%B3%E7%BD%91%E7%BA%A2%E5%A7%9C%E5%B0%8F%E6%9F%94%E5%9B%A0%E8%BD%A6%E7%A5%B8%E5%8E%BB%E4%B8%96%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-21" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-21" hidden>百万粉丝网红“姜小柔”（李某某，24岁）于7月15日因车祸不幸去世，8月初家属与圈内好友陆续发文悼念，引发关注。其短视频以生活记录为主，拥有约128万粉丝。网友在惋惜年轻生命逝去的同时，也再次呼吁重视交通安全。</div>
+          </article>
+          <article class="card" data-hot="1190000.0" data-rank="2" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 119.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E5%AE%9D%E5%BC%BA0%E7%A5%A8%23" target="_blank" rel="noopener noreferrer">王宝强0票</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E5%AE%9D%E5%BC%BA0%E7%A5%A8%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-22" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-22" hidden>第38届百花奖，王宝强凭《八角笼中》首次入围最佳男主角却以0票落选，相关话题登上微博热搜。同届易烊千玺封影帝、卫诗雅夺影后，沈腾三大奖亦颗粒无收。网友称其“无冕影帝”，围绕奖项公正与“演技是否被低估”展开热议。</div>
+          </article>
+          <article class="card" data-hot="940000.0" data-rank="3" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 94.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E9%95%BF%E6%B1%9F%E5%8D%81%E5%B9%B4%E8%A1%8C%23" target="_blank" rel="noopener noreferrer">长江十年行</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E9%95%BF%E6%B1%9F%E5%8D%81%E5%B9%B4%E8%A1%8C%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-23" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-23" hidden>2026年是“长江大保护”战略实施十周年。多家媒体推出“长江十年行”系列报道，聚焦禁渔十年、江豚种群回升至1426头、水质改善等成效。川观新闻等以“八仙护江”等创意策划展现生态之变，引发公众对母亲河保护的关注与感慨。</div>
+          </article>
+          <article class="card" data-hot="840000.0" data-rank="4" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 84.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E4%BB%A5%E5%90%8E%E6%95%91%E5%B8%82%E5%88%AB%E6%B1%82%E6%B2%88%E8%85%BE%E7%8E%8B%E5%AE%9D%E5%BC%BA%E4%BA%86%23" target="_blank" rel="noopener noreferrer">以后救市别求沈腾王宝强了</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E4%BB%A5%E5%90%8E%E6%95%91%E5%B8%82%E5%88%AB%E6%B1%82%E6%B2%88%E8%85%BE%E7%8E%8B%E5%AE%9D%E5%BC%BA%E4%BA%86%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-24" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-24" hidden>沈腾、王宝强主演的《欢迎来龙餐馆》《八角笼中》等影片口碑票房未达预期，叠加两人在百花奖颗粒无收，网友玩梗“以后救市别求沈腾王宝强了”。这一调侃实则是对暑期档票房承压、头部演员光环减弱这一行业现状的幽默投射。</div>
+          </article>
+          <article class="card" data-hot="790000.0" data-rank="5" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 79.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E6%97%A0%E5%86%95%E5%BD%B1%E5%B8%9D%23" target="_blank" rel="noopener noreferrer">无冕影帝</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E6%97%A0%E5%86%95%E5%BD%B1%E5%B8%9D%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-25" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-25" hidden>因在百花奖等多项评选中演技获认可却屡与大奖擦肩，王宝强被网友冠以“无冕影帝”称号。从《天下无贼》到《hello!树先生》《八角笼中》，其表演一直被认为被低估。此次入围百花奖男主却0票，更让这一称呼登上热搜。</div>
+          </article>
+          <article class="card" data-hot="620000.0" data-rank="6" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 62.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E6%97%85%E6%B8%B8%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%B8%A6%E5%AE%9A%E4%BD%8D%23" target="_blank" rel="noopener noreferrer">旅游发朋友圈为什么要带定位</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E6%97%85%E6%B8%B8%E5%8F%91%E6%9C%8B%E5%8F%8B%E5%9C%88%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%B8%A6%E5%AE%9A%E4%BD%8D%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-26" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-26" hidden>不少人在旅游时习惯发朋友圈附带地理位置，有观点认为公开定位既分享快乐也暗藏风险：暴露行踪、易被不法分子利用，还可能引发“凡尔赛”观感。建议视关系亲疏选择性公开，或事后补发，以平衡分享欲与隐私安全，减少不必要的信息暴露。</div>
+          </article>
+          <article class="card" data-hot="550000.0" data-rank="7" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 55.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E7%99%BD%E6%B5%B7%E8%B1%9A%E7%AA%81%E7%84%B6%E5%A4%A7%E6%8B%90%E5%BC%AF%23" target="_blank" rel="noopener noreferrer">白海豚突然大拐弯</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E7%99%BD%E6%B5%B7%E8%B1%9A%E7%AA%81%E7%84%B6%E5%A4%A7%E6%8B%90%E5%BC%AF%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-27" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-27" hidden>今年台风“白海豚”路径罕见“大拐弯”，两度登陆浙江并深入内陆，给江浙沪带来特大暴雨，上海徐家汇雨量达316毫米、破1872年有记录以来极值。路径突变令多地防台形势骤紧，相关实况与科普在社交平台持续刷屏。</div>
+          </article>
+          <article class="card" data-hot="550000.0" data-rank="8" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 55.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23iPhone18Pro%E7%AD%897%E6%AC%BE%E6%96%B0%E5%93%81%E5%BD%BB%E5%BA%95%E6%B3%84%E5%AF%86%23" target="_blank" rel="noopener noreferrer">iPhone18Pro等7款新品彻底泄密</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23iPhone18Pro%E7%AD%897%E6%AC%BE%E6%96%B0%E5%93%81%E5%BD%BB%E5%BA%95%E6%B3%84%E5%AF%86%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-28" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-28" hidden>据称苹果供应链遭泄密，iPhone 18 Pro等7款未发布新品信息外流，涉及塔塔电子（Tata）相关数据约630GB。传闻涵盖新机外观、配置等。苹果对供应链保密极严，此次大规模泄密引发对其安保与后续发布节奏的猜测。</div>
+          </article>
+          <article class="card" data-hot="540000.0" data-rank="9" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 54.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E6%B3%B0%E5%9B%BD%20%E7%94%B5%E8%AF%88%E5%9B%AD%E5%8C%BA%23" target="_blank" rel="noopener noreferrer">泰国 电诈园区</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E6%B3%B0%E5%9B%BD%20%E7%94%B5%E8%AF%88%E5%9B%AD%E5%8C%BA%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-29" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-29" hidden>泰缅边境电诈园区近期再成焦点：骗术从“高薪招聘”升级为“熟人杀熟局”，以免费旅游、接机为由诱骗，园区武装化、工业化运营。中泰缅柬联手清剿并启动“万人遣返”，但团伙化整为零转至三佛塔等深山。中国使馆发布最高级安全提醒。</div>
+          </article>
+          <article class="card" data-hot="540000.0" data-rank="10" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 54.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E5%8F%91%E7%94%9F7.5%E7%BA%A7%E5%9C%B0%E9%9C%87%23" target="_blank" rel="noopener noreferrer">哥伦比亚发生7.5级地震</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E5%8F%91%E7%94%9F7.5%E7%BA%A7%E5%9C%B0%E9%9C%87%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-30" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-30" hidden>哥伦比亚发生7.5级强烈地震，已造成至少111人死亡、61栋建筑倒塌，政府宣布进入国家灾难状态。这是该国近年来伤亡最重的强震之一，灾区通信与道路中断，多国及国际组织派出救援力量，国际人道主义援助迅速展开。</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="今日头条" style="--c:#f04142">
+          <div class="psec-h">
+            <span class="dot"></span>今日头条 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="37540926.0" data-rank="1" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 3754.1万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7672442117175787583/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672442117175787583%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%9A%E5%9C%B0%E5%85%AC%E5%AE%89%E6%9C%BA%E5%85%B3%E6%89%93%E6%8E%891000%E5%A4%9A%E4%B8%AA%E7%8A%AF%E7%BD%AA%E5%9B%A2%E4%BC%99%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672442117175787583" target="_blank" rel="noopener noreferrer">多地公安机关打掉1000多个犯罪团伙</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7672442117175787583/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672442117175787583%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%9A%E5%9C%B0%E5%85%AC%E5%AE%89%E6%9C%BA%E5%85%B3%E6%89%93%E6%8E%891000%E5%A4%9A%E4%B8%AA%E7%8A%AF%E7%BD%AA%E5%9B%A2%E4%BC%99%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672442117175787583" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-31" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-31" hidden>公安部通报，近期多地公安机关深入推进扫黑除恶等专项行动，打掉各类犯罪团伙1000余个，抓获违法犯罪嫌疑人8200余人，破获一批重大案件。行动聚焦群众反映强烈的黑恶、电诈、暴力传销等领域，持续净化社会治安环境。</div>
+          </article>
+          <article class="card" data-hot="33968435.0" data-rank="2" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 3396.8万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7671890929657724954/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227671890929657724954%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B1%9F%E8%8B%8F%E4%B8%80%E5%95%86%E5%9C%BA%E7%A7%AF%E6%B0%B4%E5%B1%95%E8%BD%A6%E9%9A%8F%E6%B0%B4%E6%BC%82%E5%8A%A8%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7671890929657724954" target="_blank" rel="noopener noreferrer">江苏一商场积水展车随水漂动</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7671890929657724954/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227671890929657724954%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B1%9F%E8%8B%8F%E4%B8%80%E5%95%86%E5%9C%BA%E7%A7%AF%E6%B0%B4%E5%B1%95%E8%BD%A6%E9%9A%8F%E6%B0%B4%E6%BC%82%E5%8A%A8%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7671890929657724954" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-32" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-32" hidden>受台风“白海豚”强降雨影响，江苏张家港曼巴特购物广场负一层10日发生严重积水倒灌，地下小鹏汽车展厅多台展车泡水后随水漂动、撞破玻璃漂至室外通道。商场已临时闭店，消防到场排水，具体损失正在统计中，暂无人员伤亡报告。</div>
+          </article>
+          <article class="card" data-hot="30735911.0" data-rank="3" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 3073.6万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/article/7672325773872742958" target="_blank" rel="noopener noreferrer">我国民营企业创新动能持续增强</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/article/7672325773872742958" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-33" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-33" hidden>最新《2026研发投入前1000家民营企业创新状况报告》显示，千家民企研发费用总额达1.43万亿元、平均研发强度3.59%，持有有效专利142.81万件。华为、比亚迪、大疆等民企站上全球科技竞争前沿，《民营经济促进法》从法律层面为民企创新撑腰。</div>
+          </article>
+          <article class="card" data-hot="27811002.0" data-rank="4" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 2781.1万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7672078220703449130/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672078220703449130%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89%E5%BC%BA%E9%9C%87%E6%AD%BB%E4%BA%A1%E4%BA%BA%E6%95%B0%E4%B8%8A%E5%8D%87%E8%87%B36301%E4%BA%BA%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672078220703449130" target="_blank" rel="noopener noreferrer">委内瑞拉强震死亡人数上升至6301人</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7672078220703449130/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672078220703449130%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89%E5%BC%BA%E9%9C%87%E6%AD%BB%E4%BA%A1%E4%BA%BA%E6%95%B0%E4%B8%8A%E5%8D%87%E8%87%B36301%E4%BA%BA%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672078220703449130" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-34" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-34" hidden>委内瑞拉强震遇难人数已升至6301人，成为该国近代史上伤亡最惨重的自然灾害之一。灾区大量房屋倒塌、基础设施严重损毁，国际救援持续展开。震后余震不断，安置与重建任务艰巨，多国及国际组织提供人道援助，灾情牵动国际社会。</div>
+          </article>
+          <article class="card" data-hot="25164435.0" data-rank="5" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 2516.4万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7671455579159740435/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227671455579159740435%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9D%8E%E5%98%89%E8%AF%9A%E5%8F%88%E8%A6%81%E5%94%AE%E5%8D%96%E6%B5%B7%E5%A4%96%E8%B5%84%E4%BA%A7%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7671455579159740435" target="_blank" rel="noopener noreferrer">李嘉诚又要售卖海外资产</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7671455579159740435/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227671455579159740435%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9D%8E%E5%98%89%E8%AF%9A%E5%8F%88%E8%A6%81%E5%94%AE%E5%8D%96%E6%B5%B7%E5%A4%96%E8%B5%84%E4%BA%A7%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7671455579159740435" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-35" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-35" hidden>李嘉诚旗下长和系拟出售澳大利亚输电资产EDL Energy，交易估值约166亿港元。近年李嘉诚频繁处置欧洲、大洋洲等海外基建与电信资产，回笼资金。市场关注其全球资产配置策略转向，以及对其商业帝国后续布局的影响。</div>
+          </article>
+          <article class="card" data-hot="22769723.0" data-rank="6" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 2277.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7672415451170999818/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672415451170999818%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%8E%8B%E5%AE%9D%E5%BC%BA0%E7%A5%A8%E8%90%BD%E9%80%89%E7%99%BE%E8%8A%B1%E5%A5%96%E6%9C%80%E4%BD%B3%E7%94%B7%E4%B8%BB%E8%A7%92%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672415451170999818" target="_blank" rel="noopener noreferrer">王宝强0票落选百花奖最佳男主角</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7672415451170999818/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672415451170999818%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%8E%8B%E5%AE%9D%E5%BC%BA0%E7%A5%A8%E8%90%BD%E9%80%89%E7%99%BE%E8%8A%B1%E5%A5%96%E6%9C%80%E4%BD%B3%E7%94%B7%E4%B8%BB%E8%A7%92%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672415451170999818" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-36" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-36" hidden>第38届百花奖，王宝强凭《八角笼中》首入围最佳男主角却以0票落选，话题登上头条热榜。同届易烊千玺封帝、卫诗雅夺后，沈腾三大奖颗粒无收。围绕“王宝强演技是否被低估”与“奖项机制”的讨论持续升温，相关话题热度居高不下。</div>
+          </article>
+          <article class="card" data-hot="20602897.0" data-rank="7" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 2060.3万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7672227001063063588/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672227001063063588%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E9%A3%8E%E5%A4%A9%E5%88%AB%E8%A2%AB%E8%B7%AF%E4%B8%8A%E6%B0%B4%E9%9D%A2%E9%AA%97%E4%BA%86%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672227001063063588" target="_blank" rel="noopener noreferrer">台风天别被路上水面骗了</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7672227001063063588/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672227001063063588%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E9%A3%8E%E5%A4%A9%E5%88%AB%E8%A2%AB%E8%B7%AF%E4%B8%8A%E6%B0%B4%E9%9D%A2%E9%AA%97%E4%BA%86%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672227001063063588" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-37" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-37" hidden>台风“白海豚”过境，多地出现严重积水。消防与交警提醒：路面平静的水面下可能暗藏窨井、坑洞或漏电，切勿涉水通行或让孩子蹚水玩耍；驾车遇积水超轮胎一半应绕行，车辆被淹后切勿贸然通电启动，务必优先保障人身安全。</div>
+          </article>
+          <article class="card" data-hot="18642272.0" data-rank="8" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1864.2万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7672403466110635574/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672403466110635574%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%AD%98%E5%82%A8%E5%BC%80%E5%A7%8B%E6%8A%8A%E5%AE%9A%E4%BB%B7%E6%9D%83%E6%8B%BF%E5%9B%9E%E6%9D%A5%E4%BA%86%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672403466110635574" target="_blank" rel="noopener noreferrer">中国存储开始把定价权拿回来了</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7672403466110635574/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672403466110635574%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%AD%98%E5%82%A8%E5%BC%80%E5%A7%8B%E6%8A%8A%E5%AE%9A%E4%BB%B7%E6%9D%83%E6%8B%BF%E5%9B%9E%E6%9D%A5%E4%BA%86%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672403466110635574" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-38" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-38" hidden>随着长鑫存储（CXMT）等国产DRAM产能与良率提升，中国在存储芯片领域逐步掌握更多定价话语权，打破长期由海外巨头主导的格局。报道称苹果等正测试国产存储，国产替代加速，有望平抑内存价格波动、增强供应链自主可控。</div>
+          </article>
+          <article class="card" data-hot="16868225.0" data-rank="9" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1686.8万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7672206894006419499/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672206894006419499%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A7%81%E6%9C%89%E4%BA%BA%E6%92%B8%E5%8F%B0%E9%A3%8E%E7%BE%8A%E6%AF%9B%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672206894006419499" target="_blank" rel="noopener noreferrer">第一次见有人撸台风羊毛</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7672206894006419499/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227672206894006419499%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A7%81%E6%9C%89%E4%BA%BA%E6%92%B8%E5%8F%B0%E9%A3%8E%E7%BE%8A%E6%AF%9B%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7672206894006419499" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-39" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-39" hidden>台风“白海豚”影响期间，有网友趁风雨前去海边、江边“打卡”，甚至有人摆摊借台风天做小生意，被调侃“撸台风羊毛”。气象与应急部门强调，台风天非必要不外出，跟风逐风、靠近水域极易遇险，所谓“羊毛”背后是实打实的安全隐患。</div>
+          </article>
+          <article class="card" data-hot="15263001.0" data-rank="10" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1526.3万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7671879395787898943/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227671879395787898943%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A6%82%E4%BD%95%E8%AF%84%E4%BB%B7%E7%94%B5%E8%A7%86%E5%89%A7%E3%80%8A%E9%87%8D%E5%99%A8%E3%80%8B%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7671879395787898943" target="_blank" rel="noopener noreferrer">如何评价电视剧《重器》</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7671879395787898943/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227671879395787898943%22%2C%22hot_board_impr_id%22%3A%22202608110857025433F3DD8137EA2FAF76%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A6%82%E4%BD%95%E8%AF%84%E4%BB%B7%E7%94%B5%E8%A7%86%E5%89%A7%E3%80%8A%E9%87%8D%E5%99%A8%E3%80%8B%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7671879395787898943" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-40" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-40" hidden>重大现实题材剧《重器》在央视八套首播后收视夺冠，豆瓣开分约8.7。该剧由两高出品、黄景瑜蒋奇明等主演，聚焦高端装备制造与大国工匠，以硬核工业叙事展现中国制造突围。观众热议其专业质感与“工科浪漫”，被视为工业剧新标杆。</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="哔哩哔哩" style="--c:#fb7299">
+          <div class="psec-h">
+            <span class="dot"></span>哔哩哔哩 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="4391171.0" data-rank="1" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 439.1万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1ffuU6bEHj" target="_blank" rel="noopener noreferrer">2026和平精英刺激之夜完整高清回放</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1ffuU6bEHj" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-41" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-41" hidden>「和平精英」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="1023545.0" data-rank="2" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 102.4万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV11Xuu6cEiJ" target="_blank" rel="noopener noreferrer">“两广人的家具belike：”【Monody-混响】【两广家具の小曲】</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV11Xuu6cEiJ" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-42" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-42" hidden>「早睡起大王」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="644941.0" data-rank="3" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 64.5万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1G2uo66Enh" target="_blank" rel="noopener noreferrer">白海豚大拐弯：江浙沪多地特大暴雨破纪录，北方暴雨启动或有三个重点</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1G2uo66Enh" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-43" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-43" hidden>「中气爱」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="743641.0" data-rank="4" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 74.4万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1YXMC6NEXY" target="_blank" rel="noopener noreferrer">当星际战士降临，被邪神腐化的世界会如何发展？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1YXMC6NEXY" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-44" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-44" hidden>「末影大黑」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="851793.0" data-rank="5" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 85.2万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1Ckud6sEHm" target="_blank" rel="noopener noreferrer">在墨西哥，你甚至可以和神父摔角?!</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1Ckud6sEHm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-45" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-45" hidden>「食贫道」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="2985902.0" data-rank="6" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 298.6万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1rJuu6XE66" target="_blank" rel="noopener noreferrer">《人民の少爷》</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1rJuu6XE66" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-46" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-46" hidden>「伤心欲茄222」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="543399.0" data-rank="7" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 54.3万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1ayuR6PE5V" target="_blank" rel="noopener noreferrer">淀粉：碳基压缩科技</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1ayuR6PE5V" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-47" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-47" hidden>「芳斯塔芙」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="740196.0" data-rank="8" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 74.0万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1XPuo6uES8" target="_blank" rel="noopener noreferrer">王健林现在怎么样了? 万达什么情况?</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1XPuo6uES8" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-48" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-48" hidden>「小Lin说」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="320642.0" data-rank="9" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 32.1万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV15HuZ62E6R" target="_blank" rel="noopener noreferrer">靠这锅沙子烤玉米，他在印度街头撑起了尊严</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV15HuZ62E6R" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-49" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-49" hidden>「印度老吃家」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="2246298.0" data-rank="10" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 224.6万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1dcuV6HEig" target="_blank" rel="noopener noreferrer">史上最难！只有一块黑曜石该如何通关？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1dcuV6HEig" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-50" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-50" hidden>「一只玖玄吖」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          </div>
+        </section>
+        </div>
+  </main>
+  <footer>
+    数据来源：微博 / 百度 / 今日头条 / 知乎 / 哔哩哔哩 公开热榜 · 每平台展示其 24 小时内综合排名前 10 条 ·
+    点击「阅读原文」跳转对应平台
+  </footer>
+  <script>
+  (function(){
+    // 单条摘要展开/收起
+    document.addEventListener('click', function(e){
+      var b = e.target.closest('.sum-btn'); if(!b) return;
+      var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+      var open = el.hasAttribute('hidden');
+      if(open){ el.removeAttribute('hidden'); b.textContent='收起摘要'; }
+      else { el.setAttribute('hidden',''); b.textContent='展开摘要'; }
+      b.setAttribute('aria-expanded', String(open));
+    });
+    // 一键展开/收起全部
+    var ea = document.querySelector('.expand-all');
+    if(ea){ ea.addEventListener('click', function(){
+      var collapsed = ea.getAttribute('data-state') === 'collapsed';
+      document.querySelectorAll('.summary').forEach(function(s){
+        if(collapsed) s.removeAttribute('hidden'); else s.setAttribute('hidden','');
+      });
+      document.querySelectorAll('.sum-btn').forEach(function(b){
+        b.textContent = collapsed ? '收起摘要' : '展开摘要';
+        b.setAttribute('aria-expanded', String(collapsed));
+      });
+      ea.setAttribute('data-state', collapsed ? 'expanded' : 'collapsed');
+      ea.textContent = collapsed ? '收起全部摘要' : '展开全部摘要';
+    }); }
+    // 分栏 / 平铺 切换
+    var wrap = document.getElementById('wrap');
+    document.querySelectorAll('.sort-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.sort-btn').forEach(function(x){ x.classList.remove('active'); });
+        btn.classList.add('active');
+        if(wrap) wrap.classList.toggle('flat', btn.getAttribute('data-view') === 'flat');
+      });
+    });
+  })();
+  </script>
+</body></html>

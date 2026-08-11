@@ -1,0 +1,202 @@
+[
+  {
+    "url": "https://www.lmsys.org/blog/2026-08-10-meta-muse-glimmer",
+    "title": "SGLang 为 Muse Glimmer 提供 Day-0 支持，针对本地智能体工作流优化推理",
+    "source": "LMSYS：Blog（Chatbot Arena 团队）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/AIatMeta/status/2086757844544811485",
+    "title": "Meta 发布开源模型 Muse Glimmer",
+    "source": "X：AI at Meta (@AIatMeta)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
+    "title": "OpenAI 推出 GPT-5.6-Cyber，面向授权漏洞研究的网络安全专用模型",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/announcements/introducing-the-new-auto-router",
+    "title": "OpenRouter 推出由市场智慧驱动的新版 Auto 路由器",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzYzNDE5MDEwMQ%3D%3D&mid=2247488345&idx=1&sn=ef4e57c9c9350f9238d90211eb2dd453",
+    "title": "千问开放平台上线：租房、寄快递、查理财等十余领域服务可对话办理",
+    "source": "公众号：千问APP（阿里）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/Alibaba_Qwen/status/2086664887560970531",
+    "title": "Qwen-MM-Plugins 让智能体原生支持多模态",
+    "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openchamber.dev/",
+    "title": "OpenChamber：一个基于代理的开发环境",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/ClaudeDevs/status/2086844755770757531",
+    "title": "Claude Code 自动模式默认开启原理",
+    "source": "X：Claude Devs (@ClaudeDevs)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685059&idx=1&sn=a329fe9999ac2419470c7eca9a97acd3",
+    "title": "我花了54个小时，做了一个可能更公平的AI大模型排行榜。",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.databricks.com/blog/innocent-until-combined-blocking-lethal-trifecta-omnigent-contextual-policies",
+    "title": "Omnigent 上下文策略如何阻断“致命三重奏”组合攻击",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates",
+    "title": "Google 为 Google Ads 和 Google Analytics 推出新 AI 与智能体功能",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "020.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://x.com/JensenHuang/status/2086934705207959965",
+    "title": "英伟达联合六大机构融资5000亿美元建AI工厂",
+    "source": "X：Jensen Huang (@JensenHuang)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/zapier",
+    "title": "Zapier 如何用 ChatGPT Work 改造核心营销流程",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/research/riemann-zeta",
+    "title": "Claude 未发布研究版将黎曼 zeta 函数零点下界从 41.6% 提升至 67.2%",
+    "source": "Anthropic：Research（发表成果 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://bobdahacker.com/blog/tldv-hack",
+    "title": "tl;dv 逾18.1万段AI会议录音被公开暴露，可实时闯入他人通话",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.a16z.news/p/can-agents-use-a-computer-yet-weve",
+    "title": "智能体真的会用电脑吗？a16z 用数据给出答案",
+    "source": "a16z：News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "016.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/finkd/status/2086754845218726027",
+    "title": "扎克伯格：超级智能应人人可用",
+    "source": "X：Mark Zuckerberg (@finkd)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://linear.app/now/how-we-built-linear-agent",
+    "title": "Linear 如何构建 Linear Agent：在系统提示词、工具设计与系统技能中划定边界",
+    "source": "Linear：Now（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "018.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.ml.cmu.edu/2026/08/10/forking-sequences-part-i-statistically-and-computationally-efficient-multi-horizon-forecasting",
+    "title": "Forking-Sequences：一种统计与计算上更高效的多步预测训练范式",
+    "source": "CMU：Machine Learning Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "019.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/open-source-is-not-the-same-as-open",
+    "title": "开源不等于开放权重：Gary Marcus 剖析两者本质差异",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]

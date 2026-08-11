@@ -206,8 +206,8 @@ def fetch_toutiao():
     return out
 
 
-def fetch_zhihu():
-    """知乎热搜（zhihu-hot-hub 公开仓库，替代原 60s.viki.moe 第三方单点）。"""
+def _zhihu_from_hub():
+    """主源：zhihu-hot-hub 公开仓库（README / archives）。"""
     date = datetime.date.today().strftime("%Y-%m-%d")
     bj = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
     today = bj.strftime("%Y-%m-%d")
@@ -237,6 +237,39 @@ def fetch_zhihu():
             "label": "",
         })
     return out
+
+
+def _zhihu_from_60s():
+    """回退源：60s 聚合接口。含 detail 描述与热度，主源失效/被网络屏蔽时启用。"""
+    d = _get_json("https://60s.viki.moe/v2/zhihu")
+    out = []
+    for it in (d.get("data") or []):
+        title = (it.get("title") or "").strip()
+        if not title:
+            continue
+        hot_desc = (it.get("hot_value_desc") or "").strip()
+        out.append({
+            "title": title,
+            "summary": (it.get("detail") or "").strip(),
+            "url": it.get("link") or "",
+            "hot": _parse_hot_num(hot_desc),
+            "hot_display": hot_desc or "—",
+            "source": "知乎",
+            "label": "",
+        })
+    return out
+
+
+def fetch_zhihu():
+    """知乎热搜：主源 zhihu-hot-hub 仓库，失败或空则回退 60s 聚合接口。"""
+    for fn in (_zhihu_from_hub, _zhihu_from_60s):
+        try:
+            out = fn()
+        except Exception:
+            out = []
+        if out:
+            return out
+    return []
 
 
 def fetch_bilibili():
