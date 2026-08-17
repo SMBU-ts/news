@@ -1,0 +1,4 @@
+{
+  "https://simonwillison.net/2026/Aug/16/qwen-38-27b": "阿里 Qwen 实验室发布 Apache 2 许可的 27B 参数视觉大模型 Qwen 3.8 27B。Simon Willison 在 M5 Max MacBook Pro 与 NVIDIA DGX Spark 上实测发现，该模型默认推理强度为 xhigh（超高），导致严重「过度思考」：连画一个圆都会展开复杂构思，生成一张鹈鹕骑自行车 SVG 竟耗时 21 分钟、消耗 22276 个推理 token。他建议初次使用时将推理强度调至 low 或直接关闭，并指出模型在目标检测边界框任务上表现优秀。",
+  "https://garymarcus.substack.com/p/the-hyping-of-anthropics-ipo": "Gary Marcus 撰文批评媒体对 Anthropic IPO 的过度炒作。文章指出，在 IPO 静默期流传的「2028 年营收达 1900 亿美元」预测多基于匿名信源和未披露的关键假设，缺乏可靠数据支撑，属于典型的上市前预热式炒作。他提醒读者对此类数字保持警惕，避免被夸大的营收预期误导。"
+}

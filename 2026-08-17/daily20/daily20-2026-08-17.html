@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-17</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-17</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816A0B18A00?scene=news-skill" target="_blank" rel="noopener">国泰海通：A股将逐步迎来“金秋行情”，看好新兴科技、大金融等</a></div>
+                <div class="item-summary">本文转载自微信公众号：国泰君安证券研究核心观点：中国市场风险下降、产业进展积极以及秋季宏观政策与资本市场政策的支持性立场，在“击球区”之后，中国股市有望走出“金秋行情”。看好科技/制造/大金融。摘要大势研判：“击球区”之后，部署“金秋行情”。7月19日国泰海通策略再度发布“击球区”，中国市场在巨大分歧中...</div>
+                <div class="item-meta">研报精选 · 2026-08-17 07:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817V01YED00?scene=news-skill" target="_blank" rel="noopener">王曼昱回应比“1”庆祝：急需夺冠为下半年开好头，希望亚运保持拼劲</a></div>
+                
+                <div class="item-meta">国乒小球迷 · 2026-08-17 02:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816A05WRR00?scene=news-skill" target="_blank" rel="noopener">3个月，8亿人次，乡村文旅靠什么吸引游客？</a></div>
+                <div class="item-summary">多年前，说起乡村旅游，很多人脑子里浮现的画面是：土灶台、大铁锅，一桌农家饭，临走再捎上两筐土鸡蛋。 如今呢？是稻田边上的咖啡店、古村里的艺术工作室、推窗见山的民宿——有人专门开车两个小时，就为了去村里喝一杯“稻田咖啡”。 据文化和旅游部数据中心测算，2026年一季度，全国乡村旅游接待总人次7.93亿，同比增长12.2%；接待总收入4570亿元，同比增长10.9%。乡村旅游市场主要指标均超过同...</div>
+                <div class="item-meta">央视新闻 · 2026-08-16 13:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816V05LKP00?scene=news-skill" target="_blank" rel="noopener">向12345投诉月亮太亮影响睡觉？！这是真诉求还是占用资源的瞎胡闹？</a></div>
+                <div class="item-summary">向12345投诉月亮太亮影响睡觉？！这是真诉求还是占用资源的瞎胡闹？</div>
+                <div class="item-meta">闪电新闻 · 2026-08-16 12:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A01ECX00?scene=news-skill" target="_blank" rel="noopener">飓风“拉拉”减弱为热带风暴</a></div>
+                <div class="item-summary">当地时间8月16日，央视记者获悉，飓风“拉拉”在美国夏威夷附近海域减弱为热带风暴，但强降雨和大风仍可能引发洪水、山体滑坡及危险海况。“拉拉”15日以一级飓风强度袭击夏威夷大岛南部海岸，随后被美国国家气象局降级为热带风暴。不过，部分地区仍可能出现强降雨。夏威夷州州长表示，风暴15日造成至少1人死亡。（央视记者...</div>
+                <div class="item-meta">央视新闻 · 2026-08-17 00:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A031FM00?scene=news-skill" target="_blank" rel="noopener">美“航母帝国”遭遇三重危机</a></div>
+                <div class="item-summary">【环球时报特约记者 晨阳】编者的话：自从二战以来，庞大的航母战斗群一直是美国海洋霸权的象征。然而近年来随着美国造船工业和海军整体实力的下降，美国航母的状况明显恶化。近日，美国航母问题频出——位于中东战区的“林肯”号航母被爆出超期部署导致舰员精神崩溃，老航母退役在即而新航母“后继无人”，美国总统特朗普...</div>
+                <div class="item-meta">环球网 · 2026-08-17 06:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A031OT00?scene=news-skill" target="_blank" rel="noopener">同比增长5.1%！香港上半年GDP增长创5年新高，股票市场交投活跃</a></div>
+                <div class="item-summary">【环球时报驻香港特约记者 叶蓝】受惠于出口、服务输出、私人消费等增长支持，香港经济在第二季度继续蓬勃扩张，上半年实质本地生产总值（GDP）同比增长5.1%，是近5年来最强劲的半年表现。香港社会舆论表示，这是香港受惠于祖国经济稳定增长，以及“背靠祖国、联通世界”优势的结果。股票市场交投活跃香港特区政府近日发表...</div>
+                <div class="item-meta">环球网 · 2026-08-17 06:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A031QT00?scene=news-skill" target="_blank" rel="noopener">美国土耳其计划向乌供武被俄警告，俄外交部：将严重损害俄同美土两国间关系</a></div>
+                <div class="item-summary">【环球时报驻俄罗斯特派记者 肖新新】“究竟是什么动机促使美国和土耳其决定打开另一个‘潘多拉魔盒’，以延长基辅政权的垂死挣扎，并夺走更多人的生命？”据俄新社15日报道，针对有消息称美土两国计划向乌克兰供应美制武器，俄外交部发言人扎哈罗娃当天回应表示，美土声称其在解决乌克兰危机中“扮演着特殊角色”，并称其...</div>
+                <div class="item-meta">环球网 · 2026-08-17 06:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A025YK00?scene=news-skill" target="_blank" rel="noopener">它是水果界的“维C天花板” 含量是橙子的78倍</a></div>
+                <div class="item-summary">你听说过一种比橙子维生素C含量还要高出几十倍的神奇水果吗？它外形小巧，却蕴藏着惊人的营养，这就是刺梨，一种云贵高原特有的野生水果，被誉为“维C之王”。01 刺梨维C含量是橙子的78倍刺梨，是生长在我国西南地区的水果，尤其以贵州刺梨最为出名。即便是在相对贫瘠的土地上，刺梨也能茁壮成长，结出优质的果实。刺梨形如...</div>
+                <div class="item-meta">央视新闻 · 2026-08-17 03:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816V04V1U00?scene=news-skill" target="_blank" rel="noopener">汛期期间多人编造灾情谣言制造恐慌被处罚 凭空捏造灾情 恶意拼接只为流量</a></div>
+                <div class="item-summary">汛期期间多人编造灾情谣言制造恐慌被处罚 凭空捏造灾情 恶意拼接只为流量</div>
+                <div class="item-meta">央视网 · 2026-08-16 11:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816A08GU000?scene=news-skill" target="_blank" rel="noopener">河南一打满补丁的县委大院即将迈入“古稀之年”：69间土坯房补了又补</a></div>
+                <div class="item-summary">极目新闻记者 陈洋洋裸露土坯的外墙、长满青苔的屋瓦、低矮的红色木门搭配颇具年代感的白色布帘，这座其貌不扬的大院位于河南省三门峡市卢氏县，是当地县委200余名干部职工日常的办公地点。如今，卢氏县委大院已经走过69个年头，周边的街道越来越繁华，而这些土坯房却依旧保留着当年的面貌。卢氏县委大院（极目新闻记者陈洋...</div>
+                <div class="item-meta">极目新闻 · 2026-08-16 17:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A00Z1Q00?scene=news-skill" target="_blank" rel="noopener">WTT大满贯：王曼昱夺冠！连赢2位国乒主力，决赛4-2胜王艺迪</a></div>
+                <div class="item-summary">2026年8月17日凌晨，国乒结束WTT欧洲大满贯（瑞典站）的最后一场对决，在女单项目的决赛中，两位主力狭路相逢、爆发内战，结果王曼昱4-2取胜夺得冠军，由此而连续打败两位国乒主力登顶（注：半决赛4....</div>
+                <div class="item-meta">全言 · 2026-08-17 01:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816A06XLT00?scene=news-skill" target="_blank" rel="noopener">中央考核巡查组突击夜查，正喝酒的值班人员匆匆赶来：你们来这是什么意思？</a></div>
+                <div class="item-summary">央视新闻8月16日报道，近期，根据国务院安委会部署，中央安全生产考核巡查第十一组赴河北省明查暗访。在河北承德，考核巡查组突击夜查一家饭店的消防控制室。几番周折，饭店人员通过物业找到消防控制室时，时间已经过去了10分钟。考核巡查组来到消防控制室，与此同时，值班人员闻讯赶来。考核巡查组发现，“值班人员是喝了...</div>
+                <div class="item-meta">政事儿 · 2026-08-16 15:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816A0AIBX00?scene=news-skill" target="_blank" rel="noopener">枪响前举手打断比赛吃黄牌！吴艳妮仍13秒12摘金 实现全锦赛3连冠</a></div>
+                <div class="item-summary">8月16日，2026全国田径锦标赛继续在浙江衢州进行。在女子100米栏决赛的比赛当中，吴艳妮表现强势，以13秒12的成绩成功摘金，实现了该项目全国锦标赛3连冠，拿下了个人第6座全国锦标赛100米栏冠军。【各项纪录】女子100米栏世界纪录由尼日利亚选手托比-阿穆桑在2022年创造，成绩为12秒12。亚洲纪录和全国纪录都已经尘封许久，其中亚洲纪录由希希金娜在1995年创造，成绩为12秒44。全国...</div>
+                <div class="item-meta">全景体育 · 2026-08-16 21:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A030F400?scene=news-skill" target="_blank" rel="noopener">存款过万必须办理纸质存单吗</a></div>
+                <div class="item-summary">问：近期，关于“存款过万必须办理纸质存单”的话题登上热搜榜，备受储户关注。存款金额与存款介质直接挂钩吗？不同存款介质有哪些区别？答：存款金额与存款介质不直接挂钩。商业银行存款介质分为3种——银行卡、纸质存单、存折。不论存多少钱，存款人都可以根据自身实际需要与使用习惯，选择介质办理存款业务。但不同存款...</div>
+                <div class="item-meta">经济日报 · 2026-08-17 06:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816A0BLQ000?scene=news-skill" target="_blank" rel="noopener">广西一木业公司成立半年，被指卷走数十名供货商上千万元财物，涉合同诈骗被立案侦查后仍在“作案”</a></div>
+                <div class="item-summary">“你们认识王某吗？”今年7月，赵先生在广西木材行业交流微信群内发问时，老张心里“咯噔”一下！“我知道又被骗了！”8月13日，老张告诉红星新闻记者，“在群里，不少人随后纷纷讲述自身被骗遭遇，信息显示，大都指向王某。”王某出生于1989年12月，是贵州省兴义市人。多名受害者向红星新闻反映，王某曾以广西华大木业有限...</div>
+                <div class="item-meta">红星新闻 · 2026-08-17 07:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A02XN900?scene=news-skill" target="_blank" rel="noopener">一年两枚戒指！30岁唐斯与女友伍兹正式举办婚礼：事业爱情双丰收</a></div>
+                <div class="item-summary">北京时间8月17日，据多家美媒报道，唐斯与模特女友伍兹在昨日于加利福尼亚州马里布举办了一场名流云集的正装婚礼，喜结连理。一年斩获两枚戒指，唐斯事业爱情双丰收，成为大赢家。 户外婚礼场地风景....</div>
+                <div class="item-meta">罗说NBA · 2026-08-17 06:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260816A0B3SC00?scene=news-skill" target="_blank" rel="noopener">陈冰：美国对伊喷射“经济怒火”，伊朗还能撑多久？</a></div>
+                <div class="item-summary">直新闻：陈先生，美国宣布将以前所未有的经济压力打击伊朗，发动所谓“经济怒火”，伊朗还能撑多久？特约评论员 陈冰：美国祭出所谓“经济怒火”，是军事上的“史诗怒火”失败后采取的行动。但是通过海上封锁，来迫使一个国家屈服的案例是很少的，除非岛国，比如二战时期盟军对日本的海上封锁，导致日本战时经济崩溃。但伊...</div>
+                <div class="item-meta">直新闻 · 2026-08-17 07:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A02XNK00?scene=news-skill" target="_blank" rel="noopener">车手德比斯首次与张雪在中国见面</a></div>
+                <div class="item-summary">“张雪机车”车手德比斯首次与张雪在中国见面，德比斯表示：每当我们遇到问题，工厂都能迅速且高质量给出答复，这是我们能一起取胜的原因。来源：央视新闻客户端...</div>
+                <div class="item-meta">北京日报客户端 · 2026-08-17 06:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A02XA400?scene=news-skill" target="_blank" rel="noopener">特朗普：已指示国防部“大幅缩减”与韩国联合军演规模</a></div>
+                <div class="item-summary">△美国总统特朗普（资料图）美国总统特朗普16日说，已要求国防部大幅缩减美国与韩国的联合军演规模。特朗普在社交媒体发文说，这些军演“耗资巨大”，其中很大一部分由美国负担，同时对朝鲜释放出“完全不恰当和敌对的信号”。特朗普表示，考虑到他与朝鲜领导人金正恩之间“良好的关系”，他对于“美国很久以前同意参加与韩国的联合军演感到不满”。他说，鉴于现在取消军演已经为时过晚，他已经指示国防部“大幅缩减”美韩...</div>
+                <div class="item-meta">央视新闻 · 2026-08-17 05:15</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-17 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

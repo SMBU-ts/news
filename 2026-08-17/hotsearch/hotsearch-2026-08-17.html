@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日热搜 · 2026-08-17</title>
+<meta name="description" content="2026-08-17 每日热搜汇总：分 5 个平台各取 24 小时内综合排名前 10，共 50 条热点，含热度指数、来源与原文链接。">
+<style>
+  :root { --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#f43f5e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg);
+      color:var(--ink); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+
+  .hero { position:relative; overflow:hidden; color:#fff; padding:48px 24px 42px;
+      background:linear-gradient(125deg,#f43f5e 0%,#fb7185 45%,#f59e0b 120%); }
+  .hero::after { content:"🔥"; position:absolute; right:20px; top:-6px; font-size:150px;
+      opacity:.14; transform:rotate(8deg); }
+  .hero-inner { position:relative; z-index:1; max-width:1080px; margin:0 auto; }
+  .kicker { display:inline-flex; align-items:center; gap:8px; font-size:12.5px;
+      letter-spacing:2px; font-weight:700; text-transform:uppercase;
+      background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.32);
+      padding:6px 14px; border-radius:999px; }
+  .hero h1 { margin:14px 0 6px; font-size:clamp(26px,5vw,42px); font-weight:850; line-height:1.15; }
+  .hero .sub { opacity:.95; font-size:14.5px; }
+  .hero .sub b { font-weight:700; }
+  .pstats { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+  .pstat { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600;
+      background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.3);
+      border-radius:999px; padding:6px 13px; }
+  .pstat i { width:8px; height:8px; border-radius:50%; background:var(--pc); display:inline-block;
+      box-shadow:0 0 0 2px rgba(255,255,255,.5); }
+
+  main { max-width:1080px; margin:0 auto; padding:24px 16px 60px; }
+  .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:20px; }
+  .sortgroup { display:inline-flex; background:var(--card); border:1px solid var(--line);
+      border-radius:999px; padding:3px; }
+  .sort-btn { font:inherit; cursor:pointer; border:0; background:transparent; color:var(--muted);
+      font-size:13.5px; font-weight:700; padding:7px 15px; border-radius:999px; transition:.15s; }
+  .sort-btn.active { background:var(--brand); color:#fff; }
+  .expand-all { margin-left:auto; font:inherit; cursor:pointer; font-size:13.5px; font-weight:700;
+      color:var(--brand); background:var(--card); border:1px solid color-mix(in srgb,var(--brand) 35%,#fff);
+      border-radius:11px; padding:8px 15px; transition:.15s; }
+  .expand-all:hover { background:var(--brand); color:#fff; }
+
+  .psec { margin-bottom:28px; }
+  .psec-h { display:flex; align-items:center; gap:10px; font-size:17px; font-weight:800;
+      color:var(--ink); margin:0 0 14px; padding-left:12px; border-left:5px solid var(--c); }
+  .psec-h .dot { width:10px; height:10px; border-radius:50%; background:var(--c); display:inline-block; }
+  .psec-count { font-size:12.5px; font-weight:700; color:var(--muted);
+      background:#eef0f6; border-radius:999px; padding:2px 10px; }
+  #wrap.flat .psec { margin-bottom:0; }
+  #wrap.flat .psec-h { display:none; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid var(--line);
+      border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:11px;
+      box-shadow:0 1px 2px rgba(15,23,42,.04); border-top:3px solid var(--c); transition:.18s; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+  .num { color:#fff; font-weight:850; font-size:14px; min-width:26px; height:26px; border-radius:8px;
+      display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+      background:linear-gradient(135deg,var(--brand),#fb7185); }
+  .card:nth-child(1) .num, .card:nth-child(2) .num, .card:nth-child(3) .num {
+      background:linear-gradient(135deg,#f59e0b,#f43f5e); box-shadow:0 3px 10px rgba(244,63,94,.4); }
+  .chip { font-size:12px; font-weight:700; color:var(--c);
+      background:color-mix(in srgb,var(--c) 12%,#fff); border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+      border-radius:999px; padding:3px 10px; }
+  .hot { margin-left:auto; font-size:12.5px; font-weight:800; color:#c2410c;
+      background:#fff7ed; border:1px solid #fed7aa; border-radius:999px; padding:3px 10px; white-space:nowrap; }
+  .card-title { margin:0; font-size:16.5px; font-weight:750; line-height:1.42; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:auto; }
+  .read { font-size:13.5px; font-weight:700; color:var(--c);
+      border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px; padding:6px 12px; transition:.15s; }
+  .read:hover { background:var(--c); color:#fff; }
+  .sum-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer;
+      margin:0; appearance:none; -webkit-appearance:none; }
+  .sum-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { padding:12px 14px; background:#fff7f8; border-left:3px solid var(--brand);
+      border-radius:0 10px 10px 0; font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty { background:var(--card); border:1px dashed var(--line); border-radius:16px;
+      padding:30px; text-align:center; color:var(--muted); font-size:14px; }
+
+  .backline { max-width:1080px; margin:16px auto 0; padding:0 16px; }
+  .backline a { font-size:13.5px; font-weight:600; color:var(--brand); }
+  footer { max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+      font-size:13px; border-top:1px solid var(--line); text-align:center; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; }
+      .expand-all { margin-left:0; } .hot { margin-left:0; } }
+</style>
+</head>
+<body>
+  <header class="hero"><div class="hero-inner">
+    <div class="kicker">🔥 每日热搜汇总</div>
+    <h1>2026 年 8 月 17 日 · 共 50 条热点</h1>
+    <div class="sub">统计范围 <b>08-16 08:27 ~ 08-17 08:27</b> · 更新于北京时间 <b>2026-08-17 08:27</b> · 聚合 5 个平台，每平台各取综合排名前 10</div>
+    <div class="pstats"><span class="pstat" style="--pc:#2932e1"><i></i>百度 · 10</span><span class="pstat" style="--pc:#0084ff"><i></i>知乎 · 10</span><span class="pstat" style="--pc:#ff8200"><i></i>微博 · 10</span><span class="pstat" style="--pc:#f04142"><i></i>今日头条 · 10</span><span class="pstat" style="--pc:#fb7299"><i></i>哔哩哔哩 · 10</span></div>
+  </div></header>
+  <div class="backline"><a href="../index.html">← 返回当日汇总</a></div>
+  <main>
+    <div class="toolbar">
+      <div class="sortgroup">
+        <button type="button" class="sort-btn active" data-view="section">分栏查看</button>
+        <button type="button" class="sort-btn" data-view="flat">平铺全部</button>
+      </div>
+      <button type="button" class="expand-all" data-state="collapsed">展开全部摘要</button>
+    </div>
+    <div id="wrap">
+        <section class="psec" data-platform="百度" style="--c:#2932e1">
+          <div class="psec-h">
+            <span class="dot"></span>百度 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="0.0" data-rank="1" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E9%98%B2%E7%81%BE%E5%87%8F%E7%81%BE%E6%95%91%E7%81%BE+%E6%80%BB%E4%B9%A6%E8%AE%B0%E5%BC%BA%E8%B0%83%E4%B8%89%E4%B8%AA%E5%88%B0%E4%BD%8D&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">防灾减灾救灾 总书记强调三个到位</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E9%98%B2%E7%81%BE%E5%87%8F%E7%81%BE%E6%95%91%E7%81%BE+%E6%80%BB%E4%B9%A6%E8%AE%B0%E5%BC%BA%E8%B0%83%E4%B8%89%E4%B8%AA%E5%88%B0%E4%BD%8D&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-1" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-1" hidden>8月16日出版的《求是》杂志发表习近平总书记重要文章《提高防灾减灾救灾能力》，强调要加强教育培训，确保各级干部在防灾减灾救灾中认识到位、责任到位、工作到位。文章指出，降低灾害风险、减轻灾害损失重在事前预防，要纠正重发展轻安全、重救灾轻预防等倾向，把风险挡在灾害之前。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="2" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E5%8A%A0%E6%B2%B9%E6%96%B0%E8%A7%8411%E6%9C%88%E8%B5%B7%E6%AD%A3%E5%BC%8F%E5%AE%9E%E6%96%BD&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">加油新规11月起正式实施</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E5%8A%A0%E6%B2%B9%E6%96%B0%E8%A7%8411%E6%9C%88%E8%B5%B7%E6%AD%A3%E5%BC%8F%E5%AE%9E%E6%96%BD&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-2" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-2" hidden>国家税务总局等四部门联合发文，自2026年11月1日起，全国成品油零售加油站全面推广“交易即开票”，消费者加油付款后即可取得发票。新规配套加油机主板加密、编码器升级，交易数据实时上传至省级计量监管平台，综合治理加油机作弊，保障消费者权益与税收秩序。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="3" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E5%A4%AE%E8%A7%86%E6%9B%9D%E5%85%89%E5%90%8E+%E4%BA%91%E5%8D%97%E8%BF%9E%E5%A4%9C%E9%80%9A%E6%8A%A5&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">央视曝光后 云南连夜通报</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E5%A4%AE%E8%A7%86%E6%9B%9D%E5%85%89%E5%90%8E+%E4%BA%91%E5%8D%97%E8%BF%9E%E5%A4%9C%E9%80%9A%E6%8A%A5&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-3" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-3" hidden>8月16日晚，央视《财经调查》曝光云南昆明、西双版纳等地999元“六天五晚”低价游乱象，存在隐性购物、强制消费、临时加价等问题。云南省文旅厅连夜通报，已成立调查组并责成相关旅行社停业整顿，举一反三排查全省旅游市场秩序。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="4" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E4%B8%AD%E5%9B%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E2%80%9C%E5%8F%8D%E5%A4%8D%E6%8E%A2%E7%B4%A2%E2%80%9D&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">中国为什么值得“反复探索”</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E4%B8%AD%E5%9B%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E2%80%9C%E5%8F%8D%E5%A4%8D%E6%8E%A2%E7%B4%A2%E2%80%9D&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-4" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-4" hidden>多家媒体刊发评论文章探讨“中国为什么值得反复探索”。文章从历史文化厚度、自然景观多样性、城市更新与烟火气，以及开放包容的社会氛围等角度，解读越来越多外国游客“二刷”“三刷”中国的背后动因，折射出中国文旅吸引力与软实力的持续提升。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="5" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E7%BD%95%E8%A7%81%E7%88%86%E4%BB%93%EF%BC%81%E5%8D%8E%E5%B0%94%E8%A1%97%E5%B7%A8%E5%A4%B4%E5%B7%A8%E4%BA%8F1000%E4%BA%BF&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">罕见爆仓！华尔街巨头巨亏1000亿</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E7%BD%95%E8%A7%81%E7%88%86%E4%BB%93%EF%BC%81%E5%8D%8E%E5%B0%94%E8%A1%97%E5%B7%A8%E5%A4%B4%E5%B7%A8%E4%BA%8F1000%E4%BA%BF&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-5" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-5" hidden>华尔街做市商简街（Jane Street）7月录得约150亿美元（约合1000亿元人民币）亏损，为2016年以来首次交易收入为负。主因是其投资的AI对冲基金Situational Awareness在7月AI股暴跌中爆仓，美光、闪迪等重仓标的深度下挫，基金被迫平仓，引发市场对AI交易拥挤度的担忧。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="6" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E6%98%94%E6%97%A5%E7%A9%BA%E5%9F%8E%E6%BB%A1%E8%A1%80%E5%A4%8D%E6%B4%BB+%E6%9B%BE%E4%BA%8F%E6%8D%9F%E8%B6%8510%E4%BA%BF&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">昔日空城满血复活 曾亏损超10亿</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E6%98%94%E6%97%A5%E7%A9%BA%E5%9F%8E%E6%BB%A1%E8%A1%80%E5%A4%8D%E6%B4%BB+%E6%9B%BE%E4%BA%8F%E6%8D%9F%E8%B6%8510%E4%BA%BF&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-6" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-6" hidden>张家界大庸古城曾因“人造空城”典型、四年累计亏损超10亿元而备受争议。经芒果超媒、电广传媒重整提质改造后，于2026年7月10日焕新复业，打造好六街、怪市、手艺巷三大主题街区，首月客流突破80万人次、营收超1500万元，昔日空城实现“满血复活”。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="7" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E5%A4%AE%E8%A7%86%E6%9B%9D%E5%85%89999%E5%85%83%E5%85%AD%E5%A4%A9%E4%BA%94%E6%99%9A%E4%BA%91%E5%8D%97%E4%BD%8E%E4%BB%B7%E6%B8%B8&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">央视曝光999元六天五晚云南低价游</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E5%A4%AE%E8%A7%86%E6%9B%9D%E5%85%89999%E5%85%83%E5%85%AD%E5%A4%A9%E4%BA%94%E6%99%9A%E4%BA%91%E5%8D%97%E4%BD%8E%E4%BB%B7%E6%B8%B8&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-7" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-7" hidden>央视《财经调查》8月16日晚曝光云南“999元六天五晚”低价游骗局：记者暗访发现产品被4至5家旅行社层层转包，以赌团模式运营，途中频繁安排隐性购物、强制消费并临时加价。云南省文旅厅连夜通报并立案调查。业内提醒，明显低于成本价的旅行产品往往暗藏消费陷阱。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="8" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E7%8E%8B%E6%9B%BC%E6%98%B1%E7%91%9E%E5%85%B8%E5%A4%A7%E6%BB%A1%E8%B4%AF%E5%A5%B3%E5%8D%95%E5%A4%BA%E5%86%A0&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">王曼昱瑞典大满贯女单夺冠</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E7%8E%8B%E6%9B%BC%E6%98%B1%E7%91%9E%E5%85%B8%E5%A4%A7%E6%BB%A1%E8%B4%AF%E5%A5%B3%E5%8D%95%E5%A4%BA%E5%86%A0&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-8" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-8" hidden>北京时间8月17日凌晨，WTT欧洲大满贯瑞典站女单决赛，王曼昱以4比2战胜队友王艺迪，夺得个人本站女单冠军，也是其职业生涯又一重要冠军。国乒本站收获女单、女双两冠及一项亚军收官，但男单赛场表现低迷、多人早早出局，球队状态引发外界关注。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="9" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E8%83%A1%E6%AD%8C%E7%8E%B0%E8%BA%AB%E3%80%8A%E5%AF%86%E6%A1%A3%E3%80%8B%E9%A6%96%E6%98%A0%E7%A4%BC&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">胡歌现身《密档》首映礼</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E8%83%A1%E6%AD%8C%E7%8E%B0%E8%BA%AB%E3%80%8A%E5%AF%86%E6%A1%A3%E3%80%8B%E9%A6%96%E6%98%A0%E7%A4%BC&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-9" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-9" hidden>8月16日晚，演员胡歌惊喜现身好友、同班同学袁弘主演的电影《密档》上海首映礼，并携两位大学老师一同到场力挺。该片取材自真实红色历史，讲述1942年上海隐秘战线守护中央文库的岁月，定档8月28日全国上映。胡歌观影后形容“步步惊心”，令相关话题登上热搜。</div>
+          </article>
+          <article class="card" data-hot="0.0" data-rank="10" data-platform="百度" style="--c:#2932e1">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">百度</span>
+              <span class="hot" title="热度指数">🔥 —</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://m.baidu.com/s?word=%E5%B0%8F%E5%8B%92%E5%B8%83%E4%BC%A6%E6%88%98%E8%83%9C%E5%BC%A0%E6%9C%AC%E6%99%BA%E5%92%8C%E5%A4%BA%E7%94%B7%E5%8D%95%E5%86%A0%E5%86%9B&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">小勒布伦战胜张本智和夺男单冠军</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://m.baidu.com/s?word=%E5%B0%8F%E5%8B%92%E5%B8%83%E4%BC%A6%E6%88%98%E8%83%9C%E5%BC%A0%E6%9C%AC%E6%99%BA%E5%92%8C%E5%A4%BA%E7%94%B7%E5%8D%95%E5%86%A0%E5%86%9B&amp;sa=fyb_news" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-10" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-10" hidden>8月17日凌晨，WTT欧洲大满贯瑞典站男单决赛，法国选手费利克斯·勒布伦以4比1战胜日本选手张本智和，首夺大满贯男单冠军，也是法国男乒历史首冠。至此外国乒协已连续夺得两个大满贯男单冠军，系WTT赛事历史上的首次，凸显世界乒坛格局变化。</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="知乎" style="--c:#0084ff">
+          <div class="psec-h">
+            <span class="dot"></span>知乎 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="2330000.0" data-rank="1" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 233 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2072359611483382539" target="_blank" rel="noopener noreferrer">摩根大通警告明年或爆发全球粮食危机，食品通胀率将从2.8%升至5%，粮价会大涨吗？会对国内有影响吗？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2072359611483382539" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-11" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-11" hidden>战争、天气、仓储、水资源、浪费——五重压力正在同步收紧全球粮食供应的&quot;阀门&quot;。 8月15日，摩根大通最新研究报告显示，下一场全球粮食危机的轮廓已初步成形，食品通胀压力将持续至2027年上半年。 该行驻伦敦高级全球经济学家Nora Szentivanyi领衔撰写了这份题为《粮食安全即国家安全：一场复合风暴》的报告。报告警告称，霍尔木兹海峡的持续中断与一场可能创历史纪录的超级厄尔尼诺正在同步发酵，将…</div>
+          </article>
+          <article class="card" data-hot="2320000.0" data-rank="2" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 232 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2071884777888682058" target="_blank" rel="noopener noreferrer">枪杀联合健康保险 CEO 的路易吉正式认罪，12 月将迎来量刑，或面临终身监禁，哪些信息值得关注？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2071884777888682058" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-12" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-12" hidden>当地时间8月14日，路易吉·曼吉奥内就枪杀联合健康保险首席执行官布赖恩·汤普森（Brian Thompson）一案正式认罪。联邦法官将路易吉·曼吉奥内的量刑日期定于12月18日。 路易吉·曼吉奥内当天在法庭上表示，他就其联邦刑事案件认罪，承认自己枪杀了汤普森。这一认罪协议将避免这起备受瞩目的案件进入联邦审判阶段。此外，认罪还可能使曼吉奥内得以寻求撤销纽约州的谋杀指控，并推迟即将到来的州审判。 曼…</div>
+          </article>
+          <article class="card" data-hot="2060000.0" data-rank="3" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 206 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/1939757494105805768" target="_blank" rel="noopener noreferrer">让孩子读《钢铁是怎样炼成的》是不是已经不适合这个时代了呢？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/1939757494105805768" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-13" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-13" hidden>我是一个资深网文爱好者，我也写网文。我认识的一个上小学的孩子每天早上一睁眼就要听故事，吃饭也听，睡觉前也要听，谁劝和谁急，听的都是网文小白文。他父母对我说，他的孩子就像过去吸大烟的，而我像是以贩养吸的道友。我不觉得网文不好，我也不想在这里探讨网文好坏，我想说的是后来我觉得有点对不住这孩子，我就准备给这孩子买本意义更深刻的书，我想起自己小时候父母给我买的书《钢铁是怎样炼成的》，那是我第一本读完的，…</div>
+          </article>
+          <article class="card" data-hot="1920000.0" data-rank="4" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 192 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2072490910139544733" target="_blank" rel="noopener noreferrer">2026 WTT瑞典大满贯赛女单决赛，王曼昱 4-2 战胜王艺迪夺得女单冠军，如何评价这场比赛？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2072490910139544733" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-14" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-14" hidden>8月17日凌晨，WTT欧洲大满贯瑞典站女单决赛，王曼昱以4比2力克队友王艺迪，职业生涯再添一座大满贯女单奖杯。整届比赛国乒女线发挥稳健，包揽女单冠亚军；但男单全线低迷、多人止步早期轮次。如何评价这场决赛与国乒当前男女队状态反差，成为球迷热议焦点。</div>
+          </article>
+          <article class="card" data-hot="1800000.0" data-rank="5" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 180 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2072481373085028433" target="_blank" rel="noopener noreferrer">如何评价deepseek8月17日涨价后，opencode go套餐的flash模型调用量削减94%？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2072481373085028433" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-15" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-15" hidden>DeepSeek于8月13日宣布API调价，采用峰谷定价：高峰时段（9—12点、14—18点）价格为闲时一倍，新价自8月17日零时生效。V4-Flash高峰输出涨至9元/百万token（涨幅350%），V4-Pro缓存命中输入最高涨约11倍。开发者社区测算，opencode go套餐flash模型调用量因此削减约94%，引发对智能体调用成本的讨论。</div>
+          </article>
+          <article class="card" data-hot="1780000.0" data-rank="6" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 178 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2072261517668344757" target="_blank" rel="noopener noreferrer">胖东来将闭门店现大排长龙，附近商贩说要跟着搬迁，为啥这么多年过去了胖东来的客户粘性还这么强？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2072261517668344757" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-16" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-16" hidden>物有所值，来好几次了】8月7日，胖东来创始人于东来在直播中称，许昌生活广场店将于2026年12月关闭。8月15日，实拍胖东来许昌生活广场店，超市人声鼎沸人头攒动，1至28号收银口大排长龙。来自山东济宁的李女士买了满满3辆购物车，表示自己是自驾专程来胖东来购物，已经来过好几次了，感觉胖东来人实在多，价格比较优惠，个别虽然有点高，但也是物有所值。不知道许昌生活广场店闭店的消息。 于东来和他媳妇儿常来…</div>
+          </article>
+          <article class="card" data-hot="1490000.0" data-rank="7" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 149 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2072291192566452332" target="_blank" rel="noopener noreferrer">继小米YU7完成品类启蒙后，岚图追光S、智界RX接连入局，FUV这个市场到底有没有想象空间？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2072291192566452332" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-17" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-17" hidden>2026年被称为“中国FUV元年”。继小米YU7完成品类启蒙后，岚图追光S、智界RX等产品接连入局。 FUV概念最早由法拉利在2022年提出，本意是“法拉利多功能车”。把一台低趴宽体的“大两厢”重新定义为FUV，到底是开辟新品类，还是SUV红利见顶后造出的“营销新词”？ 会不会重蹈当年“旅行车”叫好不叫座的覆辙？</div>
+          </article>
+          <article class="card" data-hot="1460000.0" data-rank="8" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 146 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2072370715114696836" target="_blank" rel="noopener noreferrer">乌克兰出现由日本人组成的战斗分队，与俄军作战，会对局势有哪些影响？日本未来会大规模介入俄乌冲突吗？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2072370715114696836" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-18" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-18" hidden>据中新社东西问援引乌克兰媒体报道，近日一支由日本人组成的战斗分队在乌克兰武装部队内部成立，正在参与俄乌冲突，与俄军作战。此前日本防相小泉进次郎曾表示：“汲取俄乌冲突前线出现的新型作战方式等经验教训，将有助于强化日本的防卫体制。” 据新华社此前报道，5月29日，小泉进次郎曾证实，日本防卫省、自卫队将首次向北约对乌克兰安全援助和训练机构派遣4名自卫官。乌媒称，乌克兰出现由日本人组成的战斗分队，参与俄…</div>
+          </article>
+          <article class="card" data-hot="1430000.0" data-rank="9" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 143 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2063350913864054256" target="_blank" rel="noopener noreferrer">“马云给你5亿元花呗额度”和“马化腾给你1亿q币”，只能要一个，你要哪个？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2063350913864054256" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-19" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-19" hidden>马云：你指定一个支付宝账号，获得5亿元花呗额度。 马化腾：你指定一个qq号，获得1亿q币。 你只能要其中一个，你会选择要哪个？</div>
+          </article>
+          <article class="card" data-hot="1310000.0" data-rank="10" data-platform="知乎" style="--c:#0084ff">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">知乎</span>
+              <span class="hot" title="热度指数">🔥 131 万热度</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.zhihu.com/question/2071974633394238237" target="_blank" rel="noopener noreferrer">网文作者文黛黛假死 3 年承认骗局，读者斥责其消费感情，从法律上看，这种行为是否构成欺诈？</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.zhihu.com/question/2071974633394238237" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-20" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-20" hidden>2026年8月12日，番茄小说作者文黛黛在“去世”三年后突然发文，承认2023年的“心脏病离世”系假死，并向读者道歉。据公开报道，她此次“复活”与平台提现新规要求作者人脸识别有关，截至8月14日，番茄小说已对其相关作品和账号作出处置。这场持续3年的“遗作”闹剧，在读者愤怒与平台介入中迎来阶段性结局。 文黛黛是番茄小说平台的一名签约作者，2023年8月，其连载小说《春日藏欢喜》更新至第64章时，一…</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="微博" style="--c:#ff8200">
+          <div class="psec-h">
+            <span class="dot"></span>微博 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="1150000.0" data-rank="1" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 115.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E8%BE%9F%E8%B0%A3%E6%81%8B%E6%83%85%E9%83%BD%E6%8C%89%E8%B0%B7%E7%88%B1%E5%87%8C%E8%BF%99%E4%B8%AA%E6%A0%87%E5%87%86%E6%9D%A5%23" target="_blank" rel="noopener noreferrer">辟谣恋情都按谷爱凌这个标准来</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E8%BE%9F%E8%B0%A3%E6%81%8B%E6%83%85%E9%83%BD%E6%8C%89%E8%B0%B7%E7%88%B1%E5%87%8C%E8%BF%99%E4%B8%AA%E6%A0%87%E5%87%86%E6%9D%A5%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-21" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-21" hidden>8月16日，“曝谷爱凌LV三公子恋情”登上热搜，谷爱凌随后发微博幽默辟谣：“又有新恋情??总是最后一个知道的。散了散了”，并配滑雪、冲浪九宫格。其淡定洒脱的回应获网友点赞，“辟谣恋情都按谷爱凌这个标准来”成为热议梗，被视作明星处理绯闻的范本。</div>
+          </article>
+          <article class="card" data-hot="820000.0" data-rank="2" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 82.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E5%B1%85%E6%B0%91%E5%AD%98%E6%AC%BE7%E6%9C%88%E5%8F%88%E5%B0%91%E4%BA%866300%E4%BA%BF%23" target="_blank" rel="noopener noreferrer">居民存款7月又少了6300亿</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E5%B1%85%E6%B0%91%E5%AD%98%E6%AC%BE7%E6%9C%88%E5%8F%88%E5%B0%91%E4%BA%866300%E4%BA%BF%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-22" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-22" hidden>央行公布的7月金融数据显示，7月人民币存款仅增加约300亿元，其中住户（居民）存款净减少6300亿元，虽同比少减约4800亿元，仍引发关注。与此同时非银金融机构存款高增。市场分析，居民资金或流向理财、债市及权益市场，反映资产荒下资产配置意愿的变化。</div>
+          </article>
+          <article class="card" data-hot="750000.0" data-rank="3" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 75.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E4%B8%BA%E4%B8%AD%E5%9B%BD%E8%88%AA%E5%A4%A9%E7%82%B9%E8%B5%9E%23" target="_blank" rel="noopener noreferrer">为中国航天点赞</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E4%B8%BA%E4%B8%AD%E5%9B%BD%E8%88%AA%E5%A4%A9%E7%82%B9%E8%B5%9E%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-23" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-23" hidden>近期中国航天捷报频传，从空间站应用与发展任务稳步推进，到新一代运载火箭、卫星互联网等取得进展，相关成就在社交平台刷屏。众多网友自发发起“为中国航天点赞”话题，致敬科研人员的长期坚守，也为国家航天实力的跨越式提升感到自豪，民族自信心持续升温。</div>
+          </article>
+          <article class="card" data-hot="730000.0" data-rank="4" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 73.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E4%BF%8A%E5%87%AF%E5%A6%88%E5%A6%88%E7%BB%99%E7%B2%89%E4%B8%9D%E9%80%81%E4%BC%B4%E6%89%8B%E7%A4%BC%23" target="_blank" rel="noopener noreferrer">王俊凯妈妈给粉丝送伴手礼</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E4%BF%8A%E5%87%AF%E5%A6%88%E5%A6%88%E7%BB%99%E7%B2%89%E4%B8%9D%E9%80%81%E4%BC%B4%E6%89%8B%E7%A4%BC%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-24" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-24" hidden>在某活动后台，王俊凯妈妈被拍到主动向粉丝送出伴手礼，亲切友好的举动引发热议登上热搜。不少网友称赞其“国民好家长”的暖心做派，也有人感慨偶像家庭对粉丝的尊重与善意。话题“王俊凯妈妈给粉丝送伴手礼”折射出粉丝文化与艺人家庭之间良性的互动氛围。</div>
+          </article>
+          <article class="card" data-hot="700000.0" data-rank="5" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 70.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E6%8A%AB%E8%8D%86%E6%96%A9%E6%A3%98%E6%8E%92%E5%90%8D%23" target="_blank" rel="noopener noreferrer">披荆斩棘排名</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E6%8A%AB%E8%8D%86%E6%96%A9%E6%A3%98%E6%8E%92%E5%90%8D%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-25" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-25" hidden>《披荆斩棘2026》初舞台于8月15—16日采用全开麦、无修音直播模式竞演。最终个人火力值排名出炉：小沈阳以829票夺魁，孙楠、阿云嘎分列二、三位，余文乐第四；郭晓东、张睿、欢子、陈若轩落入危险区。全开麦“照妖镜”放大真实实力，引发关于情怀与实力的广泛讨论。</div>
+          </article>
+          <article class="card" data-hot="680000.0" data-rank="6" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 68.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E6%9B%BC%E6%98%B1%E5%A4%BA%E5%86%A0%E5%90%8E%E6%AF%941%E5%BA%86%E7%A5%9D%23" target="_blank" rel="noopener noreferrer">王曼昱夺冠后比1庆祝</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E6%9B%BC%E6%98%B1%E5%A4%BA%E5%86%A0%E5%90%8E%E6%AF%941%E5%BA%86%E7%A5%9D%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-26" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-26" hidden>WTT欧洲大满贯瑞典站女单夺冠后，王曼昱做出“比1”的手势庆祝，相关画面登上微博热搜。这一标志性动作源自她过往比赛中的招牌庆祝方式，被球迷亲切称为“王曼昱式庆祝”。此次夺冠她以4比2力克队友王艺迪，稳扎稳打的发挥与自信姿态赢得一片喝彩。</div>
+          </article>
+          <article class="card" data-hot="670000.0" data-rank="7" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 67.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E9%80%81%E7%A4%BC%E4%B8%8A%E6%B7%98%E5%AE%9D%23" target="_blank" rel="noopener noreferrer">送礼上淘宝</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E9%80%81%E7%A4%BC%E4%B8%8A%E6%B7%98%E5%AE%9D%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-27" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-27" hidden>随着七夕、开学季等节点临近，淘宝上线“送礼”相关玩法，用户可直接在平台选购礼物一键赠送好友，并支持附留言、隐藏价格等功能，带动“送礼上淘宝”成为社交平台热议话题。平台借势加码礼赠场景与情感消费，试图在节日经济中抢占用户心智与社交分享流量。</div>
+          </article>
+          <article class="card" data-hot="640000.0" data-rank="8" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 64.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E8%83%96%E4%B8%9C%E6%9D%A5%E8%A2%AB%E6%B6%A8%E7%A7%9F%E9%80%BC%E8%B5%B0%E5%8D%B4%E4%BB%8E%E4%B8%8D%E6%B6%A8%E5%95%86%E6%88%B7%E7%A7%9F%23" target="_blank" rel="noopener noreferrer">胖东来被涨租逼走却从不涨商户租</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E8%83%96%E4%B8%9C%E6%9D%A5%E8%A2%AB%E6%B6%A8%E7%A7%9F%E9%80%BC%E8%B5%B0%E5%8D%B4%E4%BB%8E%E4%B8%8D%E6%B6%A8%E5%95%86%E6%88%B7%E7%A7%9F%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-28" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-28" hidden>网传胖东来因物业方涨租被迫迁出个别门店，但胖东来自身多年来坚持不向场内商户涨租、并主动让利，这一反差引发热议。“胖东来被涨租逼走却从不涨商户租”登上热搜，网友赞其“把利润留给商户与顾客”的价值观。也有声音呼吁，优质零售企业应获得更友好的经营环境。</div>
+          </article>
+          <article class="card" data-hot="530000.0" data-rank="9" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 53.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E5%84%BF%E7%A7%91%E5%8C%BB%E7%94%9F%E6%9D%A8%E5%9B%BD%E8%BE%89%E5%8E%BB%E4%B8%96%E5%A6%BB%E5%AD%90%E5%8F%91%E5%A3%B0%23" target="_blank" rel="noopener noreferrer">儿科医生杨国辉去世妻子发声</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E5%84%BF%E7%A7%91%E5%8C%BB%E7%94%9F%E6%9D%A8%E5%9B%BD%E8%BE%89%E5%8E%BB%E4%B8%96%E5%A6%BB%E5%AD%90%E5%8F%91%E5%A3%B0%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-29" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-29" hidden>江苏沭阳39岁儿科医生杨国辉在骑车锻炼时突发心脏骤停不幸离世，8月16日近千名患者家属自发为其送别。妻子章燕发文追忆，称丈夫两个微信共两万多好友，每晚挨个回复患儿家长咨询到凌晨。杨国辉为南京中医药大学硕士，曾获宿迁市五一劳动奖章，其医者仁心令人动容。</div>
+          </article>
+          <article class="card" data-hot="480000.0" data-rank="10" data-platform="微博" style="--c:#ff8200">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">微博</span>
+              <span class="hot" title="热度指数">🔥 48.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://s.weibo.com/weibo?q=%23%E5%BC%A0%E6%9C%AC%E6%99%BA%E5%92%8C%E7%91%9E%E5%85%B8%E5%A4%A7%E6%BB%A1%E8%B4%AF%E4%BA%9A%E5%86%9B%23" target="_blank" rel="noopener noreferrer">张本智和瑞典大满贯亚军</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://s.weibo.com/weibo?q=%23%E5%BC%A0%E6%9C%AC%E6%99%BA%E5%92%8C%E7%91%9E%E5%85%B8%E5%A4%A7%E6%BB%A1%E8%B4%AF%E4%BA%9A%E5%86%9B%23" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-30" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-30" hidden>WTT欧洲大满贯瑞典站男单决赛，日本选手张本智和以1比4不敌法国选手费利克斯·勒布伦，获得亚军。尽管未能夺冠，张本智和本站仍展现出不俗竞争力，世界排名稳居前列。赛后其表现与心态引发中日球迷讨论，也映衬出当前男子乒坛“群雄并起、格局生变”的态势。</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="今日头条" style="--c:#f04142">
+          <div class="psec-h">
+            <span class="dot"></span>今日头条 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="16402664.0" data-rank="1" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1640.3万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7673785960819851300/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673785960819851300%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%BD%E4%B9%922%E5%86%A01%E4%BA%9A+%E7%94%B7%E9%98%9F%E7%8A%B6%E6%80%81%E4%BD%8E%E8%BF%B7%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673785960819851300" target="_blank" rel="noopener noreferrer">国乒2冠1亚 男队状态低迷</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7673785960819851300/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673785960819851300%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%BD%E4%B9%922%E5%86%A01%E4%BA%9A+%E7%94%B7%E9%98%9F%E7%8A%B6%E6%80%81%E4%BD%8E%E8%BF%B7%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673785960819851300" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-31" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-31" hidden>WTT欧洲大满贯瑞典站收官，国乒斩获2冠1亚：王曼昱女单夺冠、女双登顶，混双摘亚。但男队状态低迷成为焦点——男单多人早早出局，无人挺进深轮次，连续在多站赛事中无缘冠军。球队在巴黎奥运后新老交替、外协冲击加剧的背景下，正面临严峻的竞争力考验。</div>
+          </article>
+          <article class="card" data-hot="14841744.0" data-rank="2" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1484.2万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7674479072151765034/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674479072151765034%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%9B%E4%B8%AA%E5%84%BF%E5%AD%90%E4%BA%89%E7%9D%80%E5%85%BB95%E5%B2%81%E8%80%81%E6%AF%8D%E4%BA%B2%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674479072151765034" target="_blank" rel="noopener noreferrer">四个儿子争着养95岁老母亲</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7674479072151765034/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674479072151765034%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%9B%E4%B8%AA%E5%84%BF%E5%AD%90%E4%BA%89%E7%9D%80%E5%85%BB95%E5%B2%81%E8%80%81%E6%AF%8D%E4%BA%B2%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674479072151765034" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-32" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-32" hidden>河南驻马店一位95岁老奶奶被四个儿子争相赡养的故事走红网络。四子约定每家轮流照顾母亲两个月，却常有人提前接老人回家；四位儿媳也悉心照料、毫无怨言。网友点赞这一大家庭的孝亲温情，认为“争着养”胜过“推着养”，朴素的家风诠释了敬老爱老的传统美德。</div>
+          </article>
+          <article class="card" data-hot="13429365.0" data-rank="3" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1342.9万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/article/7674371576191582754" target="_blank" rel="noopener noreferrer">一组数据看中国经济的澎湃动能</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/article/7674371576191582754" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-33" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-33" hidden>多家媒体以“一组数据看中国经济的澎湃动能”为题，梳理近期经济亮眼表现：高技术制造业、装备制造业增速领跑，新质生产力加快培育；暑期文旅、餐饮消费火热，内需潜力持续释放；外贸结构优化、民营企业活力增强。一组组跳动的数字，折射出中国经济韧性强、动能足的向好态势。</div>
+          </article>
+          <article class="card" data-hot="12151392.0" data-rank="4" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1215.1万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7673668636938141742/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673668636938141742%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B0%8F%E5%8B%92%E5%B8%83%E4%BC%A6%E6%88%98%E8%83%9C%E5%BC%A0%E6%9C%AC%E6%99%BA%E5%92%8C%E5%A4%BA%E7%94%B7%E5%8D%95%E5%86%A0%E5%86%9B%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673668636938141742" target="_blank" rel="noopener noreferrer">小勒布伦战胜张本智和夺男单冠军</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7673668636938141742/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673668636938141742%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B0%8F%E5%8B%92%E5%B8%83%E4%BC%A6%E6%88%98%E8%83%9C%E5%BC%A0%E6%9C%AC%E6%99%BA%E5%92%8C%E5%A4%BA%E7%94%B7%E5%8D%95%E5%86%A0%E5%86%9B%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673668636938141742" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-34" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-34" hidden>WTT欧洲大满贯瑞典站男单决赛，法国选手费利克斯·勒布伦以4比1击败日本名将张本智和，首夺大满贯男单冠军，创造法国男乒历史。这是外国协会连续第二次捧得大满贯男单奖杯，WTT历史上前所未有。勒布伦的崛起，标志着欧洲乒坛新生代正加速改写世界乒坛竞争版图。</div>
+          </article>
+          <article class="card" data-hot="10995034.0" data-rank="5" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 1099.5万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7674162628880518699/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674162628880518699%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%97%AE%E7%95%8C%E5%84%BF%E7%AB%A5%E8%BD%A6%E5%8D%B3%E5%B0%86%E4%B8%8A%E5%B8%82%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674162628880518699" target="_blank" rel="noopener noreferrer">问界儿童车即将上市</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7674162628880518699/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674162628880518699%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%97%AE%E7%95%8C%E5%84%BF%E7%AB%A5%E8%BD%A6%E5%8D%B3%E5%B0%86%E4%B8%8A%E5%B8%82%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674162628880518699" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-35" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-35" hidden>8月16日，鸿蒙智行问界汽车发布预热海报，宣布“问界儿童车”即将上市。该车由赛力斯与华为联合设计，双座敞篷外观复刻问界M9，前挡风上方仿真激光雷达内置摄像头，被网友戏称“M0.9”。目前上市时间与售价尚未公布，童车“出圈”引发对品牌周边营销的热议。</div>
+          </article>
+          <article class="card" data-hot="9948718.0" data-rank="6" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 994.9万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7673943274239033380/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673943274239033380%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%8F%B2%E6%96%B9%E5%86%8D%E6%8F%90%E2%80%9C%E9%87%8D%E7%BD%AE%E2%80%9D%E4%B8%AD%E8%8F%B2%E5%85%B3%E7%B3%BB%E6%9C%89%E4%BD%95%E7%9B%AE%E7%9A%84%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673943274239033380" target="_blank" rel="noopener noreferrer">菲方再提“重置”中菲关系有何目的</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7673943274239033380/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673943274239033380%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%8F%B2%E6%96%B9%E5%86%8D%E6%8F%90%E2%80%9C%E9%87%8D%E7%BD%AE%E2%80%9D%E4%B8%AD%E8%8F%B2%E5%85%B3%E7%B3%BB%E6%9C%89%E4%BD%95%E7%9B%AE%E7%9A%84%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673943274239033380" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-36" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-36" hidden>菲律宾总统马科斯8月15日表示，计划“重置”对华关系，意在缓解南海紧张、防止误判升级为冲突，并释放愿重回对话的信号，提及中菲联合油气勘探的可能。但分析指出，菲在安全上仍深度依赖美国（如引进“堤丰”中导），所谓“重置”更像是策略变通，而非战略转向。</div>
+          </article>
+          <article class="card" data-hot="9001972.0" data-rank="7" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 900.2万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7674503628962627620/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674503628962627620%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9B%BE%E4%BA%8F%E6%8D%9F10%E4%BA%BF%E7%9A%84%E7%A9%BA%E5%9F%8E%E7%88%86%E6%94%B9%E5%90%8E%E6%BB%A1%E8%A1%80%E5%A4%8D%E6%B4%BB%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674503628962627620" target="_blank" rel="noopener noreferrer">曾亏损10亿的空城爆改后满血复活</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7674503628962627620/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674503628962627620%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9B%BE%E4%BA%8F%E6%8D%9F10%E4%BA%BF%E7%9A%84%E7%A9%BA%E5%9F%8E%E7%88%86%E6%94%B9%E5%90%8E%E6%BB%A1%E8%A1%80%E5%A4%8D%E6%B4%BB%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674503628962627620" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-37" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-37" hidden>张家界大庸古城曾因“人造空城”、四年累计亏损超10亿元广受质疑。经芒果超媒、电广传媒重整改造，于2026年7月10日焕新开街，打造好六街、怪市、手艺巷三大主题街区，首月客流突破80万人次、营收超1500万元，昔日空城凭借文旅融合实现“满血复活”。</div>
+          </article>
+          <article class="card" data-hot="8145321.0" data-rank="8" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 814.5万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7674771660993482249/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674771660993482249%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%8E%8B%E6%9B%BC%E6%98%B1%E7%91%9E%E5%85%B8%E5%A4%A7%E6%BB%A1%E8%B4%AF%E5%A5%B3%E5%8D%95%E5%A4%BA%E5%86%A0%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674771660993482249" target="_blank" rel="noopener noreferrer">王曼昱瑞典大满贯女单夺冠</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7674771660993482249/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674771660993482249%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%8E%8B%E6%9B%BC%E6%98%B1%E7%91%9E%E5%85%B8%E5%A4%A7%E6%BB%A1%E8%B4%AF%E5%A5%B3%E5%8D%95%E5%A4%BA%E5%86%A0%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674771660993482249" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-38" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-38" hidden>北京时间8月17日凌晨，WTT欧洲大满贯瑞典站女单决赛，王曼昱以4比2战胜队友王艺迪，夺得女单冠军。这是她本站第二冠（此前女双登顶），国乒女线表现稳健；相比之下男单全线低迷。王曼昱稳扎稳打的关键分把握，赢得球迷与业界一致好评。</div>
+          </article>
+          <article class="card" data-hot="7370192.0" data-rank="9" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 737.0万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7674460027406798362/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674460027406798362%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%83%96%E4%B8%9C%E6%9D%A5%E5%B0%86%E9%97%AD%E9%97%A8%E8%80%81%E5%BA%9728%E4%B8%AA%E6%94%B6%E9%93%B6%E5%8F%A3%E6%8E%92%E9%95%BF%E9%BE%99%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674460027406798362" target="_blank" rel="noopener noreferrer">胖东来将闭门老店28个收银口排长龙</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7674460027406798362/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674460027406798362%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%83%96%E4%B8%9C%E6%9D%A5%E5%B0%86%E9%97%AD%E9%97%A8%E8%80%81%E5%BA%9728%E4%B8%AA%E6%94%B6%E9%93%B6%E5%8F%A3%E6%8E%92%E9%95%BF%E9%BE%99%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7674460027406798362" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-39" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-39" hidden>8月7日，胖东来创始人于东来直播称许昌生活广场店将于2026年12月关闭。8月15日实拍显示，该店人声鼎沸，1至28号收银口大排长龙，不少顾客专程自驾前来“最后打卡”。一家即将闭店的商超仍被如此信赖，折射出胖东来多年积累的客户粘性与独特口碑。</div>
+          </article>
+          <article class="card" data-hot="6668825.0" data-rank="10" data-platform="今日头条" style="--c:#f04142">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">今日头条</span>
+              <span class="hot" title="热度指数">🔥 666.9万</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.toutiao.com/trending/7673846664507736105/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673846664507736105%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%93%E5%AE%B6%EF%BC%9A%E9%9D%96%E5%9B%BD%E7%A5%9E%E7%A4%BE%E6%98%AF%E2%80%9C%E6%88%98%E7%8A%AF%E7%A5%9E%E7%A4%BE%E2%80%9D%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673846664507736105" target="_blank" rel="noopener noreferrer">专家：靖国神社是“战犯神社”</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.toutiao.com/trending/7673846664507736105/?category_name=topic_innerflow&amp;event_type=hot_board&amp;log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227673846664507736105%22%2C%22hot_board_impr_id%22%3A%2220260817082312F9730B3C337E08DC63E7%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%93%E5%AE%B6%EF%BC%9A%E9%9D%96%E5%9B%BD%E7%A5%9E%E7%A4%BE%E6%98%AF%E2%80%9C%E6%88%98%E7%8A%AF%E7%A5%9E%E7%A4%BE%E2%80%9D%22%7D&amp;rank=&amp;style_id=40132&amp;topic_id=7673846664507736105" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-40" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-40" hidden>8月15日日本战败投降日，首相高市早苗向靖国神社供奉祭品，多名阁僚前往参拜。专家撰文指出，靖国神社供奉14名二战甲级战犯，是日本军国主义象征，实为“战犯神社”。中方已提出严正交涉，强调有关行径亵渎历史正义、挑衅战后国际秩序，国际社会应共同反对历史修正主义。</div>
+          </article>
+          </div>
+        </section>
+        <section class="psec" data-platform="哔哩哔哩" style="--c:#fb7299">
+          <div class="psec-h">
+            <span class="dot"></span>哔哩哔哩 热榜
+            <span class="psec-count">TOP 10</span>
+          </div>
+          <div class="grid">
+          <article class="card" data-hot="3059293.0" data-rank="1" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">1</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 305.9万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV18Tby67EG9" target="_blank" rel="noopener noreferrer">自行车被偷后，保安在监控里发现了霸王龙？#SpecialForAAIFF【AI全民制作人】</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV18Tby67EG9" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-41" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-41" hidden>「超级神奇的木偶」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="2518829.0" data-rank="2" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">2</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 251.9万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1JLgp6oEAs" target="_blank" rel="noopener noreferrer">热播剧《来自河南的你 》</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1JLgp6oEAs" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-42" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-42" hidden>「凨胤言生」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="5266701.0" data-rank="3" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">3</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 526.7万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1fTb16KEDk" target="_blank" rel="noopener noreferrer">飞机安检模拟器</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1fTb16KEDk" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-43" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-43" hidden>「鲤鱼Ace」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="3460686.0" data-rank="4" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">4</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 346.1万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1Z9gT61EnM" target="_blank" rel="noopener noreferrer">《一切正常｜異常なし》MV：当所有日本人都说没问题 那问题大了</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1Z9gT61EnM" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-44" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-44" hidden>「即兴演奏家」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="1858988.0" data-rank="5" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">5</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 185.9万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1N8gG6qEpm" target="_blank" rel="noopener noreferrer">口技表演《定海神珍铁》</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1N8gG6qEpm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-45" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-45" hidden>「BBoxer酋长」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="1038045.0" data-rank="6" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">6</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 103.8万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1tMby62EC4" target="_blank" rel="noopener noreferrer">什么⁉Bye bye baby blue翻译竟然是错的✖！</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1tMby62EC4" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-46" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-46" hidden>「毛毛qi」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="2278268.0" data-rank="7" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">7</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 227.8万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1Mjgg6BEjx" target="_blank" rel="noopener noreferrer">【独家】牧神记 第96集 延康双雄</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1Mjgg6BEjx" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-47" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-47" hidden>「哔哩哔哩国创」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="454925.0" data-rank="8" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">8</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 45.5万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1gMgM6KEUM" target="_blank" rel="noopener noreferrer">80后老登，1人，4个月，113分钟AI长片电影《出马仙镇东北》【AI全民制作人】</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1gMgM6KEUM" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-48" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-48" hidden>「咩咩是个迷」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="1213277.0" data-rank="9" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">9</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 121.3万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1xubk6MEvV" target="_blank" rel="noopener noreferrer">【隂十娘】第52集</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1xubk6MEvV" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-49" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-49" hidden>「Seven_七哥」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          <article class="card" data-hot="1361419.0" data-rank="10" data-platform="哔哩哔哩" style="--c:#fb7299">
+            <div class="card-top">
+              <span class="num">10</span>
+              <span class="chip">哔哩哔哩</span>
+              <span class="hot" title="热度指数">🔥 136.1万播放</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.bilibili.com/video/BV1azgP6bEaA" target="_blank" rel="noopener noreferrer">财神窦占龙 第1集 家宴【8月国创】</a>
+            </h3>
+            <div class="card-actions">
+              <a class="read" href="https://www.bilibili.com/video/BV1azgP6bEaA" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+              <button type="button" class="read sum-btn" data-target="hs-50" aria-expanded="false">展开摘要</button>
+            </div>
+            <div class="summary" id="hs-50" hidden>「哔哩哔哩国创」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情</div>
+          </article>
+          </div>
+        </section>
+        </div>
+  </main>
+  <footer>
+    数据来源：微博 / 百度 / 今日头条 / 知乎 / 哔哩哔哩 公开热榜 · 每平台展示其 24 小时内综合排名前 10 条 ·
+    点击「阅读原文」跳转对应平台
+  </footer>
+  <script>
+  (function(){
+    // 单条摘要展开/收起
+    document.addEventListener('click', function(e){
+      var b = e.target.closest('.sum-btn'); if(!b) return;
+      var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+      var open = el.hasAttribute('hidden');
+      if(open){ el.removeAttribute('hidden'); b.textContent='收起摘要'; }
+      else { el.setAttribute('hidden',''); b.textContent='展开摘要'; }
+      b.setAttribute('aria-expanded', String(open));
+    });
+    // 一键展开/收起全部
+    var ea = document.querySelector('.expand-all');
+    if(ea){ ea.addEventListener('click', function(){
+      var collapsed = ea.getAttribute('data-state') === 'collapsed';
+      document.querySelectorAll('.summary').forEach(function(s){
+        if(collapsed) s.removeAttribute('hidden'); else s.setAttribute('hidden','');
+      });
+      document.querySelectorAll('.sum-btn').forEach(function(b){
+        b.textContent = collapsed ? '收起摘要' : '展开摘要';
+        b.setAttribute('aria-expanded', String(collapsed));
+      });
+      ea.setAttribute('data-state', collapsed ? 'expanded' : 'collapsed');
+      ea.textContent = collapsed ? '收起全部摘要' : '展开全部摘要';
+    }); }
+    // 分栏 / 平铺 切换
+    var wrap = document.getElementById('wrap');
+    document.querySelectorAll('.sort-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.sort-btn').forEach(function(x){ x.classList.remove('active'); });
+        btn.classList.add('active');
+        if(wrap) wrap.classList.toggle('flat', btn.getAttribute('data-view') === 'flat');
+      });
+    });
+  })();
+  </script>
+</body></html>

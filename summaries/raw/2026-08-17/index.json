@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b",
+    "title": "Qwen 3.8 27B 表现出色，但默认推理强度过高导致过度思考",
+    "source": "Simon Willison 博客",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/the-hyping-of-anthropics-ipo",
+    "title": "The hyping of Anthropic’s IPO",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 2
+  }
+]
