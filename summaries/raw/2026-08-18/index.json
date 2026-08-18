@@ -1,0 +1,182 @@
+[
+  {
+    "url": "https://cursor.com/changelog/origin-code-hosting",
+    "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/announcements/activity-dashboard",
+    "title": "OpenRouter 推出 Activity 仪表盘与 Analytics API：按智能体、模型、请求追踪 AI 使用成本",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/tutorials/image-generation",
+    "title": "OpenRouter 图像生成 API：代码优先的接入教程",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.langchain.com/blog/langchain-agentcore-payments",
+    "title": "AgentCore Payments 中间件为 LangChain 智能体提供 API 支付能力",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+    "title": "Claude Code v2.1.234 发布：新增项目目录名变量与 GitLab MR 徽章，修复多项安全与稳定性问题",
+    "source": "Claude Code：GitHub Releases（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blogs.nvidia.com/blog/securing-the-infrastructure-of-intelligence",
+    "title": "NVIDIA 与 SB Energy 合作锁定俄亥俄州 PORTS-Pike 园区电力容量，OpenAI 将入驻",
+    "source": "NVIDIA Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.ithome.com/0/990/812.htm",
+    "title": "A 股迎来“人形机器人第一股”，宇树科技官宣 8 月 19 日科创板上市",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
+    "title": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+    "title": "OpenAI 为 14 个独立项目提供资助，推动智能时代经济机遇与韧性研究",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "019.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery",
+    "title": "PhotoScan：用智能手机照片估算胰岛素抵抗，精度接近DXA",
+    "source": "Google Research：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/the-defenders-window",
+    "title": "OpenAI 如何用前沿智能加固自身防御：The Defender’s Window",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.librarian.net/notoai",
+    "title": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit",
+    "title": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体",
+    "source": "Google Developers Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens",
+    "title": "开源模型生态的未来：Nvidia 押注“教所有人炼 token”",
+    "source": "Nathan Lambert：Interconnects（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+    "title": "同一集群利用率提升 33 个百分点：改变的是分配顺序",
+    "source": "Hugging Face：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://claude.com/blog/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents",
+    "title": "ABC Legal 如何借助 Claude Managed Agents 让每位员工成为构建者",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.tomtunguz.com/test-time-training-impact",
+    "title": "当模型持续学习：测试时训练如何改变 AI 的记忆与成本",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "017.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.lmsys.org/blog/2026-08-17-advanced-cuda-graph",
+    "title": "SGLang 重构 CUDA Graph 支持，Breakable CUDA Graph 成 prefill 默认方案",
+    "source": "LMSYS：Blog（Chatbot Arena 团队）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "018.txt",
+    "ok": true,
+    "round": 1
+  }
+]

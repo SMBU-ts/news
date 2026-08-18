@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-18</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-18</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818V0280V00?scene=news-skill" target="_blank" rel="noopener">为悼念朱镕基同志 北京天安门下半旗志哀</a></div>
+                <div class="item-summary">为悼念朱镕基同志 北京天安门下半旗志哀（来源：中国新闻社）</div>
+                <div class="item-meta">中国新闻网 · 2026-08-18 07:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0ANK900?scene=news-skill" target="_blank" rel="noopener">不调休，最新放假通知</a></div>
+                <div class="item-summary">根据国务院办公厅发布的《关于2026年部分节假日安排的通知》。 中秋节放假： 9月25日(周五)—9月27日(周日)共3天，不调休! 小提示： 中秋、国庆两个假期仅间隔3个工作日，如果把这三天假请下来，就能把中秋和国庆无缝衔接，拼出一个。 9月25日到10月7日的13天超长假期，是不是狠狠期待住了! （来源：中国政府网）更多精彩资...</div>
+                <div class="item-meta">极目新闻 · 2026-08-17 22:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A082TI00?scene=news-skill" target="_blank" rel="noopener">好评中国｜经济新图景：文旅消费澎湃经济发展新动能</a></div>
+                <div class="item-summary">文旅市场，从来都是观察中国经济温度的一扇窗口。2026 年，作为“十五五”规划的开局之年，神州大地上涌动的出游热潮，早已不是简单的假日人潮，而是内需持续释放、民生不断改善、产业迭代升级交织而成的时代图景。亿万群众用脚步投票，把向往诗与远方的生活诉求，转化为实实在在的消费动能，为国民经济平稳向好注入源源不...</div>
+                <div class="item-meta">国际在线 · 2026-08-17 15:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0C2KH00?scene=news-skill" target="_blank" rel="noopener">多省公开征集村霸、沙霸、矿霸、街霸等涉黑涉恶线索（附举报方式）</a></div>
+                <div class="item-summary">近日，党中央就深化扫黑除恶专项斗争作出部署，明确从今年7月开始，利用1年左右时间，在全国范围开展深化扫黑除恶专项斗争。截至目前，湖南、福建、河南、黑龙江、宁夏、广东、山东、辽宁等多地已公开征集涉黑涉恶线索，开放线索受理渠道。河南近日，河南省公开征集黑恶犯罪线索，征集范围及举报方式如下广东近日，广...</div>
+                <div class="item-meta">中国新闻网 · 2026-08-17 20:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0B3RY00?scene=news-skill" target="_blank" rel="noopener">商场外墙广告“C位”让给科学家：从山东开始，内蒙古、安徽多地跟进</a></div>
+                <div class="item-summary">近日，山东菏泽、淄博等多地商圈将价格不菲的商业广告撤下，挂上钱学森、邓稼先、钱三强、郭永怀等功勋科学家的巨幅公益海报，引发舆论关注。澎湃新闻记者注意到，除了山东之外，内蒙古呼伦贝尔、安徽合肥等地近期也有商圈开始将商业空间的“C位”让给科学家，成为当地市民的打卡点。有内蒙古网友在视频媒体平台发消息称，...</div>
+                <div class="item-meta">澎湃新闻 · 2026-08-17 19:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A08NPP00?scene=news-skill" target="_blank" rel="noopener">连续滚动开发，中国“核电大省”要发力了！民营企业也将扮演重要角色，核电进入新一轮增长期</a></div>
+                <div class="item-summary">“核电发展成绩举世瞩目”。 国家能源局日前发布的《中国核电发展报告2026》透露，截至2025年底，在运和核准在建核电机组共112台，装机规模1.25亿千瓦，总规模居世界首位，在建规模持续保持全球第一。 广东福建各拿“第一” 这100余台机组，沿着海岸线排开。 从辽东半岛到北部湾，主要分布在8个省份：辽宁、山东、江苏、浙...</div>
+                <div class="item-meta">中国新闻网 · 2026-08-17 19:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0AA9U00?scene=news-skill" target="_blank" rel="noopener">合格率不足5%暗藏健康隐患！9块9包邮的手机壳还敢买吗</a></div>
+                <div class="item-summary">近日，央视频《财经调查》的一则暗访报道将手机壳这一日常消费品推上了舆论风口。报道指出，市面上部分宣称“食品级”的平价软质手机壳，疑似采用废弃针管、输液管等医疗垃圾搭配劣质再生塑料加工而成，经简单粉碎后混入劣质再生塑料注塑成型，苯含量超标、铅超标最高达1550倍，塑化剂可经手汗渗入皮肤。消息一出，相关话题...</div>
+                <div class="item-meta">界面新闻 · 2026-08-17 18:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0BFB900?scene=news-skill" target="_blank" rel="noopener">一线城市二手房价格连续5个月上涨 广州涨幅居首、上海紧随</a></div>
+                <div class="item-summary">财联社8月17日讯（记者 李洁）7月的房地产市场呈现出调整与修复并行的状态。国家统计局数据显示，7月份70个大中城市中，新建商品住宅价格环比上涨的城市17个，较6月份的20个减少3个；二手住宅价格环比上涨的城市有5个，较6月份的9个减少4个。从上涨城市数量来看，房价上涨并未呈现普遍扩散，而更多集中在上海、广州、深圳等...</div>
+                <div class="item-meta">财联社 · 2026-08-17 19:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0829800?scene=news-skill" target="_blank" rel="noopener">特朗普指示大幅削减美韩军演，中国是否支持美国与朝鲜恢复对话，中方：维护朝鲜半岛和平稳定，推动半岛问题政治解决，符合各方的共同利益</a></div>
+                <div class="item-summary">8月17日，外交部发言人林剑主持例行记者会。 彭博社记者提问，美国总统特朗普表示，他已指示五角大楼大幅削减美韩联合军事演习，他表示，演习的高昂成本及他与朝鲜领导人金正恩的良好关系，是促成这....</div>
+                <div class="item-meta">政知见 · 2026-08-17 15:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0AN9J00?scene=news-skill" target="_blank" rel="noopener">少吃肥肉就能远离脂肪肝了？</a></div>
+                <div class="item-summary">这是一种常见误区。图库版权图片，转载使用可能引发版权纠纷脂肪肝的发生并不是单纯由吃油太多或吃肥肉造成的，它的根源在于整体饮食结构与能量摄入失衡。一项发表于《BMC 营养学》（BMC Nutrition）的系统综述汇总了 43 项研究（包括 27 项观察性研究和 16 项干预性试验），结果显示：真正与脂肪肝密切相关的，是西方化饮...</div>
+                <div class="item-meta">科学辟谣 · 2026-08-17 18:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A028AI00?scene=news-skill" target="_blank" rel="noopener">60天期限已到，特朗普威胁阿曼，伊朗称将“全面进攻”</a></div>
+                <div class="item-summary">当地时间8月17日，美国与伊朗6月达成的谅解备忘录所设60天谈判期限到期。就在双方结束战争的谈判陷入僵局之际，一名伊朗高级官员向路透社表示，伊朗将从防御转向“全面进攻”的军事姿态，并准备在外交努力失败后，对美国海上封锁采取军事行动。与此同时，美国总统特朗普表示，美国不寻求延长6月达成的临时协议。他还在接受...</div>
+                <div class="item-meta">观察者网 · 2026-08-18 07:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817V0D5J700?scene=news-skill" target="_blank" rel="noopener">剩菜剩饭直接喂猪违法？“泔水喂猪”被正式写入禁令，违规可处10万元以下罚款</a></div>
+                <div class="item-summary">剩菜剩饭直接喂猪违法？“泔水喂猪”被正式写入禁令，违规可处10万元以下罚款</div>
+                <div class="item-meta">直播海南 · 2026-08-17 22:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A01SM200?scene=news-skill" target="_blank" rel="noopener">雨带北移，一个“缺水”北方的新考验</a></div>
+                <div class="item-summary">2026年6月20日，新疆和田市遭遇强降水。视觉中国/图干涸数十年的河道恢复通水，荒芜的石头山上开始长出绿草……这些现象正发生在原本干旱的北方地区。雨水开始更频繁、更剧烈地光顾北方大地，带来惊人的湿润天气。暴雨也带来预料之外的“麻烦”。受台风“白海豚”残流与冷空气结合影响，2026年8月10日至12日，河南遭遇大范...</div>
+                <div class="item-meta">南方周末 · 2026-08-18 04:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A026K100?scene=news-skill" target="_blank" rel="noopener">反转！珍妮并未同意出售湖人股权：未经她许可任何交易均无法生效</a></div>
+                <div class="item-summary">北京时间8月18日，洛杉矶湖人的球队管理者珍妮・巴斯反对家族所持湖人股权的潜在出售方案，这与ESPN早前报道所称巴斯家族决定将股份出售给鲍勃・艾格和约书亚・库什纳的消息形成冲突。据悉，巴斯六兄妹投票....</div>
+                <div class="item-meta">罗说NBA · 2026-08-18 06:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A01EDI00?scene=news-skill" target="_blank" rel="noopener">经历变局，从零开始：放下身段的赴港“高才”</a></div>
+                <div class="item-summary">香港一处建筑工地上，年过四十的高旭峰正和年轻工人一起做杂活。没人会想到，高旭峰曾是内地年薪不菲的工程项目高管，为换一条人生赛道辞掉工作，举家赴港。这样的人生转向，正发生在不少内地中年职场人身上。2026年以来，香港身份相关政策持续释放信号。国家出入境管理局最新明确规定，自7月1日起，高才通、优才计划持有人...</div>
+                <div class="item-meta">南方周末 · 2026-08-18 07:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A029EM00?scene=news-skill" target="_blank" rel="noopener">湖北一商人承诺捐款10万元给家乡修路又反悔，法院：不得撤销，判决当事人足额支付10万元捐赠款</a></div>
+                <div class="item-summary">“捐款”本属自愿，倘若不自愿了，是否可以随意变卦？ 近日，湖北省利川市人民法院柏杨坝法庭审结一起公益事业捐赠合同纠纷案，判决承诺捐款10万元给家乡修路又反悔的当事人足额支付10万元捐赠款，....</div>
+                <div class="item-meta">扬眼 · 2026-08-18 07:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0A05L00?scene=news-skill" target="_blank" rel="noopener">BBA集体大降价：宝马5系跌至28万</a></div>
+                <div class="item-summary">“官方指导价为36.8万元的宝马525Li，采用分期付款裸车优惠价格为28万元左右。而过去几年宝马3系落地价格为40万元，如今二十多万即可提车，这主要是官方售价整体下调，目前3系起售价仅为25.8万元。”近日，宝马北京一家经销商门店销售经理王于告诉记者。 伴随着国内汽车市场竞争格局的变化，传统豪华车市场迎来严峻考验。一...</div>
+                <div class="item-meta">第一财经 · 2026-08-17 23:47</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0BJV500?scene=news-skill" target="_blank" rel="noopener">iPhone 17 Pro使用第17天充电口处自燃，要求换新被拒；Apple客服：回收数据线检测；平台：人为损坏，无法免费维修</a></div>
+                <div class="item-summary">女子花7499元从平台自营店购入iPhone 17 Pro，第17天手机在充电时，充电接口处发生自燃。 截至8月12日，平台方客服称，事故原因检测为人为损坏，不在质保内，因此无法提供免费维....</div>
+                <div class="item-meta">大风新闻 · 2026-08-17 19:47</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260817A0864J00?scene=news-skill" target="_blank" rel="noopener">美国最深的恐惧</a></div>
+                <div class="item-summary">作者 | 李少威 编辑 | 阿树 当地时间7月27日，美国科技媒体《The Information》援引知情人士消息称，中国已启动国产浸没式深紫外光刻机（DUV）的量产工作。报道....</div>
+                <div class="item-meta">南风窗 · 2026-08-17 21:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A025LF00?scene=news-skill" target="_blank" rel="noopener">民调显示特朗普支持率创第二任期内新低</a></div>
+                <div class="item-summary">当地时间8月17日，路透社与益普索集团发布的一项民意调查结果显示，美国总统特朗普的支持率降至33%，创下其第二任期内新低。民调显示，64%的美国人不认可特朗普在白宫的表现，约80%的美国人预计美国和伊朗之间的战事“将会持续很长时间”。本次调查在全美以线上方式进行，收集了1166名美国成年人的反馈。（央视记者 许弢）...</div>
+                <div class="item-meta">央视新闻 · 2026-08-18 02:47</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-18 08:21</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

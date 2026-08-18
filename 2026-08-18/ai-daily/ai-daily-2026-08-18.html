@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-08-18</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 8 月 18 日 · 星期二</h1>
+      <div class="sub">共 18 条 · 生成于 北京时间 2026 年 08 月 18 日 08:00 · 数据覆盖 2026-08-17 ~ 2026-08-18</div>
+      <div class="stats">
+        <div class="stat"><div class="n">18</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">0</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">5</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">4</div><div class="l">行业动态</div></div><div class="stat"><div class="n">1</div><div class="l">论文研究</div></div><div class="stat"><div class="n">8</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 0</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 5</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 4</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 1</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 8</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">0</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">5</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">4</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">1</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">8</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">5</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">1</span>
+            <span class="chip" style="--c:#10b981">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://cursor.com/changelog/origin-code-hosting" target="_blank" rel="noopener noreferrer">Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案</a>
+          </h3>
+          <p class="card-sum">Cursor 今日起向所有付费计划用户开放 Origin 代码托管的早期测试版，提供仓库、拉取请求、代码浏览及 Git…</p>
+          <div class="card-actions">
+            <a class="read" href="https://cursor.com/changelog/origin-code-hosting" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Cursor 宣布推出 Origin 代码托管服务，作为 GitHub 的替代方案，即日起向所有付费方案用户逐步开放早期 Beta 版。Origin 首批提供代码仓库、PR、代码浏览与 GitHub 同步等核心功能，并支持将 GitHub 仓库连接至 Cursor 实现双向同步：代码与 PR 的评论、表情回应实时互通。每个代码仓库均内置智能体，可回答问题、修改代码、更新 PR 或推送分支。此外，Cursor 正构建应用生态，已接入 Vercel、Depot 与 Buildkite，为 PR 提供预览部署和 CI 能力。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">2</span>
+            <span class="chip" style="--c:#10b981">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/announcements/activity-dashboard" target="_blank" rel="noopener noreferrer">OpenRouter 推出 Activity 仪表盘与 Analytics API：按智能体、模型、请求追踪 AI 使用成本</a>
+          </h3>
+          <p class="card-sum">OpenRouter 发布 Activity 仪表盘和 beta Analytics API，可按智能体、模型、请求维…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/announcements/activity-dashboard" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>OpenRouter 推出 Activity 仪表盘与 Beta 版 Analytics API，帮助企业按智能体、模型、请求三个维度分析 AI 使用成本。仪表盘总览页提供总支出、请求量、Token 量、缓存命中率及每百万 Token 综合成本等指标，并支持趋势分析、自定义视图与下钻到单条请求。所有数据均可通过 Analytics API 读取，用户可将智能体指向 openrouter-analytics 技能，在终端快速查询或接入自有看板。此外还包含护栏页，用于监控提示注入与敏感信息拦截。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/tutorials/image-generation" target="_blank" rel="noopener noreferrer">OpenRouter 图像生成 API：代码优先的接入教程</a>
+          </h3>
+          <p class="card-sum">OpenRouter 推出专用图像生成 API，通过统一请求格式和单一密钥即可调用多个提供商的图像模型。开发者向 PO…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/tutorials/image-generation" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>OpenRouter 发布图像生成 API 教程，用统一请求格式和单一密钥即可调用多个图像模型，解决多服务商端点、数据格式与计费方式不一致的问题。核心接口为 POST /api/v1/images，缓冲响应将生成的图片放在 data[0].b64_json 中，解码后即可保存为本地文件；兼容模型还支持通过 input_references 传入参考图。教程提供 Python 与 JavaScript 可运行示例，并可通过 GET /api/v1/images/models 在运行时发现支持图像的模型及其参数。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">LangChain：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.langchain.com/blog/langchain-agentcore-payments" target="_blank" rel="noopener noreferrer">AgentCore Payments 中间件为 LangChain 智能体提供 API 支付能力</a>
+          </h3>
+          <p class="card-sum">AgentCore Payments 中间件让 LangChain 智能体以确定性会话预算支付 API 费用。该中间件…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.langchain.com/blog/langchain-agentcore-payments" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>LangChain 宣布智能体现在可通过 Amazon Bedrock AgentCore Payments 中间件安全地进行支付，使付费 API 的交易逻辑从各工具包装器中下沉到基础设施层。消费上限由 AgentCore 在每笔交易前强制执行，而非依赖模型提示词，即使智能体被攻破上限依然有效。LangSmith 会记录智能体购买了什么及其推理过程，支持事后审计，并可在上线前用评测验证。该能力面向增长中的智能体经济，让会话级预算成为确定性的支付约束。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Claude Code：GitHub Releases（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.234" target="_blank" rel="noopener noreferrer">Claude Code v2.1.234 发布：新增项目目录名变量与 GitLab MR 徽章，修复多项安全与稳定性问题</a>
+          </h3>
+          <p class="card-sum">Claude Code v2.1.234 新增可选 CLAUDE_CODE_PROJECT_DIR_NAME 环境变量…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.234" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Claude Code 发布 v2.1.234 版本。新增可选的 CLAUDE_CODE_PROJECT_DIR_NAME 环境变量，允许为每会话配置目录指定简短项目名；新增 selection:clear 键绑定用于清除文本选择。状态栏新增 GitLab 合并请求徽章，配置 glab CLI 后显示 MR 的草稿、待处理或通过状态。当 claude.ai 用量限制重置时会自动继续会话。安全方面，远程文件读取、会话恢复、CLAUDE.md 引入等路径现在拒绝 Windows NT 命名空间路径，进一步加固凭据泄露防护。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">6</span>
+            <span class="chip" style="--c:#f59e0b">NVIDIA Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blogs.nvidia.com/blog/securing-the-infrastructure-of-intelligence" target="_blank" rel="noopener noreferrer">NVIDIA 与 SB Energy 合作锁定俄亥俄州 PORTS-Pike 园区电力容量，OpenAI 将入驻</a>
+          </h3>
+          <p class="card-sum">NVIDIA 宣布与 SB Energy 合作，锁定俄亥俄州 PORTS-Pike 科技园区的电力容量（LPS）以独家…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blogs.nvidia.com/blog/securing-the-infrastructure-of-intelligence" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>英伟达 CEO 黄仁勋发文称，公司正与 SB Energy 合作，锁定俄亥俄州 Portsmouth 的 PORTS-Pike 科技园区的土地、电力和厂房容量以承载英伟达算力，OpenAI 将作为租户。该园区初始部署预计提供 4.25 吉瓦 AI 工厂容量，每代系统约对应 150 万块 GPU、1500 亿至 2000 亿美元收入，20 年内可支持多代升级。英伟达承担约 4 吉瓦、20 年期的部分租约与电力付款担保。OpenAI 面向 2030 年的英伟达算力承诺约 12 吉瓦，可扩展至 16 吉瓦，价值约 6000 亿美元。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">7</span>
+            <span class="chip" style="--c:#f59e0b">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/990/812.htm" target="_blank" rel="noopener noreferrer">A 股迎来“人形机器人第一股”，宇树科技官宣 8 月 19 日科创板上市</a>
+          </h3>
+          <p class="card-sum">宇树科技宣布股票将于 2026 年 8 月 19 日在科创板上市，发行价 150.80 元/股，对应市值约 609.9…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/990/812.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>宇树科技官宣公司股票将于 2026 年 8 月 19 日在上海证券交易所科创板上市，成为 A 股“人形机器人第一股”。发行价定为 150.80 元/股，对应市值约 609.93 亿元，发行市盈率 219.23 倍，远高于行业平均的 38.56 倍；本次拟公开发行 4044.64 万股，预计募资总额约 60.99 亿元，战略配售对象包括社保基金、深度求索等。募资将重点投向智能机器人模型研发、本体研发等四大项目。2025 年公司营收 16.99 亿元、净利润 2.78 亿元。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">8</span>
+            <span class="chip" style="--c:#f59e0b">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility" target="_blank" rel="noopener noreferrer">404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁</a>
+          </h3>
+          <p class="card-sum">404 Media 通过在一本珍本图书中放置追踪设备，首次揭露亚马逊未公开的购书行动：批量购入大量书籍，扫描用于 AI…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>科技媒体 404 Media 调查发现，亚马逊正在批量采购图书、扫描后用于 AI 训练数据，并在此过程中销毁图书。记者在一批珍本图书中放置追踪设备，最终追踪到亚马逊位于拉斯维加斯的 VGT3 仓库。据该仓库员工称，他们的工作就是接收大量纸质书，切掉书脊以便更快扫描，纸张随后被销毁。该仓库团队的标志是一只手持书本、龇牙的恐龙。这一此前未被报道的购书扫描运作由此曝光。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">9</span>
+            <span class="chip" style="--c:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/new-policy-ideas-for-the-intelligence-age" target="_blank" rel="noopener noreferrer">OpenAI 为 14 个独立项目提供资助，推动智能时代经济机遇与韧性研究</a>
+          </h3>
+          <p class="card-sum">OpenAI 宣布向 14 个由独立组织主导的项目提供总计 100 万美元资金及最高 100 万美元 API 额度，以…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/new-policy-ideas-for-the-intelligence-age" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>OpenAI 宣布向 14 个独立组织牵头的项目提供资助，以促进智能时代的经济机会与社会韧性，兑现今年 4 月发布《智能时代的产业政策》时作出的承诺。OpenAI 表示，ChatGPT 全球用户已达 10 亿，覆盖各年龄段与收入水平；但技术普及只是问题的一半，AI 最终惠及多数人还是少数人，取决于社会如何部署与分配其收益。公司认为，政策应对应与技术变革同样雄心勃勃，呼吁提出新思路而非仅调整现有政策，且这些选择不应由科技公司单独做出。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">10</span>
+            <span class="chip" style="--c:#8b5cf6">Google Research：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery" target="_blank" rel="noopener noreferrer">PhotoScan：用智能手机照片估算胰岛素抵抗，精度接近DXA</a>
+          </h3>
+          <p class="card-sum">Google Research 推出 PhotoScan，一种从智能手机 2D 照片直接估算三维身体成分的深度学习框架…</p>
+          <div class="card-actions">
+            <a class="read" href="https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>Google Research 推出 PhotoScan，一个可从智能手机 2D 照片直接估算三维身体成分的深度学习框架。该研究旨在超越传统 BMI 指标，仅凭手机拍摄的照片即可估算胰岛素抵抗等心血管代谢风险，精度接近双能 X 射线吸收法（DXA）这一金标准。相比需要专用设备与临床扫描的 DXA，PhotoScan 有望以低成本、大规模的方式普及身体成分与代谢健康评估，为更广泛人群提供心血管疾病早期风险筛查的新途径。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">11</span>
+            <span class="chip" style="--c:#ec4899">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/the-defenders-window" target="_blank" rel="noopener noreferrer">OpenAI 如何用前沿智能加固自身防御：The Defender’s Window</a>
+          </h3>
+          <p class="card-sum">OpenAI 在 OpenAI-Hugging Face 事件后反思低估了模型真实网络攻击能力，正通过四大支柱强化自身…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/the-defenders-window" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>OpenAI 联合创始人 Greg Brockman 发文《The Defender&#x27;s Window》，分享公司如何用前沿智能加固自身安全防御。他指出，OpenAI-Hugging Face 事件是网络安全的分水岭，让人们窥见典型威胁行为者能力将如何在数月内演进。AI 模型正日益能够自动完成部分真实网络攻击，放大长期存在的安全漏洞；同时 AI 也给防御者提供了发现和修复漏洞的新手段。Brockman 呼吁各组织果断行动，提升安全基础并用 AI 强化团队，把握当下窗口期。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.librarian.net/notoai" target="_blank" rel="noopener noreferrer">如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南</a>
+          </h3>
+          <p class="card-sum">一份面向希望减少技术环境中侵入式 AI 的用户的操作指南，涵盖 Adobe Acrobat、Android/Gemin…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.librarian.net/notoai" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>图书馆网站 librarian.net 发布了一份指南，帮助用户在 Windows、Chrome、Edge、Firefox、Android 等环境中禁用或避免侵入式 AI。指南按应用分类给出操作步骤：关闭 Adobe Acrobat 的生成式 AI 偏好、卸载或停用 Android 的 Gemini、关闭苹果的 Apple Intelligence 与 Siri 学习功能、在 Chrome/Edge 的 flags 中禁用 AI 与 Copilot、使用 Firefox 148 的“阻止 AI 增强”选项等，并提供 noai.duckduckgo.com 等无 AI 搜索入口。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">13</span>
+            <span class="chip" style="--c:#ec4899">Google Developers Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit" target="_blank" rel="noopener noreferrer">用 Google 的 Agent Development Kit 构建零信任 AI 智能体</a>
+          </h3>
+          <p class="card-sum">Google 开源了基于 ADK 和 Gemini 的零信任客服与退货智能体示例，演示如何防御提示注入等攻击。该架构在…</p>
+          <div class="card-actions">
+            <a class="read" href="https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>Google 开源了一套基于 Agent Development Kit（ADK）与 Gemini 的零信任客服和退货智能体示例，演示如何在 AI 智能体架构中防御提示注入等攻击。该示例践行零信任原则，对智能体的每一步操作进行授权与校验，隔离不可信输入与外部工具调用，防止恶意提示诱导智能体泄露数据或执行越权操作。开发者可参考该架构，将身份验证、最小权限和持续验证等安全机制落地到基于 ADK 构建的智能体应用中，提升企业级 AI 应用的安全性。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">14</span>
+            <span class="chip" style="--c:#ec4899">Nathan Lambert：Interconnects（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens" target="_blank" rel="noopener noreferrer">开源模型生态的未来：Nvidia 押注“教所有人炼 token”</a>
+          </h3>
+          <p class="card-sum">开源模型生态正日益依赖 Nvidia 的资助，其已投入 260 亿美元推动近乎开源的模型开发，以扩大推理芯片需求。若此…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>AI 研究员 Nathan Lambert 撰文分析开源模型生态的未来，认为 Nvidia 正押注“教所有人炼 token”。文章对比了开源语言模型与 Linux 等开源软件的异同：带完整训练配方、数据与代码的开源模型更接近开源操作系统，而只有权重的开放权重模型更像可安装的软件版本。Nvidia 大力投资近乎开源的 Nemotron 模型，发布法律允许的全部数据与训练代码，希望构建一个人人都能打造 token 机器的世界，避免智能被少数公司垄断，从而催生对推理算力的海量需求。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">15</span>
+            <span class="chip" style="--c:#ec4899">Hugging Face：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/Dharma-AI/gpu-management-pt2" target="_blank" rel="noopener noreferrer">同一集群利用率提升 33 个百分点：改变的是分配顺序</a>
+          </h3>
+          <p class="card-sum">Hugging Face 构建了一个约束感知的 GPU 分配器，并在七个基准场景中与 FIFO 调度器对比。在相同硬件…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/Dharma-AI/gpu-management-pt2" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>Hugging Face 介绍其构建的约束感知 GPU 分配器，并在七个基准场景中与传统的 FIFO 调度器进行对比。结果显示，在相同硬件条件下，仅通过改变任务分配顺序，即可将集群利用率提升 33 个百分点。传统 FIFO 调度容易因任务对 GPU 型号、显存等约束不匹配而造成资源闲置；约束感知分配器则根据任务需求与可用硬件精准匹配，减少碎片化与排队等待，从而在不增加任何硬件成本的前提下，显著提升训练与推理集群的整体资源利用率。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">16</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents" target="_blank" rel="noopener noreferrer">ABC Legal 如何借助 Claude Managed Agents 让每位员工成为构建者</a>
+          </h3>
+          <p class="card-sum">ABC Legal 为 1,100 名员工部署 Claude Enterprise 后，通过 Claude Manag…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>ABC Legal 为全公司 1,100 名员工部署 Claude Enterprise，并借助 Claude Managed Agents 让每位员工都能成为“构建者”。通过托管智能体，非技术岗位的员工也能创建自动化流程与内部工具，将法律文书处理、流程管理等重复性工作交由智能体完成，从而提升整体运营效率。该案例展示了 Claude Managed Agents 在企业级部署中的落地路径：在统一管理与安全可控的前提下，让一线员工自主构建 AI 工具，把 AI 能力从 IT 部门扩展到整个组织。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">17</span>
+            <span class="chip" style="--c:#ec4899">Tomer Tunguz 博客（VC 分析）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.tomtunguz.com/test-time-training-impact" target="_blank" rel="noopener noreferrer">当模型持续学习：测试时训练如何改变 AI 的记忆与成本</a>
+          </h3>
+          <p class="card-sum">测试时训练（Test-time training）让模型在使用中持续更新权重，而非训练结束后冻结。相比标准 Trans…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.tomtunguz.com/test-time-training-impact" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>Tomasz Tunguz 以 GPS 学习绕开拥堵的固定捷径为类比，解释“测试时训练”（test-time training）：模型在回答每个提示时都会更新自身权重，而非像传统模型那样在训练结束时就“冻结”。这一机制使记忆从随上下文线性增长的 KV-cache 变为固定大小的权重，内存不再随对话长度增长，推理延迟恒定、速度可提升至 2.7 倍。代价是服务商需为每位用户维护一份个性化模型，算力与芯片需求上升。作者认为，测试时训练将改变 AI 的经济模型。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">18</span>
+            <span class="chip" style="--c:#ec4899">LMSYS：Blog（Chatbot Arena 团队）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.lmsys.org/blog/2026-08-17-advanced-cuda-graph" target="_blank" rel="noopener noreferrer">SGLang 重构 CUDA Graph 支持，Breakable CUDA Graph 成 prefill 默认方案</a>
+          </h3>
+          <p class="card-sum">SGLang 重构 CUDA Graph 支持，通过 runner/backend 接口拆分使不同捕获策略可复用。其社…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.lmsys.org/blog/2026-08-17-advanced-cuda-graph" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>SGLang 团队发文介绍其在 CUDA Graph 支持上的重构，围绕统一的 runner/backend 接口，让不同的图捕获策略可在各执行路径间复用。针对 prefill 路径，社区引入 Breakable CUDA Graph（BCG）并率先支持 FA4 与 FlashInfer 后端的全 CUDA Graph。BCG 现为 prefill 默认策略，用约四分之一的代码实现与 torch.compile 分段后端相同的效果，构图快 3.8 至 5.2 倍；实测 prefill 上 BCG 比 eager 快 1.70 倍，全捕获可达 1.93 倍。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>18</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>
