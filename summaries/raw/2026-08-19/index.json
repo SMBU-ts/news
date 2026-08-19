@@ -1,0 +1,162 @@
+[
+  {
+    "url": "https://huggingface.co/blog/multi-vector-encoder",
+    "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型",
+    "source": "Hugging Face：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.modular.com/blog/mojo-open-source",
+    "title": "Mojo 语言正式开源，编译器与工具链全面开放",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/claudeai/status/2089806039088517356",
+    "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理",
+    "source": "X：Claude (@claudeai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/chatgpt-for-teens",
+    "title": "OpenAI 推出 ChatGPT for Teens：面向青少年的学习体验与更强安全保护",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://cursor.com/blog/git-at-any-scale",
+    "title": "Git 大规模托管为何如此困难",
+    "source": "Cursor Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.com/blog/the-claude-science-product-guide",
+    "title": "Claude Science 产品指南：面向生命科学研究的 AI 工作台",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+    "title": "OpenAI 启动新计划，强化国家安全领域 AI 的民主监督",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+    "title": "Claude 如何加速蛋白质设计与分析化学研究",
+    "source": "Anthropic：Research（发表成果 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+    "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准",
+    "source": "Hugging Face：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/grpo-beyond-english",
+    "title": "GRPO 超越英语：多语言与非英语环境下的大规模研究",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/mvicad2-delays-dilations",
+    "title": "MVICAD2：引入延迟与膨胀的多视图独立成分分析",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
+    "title": "设计 AI 评测：先求清晰，再谈可视化",
+    "source": "Google AI：DEV 作者专属（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+    "title": "OpenAI 在“关键网络能力”时代放缓模型开发节奏",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.com/blog/ai-ci-cd-on-call",
+    "title": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.tomtunguz.com/birds-dont-fly-like-planes-neither-does-ai",
+    "title": "笔记本模型也能媲美云端前沿模型：Qwen3.8-27B 登顶智能指数",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://runwayml.com/news/customers/populous",
+    "title": "Populous 如何用 Runway 呈现全球标志性场馆设计",
+    "source": "Runway：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "016.txt",
+    "ok": true,
+    "round": 1
+  }
+]

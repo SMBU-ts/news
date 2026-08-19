@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-19</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-19</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0DR2600?scene=news-skill" target="_blank" rel="noopener">当前这一问题仍然突出！国务院全体会议，释放多个重要信息</a></div>
+                <div class="item-summary">8月17日，国务院总理李强主持召开国务院全体会议，强调要“扎实做好各项工作，努力完成全年经济社会发展目标任务”。 这是本届国务院召开的第十二次全体会议，也是2026年以来召开的第三次全体会....</div>
+                <div class="item-meta">政知见 · 2026-08-18 23:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260819A02S7V00?scene=news-skill" target="_blank" rel="noopener">朝中社发文谴责韩美“乙支自由护盾”联合军演</a></div>
+                <div class="item-summary">当地时间19日，朝中社发表评论文章，谴责美韩17日起进行“乙支自由护盾”大规模联合军演。评论指出，“乙支自由之盾”美韩联合军演对朝鲜及地区的安全环境构成直接威胁，使本就恶劣的朝鲜半岛局势再次濒临战争爆发的“临界点”。美韩联合军演一次比一次危险，其内容、形式、规模、训练方法等所有构成因素持续升级，目的是提高对朝战争演习的实战性，并且在朝鲜半岛和地区安全格局中占据优势。韩国不仅变成美韩军事同盟的...</div>
+                <div class="item-meta">央视新闻 · 2026-08-19 05:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A089QK00?scene=news-skill" target="_blank" rel="noopener">三个关键词勾勒前7个月国民经济高质量发展图景</a></div>
+                <div class="item-summary">17日，在国新办举行的新闻发布会上，国家统计局新闻发言人、总经济师、国民经济综合统计司司长付凌晖表示，1—7月份，生产供给平稳增长，就业物价总体稳定，外贸韧性持续彰显，新动能成长壮大，国民经济运行总体平稳，延续动能向新、结构向优发展态势。 今年以来，尽管外部环境复杂多变，国内经济运行面临不少挑战，但是我...</div>
+                <div class="item-meta">新华社新闻 · 2026-08-18 15:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0CWBJ00?scene=news-skill" target="_blank" rel="noopener">英首相被骗！特朗普发声</a></div>
+                <div class="item-summary">“我确信他只是出现了沟通失误……我已经和他谈过了。”据美国“政客”新闻网报道，美国总统特朗普当地时间17日用这样的话为英国首相伯纳姆出现的重大乌龙事件降温。此前，后者被曝光遭遇离奇骗局，与冒充白宫幕....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-08-18 21:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0CLYD00?scene=news-skill" target="_blank" rel="noopener">视频丨调航母救急、弹射 “回头”，美国海军面临怎样考验？</a></div>
+                <div class="item-summary">美军近期调派常驻亚太的“华盛顿”号核动力航空母舰赶往中东，替换在战位上的“林肯”号航母，此前“林肯”号被曝出舰员跳海未遂事件。美国海军拆东墙补西墙，致使西太平洋短暂出现航母空窗，这是美方在兵力捉襟见肘的情况下，依然对伊朗保持高压态势的无奈之举。坐拥11艘核动力航空母舰的美国海军，为何会出现可用兵力不足的情况？急需补充的新装备更是接连遭遇挫折，甚至出现技术倒退，多重困境之下，美国海军还能否维持...</div>
+                <div class="item-meta">央视新闻 · 2026-08-18 21:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260819A031SX00?scene=news-skill" target="_blank" rel="noopener">朱雀三号遥二发射成功，一级实现垂直回收</a></div>
+                <div class="item-summary">文丨李海伦编辑丨徐青阳北京时间2026年8月19日7时35分，朱雀三号重复使用遥二运载火箭从东风商业航天创新试验区发射升空。起飞约137秒后，火箭完成一二级分离，二子级继续飞行，将鸿擎科技研制的鸿鹄03星送入预定轨道。随后，一子级按预定程序返回，并于7时43分许在甘肃省民勤县朱雀三号着陆场坪完成软着陆。本次任务是我国首次实现运载火箭一子级着陆支腿方式回收，也是我国首次实现入轨级运载火箭一子级...</div>
+                <div class="item-meta">腾讯科技 · 2026-08-19 07:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260819A02WHH00?scene=news-skill" target="_blank" rel="noopener">机器人“超级月”，来了！</a></div>
+                <div class="item-summary">8月19日2026世界机器人大会将在北京经济技术开发区（亦庄）启幕大会主题“人机共生，产需共融”300+家企业参展 2000+件展品亮相规模规格再提档150余款新品首发本届大会首发新品突破150款，获得近30家国际机构支持，主论坛国际嘉宾占比达30%，规模规格再提档。与往年相比，三大“首次”值得关注：首次启用全新落成的智创馆。四大展馆（智创馆、智合馆、智造馆、智趣馆）总展览面积近5万平方米。...</div>
+                <div class="item-meta">红星新闻 · 2026-08-19 07:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260819A02Z5U00?scene=news-skill" target="_blank" rel="noopener">中式浪漫！2026全国七夕天气地图来了 这份约会指南请收好</a></div>
+                <div class="item-summary">中国天气网讯 “七夕今宵看碧霄，牵牛织女渡河桥。”今天（8月19日）是七夕佳节，你的约会计划安排好了吗？是携手共赏星河，还是漫步公园、观看演出？无论哪种选择，天气是否给力很关键。中国天气网推出202....</div>
+                <div class="item-meta">北京青年报官网 · 2026-08-19 07:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260819A02Z2N00?scene=news-skill" target="_blank" rel="noopener">青海海西州直辖区发生5.6级地震 暂无人员伤亡情况</a></div>
+                <div class="item-summary">据中国地震台网正式测定：北京时间2026年8月19日5时36分在青海海西州直辖区（北纬37.81度，东经95.63度）发生5.6级地震，震源深度10千米。此次地震震中距离海西州大柴旦行政委员会24公里，记者从大柴旦行委了解到，城区有明显震感，地震发生后当地立即组织应急、公安、消防、各镇等力量开展人员伤亡、房屋及基础设施受损等...</div>
+                <div class="item-meta">央视新闻 · 2026-08-19 07:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260812A0B7GN00?scene=news-skill" target="_blank" rel="noopener">理性吃瓜！热点事件网络围观必备素养</a></div>
+                <div class="item-summary">指尖轻点屏幕，碎片化信息流裹挟着真假讯息扑面而来，一段截图、一条短视频、一则匿名爆料，都能轻易左右大众判断。这是当下网络舆论最真实的写照。随手一次点击转发，盲目一回跟风站队，便会助推不实信息扩散，如同无形迷雾遮蔽事实全貌，误导大众认知。有的断章取义剪辑片段，歪曲事件完整经过；有的匿名编造小道爆料，刻...</div>
+                <div class="item-meta">北京日报客户端 · 2026-08-12 17:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0CMN200?scene=news-skill" target="_blank" rel="noopener">章子怡，一把套现3亿元</a></div>
+                <div class="item-summary">近日，上美股份（02145.HK）公告称，通过旗下全资子公司上海青道分别以3.05亿元对标价收购共青城大脚投资合伙企业（有限合伙）（下称大脚投资）持有的上海怡页23%股权，以约7943.96万元收购刘明持有的上海怡页6%股权。两笔合计29%的股权收购，总耗资约3.84亿元。值得注意的是，这笔交易里出现了知名演员章子怡的身影。公告...</div>
+                <div class="item-meta">新民晚报 · 2026-08-18 23:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0BZ5N00?scene=news-skill" target="_blank" rel="noopener">每人次亏5元：上海地铁酝酿21年来首次调价</a></div>
+                <div class="item-summary">2025年，上海地铁日均客流1018万人次。图为上海地铁一换乘处。视觉中国/图上海正在酝酿21年来对地铁票价的首次调整。2026年7月29日，上海市发展和改革委员会发布公告，计划9月7日召开调价听证会。上海地铁票价的上一次调整是在2005年：6公里内，由2元涨为3元，之后，每10公里增加1元。这一价格机制延续至今。广州市2026年度...</div>
+                <div class="item-meta">南方周末 · 2026-08-18 20:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0CV4B00?scene=news-skill" target="_blank" rel="noopener">迪奥全球公关总监车祸去世，年仅57岁，与丈夫同车遇难</a></div>
+                <div class="item-summary">当地时间8月17日，法国德塞夫勒省发生一起致命车祸。Christian Dior Couture全球公关总监Mathilde Favier在超车时与对向重型卡车相撞，不幸身亡，享年57岁。同车的丈夫....</div>
+                <div class="item-meta">娱乐嗑学家 · 2026-08-18 21:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0BORO00?scene=news-skill" target="_blank" rel="noopener">云南文旅厅通报“低价团”调查结果</a></div>
+                <div class="item-summary">云南省文化和旅游厅8月18日发布情况通报：在云南省文化和旅游厅统筹督导下，昆明、大理、丽江、西双版纳等4个州市文化和旅游部门依法依规对央视财经报道云南“低价团”相关问题涉事旅行社和导游立案调查。现通报如下。一、昆明市文化和旅游局对湖北爱旅纷途国际旅游有限公司昆明第一分公司涉嫌网络虚假宣传行为立案调查。经查属实。依据《中华人民共和国旅游法》第九十七条第一项之规定，拟对设立社湖北爱旅纷途国际旅游...</div>
+                <div class="item-meta">环球网 · 2026-08-18 19:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818V0CTMA00?scene=news-skill" target="_blank" rel="noopener">海南儋州一男子拦停警车后多次驾车撞击：已被警方控制</a></div>
+                <div class="item-summary">8月18日10时许，海南儋州发生一起突发事件。行车记录仪视频拍到一名男子驾车行驶至警车前方停下，下车试图拉拽警车车门未果，随后驾车多次撞击警车。事发后，该男子很快被现场控制，当地警方目前正对这一事件开展调查。</div>
+                <div class="item-meta">新京报我们视频 · 2026-08-18 21:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818V0CVUU00?scene=news-skill" target="_blank" rel="noopener">5名中国籍在押人员在柬埔寨金边监狱越狱未遂，借助绳索逃脱失败被抓</a></div>
+                <div class="item-summary">8月17日，5名中国籍在押人员凌晨试图从柬埔寨金边警察监狱越狱，未遂后被抓获。报道称，这些在押人员试图借助梯子和绳索越狱，但被值班看守人员制止并抓获。事件发生后，柬埔寨官员前往监狱实地检查，重点查看相关设施及安保系统。</div>
+                <div class="item-meta">世面 · 2026-08-18 21:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260819A02VDN00?scene=news-skill" target="_blank" rel="noopener">多国减持，美债抛售潮加剧</a></div>
+                <div class="item-summary">【环球时报特约记者 甄翔】美国国债抛售潮正加剧。当地时间8月17日，美国30年期国债收益率上涨约5个基点，至5.31%，创下2007年6月以来最高水平。10年期国债收益率也升至4.72%。彭博社等多家外媒分析认为，此次收益率飙升主要受到多重因素推动，包括美国政府不断扩大的财政赤字、大规模发行国债、受人工智能（AI）投资热潮推...</div>
+                <div class="item-meta">环球网 · 2026-08-19 06:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A07SCD00?scene=news-skill" target="_blank" rel="noopener">老板娘随口一句“帮我看下房”，男子独守深山老宅25年，开荒种地、养鸡鸭自给自足；老板娘回乡卖房惊讶才发现他还在：家人都以为他失踪了</a></div>
+                <div class="item-summary">8月18日，“四川男子在哈尔滨深山里守了20余年”的报道引发广泛关注。据四川日报报道，8月17日，63岁的李国友（化名）从内江市公安局东兴区分局平坦派出所民警手中接过户口簿，并在当地警方协助下办理了第二代身份证，拿到了临时身份证，终于圆了回家梦。这条回家的路，李国友走了39年。内江市公安局东兴区分局平坦派出所民...</div>
+                <div class="item-meta">指尖新闻沈阳晚报 · 2026-08-18 15:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A08YDR00?scene=news-skill" target="_blank" rel="noopener">造车12年只卖20辆，年薪1400万的贾跃亭，凭什么又融到了5个亿？</a></div>
+                <div class="item-summary">图源：视觉中国 作者 ｜ 温世君 编辑 ｜ 孙春芳 出品 ｜ 棱镜·腾讯小满工作室 “这类政策我们内部早就料到了，只是落地时间点比预想的提前了差不多半年。” ....</div>
+                <div class="item-meta">棱镜 · 2026-08-18 16:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260818A0CBBA00?scene=news-skill" target="_blank" rel="noopener">百万年薪华为“天才少年”离职卖玉米？本人：无关绩效，将赴瑞典深造</a></div>
+                <div class="item-summary">“百万年薪”与“天才少年”的光环之下，他选择了转身离开。8月7日，华为“天才少年”宁博宇在社交平台官宣离职，迅速引起关注，“是不是绩效不好被劝退”“是不是干不下去”的猜测也在网上蔓延。宁博宇在接受扬子晚报紫牛新闻记者采访时回应：离职无关绩效，更非被“体面辞退”，而是希望回归学术界、持续成长。他同时透露...</div>
+                <div class="item-meta">扬眼 · 2026-08-18 20:28</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-19 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

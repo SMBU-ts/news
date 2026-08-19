@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-08-19</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 8 月 19 日 · 星期三</h1>
+      <div class="sub">共 16 条 · 生成于 北京时间 2026 年 08 月 19 日 08:00 · 数据覆盖 2026-08-18 ~ 2026-08-19</div>
+      <div class="stats">
+        <div class="stat"><div class="n">16</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">0</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">6</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">1</div><div class="l">行业动态</div></div><div class="stat"><div class="n">4</div><div class="l">论文研究</div></div><div class="stat"><div class="n">5</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 0</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 6</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 1</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 4</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 5</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">0</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">6</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">1</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">4</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">5</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">6</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">1</span>
+            <span class="chip" style="--c:#10b981">Hugging Face：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/multi-vector-encoder" target="_blank" rel="noopener noreferrer">Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型</a>
+          </h3>
+          <p class="card-sum">Sentence Transformers v6.0 新增第四种模型类型 MultiVectorEncoder，可直接…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/multi-vector-encoder" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Hugging Face 发布 Sentence Transformers v6.0，新增第四种模型类型 MultiVectorEncoder，支持 ColBERT 风格的多向量表示。与传统单向量嵌入不同，多向量模型为每个 token 生成独立向量，通过后期交互（late interaction）实现更细粒度的语义匹配，在检索、重排序等任务中显著提升精度。Sentence Transformers 是 Hugging Face 主打的句子嵌入库，广泛用于语义搜索、聚类与信息检索，新版一并优化了训练与推理接口，便于用户在 ColBERT 类检索流水线中集成使用。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">2</span>
+            <span class="chip" style="--c:#10b981">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.modular.com/blog/mojo-open-source" target="_blank" rel="noopener noreferrer">Mojo 语言正式开源，编译器与工具链全面开放</a>
+          </h3>
+          <p class="card-sum">Mojo🔥 语言现已正式开源，采用 Apache 2.0 许可证（含 LLVM 例外），编译器、工具链及全部源码已发布…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.modular.com/blog/mojo-open-source" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>Mojo 编程语言宣布在 Apache 2.0 许可证（含 LLVM 例外）下完全开源，编译器、工具链及构建语言所需的全部代码已在 Modular 官方 GitHub 仓库开放。Mojo 定位为 AI 时代的系统级语言，旨在解锁 GPU、AI 加速器等先进算力。过去四年该语言采用开放社区、封闭编译器的模式，上周刚发布 1.0 版本（源码稳定），如今正式开放整个编译器与工具链。开发者可克隆仓库后用 Bazel 单命令构建编译器，标准库自 2024 年起已接受社区贡献，编译器与工具链则计划年底前开放贡献。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">X：Claude (@claudeai)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/claudeai/status/2089806039088517356" target="_blank" rel="noopener noreferrer">Claude 现已支持 Gmail 邮件与 Google Drive 文件管理</a>
+          </h3>
+          <p class="card-sum">Claude 现在可以在 Gmail 中发送邮件，并管理 Google Drive 中的文件。 让 Claude 回复…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/claudeai/status/2089806039088517356" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>Anthropic 宣布 Claude 现已支持 Gmail 邮件与 Google Drive 文件管理能力。用户可将 Claude 接入 Gmail，让其协助撰写、回复邮件，并能对 Google Drive 中的文件进行整理、检索与管理，从而把日常邮件与文档处理交给 AI 助手完成。此举将 Claude 的自动化能力从对话延伸至个人办公场景，进一步打通邮箱与云盘等高频工具，提升工作效率。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/chatgpt-for-teens" target="_blank" rel="noopener noreferrer">OpenAI 推出 ChatGPT for Teens：面向青少年的学习体验与更强安全保护</a>
+          </h3>
+          <p class="card-sum">OpenAI 发布 ChatGPT for Teens，为 13-17 岁用户自动启用，内置更强安全保护与家长控制。新…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/chatgpt-for-teens" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>OpenAI 发布 ChatGPT for Teens，面向 13-17 岁青少年用户，上线后自动启用。该版本内置更强的内容安全过滤与数据使用限制，并提供家长控制功能，帮助监护人了解并管理孩子的使用情况。OpenAI 强调其在面向未成年人的学习体验与安全保护之间取得平衡，让青少年能在受监管的环境中使用 AI 辅助学习、答疑与创作。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Cursor Blog</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://cursor.com/blog/git-at-any-scale" target="_blank" rel="noopener noreferrer">Git 大规模托管为何如此困难</a>
+          </h3>
+          <p class="card-sum">Git 的分布式设计使其大规模托管面临固有挑战：packfile 作为存储和网络传输的基础单元，在服务器端成为可用性与…</p>
+          <div class="card-actions">
+            <a class="read" href="https://cursor.com/blog/git-at-any-scale" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Cursor 博客文章剖析了大规模托管 Git 仓库为何困难。Git 是内容寻址的分布式版本控制系统，其 packfile 二进制格式便于本地处理却不适合服务器大规模管理，对象在 packfile 中随机分布且多为增量存储，导致随机遍历在分布式文件系统上性能极差。GitHub 早期尝试 NFS、GFS、DRBD 等方案均告失败，最终开发了 Spokes 系统：在 packfile 层面运作、将数据以原生 Git 仓库形式存储于本地 NVMe 磁盘，并通过三阶段提交（3PC）共识算法保证多副本强一致，从而成为行业标准的托管架构。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/the-claude-science-product-guide" target="_blank" rel="noopener noreferrer">Claude Science 产品指南：面向生命科学研究的 AI 工作台</a>
+          </h3>
+          <p class="card-sum">Anthropic 发布 Claude Science（测试版），一个覆盖生命科学数字化流程的 AI 工作台，支持数据…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/the-claude-science-product-guide" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>Anthropic 发布 Claude Science（测试版），一个面向生命科学研究者的 AI 工作台，覆盖从数据分析、文献检索到实验设计的完整数字化流程。该产品整合 Claude 的推理能力，支持科研人员处理生物、医药等领域的复杂数据与文档，加速从假设到验证的研究循环。Anthropic 同步发布产品指南，帮助研究团队上手并融入现有科研工作流。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">7</span>
+            <span class="chip" style="--c:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/strengthening-democratic-oversight-in-national-security" target="_blank" rel="noopener noreferrer">OpenAI 启动新计划，强化国家安全领域 AI 的民主监督</a>
+          </h3>
+          <p class="card-sum">OpenAI 启动新计划，帮助民主监督机构发展专业能力与工具，以理解和监督政府将 AI 用于国家安全。未来一年，Ope…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/strengthening-democratic-oversight-in-national-security" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>OpenAI 宣布启动一项新计划，帮助民主监督机构掌握理解和监督政府将 AI 用于国家安全所需的专业知识与工具。文章指出，AI 可助力阻止网络攻击、保护关键基础设施、更早发现威胁，但也能在缺失或过时上下文、错误目标下以极快速度犯错，且国家安全领域的决策往往涉及保密并具有高风险后果。因此 OpenAI 依据其国家安全原则，在部署中引入防护措施、有意义的人工判断与适当监督，并将帮助监督机构提升在速度与规模上跟进 AI 使用的能力作为优先事项。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">8</span>
+            <span class="chip" style="--c:#8b5cf6">Anthropic：Research（发表成果 · 网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.anthropic.com/research/Claude-accelerates-protein-design" target="_blank" rel="noopener noreferrer">Claude 如何加速蛋白质设计与分析化学研究</a>
+          </h3>
+          <p class="card-sum">Anthropic 公布两项实验：Claude（Mythos Preview 和 Opus 4.8）针对 15 个靶点…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.anthropic.com/research/Claude-accelerates-protein-design" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>Anthropic 分享了两项展示 Claude 加速生命科学研究的结果。在蛋白质设计中，Claude（Mythos Preview 与 Opus 4.8）针对 15 个靶点从零设计蛋白质结合体，成功命中 14 个，单个设计成功结合率在 22% 至 35% 之间，显著高于当前行业典型 10%-15%，部分最强设计结合强度数倍于此前最佳公开结果。在分析化学方面，Claude Opus 5 仅凭合同实验室的 NMR 与 LC-MS 原始数据及两句话提示，分别在 23 分钟和 19 分钟内完成分析，氢计数与纯度（96.4% 对 96.33%）与实验室结果吻合。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">9</span>
+            <span class="chip" style="--c:#8b5cf6">Hugging Face：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/ibm-research/altk-evolve-hmm" target="_blank" rel="noopener noreferrer">智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准</a>
+          </h3>
+          <p class="card-sum">智能体记忆并非可随意开启的功能，而是需按模型能力校准的剂量。强模型适合注入完整指南集，DeepSeek-V3.2（67…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/ibm-research/altk-evolve-hmm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>IBM Research 博客指出，智能体记忆并非可随意开启的功能，而是需要按模型能力校准的剂量。对八款模型的评测显示，强模型适合注入完整的指南集以提升表现，而能力较弱的模型（如 DeepSeek-V3.2）在记忆过多时反而可能受损。研究主张应根据模型自身能力动态调整注入的记忆与指令量，而非一律追求越多越好，从而在效率与准确性之间取得平衡。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">10</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/grpo-beyond-english" target="_blank" rel="noopener noreferrer">GRPO 超越英语：多语言与非英语环境下的大规模研究</a>
+          </h3>
+          <p class="card-sum">一项大规模实证研究考察了 GRPO 在多语言和非英语环境下的表现，覆盖多种基础模型、训练语言及推理语言奖励设置。研究发…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/grpo-beyond-english" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>Apple 机器学习研究团队对多语言与非英语环境下的 GRPO 展开大规模实证研究。以可验证奖励的强化学习（RLVR）通常用 GRPO 优化，但现有研究高度集中于英语。研究发现，用母语训练推理能力与用英语训练的差距往往很小，且存在强跨语言迁移——在某一种语言上的训练常能提升其他多种语言的表现。但具体趋势高度依赖模型与语言，某些情况下特定语言训练会导致其他语言的域外能力严重退化。研究认为 RLVR 超越英语能带来广泛跨语言收益，但也需广泛评估以检测语言特定退化。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">11</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/mvicad2-delays-dilations" target="_blank" rel="noopener noreferrer">MVICAD2：引入延迟与膨胀的多视图独立成分分析</a>
+          </h3>
+          <p class="card-sum">巴黎-萨克雷大学等机构提出MVICAD2，允许不同被试的脑源在时间延迟和膨胀两方面存在差异，以解决MVICA假设过于严…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/mvicad2-delays-dilations" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>该论文提出 MVICAD2，一种带延迟与膨胀的多视图独立成分分析方法。多视图机器学习在整合异构数据、对齐特征空间时面临挑战，尤其在神经科学 MEG 信号分析中。既有方法 MVICA 假设各受试者源信号完全相同，MVICAD 进一步允许源信号存在时间延迟，但脑动力学中常见的听觉刺激时间膨胀效应使仅估计延迟不够。MVICAD2 同时允许源信号在时间延迟和膨胀上存在差异，作者提出可识别模型、闭式似然近似，并借助正则化与优化提升性能。仿真表明其优于现有多视图 ICA 方法。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">5</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">Google AI：DEV 作者专属（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii" target="_blank" rel="noopener noreferrer">设计 AI 评测：先求清晰，再谈可视化</a>
+          </h3>
+          <p class="card-sum">本文演示如何用开源评测框架 Inspect AI 和 Harbor 评估 agent 技能，并借助 Google Sh…</p>
+          <div class="card-actions">
+            <a class="read" href="https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Google AI 作者 Katie McLaughlin 与 Joe Spiro 撰文探讨如何客观评估 AI 工具与技能是否值得投入时间、token 和配额。文章介绍了使用开源评估框架 Inspect AI 与 Harbor 评测 agent 技能的方法，包括在隔离的 Docker 沙箱中用 Gemini CLI、Inspect 与 Inspect SWE 运行评估。演示中采用 Gemini 3.5-flash-lite 与 3.6-flash 作为被评测模型（solver），用上一代 Gemini 3.1-flash-lite 作为评分模型（grader），通过严格的二元评分标准与程序化归约，在不消耗求解模型配额的前提下获得稳健评估结果，并预告后续将用 Google Sheets 与 Data Studio 可视化趋势。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">13</span>
+            <span class="chip" style="--c:#ec4899">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/pacing-model-development-cyber-capabilities" target="_blank" rel="noopener noreferrer">OpenAI 在“关键网络能力”时代放缓模型开发节奏</a>
+          </h3>
+          <p class="card-sum">OpenAI 因 OpenAI-Hugging Face 事件及即将推出的 Astra 模型可能达到《预备框架》下的“…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/pacing-model-development-cyber-capabilities" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>OpenAI 发文说明因模型能力提升而放缓开发节奏。过去几周两件事凸显风险：OpenAI 与 Hugging Face 事件，以及初步证据显示即将推出的 Astra 模型可能达到预备框架下的关键网络安全能力阈值。为此，OpenAI 暂时放缓扩展步伐，包括对计划部署的最新模型暂停两周强化学习训练，以强化并红队测试研究环境、扩大监控覆盖范围，同时推进思维链监控、对齐研究等工作。其最大规模的前沿 RL 运行仍处于搁置状态，改以较小规模训练与评估来观察模型行为。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">14</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/ai-ci-cd-on-call" target="_blank" rel="noopener noreferrer">Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者</a>
+          </h3>
+          <p class="card-sum">Anthropic 的 CI 工程师用 Claude Tag 构建了值班智能体，作为 CI/CD 故障的一线响应者。C…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/ai-ci-cd-on-call" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>Anthropic 的 CI 工程师用 Claude Tag 构建了一个值班智能体，担任 CI/CD 故障的一线响应者。该智能体能够自动接收构建与部署告警，快速定位失败原因并给出修复建议或直接处理，从而减轻人工值班负担、缩短故障响应时间。文章分享了团队如何借助 Claude Tag 编排多步骤排查流程，将大模型推理能力融入工程值班与运维场景。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">15</span>
+            <span class="chip" style="--c:#ec4899">Tomer Tunguz 博客（VC 分析）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.tomtunguz.com/birds-dont-fly-like-planes-neither-does-ai" target="_blank" rel="noopener noreferrer">笔记本模型也能媲美云端前沿模型：Qwen3.8-27B 登顶智能指数</a>
+          </h3>
+          <p class="card-sum">作者将 Qwen3.8-27B 装入智能体后表现优异，该模型在 Artificial Analysis 智能指数中排名…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.tomtunguz.com/birds-dont-fly-like-planes-neither-does-ai" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>风险投资人 Tomasz Tunguz 撰文指出，笔记本模型已能媲美云端前沿模型。Qwen3.8-27B 在 Artificial Analysis 智能指数 135 个模型中排名第一，得分 52，比 7530 亿参数的 GLM-5.2 高出 1 分，一个笔记本模型击败了约 28 倍体量的云端前沿模型。关键结论是应衡量回答时间而非 token 速度：Qwen3.6-35B-A3B 生成速度快 2.2 倍，却因思考时间多 3.1 倍而最终更慢。在 25 个风投任务上，本地与云端模型质量持平，只是走了不同的推理路径——小模型更多依赖从头推理来弥补记忆知识不足。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">16</span>
+            <span class="chip" style="--c:#ec4899">Runway：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://runwayml.com/news/customers/populous" target="_blank" rel="noopener noreferrer">Populous 如何用 Runway 呈现全球标志性场馆设计</a>
+          </h3>
+          <p class="card-sum">全球设计公司 Populous 高级建筑师 Georgina Myers 介绍团队用 Runway 辅助体育场馆概念设…</p>
+          <div class="card-actions">
+            <a class="read" href="https://runwayml.com/news/customers/populous" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>全球设计公司 Populous 分享其如何用 Runway 呈现标志性场馆设计。Populous 四十年来设计了温布利球场、托特纳姆热刺球场、拉斯维加斯 Sphere 等标志性场馆。高级建筑师 Georgina Myers 介绍，团队将 Runway 用作概念设计辅助工具，在体育馆规模的可视化难题上，用 AI 概念设计与渲染替代传统流程，从而将约 25% 的渲染时间重新分配给策略、研究与精细设计。目前公司已有 30 多名 EMEA 员工使用 Runway 创作，活跃项目持续两周，更快可视化让团队得以在细节设计上投入更多时间。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>16</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>
