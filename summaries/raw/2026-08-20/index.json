@@ -1,0 +1,142 @@
+[
+  {
+    "url": "https://huggingface.co/blog/LiquidAI/qad",
+    "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失",
+    "source": "Hugging Face：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494105&idx=1&sn=8d7409e0fb846a3c7803c142b5d1a8e7",
+    "title": "GLM-5.3上线：AA智能指数60分并列开源第一，成本更低",
+    "source": "公众号：智谱（GLM）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/haoailab/status/2090177721913770407",
+    "title": "FastMetal 让 Mac 本地 30 秒生成视频",
+    "source": "X：Sky Computing Lab (@haoailab)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools",
+    "title": "Google 搜索推出 5 项 AI 学习工具",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/replit",
+    "title": "Replit 推出由 GPT-5.6 Luna 驱动的 Free Mode，免费构建软件",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.236",
+    "title": "Claude Code v2.1.236 发布：新增默认模型环境变量与跨会话闲置通知",
+    "source": "Claude Code：GitHub Releases（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+    "title": "Anthropic 在网络关键能力时代放缓模型开发：暂停 RL 训练并强化安全防护",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openrouter.ai/blog/announcements/openrouter-is-joining-stripe",
+    "title": "OpenRouter 宣布加入 Stripe",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.lmsys.org/blog/2026-08-19-deepseek-v4-pro-engine-optimization-h20",
+    "title": "突破 DeepSeek-V4-Pro 服务极限：H20 上的多场景优化方法",
+    "source": "LMSYS：Blog（Chatbot Arena 团队）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/human-like-behaviors-llms",
+    "title": "苹果研究：LLM 类人行为的多维度分析——模型行为、用户因素与系统提示词的影响",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/the-p-completeness-of-inverted-index-traversal",
+    "title": "倒排索引遍历的 P-完全性：布尔查询 DAG 的复杂度评估",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work",
+    "title": "GitHub Copilot app 初学者教程：用 My work 面板管理你的工作",
+    "source": "GitHub Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.com/blog/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams",
+    "title": "Slack 如何构建人机智能体团队：对话即知识",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.databricks.com/blog/designing-effective-genie-agents-single-prompt",
+    "title": "Databricks 如何从单一提示词设计高效的 Genie Agents",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  }
+]
