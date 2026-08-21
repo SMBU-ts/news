@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-08-21</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 8 月 21 日 · 星期五</h1>
+      <div class="sub">共 17 条 · 生成于 北京时间 2026 年 08 月 21 日 08:01 · 数据覆盖 2026-08-20 ~ 2026-08-21</div>
+      <div class="stats">
+        <div class="stat"><div class="n">17</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">8</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">1</div><div class="l">行业动态</div></div><div class="stat"><div class="n">2</div><div class="l">论文研究</div></div><div class="stat"><div class="n">4</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 2</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 8</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 1</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 2</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 4</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">2</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">8</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">1</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">2</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">4</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/992/239.htm" target="_blank" rel="noopener noreferrer">阿里发布 Qwen-UI-Agent，主打让模型真正“会用”每一块屏幕</a>
+          </h3>
+          <p class="card-sum">阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/992/239.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页端及深度搜索环境。在多项基准上全面对标乃至超越业界旗舰模型：移动端 MobileWorld 达 82.1%、真机基准 MobileWorld-Real 达 92.2%、Android Daily 高达 97.5%；电脑端 OSWorld-Verified 79.5%；浏览器 WebArena 73.6% 位列所有对比模型第一，GUI Grounding 等基准亦刷新 SOTA。模型搭建覆盖 100 多台真机、150 多个应用的移动环境，自建真机基准打通&quot;从模拟到真实&quot;。安全判断贯穿执行全程：违法或高风险请求直接拒绝，支付、数据删除、隐私授权等敏感场景主动停手，待用户确认后再继续，并支持超 100 步长轨迹在线 RL 训练。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">Hugging Face：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/LiquidAI/lfm25-dspark" target="_blank" rel="noopener noreferrer">Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍</a>
+          </h3>
+          <p class="card-sum">Hugging Face 发布 LFM2.5 系列三款模型的 DSpark 草稿模型检查点，通过投机解码在不改变输出质…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/LiquidAI/lfm25-dspark" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>Liquid AI 在 Hugging Face 发布 LFM2.5 系列三款模型（LFM2.5-1.2B-Instruct、2.6B 及 8B-A1B）的 DSpark 草稿模型检查点，为 LFMs 首次公开提供投机解码能力。DSpark 草稿模型约 3 亿参数，通过让轻量草稿模型并行生成候选 token、再由目标模型单次前向验证，实现以极小内存开销换取大幅解码提速，且不改变输出质量。实测 GPU 上吞吐最高提升 3.18 倍、端侧（M4 Max）最高提升 2.87 倍，函数调用延迟平均降低 57%。llama.cpp 与 SGLang 已首日上游集成。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">Mistral AI：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mistral.ai/news/agentic-search" target="_blank" rel="noopener noreferrer">Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率</a>
+          </h3>
+          <p class="card-sum">Mistral 发布 Agentic Search，通过 search、open、navigate、read、grep…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mistral.ai/news/agentic-search" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>Mistral 于 8 月 20 日推出 Agentic Search，一个多步检索层，让模型通过 search、open、navigate、read、grep 五个文件系统式工具，在长文档和多源数据中反复搜索、打开文档并逐步阅读，直到收集足够信息再作答，替代传统一次性 RAG。在 FinanceBench 基准上，准确率从 26.7% 跃升至 86%，提升约三倍；p90 延迟从 255 秒降至 154 秒，token 用量降低约三分之一。该能力通过 Search Toolkit SDK 及 Studio、Vibe 的 Libraries 提供，支持云端或本地部署，并内置 MCP 服务器。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">Google Cloud：Databases（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://cloud.google.com/blog/products/databases/alloydb-scann-index-four-level-tree-improves-vector-search" target="_blank" rel="noopener noreferrer">AlloyDB ScaNN 如何将向量搜索扩展到 100 亿向量</a>
+          </h3>
+          <p class="card-sum">AlloyDB 的 ScaNN 索引现已支持超过 100 亿向量的规模，通过全新的四层树架构（预览版）实现，将查询复杂…</p>
+          <div class="card-actions">
+            <a class="read" href="https://cloud.google.com/blog/products/databases/alloydb-scann-index-four-level-tree-improves-vector-search" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Google Cloud 宣布 AlloyDB 的 ScaNN 索引通过全新的四层树架构（预览版）将向量搜索规模扩展到 100 亿向量。此前两层或三层树配置在扩展到百亿级时会遭遇计算强度剧增和采样内存超限两大瓶颈。四层树采用层次化分区，将查询复杂度从 O(N^1/2) 降至 O(N^1/4)，并配合 Top-K 分支、SOAR、质心调整与平衡树形等增强，兼顾精度与构建效率。内部测试显示，100 亿向量规模下可达到 p95 延迟不超过 51 毫秒、召回率 95% 的性能。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/computer-use-skills-api-files-api" target="_blank" rel="noopener noreferrer">Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具</a>
+          </h3>
+          <p class="card-sum">Anthropic 宣布 Computer Use、Skills API 与 Files API 在 Claude P…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/computer-use-skills-api-files-api" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Anthropic 宣布 Computer Use、Skills API 与 Files API 在 Claude Platform 全面可用（GA），Computer Use 同步新增浏览器操作工具（browser use tool）。Computer use 让模型基于截图像真人一样点击、输入、滚动操作软件；browser use 通过读取页面结构精准定位网页元素；Skills API 用于上传和版本化团队的技能（指令、脚本与模板）；Files API 则存储智能体读写文档，可按 ID 引用、自动过期。三者结合可构建操作软件、复用团队经验并返回成品的智能体，Computer use 已支持 HIPAA 合规负载。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/anthropics-approach-to-teaching-and-learning-ai" target="_blank" rel="noopener noreferrer">Anthropic 如何开展 AI 教学</a>
+          </h3>
+          <p class="card-sum">Anthropic 发布 Claude Academy，为全球数百万用户提供 AI 教学资源，帮助其安全、有效地使用 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/anthropics-approach-to-teaching-and-learning-ai" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>Anthropic 发布 Claude Academy，为全球数百万用户提供 AI 教学资源，帮助其安全、有效地使用 AI 工具。该教学计划围绕与 AI 协同学习的方法论展开，涵盖提示技巧、AI 能力边界认知、负责任使用等主题，面向学生、教育工作者及普通用户，旨在将 AI 素养融入教学与终身学习场景，推动人们以批判性思维与 AI 互动，而非简单依赖模型输出。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">LMSYS：Blog（Chatbot Arena 团队）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.lmsys.org/blog/2026-08-20-miles-mooncake-rollout-data-transfer" target="_blank" rel="noopener noreferrer">Mooncake 如何为 Miles 强化学习系统实现高效批量 Rollout 数据传输</a>
+          </h3>
+          <p class="card-sum">大规模 LLM 强化学习采用解耦架构后，rollout 数据从推理侧到训练侧的传输成为瓶颈。Mooncake 针对 M…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.lmsys.org/blog/2026-08-20-miles-mooncake-rollout-data-transfer" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>LMSYS 团队撰文介绍 Mooncake 如何为 Miles 强化学习系统实现高效批量 rollout 数据传输。大模型强化学习将 rollout 生成与模型训练两个工作负载解耦部署，带来更高的资源利用率，但也引入了新的系统边界：rollout 阶段产生的结构化数据（token、掩码、对数概率、奖励等）必须跨进程或跨机器传输给训练侧。这类数据高度异构且内存碎片化，逐条传输会带来大量重复的内存注册与存储开销。Mooncake 通过 Completed-Dict 交接、将碎片化内存转为批量 I/O、发布完整 bundle 并直接重建等方式，显著提升了 rollout 数据的传输效率，优化了端到端 RL 流水线。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">8</span>
+            <span class="chip" style="--c:#10b981">Claude Code：GitHub Releases（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.238" target="_blank" rel="noopener noreferrer">Claude Code v2.1.238 发布：新增 readline 键位、插件市场 headersHelper 与多项 Remote Control 修复</a>
+          </h3>
+          <p class="card-sum">Claude Code v2.1.238 发布，新增 keybindingFlavor 设置（可设为 &quot;readlin…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.238" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>Claude Code v2.1.238 发布，带来多项改进与修复。新增 keybindingFlavor 设置，设为 readline 可让提示符中的 Ctrl+W 像 Bash 一样删除到前一个空白；插件市场支持 headersHelper，可在安装或更新插件时运行命令铸造 HTTP 头（如短期令牌）用于目录及同源归档抓取；新增 self-hosted-runner 延迟关闭参数及代理鉴权命令支持。修复了长时间交互会话中的无界内存增长、输出风格中途漂回默认声音、MCP 对话框长 URL 无法显示、Bash 被杀死或超时后残留临时文件等多处问题。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">9</span>
+            <span class="chip" style="--c:#10b981">Claude Code：GitHub Releases（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.237" target="_blank" rel="noopener noreferrer">Claude Code v2.1.237 发布：修复 LLM 网关提示词缓存，新增“简洁”输出风格</a>
+          </h3>
+          <p class="card-sum">Claude Code v2.1.237 修复了使用 LLM 网关或自定义 base URL 的会话中的提示词缓存问题…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.237" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>Claude Code v2.1.237 发布，主要包含两项更新。一是修复了使用 LLM 网关或自定义 base URL 的会话的提示词缓存问题，确保此类配置下缓存正常工作。二是新增内置的&quot;简洁&quot;（Concise）输出风格，Claude 将直接给出结果、跳过前言和叙述，同时仍同样彻底地完成工作，用户可在 /config 的 Output style 中选择该风格。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">10</span>
+            <span class="chip" style="--c:#10b981">LangChain：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.langchain.com/blog/langsmith-preview-builds-test-agent-changes-before-production" target="_blank" rel="noopener noreferrer">LangSmith 预览构建：如何在合并前测试智能体变更</a>
+          </h3>
+          <p class="card-sum">LangSmith 预览构建让团队在合并智能体变更前，于临时的、类生产环境的部署中测试拉取请求分支。该功能旨在降低变更…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.langchain.com/blog/langsmith-preview-builds-test-agent-changes-before-production" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>LangSmith 推出 Preview Builds（预览构建），这是一项新的部署功能，让团队无需为每个拉取请求创建新部署，即可从 PR 分支启动一个临时的、类似生产环境的部署来测试智能体变更。PR 可能改动提示词、工具、模型、依赖或集成，其影响往往只有在智能体真正运行时才会显现。预览构建为每个 PR 提供独立的预发布环境，团队可在合并前在 LangSmith Deployment 中测试、共享给协作者、在同一环境中检查行为，用完后即可拆除，而无需在 CI/CD 流程中增加额外部署配置。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">11</span>
+            <span class="chip" style="--c:#f59e0b">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/991/886.htm" target="_blank" rel="noopener noreferrer">消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市</a>
+          </h3>
+          <p class="card-sum">OpenAI 首席财务官萨拉·弗里亚尔在全员大会上告知员工，公司最迟将于 2027 年完成上市，若业务持续向好也可能更…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/991/886.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>据 CNBC 报道，OpenAI 首席财务官萨拉·弗里亚尔在全员大会上表示，公司&quot;将于 2027 年完成上市&quot;，若业务持续向好也可能更早。她称 IPO 是里程碑而非终点，3 月完成的 1220 亿美元融资提供了充足操作空间。OpenAI 已于 6 月秘密提交 IPO 招股书，竞争对手 Anthropic 也已秘密提交并可能于 9 月上市。本季度 OpenAI 整体年化营收增长 35%，企业级业务年化营收增长 50%，二季度营收达 67 亿美元。不过近期多位高管先后离任，留守高管需向市场传递稳定信号。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">12</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/multilingual-knowledge-transfer-lexical-interventions" target="_blank" rel="noopener noreferrer">数据受限下的多语言知识迁移：Apple 提出基于词汇干预的新方法</a>
+          </h3>
+          <p class="card-sum">Apple 研究团队提出一种基于词汇干预的多语言知识迁移方法，旨在解决低资源语言训练数据不足时，模型难以从高资源语言获…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/multilingual-knowledge-transfer-lexical-interventions" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Apple 提出 LINK 方法，一种数据级干预方法，用于在数据受限条件下改进多语言模型的知识迁移。当目标语言数据稀缺时，科学推理、常识推断等下游任务所需知识主要来自高资源语言。LINK 通过双语词汇表，按给定替换比例将高资源（英语）训练语料中部分随机选取的单词替换为其词级翻译，无需额外模型训练，且双语词汇表几乎任何语言都能以近乎零成本获得。在 8 种语言、5 种模型规模上的评估显示，该方法在下游任务上取得显著提升，达到同等性能的训练速度最高可提升 2 倍。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">13</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/scaling-laws-mixture-pretraining" target="_blank" rel="noopener noreferrer">数据约束下的混合预训练缩放定律</a>
+          </h3>
+          <p class="card-sum">苹果机器学习研究团队通过2000余次语言模型训练实验，系统研究了稀缺目标数据与通用数据混合预训练中的权衡问题。研究发现…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/scaling-laws-mixture-pretraining" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>Apple 研究团队在 2000 多个语言模型训练运行中研究了数据约束下的混合预训练缩放定律。低资源语言或专业领域的目标数据有限，混合目标数据与通用数据存在权衡：目标数据过少则暴露不足，过多则重复导致收益递减和过拟合。研究发现重复是目标域性能的核心驱动因素，混合训练比单一来源训练容忍更高的重复——稀缺目标语料可复用 15 至 20 次。团队据此提出重复感知的混合缩放定律，为在数据约束下计算有效的混合配置提供了原则性方法。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">14</span>
+            <span class="chip" style="--c:#ec4899">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/claude-code-guide-for-startups" target="_blank" rel="noopener noreferrer">Claude Code 初创公司指南：五大规则与创始人洞见</a>
+          </h3>
+          <p class="card-sum">Anthropic 发布面向初创公司的 Claude Code 使用指南，基于对十余家高增长公司的调研，总结出“人人皆…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/claude-code-guide-for-startups" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>Anthropic 发布面向初创公司的 Claude Code 使用指南，基于对十余家高增长公司的调研，总结出&quot;人人皆可用 AI&quot;的五大规则与创始人洞见。指南强调让每一位工程师（而非少数专家）都把 Claude Code 融入日常工作流，通过统一的提示词约定、代码审查流程和规范，将 AI 编码能力沉淀为团队生产力，帮助早期团队在资源有限的情况下更快迭代产品。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">15</span>
+            <span class="chip" style="--c:#ec4899">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/introducing-ai-futures" target="_blank" rel="noopener noreferrer">OpenAI 推出 AI Futures 博客，探讨自由社会如何应对变革性 AI</a>
+          </h3>
+          <p class="card-sum">OpenAI 新设 Strategic Futures 团队并推出博客 AI Futures，核心问题是自由社会应如何…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/introducing-ai-futures" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>OpenAI 新设 Strategic Futures 团队并推出 AI Futures 博客，由 Dean W. Ball 主导，核心问题是自由社会应如何重组以在变革性 AI 出现时保留个人权利与能动性，聚焦权力集中风险。团队认为，长期看这类风险最大、最难应对：当自主系统使国家无需依赖军队、警察或人类劳动即可投射力量与征税时，民众可能失去谈判地位。团队将围绕公共政策、经济学、法律、历史与机器学习交叉领域展开研究与预测，以迭代、辩论和开放反馈的方式推进。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">16</span>
+            <span class="chip" style="--c:#ec4899">Gary Marcus：The Road to AI We Can Trust（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://garymarcus.substack.com/p/leopolds-folly" target="_blank" rel="noopener noreferrer">Leopold 的愚蠢：一个年轻人如何象征一个时代</a>
+          </h3>
+          <p class="card-sum">作者以“空头支票”式骗局为类比，指出生成式 AI 行业存在类似循环融资的投机成分，如以 OpenAI 股份为抵押贷款再…</p>
+          <div class="card-actions">
+            <a class="read" href="https://garymarcus.substack.com/p/leopolds-folly" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>Gary Marcus 以 Leopold Aschenbrenner 的爆仓事件为切入点，批评生成式 AI 行业存在类似循环融资的投机成分。前 OpenAI 研究员、25 岁的 Aschenbrenner 凭借 AI 预言长文募资 450 亿美元创办对冲基金 Situational Awareness，靠约 4 倍杠杆重仓 AI 芯片、存储与能源股，7 月 AI 股大跌后遭重创，约 160 亿美元公开持仓被整体出售给 Citadel。Marcus 借此人故事质疑行业以 AI 股份为抵押贷款再投资的杠杆循环，认为其象征了当前 AI 热潮中的过度投机与风险累积。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">17</span>
+            <span class="chip" style="--c:#ec4899">Gary Marcus：The Road to AI We Can Trust（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://garymarcus.substack.com/p/breaking-the-republican-party-is" target="_blank" rel="noopener noreferrer">共和党因与大型科技公司关系陷入恐慌</a>
+          </h3>
+          <p class="card-sum">共和党正因与大型科技公司的关系而陷入恐慌，原因是他们意识到大型AI议程在美国民众中极不受欢迎。特朗普已从反对AI监管转…</p>
+          <div class="card-actions">
+            <a class="read" href="https://garymarcus.substack.com/p/breaking-the-republican-party-is" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>Gary Marcus 评论共和党正因与大型科技公司的关系而陷入恐慌，原因是大型 AI 议程（尤其是数据中心建设）在美国民众中极不受欢迎。民调显示仅 27% 的美国人支持在社区建 AI 数据中心，比核电站还低；皮尤调查显示 52% 民众对 AI 日常使用&quot;担忧多于兴奋&quot;。特朗普已从反对 AI 监管转为公开力挺数据中心，但摇摆州共和党候选人因支持数据中心而受到民主党攻击，共和党整体开始从多年力挺的产业后退，凸显 AI 议题正在重塑美国政治格局。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>17</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

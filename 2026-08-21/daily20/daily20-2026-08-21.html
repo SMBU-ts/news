@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-21</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-21</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260821A019T400?scene=news-skill" target="_blank" rel="noopener">新闻1+1丨装修、交物业费可提取！公积金用途有了这些新变化</a></div>
+                <div class="item-summary">时隔7年，《住房公积金管理条例》再次进行修订，将于9月20日起正式施行。这次修订因何而修？都有哪些重要变化？更好顺应市场发展，满足多样化住房需求，还有哪些政策推进值得关注？ 公积金制度为什么要改？清华大学房地产研究中心主任 吴璟：公积金制度最主要的目的就是支持缴存人的住房消费，因此它的生机和活力也取决于它的支持方式，能否适应缴存人住房消费方式的变化。以前，大多数缴存人的需求是买房。目前，在1...</div>
+                <div class="item-meta">央视新闻 · 2026-08-21 07:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260821A02A7G00?scene=news-skill" target="_blank" rel="noopener">开学提醒！大学新生买学生票有新变化，购票乘车攻略</a></div>
+                <div class="item-summary">开学临近同学们陆续开始乘车返校大学新生购票有哪些便利政策？今年购买学生优惠票有哪些变化？这份购票攻略请收好！ 2026级新生旅客如何购票？ 新生可以购买学生优惠票吗？标准答案：完全可以。新生可凭录取通知书，在当年开学前购买一次从家庭居住地到学校所在地的单程学生优惠票。注意：一张录取通知书只能使用一次！ 新生可以预约购票吗？2026年8月1日至30日，火车票学生预约购票服务中新增新生预约功能，...</div>
+                <div class="item-meta">央视新闻 · 2026-08-21 06:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0AGPD00?scene=news-skill" target="_blank" rel="noopener">数智化赋能产业转型升级 1—7月我国电子商务发展数据出炉</a></div>
+                <div class="item-summary">今年1—7月，我国电子商务稳定创新发展，线上线下融合激发消费潜能，数智化赋能产业转型升级，拓展国际经贸合作广度深度，助力做强做优做大实体经济。促进消费市场运行稳定。据国家统计局数据，1—7月全国网上商品和服务零售额增长4.8%，据商务部测算，对社会商品和服务零售额增长贡献率超五成。线上渠道拓展商品消费范围，...</div>
+                <div class="item-meta">央视新闻 · 2026-08-20 16:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0DZDR00?scene=news-skill" target="_blank" rel="noopener">特朗普中东碰壁后，向金正恩示好，拿李在明撒气</a></div>
+                <div class="item-summary">“做美国的敌人是危险的，但做美国的盟友则是致命的。”基辛格的这句警示，韩国总统李在明最近可谓“感同身受”。美国总统特朗普在伊朗问题上进退失据——伊朗软硬不吃，美国深陷僵局。于是，特朗普转而拿韩国撒气，压缩美韩军演，要韩国为中东“作出贡献”。更令韩国难堪的是，特朗普为了敲打韩国，还频频向“老友”朝鲜最...</div>
+                <div class="item-meta">直新闻 · 2026-08-20 20:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0E45Q00?scene=news-skill" target="_blank" rel="noopener">“两弹一星”元勋、中国科学院院士王希季送别仪式在京举行</a></div>
+                <div class="item-summary">据中国航天科技集团，8月20日，中国共产党优秀党员，我国航天事业开拓者之一，著名空间技术专家，中国科学院院士，国家“两弹一星功勋奖章”获得者，中国航天科技集团有限公司科学技术委员会原顾问，五院技术顾....</div>
+                <div class="item-meta">界面新闻 · 2026-08-20 21:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0FBSK00?scene=news-skill" target="_blank" rel="noopener">河南通报：正厅级何雄，任上被查</a></div>
+                <div class="item-summary">8月20日下午，河南省纪委监委网站通报，河南省政府副秘书长、办公厅主任何雄涉嫌严重违纪违法，目前正接受河南省纪委监委纪律审查和监察调查。何雄（资料图）公开资料显示，何雄，男，汉族，1969年3月出生，湖北省孝感市安陆市人，在职博士研究生学历，1998年12月加入中国共产党，1990年8月参加工作。何雄曾任河南省济源市...</div>
+                <div class="item-meta">中国青年报 · 2026-08-20 23:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0EEON00?scene=news-skill" target="_blank" rel="noopener">中国重大突破！马斯克发声</a></div>
+                <div class="item-summary">在我国火箭技术领域近日取得新的突破后，美国太空探索技术公司（SpaceX）创始人兼首席执行官埃隆·马斯克谈及自己2011年的一个预言，并称中国也是人工智能（AI）技术领域的最强竞争者。 8....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-08-20 23:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A09T7Y00?scene=news-skill" target="_blank" rel="noopener">“绝对的‘女汉子’”任上落马</a></div>
+                <div class="item-summary">“绝对的‘女汉子’”、南阳市中级人民法院副院长孟宪英任上落马。8月18日，南阳市纪委监委官网发布消息，南阳市中级人民法院党组成员、副院长、三级高级法官孟宪英涉嫌严重违纪违法，目前正接受南阳市纪委监委纪律审查和监察调查。孟宪英在当地政法系统工作多年，曾任邓州市（南阳市代管县级市）检察院副检察长、南召县（南阳市辖县）检察院检察长，南召县委常委、政法委书记，南阳市委政法委副书记等职。2023年8月...</div>
+                <div class="item-meta">中国新闻周刊 · 2026-08-20 16:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260821A02ANN00?scene=news-skill" target="_blank" rel="noopener">最终规模或达862亿美元！Anthropic拟超越SpaceX，冲击史上最大IPO</a></div>
+                <div class="item-summary">Anthropic正筹划一场可能改写资本市场历史的IPO。据彭博援引知情人士透露，Anthropic预计其首次公开募股（IPO）的规模将追平甚至超越SpaceX创下的历史纪录。Anthropic最快将于本月底公开递交IPO文件，公司目前正就募资规模进行测算。首席财务官Krishna Rao近期主持的投资者沟通会议刻意回避了估值问题。知情人士表示，相关...</div>
+                <div class="item-meta">华尔街见闻 · 2026-08-21 06:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0CUMN00?scene=news-skill" target="_blank" rel="noopener">网传涉安徽蚌埠普高录取工作的通知为虚假文件（2026·08·20）</a></div>
+                <div class="item-summary">辟 谣 网传涉安徽蚌埠普高录取工作的通知为虚假文件 详情：近期，一份题为《安徽省教育厅关于公布蚌埠市普通高中录取后补（原文如此）名单公示的通知》（皖中招[2026]61号）的纸....</div>
+                <div class="item-meta">2026-08-20 19:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260821A02E5D00?scene=news-skill" target="_blank" rel="noopener">美24日公布对伊经济孤立措施 伊朗：徒劳无功 误判将付出代价</a></div>
+                <div class="item-summary">当地时间20日，美国财政部长贝森特称将对伊朗实施“前所未有的经济孤立”，并称将于24日召开新闻发布会详细说明具体行动内容。这是继特朗普此前一日威胁对伊实施“有史以来针对国家的最具毁灭性的经济行动”后，美方再就经济制裁伊朗发表威胁言论。20日，伊朗多方发声，驳斥美相关言论。伊方表示，持续通过经济制裁和施压无...</div>
+                <div class="item-meta">央视新闻 · 2026-08-21 06:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0EHSF00?scene=news-skill" target="_blank" rel="noopener">妄称自己写了电影《给阿嬷的情书》主题曲，假总编张龙再度被打假</a></div>
+                <div class="item-summary">社会人士张龙冒充“香港中文大学客座教授”被校方公开声明打假后，其精心包装的人设相继被戳穿。澎湃新闻记者注意到，今年稍早前，张龙曾在个人认证的微博账号上妄称自己是电影《给阿嬷的情书》主题曲作者。这一身份如今也被证实为虚假。今年6月，张龙在微博发布了一首歌曲的MV，并且声称：“以歌作信，遥念阿嬷｜资深传媒...</div>
+                <div class="item-meta">澎湃新闻 · 2026-08-20 22:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0DLXZ00?scene=news-skill" target="_blank" rel="noopener">不理西方反对，韩国将首次试航北极航线，“中国已获得先发优势”</a></div>
+                <div class="item-summary">据路透社8月20日报道，韩国将于本周六启航一艘经由北极驶往欧洲的集装箱船，以测试北极航线是否具备商业可行性。若航行成功，这将是韩国首次经北极前往欧洲的商业航行，使其与中国和俄罗斯一起，成为少数有航运企业在该航线上试运行或运营货运服务的国家之一。韩国集装箱船运营商PanStar表示，旗下“PanStar Acro号”将从釜...</div>
+                <div class="item-meta">观察者网 · 2026-08-20 20:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260821A00T2800?scene=news-skill" target="_blank" rel="noopener">埃里克·戈登将宣布退役：告别18年生涯 曾获最佳第六人+三分王</a></div>
+                <div class="item-summary">北京时间8月21日，根据记者EvanSidery报道，37岁的埃里克·戈登很快将正式宣布退役，结束他长达18年的NBA球员生涯。戈登曾经获得NBA最佳第六人与全明星三分大赛冠军，以及2010年男篮世....</div>
+                <div class="item-meta">醉卧浮生 · 2026-08-21 00:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0EYJ400?scene=news-skill" target="_blank" rel="noopener">张雪回应机车遭台当局查扣：送到统一为止</a></div>
+                <div class="item-summary">近日，台媒报道，有台湾业者将大陆“张雪机车”拆解成零组件，分批输台后组装成车，遭到台经济部门查缉扣押。8月20日，“张雪机车”创始人张雪在短视频平台发布视频回应称，不清楚具体原因。他提出，承担车主全部维权律师费用。“如果车要不回来，我就再送一台车。如果送的车又被查扣，那我再送一台，不停地送。送到什么时...</div>
+                <div class="item-meta">长安街知事 · 2026-08-20 22:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260821A02CYF00?scene=news-skill" target="_blank" rel="noopener">美官员：委内瑞拉一半石油流向美国</a></div>
+                <div class="item-summary">【环球时报综合报道】委内瑞拉拥有全球最大的已探明石油储量，石油收入约占该国GDP的1/4。但过去的6个月里，该国石油销售所得的收入一直流向一个由美国控制的银行账户。据路透社19日报道，在今年1月美国强行控制委内瑞拉总统马杜罗并推动在加拉加斯（委内瑞拉首都）建立过渡政府后，委内瑞拉约一半的石油产量已流向美国。 ...</div>
+                <div class="item-meta">环球网 · 2026-08-21 06:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0EI9000?scene=news-skill" target="_blank" rel="noopener">23岁女孩严重脊柱侧弯，相恋5年男友每天跑14小时外卖凑手术费，走红后被骂“躺着赚钱”，当事人发声</a></div>
+                <div class="item-summary">封面新闻报道，23岁的何灵因患有严重脊柱侧弯，身高只有1.35米、体重仅63斤，为了凑齐30万元手术费，何灵白天做美甲晚上守地摊，相恋5年的男友严瑞泽则是一天跑14小时外卖赚钱，今年7月二人的故事被博主记录发布，视频浏览量超1800万、点赞破百万，感动众多网友。何灵3岁时意外摔伤背部，母亲同年离世，幼时背部畸形未及时...</div>
+                <div class="item-meta">中国新闻网 · 2026-08-20 22:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820V0DAIZ00?scene=news-skill" target="_blank" rel="noopener">韩国外长发布与王毅散步照片 8月20日，韩国外长赵显在社交媒体上发布与中共中央政治局委员、外交部长王毅一同散步的照片，戳视频↓↓↓</a></div>
+                <div class="item-summary">韩国外长发布与王毅散步照片 8月20日，韩国外长赵显在社交媒体上发布与中共中央政治局委员、外交部长王毅一同散步的照片。戳视...</div>
+                <div class="item-meta">直新闻 · 2026-08-20 19:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820V0DBB000?scene=news-skill" target="_blank" rel="noopener">AI也答错！驾照体检色盲图引争议，记者实测：24人仅6人答对</a></div>
+                <div class="item-summary">#媒体原创 AI也答错！驾照体检色盲图引争议，记者实测：24人仅6人答对</div>
+                <div class="item-meta">现代快报 · 2026-08-20 19:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260820A0BVD400?scene=news-skill" target="_blank" rel="noopener">药进医保，却报不了？国家医保局重申“对症报销”红线</a></div>
+                <div class="item-summary">创新药“进医保”的速度正在明显加快，但患者在报销时可能面临困扰：用了医保药，为何医保不报销？ 这背后一大原因在于：部分医保药，尤其是国谈新药，有着医保报销的“限定适应证”，且药品医保适应证的更新节奏，往往滞后于临床指南和药品说明书内适应证的更新节奏。 截至8月20日，国家医保局已发布多批“医保智能监管‘...</div>
+                <div class="item-meta">第一财经 · 2026-08-20 17:58</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-21 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
