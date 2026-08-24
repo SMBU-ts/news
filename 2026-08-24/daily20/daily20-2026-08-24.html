@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-24</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-24</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A062R300?scene=news-skill" target="_blank" rel="noopener">中心附近最大风力8级 “简拉维”登陆福建泉州</a></div>
+                <div class="item-summary">“简拉维”今天（24日）上午11点由热带低压加强为热带风暴级，其中心已于今天中午12点30分在福建省泉州市台商投资区张坂镇沿海登陆，登陆时中心附近最大风力有8级（18米/秒），中心最低气压为998百帕。登陆后将继续向西北方向移动，强度逐渐减弱。（总台记者 吴燕敏 吴薇） 2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-08-24 12:49</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A03O1V00?scene=news-skill" target="_blank" rel="noopener">7月财政收入增速创19个月新高，支出端仍待发力</a></div>
+                <div class="item-summary">记者 王珍财政部周五发布的数据显示，1-7月，全国一般公共预算收入143696亿元，同比增长5.8%；一般公共预算支出162889亿元，同比增长1.3%。按照历史数据推算，7月，一般公共预算收入22649亿元，同比增长11.7%，增速比上月扩大3个百分点，创2025年以来新高。其中，税收收入20516亿元，同比增长13.9%；非税收入2133亿元，同比...</div>
+                <div class="item-meta">界面新闻 · 2026-08-24 09:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260823A0BAQ300?scene=news-skill" target="_blank" rel="noopener">山海有约 热力四射——“花样”文旅点亮暑期生活</a></div>
+                <div class="item-summary">出发，不负美好时光；旅行，共赴心中山海。这个暑期，游客热情高涨，文旅热力十足。从奔赴“宝藏小城”的“小确幸”，到流连沉浸式体验的氛围感；从上山下海避暑，到漫游栖居度假……人们饱览大好河山，“花样”文旅点亮夏日经济。习近平总书记指出，文旅融合促进了经济发展，文旅产业要走一条持续、健康的发展之路。细观今夏文旅图景，旅游向多样化、个性化、品质化发展趋势愈加明晰。在融合发展、守正创新中，旅游不断丰富...</div>
+                <div class="item-meta">新华社全媒报道平台 · 2026-08-23 21:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A037OS00?scene=news-skill" target="_blank" rel="noopener">四川宜宾市长宁县发生4.7级地震，震源深度5千米</a></div>
+                <div class="item-summary">中国地震台网正式测定：08月24日08时26分在四川宜宾市长宁县（北纬28.33度，东经104.98度）发生4.7级地震，震源深度5千米。...</div>
+                <div class="item-meta">界面新闻 · 2026-08-24 08:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260823A0B3DV00?scene=news-skill" target="_blank" rel="noopener">突发！俄罗斯SU645航班，紧急备降武汉</a></div>
+                <div class="item-summary">8月22日晚，一架从泰国曼谷飞往俄罗斯海参崴的航班，因旅客突发疾病，在万米高空改变航向，紧急降落武汉。这是一场与时间赛跑的生命救援，也是一次对机场综合保障能力的“大考”。航旅纵横APP显示，SU645航班备降武汉。（APP截图）北京时间8月22日16时19分（曼谷时间8月22日15时19分），俄罗斯航空SU645航班搭载100多名乘客...</div>
+                <div class="item-meta">极目新闻 · 2026-08-23 21:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260823A0AFEL00?scene=news-skill" target="_blank" rel="noopener">嫦娥七号任务不满足发射条件，不能在今年预定窗口实施</a></div>
+                <div class="item-summary">新华社海南文昌8月23日电（李国利、邓孟）记者23日从中国载人航天工程办公室了解到，本着稳妥可靠、万无一失的原则，经综合研判，嫦娥七号任务不满足发射条件，不能在今年预定窗口实施。（完）...</div>
+                <div class="item-meta">新华社新闻 · 2026-08-23 20:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0347G00?scene=news-skill" target="_blank" rel="noopener">“三台共舞”正上演 今年台风为何偏多？</a></div>
+                <div class="item-summary">当前，西北太平洋和南海海域正上演“三台共舞”，今年第18号台风“沙德尔”、第19号台风“紫檀”和第20号台风“简拉维”同时活跃。与此同时，又一个新的热带低压正在发展，或将成为今年第21号台风。8月2....</div>
+                <div class="item-meta">北京青年报官网 · 2026-08-24 08:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A032HB00?scene=news-skill" target="_blank" rel="noopener">西方炒作“产能过剩”，非洲却感叹：最后还得靠中国</a></div>
+                <div class="item-summary">西方所谓的“产能过剩”，到了非洲，成了“无可比拟的机会”。《南华早报》8月22日报道，随着中国电动汽车、电池和零部件价格不断下降，越来越多非洲企业希望借此降低成本、获取成熟技术。有非洲专家感叹，人们原本期待西方解决清洁技术规模化和成本问题，但最终承担起这一角色的却是中国。目前，中国生产了全球近75%的电动...</div>
+                <div class="item-meta">观察者网 · 2026-08-24 08:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260823A08HWZ00?scene=news-skill" target="_blank" rel="noopener">著名战地记者唐师曾逝世</a></div>
+                <div class="item-summary">澎湃新闻记者从唐师曾多位友人处获悉，知名战地记者唐师曾于2026年8月23日在北京逝世，享年65岁。稍早前，唐师曾的中国政法大学、北京大学校友在一封写给他的信中提到，唐师曾是一位“白血球几乎为零的危重病人”，自身免疫力因为化疗已经降到了最低，站立和行走可能随时跌倒。据北京大学新闻网介绍，唐师曾，1961年生，江苏无锡人。唐师曾曾任新华社记者、北京大学国际关系学院理事、中国政法大学兼职教授、装...</div>
+                <div class="item-meta">澎湃新闻 · 2026-08-23 16:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/BmUqrZzmyVrJ30HH0Pay0Q?scene=news-skill" target="_blank" rel="noopener">发苦丝瓜可以降火？不要信！</a></div>
+                
+                <div class="item-meta">2026-08-24 11:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A04S9800?scene=news-skill" target="_blank" rel="noopener">“无座票和二等座同价”上热搜，12306回应</a></div>
+                <div class="item-summary">24日，“无座票为何和二等座同价”话题登上热搜，不少网友反映，无座票与二等座票价相同，但无座票不提供固定座位，定价合理性存疑。 对此，铁路12306客服对@中新....</div>
+                <div class="item-meta">新黄河 · 2026-08-24 11:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A03L4C00?scene=news-skill" target="_blank" rel="noopener">官方回应手机收到长宁7.7级地震预警原因</a></div>
+                <div class="item-summary">据成都高新减灾研究所，今天8:26，四川宜宾长宁发生4.7级地震，成都高新减灾研究所的大陆地震预警网对该地震的预警震级序列依次为7.7级（震后第5秒）、6.4级（震后第6秒）、3.7级（震后第7秒）....</div>
+                <div class="item-meta">界面新闻 · 2026-08-24 09:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260823A07FTG00?scene=news-skill" target="_blank" rel="noopener">炒股爆仓，借贷买房：韩国年轻人，快扛不住了</a></div>
+                <div class="item-summary">本文来源：时代财经 作者：马欢“借钱炒股”“借钱买房”的持续热潮，推升韩国家庭负债规模再创新高。8月19日，韩国央行发布的第二季度家庭信贷数据显示，受住房相关贷款及用于杠杆炒股的信用贷款大幅增加推动，当季韩国家庭信贷为2019.8万亿韩元（约合人民币9.82万亿元），较上一季度增加25.9万亿韩元（约合人民币1256.15...</div>
+                <div class="item-meta">时代周报 · 2026-08-23 15:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824V03F1T00?scene=news-skill" target="_blank" rel="noopener">令人痛心！25岁葡萄牙中场比赛中突然晕厥，送医抢救后不幸离世</a></div>
+                <div class="item-summary">关注我看更多精彩内容</div>
+                <div class="item-meta">足球放送 · 2026-08-24 09:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A032GR00?scene=news-skill" target="_blank" rel="noopener">美国急了，“不能落后中国，一刻都不行”</a></div>
+                <div class="item-summary">“中国几乎插手了我们当前面对的每一项国家安全重点。”据美国军事网站“Breaking Defense”8月21日报道，美国国家安全局（NSA）副局长蒂姆·科西巴（Tim Kosiba）日前在TechNet Augusta会议上再度炒作所谓“中国威胁”，声称中美正在各个领域展开“激烈竞争”，尤其不能在人工智能领域落后。科西巴大肆渲染称，从格陵兰岛...</div>
+                <div class="item-meta">观察者网 · 2026-08-24 08:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824V05YK900?scene=news-skill" target="_blank" rel="noopener">总薪资超5亿史上共7人，4人都没有总冠军，怎么“混”到的？｜NBA漫谈</a></div>
+                
+                <div class="item-meta">体育梗百科 · 2026-08-24 12:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A04GTM00?scene=news-skill" target="_blank" rel="noopener">马拉松跑者拍视频遭裁判阻拦，跑者：“规则未禁止，本意为宣传”，当地回应：裁判理解偏差</a></div>
+                <div class="item-summary">8月23日，有2026威宁半程马拉松跑者通过社交平台发布视频称，他在参加马拉松过程中，使用便携口袋相机拍摄视频，却遭到裁判阻拦。 据2026威宁半程马拉松官方发布消息，该赛事于8月23日上....</div>
+                <div class="item-meta">大风新闻 · 2026-08-24 10:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A060S400?scene=news-skill" target="_blank" rel="noopener">瑞众保险被指诱导投保，老人气得嚎啕大哭，寿险行业唯规模论何时休</a></div>
+                <div class="item-summary">文｜袁小丽编辑｜刘鹏瑞众人寿近日被推上了风口浪尖。据媒体报道，7月28日，瑞众人寿陕西分公司员工姚先生实名举报瑞众人寿，称公司通过虚构“国家补贴”“政策返利”、承诺3%-4%固定收益、免费领取米面油等方式，诱导老年人购买保险，并在纠纷发生后把责任推给一线业务员。姚先生称亲眼见到一位老人被忽悠买了200万元的保...</div>
+                <div class="item-meta">腾讯财经 · 2026-08-24 12:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A039T700?scene=news-skill" target="_blank" rel="noopener">十大券商看后市：A股反弹尚未结束，关注中报景气线索</a></div>
+                <div class="item-summary">进入8月底中报披露收官阶段，A股行情将作何表现呢？澎湃新闻搜集了10家券商的观点，大部分券商认为，虽然当前外部不确定性尚未出清，但A股具备较强韧性，整理后依然还有继续反弹的可能性，财报季是下半年相对不错的配置窗口。银河证券表示，短期指数层面仍受海外波动、筹码结构扰动而出现震荡反复，板块之间的博弈与再平衡...</div>
+                <div class="item-meta">澎湃新闻 · 2026-08-24 08:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260823A07YCP00?scene=news-skill" target="_blank" rel="noopener">就车臣前领导人艾哈迈德·卡德罗夫多年前遇袭身亡，普京最新表态</a></div>
+                <div class="item-summary">【环球网报道 记者 张江平】综合俄新社等媒体报道，对于俄罗斯车臣共和国前领导人艾哈迈德·卡德罗夫多年前遇袭身亡，俄总统普京23日在一段视频讲话中称，杀害艾哈迈德·卡德罗夫的无耻罪行不能被原谅，也不能被忘记。普京发表视频讲话时的画面 图源：克里姆林宫网站根据克里姆林宫网站发布的消息，普京在视频讲话中称，艾...</div>
+                <div class="item-meta">环球网 · 2026-08-23 21:06</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-24 14:41</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
