@@ -1,0 +1,142 @@
+[
+  {
+    "url": "https://openai.com/index/gpt-5-6-in-kiro",
+    "title": "GPT-5.6 登陆 Kiro，为开发者提升性价比",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-efficiency-ai-agents",
+    "title": "NVIDIA Vera Rubin NVL72 树立 AI 智能体效率新标准：每瓦特工作量提升至 30 倍",
+    "source": "NVIDIA Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet",
+    "title": "MetaRoCE：为 AI 规模以太网打造的全新 RDMA 传输协议",
+    "source": "Meta Engineering Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blogs.nvidia.com/blog/nvlink-fusion-xpu-ai-factory",
+    "title": "NVIDIA 如何用 NVLink Fusion 让定制 XPU 融入世界级 AI 工厂",
+    "source": "NVIDIA Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://engineering.fb.com/2026/08/24/networking-traffic/mtia-300-meta-training-chip-built-in-nics",
+    "title": "MTIA 300：Meta 首款内置 NIC 与通信卸载引擎的训练芯片",
+    "source": "Meta Engineering Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blogs.nvidia.com/blog/vera-rubin-lpx-spectrum-x-nvlink-fusion",
+    "title": "NVIDIA 扩展 Vera Rubin 推理能力，Groq 3 LPX 全面投产支持智能体系统",
+    "source": "NVIDIA Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mistral.ai/news/mistral-x-humain",
+    "title": "Mistral 与 HUMAIN 达成战略合作，推进沙特及中东主权 AI",
+    "source": "Mistral AI：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.langchain.com/blog/how-toyota-north-america-put-enterprise-ai-on-the-balance-sheet-with-deep-agents-and-langsmith",
+    "title": "丰田北美如何用 Deep Agents 和 LangSmith 规模化企业 AI",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/internalized-visual-thinking",
+    "title": "Beyond Visual CoT：Internalized Visual Thinking 实现主动视频推理",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them",
+    "title": "OpenAI 正为一切构建 AI 智能体，但用户会愿意交出控制权吗？",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://developers.googleblog.com/how-to-evaluate-live-voice-agents-in-adk",
+    "title": "ADK 如何评估实时语音智能体",
+    "source": "Google Developers Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.databricks.com/blog/run-debug-and-scale-databricks-workloads-your-local-ide",
+    "title": "Databricks 如何从本地 IDE 运行、调试和扩展工作负载",
+    "source": "Databricks：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.blog/engineering/user-experience/your-alt-text-passes-automated-checks-that-doesnt-mean-its-any-good",
+    "title": "你的alt文本能通过自动化检查，不代表它真的合格",
+    "source": "GitHub Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep",
+    "title": "Anthropic 市场人员如何用 Claude Code 每周为每位销售代表发送个性化更新",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]
