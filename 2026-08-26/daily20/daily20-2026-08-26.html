@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-26</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-26</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A0ANC600?scene=news-skill" target="_blank" rel="noopener">关于征集火箭军部队违规采购问题的公告</a></div>
+                <div class="item-summary">为着力整治火箭军采购领域问题，广泛接受社会监督，现面向社会公开征集违规采购问题有关信息。一、受理范围。主要受理火箭军部队组织开展的物资服务、工程、副食品、药品耗材等采购活动有关违规问题（含招标代理机构组织项目），包括但不限于需求编制、采购评审、合同履约、网上采购等。二、受理方式。参加火箭军部队采购活动的供应商、评审专家、招标代理机构、投标代理人，以及军队内部与项目相关人员，可拨打举报电话01...</div>
+                <div class="item-meta">极目新闻 · 2026-08-25 18:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260826A034GK00?scene=news-skill" target="_blank" rel="noopener">当一位66岁母亲决定托付身后事</a></div>
+                <div class="item-summary">阳光从阳台绿植的缝隙里洒进来，屋子里摆件很多，书籍、药物、各类生活用品收拾得井井有条，不知是哪盆花开了，还散发着幽微的香气。餐桌上摊开一沓银行卡和存折，66岁的刘念戴着眼镜，用手指逐一点过。“这张是我儿子梁童的残保金（编注：指给予残疾人的各项补贴），每个月千把块。”她拿起一张存折，指尖停在封面的烫金上...</div>
+                <div class="item-meta">澎湃新闻 · 2026-08-26 07:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A027OM00?scene=news-skill" target="_blank" rel="noopener">“中国服务”加速走向海外</a></div>
+                <div class="item-summary">本报记者 罗珊珊 商务部数据显示：上半年，我国服务进出口总额37797.5亿元，同比增长8.3%。其中，服务出口15047亿元，同比增长17.6%；服务贸易逆差7703.5亿元，比上年同期缩小1614.2亿元。 一连串数字背后，是全球贸易格局的深刻调整——服务贸易和服务业合作深入发展，成为世界贸易的新增长点；也是我国服务业发展的提质增...</div>
+                <div class="item-meta">人民网 · 2026-08-25 06:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825V0AYGF00?scene=news-skill" target="_blank" rel="noopener">有一种安全感，叫解放军来了！人民子弟兵抵达广西崇左抢险救灾 群众拍下感人一幕</a></div>
+                <div class="item-summary">#媒体原创 有一种安全感，叫解放军来了！人民子弟兵抵达广西崇左抢险救灾 群众拍下感人一幕#解放军 #广西</div>
+                <div class="item-meta">中国新闻网 · 2026-08-25 18:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A0C2R500?scene=news-skill" target="_blank" rel="noopener">癌症疫苗，近50万美元一针？</a></div>
+                <div class="item-summary">癌症疫苗来了，但可能要劝退很多人。 8月19日，美国药企莫德纳（Moderna）与默沙东联合宣布了mRNA皮肤癌疫苗Intismeran联合K药（Keytruda，可瑞达）治疗黑色素瘤患者....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-08-26 08:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A0D7MD00?scene=news-skill" target="_blank" rel="noopener">警方破获新型盗猎案：嫌疑人夜间利用无人机热成像搜寻野猪、黄麂，以香烟热源测风速、校准空投落点，从高空投放钢钎进行猎杀</a></div>
+                <div class="item-summary">2025年9月，旌德警方对无人机空投“牙签”盗猎案展开收网行动。嫌疑人赵某军、袁某夜间借助无人机热成像搜寻野猪、黄麂，作案前点燃香烟，依靠香烟热源测试风速、校准空投落点，再从二十余米高空投下钢钎，借下坠冲击力杀伤猎物。因野猪已移出“三有”名录、无人机未被列为禁用工具，案件一度陷入定性困境。专案组继续深挖，查实团伙使用网具捕猎野鸡、野鸭等“三有”保护动物，以此固定关键证据。最终，赵某军、袁某分...</div>
+                <div class="item-meta">红星新闻 · 2026-08-26 07:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A0CJ9500?scene=news-skill" target="_blank" rel="noopener">“离职或调岗‘打螺丝’二选一”，星宇股份被曝劝退新入职员工，常州官方通报</a></div>
+                <div class="item-summary">8月25日，常州市人力资源和社会保障局发布情况通报：近期，媒体报道常州星宇车灯股份有限公司（以下简称“星宇股份”）解聘应届大学毕业生，引发社会关注，我局成立专项工作组开展全面调查，现将调查情况通报如下：星宇股份共招录2026届高校毕业生440名，与其中107人解除劳动合同，协商过程中方法简单生硬，缺乏充分有效沟通，造成不良影响，对此企业深表歉意，已对人力资源总监作出停职处理。经查，该企业不存...</div>
+                <div class="item-meta">红星新闻 · 2026-08-25 21:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A07TXK00?scene=news-skill" target="_blank" rel="noopener">中国使馆用这幅画回击美方！</a></div>
+                <div class="item-summary">针对美国驻巴拿马使馆在社交媒体发布美官员抹黑中国科技企业的言论，中国驻巴拿马大使馆当地时间24日在社交媒体上发布一张烧麦被插入窃听器的图片作为回击，并配文称，“某些心里只有地缘政治算计的人，会怀疑烧....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-08-25 23:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825V0C0TF00?scene=news-skill" target="_blank" rel="noopener">纪录再刷新！人形机器人百米跑出8.86秒</a></div>
+                <div class="item-summary">8月25日，第二届世界人形机器人运动会大型组100米复赛，第一组成绩再次刷新纪录。继开幕式上跑出的9.39秒，来自北京人形机器人创新中心的天工机器人，跑出了8.86秒的最好成绩，再次刷新纪录。</div>
+                <div class="item-meta">央视新闻 · 2026-08-25 20:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://www.piyao.org.cn/20260825/5a23abf071544c8586d212168a076603/c.html?scene=news-skill" target="_blank" rel="noopener">网传“武汉轮椅老人上高架蓄意碰瓷”不实（2026·08·25）</a></div>
+                
+                <div class="item-meta">2026-08-25 18:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A0CVQC00?scene=news-skill" target="_blank" rel="noopener">以极右翼议员抡锤破坏巴勒斯坦人纪念碑引争议，内塔尼亚胡回应</a></div>
+                <div class="item-summary">【环球网报道】据以色列《耶路撒冷邮报》报道，以色列极右翼政党宗教犹太复国主义者党议员苏科特8月25日在社交媒体上宣传他用锤子破坏了一个关于巴勒斯坦人的纪念碑。苏科特此举在以色列国内引发强烈争议，他被批浪费了以色列国防军的人力资源。以色列总理内塔尼亚胡称，苏科特此举“不可接受”。苏科特在社交媒体上所发的...</div>
+                <div class="item-meta">环球网 · 2026-08-25 22:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260826A02SHM00?scene=news-skill" target="_blank" rel="noopener">詹姆斯涉3亿美元贷款！与湖人前老板沃尔特产生关联 发言人正式回应</a></div>
+                <div class="item-summary">北京时间8月26日，《加州邮报》证实，在2018年加盟湖人队之前，由前湖人超级球星勒布朗・詹姆斯掌控的一家有限责任公司，从两家人寿保险公司获得了贷款，而这两家保险公司接受古根海姆合伙公司的顾问服务。....</div>
+                <div class="item-meta">罗说NBA · 2026-08-26 05:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260826A001GS00?scene=news-skill" target="_blank" rel="noopener">马克龙宣布“大消息”</a></div>
+                <div class="item-summary">北京时间8月25日，法国总统马克龙在他的社交账号上宣布了一则被他称为“非同寻常”和“史无前例”的大消息：沙特阿拉伯将在法国投资高达60亿欧元，建设三个大型动漫主题游乐园。 根据马克龙的介绍....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-08-26 07:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A07CCZ00?scene=news-skill" target="_blank" rel="noopener">一家6口挤在出租屋 妻子打赏男主播近30万 丈夫：男主播叫她“姐姐”，她打赏他1576次</a></div>
+                <div class="item-summary">封面新闻记者 宋潇 直到让妻子给自己转一笔生活费时，蒋鹏才发现，家中的积蓄早已被妻子“打赏”给了男主播。 “她还觉得这钱不多，好像没什么大不了的。”8月24日，蒋鹏告诉封面新闻记....</div>
+                <div class="item-meta">封面新闻 · 2026-08-25 14:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A05BP600?scene=news-skill" target="_blank" rel="noopener">飞机飞行途中，一乘客躲在厕所里不出来，机舱内能闻到明显异味！被空乘当场抓了现行，已被警方带走调查</a></div>
+                <div class="item-summary">近日一旅游博主爆料称8月21日由新加坡樟宜飞往上海浦东的SQ836航班上乘客们遇到了一件离谱的事有人躲进飞机厕所里抽烟被空乘当场抓了现行事后被公安部门带走调查厕所里飘出烟味空乘迅速"破案"据该网友爆料飞行途中有乘客躲进飞机厕所里抽烟结果被空乘当场发现“闻到了一股油烟混杂的味道起初还纳闷是不是飞机的燃油”...</div>
+                <div class="item-meta">极目新闻 · 2026-08-25 20:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A0CI4800?scene=news-skill" target="_blank" rel="noopener">武汉市发改委郑重声明</a></div>
+                <div class="item-summary">8月25日，湖北省武汉市发展和改革委员会发布郑重声明——近期，有人自称武汉市发展和改革委员会工作人员，向各区服务业企业打电话、发短信，以服务业“小进规”奖励及落实服务业扩能提质行动为名，要求企业订阅相应报刊杂志，参加规上企业高素质管理干部人才培训等相关活动。我们郑重声明：我委从未要求企业订阅任何报刊杂...</div>
+                <div class="item-meta">长安街知事 · 2026-08-25 23:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260826A01RZ300?scene=news-skill" target="_blank" rel="noopener">马斯克又画千亿美元“大饼”！SpaceX官宣建设地球最大发射场</a></div>
+                <div class="item-summary">财联社8月26日讯（编辑 史正丞）继千亿美元的Terafab芯片厂项目后，世界首富马斯克的“画饼列表”中又多一个千亿美元级别的太空发射场项目。当地时间周二，美国路易斯安那州政府和SpaceX共同宣布，商业航天巨头计划投资1000亿美元，在该州南部建设一座巨型新发射场，占地面积约12.5万英亩。SpaceX表示，该基地的设计目标是...</div>
+                <div class="item-meta">财联社 · 2026-08-26 08:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260826A021P900?scene=news-skill" target="_blank" rel="noopener">“叙利亚民主力量”宣布解散 全面整合进国家机构</a></div>
+                <div class="item-summary">当地时间25日，叙利亚库尔德武装主导的“叙利亚民主力量”领导人马兹卢姆·阿卜迪在叙总统府举行的新闻发布会上宣布，解散“叙利亚民主力量”及叙库尔德武装所成立的自治政府，并将其全面整合进叙利亚国家机构。 新闻链接阿卜迪本月20日在叙利亚东北部哈塞克省卡米什利市一场活动上说，库尔德“军事、安全和行政机构融入国...</div>
+                <div class="item-meta">央视新闻 · 2026-08-26 02:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A0AW3H00?scene=news-skill" target="_blank" rel="noopener">9点了办事窗口咋没人？网友质疑灌云县社会治安综合治理中心没人在岗；回应：有值班人员在， 当时在开早会</a></div>
+                <div class="item-summary">8月25日上午，有网友发布视频称，都9点了，灌云县社会治安综合治理中心办事大厅的窗口还没有工作人员到岗上班，大家都着急等着呢。 灌云县位于江苏省连云港市。灌云县社会治安综合治理中心对外介绍....</div>
+                <div class="item-meta">大风新闻 · 2026-08-25 19:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260826A01AE900?scene=news-skill" target="_blank" rel="noopener">美伊停火谈判传重大进展！据称就霍尔木兹自由通航达成共识，布油一度跌6%</a></div>
+                <div class="item-summary">霍尔木兹海峡航运恢复出现新的外交进展，国际原油周二盘中跌幅进一步扩大。伊朗与阿曼25日发表联合声明称，双方已就建立一条临时联合航运通道、开展海峡扫雷行动等展开讨论，并将继续进行技术磋商，推动建立永久航运通道及相关交通和安全管理机制。消息传出后，市场对霍尔木兹海峡航运有望逐步恢复的预期升温。周二美股早盘...</div>
+                <div class="item-meta">华尔街见闻 · 2026-08-26 07:29</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-26 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

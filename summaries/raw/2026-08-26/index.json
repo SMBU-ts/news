@@ -1,0 +1,192 @@
+[
+  {
+    "url": "https://x.com/GoogleAI/status/2092275116503707733",
+    "title": "WeatherNext 预测气旋：提前五天预警五级飓风",
+    "source": "X：Google AI (@GoogleAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/AndrewYNg/status/2092315079576555806",
+    "title": "OpenWorker 新版发布，内置网络安全智能体",
+    "source": "X：Andrew Ng（DeepLearning.AI 创始人） (@AndrewYNg)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it",
+    "title": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra",
+    "title": "Apple 推出搭载 M5 Max 与 M5 Ultra 的全新 Mac Studio",
+    "source": "Apple：Newsroom（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.langchain.com/blog/making-data-ingestion-production-ready-a-langchain-powered-airbyte-destination",
+    "title": "LangChain 与 Airbyte 集成：让数据摄取达到生产级就绪",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro",
+    "title": "Apple 发布搭载全新 M6 与 M5 Pro 芯片的 Mac mini",
+    "source": "Apple：Newsroom（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute",
+    "title": "Apple 发布 M6 与 M5 Ultra，性能与 AI 算力大幅跃升",
+    "source": "Apple：Newsroom（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/introducing-admin-plugin",
+    "title": "OpenAI 推出 ChatGPT Work 和 Codex 的 Admin 插件",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/jalapeno-first-results",
+    "title": "OpenAI 自研推理芯片 Jalapeño 首秀：行业领先的速度与能效",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.anthropic.com/news/wellbeing-research-grants",
+    "title": "Anthropic 推出 500 万美元资助计划，支持 AI 对用户幸福感影响的独立评估",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+    "title": "OpenAI 封禁俄罗斯虚假影响力行动账号",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr",
+    "title": "AgentHands：为XR空间对话智能体生成交互式手部手势",
+    "source": "Google Research：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://machinelearning.apple.com/research/starflow2-multimodal-generation",
+    "title": "STARFlow2：用归一化流桥接语言模型，实现统一多模态生成",
+    "source": "Apple Machine Learning Research（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/tutorials/choose-best-ai-model",
+    "title": "如何在编辑器里实时挑选最佳 AI 模型",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/tutorials/video-generation-api",
+    "title": "OpenRouter 视频生成 API：一份代码优先的接入指南",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.dwarkesh.com/p/dylan-patel-3",
+    "title": "Dylan Patel：Anthropic 与 OpenAI 到 2028 年将控制全球大部分算力",
+    "source": "Dwarkesh Patel：Podcast & Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.langchain.com/blog/benchmarking-question-answering-over-csv-data",
+    "title": "LangChain 评测 CSV 数据问答系统：智能体、检索与 LLM 评估",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "017.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.langchain.com/blog/llms-and-sql",
+    "title": "LLMs 与 SQL：用 LangChain 构建可靠的 text-to-SQL 方案",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "018.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.google/products-and-platforms/products/search/home-decor-tips",
+    "title": "Google Search 升级家居装饰的 5 种方法",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]

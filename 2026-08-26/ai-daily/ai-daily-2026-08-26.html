@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-08-26</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 8 月 26 日 · 星期三</h1>
+      <div class="sub">共 19 条 · 生成于 北京时间 2026 年 08 月 26 日 08:02 · 数据覆盖 2026-08-25 ~ 2026-08-26</div>
+      <div class="stats">
+        <div class="stat"><div class="n">19</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">1</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">8</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">2</div><div class="l">行业动态</div></div><div class="stat"><div class="n">2</div><div class="l">论文研究</div></div><div class="stat"><div class="n">6</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 1</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 8</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 2</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 2</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 6</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">1</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">8</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">2</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">2</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">6</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">X：Google AI (@GoogleAI)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/GoogleAI/status/2092275116503707733" target="_blank" rel="noopener noreferrer">WeatherNext 预测气旋：提前五天预警五级飓风</a>
+          </h3>
+          <p class="card-sum">Google AI 发布 WeatherNext 气旋预测模型，可同时预测风暴路径、强度和规模，比现有系统多提供一整天…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/GoogleAI/status/2092275116503707733" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Google AI 发布 WeatherNext 气旋预测模型，可同时预测风暴路径、强度和规模，比现有系统多提供一整天的预警时间。该模型在 2025 飓风季实战测试中，提前五天预测飓风 Melissa 在牙买加的五级登陆，系美国国家飓风中心首次实时使用 AI 模型辅助业务预报。WeatherNext 采用概率集合预报思路，单场风暴可生成多达 1000 次模拟，从而刻画路径与强度的不确定性区间，为防灾决策提供更充分的准备窗口。模型代码与权重均已开源，供气象机构与研究者复现和二次开发。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">2</span>
+            <span class="chip" style="--c:#10b981">X：Andrew Ng（DeepLearning.AI 创始人） (@AndrewYNg)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/AndrewYNg/status/2092315079576555806" target="_blank" rel="noopener noreferrer">OpenWorker 新版发布，内置网络安全智能体</a>
+          </h3>
+          <p class="card-sum">Andrew Ng 旗下开源智能体 OpenWorker 发布新版，强化安全工作流。其 harness 完全开源，安全…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/AndrewYNg/status/2092315079576555806" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>Andrew Ng 旗下开源智能体项目 OpenWorker 发布新版，重点强化安全工作流。其 harness（智能体运行框架）完全开源，安全团队可自行审计，确认不存在后门。新版内置三类网络安全智能体：代码漏洞扫描、依赖供应链注入检测，以及云安全配置检查，覆盖从源码到部署环境的常见风险面。同时支持在本地运行开源权重模型，使敏感代码无需上传至第三方 API 即可完成分析，契合金融、医疗等对数据驻留有硬性要求的场景。此举也反映出智能体落地正从通用助手转向可审计、可私有部署的垂直安全用例。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it" target="_blank" rel="noopener noreferrer">Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑</a>
+          </h3>
+          <p class="card-sum">Claude 即日起将聊天与 Claude Cowork 的记忆统一，用户在任一场景对话时都能调用此前积累的上下文，减…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>Anthropic 宣布 Claude 的记忆功能即日起打通普通聊天与 Claude Cowork，用户在任一场景对话时都能调用此前积累的上下文，无需反复解释背景。记忆会在聊天过程中实时更新，用户可在 Memory 设置中按主题查看、编辑或删除每一条记忆，实现逐条可控。隐私方面采取保守默认：健康、信仰等敏感话题默认不予存储，用户可主动在设置中开启；而敏感身份识别号、犯罪记录等类别则始终不会被保存。这一设计试图在长期个性化与用户对数据的掌控权之间取得平衡，也回应了外界对 AI 助手记忆边界的担忧。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">Apple：Newsroom（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra" target="_blank" rel="noopener noreferrer">Apple 推出搭载 M5 Max 与 M5 Ultra 的全新 Mac Studio</a>
+          </h3>
+          <p class="card-sum">Apple 发布搭载 M5 Max 与全新 M5 Ultra 的 Mac Studio，AI 性能最高提升 4.3 倍…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>苹果 8 月 25 日发布搭载 M5 Max 与全新 M5 Ultra 的新款 Mac Studio，定位本地端 AI 与极限专业工作流。M5 Max 版本配 18 核 CPU、最高 40 核 GPU（每核内建神经加速器）与 128GB 统一内存；M5 Ultra 版本可达 36 核 CPU、80 核 GPU 与 512GB 统一内存、1.2TB/s 内存带宽（较 M3 Ultra 提升 50%），可完全在本地运行超大语言模型。AI 性能最高提升至上代 4.3 倍，存储快 2 倍、图形快 1.8 倍。首次支持 Wi-Fi 7 与蓝牙 6，并通过雷雳 5 与 RDMA 实现多机集群，四台组网推理速度可达单机 3 倍。今日开启预购，9 月 22 日上市。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">LangChain：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.langchain.com/blog/making-data-ingestion-production-ready-a-langchain-powered-airbyte-destination" target="_blank" rel="noopener noreferrer">LangChain 与 Airbyte 集成：让数据摄取达到生产级就绪</a>
+          </h3>
+          <p class="card-sum">LangChain 与 Airbyte 的集成方案旨在将检索应用扩展至生产环境。该方案通过调度、文本拆分和 50 多种…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.langchain.com/blog/making-data-ingestion-production-ready-a-langchain-powered-airbyte-destination" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>LangChain 官方博客介绍其与数据集成平台 Airbyte 的联合成果：一个由 LangChain 驱动的 Airbyte 目标端（destination）。文章指出，检索类应用要从原型走向生产，除了查询侧的调试监控（LangSmith）和检索算法优化（如对话式检索智能体）之外，数据摄取环节同样关键——需要把分散在各类数据源中的内容可靠、可重复、增量地同步到向量库。该 Airbyte destination 让开发者复用 Airbyte 数百个数据源连接器，自动完成文档切分、向量化与写入，从而把数据管道升级为生产级基础设施，减少自建 ETL 的维护成本。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">Apple：Newsroom（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro" target="_blank" rel="noopener noreferrer">Apple 发布搭载全新 M6 与 M5 Pro 芯片的 Mac mini</a>
+          </h3>
+          <p class="card-sum">Apple 推出搭载全新 M6 与 M5 Pro 芯片的新款 Mac mini，M6 版本 AI 性能最高提升 4 倍…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>苹果同日发布搭载全新 M6 与 M5 Pro 芯片的 Mac mini，主打常驻式智能体计算。M6 版本 AI 性能最高提升至 4 倍、存储与图形性能翻倍、CPU 提速 40%；其 12 核 CPU 拥有号称全球最快的单线程性能，12 核 GPU 首次为 Mac mini 引入神经加速器，并配备全新双 16 核神经网络引擎，标准 16GB 统一内存可选配至 32GB，带宽最高 170GB/s。M5 Pro 版本可达 18 核 CPU 与 20 核 GPU，面向视频制作、游戏开发等重负载。两款均支持 Wi-Fi 7、蓝牙 6 与 2.5Gb 以太网（可选 10Gb）。当日预购，9 月 22 日发售。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">Apple：Newsroom（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute" target="_blank" rel="noopener noreferrer">Apple 发布 M6 与 M5 Ultra，性能与 AI 算力大幅跃升</a>
+          </h3>
+          <p class="card-sum">Apple 推出首款 2nm 芯片 M6，搭载 12 核 CPU、12 核 GPU 及双 16 核神经引擎，统一内存带…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>苹果推出 M6 与 M5 Ultra 两款芯片，分别首发于新 Mac mini 与 Mac Studio。M6 是苹果首颗 2 纳米工艺芯片，采用全新 12 核 CPU 架构（2 超核 + 4 性能核 + 6 能效核），多线程性能较 M5 提升 1.2 倍、较 M1 提升 2.4 倍；12 核 GPU 每核内建神经加速器，AI 峰值算力比 M5 提高近 30%、比 M1 高逾 8 倍，并配双 16 核神经网络引擎与 170GB/s 内存带宽。M5 Ultra 首次采用四芯片（quad-die）UltraFusion 封装，是苹果史上最强芯片，最高 36 核 CPU、80 核 GPU，统一内存带宽达 1.2TB/s，比 M3 Ultra 高 50%。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">8</span>
+            <span class="chip" style="--c:#10b981">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/introducing-admin-plugin" target="_blank" rel="noopener noreferrer">OpenAI 推出 ChatGPT Work 和 Codex 的 Admin 插件</a>
+          </h3>
+          <p class="card-sum">OpenAI 为 ChatGPT Work 和 Codex 推出 Admin 插件，让管理员在单一对话中完成查看工作区…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/introducing-admin-plugin" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>OpenAI 为 ChatGPT Work 和 Codex 推出 Admin 插件，让管理员在单一对话界面内完成查看工作区活动、管理成员与权限、调整用量限制以及审批支出请求等运维操作，无需在多个控制台之间切换。该插件严格遵循用户现有角色与权限体系，不会扩大任何人的访问范围。它还可将待处理的用量申请自动路由至 Slack 或 Microsoft Teams 进行审批，把管理动作嵌入团队既有沟通流程。OpenAI 表示，其内部 IT 团队部署的相关工作流已自动解决约 45% 的工单量，显著降低了人工处理负担。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">9</span>
+            <span class="chip" style="--c:#10b981">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/jalapeno-first-results" target="_blank" rel="noopener noreferrer">OpenAI 自研推理芯片 Jalapeño 首秀：行业领先的速度与能效</a>
+          </h3>
+          <p class="card-sum">OpenAI 发布自研推理芯片 Jalapeño，专为现代模型提供更快、更节能的 AI 推理，具备更高吞吐量和更低延迟…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/jalapeno-first-results" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>OpenAI 公布自研推理芯片 Jalapeño 的首批实测结果。该芯片专为现代大模型的推理场景设计，官方称其在推理速度与能效上达到行业领先水平，具备更高吞吐量与更低延迟。这标志着 OpenAI 在自研硬件方向迈出实质一步——此前公司推理算力主要依赖外部供应商的通用加速卡，而随着 ChatGPT、Codex 等产品调用规模持续扩大，推理侧开销已成为其核心成本项。专用推理芯片的意义在于以更低单位功耗服务更多请求，从而摊薄每 token 成本并降低对单一供应链的依赖。官方表示首批结果验证了该设计路线的可行性。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">10</span>
+            <span class="chip" style="--c:#f59e0b">Anthropic：Newsroom（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.anthropic.com/news/wellbeing-research-grants" target="_blank" rel="noopener noreferrer">Anthropic 推出 500 万美元资助计划，支持 AI 对用户幸福感影响的独立评估</a>
+          </h3>
+          <p class="card-sum">Anthropic 启动一项 500 万美元的资助计划，为研究 AI 如何影响用户幸福感的独立研究提供直接资金、模型访…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.anthropic.com/news/wellbeing-research-grants" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>Anthropic 宣布启动 500 万美元资助计划，支持独立研究评估 AI 对用户身心健康（wellbeing）的影响。除资金外，还向获资助者提供模型访问权限与技术支持，成果须以开源评估项目发布，供全行业开发者使用；研究团队保持完全独立。Anthropic 表示，AI 已成为许多人工作、学习乃至情感支持的对象，但业界仍缺乏清晰标准来判断模型在这类对话中应如何回应。幸福感评估尤其困难：单条回答难以判定优劣，需结合长对话上下文与用户历史，例如同一条减重建议对有进食障碍史的用户可能造成伤害。该计划旨在补齐这一评估空白。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">11</span>
+            <span class="chip" style="--c:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia" target="_blank" rel="noopener noreferrer">OpenAI 封禁俄罗斯虚假影响力行动账号</a>
+          </h3>
+          <p class="card-sum">OpenAI 封禁了一批源自俄罗斯的账号，这些账号利用 AI 推广一个虚构的以色列智库及“主权”指数，内容赞扬俄罗斯并…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>OpenAI 披露并封禁一批源自俄罗斯的账号。这些账号利用 AI 批量生成内容，包装推广一个虚构的以色列智库及其所谓「主权」指数，内容基调赞扬俄罗斯、批评西方国家，试图借第三方研究机构的外衣提升可信度、影响国际舆论。OpenAI 已终止相关账号的访问权限，并将手法特征与同业及研究机构共享。这是该公司持续公开的一系列打击 AI 滥用行动之一——自 2024 年起，OpenAI 定期披露利用其模型开展虚假信息传播、影响力行动与网络钓鱼的典型案例，目的在于提升此类操作的曝光成本与实施难度。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">12</span>
+            <span class="chip" style="--c:#8b5cf6">Google Research：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr" target="_blank" rel="noopener noreferrer">AgentHands：为XR空间对话智能体生成交互式手部手势</a>
+          </h3>
+          <p class="card-sum">Google在CHI 2026发布研究原型AgentHands，利用LLM为XR对话智能体生成与语音同步的富有表现力的…</p>
+          <div class="card-actions">
+            <a class="read" href="https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Google 在 CHI 2026 发布研究原型 AgentHands，利用大语言模型为 XR 对话智能体生成与语音同步、富有表现力的手部手势，提供空间锚定的物理指引。系统先通过眼动追踪与场景重建注册现实物体，再由 LLM 在回复文本中生成内联 GestureEvents 标记，最后在头显上按词级时间戳协调 TTS 与动画引擎，实现手势与语音的精准对齐。论文展示了三个应用场景：兰花养护的交互式教学、3D 打印机操作的技术讲解，以及生活方式陪伴。该工作表明手势不只是拟人化装饰，更是空间任务中不可替代的指代通道。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">13</span>
+            <span class="chip" style="--c:#8b5cf6">Apple Machine Learning Research（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://machinelearning.apple.com/research/starflow2-multimodal-generation" target="_blank" rel="noopener noreferrer">STARFlow2：用归一化流桥接语言模型，实现统一多模态生成</a>
+          </h3>
+          <p class="card-sum">STARFlow2 提出将自回归归一化流与语言模型统一，用于多模态生成。该方法观察到自回归归一化流与 LLM 共享因果…</p>
+          <div class="card-actions">
+            <a class="read" href="https://machinelearning.apple.com/research/starflow2-multimodal-generation" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>苹果机器学习研究团队发表论文 STARFlow2，提出用自回归归一化流（normalizing flow）统一多模态生成。作者指出现有统一模型存在结构割裂：离散 token 化牺牲视觉保真度，因果文本生成与迭代扩散去噪结构不对称，或在改造视觉语言模型时损害预训练理解能力。研究观察到自回归归一化流本质上就是自回归 Transformer，共享相同的因果掩码、KV 缓存与从左到右结构。STARFlow2 基于 Pretzel 架构，通过残差跳连将冻结的预训练 VLM 流与 TARFlow 流垂直交织，在同一因果机制下同时保留理解能力与高保真连续图像生成，并支持缓存友好的图文交错输出。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">6</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">14</span>
+            <span class="chip" style="--c:#ec4899">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/tutorials/choose-best-ai-model" target="_blank" rel="noopener noreferrer">如何在编辑器里实时挑选最佳 AI 模型</a>
+          </h3>
+          <p class="card-sum">OpenRouter 提出一套模型选型框架：先定义任务，从实时用量和第三方基准中筛选候选，再对比各提供商的定价与延迟，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/tutorials/choose-best-ai-model" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>OpenRouter 发布教程，讲解如何在编辑器内实时挑选最合适的 AI 模型。文章拒绝给出单一「最佳模型」，理由是任何具名答案一个月内就会过时，且最优选择取决于具体任务、成本与延迟预算。其推荐方法论为六步框架：明确任务定义、依据实时用量与第三方基准（Artificial Analysis、Design Arena）筛选候选、跨供应商比较价格与延迟、再用自有 prompt 实测决胜；评判标准应是「每完成一个任务的成本」而非每 token 单价。全部流程可通过 OpenRouter 托管的 MCP 服务器在编辑器中完成，若无明显赢家，则可用 openrouter/auto-beta 按请求动态路由。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">15</span>
+            <span class="chip" style="--c:#ec4899">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/tutorials/video-generation-api" target="_blank" rel="noopener noreferrer">OpenRouter 视频生成 API：一份代码优先的接入指南</a>
+          </h3>
+          <p class="card-sum">OpenRouter 推出统一的异步视频生成 API，通过 POST /api/v1/videos 提交任务、轮询状态…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/tutorials/video-generation-api" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>OpenRouter 发布视频生成 API 的代码优先接入指南。文章指出，接入单个视频模型并不难，难点在于更换模型时各家在端点、请求参数、任务状态、轮询逻辑与输出格式上各不相同，导致换模型变成一次新集成。OpenRouter 将该流程收敛为统一的异步接口：向 POST /api/v1/videos 提交 prompt 后立即获得任务 ID，随后轮询状态，完成后下载视频。教程完整演示用 Seedance 提交任务、安全轮询、保存 MP4，再以同一套代码切换到 Veo 与 Wan——仅需改动模型标识符，鉴权、轮询与下载逻辑不变（时长、宽高比等模型特有参数仍需调整）。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">16</span>
+            <span class="chip" style="--c:#ec4899">Dwarkesh Patel：Podcast &amp; Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.dwarkesh.com/p/dylan-patel-3" target="_blank" rel="noopener noreferrer">Dylan Patel：Anthropic 与 OpenAI 到 2028 年将控制全球大部分算力</a>
+          </h3>
+          <p class="card-sum">在最新一期播客中，SemiAnalysis 创始人 Dylan Patel 与 Dwarkesh Patel 讨论实验…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.dwarkesh.com/p/dylan-patel-3" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>在最新一期播客中，SemiAnalysis 创始人 Dylan Patel 与主持人 Dwarkesh Patel 深入讨论 AI 实验室的经济学逻辑。Patel 预计，Anthropic 和 OpenAI 到 2028 年将控制全球大部分可用 FLOPs（浮点算力），核心原因并非技术垄断，而是二者能把算力更高效地变现，因而有能力在采购中出价高于其他竞争者——算力最终会流向单位收益最高的买家。这一判断意味着算力分配将由商业变现能力而非科研需求主导，中小实验室与学术机构可能面临进一步的资源挤压。对话还涉及芯片供应链、数据中心建设节奏等议题。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">17</span>
+            <span class="chip" style="--c:#ec4899">LangChain：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.langchain.com/blog/benchmarking-question-answering-over-csv-data" target="_blank" rel="noopener noreferrer">LangChain 评测 CSV 数据问答系统：智能体、检索与 LLM 评估</a>
+          </h3>
+          <p class="card-sum">LangChain 发布针对 CSV 数据问答系统的基准评测，涵盖智能体、检索与 LLM 评估方法。文章提供基准测试结…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.langchain.com/blog/benchmarking-question-answering-over-csv-data" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>LangChain 发布关于表格数据问答的深度评测文章，以 CSV 为例（结论同样适用于 SQL）。团队先用 Streamlit 搭建简易应用收集真实用户提问分布，再借助 LangSmith 调试，发现初版方案的问题所在，随后建立评估流程对比不同解法。最终得到的改进方案是一个自定义智能体：基于 OpenAI functions，并配备两个工具——Python REPL 与检索器（retriever），前者负责计算与数据操作，后者负责定位相关内容。文章将收集反馈用的应用、数据集与评估脚本全部开源，并配有讲解视频，为构建可靠的表格问答系统提供了可复现的工程范式。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">18</span>
+            <span class="chip" style="--c:#ec4899">LangChain：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.langchain.com/blog/llms-and-sql" target="_blank" rel="noopener noreferrer">LLMs 与 SQL：用 LangChain 构建可靠的 text-to-SQL 方案</a>
+          </h3>
+          <p class="card-sum">本文探讨如何用大语言模型以自然语言查询 SQL 数据库，并重点介绍减少模型幻觉、构建可靠 text-to-SQL 解决…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.langchain.com/blog/llms-and-sql" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>LangChain 与社区贡献者 Francisco Ingham、Jon Luo 合作撰文，总结用大语言模型操作 SQL 数据库的经验与技巧。文章背景是企业绝大多数有价值的数据仍存于 SQL 数据库中，传统需借 BI 工具查询；而 LLM 让用户能以自然语言直接与数据库对话。LangChain 提供多种 SQL 链（SQL chains）与 SQL 智能体（SQL agent），Python 与 JavaScript 版本均有实现，目标是尽可能简化与 SQL 数据的交互。文中汇总了提示设计、表结构注入、查询校验等实践要点，帮助开发者构建可靠的 text-to-SQL 方案，并预告了配套线上分享会。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">19</span>
+            <span class="chip" style="--c:#ec4899">Google Blog：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.google/products-and-platforms/products/search/home-decor-tips" target="_blank" rel="noopener noreferrer">Google Search 升级家居装饰的 5 种方法</a>
+          </h3>
+          <p class="card-sum">Google Search 推出五种家居装饰实用功能：AI Mode 可上传房间照片并生成家具摆放效果图，Lens 支…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.google/products-and-platforms/products/search/home-decor-tips" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-19" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-19" hidden>Google 介绍 Search 在家居装饰场景的五项实用功能。AI Mode 支持上传房间照片并生成家具摆放效果图，帮助用户在购买前预览搭配；Lens 可识别复古单品并查找相似在售商品；Circle to Search 让用户无需切换应用即可圈选页面中心仪的装饰元素继续检索；Search Live 为 DIY 安装提供实时逐步指导；产品列表则可横向对比价格并设置降价提醒。Google 表示，近几个月「home decor inspo」相关搜索量上涨约 300%，反映出用户在家居决策中越来越依赖视觉化与多模态的搜索方式。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>19</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

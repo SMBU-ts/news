@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-25</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-25</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A014M000?scene=news-skill" target="_blank" rel="noopener">新闻1+1丨四个台风接续而来，如何应对？</a></div>
+                <div class="item-summary">过去的6天时间里，又有4个新台风陆续生成。台风“简拉维”24日中午在福建泉州沿海登陆，台风“紫檀”一直“滞留”在北部湾，给广西等地带去强降雨。台风“艾莎尼”和台风“沙德尔”则正在行进中。四个台风将会影响哪些地区？今年台风为啥这么多？面对已经出现的灾害风险，广西又在如何抢险救灾？本期《新闻1+1》带来分析解...</div>
+                <div class="item-meta">央视新闻 · 2026-08-25 02:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0C4NK00?scene=news-skill" target="_blank" rel="noopener">癌症疫苗，来了</a></div>
+                <div class="item-summary">8月19日，美国生物技术公司莫德纳与跨国药企默沙东公布了一项有关黑色素瘤疫苗的Ⅲ期试验结果。双方共同开发的“私人订制”mRNA癌症疫苗迅速刷屏。 珠海科技产业集团旗下华金资本首席投资官牛新....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-08-24 21:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A09DZW00?scene=news-skill" target="_blank" rel="noopener">瞭望 | 基层养老加速“织网”</a></div>
+                <div class="item-summary">突出县级“统”的功能强协调、强化镇街“链”的能力优供给、发挥村居“近”的优势广触达，推动功能互补的三级养老服务站点攥指成拳、协同协作，兜住兜好基层养老基本盘 文 |《瞭望》新闻周刊记者 积极应对人口老龄化，让养老服务更加可感可及，重点在基层。 《中国人口普查年鉴-2020》显示，全国60岁及以上人口总量约为2.6...</div>
+                <div class="item-meta">新华社新闻 · 2026-08-24 17:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A09E5400?scene=news-skill" target="_blank" rel="noopener">国管公积金新政 首套房最高可贷款340万元</a></div>
+                <div class="item-summary">中央国家机关住房资金管理中心近日发布通知，宣布对住房公积金政策进行优化调整，与此前北京楼市新政中关于公积金的调整相同，首套房贷款最高额度也可达340万元。提高住房公积金最高贷款额度1.购房家庭中1人为住房公积金缴存人的，购买首套住房公积金贷款最高贷款额度为120万元，二套住房公积金贷款最高贷款额度为100万元。...</div>
+                <div class="item-meta">央视新闻 · 2026-08-24 16:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0CUJF00?scene=news-skill" target="_blank" rel="noopener">26年！他们种下的树苗已成参天大树</a></div>
+                <div class="item-summary">‍‍‍‌‍‍‌ 26年前，殷玉珍和“赛考斯”种下的树苗，如今已长成参天大树。木犹如此，祝友谊长青！致敬所有治沙人！(来源:人民日报客户端)...</div>
+                <div class="item-meta">人民日报 · 2026-08-24 22:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A02EX800?scene=news-skill" target="_blank" rel="noopener">国家安全部官微评论员：日本靖国神社就是“战犯神社”！</a></div>
+                <div class="item-summary">近日，在外交部例行记者会上，中国外交部发言人首次直接使用“战犯神社”称呼日本靖国神社，引发国内外广泛关注。这一提法上的改变，既是对历史真相的庄严捍卫，更是对日本右翼势力的有力回击。靖国神社始建于明治年间，字面意为“保国安宁”，带有极强的模糊中立色彩。长期以来，日本右翼势力试图利用“靖国神社”这一迷惑性称谓，掩盖滔天罪行、美化军国主义历史、混淆国际社会认知，甚至将侵略战争受害国对日本政客参拜靖...</div>
+                <div class="item-meta">红星新闻 · 2026-08-25 08:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A02BUD00?scene=news-skill" target="_blank" rel="noopener">视频丨今年厄尔尼诺事件或冲击历史纪录！对我国有何影响？</a></div>
+                <div class="item-summary">记者从自然资源部国家海洋环境预报中心获悉，今年赤道中东太平洋厄尔尼诺事件或将冲击历史观测纪录。受此气候背景影响，我国沿海正持续面临台风、巨浪、风暴潮交织的复合型海洋灾害考验。今年5月，赤道中东太平洋进入厄尔尼诺状态，并且维持快速发展态势。截至目前，本次事件同期增暖程度，已经超过1982—1983、1997—1998...</div>
+                <div class="item-meta">央视新闻 · 2026-08-25 07:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A06Y4K00?scene=news-skill" target="_blank" rel="noopener">成本接近30元，飞机餐为什么依然难吃？</a></div>
+                <div class="item-summary">飞机餐为什么总被吐槽“难吃”？真的是因为成本低吗？数据显示，国内三大航司每份飞机餐平均成本都在30元左右。可到了万米高空，湿度只有10%—20%、气压相当于2400米高山，再加上复杂的冷链、安检、二次加热，以及航空食品的特殊要求，一顿饭从地面到餐桌，远比想象中复杂。更关键的是，同一家航司，不同机场的飞机餐甚至可...</div>
+                <div class="item-meta">新京报 · 2026-08-24 14:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0CQ2Z00?scene=news-skill" target="_blank" rel="noopener">汽车出口狂飙，又一大省杀入战局</a></div>
+                <div class="item-summary">每经记者：淡忠奎 每经编辑：刘艳美今年前七个月，中国汽车出口交出一份亮眼成绩单：累计出口639.9万辆，同比增幅达53.7%。其中，6月单月首次突破百万辆大关，7月再达109.2万辆，连续两个月站稳百万辆级台阶。行业普遍预测，2026年中国汽车出口预计将首次超过1000万辆。乘联分会秘书长崔东树则向城市进化论给出更积极的判断...</div>
+                <div class="item-meta">每日经济新闻 · 2026-08-24 22:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://www.piyao.org.cn/20260824/6f6c2dc3f0d145699a01481964f59aa1/c.html?scene=news-skill" target="_blank" rel="noopener">国家疾控局权威回应：“没打HPV疫苗不能入学”是误传（2026·08·24）</a></div>
+                
+                <div class="item-meta">2026-08-24 18:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260825A00HBB00?scene=news-skill" target="_blank" rel="noopener">网红“粥饼伦”突然闭店，称店铺房租上涨，名下关联4家公司3家已注销</a></div>
+                <div class="item-summary">8月24日，因撞脸周杰伦爆红的网红灌饼摊主“粥饼伦”（本名白献英）官宣其天津线下实体店闭店，核心原因为房租大幅上涨。他透露，店铺年租金从13万涨至20万，经营压力激增、无力承担，无奈选择停业。45岁的白献英来自河北保定，2020年因长相酷似周杰伦意外走红。他贴合热度打造特色灌饼品类，推出七里香灌饼、双节棍灌饼、...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-08-25 00:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A08ZEE00?scene=news-skill" target="_blank" rel="noopener">地方过紧日子问题被曝光：违规发放工资津贴、突击花钱</a></div>
+                <div class="item-summary">为了让老百姓过上好日子，政府坚持过紧日子，而为了确保这一长期方针政策落地，各地审计部门将过紧日子作为审计重点。 近期，十多个省份陆续披露当地2025年度省（自治区、直辖市）级预算执行和其他财政收支的审计工作报告（下称“审计报告”），其中不少省份发现当地仍存在一些部门、单位落实过紧日子要求不到位的问题。 为...</div>
+                <div class="item-meta">第一财经 · 2026-08-24 16:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0CFAT00?scene=news-skill" target="_blank" rel="noopener">听网友建议赴泰国旅游，29岁中国女留学生遭绑架，被带往边境路上跳车逃生，绑匪4人均落网</a></div>
+                <div class="item-summary">据多家泰国媒体报道，一名女性中国游客在泰国遭遇绑架，后跳车逃生获救。泰国警方表示，截至8月24日傍晚，4名涉案男子均已落网。警方正继续追查境外联系人、泰国境内接送网络及最终目的地。报道称，8月23日夜间，泰国警方接到报案，一名外国女子（后被证实为中国公民）在甘烹碧府遭遇袭击。警方接报后在现场找到受伤女子将...</div>
+                <div class="item-meta">中国侨网 · 2026-08-24 21:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0B45S00?scene=news-skill" target="_blank" rel="noopener">想证明自己“没躺平”，高市早苗又翻车了</a></div>
+                <div class="item-summary">据日本J-CAST NEWS网站23日报道，因为被媒体曝出自己“半数以上节假日都在首相公邸度过”，日本首相高市早苗22日在社交平台X连续发布多篇长文想平息质疑。她在帖文中强调自己节假日仍在首相公邸办....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-08-24 21:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A078HH00?scene=news-skill" target="_blank" rel="noopener">宁夏银川一高校宣布：2026级新生可携带宠物上学，优先接纳猫咪，严禁大型犬、异宠入校</a></div>
+                <div class="item-summary">8月23日，银川科技学院微信公众号发布消息：允许学生携带宠物一同开启大学生活。 消息称，为了兼顾校园秩序、师生权益与宠物生活品质，学校不允许宿舍养宠，而是全新打造标准化校园宠物寄养站，配齐专业、完善、暖心的全套服务体系： 专业专人管护校内配备专业宠物养护从业人员，提供日常照料、健康观察、行为引导等专业...</div>
+                <div class="item-meta">九派新闻 · 2026-08-24 14:49</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0B0MB00?scene=news-skill" target="_blank" rel="noopener">印度洋发生沉船事故，多名中国船员失联，福建海事局派船参与搜救</a></div>
+                <div class="item-summary">新京报讯（记者刘思维）印度当地时间8月21日，一艘名为海洋胜利者号（ocean winner）的散货轮在印度洋发生沉船事故，船上有多名中国船员失联。8月24日，新京报记者从福建海事局指挥中心获悉，目前已经成立协调搜救组派船参与搜救。 据印度海事部门消息，沉船事故发生于当地时间8月21日，事发海域位于印度东部帕拉迪普港（P...</div>
+                <div class="item-meta">新京报 · 2026-08-24 19:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824V08FJ100?scene=news-skill" target="_blank" rel="noopener">女子预约次日清洗，一早推开门却发现洗衣机被烧：7年没拔插头</a></div>
+                <div class="item-summary">女子预约次日清洗，一早推开门却发现洗衣机被烧：7年没拔插头</div>
+                <div class="item-meta">星视频 · 2026-08-24 16:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A07F3T00?scene=news-skill" target="_blank" rel="noopener">一年消失32万家！每天900家消失，街角的烟酒店到底怎么了？</a></div>
+                <div class="item-summary">凌晨2点的城市街头，当喧嚣褪去，百友超市门头上的灯箱依然倔强地闪亮着。这是成都武侯区一家烟酒店的日常，也是无数传统烟酒店在时代洪流中挣扎求生的缩影。在大众的传统认知里，街角那家看似门可罗雀的烟酒店，往往是“闷声发大财”的代名词。然而，现实却是一组令人触目惊心的数据：在行业洗牌的巨浪下，全国烟酒店正以...</div>
+                <div class="item-meta">BT财经 · 2026-08-24 15:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A070L500?scene=news-skill" target="_blank" rel="noopener">全球首批上市！乙肝功能性治愈新药上市</a></div>
+                <div class="item-summary">8月24日，葛兰素史克（GSK）宣布，日本厚生劳动省（MHLW）已批准其研发的反义寡核苷酸（ASO）药物Hibsago（bepirovirsen），作为慢性乙型肝炎（CHB）成人患者的功能性治愈（临....</div>
+                <div class="item-meta">新药说 · 2026-08-24 14:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260824A0718G00?scene=news-skill" target="_blank" rel="noopener">女子穿拖鞋开套牌车砸西瓜摊，被拍后当众取下假车牌，山东菏泽警方：确系套牌车，涉事女子正在派出所接受调查</a></div>
+                <div class="item-summary">据二三里资讯消息，山东菏泽一西瓜摊主发视频称，8月23日上午，一女子在他的摊位购买西瓜，回家后觉得西瓜不好吃，随即返回摊位找他理论。摊主表示“西瓜没问题，纯属找事。”监控画面显示，女子在西瓜摊前砸了....</div>
+                <div class="item-meta">扬眼 · 2026-08-24 14:28</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-25 09:08</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

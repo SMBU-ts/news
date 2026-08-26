@@ -11,6 +11,8 @@ output/
 
 # 正文缓存（不提交，仅保留索引和README）
 summaries/raw/**/*.txt
+# AI HOT API 原始响应缓存（用于取未截断的完整中文导语，属中间产物）
+summaries/raw/**/_aihot.json
 
 # 临时/调试产物
 remote_tree_tmp.json
