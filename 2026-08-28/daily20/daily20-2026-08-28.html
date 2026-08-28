@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-08-28</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-08-28</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A09DVS00?scene=news-skill" target="_blank" rel="noopener">视频丨受习近平总书记委托 李强抵达西藏吉隆指导抢险救灾工作</a></div>
+                <div class="item-summary">受习近平总书记委托，中共中央政治局常委、国务院总理李强率有关方面负责同志，于8月27日下午抵达西藏吉隆县吉隆镇泥石流受灾区域，指导抢险救灾工作，看望抢险救援人员和受灾安置群众。</div>
+                <div class="item-meta">央视新闻 · 2026-08-27 16:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0BQF900?scene=news-skill" target="_blank" rel="noopener">中方：绝不接受，将坚决依法依规予以拦阻</a></div>
+                <div class="item-summary">国防部：菲方应尽快拖走非法“坐滩”的57号舰。 8月27日下午，国防部举行例行记者会，国防部新闻发言人张晓刚大校答记者问。 记者：据报道，在经历近50天物资紧张之后，菲律宾非法“....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-08-27 19:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260826A0D92Q00?scene=news-skill" target="_blank" rel="noopener">新华鲜报|“十五五”，中国制造业这样争“先”</a></div>
+                <div class="item-summary">先进制造业是实体经济的重要支柱。 “‘十五五’期间，我们将加快发展先进制造业”“加快构建以先进制造业为骨干的现代化产业体系”“着力提升先进制造能力”……8月26日，在国新办举行的“开局起步‘十五五’”系列主题新闻发布会上，“先进制造”成为高频词，释放的信号清晰而有力。 8月24日，在第二届世界人形机器人运动...</div>
+                <div class="item-meta">新华社新闻 · 2026-08-26 21:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0ANAQ00?scene=news-skill" target="_blank" rel="noopener">鸡蛋价格创近十年同期新高，上市公司几家欢喜几家愁</a></div>
+                <div class="item-summary">在经历不久前的价格暴涨和冲高回落后，近期鸡蛋价格再度冲高。“今年鸡蛋价格涨得厉害。往常我们一箱鸡蛋的进货价格是七十元，现在要一百四十元左右。”近日一家鸡蛋煎饼铺的店员对第一财经记者说。就在上周，一家大型会员商店公开发布通知，上调自有品牌精选鸡蛋售价，上涨幅度约15%。今年3、4月份以来，鸡蛋价格走出“淡...</div>
+                <div class="item-meta">第一财经 · 2026-08-27 18:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0CNHC00?scene=news-skill" target="_blank" rel="noopener">英国完成全球首例AI实时辅助脑外科手术</a></div>
+                <div class="item-summary">8月27日，据新华社报道，英国伦敦大学学院医院NHS基金会信托下属的国家神经病学和神经外科医院正式公布，该院外科医生于今年5月为一名患者成功实施了全球首例人工智能实时辅助脑外科手术，借助AI系统在手术过程中实时分析内镜画面、识别隐藏的血管与神经，精准切除了患者脑部的垂体肿瘤。患者目前已完全康复，视力显著改善...</div>
+                <div class="item-meta">界面新闻 · 2026-08-27 21:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A07UGM00?scene=news-skill" target="_blank" rel="noopener">罕见！台风“沙德尔”突然拐弯了</a></div>
+                <div class="item-summary">台风“沙德尔”今天已移入我国24小时警戒线，早上9点距离浙江省温岭市偏东方向约335公里！ 据中央气象台最新研判，“沙德尔”预计将于今天夜间至明天上午在浙江象山到福建连江一带沿海登陆。 ....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-08-27 18:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0DAGI00?scene=news-skill" target="_blank" rel="noopener">大学生卖网课赚0元被版权方索赔1万：唯一订单是原告专门拍下，全国有超千起类似案例，涉事企业回应</a></div>
+                <div class="item-summary">封面新闻记者 杨旭斌因为在二手交易平台售卖网课，大四学生小雪（化名）被起诉侵权，原告要求赔偿经济损失和多项费用共计10000元，对方同时抛出和解方案，称小雪赔付数千元可以撤诉。小雪涉案的网课商品标价为10元，案发前仅成交一单，而这唯一一笔订单，还是原告方为固定侵权证据专门拍下的。到社交平台发帖求助后，小雪发...</div>
+                <div class="item-meta">封面新闻 · 2026-08-27 22:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A06EV400?scene=news-skill" target="_blank" rel="noopener">人民锐评：批量劝退应届生，企业应善待人力资源</a></div>
+                <div class="item-summary">入职仅月余，便遭分批约谈；签约管理岗，却被逼转一线“打螺丝”；要么以个人原因离职，要么接受调岗。近日，江苏常州一家上市企业劝退应届生百余名，引发舆论广泛关注。当地人社部门通报称，企业在协商过程中方法简单生硬、缺乏有效沟通，对此企业深表歉意，已对人力资源总监作出停职处理。事实不容含糊，是非自有公断。这...</div>
+                <div class="item-meta">人民日报 · 2026-08-27 12:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A08CFU00?scene=news-skill" target="_blank" rel="noopener">20年来首次，多数韩国人对美国持负面评价</a></div>
+                <div class="item-summary">参考消息网8月27日报道 据韩国《中央日报》网站8月26日报道，最新民调结果显示，超过一半的韩国人对美国持负面评价，为20年来首次。造成这一结果的主要原因是，民众对美国政府信心下滑，以及对特朗普关税政策的普遍不满。美国皮尤研究中心24日公布的民调结果显示，55%的韩国调查对象对美国持负面评价，比去年上升16个百分点...</div>
+                <div class="item-meta">参考消息 · 2026-08-27 21:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0B39700?scene=news-skill" target="_blank" rel="noopener">感冒快好的时候，传染性最强？</a></div>
+                <div class="item-summary">这是一种常见误区。图库版权图片，转载使用可能引发版权纠纷感冒传染性最强的时间是出现症状后的前2~3天。感冒通常指病原体侵袭呼吸道引发的疾病，潜伏期通常为2~4天。当感冒出现恶寒、发热、头痛、打喷嚏、咳嗽等症状时，病原体已经在呼吸道大量繁殖。尤其是感冒出现症状后的前2~3天，此时病原体活性最强、数量最多，传染...</div>
+                <div class="item-meta">科学辟谣 · 2026-08-27 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0BEH800?scene=news-skill" target="_blank" rel="noopener">女子偷自行车被老公批评后归还，隔天带着孩子偷同一辆车变卖，目前已被行政拘留；警方提醒：不要因贪图小利触碰法律红线</a></div>
+                <div class="item-summary">知错不改，还变本加厉！株洲一名女子的操作让人匪夷所思。第一次偷了别人的自行车，被丈夫批评后主动归还，本该吸取教训、引以为戒，没想到她隔天又带着孩子再次偷走同一辆自行车，转手变卖获利。8月27日，记者从株洲市公安局荷塘分局了解到，该局金山派出所成功查处这起盗窃案，涉事女子已被依法处罚。“市民张先生来到金山派出所报警，称自己停放在红旗广场某店铺外的品牌自行车被盗，希望民警帮忙追回车辆、追查嫌疑人...</div>
+                <div class="item-meta">红星新闻 · 2026-08-27 19:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827V06P1R00?scene=news-skill" target="_blank" rel="noopener">男子未领证办婚礼后离世，留下超400万财产，女方眼看婚房被砸还被赶出门，法院判了</a></div>
+                <div class="item-summary">山西朔州一对男女举办婚礼，原定领证因故搁置，婚礼41天后男子遇车祸身亡，留下超400万元资产。女方按当地习俗以妻子身份料理全部后事，向婆家申请补偿未果，男子百天祭日当天，有人员闯入婚房打砸物品，将女方及其父母赶出家门。男方母亲起诉，要求女方返还 49.7 万余元彩礼及赠与。</div>
+                <div class="item-meta">掌闻视讯 · 2026-08-27 12:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A09OK600?scene=news-skill" target="_blank" rel="noopener">网民称加1升油实测只有970毫升 江西鹰潭市监局：5升以上适合精准测量</a></div>
+                <div class="item-summary">近日，网民在江西鹰潭一家中石化加油站加1升油实测只有970毫升，质疑加油站缺斤少两。事发加油站工作人员称，相关部门已到场处置，检测合格，站点已恢复正常营业。8月27日，辖区市监局工作人员称，已到场核实情况，加油量达到5升以上才适合精准计量，当事网民使用的量筒容量低于最小测量限值，不能作为法定计量判定依据。</div>
+                <div class="item-meta">新京报我们视频 · 2026-08-27 16:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0C2JJ00?scene=news-skill" target="_blank" rel="noopener">赤根智子强硬回应美制裁</a></div>
+                <div class="item-summary">参考消息网8月27日报道 据《日本经济新闻》8月27日报道，国际刑事法院（ICC）院长赤根智子26日通过日本记者俱乐部举行了线上记者会。针对特朗普政府将ICC列为制裁对象一事，她表示，“正义终将战胜邪恶，这一信念将贯彻始终”。赤根女士将制裁描述为“法治危机”。她还警告说，日本国内存在倾向于“服从强权”的风气，这很...</div>
+                <div class="item-meta">参考消息 · 2026-08-27 20:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0D1O000?scene=news-skill" target="_blank" rel="noopener">美团外卖、淘宝闪购在浙江宁波暂停服务</a></div>
+                <div class="item-summary">8月27日晚，记者从美团外卖、淘宝闪购方面了解到，由于今年第18号台风“沙德尔”来袭，根据相关要求，为保障骑手安全，各大平台已启动特殊天气应对预案，并暂停宁波地区外卖服务。 美团外卖页面已无法下单，页面上显示，“暂无结果”。 美团外卖回应称，平台将密切关注天气情况及配送条件，后续适时恢复运营，“在此也提醒...</div>
+                <div class="item-meta">九派财经 · 2026-08-27 22:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0D2ZR00?scene=news-skill" target="_blank" rel="noopener">广州长隆特惠票“不可退”引发大量投诉，消费者：标注的字太小</a></div>
+                <div class="item-summary">今年8月以来，黑猫投诉平台涌现大量针对广州长隆旅游度假区周年庆“买一送一”特惠双人票的投诉。几百名用户在订单未预约、未核销、未产生任何使用记录的情况下申请退款，发现门票不可退，再次查看，才发现商品名称下方有“不可退”的灰色小字标识。 针对此次大规模投诉，北京市东卫律师事务所钱汪龙律师在接受新京报采访时...</div>
+                <div class="item-meta">新京报 · 2026-08-27 22:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A0CJSE00?scene=news-skill" target="_blank" rel="noopener">女子参加官方组织的相亲活动遭遇骗子被骗23万，起诉主办方一审驳回后已上诉</a></div>
+                <div class="item-summary">参加有关单位组织的相亲活动，却遭遇假冒退役军人的骗子，女子被骗23万余元。骗子最终被判刑，但财产损失难以追回。王女士遂将活动主办方——淮安市淮阴区妇联、区总工会、区级机关工委、区团委及清浦区微微红娘婚姻咨询中心（下称红娘中心）告上法庭，要求赔偿损失。目前，该案有了最新进展，一审被驳回后，王女士已提起上...</div>
+                <div class="item-meta">澎湃新闻 · 2026-08-27 21:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A09EQ600?scene=news-skill" target="_blank" rel="noopener">今年前7月中国机械工业生产实现较快增长</a></div>
+                <div class="item-summary">中新社北京8月27日电 记者27日从中国机械工业联合会获悉，2026年1至7月，全国机械工业主要涉及的五个大类行业增加值同比保持增长趋势。 其中，通用设备制造业增长7.9%，专用设备制造业增长8.8%，汽车制造业增长7.2%，电气机械和器材制造业增长6.5%，仪器仪表制造业增长9.4%。固定资产投资方面，通用设备制造业增长1.4%，专...</div>
+                <div class="item-meta">中国新闻网 · 2026-08-27 16:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827V0843D00?scene=news-skill" target="_blank" rel="noopener">白发人送黑发人，18岁高尔夫新星因脑出血离世，母亲悼词太催泪｜奇谈</a></div>
+                <div class="item-summary">18岁正是最好的年华，她的人生本才刚刚启幕，并为高尔夫梦想而拼搏，却突然因为急性脑出血倒在训练场，永远离开了父母。</div>
+                <div class="item-meta">体坛山羊 · 2026-08-27 16:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260827A08NFX00?scene=news-skill" target="_blank" rel="noopener">肉店老板连杀3人，一审死刑</a></div>
+                <div class="item-summary">8月26日，中国新闻周刊从被害人家属代理律师处获悉，山西晋城“肉店老板杀害合伙人及顾客共3人”一案，已于近日一审宣判，被告人王某忠犯故意杀人罪，被判处死刑，剥夺政治权利终身。2025年9月4日，王某忠将肉店合伙人李某杀害后，又将前来买肉的2名顾客杀害，引发社会关注。判决书显示，经审理查明，王某忠和李某共同经营一家肉店。2024年，李某自愿退出而后反复，王某忠因此不满，加之患干眼症及经济压力大...</div>
+                <div class="item-meta">中国新闻周刊 · 2026-08-27 15:37</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-08-28 08:42</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
