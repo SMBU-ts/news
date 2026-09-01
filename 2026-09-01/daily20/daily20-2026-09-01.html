@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-01</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-01</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A08FJ000?scene=news-skill" target="_blank" rel="noopener">“为什么要军训？这是我听过最好的回答”</a></div>
+                <div class="item-summary">新学年开启 各大高校、高中等迎来开学季 军训 是无数新生的第一堂必修课 有人发问：“为什么要军训？” 近日 我国首批歼击机女飞行员何晓莉 空军首位90后运-20机长陈思麒 结合自身军旅成长经历给出了答案 这番讲述被众多网友评价为 “这是我听过最好的回答” △北京大学2026年新生教育主题报告会现场 军训是一堂沉甸甸的国...</div>
+                <div class="item-meta">北京日报客户端 · 2026-08-31 18:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A0CPOS00?scene=news-skill" target="_blank" rel="noopener">（图表）2026年9月1日起 一批国家标准开始实施</a></div>
+                <div class="item-summary">新华社图表，北京，2026年8月31日 记者8月31日从国家市场监督管理总局获悉，9月1日起，59项强制性国家标准和375项推荐性国家标准开始实施。其中，家用电器、机器人智能控制、智能终端软件平台、电子商务等重要国家标准，将为引领相关产业高质量发展、提高产品质量、满足人民美好生活需要等提供标准支撑。 新华社发 宋博 制...</div>
+                <div class="item-meta">新华社新闻 · 2026-08-31 22:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A0610X00?scene=news-skill" target="_blank" rel="noopener">同行25载 带你读懂上合之“合”</a></div>
+                <div class="item-summary">2026年是上合组织成立25周年。25年来，从6个创始成员国发展为横跨亚欧非三大洲27个国家的大家庭，从聚焦地区安全拓展到50多个合作领域，上合组织已成为世界上幅员最广、人口最多、发展潜力巨大的综合性区域合作组织。 成立之初，上合组织确立互信、互利、平等、协商、尊重多样文明、谋求共同发展的“上海精神”。 从安全与...</div>
+                <div class="item-meta">新华社新闻 · 2026-08-31 11:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A02NCZ00?scene=news-skill" target="_blank" rel="noopener">终结4连败！郑钦文回应打哭16岁少女：我状态并不好 一度有些头晕</a></div>
+                <div class="item-summary">9月1日凌晨，美网女单第1轮，郑钦文对阵16岁的柳托娃。先丢一盘后，郑钦文连赢两盘，最终2-1晋级。赛后，郑钦文表示自己并不在最佳状态，并透露自己在比赛中一度头晕。 本场比赛前，郑钦文在大....</div>
+                <div class="item-meta">风过乡足球精华 · 2026-09-01 07:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A02K1800?scene=news-skill" target="_blank" rel="noopener">罕见！“沙德尔”停止编号后再度加强为台风 最新路径</a></div>
+                <div class="item-summary">中央气象台9月1日6时发布台风蓝色预警：由今年第18号台风“沙德尔”减弱后的残余涡旋发展的热带低压，今天凌晨在南海西北部海域再度加强为台风（热带风暴级，该续编台风中央气象台将继续维持原台风名称“沙德尔”和编号2618不变），今天早晨5点钟其中心位于广东省汕尾市西南方向约480公里的南海西北部海面，就是北纬19.2度、东经112.8度，中心附近最大风力有8级（18米/秒），中心最低气压为995...</div>
+                <div class="item-meta">央视新闻 · 2026-09-01 06:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A00ONA00?scene=news-skill" target="_blank" rel="noopener">海南三亚、儋州等多地发布暴雨红色预警</a></div>
+                <div class="item-summary">8月31日晚，记者从海南省气象局获悉，当晚，三亚市、儋州市、白沙县、昌江县陆续发布暴雨红色预警。三亚市气象台8月31日23时20分变更崖州区暴雨橙色预警信号为暴雨红色预警信号：受强对流云团影响，三亚市崖州区梅山附近区域过去12小时降雨量已达184.1毫米，预计未来6小时内崖州区、育才生态区、天涯区仍将有40-70毫米降雨...</div>
+                <div class="item-meta">央视新闻 · 2026-09-01 00:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A02K9K00?scene=news-skill" target="_blank" rel="noopener">视频丨美率先对伊动武又扬言报复 五角大楼却自曝“家底见空”</a></div>
+                <div class="item-summary">时隔一个月，美军再次对伊朗大打出手。当地时间8月30日深夜，美军对霍尔木兹海峡附近的伊朗拉腊克岛发动了袭击。而在约2小时后的31日凌晨，伊朗军方便宣布向美军基地发射导弹。美国总统特朗普则在31日稍晚时就美军遭袭作出回应，扬言将“狠狠打击”伊朗。但与此同时，五角大楼内部却在自己“揭短”，发出了美国对伊战事难以...</div>
+                <div class="item-meta">央视新闻 · 2026-09-01 06:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A00FWC00?scene=news-skill" target="_blank" rel="noopener">国际金价由涨转跌，后市如何？</a></div>
+                <div class="item-summary">国际黄金市场近期波动加剧。8月31日，国际金价大幅下挫。截至记者发稿，伦敦金现报4433.816美元/盎司，日内下跌0.45%，盘中最低下探至4396.07美元/盎司，跌破4400美元/盎司关键整数关口。期货市场同步走弱。截至发稿，COMEX黄金期货日内下跌0.95%，报4486.9美元/盎司，盘中最低触及4445.6美元/盎司。回顾本轮行情，8月初金...</div>
+                <div class="item-meta">国际金融报 · 2026-09-01 00:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A02DGX00?scene=news-skill" target="_blank" rel="noopener">俄罗斯财长意外亮相美国G20会议，欧洲国家“感到不安”</a></div>
+                <div class="item-summary">财联社9月1日讯（编辑 史正丞）当地时间周一，G20财长和央行行长会议在美国山区度假胜地阿什维尔揭幕。相较于美国财长贝森特和美联储主席沃什的联席讲话，一个久违的身影吸引了全球舆论的关注——在没有事先宣布的情况下，俄罗斯财政部长安东·西卢安诺夫出现在会场中。据悉，西卢安诺夫上一次出席G20财长会议，还是2022年...</div>
+                <div class="item-meta">财联社 · 2026-09-01 05:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A0AM9K00?scene=news-skill" target="_blank" rel="noopener">初乳黄黄的有毒, 要挤掉？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-08-31 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831V04UOG00?scene=news-skill" target="_blank" rel="noopener">商场保洁刚拖完地，孕晚期女子不慎摔倒，当事人：当时孕39周，自己遭受了很大的痛苦</a></div>
+                <div class="item-summary">商场保洁刚拖完地，孕晚期女子不慎摔倒，当事人：当时孕39周，自己遭受了很大的痛苦</div>
+                <div class="item-meta">九派新闻 · 2026-08-31 10:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A026BV00?scene=news-skill" target="_blank" rel="noopener">库克卸任苹果CEO：致全员信告别15年掌舵岁月，称将怀念这份工作</a></div>
+                <div class="item-summary">蒂姆·库克执掌苹果长达15年的时代，于周一正式画上句点。这位将苹果带入新纪元的CEO在任期最后一天向全体员工发出告别信，字里行间情真意切，却也透出深思熟虑的坦然。8月31日，据知名苹果内部消息人士Mark Gurman披露，库克在卸任当日向全体员工发送了这封内部信。信中，他表示自己"不会离开苹果"，只是卸下这一他"无比热...</div>
+                <div class="item-meta">全天候科技 · 2026-09-01 04:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A01U4L00?scene=news-skill" target="_blank" rel="noopener">重磅！曼城压哨签下26岁英超顶级边锋 总价6500万镑 热刺又被截胡</a></div>
+                <div class="item-summary">北京时间9月1日，知名转会专家罗马诺以标志性的“HERE WE GO”宣布，英超豪门曼城俱乐部，成功签下塞内加尔边锋恩迪亚耶。 曼城已经与埃弗顿达成协议，恩迪亚耶已获得埃弗顿批准，即将前往....</div>
+                <div class="item-meta">我爱英超 · 2026-09-01 02:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A09SYF00?scene=news-skill" target="_blank" rel="noopener">“子涵梓萱”的时代已经过去，这届新生不叫“子涵”了</a></div>
+                <div class="item-summary">近日，全国各地学校开学，不少小学新生的名字令人惊艳。与过去的子涵、梓萱相比，孩子的名字更独特。越来越多新手爸妈在取名时，从古典文学和状元姓名中寻找灵感。不少网友直呼“画风变了”。北京语言大学命名文化研究中心2024年的调查显示，采用诗词典故的新生名字占比已达38.7%，较2015年增长近3倍。姓名文化作为中国传统...</div>
+                <div class="item-meta">大皖新闻 · 2026-08-31 17:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A0BSRN00?scene=news-skill" target="_blank" rel="noopener">40年房贷新政尚未落地，六大行房贷余额少了5000多亿</a></div>
+                <div class="item-summary">上周五（8月28日），央行、金融监管总局等多部门发布一揽子房地产新规，其中在个人住房贷款领域的核心调整之一是贷款期限上限从30年延长至40年，其落地情况备受关注。据第一财经了解，目前多数银行尚未进入正式执行阶段，落地仍待细则发布，但少数银行已支持客户按照40年期限申请。 刚刚披露的银行半年报显示，上半年国有六...</div>
+                <div class="item-meta">第一财经 · 2026-08-31 20:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A0C0N900?scene=news-skill" target="_blank" rel="noopener">准绝杀！世预赛：中国男篮险胜黎巴嫩 杨瀚森19分献霸气单打制胜</a></div>
+                <div class="item-summary">北京时间8月31日，中国男篮在世预赛第二阶段第二场，回到主场对阵缺少阿拉基的黎巴嫩男篮。中国男篮在第二节开局取得过11分领先优势，黎巴嫩男篮多点开花在下半场逐步反超比分，双方之后持续交替领先缠斗。杨....</div>
+                <div class="item-meta">醉卧浮生 · 2026-08-31 21:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A07W8B00?scene=news-skill" target="_blank" rel="noopener">飙涨500%！国产之“光”，爆单</a></div>
+                <div class="item-summary">两根光纤预制棒就能拉出环绕地球一整圈的光纤——在光纤生产车间里，这些外径超300毫米、重达560多公斤的光棒，单根即可拉出两万多公里光纤。有企业负责人介绍，今年以来，所有生产线始终满负荷运转，部分型号销量同比猛增3至5倍，新建的智能制造基地刚刚封顶，产能将实现翻番，目前有的订单已经排到了一年之后。来源：央视财经</div>
+                <div class="item-meta">红星新闻 · 2026-08-31 19:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A087WZ00?scene=news-skill" target="_blank" rel="noopener">“00后”情侣入住酒店145天，将客房变成垃圾场，入住期间不让保洁打扫也不让开门检查；酒店：因欠费不多未报警</a></div>
+                <div class="item-summary">8月30日，据百姓关注报道，四川成都简阳市一酒店顾客入住145天，将客房变成垃圾场。现场视频显示，整个房间被大量零食包装袋、外卖餐盒、个人杂物堆满，连置物架缝隙里也塞满了用过的纸巾，房间几乎没有落脚的空隙。酒店工作人员称顾客是一对“00后”男女，入住期间，住客不让保洁打扫，也不让开门检查，理由是不方便。因为...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-08-31 14:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831V0A1R700?scene=news-skill" target="_blank" rel="noopener">女孩起夜如厕误把电视柜当马桶坐塌，爸爸：孩子发癔症了，脚被划伤</a></div>
+                <div class="item-summary">8月30日，河南郑州。女孩深夜起床上厕所，误把电视柜当马桶坐塌。孩子爸爸王先生称，孩子白天玩的太累，晚上睡觉发癔症了，电视柜上的水壶碎了，脚有被划伤，提醒家长不要做这种悬浮电视柜，不太安全。</div>
+                <div class="item-meta">掌闻视讯 · 2026-08-31 17:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A07HOT00?scene=news-skill" target="_blank" rel="noopener">高校宣布中秋、国庆连放13天，校方：避免学生反复往返耗费路费、体力</a></div>
+                <div class="item-summary">2026年暑期落幕，中秋、国庆双节临近。8月31日，九派新闻了解到，大连工业大学艺术与信息工程学院、淮阴师范学院等高校公布假期安排，将中秋、国庆假期合并连放，时长共计13天。 放假通知。图/受访者供图 淮阴师范学院工作人员介绍，若按常规安排，中秋9月25日-27日放假3天，学生返校上完9月28日-30日课程，紧接着又迎来国...</div>
+                <div class="item-meta">九派新闻 · 2026-08-31 14:04</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-01 08:20</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

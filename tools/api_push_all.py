@@ -115,7 +115,7 @@ def main():
 
     # Create commit
     commit_msg = (
-        "hotsearch 2026-08-31\n\n"
+        "hotsearch 2026-09-01\n\n"
         "- 每日热搜：五平台（微博/百度/今日头条/知乎/哔哩哔哩）各综合排名前10热点，共50条；"
         "agent 预生成 100-200 字中文摘要替代易失效的 Bing 抓取\n"
         "- 重建站点聚合页（index/archive/sitemap），热搜分类融入首页与归档\n"

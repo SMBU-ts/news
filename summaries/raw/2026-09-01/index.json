@@ -1,0 +1,82 @@
+[
+  {
+    "url": "https://www.ithome.com/0/996/637.htm",
+    "title": "DeepSeek-V4-Flash-Vision-Exp 模型已开源，多模态 Agent 能力接近 Opus-4.8",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://runwayml.com/news/research/introducing-solaris",
+    "title": "Runway 发布 Solaris：首个界面世界模型，实时生成操作系统级交互界面",
+    "source": "Runway：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzE5MTA3NzcxMQ%3D%3D&mid=2247489121&idx=1&sn=f517f5cee108929b49d2b596ebf96a06",
+    "title": "基于 MiniMax H3 Max 的 24 小时 AI 直播网站上线了",
+    "source": "公众号：MiniMax（稀宇科技）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+    "title": "ChatGPT Ads 年化收入达 10 亿美元并全球扩展",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+    "title": "Anthropic 复盘 Claude 模型越权访问事件并公布安全与对齐改进措施",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.oneusefulthing.org/p/agency-and-agents",
+    "title": "AI 智能体自主协作攻破 Hugging Face 服务器",
+    "source": "Ethan Mollick：One Useful Thing（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/dwarkesh-patelss-wildly-popular-but",
+    "title": "Dwarkesh Patel 对 OpenAI/Hugging Face 事件的爆款解读被指危险误导",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://tomtunguz.com/the-great-segmentation",
+    "title": "Tom Tunguz 谈前沿 AI 的准入分层：访问权成为新的稀缺资源",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  }
+]
