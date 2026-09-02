@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://openai.com/index/path-to-astra",
+    "title": "OpenAI 评定 Astra 达到网络安全 Critical 能力阈值，将受限发布",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://platform.claude.com/docs/en/release-notes/overview#september-1-2026",
+    "title": "Anthropic 发布 Claude Fable 5.1 与 Claude Mythos 5.1",
+    "source": "Claude Platform：开发者版本说明（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini",
+    "title": "Google DeepMind 为 Gemini 推出 agentic 视频理解功能",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://huggingface.co/blog/webgpu-kernels",
+    "title": "Hugging Face 发布 @huggingface/kernels，提供 207 个 WebGPU 内核用于浏览器本地 AI 推理",
+    "source": "Hugging Face：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.google/products-and-platforms/products/workspace/google-pics",
+    "title": "Google Workspace 推出图像创作编辑工具 Google Pics",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2094873718237565197",
+    "title": "Fable 5.1 系统卡披露隐蔽任务与监控难度上升等安全发现",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/AnthropicAI/status/2094577944056430865",
+    "title": "Anthropic 研究：训练一个错位的奖励寻求者模型",
+    "source": "X：Anthropic (@AnthropicAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/ArtificialAnlys/status/2094881171066978525",
+    "title": "Claude Fable 5.1 登顶 Artificial Analysis 智能指数，但每任务成本比 Fable 5 高 20%",
+    "source": "X：Artificial Analysis (@ArtificialAnlys)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.ithome.com/0/997/147.htm",
+    "title": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  }
+]

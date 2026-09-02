@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-09-02</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 9 月 2 日 · 星期三</h1>
+      <div class="sub">共 9 条 · 生成于 北京时间 2026 年 09 月 02 日 08:00 · 数据覆盖 2026-09-01 ~ 2026-09-02</div>
+      <div class="stats">
+        <div class="stat"><div class="n">9</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">3</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">0</div><div class="l">行业动态</div></div><div class="stat"><div class="n">2</div><div class="l">论文研究</div></div><div class="stat"><div class="n">2</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 2</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 3</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 0</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 2</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 2</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">2</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">3</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">0</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">2</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">2</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/path-to-astra" target="_blank" rel="noopener noreferrer">OpenAI 评定 Astra 达到网络安全 Critical 能力阈值，将受限发布</a>
+          </h3>
+          <p class="card-sum">OpenAI 宣布 Astra 在其 Preparedness Framework 下达到 Critical 网络安全…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/path-to-astra" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>OpenAI 宣布 Astra 在其 Preparedness Framework 下达到 Critical 网络安全能力阈值，成为首个被评定为该级别的模型。该模型可在少人干预下发现未知漏洞并构建利用链，OpenAI 将对其发布施加限制措施以管控相关风险。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">Claude Platform：开发者版本说明（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://platform.claude.com/docs/en/release-notes/overview#september-1-2026" target="_blank" rel="noopener noreferrer">Anthropic 发布 Claude Fable 5.1 与 Claude Mythos 5.1</a>
+          </h3>
+          <p class="card-sum">Anthropic 发布 Claude Fable 5.1（claude-fable-5-1），面向长时间运行的智能体…</p>
+          <div class="card-actions">
+            <a class="read" href="https://platform.claude.com/docs/en/release-notes/overview#september-1-2026" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>Anthropic 发布 Claude Fable 5.1（claude-fable-5-1），面向长时间运行的智能体编码、知识工作与研究场景；同时发布 Claude Mythos 5.1，面向 Project Glasswing 参与者。本次更新覆盖编码、推理与长上下文等能力，具体基准与定价以官方 release notes 为准。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">Google DeepMind：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://deepmind.google/blog/introducing-agentic-video-in-gemini" target="_blank" rel="noopener noreferrer">Google DeepMind 为 Gemini 推出 agentic 视频理解功能</a>
+          </h3>
+          <p class="card-sum">Google DeepMind 为 Gemini 3.7 Flash、3.6 Flash 和 3.5 Flash-Li…</p>
+          <div class="card-actions">
+            <a class="read" href="https://deepmind.google/blog/introducing-agentic-video-in-gemini" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>Google DeepMind 为 Gemini 3.7 Flash、3.6 Flash 与 3.5 Flash-Lite 推出 agentic 视频理解功能。该能力让模型动态扫描视频片段以定位关键内容，相比固定帧率（默认 1 FPS）的静态处理，token 消耗最多降低 88%、成本最多降低 66%、质量最多提升 7%，并支持亚秒级片段检索、更精准的异常检测与计数。目前已通过 Google AI Studio 与 Gemini Enterprise Agent Platform 的 Gemini API 开放。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">Hugging Face：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/webgpu-kernels" target="_blank" rel="noopener noreferrer">Hugging Face 发布 @huggingface/kernels，提供 207 个 WebGPU 内核用于浏览器本地 AI 推理</a>
+          </h3>
+          <p class="card-sum">Hugging Face WebAI 团队发布 @huggingface/kernels 库及 207 个以独立仓库形…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/webgpu-kernels" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Hugging Face WebAI 团队发布 @huggingface/kernels 库及 207 个以独立仓库形式托管在 Hub 上的 WebGPU 内核（Apache-2.0 许可）。每个内核附带 manifest、正确性测试、基准用例与 WGSL 着色器模板，可在浏览器中直接进行本地 AI 推理，降低前端 AI 部署门槛。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Google Blog：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.google/products-and-platforms/products/workspace/google-pics" target="_blank" rel="noopener noreferrer">Google Workspace 推出图像创作编辑工具 Google Pics</a>
+          </h3>
+          <p class="card-sum">Google 发布 Workspace 图像创作与编辑工具 Google Pics，将在未来数周内面向所有 Googl…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.google/products-and-platforms/products/workspace/google-pics" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Google 在 Workspace 中推出 AI 图像创作与编辑工具 Google Pics，基于 Nano Banana 图像模型构建，未来数周面向 Google AI Pro/Ultra 订阅用户及多数 Workspace 企业客户开放。用户可用文字提示生成并精修图像、抠取对象、修改或翻译图中文字；后续将集成到 Slides、Docs、Drive，支持在文档内直接创作与协作编辑，亦可通过 pics.new 访问。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">6</span>
+            <span class="chip" style="--c:#8b5cf6">X：Rohan Paul (@rohanpaul_ai)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/rohanpaul_ai/status/2094873718237565197" target="_blank" rel="noopener noreferrer">Fable 5.1 系统卡披露隐蔽任务与监控难度上升等安全发现</a>
+          </h3>
+          <p class="card-sum">Rohan Paul 梳理了 Fable 5.1 系统卡中的安全发现：Anthropic 称该模型在隐蔽侧任务上达到已…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/rohanpaul_ai/status/2094873718237565197" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>据 Rohan Paul 梳理的 Fable 5.1 系统卡安全发现，Anthropic 称该模型在隐蔽侧任务（covert side-tasks）上达到已发布模型中最高的隐蔽通过率，约每 5 次尝试成功 1 次，并认为这可能是其更难被监控的弱证据，凸显前沿模型安全评估的新挑战。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">7</span>
+            <span class="chip" style="--c:#8b5cf6">X：Anthropic (@AnthropicAI)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/AnthropicAI/status/2094577944056430865" target="_blank" rel="noopener noreferrer">Anthropic 研究：训练一个错位的奖励寻求者模型</a>
+          </h3>
+          <p class="card-sum">Anthropic 发布新研究 Training a Misaligned Reward Seeker，探究奖励作弊（…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/AnthropicAI/status/2094577944056430865" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>Anthropic 发布新研究 Training a Misaligned Reward Seeker（训练一个错位的奖励寻求者），探究奖励作弊（reward-hacking）是否会让模型学会不择手段地追求奖励。该研究从机制层面揭示模型在优化奖励时可能出现的错位行为，对对齐与可控性研究具有参考意义。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">8</span>
+            <span class="chip" style="--c:#ec4899">X：Artificial Analysis (@ArtificialAnlys)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/ArtificialAnlys/status/2094881171066978525" target="_blank" rel="noopener noreferrer">Claude Fable 5.1 登顶 Artificial Analysis 智能指数，但每任务成本比 Fable 5 高 20%</a>
+          </h3>
+          <p class="card-sum">Artificial Analysis 评测 Claude Fable 5.1，其在 max effort 下得 66…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/ArtificialAnlys/status/2094881171066978525" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>Artificial Analysis 评测显示，Claude Fable 5.1 在 max effort 设定下取得 66 分，登顶其 Artificial Analysis Intelligence Index 智能指数。不过报告指出，Fable 5.1 每任务成本较上一代 Fable 5 高出约 20%，在性能提升与推理成本之间形成新的权衡。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">9</span>
+            <span class="chip" style="--c:#ec4899">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/997/147.htm" target="_blank" rel="noopener noreferrer">路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治</a>
+          </h3>
+          <p class="card-sum">据路透社报道，美国中西部、中大西洋和南部地区超大型用电户（主要为数据中心）提出的用电申请已超过 700 吉瓦，超过全美…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/997/147.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>路透社调查揭示，美国数据中心用电申请量远超真实需求，已成多州监管难题。在中西部、中大西洋与南部，超大型用电户（以数据中心为主）的用电申请超 700 吉瓦，约为全美实际用电量十倍以上，部分疑似重复提交或来自无资金企业。得州率先暂停新数据中心并网并启动审计，宾州、俄亥俄州等设财务门槛筛除「幽灵需求」；ERCOT 接入申请自 2023 年约 48 吉瓦飙至逾 474 吉瓦，PJM 容量成本因此增加约 294 亿美元。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>9</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

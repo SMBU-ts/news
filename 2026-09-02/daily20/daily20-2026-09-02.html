@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-02</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-02</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A03FG800?scene=news-skill" target="_blank" rel="noopener">双预警齐发！这些地区有大暴雨、雷暴大风</a></div>
+                <div class="item-summary">中央气象台9月2日6时继续发布暴雨黄色预警：预计，9月2日8时至3日8时，湖南东南部、江西中南部、浙江东部和南部、福建东部和南部、广东东部、台湾岛南部以及黑龙江东部等地部分地区有大到暴雨，其中，江西南部、浙江南部、福建东北部和东南部、广东东部、台湾岛南部等地部分地区有大暴雨（100-230毫米）。上述部分地区伴有...</div>
+                <div class="item-meta">央视新闻 · 2026-09-02 06:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A03KAF00?scene=news-skill" target="_blank" rel="noopener">“以盾养矛”？日本又搞危险动作</a></div>
+                <div class="item-summary">【环球时报报道 记者 郭媛丹】近日，外媒报道称，日本新建的“宙斯盾系统搭载舰”首舰巨型主桅杆已安装，此外日本“鸟海”号驱逐舰携“战斧”导弹近日返回日本。接受《环球时报》采访的军事问题专家表示，日本借“反导防御”之名，行进攻性扩军之实，突破和平宪法束缚的野心愈发不加掩饰。日本一系列举动将冲击亚太战略平衡...</div>
+                <div class="item-meta">环球网 · 2026-09-02 06:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A09C7200?scene=news-skill" target="_blank" rel="noopener">12．86亿千瓦我国光伏发电装机历史性超过煤电</a></div>
+                <div class="item-summary">人民网北京9月1日电 (记者杜燕飞)国家能源局今日发布的最新数据显示，截至今年7月底，我国光伏发电装机容量达到12.86亿千瓦，其中集中式光伏7.04亿千瓦、分布式光伏5.82亿千瓦。光伏发电的装机容量首次超越煤电装机12.85亿千瓦，成为我国装机规模最大的电源品类。 “这一历史性跨越为实现‘双碳’目标夯实了电力根基。电力...</div>
+                <div class="item-meta">人民网 · 2026-09-01 17:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A0AFZQ00?scene=news-skill" target="_blank" rel="noopener">地面风不够用？中国把发电站送上4000米高空</a></div>
+                <div class="item-summary">我国自主研制的S4000浮空风力发电系统（形似巨型飞艇），近日在西北某试验基地顺利完成了升空、驻空、发电、回收全流程验证。这个由北京中关村企业临一云川牵头，联合清华大学、中国科学院空天信息创新研究院研制的“空中发电站”，标志着我国高空风电技术正式从技术迭代走向工程化落地。今年7月发布的《可再生能源发展“十...</div>
+                <div class="item-meta">北京日报客户端 · 2026-09-01 18:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A00N1700?scene=news-skill" target="_blank" rel="noopener">“存款定期化”未逆转，“付息成本”已转向：42家A股上市银行中报收官，高息存款集中到期重定价成息差修复第一杠杆</a></div>
+                <div class="item-summary">每经记者：刘嘉魁 每经编辑：魏官红截至2026年8月末，A股42家上市银行2026年半年报披露收官。一个看似矛盾的信号浮出水面：曾持续数年的“存款定期化”趋势并未逆转——农业银行6月末个人定期存款余额达14.30万亿元，较上年末增加9422.14亿元；工商银行上半年个人定期平均余额同比再增1万亿元。但另一条曲线已经转向：高成...</div>
+                <div class="item-meta">每日经济新闻 · 2026-09-02 00:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A07F8I00?scene=news-skill" target="_blank" rel="noopener">美企将接管中国企业所运营的委内瑞拉油田？外交部：中委合作受法律保护</a></div>
+                <div class="item-summary">9月1日，外交部发言人郭嘉昆主持例行记者会。路透社记者提问，据报道，作为特朗普总统与委内瑞拉达成的全新石油协议的一部分，美国石油公司北美蓝色能源合作伙伴公司（NABEP）将接管委内瑞拉境内多处油田。这些油田此前由中国企业所运营。中方对此有何回应？郭嘉昆表示，中方注意到有关报道。中方一贯主张国与国之间关系应...</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-01 14:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A03QM800?scene=news-skill" target="_blank" rel="noopener">中秘联合考古：合作没有国界，但考古人和考古学概念都有祖国</a></div>
+                <div class="item-summary">【文/观察者网专栏作者 花舞影】近日，中国社科院考古所、秘鲁文化部卡拉尔考古区和圣马科斯国立大学考古学院在巴兰卡省苏佩签署合作协议，组建中秘联合考古队进驻秘鲁小北地区（Norte-Chico），实地踏勘作为美洲最古老文明主体及内陆代表的卡拉尔-苏佩圣城(La Ciudad Sagrada de Caral-Supe)、以及作为其滨海代表的阿斯佩...</div>
+                <div class="item-meta">观察者网 · 2026-09-02 07:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A0BFLU00?scene=news-skill" target="_blank" rel="noopener">皇马，请使用“中国西藏”（China's Xizang）</a></div>
+                <div class="item-summary">日前，西班牙皇家马德里足球俱乐部在其境外社交媒体的官方账号上，发布一张球队为尼泊尔泥石流灾害默哀的图片，并配文“悼念在尼泊尔和西藏灾害中的遇难者”。该贴把“西藏”与“尼泊尔”并列为两个对等主体，而西....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-09-01 22:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A0AFMY00?scene=news-skill" target="_blank" rel="noopener">生酮食谱 7 天不重样，吃饱吃好还掉秤？</a></div>
+                <div class="item-summary">网上有传闻称：生酮饮食7天不重样，平均掉秤8斤！彻底断碳水，身体被迫燃脂，躺着都能瘦。那么，这种说法靠谱吗？先说答案：这种说法过于夸大，生酮饮食可能帮助部分人短期减重，但并不是适合所有人的“快速减肥法”。图库版权图片，转载使用可能引发版权纠纷生酮饮食是一种限制碳水化合物摄入、提高脂肪摄入比例的饮食方式...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-01 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026082617391700?scene=news-skill" target="_blank" rel="noopener">2026秋季开学丨向阳生长</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A03NIM00?scene=news-skill" target="_blank" rel="noopener">美国银行副总裁在纽约时代广场被刺身亡，年仅32岁！凶手与警察对峙4分钟后被击毙，警方：49岁女子持双刀随机攻击，20秒内刺伤2人</a></div>
+                <div class="item-summary">据美媒消息，美国银行副总裁艾琳·皮亚琴蒂（Erin Piacenti）当地时间周一在时代广场被刺身亡，年仅32岁。Erin Piacenti, 图片来源：LinkedIn公开信息显示，美国银行（Bank of America）为美国第二大商业银行，业务包含个人零售银行、商业信贷、投资银行、全球市场交易以及美林品牌下的财富管理。据央视新闻报道，美国方面消息，当地时间8月31日下午，一名女子在纽...</div>
+                <div class="item-meta">红星新闻 · 2026-09-02 07:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A0CKV800?scene=news-skill" target="_blank" rel="noopener">家长群内有人提议凑600元请保洁打扫教室，一学生妈妈回复“再请俩保姆咋样”表达质疑被老师禁言，四川西昌教体局：将核查此事</a></div>
+                <div class="item-summary">9月1日，四川西昌航天学校一年级新生家长群内，有家长提议交600元请保洁打扫教室卫生。一位学生妈妈当即质疑，该学生家长说：“孩子是送到学校去上学的，不是去学校当公主、少爷，小孩子都能做到的事情，请保洁我觉得不是很合理。”随后，她被老师单独禁言。该家长表示，自己收入微薄，在学校附近租房陪读，不是多少钱的问...</div>
+                <div class="item-meta">交汇点 · 2026-09-02 07:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A014HG00?scene=news-skill" target="_blank" rel="noopener">高盛、美银、德银、瑞银等21家国际大行宣布：明年抱团发行稳定币</a></div>
+                <div class="item-summary">财联社9月2日讯（编辑 史正丞）当地时间周二，包括高盛、美国银行、花旗集团、德意志银行在内的21家金融机构集体发表声明，宣布计划于2027年上半年发行一种与美元挂钩的加密货币。（来源：prnewswire）公告表示，这些机构计划于今年下半年成立一家新公司，作为发行稳定币的主体。新公司成立初期将聚焦于推出美元计价稳定币...</div>
+                <div class="item-meta">财联社 · 2026-09-02 01:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A0CKRT00?scene=news-skill" target="_blank" rel="noopener">2700亿五粮液，账面上一骑绝尘</a></div>
+                <div class="item-summary">记者丨谢之迎 编辑丨谭璐在白酒上市公司中，五粮液账面增幅一骑绝尘。8月28日，五粮液披露，1-6月，公司实现营收284.17亿元，同比增长20.9%；净利润87.53亿元，同比增长89.3%。不过，这建立在去年调整后的低基数之上。具体来看，今年一季度，五粮液的净利润达80.63亿元，二季度则仅有6.9亿元，环比下降超九成。管理层高调抛出“一核两擎两驱一新”体系，1618五粮液与39度五粮液剑...</div>
+                <div class="item-meta">21世纪商业评论 · 2026-09-02 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A03K0800?scene=news-skill" target="_blank" rel="noopener">夏窗标王！曼城压哨官宣签约25岁恩佐5年 总价1.25亿镑平英超纪录</a></div>
+                <div class="item-summary">北京时间9月2日，英超豪门曼城俱乐部官方宣布，正式签下25岁的切尔西中场恩佐-费尔南德斯，双方将签约5年至2031年。 在正式加盟曼城后，恩佐激动表示：“曼城是近年来英格兰最成功的俱乐部。....</div>
+                <div class="item-meta">我爱英超 · 2026-09-02 06:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A03KHO00?scene=news-skill" target="_blank" rel="noopener">苹果CEO特努斯薪酬曝光：基本年薪300万美元，2027目标5800万美元</a></div>
+                <div class="item-summary">IT之家 9 月 2 日消息，苹果公司于当地时间 9 月 1 日向美国证券交易委员会（SEC）提交的文件显示，新任 CEO 约翰 · 特努斯（John Ternus）2027 财年的薪酬方案目标值约为 5,800 万美元（IT之家注：现汇率约合 3.91 亿元人民币），而蒂姆 · 库克（Tim Cook）约为 4,700 万美元（现汇率约合 3.17 亿元人民币）。现年 51 岁...</div>
+                <div class="item-meta">IT之家 · 2026-09-02 06:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A0CZD200?scene=news-skill" target="_blank" rel="noopener">深夜多股发布利好，多股提示风险</a></div>
+                <div class="item-summary">9月1日晚，多家上市公司发布利好公告，另有多股发布利空公告。多股发布利好公告阳光股份公告称，签下算力新业务大单。公司控股子公司深圳阳光金汇科技有限公司与A公司签署了服务协议，阳光金汇向A公司提供服务器租赁综合服务，服务期限自服务计费之日起5年，服务费总价（含税）6.33亿元。阳光股份表示，若协议能顺利实施，...</div>
+                <div class="item-meta">21世纪经济报道 · 2026-09-02 07:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A03RQ300?scene=news-skill" target="_blank" rel="noopener">英国公开赛：赵心童常冰玉晋级 丁俊晖横扫小奥沙利文 吴宜泽出局</a></div>
+                <div class="item-summary">北京时间9月1日晚，2026年斯诺克英国公开赛正赛阶段进入第二日的比赛。 1. 中国球员：赵心童、常冰玉轻松晋级，丁俊晖横扫，吴宜泽和肖国栋出局，张安达险胜韦克林 当日，中国10....</div>
+                <div class="item-meta">交叉小径的花园 · 2026-09-02 07:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260831A0A32D00?scene=news-skill" target="_blank" rel="noopener">男子听信AI抄近道下山，越导越偏直接困在深山，事后AI这样说</a></div>
+                <div class="item-summary">8月30日下午，宁波市鄞州区一处山域内一名男子爬山时迷路被困，急需救援。接警后消防员火速赶到山脚，起初，消防员根据男子发来的定位上山搜寻，可搜救途中，被困男子电话一直处于忙线状态，始终无法取得联络。当救援队伍抵达定位标记的地点后，现场却空无一人。经过多次尝试，消防员终于再次联系上男子，双方开启实时位置...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-09-01 20:55</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-02 08:56</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
