@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-03</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-03</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903V02X0200?scene=news-skill" target="_blank" rel="noopener">抗战胜利81周年！1分钟重温2025九三盛大阅兵 感受中国军人的横平竖直！</a></div>
+                <div class="item-summary">抗战胜利81周年！1分钟重温2025九三盛大阅兵 感受中国军人的横平竖直！</div>
+                <div class="item-meta">海客军事 · 2026-09-03 07:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A02WHF00?scene=news-skill" target="_blank" rel="noopener">视频丨台风“沙德尔”在福建漳州沿海第三次登陆</a></div>
+                <div class="item-summary">今年第18号台风“沙德尔”（热带风暴级）的中心已于3日6时30分前后在福建省漳州市漳浦古雷沿海第三次登陆，登陆时中心附近最大风力有9级（23米/秒），中心最低气压985百帕。 受“沙德尔”及其外围环流影响福建广东局地有特大暴雨中央气象台今天6时发布台风黄色预警：预计9月3日8时至4日8时，受“沙德尔”及其外围环流影响，广东东部和北部、福建大部、江西中南部、湖南东南部、台湾岛等地部分地区有大到...</div>
+                <div class="item-meta">央视新闻 · 2026-09-03 06:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260901A0BZL100?scene=news-skill" target="_blank" rel="noopener">开学第一课丨37年→1年10个月！长征火箭跑出奋进加速度</a></div>
+                <div class="item-summary">今年，是中国共产党成立105周年，中国工农红军长征胜利90周年。在中国共产党百余年奋斗历程中，长征，是具有决定意义的一次伟大远征。要读懂长征，就要走入那段烽火连天的岁月。今天，《2026开学第一课》，让我们一起踏上“我们的长征路”，去看看中国共产党怎样在绝境中开辟新路！一代又一代航天人接力前行，长征火箭不断...</div>
+                <div class="item-meta">央视新闻 · 2026-09-01 21:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0EGJ700?scene=news-skill" target="_blank" rel="noopener">人教版语文教材，新增这篇课文</a></div>
+                <div class="item-summary">据央视新闻消息，近日，有网友发现，航天员刘洋给孩子的亲笔信，正式编入了五年级上册语文教材。2022年，神舟十四号载人飞船成功发射，将陈冬、刘洋、蔡旭哲三名航天员送上太空。出征前，刘洋给一对儿女写下了一封亲笔信。信中，她解释了为何拒绝孩子们到发射现场送行——“你们是妈妈的铠甲，也是妈妈的软肋。我是妈妈，也...</div>
+                <div class="item-meta">长安街知事 · 2026-09-02 22:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0DPYW00?scene=news-skill" target="_blank" rel="noopener">黑龙江省委书记：深挖彻查涉黑涉恶腐败，做到有伞必打、有网必破，对涉黑涉恶和腐败交织案件加大督办力度，发现一起、查处一起、绝不姑息</a></div>
+                <div class="item-summary">黑龙江日报消息，9月2日，黑龙江省委书记许勤到省委政法委、省公安厅、哈尔滨市公安局调研督导深化扫黑除恶专项斗争工作。他强调，要坚决贯彻习近平法治思想和习近平总书记关于扫黑除恶斗争的重要指示精神，全面落实全国扫黑除恶专项斗争视频会议部署要求，扎实开展深化扫黑除恶专项斗争，营造安全稳定社会环境，加快建设更...</div>
+                <div class="item-meta">政事儿 · 2026-09-02 21:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0DQ3V00?scene=news-skill" target="_blank" rel="noopener">港大医科修订入学语言要求：“良好粤语能力”变“良好中文能力”，允许普通话面试</a></div>
+                <div class="item-summary">据多家港媒9月2日报道，香港大学医学院近日更新内外全科医学士入学语言要求，由以往“需要具备良好粤语能力”改为“需具备良好中文能力”，意味着申请人可使用粤语或普通话。港大医学院1日承认有关修订，但称并非放宽入学标准，并强调所有学生在临床实习及接触病人前，均须具备粤语能力。内外全科医学士被视为港大“神科”...</div>
+                <div class="item-meta">观察者网 · 2026-09-02 21:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0E3G000?scene=news-skill" target="_blank" rel="noopener">阳台有碍市容，最高罚3万？</a></div>
+                <div class="item-summary">“以后阳台外还能不能晾衣服？”“什么物品算‘有碍市容’？”“真要罚的话罚多少？”在佛山市城市管理和综合执法局发布征求意见稿的媒体报道下，不少市民留言道。 近日，广东佛山市城市管理和综合执法....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-09-02 22:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0ERXS00?scene=news-skill" target="_blank" rel="noopener">特朗普：霍尔木兹海峡应改名“特朗普海峡”，我们已经控制了它；伊朗：在波斯湾北部查获38.2万升走私燃油</a></div>
+                <div class="item-summary">当地时间9月2日，美国总统特朗普在社交媒体平台发文称，霍尔木兹海峡应改名为“特朗普海峡”。特朗普再次强调已控制了霍尔木兹海峡，称“既然我们已经控制了它，我们是不是应该把霍尔木兹海峡改名为特朗普海峡呢？就像美国本身一样，它肯定会比以往任何时候都‘更火热’！”伊朗说在波斯湾北部查获38.2万升走私燃油据伊朗媒体2日报道，伊朗边防部队日前在波斯湾北部海域扣押一艘涉嫌走私燃油的外国拖船，查获38.2...</div>
+                <div class="item-meta">红星新闻 · 2026-09-02 23:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0C6GN00?scene=news-skill" target="_blank" rel="noopener">耳垂有折痕，说明患有心血管疾病？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-02 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902V0E34H00?scene=news-skill" target="_blank" rel="noopener">家长在班级群自报干部身份“让老师关照孩子”？保定一中：会对所有学生一视同仁</a></div>
+                <div class="item-summary">家长在班级群自报干部身份“让老师关照孩子”？保定一中：会对所有学生一视同仁</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-02 22:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0EKK500?scene=news-skill" target="_blank" rel="noopener">中国女篮世界杯12人名单出炉，李月汝护照在美国丢失，遗憾落选</a></div>
+                <div class="item-summary">9月2日晚，中国篮球之队发文：2026年国际篮联女篮世界杯将于9月4日开赛。中国女篮将在小组赛中分别迎战美国女篮、捷克女篮和意大利女篮。中国女篮参加本次比赛的12名运动员为：陈明伶、陈玉婕、韩旭、贾赛琪、李缘、罗欣棫、孙宇、唐子婷、王思雨、杨舒予、张曼曼、张子宇。经中国女篮队委会研究决定，钟佳丽、李雨汧、邓雨婷三位队员返回国内。因近期健康状况等原因，刘禹彤也已返京。感谢她们在集训期间的全心投...</div>
+                <div class="item-meta">红星新闻 · 2026-09-02 23:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0E56P00?scene=news-skill" target="_blank" rel="noopener">越南或购买法国“阵风”战机，装备战略将出现重大转变？</a></div>
+                <div class="item-summary">越南可能正与法国就采购达索航空公司生产的“阵风”多用途战斗机进行深入谈判。根据“印度国防研究”网站(IDRW)网站8月31日报道，越南正在考虑采购法国“阵风”战斗机，以推动本国老旧战斗机机队的现代化。与此同时，越南也在寻求减少长期以来对俄制战斗机的依赖。“阵风”战斗机可携带多种类型的精确制导弹药，具备较强的...</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-02 22:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0CK9L00?scene=news-skill" target="_blank" rel="noopener">北京一大学生摔倒碰到女子腿部，送医检查未见异常仍被索赔误工费三千元，警方回应</a></div>
+                <div class="item-summary">近日，北京的一名大学生小陈因为地铁晃动导致他摔倒，碰到了一名女乘客，下地铁时女乘客叫住他，说自己的腿没知觉了他得负责，小陈报警随后将女子送医，垫付了医药费，经过检查女子腿部无大碍，不过该女子坚称，自己因伤要请假三天，向小陈索要误工费。小陈在社交平台讲述自己的遭遇，引发关注。图/受访者提供。9月2日，小...</div>
+                <div class="item-meta">潇湘晨报 · 2026-09-02 19:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A00CAE00?scene=news-skill" target="_blank" rel="noopener">浙江宁波一医院开药标注“每次服用30片”，患者质疑与说明书“每次服用1-3片”不符，涉事医院：属录入错误，将调查核实</a></div>
+                <div class="item-summary">9月1日，浙江宁波。患者李女士（化名）反映，她在宁波鄞州中医院开具助眠药物谷维素片，医院打印的用药标签标注每次服用30片，但药品说明书规定每次仅服用1-3片。李女士质疑医院用药剂量录入出错，担心若按照标签误服会带来安全隐患。李女士称，她在数药时觉得30片的服用剂量用量过大，才核对药品说明书，并没有服用，目前...</div>
+                <div class="item-meta">大河报 · 2026-09-03 00:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0E8YU00?scene=news-skill" target="_blank" rel="noopener">“特大头”1美元币将开售</a></div>
+                <div class="item-summary">美媒“今日美国”报道，美国铸币局将于美国东部时间9月2日中午12点正式开售印有特朗普头像的1美元纪念币，这是一个多世纪以来，美国货币上首次出现在世人物的形象。收藏者可花154.50美元购买100枚，或是花61美元购买一卷25枚装。美国财政部在新闻稿中称，在整袋、整卷的硬币当中，共有25万枚硬币带有“7月4日”密记标记。 ...</div>
+                <div class="item-meta">观察者网 · 2026-09-02 22:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A02KJS00?scene=news-skill" target="_blank" rel="noopener">NBA重磅罚单官宣！剥夺快船5首轮+罚款3000万 小卡罚70万免遭禁赛</a></div>
+                <div class="item-summary">北京时间9月3日，NBA今日宣布，洛杉矶快船队以及科怀・莱昂纳德因违反联盟与球员工会（NBPA）达成的《集体劳资协议》中规避工资帽相关规定，遭到处罚。该裁决依据由伟凯律师事务所开展的独立调查所获取的....</div>
+                <div class="item-meta">罗说NBA · 2026-09-03 04:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0DTBW00?scene=news-skill" target="_blank" rel="noopener">江西宜春查获56万余罐假新西兰羊奶粉，涉事企业被吊销生产许可</a></div>
+                <div class="item-summary">新京报讯（首席记者郭铁）新京报记者从“宜春市场监管”微信公号获悉，宜春市市场监管局近期公布3起食品安全领域严重违法典型案例。其中，江西某纳健康产业有限公司生产的“新西兰羊奶初乳高钙粉”因标签不符合食品安全法规定、伪造出厂检验记录等，被宜春市市场监管局吊销食品生产许可证，涉案产品约56.52万罐。 2025年5月...</div>
+                <div class="item-meta">新京报 · 2026-09-02 21:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0EAN800?scene=news-skill" target="_blank" rel="noopener">高校连续30年为家长设免费过夜区，体育馆“爆改”成500个床位，提供浴巾等一次性日用品</a></div>
+                <div class="item-summary">开学季的高校周边酒店，往往一房难求。但在华中农业大学，一座体育馆却成了家长们最温暖的落脚点。 9月1日晚，华中农业大学东体育馆内没有激烈的体育赛事，而是化身“免费过夜区”，在多个场馆内铺满了整齐的瑜伽垫和全新的空调被。这项为新生家长提供免费住宿的暖心举措，学校已经默默坚持了30年。 晚上9时许，记者看到，...</div>
+                <div class="item-meta">九派新闻 · 2026-09-03 07:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260902A0EDD700?scene=news-skill" target="_blank" rel="noopener">男子捡走他人遗失在出租车内手机并关机，用锡纸将手机包起来屏蔽信号，被刑拘</a></div>
+                <div class="item-summary">近日，辽宁省鞍山市一名男子在乘坐出租车时捡走他人遗失在后排座位的手机并关机，民警通过研判成功锁定犯罪嫌疑人位置开展抓捕。在犯罪嫌疑人家中，民警将其抓获，并查获了其用锡纸包起来企图屏蔽信号的手机。警方表示，在出租车、网约车等封闭运营车辆内，乘客遗忘的财物转化为管理人占有。若有其他乘客趁驾驶员不备私自拿...</div>
+                <div class="item-meta">法治日报 · 2026-09-03 07:34</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-03 08:41</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
