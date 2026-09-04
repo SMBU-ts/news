@@ -1,0 +1,489 @@
+{
+  "date": "2026-09-04",
+  "generated_at": "2026-09-04T08:57:58.739773+08:00",
+  "total": 50,
+  "sections": [
+    {
+      "source": "百度",
+      "items": [
+        {
+          "rank": 1,
+          "title": "习近平主席的“比什凯克时间”",
+          "summary": "9月1日，国家主席习近平在吉尔吉斯斯坦首都比什凯克出席上海合作组织成员国元首理事会第二十六次会议及“上合组织+”会议，发表《推动上海合作组织实现更高质量发展》等重要讲话，就发展优先、安全为要、以人为本、对话协商提出四点主张，并强调高举“上海精神”旗帜、落实未来10年发展战略。今年适逢上合组织成立25周年，组织已扩至横跨亚欧非27国。",
+          "url": "https://m.baidu.com/s?word=%E4%B9%A0%E8%BF%91%E5%B9%B3%E4%B8%BB%E5%B8%AD%E7%9A%84%E2%80%9C%E6%AF%94%E4%BB%80%E5%87%AF%E5%85%8B%E6%97%B6%E9%97%B4%E2%80%9D&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 2,
+          "title": "“Token贷”火出圈",
+          "summary": "以Token消耗量为授信依据的“Token贷”近期在广东、安徽等地落地走热。银行不再依赖固定资产抵押，而是基于企业算力消耗、算法效能等新型生产要素评估放贷，风控从“看砖头”转向“看Token”。广东海珠推出最高3000万元、期限3年的Token贷，安徽等地也鼓励“模型贷”。业内提示需建立统一可审计的Token数据存证标准以防范刷单虚增等风险。",
+          "url": "https://m.baidu.com/s?word=%E2%80%9CToken%E8%B4%B7%E2%80%9D%E7%81%AB%E5%87%BA%E5%9C%88&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 3,
+          "title": "OpenAI总裁宣布AGI到来",
+          "summary": "当地时间9月3日，OpenAI正式发布新一代旗舰模型GPT-6 Astra，总裁格雷格·布洛克曼称人们或可将此模型视为AGI（通用人工智能）到来的节点，并以“欢迎进入AGI时代”作结。Astra被称为“全球最智能、对齐程度最高的模型”，在电脑操作、编程、科研、网络安全等任务上取得突破，使用超10万块GPU在得州Stargate基地训练，API定价为每百万输入10美元、输出50美元。",
+          "url": "https://m.baidu.com/s?word=OpenAI%E6%80%BB%E8%A3%81%E5%AE%A3%E5%B8%83AGI%E5%88%B0%E6%9D%A5&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 4,
+          "title": "新学期建议家长每天抓好这3件小事",
+          "summary": "新学期伊始，教育领域人士建议家长每天抓好三件小事以帮助孩子平稳适应开学节奏：保证规律作息与充足睡眠、关注情绪变化并给予适度陪伴、培养独立完成学业与整理物品的习惯。相关科普倡导家长避免过度代劳与焦虑传导，以稳定的家庭支持为孩子建立安全感与自律意识，引发不少家长共鸣与讨论。",
+          "url": "https://m.baidu.com/s?word=%E6%96%B0%E5%AD%A6%E6%9C%9F%E5%BB%BA%E8%AE%AE%E5%AE%B6%E9%95%BF%E6%AF%8F%E5%A4%A9%E6%8A%93%E5%A5%BD%E8%BF%993%E4%BB%B6%E5%B0%8F%E4%BA%8B&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 5,
+          "title": "一次“时髦”尝试 换来生活不能自理",
+          "summary": "一则关于跟风尝试某种“时髦”行为却导致身体严重受损、生活不能自理的案例引发网络关注。当事人因盲目追随网络流行做法、忽视安全与专业评估而造成不可逆后果。网友围绕“精致陷阱”“健康不能被流量裹挟”展开讨论，提醒公众对待新兴美容、健身或极限体验应保持理性，切勿以健康为代价追逐一时潮流。",
+          "url": "https://m.baidu.com/s?word=%E4%B8%80%E6%AC%A1%E2%80%9C%E6%97%B6%E9%AB%A6%E2%80%9D%E5%B0%9D%E8%AF%95+%E6%8D%A2%E6%9D%A5%E7%94%9F%E6%B4%BB%E4%B8%8D%E8%83%BD%E8%87%AA%E7%90%86&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 6,
+          "title": "深夜突发！美国AI大宕机",
+          "summary": "北京时间9月3日深夜，美国爆发有记录以来最大规模AI集体宕机。OpenAI旗下ChatGPT与Codex、Anthropic旗下Claude、xAI旗下Grok三大头部服务先后故障，谷歌Gemini、微软Copilot亦现异常。事件持续约3小时40分，Downdetector显示故障报告超数万份，业内疑与共享云基础设施有关，至凌晨1点10分左右陆续恢复。",
+          "url": "https://m.baidu.com/s?word=%E6%B7%B1%E5%A4%9C%E7%AA%81%E5%8F%91%EF%BC%81%E7%BE%8E%E5%9B%BDAI%E5%A4%A7%E5%AE%95%E6%9C%BA&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 7,
+          "title": "美网五连胜！郑钦文晋级女单32强",
+          "summary": "北京时间9月4日凌晨，2026美网女单第二轮，郑钦文以6-4、2-6、6-1战胜哈萨克斯坦选手普丁塞娃，职业生涯首次击败这位“磨王”，豪取美网五连胜晋级32强，成为本届赛事女单32强中唯一中国选手。此役再获130积分，即时世界排名升至第94位，第三轮将迎战22号种子凯斯。",
+          "url": "https://m.baidu.com/s?word=%E7%BE%8E%E7%BD%91%E4%BA%94%E8%BF%9E%E8%83%9C%EF%BC%81%E9%83%91%E9%92%A6%E6%96%87%E6%99%8B%E7%BA%A7%E5%A5%B3%E5%8D%9532%E5%BC%BA&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 8,
+          "title": "OpenAI发布GPT-6 Astra",
+          "summary": "美东时间9月3日，OpenAI发布新一代旗舰模型GPT-6 Astra，定义为“新一代智能”，称其在电脑操作、浏览器使用、软件工程、网络安全与科学研究等领域实现进一步突破。Astra可自主拆解目标、调用工具并完成复杂工作流，是OpenAI首个达到内部“关键”网络安全能力门槛的模型。企业版率先开放，未来数日逐步推送至ChatGPT订阅用户及API。",
+          "url": "https://m.baidu.com/s?word=OpenAI%E5%8F%91%E5%B8%83GPT-6+Astra&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 9,
+          "title": "“没有Token的CS学生 应立即退学”",
+          "summary": "伴随OpenAI发布GPT-6 Astra与“Token贷”走热，一则“没有Token的计算机专业学生应立即退学”的争议言论引发讨论。发言者意在强调AI时代算力与Token资源已成CS人才培养的关键变量，但“退学”表述过于绝对，遭不少网友反驳。舆论普遍认为高校应均衡配置AI算力、降低使用门槛，而非将资源差异简单等同于学业去留。",
+          "url": "https://m.baidu.com/s?word=%E2%80%9C%E6%B2%A1%E6%9C%89Token%E7%9A%84CS%E5%AD%A6%E7%94%9F+%E5%BA%94%E7%AB%8B%E5%8D%B3%E9%80%80%E5%AD%A6%E2%80%9D&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        },
+        {
+          "rank": 10,
+          "title": "外交部：已向韩方提出严正交涉",
+          "summary": "9月3日外交部例行记者会上，发言人郭嘉昆就韩国光州双年展主办方纵容中国台湾地区使用不符身份的名称参展表明立场，指出此举公然违反一个中国原则，中方已向韩方提出严正交涉并要求立即纠正。郭嘉昆重申，1992年中韩建交公报明确韩国承认一个中国、台湾是中国一部分，希望韩方恪守政治承诺、切实负起责任。",
+          "url": "https://m.baidu.com/s?word=%E5%A4%96%E4%BA%A4%E9%83%A8%EF%BC%9A%E5%B7%B2%E5%90%91%E9%9F%A9%E6%96%B9%E6%8F%90%E5%87%BA%E4%B8%A5%E6%AD%A3%E4%BA%A4%E6%B6%89&sa=fyb_news",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "百度"
+        }
+      ]
+    },
+    {
+      "source": "知乎",
+      "items": [
+        {
+          "rank": 1,
+          "title": "淘宝崩了",
+          "summary": "9月3日上午，淘宝App突发大面积服务器故障，大量用户无法查看订单、页面报错或提示“服务竟然出错了”，“淘宝崩了”迅速登上热搜。客服回应称可能为App缓存、网络不稳或系统临时异常，建议更新、清缓存或切换网络。截至发稿平台未就故障范围与修复作官方说明，支付宝、闲鱼等阿里系应用亦曾现同步异常。",
+          "url": "https://www.zhihu.com/search?q=淘宝崩了",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 2,
+          "title": "HLE对战T1",
+          "summary": "英雄联盟LCK赛区HLE与T1的对决再度成为电竞圈焦点。两支韩国顶级战队的交锋向来牵动粉丝神经，相关战术布置、选手状态与版本理解成为赛前讨论热点。无论胜负，HLE与T1的较量都被视为检验LCK顶尖竞争力的风向标，比赛进程与关键团战在社交平台引发大量复盘与热议。",
+          "url": "https://www.zhihu.com/search?q=HLE对战T1",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 3,
+          "title": "LPL",
+          "summary": "英雄联盟职业联赛（LPL）新赛季动态持续吸引观众。关于战队阵容调整、新人登场与版本更迭下的战术演进，成为电竞社区高频话题。粉丝围绕强队走势、季后赛格局与本土选手表现展开热烈讨论，LPL作为全球最具影响力的赛区之一，其竞争态势备受海内外观众关注。",
+          "url": "https://www.zhihu.com/search?q=LPL",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 4,
+          "title": "Manus宣布恢复独立运营",
+          "summary": "9月1日，通用AI智能体公司Manus在官网公告已正式恢复独立运营，由肖弘、张涛、季逸超组成的原创始团队继续领导公司。这标志着其与Meta的分拆过渡基本结束——2025年底Meta收购Manus，今年4月被中国监管部门依法禁止并要求撤销交易。公司称将作为独立Agent实验室继续拓展通用AI代理能力，并开放受影响用户数据恢复入口。",
+          "url": "https://www.zhihu.com/search?q=Manus宣布恢复独立运营",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 5,
+          "title": "出发吧！看山",
+          "summary": "一档以“看山”为主题的户外旅行内容引发关注，倡导走近自然、用脚步丈量山川的慢旅行方式。相关影像与攻略分享唤起都市人群对山野徒步、露营与在地文化的兴趣，网友围绕路线选择、装备准备与安全须知展开交流。“出发吧！看山”折射出后疫情时代人们对轻量化户外与精神休憩的偏好升温。",
+          "url": "https://www.zhihu.com/search?q=出发吧！看山",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 6,
+          "title": "小米18Fold",
+          "summary": "小米官宣9月7日举行秋季旗舰发布会，将推出新形态“中折叠”旗舰小米18 Fold，首发自研玄戒O3 AI旗舰SoC与澎湃OS 4，搭载Xiaomi MiMo端侧大模型，采用5.38英寸外屏、7.58英寸内屏与徕卡三摄，内置6000mAh电池。同场还将发布小米平板9 Pro Max、小米手环11及澎程N70系列等新品，起售价传闻破万元。",
+          "url": "https://www.zhihu.com/search?q=小米18Fold",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 7,
+          "title": "2026女排亚锦赛",
+          "summary": "2026年女排亚洲锦标赛正在进行，各队为争夺洲际荣誉与世锦赛席位展开角逐。中国女排在新周期阵容磨合下的表现备受关注，网友围绕主力配置、临场发挥与年轻队员成长展开讨论。作为亚洲排坛最高水平赛事之一，亚锦赛的每一场对决都牵动球迷神经，比赛结果将影响后续国际大赛排兵布阵。",
+          "url": "https://www.zhihu.com/search?q=2026女排亚锦赛",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 8,
+          "title": "官方通报星宇股份批量劝退应届生",
+          "summary": "常州星宇车灯股份有限公司因批量解约107名应届生持续发酵。8月25日常州市人社局通报，公司招录440名应届生中与107人解除劳动合同，协商方法简单生硬、缺乏有效沟通，已对人力资源总监停职处理。公司8月27日致歉，承诺发放3个月求职补贴，若11月底前未就业再给6个月工资补偿，董事长9月2日再度致歉。",
+          "url": "https://www.zhihu.com/search?q=官方通报星宇股份批量劝退应届生",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 9,
+          "title": "星宇股份劝退应届生补偿方案",
+          "summary": "针对批量解约107名应届生事件，星宇股份公布补偿方案：向受影响同学即时发放为期3个月的求职生活补贴并保留免费住宿，积极联系其他企业提供适配岗位；若3个月内（11月底前）仍未实现单位就业，将给予6个月工资作为补偿。常州市人社局已提供一对一就业推荐，截至8月25日107人中已有22人就业、14人参加面试。",
+          "url": "https://www.zhihu.com/search?q=星宇股份劝退应届生补偿方案",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        },
+        {
+          "rank": 10,
+          "title": "星宇股份应届生离职打螺丝二选一",
+          "summary": "网传录音显示，星宇股份在8月上旬对2026届应届生启动集中约谈，给出“二选一”方案：主动以“个人原因”签字离职可获半月薪资补偿，否则单方强制调岗至一线流水线从事装配、插接等基础操作工岗位，并暗示配合签字才不影响背调。该“羞辱式劝退”引发舆论哗然，后被官方认定协商方式简单生硬。",
+          "url": "https://www.zhihu.com/search?q=星宇股份应届生离职打螺丝二选一",
+          "hot": 0.0,
+          "hot_display": "—",
+          "source": "知乎"
+        }
+      ]
+    },
+    {
+      "source": "微博",
+      "items": [
+        {
+          "rank": 1,
+          "title": "人人影视变正版了",
+          "summary": "关停五年后，人人影视以“人人影视分享精彩”之名于9月2日重新上架苹果、小米、荣耀等应用商店，携手华数传媒全面转向正版付费，所有片源均为正规授权，不再提供下载。月卡25元、季卡60元、年卡175元，老用户可领1个月会员。新运营主体与2021年因侵权获刑的旧字幕组团队彻底切割，引发“爷青回”与版权讨论。",
+          "url": "https://s.weibo.com/weibo?q=%23%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86%E5%8F%98%E6%AD%A3%E7%89%88%E4%BA%86%23",
+          "hot": 1140000.0,
+          "hot_display": "114.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 2,
+          "title": "郑钦文首胜普丁塞娃",
+          "summary": "2026美网女单第二轮，郑钦文以6-4、2-6、6-1战胜哈萨克斯坦好手普丁塞娃，生涯首次击败这位擅长节奏变化的“磨王”，晋级32强。带病出战的郑钦文凭借更稳定的相持与关键破发拿下决胜盘，成为本届美网女单32强中唯一中国选手，即时世界排名升至第94位，下轮对阵22号种子凯斯。",
+          "url": "https://s.weibo.com/weibo?q=%23%E9%83%91%E9%92%A6%E6%96%87%E9%A6%96%E8%83%9C%E6%99%AE%E4%B8%81%E5%A1%9E%E5%A8%83%23",
+          "hot": 840000.0,
+          "hot_display": "84.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 3,
+          "title": "中埃两大文明双向奔赴",
+          "summary": "中埃两大文明交流互动持续升温，“双向奔赴”成为网络热词。作为两大古老文明代表，中埃在考古、文物展陈、影视与文化创意等领域的合作不断拓展，卢克索等地文明对话与文化交流项目受到关注。网友赞叹文明互鉴的魅力，认为两大文明跨越时空的呼应，为共建“一带一路”人文合作注入新活力。",
+          "url": "https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9F%83%E4%B8%A4%E5%A4%A7%E6%96%87%E6%98%8E%E5%8F%8C%E5%90%91%E5%A5%94%E8%B5%B4%23",
+          "hot": 640000.0,
+          "hot_display": "64.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 4,
+          "title": "这季花少保好看的",
+          "summary": "新一季《花儿与少年》开播后口碑回暖，被不少观众评价“保好看”。嘉宾阵容与旅行路线的轻松氛围、真实互动成为讨论焦点，网友围绕名场面、嘉宾性格与旅途笑点展开热议。相比前几季，本季在叙事节奏与人物关系呈现上更获认可，相关剪辑与花絮在社交平台持续刷屏，带动综艺热度走高。",
+          "url": "https://s.weibo.com/weibo?q=%23%E8%BF%99%E5%AD%A3%E8%8A%B1%E5%B0%91%E4%BF%9D%E5%A5%BD%E7%9C%8B%E7%9A%84%23",
+          "hot": 640000.0,
+          "hot_display": "64.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 5,
+          "title": "武大大可不必等86页PDF逼出来",
+          "summary": "近日，一名自称武大教授之女的网友发布86页PDF长文，实名举报武汉大学化学与分子科学学院一女教授、博导涉嫌学术不端并介入其家庭。9月3日晚武大通报：举报人曾于8月19日向校纪委提交材料，纪委已正式受理、启动调查，一经查实将依规依纪依法严肃处理。网友呼吁校方及时公布结果，“大可不必等逼出来”。",
+          "url": "https://s.weibo.com/weibo?q=%23%E6%AD%A6%E5%A4%A7%E5%A4%A7%E5%8F%AF%E4%B8%8D%E5%BF%85%E7%AD%8986%E9%A1%B5PDF%E9%80%BC%E5%87%BA%E6%9D%A5%23",
+          "hot": 630000.0,
+          "hot_display": "63.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 6,
+          "title": "小米手环11",
+          "summary": "小米官宣9月7日秋季发布会，除小米18 Fold外将一同推出全新小米手环11。爆料显示手环11将提供标准版、NFC版、陶瓷版与全金属版四款版本，在外观材质上明显升级。作为小米可穿戴产品线的重要更新，手环11的续航、健康监测与智能联动能力备受期待，将与手机、平板新品共同构成本轮旗舰阵容。",
+          "url": "https://s.weibo.com/weibo?q=%23%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF11%23",
+          "hot": 590000.0,
+          "hot_display": "59.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 7,
+          "title": "吉隆口岸淤泥里发现警服",
+          "summary": "西藏吉隆口岸受尼泊尔侧泥石流冲击严重，救援人员在数米深淤泥中清理出一件荧光黄警用马甲，现场民警一句“这个肯定是我们的”令人动容。截至9月2日现场已累计发现遗物847件。这场由冰岩崩引发的灾害致尼泊尔侧逾千人死亡失联，我国边检与公安干警逆流冲锋、转移群众，核心区临时供电已抢通。",
+          "url": "https://s.weibo.com/weibo?q=%23%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E6%B7%A4%E6%B3%A5%E9%87%8C%E5%8F%91%E7%8E%B0%E8%AD%A6%E6%9C%8D%23",
+          "hot": 550000.0,
+          "hot_display": "55.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 8,
+          "title": "浙BA省级争霸赛",
+          "summary": "浙江“浙BA”篮球赛事进入省级争霸阶段，引发全省球迷关注。作为融合群众体育与地域荣誉的业余篮球联赛，各市县代表队为家乡而战，草根球员的拼劲与现场氛围成为看点。赛事通过线上线下联动扩大影响力，带动基层篮球热情，“浙BA省级争霸赛”相关话题在社交平台持续升温，展现浙江群众体育活力。",
+          "url": "https://s.weibo.com/weibo?q=%23%E6%B5%99BA%E7%9C%81%E7%BA%A7%E4%BA%89%E9%9C%B8%E8%B5%9B%23",
+          "hot": 460000.0,
+          "hot_display": "46.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 9,
+          "title": "没有人会教你真正核心的东西",
+          "summary": "“没有人会教你真正核心的东西”引发职场讨论。不少网友结合自身经历指出，核心技能、关键资源与底层方法论往往需主动摸索、试错与沉淀，难以靠他人手把手传授。观点倡导新人少依赖“喂饭式”指导，在多做事、勤复盘与建立信任中积累不可替代性，同时也提醒团队应重视知识传承与带教机制。",
+          "url": "https://s.weibo.com/weibo?q=%23%E6%B2%A1%E6%9C%89%E4%BA%BA%E4%BC%9A%E6%95%99%E4%BD%A0%E7%9C%9F%E6%AD%A3%E6%A0%B8%E5%BF%83%E7%9A%84%E4%B8%9C%E8%A5%BF%23",
+          "hot": 460000.0,
+          "hot_display": "46.0万",
+          "source": "微博"
+        },
+        {
+          "rank": 10,
+          "title": "普通人没必要追求电子产品顶配",
+          "summary": "“普通人没必要追求电子产品顶配”引发消费观讨论。观点认为多数用户日常使用并不需要旗舰级性能，盲目追高配易造成预算浪费，按需选择中端机型往往更具性价比。网友结合自身经验分享“够用就好”的理性购机思路，同时也承认特定人群（创作者、重度玩家）对顶配确有真实需求，关键在量入为出。",
+          "url": "https://s.weibo.com/weibo?q=%23%E6%99%AE%E9%80%9A%E4%BA%BA%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%BD%E6%B1%82%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81%E9%A1%B6%E9%85%8D%23",
+          "hot": 340000.0,
+          "hot_display": "34.0万",
+          "source": "微博"
+        }
+      ]
+    },
+    {
+      "source": "今日头条",
+      "items": [
+        {
+          "rank": 1,
+          "title": "Token经济要开始崩了吗",
+          "summary": "伴随“Token贷”落地与OpenAI发布GPT-6 Astra，关于“Token经济是否开始崩塌”的讨论升温。一方认为Token调用量两年暴涨千倍、算力信贷兴起标志AI生产力加速落地；另一方担忧Token消耗可被刷单虚增、估值缺乏统一审计，相关金融产品或孕育泡沫。舆论呼吁在鼓励创新的同时建立可审计的Token数据标准，防范风险。",
+          "url": "https://www.toutiao.com/trending/7681315479033482798/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681315479033482798%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22Token%E7%BB%8F%E6%B5%8E%E8%A6%81%E5%BC%80%E5%A7%8B%E5%B4%A9%E4%BA%86%E5%90%97%22%7D&rank=&style_id=40132&topic_id=7681315479033482798",
+          "hot": 13407092.0,
+          "hot_display": "1340.7万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 2,
+          "title": "外交部：已向韩方提出严正交涉",
+          "summary": "外交部发言人郭嘉昆9月3日就韩国光州双年展涉台错误做法表示，韩方纵容中国台湾地区使用不符身份的名称参展，公然违反一个中国原则，中方已向韩方提出严正交涉并要求纠正。郭嘉昆强调，中韩建交公报明确韩国承认一个中国、台湾是中国一部分，希望韩方恪守承诺、切实负起责任。",
+          "url": "https://www.toutiao.com/trending/7680859229084647466/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680859229084647466%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%96%E4%BA%A4%E9%83%A8%EF%BC%9A%E5%B7%B2%E5%90%91%E9%9F%A9%E6%96%B9%E6%8F%90%E5%87%BA%E4%B8%A5%E6%AD%A3%E4%BA%A4%E6%B6%89%22%7D&rank=&style_id=40132&topic_id=7680859229084647466",
+          "hot": 12131238.0,
+          "hot_display": "1213.1万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 3,
+          "title": "促进中小企业发展“十五五”规划发布",
+          "summary": "9月3日，工信部等十部门联合发布《促进中小企业发展“十五五”规划》。提出到2030年中小企业量质齐升，规模以上中小企业人均营收累计增长15%左右，专精特新“小巨人”达2.2万家、国家级特色产业集群600个，研发费用年均增长8%以上；并部署稳企业稳就业、强化培育、数智化绿色化、协同融通等七方面任务，基本建立防范拖欠账款长效机制。",
+          "url": "https://www.toutiao.com/trending/7681227409579868223/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681227409579868223%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BF%83%E8%BF%9B%E4%B8%AD%E5%B0%8F%E4%BC%81%E4%B8%9A%E5%8F%91%E5%B1%95%E2%80%9C%E5%8D%81%E4%BA%94%E4%BA%94%E2%80%9D%E8%A7%84%E5%88%92%E5%8F%91%E5%B8%83%22%7D&rank=&style_id=40132&topic_id=7681227409579868223",
+          "hot": 10976798.0,
+          "hot_display": "1097.7万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 4,
+          "title": "三胞胎迎接退役军爸被一把抱起",
+          "summary": "一则暖心视频引发关注：一名退役军人在结束服役返乡时，三个孩子飞奔上前、被爸爸一把抱起的瞬间令不少网友泪目。画面展现军人家庭聚少离多的牵挂与重逢的喜悦，网民纷纷致敬退役军人对国家的奉献，也为这份质朴亲情点赞，相关话题在今日头条持续收获温暖评论与转发。",
+          "url": "https://www.toutiao.com/trending/7680466314113531967/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680466314113531967%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%89%E8%83%9E%E8%83%8E%E8%BF%8E%E6%8E%A5%E9%80%80%E5%BD%B9%E5%86%9B%E7%88%B8%E8%A2%AB%E4%B8%80%E6%8A%8A%E6%8A%B1%E8%B5%B7%22%7D&rank=&style_id=40132&topic_id=7680466314113531967",
+          "hot": 9932218.0,
+          "hot_display": "993.2万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 5,
+          "title": "全国唯一有两所211高校县级市迎新生",
+          "summary": "江苏江阴迎来5500多名本科新生，分别前往南京理工大学江阴校区、江南大学江阴校区报到。江阴是全国唯一拥有两所“211”高校的县级市，高水平大学布局县域引发“985开进县城”的讨论。报道指出，高校多选址长三角都市圈节点，既缓解城区用地紧张，也借县域产业资源反哺人才培养，适配区域发展需求是关键。",
+          "url": "https://www.toutiao.com/trending/7680914423784751158/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680914423784751158%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%85%A8%E5%9B%BD%E5%94%AF%E4%B8%80%E6%9C%89%E4%B8%A4%E6%89%80211%E9%AB%98%E6%A0%A1%E5%8E%BF%E7%BA%A7%E5%B8%82%E8%BF%8E%E6%96%B0%E7%94%9F%22%7D&rank=&style_id=40132&topic_id=7680914423784751158",
+          "hot": 8987042.0,
+          "hot_display": "898.7万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 6,
+          "title": "人民日报批饭圈刷爆12345",
+          "summary": "人民日报关注“饭圈刷爆12345”现象：部分粉丝因偶像争议拨打12345政务服务便民热线进行投诉、举报或施压，挤占真正有民生诉求的来电资源。评论指出，12345是群众表达合理诉求的通道，不应被饭圈博弈裹挟；呼吁平台与粉丝理性表达，相关部门也需提升对恶意占用公共资源的识别与处置能力。",
+          "url": "https://www.toutiao.com/trending/7680674050754183222/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680674050754183222%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BA%BA%E6%B0%91%E6%97%A5%E6%8A%A5%E6%89%B9%E9%A5%AD%E5%9C%88%E5%88%B7%E7%88%8612345%22%7D&rank=&style_id=40132&topic_id=7680674050754183222",
+          "hot": 8131812.0,
+          "hot_display": "813.2万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 7,
+          "title": "广场20多个音响齐轰严重影响小学上课",
+          "summary": "某地一处广场上20多个音响同时高分贝播放，噪声严重干扰紧邻小学正常上课，引发家长与居民投诉。校方反映课堂教学与广播操受明显影响，学生难以集中注意力。事件凸显公共空间娱乐活动与周边教学、居住环境间的矛盾，网友呼吁划定声环境与时段边界、平衡休闲权利与公共利益，相关部门已介入协调。",
+          "url": "https://www.toutiao.com/trending/7681248980579500038/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681248980579500038%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B9%BF%E5%9C%BA20%E5%A4%9A%E4%B8%AA%E9%9F%B3%E5%93%8D%E9%BD%90%E8%BD%B0%E4%B8%A5%E9%87%8D%E5%BD%B1%E5%93%8D%E5%B0%8F%E5%AD%A6%E4%B8%8A%E8%AF%BE%22%7D&rank=&style_id=40132&topic_id=7681248980579500038",
+          "hot": 7357968.0,
+          "hot_display": "735.8万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 8,
+          "title": "郑钦文2-1普丁塞娃晋级美网32强",
+          "summary": "2026美网女单第二轮，郑钦文以2-1（6-4、2-6、6-1）击败哈萨克斯坦选手普丁塞娃，职业生涯首胜这位“苦主”，晋级女单32强并成为本届赛事中国选手独苗。感冒未愈的她凭借决胜盘强势发挥拿下比赛，再获130积分、世界排名升至第94位，第三轮将挑战22号种子凯斯。",
+          "url": "https://www.toutiao.com/trending/7681443736152198699/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681443736152198699%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%83%91%E9%92%A6%E6%96%872-1%E6%99%AE%E4%B8%81%E5%A1%9E%E5%A8%83%E6%99%8B%E7%BA%A7%E7%BE%8E%E7%BD%9132%E5%BC%BA%22%7D&rank=&style_id=40132&topic_id=7681443736152198699",
+          "hot": 6657765.0,
+          "hot_display": "665.8万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 9,
+          "title": "上海多家银行：办40年房贷需35岁以下",
+          "summary": "央行等8月底将个人住房贷期限由最长30年延至40年，上海多家银行已受理。交行上海分行表示存量房贷可延期，原期限与延长期合计不超40年；多家银行执行“贷款人年龄+贷款期限”不超75年，即新申40年贷需在35周岁前放款，意味着1991年前出生者新办最长只能39年。首批40年贷即将放款，月供可降约634元但总息多约20万。",
+          "url": "https://www.toutiao.com/trending/7680703592528875071/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680703592528875071%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%8A%E6%B5%B7%E5%A4%9A%E5%AE%B6%E9%93%B6%E8%A1%8C%EF%BC%9A%E5%8A%9E40%E5%B9%B4%E6%88%BF%E8%B4%B7%E9%9C%8035%E5%B2%81%E4%BB%A5%E4%B8%8B%22%7D&rank=&style_id=40132&topic_id=7680703592528875071",
+          "hot": 6024194.0,
+          "hot_display": "602.4万",
+          "source": "今日头条"
+        },
+        {
+          "rank": 10,
+          "title": "曾3次参加阅兵的火箭军退役军人返乡",
+          "summary": "一名曾三次参加阅兵的火箭军退役军人光荣返乡，受到家乡群众与战友欢迎。其多次受阅经历被视为军人荣誉的缩影，退伍不褪色的精神引发网友致敬。相关报道展现退役军人群体“若有战、召必回”的担当与扎根地方的朴实，折射全社会对国防建设者尊崇氛围的持续升温。",
+          "url": "https://www.toutiao.com/trending/7681172426996023346/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681172426996023346%22%2C%22hot_board_impr_id%22%3A%22202609040852100C398CB8364A3B379276%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9B%BE3%E6%AC%A1%E5%8F%82%E5%8A%A0%E9%98%85%E5%85%B5%E7%9A%84%E7%81%AB%E7%AE%AD%E5%86%9B%E9%80%80%E5%BD%B9%E5%86%9B%E4%BA%BA%E8%BF%94%E4%B9%A1%22%7D&rank=&style_id=40132&topic_id=7681172426996023346",
+          "hot": 5450917.0,
+          "hot_display": "545.1万",
+          "source": "今日头条"
+        }
+      ]
+    },
+    {
+      "source": "哔哩哔哩",
+      "items": [
+        {
+          "rank": 1,
+          "title": "难绷：尼泊尔就泥石流灾害对中美印提出赔偿要求",
+          "summary": "「波士顿圆脸」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1uHtZ6HEa8",
+          "hot": 725275.0,
+          "hot_display": "72.5万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 2,
+          "title": "网络热传生物鉴定 第63期",
+          "summary": "「无穷小亮的科普日常」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1FQtt6JEKs",
+          "hot": 1540729.0,
+          "hot_display": "154.1万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 3,
+          "title": "“我从小抽核弹长大的”，抽一个可变形核弹发射井模型",
+          "summary": "「隔墙总有耳」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1abtE6VE2f",
+          "hot": 1436229.0,
+          "hot_display": "143.6万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 4,
+          "title": "【独家】时光代理人 第三季 PartOne 第5集 接风宴【8月国创】",
+          "summary": "「哔哩哔哩国创」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1RgtG6wEJx",
+          "hot": 625456.0,
+          "hot_display": "62.5万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 5,
+          "title": "女子打119报警后 上传火警视频却跳转出开屏广告",
+          "summary": "「闪电新闻」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1e3td6nEEw",
+          "hot": 465305.0,
+          "hot_display": "46.5万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 6,
+          "title": "【科学修仙】今日不死，儿孙满堂！【up动画】",
+          "summary": "「么鸣堂」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1istn69EPU",
+          "hot": 861513.0,
+          "hot_display": "86.2万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 7,
+          "title": "还没擦掉嘴角伊朗儿童的血，他们又来吃中国的“人血馒头”",
+          "summary": "「环球网」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1Y8tn6nE9L",
+          "hot": 1063064.0,
+          "hot_display": "106.3万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 8,
+          "title": "黄 毛 抢 钱 记",
+          "summary": "「马哥巨离谱」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1e4tn6pEg6",
+          "hot": 1208362.0,
+          "hot_display": "120.8万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 9,
+          "title": "“修仙也爱拍照”",
+          "summary": "「剑上一寸雪」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV1Ugtb6TE9R",
+          "hot": 1202615.0,
+          "hot_display": "120.3万播放",
+          "source": "哔哩哔哩"
+        },
+        {
+          "rank": 10,
+          "title": "这一期视频我不允许任何人漏看！！你们自己要的男生超详细全流程护肤教程！！！！",
+          "summary": "「小小小思源哎」相关话题，正在哔哩哔哩热榜引发热议，点击查看详情",
+          "url": "https://www.bilibili.com/video/BV19Dtd6XEY3",
+          "hot": 325292.0,
+          "hot_display": "32.5万播放",
+          "source": "哔哩哔哩"
+        }
+      ]
+    }
+  ],
+  "per_platform": {
+    "百度": 10,
+    "知乎": 10,
+    "微博": 10,
+    "今日头条": 10,
+    "哔哩哔哩": 10
+  }
+}

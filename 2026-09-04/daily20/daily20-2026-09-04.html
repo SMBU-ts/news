@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-04</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-04</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260904A02MSK00?scene=news-skill" target="_blank" rel="noopener">4次美网全晋级32强！郑钦文2-1生涯首胜普丁塞娃 豪取5连胜</a></div>
+                <div class="item-summary">北京时间9月4日，2026年美网女单第二轮，中国选手郑钦文对阵普丁塞娃。郑钦文打满三盘比赛，具体比分是6-4、2-6和6-1，最终郑钦文总分2-1战胜普丁塞娃收获5连胜，生涯3次交锋首次战胜普丁塞娃....</div>
+                <div class="item-meta">醉卧浮生 · 2026-09-04 06:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AMGS00?scene=news-skill" target="_blank" rel="noopener">海南两渔民禁渔期出海被罚1万，曾救起漂浮7天落水男子，执法局回应</a></div>
+                <div class="item-summary">9月3日，海南渔民郑世忠告诉潇湘晨报·晨视频记者，他和姐夫符廷三在9月2日收到澄迈县综合行政执法局作出的《行政处罚告知书》，因2026年5月30日在桥头镇玉包港驾驶船舶进出渔港未按照规定报告，被处罚款10000元。此前，二人曾在6月2日救起落水漂泊七天六夜的广西游客秦先生而受广泛关注。△两渔民救起落水男子“感觉非常冤...</div>
+                <div class="item-meta">潇湘晨报 · 2026-09-03 19:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A08GHT00?scene=news-skill" target="_blank" rel="noopener">中国游中国购持续火热 入境消费呈现4个特点</a></div>
+                <div class="item-summary">今天（9月3日）下午，商务部举行例行新闻发布会。总台记者提问，这个暑期入境消费掀起了新一轮的热潮，请问根据商务部的监测，外国人在中国消费有哪些亮点？新闻发言人介绍，今年暑期，中国游、中国购持续火热，越来越多的外国游客来中国购好物、品美食、赏美景、观展演，感受购在中国的独特魅力。今年1至7月，境外人员在华...</div>
+                <div class="item-meta">央视新闻 · 2026-09-03 15:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A084DF00?scene=news-skill" target="_blank" rel="noopener">越南声称对西沙群岛拥有主权，中国外交部驳斥</a></div>
+                <div class="item-summary">中新网北京9月3日电 (记者 张素)中国外交部发言人郭嘉昆9月3日主持例行记者会。 有记者提问：据报道，越南外交部发言人近日发表声明称，越南对西沙群岛拥有主权，未经越方允许外国在包括羚羊礁和鸭公岛在内西沙群岛的一切活动完全非法无效，已就此提出严正交涉，要求立即停止相关活动，确保不再发生。中方对此有何评论？ 郭...</div>
+                <div class="item-meta">中国新闻网 · 2026-09-03 15:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A08C4700?scene=news-skill" target="_blank" rel="noopener">罕见存款利率倒挂，存5年、3年、2年利息不如存1年</a></div>
+                <div class="item-summary">记者丨叶麦穗编辑丨方海平,曾芳 银行存款利率期限结构再现罕见变局！21世纪经济报道记者发现，四川阆中融兴村镇银行落地极致利率倒挂定存方案，成为业内首家1年期整存整取利率全面高于2年期、3年期、5年期所有中长期定存产品的利率的银行，彻底打破“存款期限越长、收益越高”的行业常规，存款利率倒挂的现象从中长期产品扩...</div>
+                <div class="item-meta">21世纪经济报道 · 2026-09-03 15:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AJEJ00?scene=news-skill" target="_blank" rel="noopener">三名伊朗飞行员在美军袭击中死亡</a></div>
+                <div class="item-summary">伊朗方面当地时间3日称，三名伊朗飞行员在最近一次美国对伊朗的袭击中死亡。据悉，美军1日对伊朗南部多个地点发动袭击，造成6名伊朗伊斯兰共和国军队人员死亡，其中3人为隶属于空军和海军的飞行员。（总台记者 李健南）2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-09-03 19:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AUD800?scene=news-skill" target="_blank" rel="noopener">直播间的“一刀暴富”，全是演给你看的！主播、水军、假原石全套上阵</a></div>
+                <div class="item-summary">屏幕里，原石被缓缓切开，主播惊呼“涨了”，弹幕瞬间刷屏“恭喜老板”“跟上吃肉”……可你永远不知道，下一秒的“暴富”是真是假——直到真相被撕开，才发现整个直播间都是为你一个人搭的戏台。近日，宝山区检察院对一起利用直播赌石实施诈骗的案件提起公诉后，主播朱某与同伙罗某双双获刑。2024年，朱某在云南应聘进入一...</div>
+                <div class="item-meta">上观新闻 · 2026-09-03 20:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AQQH00?scene=news-skill" target="_blank" rel="noopener">四川绵阳联通工作人员入校推销，与学生发生冲突致学生受伤？校方回应</a></div>
+                <div class="item-summary">9月2日，有网友发帖称，近日有中国联通工作人员违规进入四川文化艺术学院（绵阳校区）进行营销活动，并与校内学生发生冲突致学生受伤住院。四川文化艺术学院（绵阳校区）工作人员告诉潇湘晨报·晨视频记者，冲突一方确为中国联合网络通信有限公司绵阳市分公司工作人员，涉事工作人员并未经学校允许进入学校。目前校方正在调...</div>
+                <div class="item-meta">潇湘晨报 · 2026-09-03 19:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0A54L00?scene=news-skill" target="_blank" rel="noopener">台风风力变小，降水也会随之减弱？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-03 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903V08K6S00?scene=news-skill" target="_blank" rel="noopener">用了快20年的机顶盒，终于要说再见了！网友：希望“打开就能看电视”</a></div>
+                <div class="item-summary">用了快20年的机顶盒，终于要说再见了！网友：希望“打开就能看电视”</div>
+                <div class="item-meta">众播视频 · 2026-09-03 16:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AJMU00?scene=news-skill" target="_blank" rel="noopener">网传“90后死亡总数达三千万，存活率仅为85%”？真相到底是什么</a></div>
+                <div class="item-summary">较真要点： 1. 网传“90后存活率85%”，是用“历年出生人口加总”减去“当前存活人口”算出来的。但这两个数来自两套统计系统，都不是登记数——非普查年份靠千分之一抽样推算。国家统计局“七....</div>
+                <div class="item-meta">较真 · 2026-09-03 19:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903V0709200?scene=news-skill" target="_blank" rel="noopener">尴尬瞬间！姆巴佩马德里遭记者拷问婚期，一旁女友颜值抢镜神态淡定</a></div>
+                
+                <div class="item-meta">篮球过人技巧 · 2026-09-03 14:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AN0Q00?scene=news-skill" target="_blank" rel="noopener">尼泊尔外长感谢中国紧急援助支持，强调不会向中国等国家寻求“气候正义赔偿”</a></div>
+                <div class="item-summary">据中国驻尼泊尔大使馆，9月3日，中国驻尼泊尔大使张茂明会见尼泊尔外交部长希西尔。张茂明表示，此次严重泥石流灾害发生以来，中方以多种形式支持尼方救灾努力。相信在双方同舟共济携手努力下，两国人民一定能够战胜灾情，共渡难关。气候变化是全人类面临的共同挑战，任何一国都无法独善其身。中方愿继续同包括尼泊尔在内的...</div>
+                <div class="item-meta">界面新闻 · 2026-09-03 19:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AUU800?scene=news-skill" target="_blank" rel="noopener">流感疫苗市场变天了！最新流感疫苗接种指南只推三价流感疫苗</a></div>
+                <div class="item-summary">随着世界卫生组织今年2月份调整推荐2026—2027年北半球流感疫苗组分，即从四价改为三价，中国疾病预防控制中心9月2日发布的《中国流感疫苗预防接种技术指南（2026-2027）》（下称《指南》），也相应进行了调整。 这份《指南》推荐的流感疫苗种类只有三价流感疫苗，包括三价灭活疫苗（IIV3）和三价减毒活疫苗（LAIV3）。而上...</div>
+                <div class="item-meta">第一财经 · 2026-09-03 20:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260904A02Y5H00?scene=news-skill" target="_blank" rel="noopener">霸气！郑钦文击球遭干扰后训斥观众 中文怒吼：不要喊 全场瞬间安静</a></div>
+                <div class="item-summary">在北京时间9月4日结束的美网女单第2轮1场焦点战中，23岁的中国名将郑钦文经过3盘苦战，总比分2-1淘汰了31岁的哈萨克斯坦老将普丁塞娃，顺利晋级32强。 而首盘比赛，也出现了戏剧性的一幕....</div>
+                <div class="item-meta">我爱英超 · 2026-09-04 07:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903V08MSR00?scene=news-skill" target="_blank" rel="noopener">三胞胎迎接退役军爸一拥而上被军爸一把抱起 网友：这是稳稳的幸福</a></div>
+                <div class="item-summary">三胞胎迎接退役军爸一拥而上被军爸一把抱起 网友：这是稳稳的幸福</div>
+                <div class="item-meta">海外网 · 2026-09-03 16:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0AB4V00?scene=news-skill" target="_blank" rel="noopener">两部门联合印发，释放7万亿元利好</a></div>
+                <div class="item-summary">记者丨张旭 编辑丨郑玮清晨，带着露水的鲜花还长在昆明的枝头，次日就能送达北京客厅的茶几——一束鲜花的旅程背后，是一张四通八达的现代物流网。近日，经国务院同意，国家发展改革委、交通运输部联合印发《物流网建设实施方案》（以下简称《实施方案》），为这张网络的升级绘制了清晰的“施工图”。这是物流网被纳入“六...</div>
+                <div class="item-meta">21世纪经济报道 · 2026-09-03 18:47</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A0A5HZ00?scene=news-skill" target="_blank" rel="noopener">世界女排“身价榜” 中国女排前队长高居榜首 前八名公布</a></div>
+                <div class="item-summary">世界女排进入职业化时代后，顶级球星的收入和商业价值一直备受关注，朱婷、埃格努、加比、博斯科维奇等人不仅是各自国家队的核心，也是欧洲顶级豪门争相邀请的明星球员，而女排身价榜单也是很多球迷讨论的话题之一....</div>
+                <div class="item-meta">领跃排球 · 2026-09-03 18:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260903A09SUS00?scene=news-skill" target="_blank" rel="noopener">天津一大学生骑电动车回浙江看望老师，当事人：骑近10天来回2200公里</a></div>
+                <div class="item-summary">极目新闻记者 李迎9月3日，21岁大四学生王新（化名）告诉极目新闻记者，8月22日至9月1日，他骑电动车从天津的大学出发，来回骑行2200公里到浙江湖州长兴县看望高中老师，再返回天津，耗时11天，除在湖州停留的时间外，骑行近10天。王新说，这个暑假自己没回家留在了大学校园，开学前，突然想骑电动车回到高中母校看望老师。...</div>
+                <div class="item-meta">极目新闻 · 2026-09-03 17:54</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-04 08:28</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

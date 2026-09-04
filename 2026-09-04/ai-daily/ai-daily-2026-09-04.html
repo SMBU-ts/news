@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-09-04</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 9 月 4 日 · 星期五</h1>
+      <div class="sub">共 21 条 · 生成于 北京时间 2026 年 09 月 04 日 08:01 · 数据覆盖 2026-09-03 ~ 2026-09-04</div>
+      <div class="stats">
+        <div class="stat"><div class="n">21</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">8</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">4</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">1</div><div class="l">行业动态</div></div><div class="stat"><div class="n">0</div><div class="l">论文研究</div></div><div class="stat"><div class="n">8</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 8</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 4</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 1</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 0</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 8</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">8</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">4</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">1</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">0</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">8</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">MarkTechPost（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.marktechpost.com/2026/09/03/openai-releases-gpt-6-astra-a-1-05m-context-computer-use-model-gated-behind-a-critical-cyber-threshold" target="_blank" rel="noopener noreferrer">OpenAI 发布 GPT-6 Astra：1.05M 上下文的计算机操作模型，因触及 Critical 网络安全阈值而限制访问</a>
+          </h3>
+          <p class="card-sum">OpenAI 发布 GPT-6 Astra，定位为计算机操作模型，提供 1,050,000 token 上下文窗口、1…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.marktechpost.com/2026/09/03/openai-releases-gpt-6-astra-a-1-05m-context-computer-use-model-gated-behind-a-critical-cyber-threshold" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model" target="_blank" rel="noopener noreferrer">OpenAI 发布新模型 Astra，主打计算机与浏览器操作但因 opaque recurrence 引发争议</a>
+          </h3>
+          <p class="card-sum">OpenAI 发布最新模型 Astra，称其为迄今最强大模型，主打计算机和浏览器操作，先面向 Daybreak 网络安…</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">3</span>
+            <span class="chip" style="--c:#3b82f6">X：Tibo (@thsottiaux)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/thsottiaux/status/2095597168816226335" target="_blank" rel="noopener noreferrer">OpenAI 开始发布 GPT-6 Astra，面向全部 Plus 用户开放</a>
+          </h3>
+          <p class="card-sum">OpenAI 宣布开始发布 GPT-6 Astra，称正以尽可能谨慎和快速的方式推进，重点让全部 Plus 用户可用，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/thsottiaux/status/2095597168816226335" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">4</span>
+            <span class="chip" style="--c:#3b82f6">X：Sherwin Wu（@sherwinwu）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/sherwinwu/status/2095608486940086448" target="_blank" rel="noopener noreferrer">OpenAI 发布 GPT-6 Astra，多项基准达到 SOTA</a>
+          </h3>
+          <p class="card-sum">OpenAI 发布 GPT-6 Astra，在 FrontierMath Tier 4、ARC-AGI 3、Termi…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/sherwinwu/status/2095608486940086448" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">5</span>
+            <span class="chip" style="--c:#3b82f6">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://ifm.ai/blog/k2" target="_blank" rel="noopener noreferrer">IFM 发布 K2 Horizon 六款开源模型，覆盖 0.9B 到 375B-A23B 并开放完整训练生命周期</a>
+          </h3>
+          <p class="card-sum">IFM 发布 K2 Horizon 模型系列，共六个模型：375B-A23B、36B-A4B、32B、7B、3.7B …</p>
+          <div class="card-actions">
+            <a class="read" href="https://ifm.ai/blog/k2" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">6</span>
+            <span class="chip" style="--c:#3b82f6">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/0/998/208.htm" target="_blank" rel="noopener noreferrer">OpenAI 发布 GPT-6 Astra，首个达到关键级网络安全能力门槛的模型</a>
+          </h3>
+          <p class="card-sum">OpenAI 于 9 月 3 日发布新一代大语言模型 GPT-6 Astra，是其首个达到准备框架中关键级网络安全能力…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/0/998/208.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">7</span>
+            <span class="chip" style="--c:#3b82f6">X：Kim (@kimmonismus)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/kimmonismus/status/2095585966102614182" target="_blank" rel="noopener noreferrer">OpenAI 发布 GPT-6 Astra，官方基准显示 ARC-AGI-3 得分 99.9%</a>
+          </h3>
+          <p class="card-sum"></p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/kimmonismus/status/2095585966102614182" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">8</span>
+            <span class="chip" style="--c:#3b82f6">X：Kim (@kimmonismus)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/kimmonismus/status/2095589174686400914" target="_blank" rel="noopener noreferrer">OpenAI 发布 GPT-6 Astra，基准全面超越 Claude Fable 5.1</a>
+          </h3>
+          <p class="card-sum">作者引用 OpenAI 官方基准称 GPT-6 Astra 以 99.9% 饱和 ARC-AGI-3，在 Exploi…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/kimmonismus/status/2095589174686400914" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">9</span>
+            <span class="chip" style="--c:#10b981">Hugging Face：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/funes" target="_blank" rel="noopener noreferrer">Hugging Face 发布开源工具 funes，为编码智能体提供可本地持有的记忆层</a>
+          </h3>
+          <p class="card-sum">Hugging Face 发布开源工具 funes，为 Claude Code、Codex、pi、Hermes 等编码…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/funes" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">10</span>
+            <span class="chip" style="--c:#10b981">xAI：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.ai/news/designing-grok-bot" target="_blank" rel="noopener noreferrer">xAI 设计 Grok Bot：为持久化智能体重构交互界面</a>
+          </h3>
+          <p class="card-sum">xAI 发布设计文章，介绍 Grok Bot 如何为超越单次会话的持久化智能体设计界面。产品以 Bot 为主要对象而非…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.ai/news/designing-grok-bot" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">11</span>
+            <span class="chip" style="--c:#10b981">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/daybreak-for-frontline-defenders" target="_blank" rel="noopener noreferrer">OpenAI 推出 Daybreak for Frontline Defenders，投入10亿美元支持一线网络防御</a>
+          </h3>
+          <p class="card-sum">OpenAI 发布 Daybreak for Frontline Defenders 全球计划，承诺提供10亿美元的 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/daybreak-for-frontline-defenders" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">12</span>
+            <span class="chip" style="--c:#10b981">xAI：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.ai/news/grok-bot-for-enterprise" target="_blank" rel="noopener noreferrer">xAI 发布 Grok Bot 企业版，Grok 与 Cursor Enterprise 客户两周免费</a>
+          </h3>
+          <p class="card-sum">xAI 宣布 Grok Bot 面向企业开放，Grok 和 Cursor Enterprise 客户未来两周可免费使用…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.ai/news/grok-bot-for-enterprise" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">13</span>
+            <span class="chip" style="--c:#f59e0b">NVIDIA Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face" target="_blank" rel="noopener noreferrer">NVIDIA 宣布以 129.303 亿美元收购 Hugging Face</a>
+          </h3>
+          <p class="card-sum">NVIDIA 宣布已同意以 12,930,300,000 美元收购 Hugging Face，黄仁勋在官方博客公布了这…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">14</span>
+            <span class="chip" style="--c:#ec4899">X：Artificial Analysis (@ArtificialAnlys)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/ArtificialAnlys/status/2095595489031000350" target="_blank" rel="noopener noreferrer">Artificial Analysis 评测 GPT-6 Astra：编码智能体追平 Fable 5 但价格涨至 2.5 倍</a>
+          </h3>
+          <p class="card-sum">Artificial Analysis 发布 GPT-6 Astra 评测，其 Coding Agent Index …</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/ArtificialAnlys/status/2095595489031000350" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">15</span>
+            <span class="chip" style="--c:#ec4899">X：Francois Chollet (@fchollet)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/fchollet/status/2095598451115614371" target="_blank" rel="noopener noreferrer">François Chollet 评 GPT-6 Astra 在 ARC-AGI-3 上的表现</a>
+          </h3>
+          <p class="card-sum">François Chollet 发文称 GPT-6 Astra 在交互式推理任务上带来阶跃式能力提升，使用标准 ha…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/fchollet/status/2095598451115614371" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">16</span>
+            <span class="chip" style="--c:#ec4899">X：Rohan Paul (@rohanpaul_ai)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/rohanpaul_ai/status/2095616781880869271" target="_blank" rel="noopener noreferrer">Rohan Paul 解读 OpenAI GPT-6 Astra 117 页系统卡中的安全发现</a>
+          </h3>
+          <p class="card-sum">Rohan Paul 梳理 OpenAI GPT-6 Astra 117 页系统卡的要点：Astra 控制自身链式思维…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/rohanpaul_ai/status/2095616781880869271" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-16" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-16" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">17</span>
+            <span class="chip" style="--c:#ec4899">Gary Marcus：The Road to AI We Can Trust（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://garymarcus.substack.com/p/hot-take-on-gpt-6-astra" target="_blank" rel="noopener noreferrer">Gary Marcus 评 GPT-6 Astra：进步明显但鲁棒性与可监控性存疑</a>
+          </h3>
+          <p class="card-sum">Gary Marcus 发文点评 GPT-6 Astra，称多项报告显示其为真正的进步，OpenAI 产品显式创建并操…</p>
+          <div class="card-actions">
+            <a class="read" href="https://garymarcus.substack.com/p/hot-take-on-gpt-6-astra" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-17" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-17" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">18</span>
+            <span class="chip" style="--c:#ec4899">Tomer Tunguz 博客（VC 分析）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://tomtunguz.com/the-ads-model-for-prompts-vertically-integrates-ai" target="_blank" rel="noopener noreferrer">Tom Tunguz 解析 Meta Muse Spark 双轨定价背后的数据换算力逻辑</a>
+          </h3>
+          <p class="card-sum">Tom Tunguz 分析 Meta 发布 Muse Spark 模型及双轨 API 定价：Standard Tier…</p>
+          <div class="card-actions">
+            <a class="read" href="https://tomtunguz.com/the-ads-model-for-prompts-vertically-integrates-ai" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-18" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-18" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">19</span>
+            <span class="chip" style="--c:#ec4899">Google AI：DEV 作者专属（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://dev.to/googleai/build-a-long-running-agent-in-the-cloud-for-570month-113c" target="_blank" rel="noopener noreferrer">Google Cloud 教你用 Cloud Run instances 以每月 $5.70 搭建常驻 Agent</a>
+          </h3>
+          <p class="card-sum">Shir Meir Lador 在 Google AI 开发者博客介绍如何用 Cloud Run instances …</p>
+          <div class="card-actions">
+            <a class="read" href="https://dev.to/googleai/build-a-long-running-agent-in-the-cloud-for-570month-113c" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-19" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-19" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">20</span>
+            <span class="chip" style="--c:#ec4899">X：Alexandr Wang（Scale AI 创始人/Meta 首席 AI 官） (@alexandr_wang)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/alexandr_wang/status/2095318449602138577" target="_blank" rel="noopener noreferrer">Meta Muse Spark 1.3 在 Artificial Analysis 编码智能体指数中与 Claude 组合对比评测结果公布</a>
+          </h3>
+          <p class="card-sum">Artificial Analysis 编码智能体指数显示，Meta Muse Spark 1.3 (max) 在 M…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/alexandr_wang/status/2095318449602138577" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-20" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-20" hidden>暂无法生成概括</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">21</span>
+            <span class="chip" style="--c:#ec4899">X：Sherwin Wu（@sherwinwu）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/sherwinwu/status/2095608725730119733" target="_blank" rel="noopener noreferrer">ARC-AGI-3 发布仅半年即被 Astra 饱和，进展快于 François Chollet 预期一倍</a>
+          </h3>
+          <p class="card-sum">Sherwin Wu 表示自己曾觉得 ARC-AGI-3 很难，如今该基准已被 Astra 饱和。引用 Françoi…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/sherwinwu/status/2095608725730119733" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-21" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-21" hidden>暂无法生成概括</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>21</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>
