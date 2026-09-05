@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-05</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-05</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A08QBG00?scene=news-skill" target="_blank" rel="noopener">视频丨尼泊尔泥石流灾害中1名受困中国公民获救</a></div>
+                <div class="item-summary">当地时间9月5日，1名受困中国公民在尼泊尔北部热索瓦泥石流受灾地区获救。△尼泊尔总理办公室发帖确认中国公民获救尼泊尔警方9月5日在社交媒体发文说，截至当地时间5日5时，该国泥石流受灾地区已发现1344具遇难者遗体，另有4898人失联。8月26日，尼泊尔北部热索瓦地区发生大规模泥石流灾害。尼泊尔政府26日决定，依据相关法律规定，将受灾地区的一些地方行政单位划为灾害危机地区，期限3个月，以便集中...</div>
+                <div class="item-meta">央视新闻 · 2026-09-05 16:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A02TGM00?scene=news-skill" target="_blank" rel="noopener">央行将开展5000亿元买断式逆回购操作</a></div>
+                <div class="item-summary">中国人民银行昨天（4日）发布消息称，为保持银行体系流动性充裕，中国人民银行将于9月7日以固定数量、利率招标、多重价位中标方式开展5000亿元买断式逆回购操作，到期日为2026年12月5日（遇节假日顺延）。由于9月份将有5000亿元3个月期买断式逆回购到期，这意味着当月3个月期买断式逆回购为等量续作。</div>
+                <div class="item-meta">央视新闻 · 2026-09-05 07:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A08RP500?scene=news-skill" target="_blank" rel="noopener">8月中国物流业景气指数为50.9% 市场预期回升</a></div>
+                <div class="item-summary">中新社北京9月5日电 (记者 阮煜琳)中国物流与采购联合会5日发布数据显示，8月份，中国物流业景气指数为50.9%，环比回升0.5个百分点，显示中国物流业需求保持扩张，市场预期回升。 主要指标中，业务总量指数、新订单指数、库存周转次数指数、资金周转率指数、设备利用率指数、物流服务价格指数、从业人员指数和业务活动预期...</div>
+                <div class="item-meta">中国新闻网 · 2026-09-05 16:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A058QA00?scene=news-skill" target="_blank" rel="noopener">摘除“食品”标签，国家药监局多家直属单位更名</a></div>
+                <div class="item-summary">2026年9月4日，中国药品国际交流中心发布的一则更名通知显示，根据中央编办和国家药监局关于国际交流中心更名的批复和有关要求，“中国食品药品国际交流中心”已更名为“中国药品国际交流中心”。8月9日起，中心所有印鉴、财务账号、开具发票、税号等全部使用新名称。中心更名后，业务主体和法律关系不变。目前，该中心的主...</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-05 11:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A02S2N00?scene=news-skill" target="_blank" rel="noopener">“买一赠一”要缴纳增值税吗？专家解读</a></div>
+                <div class="item-summary">我国增值税法自今年1月1日起施行以来，“视同应税交易”规则的调整持续引发纳税人关注。针对“买一赠一”是否仍需按无偿赠送计税、总分机构货物调拨要不要缴税等高频问题，记者采访了财税专家。什么是“视同应税交易”？它是指虽然没有发生常规有偿销售行为，但依据增值税法规定，需视为应税交易缴纳增值税的特殊涉税行为。...</div>
+                <div class="item-meta">央广网 · 2026-09-05 07:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A036MC00?scene=news-skill" target="_blank" rel="noopener">“不坐班不开会不写周报，每日拍视频记录气象”，山东一景区回应月薪3万招“云端观察员”：综合考量拍摄、自主能力，对健康和体力有要求</a></div>
+                <div class="item-summary">景区月薪3万元招云端观察员，住在山顶30天，包吃包住。9月4日，山东临沂天蒙山景区发布招聘公告，入选者将在海拔1001.2米的天蒙山顶任职30天，不用坐班、不用开会，不用写周报，全程食宿全包，薪资3万元。每日观测记录山间气象与秋色变化，原创产出至少一条短视频和若干高清风景美图。景区工作人员告诉九派新闻&nbsp;，招聘属实，综合考量报名者的拍摄、自主能力，因长期住山顶，对报名者的健康和体力也...</div>
+                <div class="item-meta">红星新闻 · 2026-09-05 08:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A007AO00?scene=news-skill" target="_blank" rel="noopener">安徽滁州天空传出巨响，当地回应</a></div>
+                <div class="item-summary">9月4日晚间，有安徽省滁州市的网友发帖，表示当晚听见天空传出巨响，相关话题在网络上引起关注和讨论。当晚22时许，滁州市应急管理局发布通报，解释巨响产生缘由：9月4日20时10分左右，滁州上空传来震响，经排查，已排除地震、矿爆和其他生产安全事故。经了解，初步判定为高空音爆，请广大市民不要惊慌，不造谣，不信谣，不...</div>
+                <div class="item-meta">长安街知事 · 2026-09-05 00:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260904A0E1TP00?scene=news-skill" target="_blank" rel="noopener">2.38亿元天价罚单！证监会出手</a></div>
+                <div class="item-summary">【导读】元道通信被证监会罚超2.38亿元，股票即将退市中国基金报记者 忆山9月4日，证监会官网发布的行政处罚决定书显示，因存在欺诈发行、年报信息虚假记载等违法行为，证监会对元道通信开出超2.38亿元的天价罚单，并对时任董事长等相关责任人作出处罚。元道通信成立于2008年9月，是一家全国性、综合型的通信技术服务提供商...</div>
+                <div class="item-meta">中国基金报 · 2026-09-04 23:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260904A0C91K00?scene=news-skill" target="_blank" rel="noopener">汽车越重越安全？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-04 18:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A07ZFX00?scene=news-skill" target="_blank" rel="noopener">连云港一小学要求家长自费349元买课桌？校方和教育部门回应：学校及时引导，无家长自费购置课桌椅；记者实地走访东海县海陵路小学</a></div>
+                <div class="item-summary">近日，网传“连云港东海县海陵路小学要求家长自费349元为孩子购置新课桌椅”的相关内容在社交平台引发广泛讨论。9月5日，记者前往海陵路小学进行了实地走访。 记者在海陵路小学多间教室内看到，所....</div>
+                <div class="item-meta">扬眼 · 2026-09-05 15:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A086N600?scene=news-skill" target="_blank" rel="noopener">26岁女子连续数月口服避孕药，1天坐车最多12小时，一周内横跨多个城市……差点遭遇“夺命杀手”！</a></div>
+                <div class="item-summary">长途旅行、做个微创小手术，再卧床休息几天。这样的安排，在不少年轻人眼里，不过是个“稍稍紧凑”的假期套餐。可26岁的小玉（化名）怎么也没想到，正是这几件看似平常的事接连发生，竟在短短时间内，把她推向了危险的悬崖边。一个累出来的长假换来一张入院通知在此之前，小玉已连续数月口服避孕药。小玉这次出行很尽兴，每天乘车5到12个小时，横跨多个城市，一周下来，腿脚几乎没有好好伸展过。回到杭州后，她又趁着假...</div>
+                <div class="item-meta">红星新闻 · 2026-09-05 15:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A06OYQ00?scene=news-skill" target="_blank" rel="noopener">马斯克母亲晒新中式造型，点赞成都、西安、苏州、广州四座中国城市</a></div>
+                <div class="item-summary">9月5日，@环球时报：美国企业家埃隆·马斯克的母亲梅耶·马斯克北京时间5日在社交平台X发布的一条新书推广相关帖文中，晒出自己身穿红色中式服装的照片。 有网友留言夸赞其造型雅致好看，同时向她安利成都、西安、苏州、广州四座中国城市。梅耶·马斯克再度发文回复：“这四座城市我都去过，每座城市都独具特色。我十分欣赏...</div>
+                <div class="item-meta">九派新闻 · 2026-09-05 13:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A085HE00?scene=news-skill" target="_blank" rel="noopener">布达拉宫发布公告</a></div>
+                <div class="item-summary">据“西藏发布”消息，9月5日，西藏自治区布达拉宫管理处发布最新公告称，自9月21日（星期一）起，恢复执行每周一闭馆制度（国家法定节假日除外）。闭馆期间将开展文物本体巡检修缮、展陈内容更新、公共设施维护和环境消杀等工作。此前，为全面提升景区服务质量，有效应对暑期参观高峰，更好满足广大游客的参观游览需求，布...</div>
+                <div class="item-meta">长安街知事 · 2026-09-05 21:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A06RKB00?scene=news-skill" target="_blank" rel="noopener">辽宁沈阳一女子在快餐店吃出石子崩断门牙，未接受店方提出的500元赔偿，表示只要求报销牙医诊所治疗费用，涉事门店：目前正在调查中</a></div>
+                <div class="item-summary">9月4日，辽宁沈阳。吕女士表示在富龙快餐中街店就餐时，口中突然咬到硬物石子，大门牙当场被崩断脱落。事后她找店家协商赔偿，店方提出赔偿500元，吕女士未接受。她表示不需要现金私了，只要求店方报销牙医诊所治疗费用；若店方不接受，将向相关部门反映。9月5日，涉事门店回应称“有听说过这事，目前正在调查中”。———...</div>
+                <div class="item-meta">大河报 · 2026-09-05 13:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A07W0700?scene=news-skill" target="_blank" rel="noopener">破除病耻感和刻板印象，地方精神病院接连更名</a></div>
+                <div class="item-summary">又一所地方精神病医院完成更名。据微信公众号“郴州发布”9月4日消息，近日，经批复同意，郴州市精神病医院正式更名为郴州市第六人民医院。随着这块新牌匾的挂起，这家公立三甲医院正式告别了“精神病医院”的旧称。“这不仅仅是一次名称的变更，更是一场关于‘病耻感’的破冰行动。”上述消息提到，此次更名的核心，是要破...</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-05 20:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A03ZF700?scene=news-skill" target="_blank" rel="noopener">解决台湾问题，要正视两岸最关键的认知差异，岛内一些人对统一有防备心</a></div>
+                <div class="item-summary">同样是“统一”二字，两岸民众常常会听出不同的意思。认知差异来自历史叙事、现实经验和信息环境，也需要通过事实、交流和共同发展逐步弥合。 大陆民众谈统一，关注的是国家统一如何完成，是中华民族历....</div>
+                <div class="item-meta">海峡导报社 · 2026-09-05 09:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A05L4500?scene=news-skill" target="_blank" rel="noopener">医生给5岁小女孩电子病历中标注“刁蛮”？媒体评：患者人格不容贬损</a></div>
+                <div class="item-summary">近日，广东湛江吴川市一家长反映，5岁的女儿突发全身过敏，赶到吴川市黄坡镇中心卫生院急诊后，当值医生拒绝看病。一周后发现，涉事医生于当晚11时许，在孩子电子病历“既往史”中写下“刁蛮”，无其他病情记录。轻飘飘的“刁蛮”二字，落在电子病历里，却像两根尖刺，扎在家长心头，也扎在社会公众的心头。病人至上，是医...</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-05 11:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260905A05BC100?scene=news-skill" target="_blank" rel="noopener">“即使衣服不见了，也会以为是顾客偷的”，女导购“薅”了公司72万余元，两年多才被发现</a></div>
+                <div class="item-summary">近日，上海虹口区检察院审查起诉了一起内部员工以职务便利将单位财物非法占为己有的案件。某品牌服装导购沈某某在两年多时间里，多次夹带门店商品离店并对外出售，销售金额达数十万元。内部员工“代购”实为“监守自盗”2022年底，沈某某作为兼职导购员入职某知名服装品牌门店，负责产品销售，日常也会参与门店内仓库产品的整理、取货等，有进出仓库的自由。2023年初，沈某某发现，公司系统不能及时更新每件衣服款式...</div>
+                <div class="item-meta">红星新闻 · 2026-09-05 11:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260904V0D1HB00?scene=news-skill" target="_blank" rel="noopener">男子总在家中闻到一股霉味， 取下墙上的装饰画后惊呆了</a></div>
+                <div class="item-summary">男子总在家中闻到一股霉味。 取下墙上的装饰画后惊呆了</div>
+                <div class="item-meta">5号视频 · 2026-09-04 20:16</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-05 21:14</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
