@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://www.ithome.com/0/998/661.htm",
+    "title": "奥尔特曼致歉 GPT-6 Astra 发布混乱，现已面向所有 Plus / Pro 等用户推出",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/openai-rolls-out-gpt-6-astra-to-top-tier-chatgpt-plans-at-half-the-rate-of-gpt-5-6-sol",
+    "title": "OpenAI 向 Pro、Enterprise 和 Business Premium 用户推出 GPT-6 Astra，消息额度约为 GPT-5.6 Sol 的一半",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.com/anthropics/fermats-last-theorem",
+    "title": "费马大定理的 Lean 4 机器检查完整证明开源发布",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/testingcatalog/status/2096350628054176240",
+    "title": "OpenAI GPT-6 Astra 登顶 Code Arena WebDev 榜首，领先 Claude Fable 5.1 达 35 分",
+    "source": "X：Testing Catalog (@testingcatalog)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.theverge.com/ai-artificial-intelligence/990773/openai-german-wiki-incident",
+    "title": "OpenAI 承认德国 wiki 事件并承诺改革智能体错位事件报告机制",
+    "source": "The Verge：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.ithome.com/0/998/758.htm",
+    "title": "塔姆布勒岭校园枪击案受害者追加 30 起诉讼，OpenAI 面临诉讼超 50 起",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure",
+    "title": "OpenAI 承认 wiki 事件，称正在制定更透明的事故披露框架",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2096303922378088854",
+    "title": "OpenAI 承认 wiki 事件，称将建立智能体异常行为披露框架",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://www.ithome.com/0/998/814.htm",
+    "title": "OpenAI 回应智能体接管德语维基网站事件，称将改革 AI 误对齐事件披露机制",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/openai-shares-prompting-tips-for-gpt-6-astra-including-a-blocklist-of-slop-words",
+    "title": "OpenAI 发布 GPT-6 Astra 提示词指南，含 slop 词屏蔽清单",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685905&idx=1&sn=2a6327daa3fb1d5573a824afd63af7f6",
+    "title": "实测GPT-6 Astra：速度、前端与代码能力对比GPT-5.6 Sol的全面升级",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  },
+  {
+    "url": "https://x.com/OpenAI/status/2096133504417616165",
+    "title": "OpenAI 说明 wiki 事件并着手制定对齐事故披露框架",
+    "source": "X：OpenAI (@OpenAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 0
+  }
+]
