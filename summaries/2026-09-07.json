@@ -1,0 +1,5 @@
+{
+  "https://openai.com/index/research-acceleration-view-inside-openai": "OpenAI 发文披露其内部研究自动化进展，宣布已达成去年秋天设定的目标——于今年 9 月拥有可在人类指导下完成耗时数天明确研究任务的“自动化研究实习生”，并计划到 2028 年 3 月前造出能自主开展研究的“自动化 AI 研究员”。文章阐述了研究加速在组织与工具层面的具体路径，被视为 OpenAI 推进 AI 自我改进研发体系的重要节点。",
+  "https://www.ithome.com/0/998/927.htm": "据 Fortune 报道，OpenAI 自 9 月 3 日发布 GPT-6 Astra 公告以来多次修改评测基准数据。网页存档显示，Astra 幻觉率曾由 4.2% 一度降至 2%，其前代 GPT-5.6 Sol 亦由 12.2% 降至 9.4%；OpenAI 同时将 GPT-5.6 Sol 在 ExploitBench 中的成绩由 5.5% 上调至 11.5%。OpenAI 称评测存在波动、修正为反映最佳估计，事件再度引发对基准“刷分”的质疑。",
+  "https://openai.com/index/an-alien-mind": "OpenAI 发布长文《An Alien Mind》，回溯 2023 年 RLSlow 项目——确认推理模型可通过可扩展训练提升，成为其后对齐研究起点。文章区分“目标对齐”与“价值对齐”，指出链式思维（CoT）监控效果正随模型能力提升而减弱，GPT-6 Astra 在对齐上显著优于 GPT-5.6 Sol。作者预期进展或走向机器递归自我改进（RSI），呼吁自愿放缓扩展、设第三方安全门槛并加强国际协调。"
+}

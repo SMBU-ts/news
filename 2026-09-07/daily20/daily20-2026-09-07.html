@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-07</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-07</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A03CKM00?scene=news-skill" target="_blank" rel="noopener">5年再增约10亿“风光”，意味着什么？</a></div>
+                <div class="item-summary">原标题：到2030年，风电和太阳能发电总装机容量达到28亿千瓦以上5年再增约10亿“风光”意味着什么（解码“十五五”专项规划）不久前，国务院印发《“十五五”碳达峰行动方案》，明确“到2030年，风电和太阳能发电总装机容量达到28亿千瓦以上”。“十四五”时期，我国建成全球最大、发展最快的可再生能源体系，新能源实现了...</div>
+                <div class="item-meta">人民日报 · 2026-09-07 07:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A01RFE00?scene=news-skill" target="_blank" rel="noopener">视频丨中国人民解放军“和平列车”医疗队抵达老挝</a></div>
+                <div class="item-summary">6日，参加中老“和平列车-2026”人道主义医学救援联合演习的中方卫勤分队抵达老挝首都万象，将与老挝人民军卫勤分队组织为期17天的联合演习和医疗服务活动。演习结束后，医疗队还将在当地开展特色诊疗、学术讲座等医疗服务活动。联合演习中方指挥协调组成员 郎大山：两军第6次举行该系列联演，此次联演将进一步提升两军卫勤、联合指挥、联合救援、联合防控能力，彰显中老两军深层次军事友好互信，持续打造双边军事...</div>
+                <div class="item-meta">央视新闻 · 2026-09-07 02:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A0BZJT00?scene=news-skill" target="_blank" rel="noopener">青春华章丨这里是中国科大</a></div>
+                <div class="item-summary">一所大学，为国而生。1958年，为响应国家“两弹一星”战略布局，中国科学技术大学在北京应运而生，1970年南迁合肥，艰苦创业，与城市共生发展。学校英才辈出，科研实力雄厚，在量子科技等领域成果卓著。六十八年来，一代代科大人坚持“红专并进 理实交融”的校训，坚守科教报国初心，助力科技强国建设。...</div>
+                <div class="item-meta">央广网 · 2026-09-06 22:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A02NCP00?scene=news-skill" target="_blank" rel="noopener">视频丨白露时节如何养生？这几个部位千万别受凉</a></div>
+                <div class="item-summary">“蒹葭苍苍，白露为霜”9月7日迎来白露节气此时节，天高云淡，气爽风凉白露时节如何养生？这份养生攻略快收下 “春捂秋冻”靠谱吗？白露养生牢记“三不冻”！白露是秋季的第三个节气，因秋气渐深，温差较大，接近地面的水蒸气夜间遇冷凝结成水珠而得名。此时，天气冷暖多变，早晚温差较大，要注意应季养生。白露节气，...</div>
+                <div class="item-meta">央视新闻 · 2026-09-07 05:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A03A0N00?scene=news-skill" target="_blank" rel="noopener">传回一张8K高清月照仅需12秒，如何做到？</a></div>
+                <div class="item-summary">原标题：我国首次实现地月双向高速激光通信十二秒传高清月照，如何做到（身边的创新）历经一年多在轨测试，我国地月激光通信试验任务日前取得重要突破，科研团队成功在约40万公里的地月距离上建立起双向激光链路，首次实现地月双向高速激光通信。这标志着我国空间激光通信正式从近地轨道迈入地月空间。空间激光通信是一种利...</div>
+                <div class="item-meta">人民日报 · 2026-09-07 07:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A038TA00?scene=news-skill" target="_blank" rel="noopener">买海鲜混入毒蟹险酿大祸 螃蟹季食鲜小心这些海洋“毒物”</a></div>
+                <div class="item-summary">近日，杨女士的母亲在一街市买墨鱼时，一只不起眼的小螃蟹混入其中。老人将其炒熟，准备留给爱吃螃蟹的女儿。饭桌上，杨女士发现这种螃蟹从未见过，使用AI查询后竟识别出这是携带河鲀毒素的红斑斗蟹！其毒素少量即可致命，高温烹饪无法破坏毒性。杨女士果断倒掉整盘菜，所幸未造成中毒。红斑斗蟹这个名字对大多数人来说十分...</div>
+                <div class="item-meta">央视新闻 · 2026-09-07 06:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A02EJZ00?scene=news-skill" target="_blank" rel="noopener">视频丨手机“屏幕病”正悄悄透支老年人的身体</a></div>
+                <div class="item-summary">如今，刷短视频、追短剧、看新闻，早已成为很多老年人的日常休闲方式。手机丰富了老年生活，打发了闲暇时光，但很多长辈一刷就是几小时，久坐不动、关灯刷屏、音量拉满，看似放松的习惯，却在悄悄透支身体。医生提醒：老年人身体机能本就处于退化阶段，长时间看手机不仅伤眼睛，对颈椎、听力、睡眠、大脑状态也可能造成伤害...</div>
+                <div class="item-meta">央视新闻 · 2026-09-07 04:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A03DRE00?scene=news-skill" target="_blank" rel="noopener">曾经枝叶繁茂的二级古树，遭截顶修剪</a></div>
+                <div class="item-summary">原标题：重庆南川区—— 二级古树遭截顶修剪（身边事）古树修剪后。古树修剪前。以上图片均为彭松涛提供我是重庆南川区大有镇大保村的村民。我家房子旁有一棵世代管护、产权私有的二级古树。这棵古银杏树曾经枝叶繁茂，是一个网红打卡点。去年夏天，因为古树部分枝干太长，有掉落的风险。根据古树保护相关规定，我们不能随...</div>
+                <div class="item-meta">人民日报 · 2026-09-07 07:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A0B3S200?scene=news-skill" target="_blank" rel="noopener">蔬菜、水果可以互相替代？大错特错！一文看懂二者营养差距</a></div>
+                <div class="item-summary">流“蔬菜水果营养差不多，都能提供维生素和膳食纤维，可以互相替代着吃。”在日常生活中，一种普遍的观点认为蔬菜跟水果在营养成分上会有许多相似之处，因此不少不爱吃蔬菜的人就用水果替代蔬菜，他们觉得只要每天吃足够的水果，就能够满足人体所需要的蔬菜中的营养物质。言流言分析这是一种常见误区。虽然蔬菜和水果都富含...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-06 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A05LX000?scene=news-skill" target="_blank" rel="noopener">微塑料仅2小时即可入侵大脑！这10个含微塑料的日用品，你可能都用过</a></div>
+                <div class="item-summary">微塑料“无孔不入”，2023年4月《纳米材料》的一项研究发现，微塑料颗粒被小鼠随水口服后，仅2小时即可穿过血脑屏障进入大脑。2020年发表在权威期刊《国际环境》上的一项研究显示，在6位健康孕妇的胎盘中，其中4个都被检测出了5～10微米大小的“微塑料颗粒”。微塑料甚至可以被“遗传”，能通过胎盘屏障对人体造成影响。今...</div>
+                <div class="item-meta">新民晚报 · 2026-09-06 21:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A02Z6R00?scene=news-skill" target="_blank" rel="noopener">萨巴伦卡夺美网17连胜，连续6年闯入八强！非种子选手仅剩郑钦文</a></div>
+                <div class="item-summary">北京时间9月7日凌晨， 美网女单第4轮比赛展开争夺。两届赛会卫冕冠军萨巴伦卡直落两盘轻松战胜汤森德，取得了自己在美网的第17场连胜，成功锁定了一个八强席位。随着汤森德被淘汰出局，本届美网女单签表当中的非种子球员，仅剩中国金花郑钦文一人。首盘比赛一上来双方就展开了一场破发大战，前4局两次互破发球局，萨巴伦卡在第5局再次完成破发，随后保发取得4-2的领先优势。第7局萨巴伦卡再度破发，但此后她错失...</div>
+                <div class="item-meta">全景体育 · 2026-09-07 06:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A09IUF00?scene=news-skill" target="_blank" rel="noopener">多地严查赵一鸣、好想来等量贩零食品牌</a></div>
+                <div class="item-summary">近期赵一鸣、好想来等头部量贩零食品牌接连陷入“缺斤短两”争议河北有顾客买4块牛肉干店内称重64.58元，复秤仅17.29元河南有顾客结账111元要求重称后变64.8元包头市市场监管局迅速出手紧盯好想来、赵一鸣、七篓零食、采栗人等主流连锁零食门店在全市开展量贩式零食行业计量专项整治对“缺斤短两”违法行为重拳亮剑山西运城...</div>
+                <div class="item-meta">中国新闻网 · 2026-09-06 15:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A02YZZ00?scene=news-skill" target="_blank" rel="noopener">世界排名更新！塞尔比直逼赵心童，新科冠军升9位丁俊晖保住前16</a></div>
+                <div class="item-summary">北京时间2026年9月7日，世界斯诺克巡回赛发布了最新的世界排名。赵心童稳居第一，塞尔比提升两位排名第二，特鲁姆普排名提升两位位居第三。 罗伯逊排名下滑两位排名第四，吴宜泽排名下滑两位排第....</div>
+                <div class="item-meta">世界体坛观察家 · 2026-09-07 06:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A0C1TB00?scene=news-skill" target="_blank" rel="noopener">杨舒予救主！世界杯：中国女篮加时逆转捷克 韩旭22+14张子宇3失误</a></div>
+                <div class="item-summary">北京时间9月6日，2026年女篮世界杯D组小组赛，上届亚军中国女篮对阵捷克女篮。老将王思雨带伤复出，中国女篮首节后半段被轰13-0，次节一度被拉开落后10分差距。韩旭率领中国女篮下半场持续反扑，杨舒....</div>
+                <div class="item-meta">醉卧浮生 · 2026-09-06 22:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A03APA00?scene=news-skill" target="_blank" rel="noopener">反亲日热潮在韩国集中爆发</a></div>
+                <div class="item-summary">【环球时报驻韩国特约记者 黎枳银 李长锦 环球时报记者 李萌】编者的话：曾祖父有亲日行径的韩国女演员安贺营（音）将不会出演奈飞原创韩国医疗剧《外伤重症中心》的下一季。此次事件让韩国国内清算亲日派的行动再次受到关注。近期，韩国从民间到政府都出现了加大清算亲日派的势头。在民间，韩国民众特别是年轻人通过各类活...</div>
+                <div class="item-meta">环球网 · 2026-09-07 07:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A0B9GZ00?scene=news-skill" target="_blank" rel="noopener">21点中国女足首秀！时隔8年重返U20世界杯 PK新军盼狂胜+刷净胜球</a></div>
+                <div class="item-summary">北京时间9月7日，U20女足世界杯迎来1场焦点战。位于F组的中国女足将在21点亮相，首轮迎战大洋洲新军新喀里多尼亚。 在时隔8年重返U20女足世界杯（女足世青赛）正赛后，这支由王军挂帅的青....</div>
+                <div class="item-meta">我爱英超 · 2026-09-07 06:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A0AYPJ00?scene=news-skill" target="_blank" rel="noopener">平均每天打7个电话给12315，男子一年举报2814次，批量投诉上千家商户，拿模板瞄准食品问题索要赔偿；长沙市监局出手：对其投诉不予受理</a></div>
+                <div class="item-summary">近年来，以牟利为目的的投诉举报迅猛增长、挤占普通消费者的维权通道。长沙市场监管部门建立市级批量投诉综合研判与区县（市）局个案分析的工作机制，认定了一批牟利性投诉举报人并依法予以规制，9月4日公开了第一批典型案例。典型案例中，当事人往往在短短一年之内发起上百次乃至上千次投诉。针对这类大批量、内容模板化的...</div>
+                <div class="item-meta">潇湘晨报 · 2026-09-06 18:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260906A0B02F00?scene=news-skill" target="_blank" rel="noopener">江西一女生赴港看演唱会被取消全家低保？律师：若属实于法有据，但行政比例原则有讨论空间</a></div>
+                <div class="item-summary">封面新闻见习记者 王云嘉 记者 刁明康 近日，一则“江西赣州一名低保家庭女生因赴香港观看演唱会，返程后全家低保资格被取消”的消息在网络上持续发酵。9月6日，赣州市民政局值班人员表示，市本级....</div>
+                <div class="item-meta">封面新闻 · 2026-09-06 18:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A03ASA00?scene=news-skill" target="_blank" rel="noopener">瑞士给冰川盖上羊毛毯，效果出乎意料</a></div>
+                <div class="item-summary">为了减缓冰川融化，瑞士研究人员想出了一个特别的办法：给冰川盖上“羊毛毯”。初步实验显示，羊毛的效果不输传统合成材料。据路透社9月3日报道，瑞士环保组织Summit Foundation和洛桑大学正在阿尔卑斯山区开展“Keep It Wool”项目，尝试用羊毛覆盖瑞士西部的桑弗勒龙冰川。 从无人机拍摄的影像中可以看到，用于保护冰川的...</div>
+                <div class="item-meta">观察者网 · 2026-09-07 07:07</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-07 09:06</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
