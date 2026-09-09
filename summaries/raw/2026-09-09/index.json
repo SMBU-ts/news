@@ -1,0 +1,132 @@
+[
+  {
+    "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+    "title": "OpenAI 发布 ChatGPT Images 2.5 图像模型",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://runwayml.com/news/company-news/runway-for-adobe",
+    "title": "Runway 发布 Adobe 插件，可在 Premiere Pro 和 After Effects 内直接生成与编辑",
+    "source": "Runway：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenAI/status/2097431322117476423",
+    "title": "OpenAI 向 Plus、Pro、Business 和 Enterprise 用户全面推送 Astra",
+    "source": "X：OpenAI (@OpenAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician",
+    "title": "NYU 数学家指控 OpenAI 在千禧年难题竞赛中不正当竞争，Bubeck 否认",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier",
+    "title": "Mistral 完成 30 亿欧元 D 轮融资，估值超 210 亿欧元",
+    "source": "Mistral AI：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/navier-stokes-solution",
+    "title": "OpenAI 宣布以内部 AI 系统给出 Navier–Stokes 千禧年问题解答",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.dwarkesh.com/p/pretraining-progress-is-mostly-data",
+    "title": "Dwarkesh Patel 研究：预训练进步主要来自数据改进",
+    "source": "Dwarkesh Patel：Podcast & Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://cims.nyu.edu/~tristanb/statement.pdf",
+    "title": "数学家巴克马斯特宣布多项方程 blowup 结果并公开与 OpenAI 沟通经过",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/polynoamial/status/2097375837670785447",
+    "title": "Noam Brown 评 OpenAI 用智能体求解 Navier-Stokes 千禧年难题：成本会快速下降",
+    "source": "X：Noam Brown (@polynoamial)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647686056&idx=1&sn=c1710404c08cf3201da27f4d53f94940",
+    "title": "GPT-6 Astra操控Blender保姆级教程：三种玩法与踩坑实录",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/sama/status/2097385167002415140",
+    "title": "Sam Altman 回应与 Anthropic 研究员的 Navier-Stokes 证明发布争议",
+    "source": "X：Sam Altman (@sama)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/ClaudeDevs/status/2097369738968195513",
+    "title": "Anthropic 讲解用 Claude Platform 降低成本并提升性能的三个方法",
+    "source": "X：Claude Devs (@ClaudeDevs)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://tomtunguz.com/openai-research-acceleration-agentic-productivity",
+    "title": "Tom Tunguz 分析 OpenAI 的 3x AI 生产力增益是否只是机器不睡觉",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]

@@ -24,6 +24,7 @@
   python build_hotsearch.py --from-json sections.json [日期]  # 用已填好摘要的 sections JSON 渲染（agent 预生成摘要后调用）
 """
 import re
+import ssl
 import sys
 import json
 import html
@@ -260,9 +261,44 @@ def _zhihu_from_60s():
     return out
 
 
+def _zhihu_from_topsearch():
+    """第三回退源：知乎官方 top_search 接口（热搜词，无需鉴权）。
+
+    2026-09-09 起 zhihu-hot-hub 上游归档持续返回「暂无数据」、60s 聚合源证书失效，
+    此时改用官方搜索热词接口补齐知乎栏目（固定 10 条，无热度值）。
+    """
+    try:
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        req = urllib.request.Request(
+            "https://www.zhihu.com/api/v4/search/top_search",
+            headers={"User-Agent": UA, "Referer": "https://www.zhihu.com/"},
+        )
+        with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as r:
+            d = json.loads(r.read().decode("utf-8", "ignore"))
+    except Exception:
+        return []
+    out = []
+    for it in ((d.get("top_search") or {}).get("words") or []):
+        q = (it.get("query") or it.get("display_query") or "").strip()
+        if not q:
+            continue
+        out.append({
+            "title": q,
+            "summary": "",
+            "url": "https://www.zhihu.com/search?type=content&q=" + urllib.parse.quote(q),
+            "hot": 0.0,
+            "hot_display": "—",
+            "source": "知乎",
+            "label": "",
+        })
+    return out
+
+
 def fetch_zhihu():
-    """知乎热搜：主源 zhihu-hot-hub 仓库，失败或空则回退 60s 聚合接口。"""
-    for fn in (_zhihu_from_hub, _zhihu_from_60s):
+    """知乎热搜：主源 zhihu-hot-hub 仓库，失败或空则回退 60s 聚合接口，再回退官方 top_search。"""
+    for fn in (_zhihu_from_hub, _zhihu_from_60s, _zhihu_from_topsearch):
         try:
             out = fn()
         except Exception:

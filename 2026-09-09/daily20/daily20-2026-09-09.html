@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-09</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-09</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0E1A000?scene=news-skill" target="_blank" rel="noopener">接连参加三场联训 中国战机展现全域作战能力</a></div>
+                <div class="item-summary">中国和埃及的“文明之鹰-2026”空军联合训练尚未结束，中国与阿联酋的“猎鹰盾牌-2026”空军联训接连上演。八月到九月之间，中国空军接连同泰国、埃及和阿联酋进行三场联合训练，分别深入东南亚热带季风地区、中东干热沙尘环境，以及我国的南疆戈壁与昆仑山麓，中国空军的全域作战能力得以全面展示。 阿联酋全套远程保障阵容亮相近距离观察幻影2000-9 △幻影2000-9事评论员傅前哨表示，通过联合训练...</div>
+                <div class="item-meta">央视新闻 · 2026-09-08 22:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260909A032QE00?scene=news-skill" target="_blank" rel="noopener">十万卡集群将越来越多！事关国产算力，重磅部署</a></div>
+                <div class="item-summary">9月7日，工业和信息化部印发《信息通信行业发展“十五五”规划》（下文简称《规划》）。《规划》提出要提升算力设施发展水平；深化算力协同发展能力；强化公共算力服务能力。到2030年，新建大型超大型算力设施运行电能利用效率（PUE）降至1.2以下，智能算力规模达到9800EFLOPS（每秒百亿亿次浮点运算）。在打造高效协同的算...</div>
+                <div class="item-meta">央视新闻 · 2026-09-09 06:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0C4GN00?scene=news-skill" target="_blank" rel="noopener">我国加快推动历史经典产业迈向中高端</a></div>
+                <div class="item-summary">央视网消息（新闻联播）：国务院新闻办公室9月7日上午举行新闻发布会，工业和信息化部、商务部、文化和旅游部与市场监管总局有关负责人表示，将多措并举推动历史经典产业高质量发展。 历史经典产业是指丝绸、茶叶、瓷器、中药、文房四宝等文化底蕴深厚的中华传统特色产业。目前，我国历史经典产业代表性行业规模以上企业数量达2.5万家，从业人员近350万人，全行业年营业收入约8万亿元；同时，各地通过加强非物质文...</div>
+                <div class="item-meta">央视网 · 2026-09-08 18:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260909A02S2U00?scene=news-skill" target="_blank" rel="noopener">视频丨郑钦文今晚对阵莱巴金娜！期待Queen Wen越打越强</a></div>
+                <div class="item-summary">今天23:302026美网女单1/4决赛中国金花郑钦文将对阵2号种子莱巴金娜双方此前交手五次莱巴金娜4胜1负最近三场比赛都打满三盘郑钦文时隔两年重返美网八强生涯三度晋级美网女单八强追平个人美网单打最佳成绩本届美网，郑钦文一扫此前赛事中的低迷状态，从资格赛起步，一路高歌猛进，豪取7连胜。特别是在女单第四轮比赛中，郑钦...</div>
+                <div class="item-meta">央视新闻 · 2026-09-09 05:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260909A0359200?scene=news-skill" target="_blank" rel="noopener">视频丨采购周期缩短50%以上 人工智能应用在供应链领域加速落地</a></div>
+                <div class="item-summary">中国物流与采购联合会今天发布《中国供应链发展报告（2025-2026）》。根据报告，2025年我国供应链领域的人工智能应用开始加速落地，以生成式大模型为引领，机器视觉、智能体、具身智能等多项技术协同演进，已在采购管理、需求预测、库存优化、智能调度、风险管理等供应链管理的核心环节实现深度赋能，显著提升了供应链的响应速度、决策精度与运营韧性。据统计，在采购领域，采用智能采购供应链的企业，相较传统...</div>
+                <div class="item-meta">央视新闻 · 2026-09-09 06:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260909A00WOX00?scene=news-skill" target="_blank" rel="noopener">香港首任特首董建华逝世，享年89岁</a></div>
+                <div class="item-summary">据凤凰卫视报道，董建华办公室发表讣闻，前全国政协副主席、香港特别行政区首任行政长官董建华，于2026年9月8日安详辞世，享年89岁。讣闻称，董建华先生为人刚正不阿，胸怀家国，鞠躬尽瘁，其高风亮节的精....</div>
+                <div class="item-meta">凤凰网 · 2026-09-09 01:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0E2ZP00?scene=news-skill" target="_blank" rel="noopener">福建莆田洪水后 “泡水鞋”叫卖刷屏 真相如何？</a></div>
+                <div class="item-summary">最近几天，福建莆田遭遇持续强降雨，部分地区发生内涝，一些工厂仓库进水受损。就在当地加紧开展灾后恢复的同时，网络上出现了一批打着“泡水鞋”旗号的低价商品——70块钱两双，还包邮，这样的价格吸引了不少消费者关注。一些商家直播仓库被淹，还有些人在群里发公告说是“忍痛清仓”。相关清仓信息和商品链接在多个平台迅...</div>
+                <div class="item-meta">央视新闻 · 2026-09-08 23:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260909A0310U00?scene=news-skill" target="_blank" rel="noopener">多地将有暴雨大暴雨 中央气象台继续发布蓝色预警</a></div>
+                <div class="item-summary">中央气象台9月9日6时发布暴雨蓝色预警：预计，9月9日08时至10日08时，甘肃东部和南部、陕西西南部、川西高原北部、四川盆地西部和南部、贵州西北部、云南西部等地部分地区有大雨到暴雨，其中，四川盆地西部和南部等地局地有大暴雨（100～150毫米）。上述部分地区伴有短时强降水（最大小时降雨量20～50毫米，局地可超过60毫...</div>
+                <div class="item-meta">央视新闻 · 2026-09-09 06:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0CGYH00?scene=news-skill" target="_blank" rel="noopener">泥石流过去就没事了？方便面 32 小时内都无法消化？2026 年 8 月科学领域流言榜来了</a></div>
+                <div class="item-summary">1.泥石流过去就没事了？流言：泥石流结束后危险就解除了，可以马上返回危险区域继续活动，或者继续驾车通行。真相：这种认知极其危险。泥石流过后，受持续降雨、冲刷和灾害扰动影响，坡体和土体稳定性可能进一步下降，仍存在二次滑坡、崩塌或泥石流风险。河沟、山谷等地形还可能继续汇集降雨和松散物质，因此不能把“第一波...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-08 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260909A0007B00?scene=news-skill" target="_blank" rel="noopener">埃菲尔铁塔，惹大事了！</a></div>
+                <div class="item-summary">法国巴黎的埃菲尔铁塔，这两天出了一件大事，导致这座全世界知名的法国地标景点在周一被迫停运，巴黎市长还宣布成立调查组严查，甚至法国的很多人都在为此事愤怒。 埃菲尔铁塔到底惹啥事了呢？ ....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-09-09 07:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0E44300?scene=news-skill" target="_blank" rel="noopener">成都航空一航班2名乘客打架，目击者：因调座椅引发肢体冲突，经停时双方被带离调查致航班延误</a></div>
+                <div class="item-summary">9月7日，成都航空一航班上两乘客发生肢体冲突，目击者称系因调座椅起争执所致。视频显示，一名男乘客与前排旅客发生肢体冲突，安全员随即上前劝阻，因事发时飞机正在滑行，视频在社交媒体引发关注。一目击者表示，此事系因前排旅客放倒座椅，导致后排空间较小引发双方口角，进而演化为肢体冲突。另一旅客称，该航班由海南海...</div>
+                <div class="item-meta">大河报 · 2026-09-09 07:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0DZHT00?scene=news-skill" target="_blank" rel="noopener">魏德尔正成为德国政坛“最危险也最有希望的人”，有望角逐下一任总理，曾在华生活6年，就职于中国银行，博士论文题目是中国养老金制度</a></div>
+                <div class="item-summary">20多年前曾坐在中国银行工位上、以中国养老金制度为博士论文题目的女人，正成为德国政坛“最危险也最有希望的人”。据葡萄牙国家广播电视台报道，极右翼的德国选择党（AfD）在9月6日的萨克森-安哈尔特州议会选举胜出后，该党联合领袖爱丽丝·魏德尔表示，“我希望提前举行联邦选举，也希望现任总理能在圣诞节前被替换。”据...</div>
+                <div class="item-meta">大河报 · 2026-09-09 07:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A07X8600?scene=news-skill" target="_blank" rel="noopener">小米“最贵手机”顶配售罄！网友：手速太慢只抢到空气！雷军称摔了1500台工程机…</a></div>
+                <div class="item-summary">全文共724字，阅读大约需要2分钟9月8日，@小米手机 发文称，小米18 Fold预售已开启，9月10日正式开售，首发搭载玄戒O3。图片来源：新浪微博@小米手机 截图小米商城显示，小米18 Fold顶配16GB+1TB版本目前已经售罄，页面显示暂时缺货，其余三个存储版本仍有现货。有网友评论称：“手速太慢，只抢到了空气”“陶瓷版不知道会...</div>
+                <div class="item-meta">北京商报 · 2026-09-08 12:49</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0COD900?scene=news-skill" target="_blank" rel="noopener">演员陈赫自曝确诊，已暂停工作，“疼痛到无法直起身子”</a></div>
+                <div class="item-summary">近日，演员陈赫在直播中透露，自己因十多年旧伤累积，确诊严重腰椎滑脱。他表示前几日腰部伤势加重，就医拍片检查，严重时腰部疼痛到无法直起身子，目前正在接受理疗休养，已暂停部分工作。据了解，陈赫腰伤由来已久，伤病可追溯至综艺节目的录制，多年高强度录制让腰部损伤不断累积。陈赫（Michael Chen），1985年11月9日...</div>
+                <div class="item-meta">极目新闻 · 2026-09-08 18:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0CPET00?scene=news-skill" target="_blank" rel="noopener">8月汽车销量前十已无燃油车</a></div>
+                <div class="item-summary">9月8日，懂车帝援引的乘联分会零售销量数据显示，2026年8月全国乘用车零售销量排行榜前十车型全部为新能源车，传统燃油车无一上榜。 具体来看，吉利星愿以39651辆的零售销量居首，零跑A10（30652辆）、特斯拉Model Y（29260辆）分列二三位，比亚迪元UP（22958辆）、特斯拉Model 3（20787辆）、长安启源Q05（17349辆）、理想...</div>
+                <div class="item-meta">第一财经 · 2026-09-08 19:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A09M0J00?scene=news-skill" target="_blank" rel="noopener">四年半亏掉百亿，原董事长大搞权色交易，被牛散抛弃的江淮还有救吗</a></div>
+                <div class="item-summary">成都车展，江淮汽车展位 作者拍摄 作者 ｜ 岳家琛 编辑 ｜ 孙春芳 出品 ｜ 棱镜·腾讯小满工作室 在2026成都车展上，江淮汽车的展位几乎占据了半个展厅。....</div>
+                <div class="item-meta">棱镜 · 2026-09-08 16:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0AQDW00?scene=news-skill" target="_blank" rel="noopener">下月你的工资或将多一笔钱</a></div>
+                <div class="item-summary">中秋节快到啦！根据国务院办公厅发布的《关于2026年部分节假日安排的通知》中秋节9月25日（周五）至27日（周日）放假三天，不调休。那么放假期间加班工资应如何计算？计算公式日工资=月工资收入÷月计薪天数（21.75天）月计薪天数=（365天－104天）÷12个月=21.75天3倍日工资=月工资收入÷21.75×300%2倍日工资=月工资收入÷21.75×200%月工资支付日在1日—7日的小伙...</div>
+                <div class="item-meta">红星新闻 · 2026-09-08 16:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0CXBR00?scene=news-skill" target="_blank" rel="noopener">观察：17岁高中生入选中国男子成年国家队，是天赋异禀还是拔苗助长？</a></div>
+                <div class="item-summary">9 月 8 日，中国男足公布新一期 30 人集训名单，名单末尾的人选让外界大跌眼镜：来自清华大学附属中学的赵松源。一名 17 岁、没有任何职业联赛经历的在读高中生，以近乎跨级跳跃的方式进入成年男足国家队集训，颇具魔幻色彩。新一期中国男足国家队名单。称其 “创造历史” 并不为过 —— 他是中国足球职业化以来，首位没有...</div>
+                <div class="item-meta">上观新闻 · 2026-09-08 22:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A0CO2I00?scene=news-skill" target="_blank" rel="noopener">匈牙利驱逐10名俄罗斯外交官，扎哈罗娃：俄方将作出“严厉且痛苦”回应</a></div>
+                <div class="item-summary">【环球网报道 记者 赵建东】据塔斯社报道，俄罗斯外交部发言人扎哈罗娃8日表示，莫斯科将对匈牙利驱逐俄罗斯外交官的行为作出“严厉且痛苦”的回应。此前，匈牙利外交部长奥尔班·奥妮道在社交媒体发文说，匈牙利政府已驱逐10名俄罗斯外交官，理由是匈方认为他们的活动与外交身份不符。匈牙利外交部长奥尔班·奥妮道，资料...</div>
+                <div class="item-meta">环球网 · 2026-09-08 19:04</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-09 08:47</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

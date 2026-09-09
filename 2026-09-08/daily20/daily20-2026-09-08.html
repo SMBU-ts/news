@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-08</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-08</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A038MN00?scene=news-skill" target="_blank" rel="noopener">偷拍未公开战机、撬锁擅闯军事禁区 国安部披露多个案件详情</a></div>
+                <div class="item-summary">国家安全部今天发布安全提示文章。“军队打胜仗，人民是靠山。”加强国防建设，离不开广大人民群众的关心和支持。但近年来，极个别人员打着“热爱”的旗号，竟将镜头对准了呼啸的战机，将脚步踏入了军事禁区，将“热情”异化为侥幸的冲动，让“好奇”突破了安全的底线。 越界行为有代价国家安全机关依法侦办的一系列典型案件显示，从“登高望远”的“高级机位”，到“翻墙撬锁”的越界探险，再到操控无人机的“航拍猎奇”，...</div>
+                <div class="item-meta">央视新闻 · 2026-09-08 06:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A021YK00?scene=news-skill" target="_blank" rel="noopener">中企牵头参建的波黑重要高速公路隧道贯通</a></div>
+                <div class="item-summary">新华社萨拉热窝9月7日电（记者宋佳 解园）由中国路桥工程有限责任公司牵头参建的波黑克瓦尼-布纳段高速公路克瓦尼隧道7日顺利贯通。波黑联邦总理内尔明·尼克希奇表示，这是提升波黑交通连通性的关键一步。 波黑克瓦尼-布纳段高速公路是泛欧5C走廊高速公路项目的重要组成部分。该走廊纵贯匈牙利、克罗地亚和波黑，是连接中...</div>
+                <div class="item-meta">新华社新闻 · 2026-09-08 03:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907V09U5T00?scene=news-skill" target="_blank" rel="noopener">青春华章｜中国人，为何行？</a></div>
+                <div class="item-summary">青春华章｜中国人，为何行？</div>
+                <div class="item-meta">中国新闻网 · 2026-09-07 15:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A03AD600?scene=news-skill" target="_blank" rel="noopener">大胜意大利队，中国女篮世界杯小组第二出线</a></div>
+                <div class="item-summary">北京时间9月8日凌晨，2026年国际篮联女篮世界杯D组展开小组赛最后一轮比赛的争夺，中国女篮一改前两场开局慢热的局面，先发制人，71∶51大胜意大利女篮，以小组第二的身份成功晋级附加赛。在此前进行的两轮小组赛比赛中，两队均取得1胜1负的战绩，本场获胜的一方将锁定小组第二的位置。本场比赛，中国队开局阶段便快速进入...</div>
+                <div class="item-meta">人民日报 · 2026-09-08 06:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A01Z2Y00?scene=news-skill" target="_blank" rel="noopener">新闻1+1丨人工智能纠纷案件，有了裁判“标尺”！</a></div>
+                <div class="item-summary">9月7日，最高法举行新闻发布会，发布《最高人民法院关于依法审理涉人工智能纠纷案件的意见》（以下简称《意见》）。聚焦“AI换脸拟声”、“AI幻觉”侵权、“网络开盒”、“大数据杀熟”、自动驾驶、模型训练等问题，有针对性地明确涉人工智能案件实体裁判和诉讼程序规则。这份意见划定了怎样的法律“红线”和底线？又为技术...</div>
+                <div class="item-meta">央视新闻 · 2026-09-08 03:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A00ZAT00?scene=news-skill" target="_blank" rel="noopener">重返美网八强！郑钦文2-0横扫斯瓦泰克 重演0-5落后连赢七局神迹</a></div>
+                <div class="item-summary">北京时间9月8日，2026年美网女单第四轮，中国选手郑钦文对阵前世界第一、前赛会冠军斯瓦泰克。郑钦文首盘在0-5落后情况下，重演连赢七局神奇逆袭模式，且合计挽救3个盘点7-5惊险先赢一盘，第二盘以6....</div>
+                <div class="item-meta">醉卧浮生 · 2026-09-08 01:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0B6DJ00?scene=news-skill" target="_blank" rel="noopener">证券业黑灰产调查</a></div>
+                <div class="item-summary">破局之道，不在于一次打击、一个判例，而在于司法、监管、平台、机构与投资者的系统升级文｜《财经》记者 张欣培编辑｜郭楠 陆玲“我被投顾公司骗了3万元，后来通过××法律咨询，一分不少全退回来了。”正在浏览某社交平台的投资者张明（化名）看到了这样的推广信息，“我们可以帮助投资者追回投顾费，不成功不收钱。”张...</div>
+                <div class="item-meta">财经杂志 · 2026-09-07 17:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0DIOU00?scene=news-skill" target="_blank" rel="noopener">国产GPU，到了最贵的时刻</a></div>
+                <div class="item-summary">本文来自微信公众号： 资本不熬夜 ，作者：不熬夜研究院中国最贵的一批芯片公司，在9月7日这一天，突然集体打了个寒颤。早上开盘没多久，“国产GPU第一股”摩尔线程就被摁在20cm跌停板上，股价报415.48元，总市值跌破2000亿元。一天蒸发近488亿元。隔壁的沐曦股份也没能独善其身，盘中一度跌超11%。寒武纪也在今天的AI反弹...</div>
+                <div class="item-meta">虎嗅APP · 2026-09-07 22:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0C2DB00?scene=news-skill" target="_blank" rel="noopener">土壤破坏后几年就能恢复？</a></div>
+                <div class="item-summary">有传言称：“土壤破坏后几年就能恢复。”这个说法是真的吗？为此，科学辟谣专门制作了一条视频来剖析：策划制作审核丨李素艳 北京林业大学 教授责编丨王梦如点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-07 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0DJ1800?scene=news-skill" target="_blank" rel="noopener">深圳一产妇生下女婴5分钟后，意外发现肚子里竟还有一个娃；本人及家属此前完全不知情，整个孕期一次产检都没做，生完才知道是龙凤胎</a></div>
+                <div class="item-summary">9月4日，一名经产妇（即有过分娩经历）因紧急临产被送入医院。入院检查时，产妇宫口已开大9厘米，胎头即将娩出。产科医护团队立即启动紧急分娩应急预案。9时40分，第一名女婴顺利娩出，新生儿状态良好。但仅5分钟后，助产士在评估胎盘娩出前，察觉到异常——产妇宫腔内似乎仍有胎儿。经值班医生检查，确诊为罕见的隐匿性双...</div>
+                <div class="item-meta">大河报 · 2026-09-08 07:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0DAEZ00?scene=news-skill" target="_blank" rel="noopener">中方回应菲律宾防长涉华言论</a></div>
+                <div class="item-summary">9月7日，外交部发言人毛宁主持例行记者会。路透社记者提问，今天早些时候，菲律宾防长接受本社采访称，中国可能以近期美韩军演缩减规模为契机，在印太地区加强自身影响力。中方对此有何评论？毛宁 资料图。图源：外交部网站毛宁表示，中方一贯致力于维护亚太地区的和平稳定，不搞大国对抗。希望相关国家也能为地区和平稳定...</div>
+                <div class="item-meta">长安街知事 · 2026-09-07 21:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0DCMI00?scene=news-skill" target="_blank" rel="noopener">“喂，110，我要举报我的女儿”，杭州一父亲举报女儿吸食9个小时笑气，2026年该女子就先后4次因吸食笑气被处罚</a></div>
+                <div class="item-summary">“喂，110，我要举报，我女儿吸笑气！”9月1日，一通报警电话打进杭州建德公安梅城派出所，报警人老陈（化姓）举报自己的女儿在家里吸笑气。老陈的女儿小陈租住在杭州，大学毕业，前几天回家住了一晚。早上老陈去女儿房间敲门叫她起床吃早饭，女儿不应声，想办法进门后，老陈发现女儿躺在床上，怀里抱着一个瓶子，女儿半昏半睡。看着眼前的场景，老陈暴跳如雷，和女儿发生了激烈的争吵，并且报了警。梅城派出所民警到达...</div>
+                <div class="item-meta">红星新闻 · 2026-09-08 07:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0ACP000?scene=news-skill" target="_blank" rel="noopener">“县人民政府”写成“县人民币政府”，万亿巨头翻车了</a></div>
+                <div class="item-summary">“人民政府”写成“人民币政府”、“新能源”写成“新熊源”、银行名漏掉“银行”二字…… 准万亿级巨头紫金矿业，因为低级文字错误“翻车”了。值得一提的是，上述个别错误并非首次出现，而是在年报里....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-09-07 22:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A00X3J00?scene=news-skill" target="_blank" rel="noopener">伊朗公布一款新型导弹</a></div>
+                <div class="item-summary">总台记者获悉，当地时间7日，伊朗公布一款新型导弹。伊朗称，该款名为“卡西姆·巴希尔”弹道导弹的亮相是该国国防战略的一个里程碑。这款导弹射程更远、精度更高，更象征着伊朗“从被动威慑转向主动威慑”。伊朗称，“卡西姆·巴希尔”导弹采用固体燃料、光电制导和半吨重的弹头，它向敌人发出明确的信息：伊朗不再只是被...</div>
+                <div class="item-meta">央视新闻 · 2026-09-08 01:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0DO1B00?scene=news-skill" target="_blank" rel="noopener">钧正平：抗战歌曲承载中华民族抗战记忆与情感，绝不允许随意歪曲篡改</a></div>
+                <div class="item-summary">9月7日，武汉市文化和旅游局发布通报，就相声演员郭德纲在演出中歪曲篡改抗战经典歌曲《弹起我心爱的土琵琶》一事作出处置。“西边的太阳快要落山了，微山湖上静悄悄……”每当熟悉的旋律响起，几代国人脑海中，总会浮现出铁道游击队员们浴血奋战的英雄身影。以戏谑嘲弄的态度和形式对红色经典进行解构歪编，消解的不只是一首抗战老歌的精神内核，更是中华民族的共同记忆与家国情感。艺术需要创新，舞台需要活力。但创新的...</div>
+                <div class="item-meta">红星新闻 · 2026-09-07 22:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0DNW000?scene=news-skill" target="_blank" rel="noopener">“反派专业户”老戏骨，走了</a></div>
+                <div class="item-summary">2026年9月1日，台湾演员庞祥麟去世，享年80岁。9月7日家属对外公布了消息。消息传开，两岸社交媒体上不少人发文悼念，很多人不是称呼他“庞祥麟”，而是“梁永昌”——那个在台剧《一剪梅》里让人恨得牙....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-09-07 22:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260908A03DA500?scene=news-skill" target="_blank" rel="noopener">日媒：名古屋亚运会门票销售遭遇困境</a></div>
+                <div class="item-summary">【环球时报综合报道】距离爱知·名古屋亚运会开幕只剩不到两周，赛事门票销售情况引发关注。“门票销售正在遭遇困境”，据《冲绳时报》报道，虽然一些比赛项目的门票如卡巴迪等已经在官方售票网站售罄，但像足球、棒球这类主要在大型场馆举行的比赛项目门票销售相对缓慢，组委会正采取最后的努力来全力提振门票销量。名古屋...</div>
+                <div class="item-meta">环球网 · 2026-09-08 07:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A05PKG00?scene=news-skill" target="_blank" rel="noopener">普京乘车遭遇“不速之客”</a></div>
+                <div class="item-summary">据俄新社9月6日报道，俄罗斯总统普京近日乘车穿过俄滨海边疆区一片森林时，偶然遭遇一只老虎。安保人员拍摄的视频显示，这只老虎从森林中走出，来到总统车队的前方，沿着公路在车队前跑了一会儿之后离开。俄总统新闻秘书佩斯科夫指出，对于安保人员来说，总统身边出现野兽几乎等同于紧急情况。佩斯科夫透露，普京当时要求安...</div>
+                <div class="item-meta">观察者网 · 2026-09-07 10:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260907A0CRAC00?scene=news-skill" target="_blank" rel="noopener">万粉网红晒图称捐款百万，广西红十字会：未收到个人百万元捐款，根据姓名查到当日有1元捐款；小红书：帖子已处理，用户已禁言</a></div>
+                <div class="item-summary">受今年10号台风“美莎克”影响，7月4日以来，广西南宁多地遭受严重洪涝灾害，社会各界纷纷捐款捐物，支援防汛救灾。不少网友主动晒出捐款凭证，传递善意。但也有人打起流量的歪主意，借灾情炮制虚假善举博取关注。继福建日报全媒体中心曝光抖音账号“秋叶白”诈捐10万元一事后，今日记者再收到网友报料——小红书万粉网红“安澜”宣传捐款百万，实际只捐1元，还在他人评论区频晒万元捐款截图。记者查询上述账号发现，...</div>
+                <div class="item-meta">大河报 · 2026-09-07 20:11</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-08 08:35</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
