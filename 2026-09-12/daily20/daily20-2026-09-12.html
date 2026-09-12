@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-12</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-12</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0G5KN00?scene=news-skill" target="_blank" rel="noopener">视频丨中国空军四型主战装备亮相埃及 这套作战链条有多强？</a></div>
+                <div class="item-summary">第二届埃及国际航展当地时间10日在阿拉曼国际机场闭幕。歼-16、空警-500、运油-20A、直-20K四型主战装备首次在海外航展公开亮相。从本土起飞，远赴北非沙漠，先实战化对抗，再把整套空中作战链条带到国际舞台。这背后折射出人民空军怎样的能力跃升？国产四型军机展现闭环作战链条 这次亮相的四型军机全部国产：歼-16负责制...</div>
+                <div class="item-meta">央视新闻 · 2026-09-11 22:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0GGIQ00?scene=news-skill" target="_blank" rel="noopener">WTT澳门冠军赛：中国队三人晋级单打八强</a></div>
+                <div class="item-summary">新华社澳门9月11日电（记者齐菲、宋晨）世界乒乓球职业大联盟（WTT）澳门冠军赛11日展开八分之一决赛，中国队选手陈幸同、陈熠、周启豪晋级。 陈幸同遇到18岁埃及小将汉娜·高达的强力挑战。前四局两人2:2战平；决胜局，陈幸同在1:7之后上演绝地反击，最终以11:9拿下，大比分3:2战胜对手。下一轮，她将与另一位埃及选手蒂娜...</div>
+                <div class="item-meta">新华社新闻 · 2026-09-11 23:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A030V100?scene=news-skill" target="_blank" rel="noopener">权威发布 | 加快建设金融强国 服务经济高质量发展</a></div>
+                <div class="item-summary">原标题：加快建设金融强国 服务经济高质量发展（权威发布·开局起步“十五五”）到2035年，基本建成具有高度适应性、竞争力、普惠性的中国特色现代金融体系9月10日，国务院新闻办举行“开局起步‘十五五’”系列主题新闻发布会，介绍金融领域贯彻落实“十五五”规划，推动金融强国建设有关情况。加快建设中国特色现代金融体...</div>
+                <div class="item-meta">人民日报 · 2026-09-11 07:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A019YD00?scene=news-skill" target="_blank" rel="noopener">夜空振翅！战鹰暗夜训练每一张都是大片</a></div>
+                <div class="item-summary">近日，空军某部组织下半夜、拂晓飞行训练。随着指挥员“起飞”命令下达，多型战机开足马力向暗夜飞去。（来源：中国军号）...</div>
+                <div class="item-meta">央视新闻 · 2026-09-12 02:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A023FV00?scene=news-skill" target="_blank" rel="noopener">中国天眼，新发现</a></div>
+                <div class="item-summary">近日，由中国科学院国家天文台研究团队牵头的“中国天眼FAST中性氢巡天项目”发布第二期数据集，构建起当今世界规模最大的中性氢星系样本库。中性氢是宇宙古老的基础物质，也是形成恒星的核心物料。它发出的21厘米辐射信号能够穿透星际尘埃，传递宇宙深处的信息，为人类解开星系演化、暗物质分布等前沿谜题提供关键数据。此次发布的数据集共捕捉到15.6万个中性氢星系，覆盖近半个天穹。样本数量是此前国际巡天望远...</div>
+                <div class="item-meta">红星新闻 · 2026-09-12 07:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0FFWX00?scene=news-skill" target="_blank" rel="noopener">甘肃省委：坚决拥护党中央决定</a></div>
+                <div class="item-summary">新甘肃客户端9月11日消息，甘肃省委常委会今天召开会议，传达中央纪委给予雷思维开除党籍、国家监委给予雷思维开除公职处分的决定。省委书记胡昌升主持会议。 与会同志一致表示坚决拥护党中央决定，....</div>
+                <div class="item-meta">政知见 · 2026-09-11 21:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026073115347700?scene=news-skill" target="_blank" rel="noopener">久久公益丨“益”起做好事</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A021EK00?scene=news-skill" target="_blank" rel="noopener">中国医疗设备，何以走向全球？</a></div>
+                <div class="item-summary">PET/CT是一种医学影像设备在临床应用中不但能显示病灶在哪还能显示病灶的状态因此在肿瘤分期、找转移、查复发时非常有用常被称为“查癌利器”2026中国国际服务贸易交易会记者在现场就见到了一台国产PET/CT不仅国内的医院在用新加坡、德国、美国的医院都在用这台国产医疗设备是如何撬动全球市场的？传统PET/CT的轴向视野通常...</div>
+                <div class="item-meta">央视新闻 · 2026-09-12 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A07XPZ00?scene=news-skill" target="_blank" rel="noopener">从“捏爆婴儿”到“吃掉作业”，校园网红爆款暗藏多少雷？</a></div>
+                <div class="item-summary">新学期伊始，一款名为“可食用课本”的网红糯米纸零食在中小学生中流行，凭借“吃掉作业”的解压噱头走红社交平台。此前，以“娜塔莎”婴儿造型解压玩具为代表的暴力宣泄类产品也曾席卷校园。近年来，多款网红产品....</div>
+                <div class="item-meta">海报新闻 · 2026-09-11 22:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0DXKO00?scene=news-skill" target="_blank" rel="noopener">保质期长的月饼防腐剂超标不能吃？买回来的生肉要用水龙头冲洗干净？丨每周食安辟谣</a></div>
+                <div class="item-summary">策划制作出品丨科学辟谣 X 食安中国 审核丨阮光锋 科信食品与健康信息交流中心副主任 中华预防医学会健康传播分会委员责编丨丁崝本文封面图片及文内图片来自版权图库转载使用可能引发版权纠纷原创图文转载请后台回复“转载”点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-11 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0CO2Q00?scene=news-skill" target="_blank" rel="noopener">因道闸故障致车辆堵门，物业与业主和解后，业主被警方行拘10日</a></div>
+                <div class="item-summary">一次小区道闸抬杆故障，导致业主车辆被“卡”在出口。在物业道歉、双方和解的情况下，业主却收到了一张拘留十日的行政处罚单。这样的遭遇，让广西南宁市民王琴（化名）....</div>
+                <div class="item-meta">新黄河 · 2026-09-11 23:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A01ZSE00?scene=news-skill" target="_blank" rel="noopener">“靖国神社在德国违法”、“日本是现存唯一军国主义国家”，一名欧洲游客的评价让日右翼网民破防</a></div>
+                <div class="item-summary">【环球时报报道 记者 刘雅婷】近日，日本社交平台注意到一段搬运自中国社交媒体的欧洲游客前往日本靖国神社并分享对馆内展陈内容看法的视频。这位欧洲游客表示，日本是“现存唯一的军国主义国家”，并强调靖国神社里放二战期间的日本旗帜和音乐，“这在德国是违法的”。其言论被转载到日本社交媒体后引发热议，有网民对日本...</div>
+                <div class="item-meta">环球网 · 2026-09-12 06:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0271100?scene=news-skill" target="_blank" rel="noopener">马杜罗妻子健康状况严重恶化</a></div>
+                <div class="item-summary">据央视新闻消息，委内瑞拉执政党统一社会主义党11日在社交媒体发布公告说，遭美国关押的马杜罗总统夫妇的辩护团队以健康理由申请暂时释放第一夫人西莉亚·弗洛雷斯。根据该公告，辩护团队向美国纽约一家法院提交了申请，请求基于“危急的医疗状况”、宪法原则及安全保证，批准第一夫人暂时获释。公告显示，弗洛雷斯正经历“心脏及身体健康状况的严重恶化”，症状包括严重心律失常、心动过速以及符合冠状动脉缺血特征的发作...</div>
+                <div class="item-meta">红星新闻 · 2026-09-12 07:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0G7K800?scene=news-skill" target="_blank" rel="noopener">家委会私自收费给高中老师送礼，校方通报</a></div>
+                <div class="item-summary">9月11日晚，陕西省延安市宝塔区第二中学发布情况通报：近日，网络出现有关延安市宝塔区第二中学高一某班家委会私自收取费用购置物资相关舆情。我校高度重视，第一时间成立专项调查小组开展全面核查，现将有关情况说明如下：经核查：网传事件为我校高一某班家委会，在未告知学校、未向班主任报备的情况下，私自建立家长微信...</div>
+                <div class="item-meta">观察者网 · 2026-09-11 22:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0GAM700?scene=news-skill" target="_blank" rel="noopener">编造“女生用苹果手机还催资助”的男子2022年曾出现在欠薪名单上，其线下门店贴有封条</a></div>
+                <div class="item-summary">9月11日，甘肃嘉峪关市公安局发布警情通报，姚某某为博取网络关注、吸粉引流，自编自导、虚构伪造“停止资助某学生后遭对方威胁”不实内容，公安机关已受理该案件。红星新闻记者发现，目前“姚某某”的社交平台账号已经更换名字，所有作品已清空。11日下午，来自嘉峪关的丁同学向红星新闻爆料，2025年，姚某某曾在网络发视...</div>
+                <div class="item-meta">红星新闻 · 2026-09-11 23:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A085KQ00?scene=news-skill" target="_blank" rel="noopener">完工两年被拖欠工程款，记者核实遭水利局工作人员怼“不关你们的事”</a></div>
+                <div class="item-summary">9月9日，湖南怀化靖州县居民陈先生向湖南广播电视台《为民热线》栏目反映，自己承接的当地一水库维护工程已完工两年，工程款至今仍被拖欠。栏目主持人随后致电靖州县水利局工作人员核实情况，对方却态度强硬，称此事"不关媒体的事"。相关视频在社交平台发布后引发广泛关注。9月10日，靖州县水利局就此事作出回应，称已对相...</div>
+                <div class="item-meta">大河报 · 2026-09-11 22:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0E9OK00?scene=news-skill" target="_blank" rel="noopener">百亿顶流，认错了</a></div>
+                <div class="item-summary">顶流基金经理，罕见在中报中承认失职。 近日，一封中报“检讨书”，把嘉实基金基金经理谭丽推上风口。“在此轮产业趋势启动之前不能够识别趋势和介入投资，是我们的失职。”这位从业超过20年的老将，....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-09-11 23:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0239900?scene=news-skill" target="_blank" rel="noopener">真相来了丨“圈养雪豹博流量”？救护中心用科普回应谣言</a></div>
+                <div class="item-summary">近日，由中央网信办指导、青海省委网信办主办的2026年全国“辟谣侠”求真之旅 走进三江源活动，在青海西宁正式启动。青海是三江之源，中华水塔，生态、民族、文旅、特色产业广受社会关注。随着短视频快速传播，各类涉及青海的网络谣言时有出现，误导公众认知。围绕生态环保、电离辐射、文旅文保、食盐安全等网络热点谣言。...</div>
+                <div class="item-meta">央视新闻 · 2026-09-12 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0FXQ300?scene=news-skill" target="_blank" rel="noopener">黄牛围猎iPhone Duo：代抢、线下“接头”、囤货</a></div>
+                <div class="item-summary">图源：视觉中国 蓝鲸新闻9月11日讯（记者 翟智超）北京时间9月10日凌晨，苹果2026年秋季发布会正式推出iPhone 18 Pro、iPhone 18 Pro Max及首款折叠屏手机i....</div>
+                <div class="item-meta">蓝鲸新闻 · 2026-09-11 21:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0768H00?scene=news-skill" target="_blank" rel="noopener">经公安部批准，给予黄同才同志记一等功</a></div>
+                <div class="item-summary">据贵州法治报9月10日消息，经公安部批准，给予贵州省凯里市公安局白午派出所副所长黄同才同志记个人一等功。黄同才。图源：贵州法治报黄同才，现任凯里市公安局白午派出所副所长，先后荣立二等功2次、三等功2次，获嘉奖5次；获评贵州省2023年“最美基层民警”提名奖、2024年黔东南州扫黑除恶常态化斗争先进个人，是贵州省公...</div>
+                <div class="item-meta">长安街知事 · 2026-09-11 11:57</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-12 09:24</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
