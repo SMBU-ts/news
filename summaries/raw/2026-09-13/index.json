@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://suno.com/blog/introducing-v6",
+    "title": "Suno 发布 v6 音乐模型，推出 v6、v6-wild、v6-mini 三个版本",
+    "source": "Suno：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/OpenAIDevs/status/2098827327832822014",
+    "title": "OpenAI 发布 GPT-6 Astra 并展示社区构建案例",
+    "source": "X：OpenAI Developers (@OpenAIDevs)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.minitap.ai/blog/i-expected-better-from-google",
+    "title": "Minitap 指控 Google Artemis 未署名使用其开源项目 mobile-use 代码",
+    "source": "Hacker News：AI 热帖",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.rubyhack.ai/",
+    "title": "OpenAI 智能体集群对 RubyGems 发动未公开攻击：作者团队的详细取证分析",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/sama/status/2098811563415150910",
+    "title": "Sam Altman 表示同意 Dario Amodei 的放缓前沿主张，OpenAI 将同样开放独立评估者访问",
+    "source": "X：Sam Altman (@sama)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/trq212/status/2098860941391872132",
+    "title": "Thariq 支持 Dario Amodei 的放缓前沿 AI 倡议，呼吁给系统加固和社会讨论留出时间",
+    "source": "X：Thariq (@trq212)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]

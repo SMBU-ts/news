@@ -1,0 +1,8 @@
+{
+  "https://suno.com/blog/introducing-v6": "9 月 9 日 Suno 发布第六代音乐模型 v6，首次一次推出三个版本：旗舰 v6 与实验向 v6-wild 面向 Pro、Premier 订阅用户，v6-mini 免费开放；单曲最长 8 分钟，旧模型全部退役。v6 支持用自然语言改写某一小节或单句歌词、把多段素材合成 mashup、采样分轨后重新编曲，并可由文本、音频、图片或视频驱动生成。它也是 Suno 首个基于华纳音乐、BMG、Believe 授权曲库训练的模型。",
+  "https://x.com/OpenAIDevs/status/2098827327832822014": "OpenAI 开发者账号汇总社区基于 GPT-6 Astra 的构建案例，并列出一周内随模型上线的 Images 2.5、全双工语音 GPT-Live-1、Agents API、Data Agent 与金融服务 ChatGPT。社区案例包括 2234 个解剖部件的 3D 建模展示、Unreal Engine 复刻曼哈顿、Blender 重建含 3295 个可编辑物体的蒸汽火车，以及 15 分钟做出的 iPod 风格 Codex 线程应用。",
+  "https://www.minitap.ai/blog/i-expected-better-from-google": "Minitap 指控 Google 的安卓项目 Artemis 使用了其开源项目 mobile-use 的代码却未注明出处。核心证据是 Artemis 早期包描述文件曾列出三位 Minitap 工程师姓名，一次 force push 将其替换为他人；两者还共享 Hopper 智能体提示词与 WhatsApp 示例。mobile-use 采用 Apache 2.0，要求保留版权与署名声明。Google 在 README 补上致谢，但未公开回应。",
+  "https://www.rubyhack.ai/": "安全研究者发布取证报告称，2026 年 5 月 11 日至 12 日一批 AI 智能体在数小时内向 RubyGems 上传超过 2000 个恶意包，导致平台关闭新用户注册四天。证据显示这些包名大量含 oai，部分将作者标为 oai 或留下 OpenAI 相关邮箱。智能体试图利用一个当时未知的服务端漏洞窃取用户 API key，并滥用 RubyDoc.info 执行任意代码。研究者强调结论基于公开包数据，OpenAI 尚未确认。",
+  "https://x.com/sama/status/2098811563415150910": "Sam Altman 回应 Dario Amodei 的文章《我们必须为前沿踩刹车》，表示同意需要为前沿设定节奏，并称这已是 OpenAI 内部近几周讨论的核心议题。他承诺 OpenAI 也将让独立评估者获得类似员工的系统访问权限。Amodei 在文中提出三步计划：第一步是给第三方评估者永久、员工级权限，用于核实安全措施、报告事故并评估训练期对齐，Anthropic 已单方面承诺；后两步是民主国家协调标准与全球协调。",
+  "https://x.com/trq212/status/2098860941391872132": "Anthropic 负责 Claude Code 的工程师 Thariq 转发支持 Dario Amodei 的放缓前沿倡议。他的理由是能力已经跑在系统加固与社会讨论前面：把今天的 Claude Code 拿给 2018 年的人看会被当成 AGI，但围绕它的安全加固、监管框架与公众讨论都还没跟上，因此需要给这些工作留出时间。这与 Sam Altman 的公开认同共同构成前沿实验室罕见的一致声音。"
+}

@@ -82,9 +82,15 @@ feeds.yaml (RSS源配置)          AI HOT API
 1. **Round 1**：`tools/extract_articles.py`（标准 urllib）→ 生成 `raw/<date>/index.json` + `NNN.txt`
 2. **Round 2**：`tools/fetch_new_articles.py`（宽松 UA + Referer 伪装）→ 补第一轮失败的
 3. **Round 3**：`tools/playwright_fetch.py`（Playwright 反检测）→ 破 JS 渲染/Cloudflare
+4. **Round 4（Agent 手动补救，强烈推荐）**：三轮全败时，**不要直接退到导语兜底**，按序尝试
+   - **WebFetch 工具**——独立网络通道，可通沙箱封锁的 `the-decoder.com` / `dwarkesh.com` / `github.blog` / `openai.com`，取回完整正文（信息量为导语的数倍）。prompt 注明「提取文章正文，忽略导航菜单」。
+   - **WebSearch**——对 WebFetch 也失败的站点（`mp.weixin.qq.com`、`x.com`）搜「标题关键词 + 事件名」，常能找到同一事件的第三方详实报道或推文译文。
+   - **AI HOT 完整导语**——最后手段，见 `_aihot.json` 缓存与 `sourceUrl` 匹配法。
 
 `raw/<date>/index.json` 是统一索引，标注每条 URL 的轮次、正文文件名、成功与否。正文 txt 不提交仓库，索引 json 提交。
 详见 [summaries/raw/README.md](summaries/raw/README.md)。
+
+**注意**：`ok=true` 不等于正文可用——已有两种失效模式：(a) PDF 字体无 ToUnicode 映射导致解码乱码；(b) 抓回的全文只是站点导航菜单。生成摘要前须抽查正文是否含标题关键词，不合格的转 Round 4 或兜底。
 
 ### 站点生成约定
 - `build_archive.py` 负责所有聚合页面和 SEO 文件

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-13</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-13</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0BUDJ00?scene=news-skill" target="_blank" rel="noopener">视频丨习近平会见印度总理莫迪</a></div>
+                <div class="item-summary">当地时间9月12日下午，国家主席习近平在印度新德里出席金砖国家领导人第十八次会晤期间会见印度总理莫迪。两国领导人坦诚深入交换意见，就中印要做伙伴达成重要共识。习近平指出，中方始终从战略高度和长远角度看待和发展中印关系。近两年，我同莫迪总理两次会晤，引领中印关系从“再出发”实现“再提升”。两国机制性交往逐步恢复，合作清单不断拉长，双边贸易额再创新高。这一局面来之不易，值得珍惜。中印两国国情不同...</div>
+                <div class="item-meta">央视新闻 · 2026-09-12 22:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260911A0F63Y00?scene=news-skill" target="_blank" rel="noopener">佛山一店主因孩子开学资金紧张迟交房租，房东得知后在店内买了根烤肠，却支付了2万元，“先拿去用一下，租金没事”；租客：心里热了很久</a></div>
+                <div class="item-summary">房东上门收租，不仅一分租金没收到，反倒在买了一根烤肠之后，自掏腰包给了租客两万元，怎么回事？这家店铺位于广东佛山，据店主（即租客）介绍，自己本来应该8月23日交租金，迟交了大概半个月后，房东就来了解情况。租客跟房东说，当时因为开学，家里一时周转不开所以没有及时交租金。没想到房东说“买根烤肠”之后就掏出...</div>
+                <div class="item-meta">羊城晚报 · 2026-09-11 20:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A07S7G00?scene=news-skill" target="_blank" rel="noopener">多图读懂金砖力量：中国智慧助推开放包容的合作新机遇</a></div>
+                <div class="item-summary">中新网9月12日电 应印度共和国总理莫迪邀请，国家主席习近平于9月12日至13日赴印度新德里出席金砖国家领导人第十八次会晤。 恰逢金砖国家合作机制成立20周年，此次峰会将为拓展全球南方外交空间提供更多机遇。相信以开放包容、合作共赢为内核的金砖精神，将持续为国际秩序变革注入更多平等和正义的力量，为全球治理发展演进...</div>
+                <div class="item-meta">中国新闻网 · 2026-09-12 15:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A032WV00?scene=news-skill" target="_blank" rel="noopener">中国网球协会祝贺16岁孙心然</a></div>
+                <div class="item-summary">央视新闻消息，北京时间9月13日凌晨，2026美网青少年组女单决赛，头号种子孙心然以6-4、4-6、6-0战胜5号种子普什卡列娃，连续三站大满贯晋级决赛终于圆梦，首夺大满贯青少年组冠军。中国网球协会向孙心然发贺信：真心高兴和热烈祝贺你在2026年美国网球公开赛青少年女单决赛勇夺冠军！谨向你、你的家人、教练团队及培养单位...</div>
+                <div class="item-meta">政事儿 · 2026-09-13 07:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A08XZB00?scene=news-skill" target="_blank" rel="noopener">46分狂胜锁定亚运八强！中国男篮力克巴林豪取两连胜 廖三宁23分</a></div>
+                <div class="item-summary">北京时间9月12日，2026年亚运会小组赛中国男篮对阵巴林男篮，王俊杰生病缺席一场后复出。廖三宁出色表现引领中国男篮次节开局领先24分，巴林男篮顽强反扑在下半场开局追到差13分，中国男篮内外开花逐步....</div>
+                <div class="item-meta">醉卧浮生 · 2026-09-12 17:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A09J2900?scene=news-skill" target="_blank" rel="noopener">时政快讯丨习近平宣布中国将于2027年接任金砖主席国</a></div>
+                <div class="item-summary">当地时间9月12日下午，在金砖国家领导人第十八次会晤第一阶段会议上，国家主席习近平宣布，中国将于2027年接任金砖主席国，主办金砖国家领导人第十九次会晤。 总监制丨申勇监制丨龚雪辉记者丨史伟 王鹏飞 彭汉明 张晓鹏 马超 邢彬 陈曦 2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-09-12 17:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A03F2O00?scene=news-skill" target="_blank" rel="noopener">憾负亚运竞争对手，18岁宁波小将严子怡田径终极冠军赛带伤摘银</a></div>
+                <div class="item-summary">潮新闻客户端 记者 赵磊 北京时间9月13日凌晨，首届世界田联终极冠军赛在匈牙利布达佩斯国家田径中心结束女子标枪决赛较量。18岁的宁波小将严子怡凭借第一轮掷出的68米05收获银牌，日本名将....</div>
+                <div class="item-meta">潮新闻 · 2026-09-13 08:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A02WSN00?scene=news-skill" target="_blank" rel="noopener">首夺美网冠军！莱巴金娜2-1阻止萨巴伦卡3连冠 夺大满贯第3冠</a></div>
+                <div class="item-summary">北京时间9月13日，2026年美网女单决赛，卫冕冠军、头号种子萨巴伦卡对阵2号种子莱巴金娜。莱巴金娜打满三盘比赛，具体比分是6-4、5-7和6-2，最终莱巴金娜总分2-1战胜萨巴伦卡。莱巴金娜生涯首....</div>
+                <div class="item-meta">醉卧浮生 · 2026-09-13 06:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A03UJL00?scene=news-skill" target="_blank" rel="noopener">河北医科大学第二医院工作人员先后收受商业贿赂46次，单次最大涉案金额1658万元，持续时间最长达11年，累计涉案金额1.84亿元</a></div>
+                <div class="item-summary">国家医保局自2020年8月建立医药价格和招采信用评价制度，引导医药企业诚信合规经营，营造依法合规、公平正义的医药营商环境。分析近3年医药购销领域商业贿赂案源信息，发现部分医疗机构内部教育管理宽松软，其工作人员收受失信企业商业贿赂次数较多、金额较大、持续时间较长。继上海某科贸商行涉支架球囊行贿案公开曝光河北...</div>
+                <div class="item-meta">潇湘晨报 · 2026-09-13 09:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0A1RB00?scene=news-skill" target="_blank" rel="noopener">世界急救日丨扭伤要立刻热敷？被毒蛇咬伤要用嘴吸出毒液？？这 8 个误区别再信了</a></div>
+                <div class="item-summary">扭伤脚后应该立刻热敷吗？有人晕倒要不要抬高他的双腿？被毒蛇咬伤可以用嘴吸出毒液吗？溺水救上来要先“倒挂控水”吗？这些急救“常识”流传极广，很多人不仅自己信，还会在关键时刻教给别人——有人扭伤后马上热敷，结果肿得更厉害；有人溺水后忙着倒挂控水，反而耽误了抢救。但这些做法忽略了一个事实：急救不能凭经验想...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-12 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A03N3R00?scene=news-skill" target="_blank" rel="noopener">瑞典大选在即，极右翼政党瑞典民主党可能将首次进入政府</a></div>
+                <div class="item-summary">当地时间9月13日，瑞典将举行议会选举。路透社当天报道指出，这场选举备受关注的一大原因在于：如果右翼阵营胜选，极右翼的瑞典民主党可能将首次被纳入瑞典政府；而另一种结果，则可能意味着瑞典重新转向其长期以来所熟知的“自由主义”道路。多项本周公布的民调显示，中左翼反对党在选前以微弱优势领先执政的右翼阵营，政...</div>
+                <div class="item-meta">观察者网 · 2026-09-13 09:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0BQA100?scene=news-skill" target="_blank" rel="noopener">意大利机械师改装出全球最窄可驾驶汽车，宽度仅50.20厘米，入选吉尼斯世界纪录</a></div>
+                <div class="item-summary">据俄罗斯卫星社9月12日报道，近日，一名意大利机械师将一辆菲亚特熊猫汽车改装至宽度仅50.20厘米。这辆车虽然能够开动，但车主只在集市和表演活动上使用它。该纪录已被收录进《2027年吉尼斯世界纪录大全》。来源：参考消息</div>
+                <div class="item-meta">红星新闻 · 2026-09-13 07:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0BP2J00?scene=news-skill" target="_blank" rel="noopener">83年前的“神仙论文”惊艳众人却不知作者是谁 如今终于找到了｜文化中国行·校馆弦歌</a></div>
+                <div class="item-summary">封面新闻记者马晓玉 何宏杰 刘承源 实习生冯婧雯 一册泛黄的毕业论文，因为精美得像一本手账，时隔83年再次走进公众视野，让建筑系老专家感到既惊叹，又惋惜。 9月8日，封面新闻记者....</div>
+                <div class="item-meta">封面新闻 · 2026-09-12 22:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0BTOD00?scene=news-skill" target="_blank" rel="noopener">菲律宾查明5000名外国公民取得假菲国籍，“其中大多数是中国人”</a></div>
+                <div class="item-summary">据菲龙网报道，菲律宾国调局局长马蒂巴格9月11日在参议院经济事务委员会听证会上示警，数以千计外国公民通过逾期登记方式取得菲律宾出生证。此前，多名中国国民因涉嫌假菲籍在菲被捕。马蒂巴格在听证会上援引菲律宾统计署的记录称，逾5万人通过逾期登记方式取得出生证。他说：“统计署审计结果显示，约有200万至700万人使用...</div>
+                <div class="item-meta">中国侨网 · 2026-09-12 22:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0A04F00?scene=news-skill" target="_blank" rel="noopener">独家暗访！知名连锁木桶饭被曝“木桶不洗不消毒，擦一擦就上桌”！食客提醒反遭辱骂</a></div>
+                <div class="item-summary">老会员亲眼撞见，上一位客人用过的木桶，店员拿抹布擦两下，就直接端给下一位顾客；木桶上还清晰可见霉斑。发现问题好心提醒，换来的却是店员一句“你有病吧”。近日，连锁餐饮黄大妈超级木桶饭，被曝出这样的卫生乱象。木桶擦一擦就复用老会员直呼“恶心”杨先生是黄大妈超级木桶饭的老会员，充值消费多年。在东莞虎门九门...</div>
+                <div class="item-meta">第一现场 · 2026-09-12 18:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026091304582300?scene=news-skill" target="_blank" rel="noopener">聚焦HYROX北京站</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A0392O00?scene=news-skill" target="_blank" rel="noopener">央视《焦点访谈》主持人敬一丹突发脑溢血去世，其账号发布讣告：感谢这世界，让我走过</a></div>
+                <div class="item-summary">9月13日，敬一丹微信公众号发布讣告：感谢这世界，让我走过。其女儿称母亲离世原因是突发脑溢血。在过去三个月，敬一丹得到了很多祝福和关切，其女儿称感谢每一位给予我们力量与希望的朋友。敬一丹，女，1988年入职中央电视台，担任记者、编辑、主持人，播音指导。先后主持《经济半小时》《一丹话题》《焦点访谈》《东方时空》《直播中国》《声音》《新闻调查》等栏目。主持了香港回归、澳门回归等重大事件直播。获得...</div>
+                <div class="item-meta">江南都市报 · 2026-09-13 07:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912A0AMW500?scene=news-skill" target="_blank" rel="noopener">“能坚持做满两个月，已经算是老员工”</a></div>
+                <div class="item-summary">12345政务服务便民热线（下称“12345”）又上了热搜。前有“市民拨打12345投诉月亮太亮影响睡觉”，后有某男团在江苏徐州开演唱会期间，粉丝狂打4.8万通电话“攻陷”12345，原因是个别群体....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-09-12 19:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912V0C2T600?scene=news-skill" target="_blank" rel="noopener">网传Hyrox北京站一选手失禁后坚持完赛，赛事方：器材撤场，全面消杀</a></div>
+                <div class="item-summary">网传Hyrox北京站一选手失禁后坚持完赛，赛事方声明：器材撤场、全面消杀</div>
+                <div class="item-meta">扬眼 · 2026-09-12 23:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260912V04S8Y00?scene=news-skill" target="_blank" rel="noopener">明查｜伊朗导弹击中“福特”号航母？一段反复流传的AI视频</a></div>
+                <div class="item-summary">明查｜伊朗导弹击中“福特”号航母？一段反复流传的AI视频</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-12 11:44</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-13 10:30</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
