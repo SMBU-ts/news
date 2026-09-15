@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-14</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-14</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A03F2F00?scene=news-skill" target="_blank" rel="noopener">视频丨平陆运河16日通航 准备工作进展如何</a></div>
+                <div class="item-summary">9月16日，新中国成立以来第一条国家层面统筹建设的通江达海运河工程——平陆运河即将通航。平陆运河于2022年8月28日开工建设，全长134.2公里，北起南宁横州市西津库区平塘江口，南经钦州灵山县陆屋镇，沿钦江直通北部湾。四年多时间，两万多名建设者用智慧和汗水在八桂大地上开辟出了一条通江达海的新通道。如今，这条西部陆海新通道骨干工程通航在即，全线的准备工作进展如何？总台央视记者 陈晰：在平陆运...</div>
+                <div class="item-meta">央视新闻 · 2026-09-14 07:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A02EHI00?scene=news-skill" target="_blank" rel="noopener">面对面丨舷窗裂纹、极限出舱 他们直面考验书写中国航天新篇章</a></div>
+                <div class="item-summary">浩瀚天宫，接力不息。此刻，神舟二十三号航天员乘组接替神舟二十一号航天员乘组驻守中国空间站，正在有序推进各项在轨任务。就在不久前，完成210天太空驻留的神舟二十一号航天员乘组受到褒奖：张陆获颁“二级航天功勋奖章”，首次飞天的武飞、张洪章被授予“英雄航天员”荣誉称号并获颁“三级航天功勋奖章”。在轨期间，神...</div>
+                <div class="item-meta">央视新闻 · 2026-09-14 04:49</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A0717D00?scene=news-skill" target="_blank" rel="noopener">一图看懂！2026年国家网络安全宣传周亮点全揭秘</a></div>
+                <div class="item-summary">...</div>
+                <div class="item-meta">央广网 · 2026-09-13 15:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A00OO900?scene=news-skill" target="_blank" rel="noopener">山西、云南、黑龙江、安徽多地发布提醒告诫书</a></div>
+                <div class="item-summary">2026年中秋、国庆“双节”临近，商品、餐饮、旅游住宿等消费将迎来高峰。连日来，多地市场监管部门密集发布价格提醒告诫，进一步规范市场价格行为，维护公平有序的节日市场环境。9月7日，山西长治市市场监督管理局发布《关于规范2026年中秋、国庆期间市场价格行为的提醒函》，其中提到，各经营者及相关单位违反明码标价规定...</div>
+                <div class="item-meta">长安街知事 · 2026-09-14 00:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A00LRW00?scene=news-skill" target="_blank" rel="noopener">韩国股市放大招！今日正式开启夜盘</a></div>
+                <div class="item-summary">从今天（9月14日）开始，韩国股市要延长交易时间了——延长至晚上8点。 具体来说，韩国交易所将从9月14日开始，把几乎所有韩国本地股票的交易时间延长至晚上8点，常规交易仍于下午3点30分结束。虽然这是亚洲主要证券交易所中的首例，但也顺应了全球资本市场向全天候交易发展的趋势。纳斯达克和纽约证券交易所此前也在推动延长交易时段。不过准确地说，不是把原来的“正常交易时段”直接拉长，而是新增了一个真正...</div>
+                <div class="item-meta">九派财经 · 2026-09-14 00:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A03RLQ00?scene=news-skill" target="_blank" rel="noopener">视频丨200米被超18次！这么开车违法了</a></div>
+                <div class="item-summary">日常驾车很多人都知道超速违法但却忽略了“开太慢”同样是违法行为近日，话题#治理龟速开车#登上社交平台热搜引发网友热议 危险！“龟速”开车200米被超18次近期，成都交警公布了一起“龟速行驶”典型案例：成都一条主道上，一辆汽车在200米内，先后被18辆车超越。民警在视频回溯时，发现该车驾驶员存在边开车边刷手机的行...</div>
+                <div class="item-meta">央视新闻 · 2026-09-13 09:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A02R9G00?scene=news-skill" target="_blank" rel="noopener">美网首冠+大满贯第二冠！兹维列夫3-1力克谢尔顿 交锋6战全胜</a></div>
+                <div class="item-summary">北京时间9月14日，2026年美网男单决赛，头号种子兹维列夫对阵8号种子谢尔顿。兹维列夫鏖战四盘比赛，具体比分是6-3、7-6（2）、5-7和6-2，最终兹维列夫总分3-1战胜谢尔顿，保持交锋6胜0....</div>
+                <div class="item-meta">醉卧浮生 · 2026-09-14 05:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A0331J00?scene=news-skill" target="_blank" rel="noopener">视频丨特朗普称考虑解密更多“9·11”事件档案</a></div>
+                <div class="item-summary">美国总统特朗普当地时间9月13日回答媒体提问时表示，他将考虑“9·11”事件遇难者家属提出的申请，拟公开更多与该事件相关的档案，包括劫机者或相关人员是否与沙特阿拉伯存在关联的档案。他在爱尔兰登机返美前对记者表示：“我回去后会研究这件事。”“9·11”事件遇难者家属一直呼吁解密与该事件相关的更多档案。纽约州两党议员已敦促特朗普政府公布特定通话记录。（央视记者 许弢） 2026中央广播电视总台版...</div>
+                <div class="item-meta">央视新闻 · 2026-09-14 02:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A03F4K00?scene=news-skill" target="_blank" rel="noopener">12年后，冲绳“变天”</a></div>
+                <div class="item-summary">据日本时事通信社报道，当地时间9月13日举行的日本冲绳县知事选举中，日本自民党支持的冲绳首府那霸市前副市长古谢玄太当选新一任知事。这意味着，自民党将时隔12年重新掌控冲绳县政府，其立场将转向支持当地美军基地搬迁。冲绳县选举管理委员会公布的数据显示，本次选举的投票率为61.57%，古谢获得创纪录的42.3万张选票，...</div>
+                <div class="item-meta">观察者网 · 2026-09-14 07:47</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A02SRM00?scene=news-skill" target="_blank" rel="noopener">真相来了丨网传“高电压实验室开展放电试验会致癌”是真的吗？</a></div>
+                <div class="item-summary">近日，由中央网信办指导、青海省委网信办主办的2026年全国“辟谣侠”求真之旅走进三江源活动在青海西宁正式启动。网信部门现场取证，以真相破解不实说法。前不久，有自媒体发布不实消息，声称“位于青海西宁市的国家电网高海拔高电压实验室，在开展特高压放电试验过程中会释放辐射，周边居民容易出现患病等情况，长期生活在...</div>
+                <div class="item-meta">央视新闻 · 2026-09-14 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A056JI00?scene=news-skill" target="_blank" rel="noopener">一家三口打赏650万背后</a></div>
+                <div class="item-summary">两年前，北京互联网法院接到一起未成年人直播打赏的案件，一个17岁的女孩，瞒着父母，连续几个月，在直播间打赏超过650万元，事后，她在母亲陪同下起诉直播平台，要求全额退款。这是北京互联网法院建院以来，受理标的额最高的未成年人充值打赏案件。表面上看，这像是未成年人被网络吞噬，难以自控，但随着审理深入，事实却逐渐发生偏转。在高达650多万的打赏流水背后，是一个家庭全员沉迷直播打赏，最终父母将责任尽...</div>
+                <div class="item-meta">人物 · 2026-09-14 10:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A04FAL00?scene=news-skill" target="_blank" rel="noopener">“上5休1上5休3上3休7上3休1”冲上热搜！重要提醒：本周上班时间有变</a></div>
+                <div class="item-summary">2026年中秋、国庆假期要来啦！打工人接下来一段时间的上班节奏：上5休1上5休3上3休7上3休1，别忘了提前调闹钟。中秋9 月25日至27日放假，共 3 天；国庆10月1日至7日放假调休，共7天，9月20日、10月10日需要补班。今日#上5休1上5休3上3休7上3休1#话题冲上热搜根据国务院办公厅此前发布的《关于2026年部分节假日安排的...</div>
+                <div class="item-meta">新民晚报 · 2026-09-14 09:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A042TD00?scene=news-skill" target="_blank" rel="noopener">游客在距离市区约30公里的四川泸州东站下车后建议更改站名，官方答复</a></div>
+                <div class="item-summary">泸州站、泸州东站尽管只有一字之差，但后者距离泸州市区约30公里。自渝昆高铁渝宜段2024年开通以来，已有不少误认为泸州东站位于市区而“买错票”“下错站”的旅客建议修改站名。2026年9月4日，又有一名自称是来泸州的游客在泸州市网络问政平台留言称，其当天从外地坐高铁到泸州，在12306搜“泸州”，看到“泸州东”以为就...</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-14 09:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A03BL200?scene=news-skill" target="_blank" rel="noopener">家中搜出约300根金条、200万美元现金、35块名贵腕表，美国中情局前官员认罪</a></div>
+                <div class="item-summary">美国媒体12日报道，美国联邦调查局在中央情报局前官员戴维·J·拉什家中查获价值逾4000万美元的金条、约200万美元现金，以及数十块名贵腕表。案件涉及大量涉密材料，目前该嫌疑人已与检方达成临时认罪协议，有望避免公开庭审。美联社援引法庭文件报道，检方与拉什的律师10日向法院联合提交文件，但没有披露这份临时认罪协议的具体内容。一名联邦法官11日裁定，将对拉什正式提出起诉的期限延长至10月8日，给...</div>
+                <div class="item-meta">红星新闻 · 2026-09-14 07:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A03XOO00?scene=news-skill" target="_blank" rel="noopener">外媒：iPhone Duo重现乔布斯时代惊艳感，折叠机十年内或成主流</a></div>
+                <div class="item-summary">iPhone Duo 凤凰网科技讯 北京时间9月14日，彭博社知名苹果记者马克·古尔曼(Mark Gurman)周日发文称，iPhone Duo设计惊艳，将成为苹果历史上的标志性产品之一，....</div>
+                <div class="item-meta">凤凰网 · 2026-09-14 08:49</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A0005O00?scene=news-skill" target="_blank" rel="noopener">“涨工资”的三重信号：最低工资、指导线、集体协商</a></div>
+                <div class="item-summary">近三年来，超过14个省市的最低工资标准几乎都是一年一调。图文无关。视觉中国/图继2025年中央文件里频繁出现“涨工资”信号以来，进入2026年，多个文件正在进一步细化具体内容。7月印发的《人力资源和社会保障事业发展“十五五”规划》中，有多条关于工资改革的表述。比如：以非公有制企业为重点，深入推行工资集体协商，促...</div>
+                <div class="item-meta">南方周末 · 2026-09-14 07:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A036EX00?scene=news-skill" target="_blank" rel="noopener">当GPT-6 能让机器人拿起筷子，留给具身模型的窗口期还剩多久？</a></div>
+                <div class="item-summary">当通用大模型开始理解三维环境、拆解操作任务甚至控制机器人，具身智能公司会不会遭遇“降维打击”？GPT-6 Astra近期发布后，社交媒体上陆续出现用它控制机械臂、灵巧手完成操作任务的视频。这无疑对具身模型、世界模型的创业者提出了挑战，未来伴随着大模型能力的不断提升，它是不是直接可以覆盖其它模型的能力？单独打造...</div>
+                <div class="item-meta">澎湃新闻 · 2026-09-14 07:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913A08LEY00?scene=news-skill" target="_blank" rel="noopener">人民日报曝光后，苏州市委表态：严查！</a></div>
+                <div class="item-summary">《人民日报》9月7日曝光京杭大运河江苏苏州段——多头监管，非法码头4年关不掉。9月7日当天消息，苏州市政府高度重视，成立专项调查处置组就该问题开展提级调查，将依法依规进行处置。苏州日报消息，9月13日，市委书记范波主持召开市委常委会会议，传达学习习近平总书记关于大运河保护传承利用的重要讲话和重要指示批示精神...</div>
+                <div class="item-meta">政事儿 · 2026-09-13 21:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A03MAX00?scene=news-skill" target="_blank" rel="noopener">项目一拖再拖，加拿大还想“入伙”</a></div>
+                <div class="item-summary">据《日本时报》9月13日报道，加拿大驻日本大使伊恩·麦凯日前表示，加拿大希望进一步参与日本、英国和意大利联合推进的“全球作战航空计划”（GCAP），最终目标是成为正式成员。GCAP旨在联合研发下一代战斗机，目标是2035年投入使用。今年7月，日本、英国、意大利和加拿大就加拿大以观察员身份参与该项目达成一致。麦凯接受...</div>
+                <div class="item-meta">观察者网 · 2026-09-14 08:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914A0498Q00?scene=news-skill" target="_blank" rel="noopener">三星、SK海力士联手对韩国电力说“不”</a></div>
+                <div class="item-summary">IT之家 9 月 14 日消息，据韩媒 SBS 报道，韩国电力公社（KEPCO）曾计划让三星电子、SK 海力士预支付未来 5 年电费，共计 25 万亿韩元（IT之家注：现汇率约合 1,246.25 亿元人民币）。据报道，三星和 SK 海力士决定不接受提前付款方案。两家公司给出的理由是，提前支付巨额资金负担过大，且半导体行业未必能持续繁荣 5 年。...</div>
+                <div class="item-meta">IT之家 · 2026-09-14 09:15</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-14 11:21</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
