@@ -1,0 +1,132 @@
+[
+  {
+    "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking",
+    "title": "Google DeepMind 发布 Gemini 3.8 Live 和 3.8 Live Extended Thinking",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzkzMDQ5NTQwMQ%3D%3D&mid=2247489246&idx=2&sn=b23b39da69f6c75594eccac11854111f",
+    "title": "生数科技发布 Vidu S2：含 Avatar 与 Editing 双模型，探索空间视频",
+    "source": "公众号：生数科技（Vidu·视频）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&mid=2247488074&idx=1&sn=7d92ce0f0098ec0c53b243df4709b522",
+    "title": "阶跃星辰发布 StepAudio 3 系列语音大模型，多款在 Artificial Analysis 榜单全球第一",
+    "source": "公众号：阶跃星辰（Step）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language",
+    "title": "Google 发布 TranslateGemma 等多语言 AI 成果，语言技术覆盖 300 多种语言",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs",
+    "title": "Claude for Small Business 新增 43 个工作流和 27 个集成，并推出免费培训计划",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/AravSrinivas/status/2099957318935028173",
+    "title": "Perplexity 自研 CobbleDB 替代 AWS DynamoDB，每年最多可节省一亿美元",
+    "source": "X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://newsletter.pragmaticengineer.com/p/openai-software-factory",
+    "title": "Gergely Orosz 探访 OpenAI：Codex 驱动的智能体软件工厂",
+    "source": "Pragmatic Engineer（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/not-everyone-is-convinced-that-big-ais-proposed-development-slowdown-is-really-about-safety",
+    "title": "Anthropic 与 OpenAI 提议协调放缓前沿 AI 开发，Cohere CEO 等批评者质疑其真实动机",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.ithome.com/1/002/750.htm",
+    "title": "404 Media 曝光 OpenAI 莉莉计划：人工审核 ChatGPT 聊天记录以优化模型",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/arena/status/2099971741993050236",
+    "title": "Arena 更新 Image-to-WebDev 榜单：GPT-6 Astra 以 1733 分登顶",
+    "source": "X：Arena (@arena)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/ArtificialAnlys/status/2099698254414029207",
+    "title": "Artificial Analysis 评测：GPT-Live-1 以 81.5 分登顶 Speech to Speech Index",
+    "source": "X：Artificial Analysis (@ArtificialAnlys)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.trailofbits.com/2026/09/15/1passwords-ai-patching-benchmark-is-misleading",
+    "title": "Trail of Bits 批评 1Password 的 AI 补丁基准存在误导，并发布两个补丁验证 Agent 技能",
+    "source": "Trail of Bits：AI安全研究",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://tomtunguz.com/single-digit-thousand-dollar-ai-sdr",
+    "title": "Vercel 将 inbound 销售团队从 10 人压缩至 1.25 人，AI 销售开发智能体年成本仅数千美元",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-09-16</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 9 月 16 日 · 星期三</h1>
+      <div class="sub">共 13 条 · 生成于 北京时间 2026 年 09 月 16 日 08:00 · 数据覆盖 2026-09-15 ~ 2026-09-16</div>
+      <div class="stats">
+        <div class="stat"><div class="n">13</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">2</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">1</div><div class="l">行业动态</div></div><div class="stat"><div class="n">0</div><div class="l">论文研究</div></div><div class="stat"><div class="n">7</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 3</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 2</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 1</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 0</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 7</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">3</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">2</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">1</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">0</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">7</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">Google DeepMind：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking" target="_blank" rel="noopener noreferrer">Google DeepMind 发布 Gemini 3.8 Live 和 3.8 Live Extended Thinking</a>
+          </h3>
+          <p class="card-sum">Google DeepMind 发布 Gemini 3.8 Live 与 Gemini 3.8 Live Extend…</p>
+          <div class="card-actions">
+            <a class="read" href="https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Google DeepMind 发布 Gemini 3.8 Live 与 3.8 Live Extended Thinking 两款端到端语音模型，二者均可边对话边在后台执行工具与 API 调用。3.8 Live 侧重低成本高吞吐，支持近实时视觉输入并在 97 种语言间切换；Extended Thinking 边推理边说话，在 Artificial Analysis 语音质量榜以 82.6 分登顶，Big Bench Audio 得 97.7%。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">公众号：生数科技（Vidu·视频）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s?__biz=MzkzMDQ5NTQwMQ%3D%3D&amp;mid=2247489246&amp;idx=2&amp;sn=b23b39da69f6c75594eccac11854111f" target="_blank" rel="noopener noreferrer">生数科技发布 Vidu S2：含 Avatar 与 Editing 双模型，探索空间视频</a>
+          </h3>
+          <p class="card-sum">生数科技正式发布 Vidu S2，包含面向数字角色实时交互的 Vidu S2-Avatar 和面向视频流实时编辑的 V…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s?__biz=MzkzMDQ5NTQwMQ%3D%3D&amp;mid=2247489246&amp;idx=2&amp;sn=b23b39da69f6c75594eccac11854111f" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>生数科技发布并全量开放 Vidu S2：S2-Avatar 面向持续交互数字角色生成，实时输出由 540P 提升至 720P（25–42 FPS），支持互动中随时插入物品、服装或背景参考图；S2-Editing 面向输入视频流实时编辑，覆盖风格迁移、虚拟试穿、人物与背景替换。二者还探索面向 VR 头显的实时空间视频，可生成同步左右眼视图。S2-Avatar 在 StreamAV-Bench 九项指标均取最优。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">3</span>
+            <span class="chip" style="--c:#3b82f6">公众号：阶跃星辰（Step）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&amp;mid=2247488074&amp;idx=1&amp;sn=7d92ce0f0098ec0c53b243df4709b522" target="_blank" rel="noopener noreferrer">阶跃星辰发布 StepAudio 3 系列语音大模型，多款在 Artificial Analysis 榜单全球第一</a>
+          </h3>
+          <p class="card-sum">阶跃星辰发布 StepAudio 3 系列，包含 Realtime、ASR、TTS、Gen 和 Music 五款模型，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&amp;mid=2247488074&amp;idx=1&amp;sn=7d92ce0f0098ec0c53b243df4709b522" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>阶跃星辰发布 StepAudio 3 系列五款语音模型 Realtime、ASR、TTS、Gen 与 Music，均已上线开放平台。Realtime 支持原生全双工实时对话，在 Artificial Analysis 对话动态榜以 98.9% 综合得分居全球第一，语音推理准确率 99.7%；长任务可异步执行而不阻塞会话。ASR 非流式词错误率仅 1.7%，并列全球第一。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">Google Blog：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language" target="_blank" rel="noopener noreferrer">Google 发布 TranslateGemma 等多语言 AI 成果，语言技术覆盖 300 多种语言</a>
+          </h3>
+          <p class="card-sum">Google 宣布其语言技术已支持超过 300 种语言、覆盖全球 86% 人口，并发布 TranslateGemma …</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Google 宣布其语言技术已支持超过 300 种语言，服务超 70 亿人、覆盖全球 86% 人口。Google Translate 自 2006 年上线以来，语言数已从最初的少数几种扩展到 250 种以上。本次还发布轻量开源翻译模型 TranslateGemma，基于 Gemini 训练、支持 55 种语言，可端侧离线运行。Google 表示目标不止于文本翻译，还要让模型理解真实交流中的情绪与俚语。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">Claude：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs" target="_blank" rel="noopener noreferrer">Claude for Small Business 新增 43 个工作流和 27 个集成，并推出免费培训计划</a>
+          </h3>
+          <p class="card-sum">Anthropic 为 Claude for Small Business 新增 43 个工作流和 27 个集成，覆盖…</p>
+          <div class="card-actions">
+            <a class="read" href="https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Anthropic 为 Claude for Small Business 新增 43 个自动化工作流与 27 项第三方集成，覆盖 Shopify、Salesforce、TikTok、Zoom、Xero、Stripe、Zapier 等中小企业常用工具。该产品自 5 月上线以来安装量已超 90 万次，新工作流把能力从后台事务延伸到获客、答复咨询与撰写提案，并配套美国 10 城免费工作坊与 750 余场社区培训。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">6</span>
+            <span class="chip" style="--c:#f59e0b">X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/AravSrinivas/status/2099957318935028173" target="_blank" rel="noopener noreferrer">Perplexity 自研 CobbleDB 替代 AWS DynamoDB，每年最多可节省一亿美元</a>
+          </h3>
+          <p class="card-sum">Perplexity CEO Aravind Srinivas 宣布自研键值数据库 CobbleDB，替代 AWS D…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/AravSrinivas/status/2099957318935028173" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>Perplexity 发布自研键值热存储 CobbleDB，替代 AWS DynamoDB 承载搜索网页内容，由 2 名工程师带领数百个持续运行的 AI 编码智能体在约两个月内完成。生产数据显示批量读中位延迟由 31.4ms 降至 5.60ms，P99 由 123ms 降至 24.2ms；内部估算相对 DynamoDB 至少节省 20%，年省最高约 1 亿美元。架构把持久文档状态、更新投递与热读服务解耦，底层用 RocksDB。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">7</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">7</span>
+            <span class="chip" style="--c:#ec4899">Pragmatic Engineer（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://newsletter.pragmaticengineer.com/p/openai-software-factory" target="_blank" rel="noopener noreferrer">Gergely Orosz 探访 OpenAI：Codex 驱动的智能体软件工厂</a>
+          </h3>
+          <p class="card-sum">Gergely Orosz 实地探访 OpenAI 总部并访谈七位工程师与工程负责人，发现自约一月起 Codex 和 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://newsletter.pragmaticengineer.com/p/openai-software-factory" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>技术博主 Gergely Orosz 探访 OpenAI 总部并访谈 7 位工程负责人，披露 Codex 已在数月内从「锦上添花」的工具变为公司骨干：财务、招聘、法务等非工程团队使用率在四个月内由接近 0 升至 90%，几乎全员每周使用 Codex 与 ChatGPT Work，且非强制推行。IDE 使用率自 1 月 Codex 用量激增后持续下降，PR 与代码评审面临重构。OpenAI 还搭建多套智能体反馈回路，如自动修复生产性能问题。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">8</span>
+            <span class="chip" style="--c:#ec4899">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/not-everyone-is-convinced-that-big-ais-proposed-development-slowdown-is-really-about-safety" target="_blank" rel="noopener noreferrer">Anthropic 与 OpenAI 提议协调放缓前沿 AI 开发，Cohere CEO 等批评者质疑其真实动机</a>
+          </h3>
+          <p class="card-sum">Anthropic CEO Dario Amodei 呼吁行业与政府协调放缓前沿 AI 开发，并寻求反垄断豁免，Sam…</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/not-everyone-is-convinced-that-big-ais-proposed-development-slowdown-is-really-about-safety" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>Anthropic CEO Dario Amodei 呼吁协调放缓前沿 AI 开发并寻求反垄断豁免，获 Sam Altman、Elon Musk 赞同。Cohere CEO Aidan Gomez 称其为「换了名字的卡特尔」：少数实验室获豁免后制定标准并强制全球开发者遵守，所谓「独立」评估机构恰由被审计公司出资。Hugging Face 的 Niels Rogge 则认为其动机是限制 DeepSeek 等中国模型。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">9</span>
+            <span class="chip" style="--c:#ec4899">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/1/002/750.htm" target="_blank" rel="noopener noreferrer">404 Media 曝光 OpenAI 莉莉计划：人工审核 ChatGPT 聊天记录以优化模型</a>
+          </h3>
+          <p class="card-sum">404 Media 披露 OpenAI 内部代号为莉莉计划（Project Lily）的项目，由时薪超 50 美元的提…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/1/002/750.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>404 Media 报道披露 OpenAI 内部代号「莉莉计划」（Project Lily）的人工评估项目，媒体获取了操作指引、Slack 工作群记录与真实对话样本。从事该项工作的「提示词审核员」查看匿名化后的真实聊天记录，评判回复是否切题，并检查是否过度出现「AI 式话术」、说教语气与谄媚口吻。审核员时薪据称超 50 美元，但工作「十分机械重复」，指引频繁改动且版本间自相矛盾。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">10</span>
+            <span class="chip" style="--c:#ec4899">X：Arena (@arena)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/arena/status/2099971741993050236" target="_blank" rel="noopener noreferrer">Arena 更新 Image-to-WebDev 榜单：GPT-6 Astra 以 1733 分登顶</a>
+          </h3>
+          <p class="card-sum">Arena 更新 Image-to-WebDev 排行榜，纳入四个新评测模型。GPT-6 Astra (Max) 以 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/arena/status/2099971741993050236" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>Arena 更新 Image-to-WebDev 排行榜，本轮纳入四个新评测模型。GPT-6 Astra（Max）以 1733 分登顶，领先次席 GPT-5.6 Sol（xHigh）129 分；Claude Fable 5.1（Max）以 1710 分排名第二，Muse Spark 1.3（Max）以 1645 分列第四，GLM-5.3-Flash 以 1588 分排名第十。该榜单评测模型根据界面截图生成网页开发代码的能力。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">11</span>
+            <span class="chip" style="--c:#ec4899">X：Artificial Analysis (@ArtificialAnlys)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/ArtificialAnlys/status/2099698254414029207" target="_blank" rel="noopener noreferrer">Artificial Analysis 评测：GPT-Live-1 以 81.5 分登顶 Speech to Speech Index</a>
+          </h3>
+          <p class="card-sum">Artificial Analysis 发布 Speech to Speech Index，OpenAI 的 GPT-…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/ArtificialAnlys/status/2099698254414029207" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>Artificial Analysis 发布 Speech to Speech Index 语音对语音评测榜。OpenAI 的 GPT-Live-1 以 81.5 分（Astra 后端、medium 推理强度）排名第一，略高于 Grok Voice Think Fast 2.0 High 的 81.3 分；采用 Sol 后端配置的版本以 80.1 分位列第三。该指数面向端到端语音对话模型，衡量语音交互场景下的综合响应质量。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">Trail of Bits：AI安全研究</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.trailofbits.com/2026/09/15/1passwords-ai-patching-benchmark-is-misleading" target="_blank" rel="noopener noreferrer">Trail of Bits 批评 1Password 的 AI 补丁基准存在误导，并发布两个补丁验证 Agent 技能</a>
+          </h3>
+          <p class="card-sum">Trail of Bits 发文批评 1Password 8月6日发布的 FLAWED 报告，称其 26% 的 AI …</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.trailofbits.com/2026/09/15/1passwords-ai-patching-benchmark-is-misleading" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Trail of Bits 批评 1Password 于 8 月 6 日发布的补丁评测报告存在误导：其标题称模型只有 26% 的情况产出干净修复，但该数字包含刻意指示智能体应用错误补丁、以及智能体无法编译或测试补丁的实验，样本还刻意挑选了修复难度高的 6 个漏洞。Trail of Bits 依自身咨询项目与 Patch the Planet 数据指出，1Password 模型生成的补丁有 86% 成功阻断了所提供的漏洞利用。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">13</span>
+            <span class="chip" style="--c:#ec4899">Tomer Tunguz 博客（VC 分析）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://tomtunguz.com/single-digit-thousand-dollar-ai-sdr" target="_blank" rel="noopener noreferrer">Vercel 将 inbound 销售团队从 10 人压缩至 1.25 人，AI 销售开发智能体年成本仅数千美元</a>
+          </h3>
+          <p class="card-sum">Vercel COO Jeanne DeWitt Grosser 在 The Information 访谈中表示，公司…</p>
+          <div class="card-actions">
+            <a class="read" href="https://tomtunguz.com/single-digit-thousand-dollar-ai-sdr" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>Tomasz Tunguz 撰文引述 Vercel COO Jeanne DeWitt Grosser 在 The Information 访谈中的披露：Vercel inbound 销售开发已实现 90% 自动化，团队由 10 人压缩至 1.25 人；自研客服智能体处理 93% 的支持工单；销售开发智能体投资回报率达 32 倍。两项合计的年度基础设施账单仅在「数千美元」量级（约合每年 5000 美元）。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>13</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

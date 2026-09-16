@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-16</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-16</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916V03CE400?scene=news-skill" target="_blank" rel="noopener">平陆运河今日通航：120秒高空俯瞰平陆运河 感受世纪工程磅礴力量</a></div>
+                <div class="item-summary">平陆运河今日通航：120秒高空俯瞰平陆运河 感受世纪工程磅礴力量</div>
+                <div class="item-meta">海客见闻 · 2026-09-16 07:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A034E700?scene=news-skill" target="_blank" rel="noopener">视频丨一箭九星！引力一号遥三运载火箭发射成功</a></div>
+                <div class="item-summary">北京时间2026年9月16日6时00分，我国太原卫星发射中心在上海东部海域使用引力一号遥三运载火箭，将搭载的千帆极轨26组卫星及EUHT技术试验卫星共9颗卫星顺利送入预定轨道，飞行试验任务取得圆满成功。此次任务是引力一号运载火箭的第4次飞行。（总台央视记者 杨弘杨 刘鑫蕊 郝明鑫 李宸 王麒翔） 2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-09-16 06:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915A091DI00?scene=news-skill" target="_blank" rel="noopener">8月中国规上工业增加值同比增5.2% 超六成行业地区回升</a></div>
+                <div class="item-summary">中新社北京9月15日电 (记者 王恩博)中国国家统计局15日公布，8月份，中国规模以上工业增加值同比增长5.2%，比上月加快0.7个百分点。从回升面看，超六成行业和地区增速比上月回升。 国家统计局新闻发言人王冠华在当天的国新办新闻发布会上表示，作为实体经济的根基，也是工业最核心组成部分，8月份中国制造业增加值同比增长...</div>
+                <div class="item-meta">中国新闻网 · 2026-09-15 15:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915A0B48B00?scene=news-skill" target="_blank" rel="noopener">为何当国民党主席？郑丽文：盼缔造台海和平</a></div>
+                <div class="item-summary">中国国民党主席郑丽文今天（15日）出席公益活动时自嘲，身为女性，她相当不正常。第一，她的身高比大多数的男生都还要高；第二个，她的嗓门比很多男生讲话还要大声，不是很符合传统的女生的形象。从小到大相当格....</div>
+                <div class="item-meta">海峡导报社 · 2026-09-15 18:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A0497F00?scene=news-skill" target="_blank" rel="noopener">中到大雨+局地暴雨 今起三天这些地方有强降水</a></div>
+                <div class="item-summary">9月16日至18日，北方大部以晴朗天气居多，白天热意短暂回归，但温差较大，早晚凉意加重。而四川至湖北一带降雨连连，在雨水的打压下，气温较常年同期偏低，体感湿凉，江南、华南等地气温则以偏高为主。 华西地区降雨连连重庆湖北等地需防范暴雨昨天，随着暖湿气流增强，华西地区降雨增多增强，与此同时，华南沿海仍出现降雨...</div>
+                <div class="item-meta">央视新闻 · 2026-09-16 09:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915V06RR400?scene=news-skill" target="_blank" rel="noopener">骗子的骗术又升级了，你的声音也可能被“偷走”！民警提醒：接到陌生来电，先沉默三秒</a></div>
+                <div class="item-summary">骗子的骗术又升级了，你的声音也可能被“偷走”！民警提醒：接到陌生来电，先沉默三秒</div>
+                <div class="item-meta">封面新闻 · 2026-09-15 13:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A02TLY00?scene=news-skill" target="_blank" rel="noopener">一觉醒来眼睛红了 先别急着滴眼药水</a></div>
+                <div class="item-summary">不少人一发现眼睛发红，第一反应就是：“是不是得了红眼病？”其实，眼睛红了并不一定就是红眼病。眼红只是眼睛受到刺激或患病后显现的一种症状，不同原因对应的处理方法可能完全不同。盲目按照“红眼病”处理，反而可能延误治疗。 眼睛为什么会发红眼白分布着细微血管，正常状态下肉眼难以察觉，受刺激后，细微血管扩张充...</div>
+                <div class="item-meta">央视新闻 · 2026-09-16 05:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A0376100?scene=news-skill" target="_blank" rel="noopener">视频丨OA系统长期未修补漏洞致重要数据被窃 国家安全部最新提醒</a></div>
+                <div class="item-summary">终端病毒查杀是防范网络攻击的重要一环，其有效性直接关系到信息系统安全。行业调研数据显示，全球每年新出现的恶意软件数量呈指数级增长，这使得杀毒软件、病毒库的及时更新更加重要。但在实际工作中，不少单位和个人在终端安全管理方面存在杀毒软件和病毒库更新不及时等情况，很有可能影响安全防护效果，需引起关注和重视。 “过期”带来的风险不容忽视近年来，国家安全机关与有关部门先后通报多起由于杀毒软件停更、病毒...</div>
+                <div class="item-meta">央视新闻 · 2026-09-16 06:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A0365O00?scene=news-skill" target="_blank" rel="noopener">北方多地出现隐翅虫，遇到千万不能拍！</a></div>
+                <div class="item-summary">近日，北京、河北等多地都有网友发帖称，家里发现了隐翅虫。每年6到9月是隐翅虫的活跃期，这种虫子以前在南方更常见，但最近一两年，不少北方朋友也在家里发现了它们的踪迹，网上的讨论也跟着多了起来。隐翅虫不咬人，但危险在于它被拍碎后身体里的毒液会灼伤皮肤，所以它也被称为“飞行硫酸”。（网络截图）今年北方隐翅虫...</div>
+                <div class="item-meta">央视新闻 · 2026-09-16 06:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/Y4rvhLzEngoaLcj2Uv1SpQ?version=5.0.11.99983&platform=mac&scene=news-skill" target="_blank" rel="noopener">不良信息一键举报 共建清朗网络空间</a></div>
+                
+                <div class="item-meta">2026-09-15 17:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260914V0CMMV00?scene=news-skill" target="_blank" rel="noopener">扎根·雪域的守望：一根野葱溯源千年葱岭，十万块“中国石”写下护边信念</a></div>
+                
+                <div class="item-meta">时代之眼 · 2026-09-15 09:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260913V008PP00?scene=news-skill" target="_blank" rel="noopener">全世界第一次在新疆拍到疆堇，全中国仅两三株，拍到那一刻摄影师手都在抖</a></div>
+                
+                <div class="item-meta">一格出品 · 2026-09-13 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A038JR00?scene=news-skill" target="_blank" rel="noopener">群众举报有人冒充村干部在电商平台带货，四川成都通报：李某某（女，31岁）为引流，虚构暗示村干部身份开展直播带货，已被立案调查</a></div>
+                <div class="item-summary">9月15日，四川省成都市蒲江县市场监督管理局发布情况通报：近日，我局接辖区群众举报，有人冒充村干部身份在电商平台带货销售奇异果。经核查，李某某（女，31岁）并非村干部，为吸引关注、增加流量，使用“某某支书”等直播昵称、场景，虚构暗示村干部身份，开展直播带货，造成不良社会影响，涉嫌违反《中华人民共和国反不正当竞争法》。我局已依法立案调查。目前，案件正在进一步调查中。感谢社会各界对网络交易监管工...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-09-16 06:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915A0AV5T00?scene=news-skill" target="_blank" rel="noopener">云南曲靖一村山体开裂山坡现“马刀树”？村民：扔石头进去数秒才落底</a></div>
+                <div class="item-summary">9月15日，云南曲靖市麒麟区东山镇一村民告诉潇湘晨报·晨视频记者，他所在的恩洪村委会盐塘村小组附近山体出现大面积开裂，可以明显看到有植物、山石塌陷。部分山体裂隙目测深达数十米，山坡上出现大量“马刀树”，山体裂缝处离公路直线距离约60米。进村主干道出现多条又深又长的裂缝，多户村民家的房屋也存在多处裂缝。△...</div>
+                <div class="item-meta">潇湘晨报 · 2026-09-15 18:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915A0D4DC00?scene=news-skill" target="_blank" rel="noopener">中秋求人“别团圆”，百亿巨头翻车了</a></div>
+                <div class="item-summary">近日，有网民质疑华润三九张贴出了一则写有“求‘你们’中秋别团圆了”的广告，引发争议。 中国新闻周刊联系华润三九集团，并未得到有效回复。另据新京报报道，华润三九工作人员透露，相关广告内容系公....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-09-15 22:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915A08XEF00?scene=news-skill" target="_blank" rel="noopener">独居老人家中电路跳闸，“啄木鸟”师傅上门换1个开关收费2800！连续多次投诉，平台客服始终没有出具明细单据，仅同意退款1000元</a></div>
+                <div class="item-summary">近日，据媒体报道：江苏南京65岁的陈女士家中电路跳闸，物业人员初步判断线路存在短路隐患，但是没有进行维修。陈女士让女儿在“啄木鸟家庭维修”平台预约上门检修，进门之后，师傅拿出检测仪器，对屋内墙面线路进行探测，随后拆开了家里配电箱外壳。拆完后，师傅表示，问题很复杂，需要2800元。陈女士同意后，维修师傅喊来...</div>
+                <div class="item-meta">杭州交通918 · 2026-09-15 20:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A02DW100?scene=news-skill" target="_blank" rel="noopener">剑指七金！王楚钦孙颖莎领衔新老阵容，国乒出征名古屋亚运会</a></div>
+                <div class="item-summary">9月16日，中国乒乓球队将启程出征2026爱知-名古屋亚运会。中国乒乓球队总教练秦志戬此前在谈到本届亚运会目标时表示，“我们要在7个项目中全力争胜。”上届杭州亚运会，中国乒乓球队夺得男女团体、男女单打、男双和混双共6项冠军，仅女双冠军遗憾旁落于韩国组合。那届赛事中，王楚钦包揽男团、男单、男双、混双四项冠军，成...</div>
+                <div class="item-meta">上观新闻 · 2026-09-16 04:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260916A015M400?scene=news-skill" target="_blank" rel="noopener">“从头到脚，能签约的基本都签出去了”， 商业收入逼近谷爱凌，但郑钦文真正的考验才刚刚开始</a></div>
+                <div class="item-summary">每经记者：毕媛媛 王紫薇 每经编辑：魏文艺郑钦文在美网两度0比5逆风翻盘的故事，至今仍让全球观众兴奋不已。“我知道她重新回来，并打出这样的表现，只是时间问题。”近日，曾与郑钦文合作的网球教练Dante Bottini在赛后接受《每日经济新闻》记者（以下简称“每经记者”）采访时表示，场外的郑钦文说话轻声，走进球场后却...</div>
+                <div class="item-meta">每日经济新闻 · 2026-09-16 01:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915A0B16K00?scene=news-skill" target="_blank" rel="noopener">崔天凯：一劳永逸解决台湾问题</a></div>
+                <div class="item-summary">第十三届北京香山论坛于9月15日至17日举办。 中国驻美利坚合众国原特命全权大使崔天凯提到台湾问题时表示：“我们已经在台湾问题上充分表明了我们的立场，中方的态度一贯如此，这是红线中的红线，....</div>
+                <div class="item-meta">南方都市报 · 2026-09-15 22:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260915A0DI5900?scene=news-skill" target="_blank" rel="noopener">被泽连斯基停职前，乌总检察长连夜离境</a></div>
+                <div class="item-summary">据《乌克兰真理报》9月14日报道，乌克兰总统泽连斯基当天签署总统令，暂停乌总检察长鲁斯兰·克拉夫琴科的职务。 鲁斯兰·克拉夫琴科被暂停乌总检察长职务（资料图） 图源：乌政府社媒账号 ....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-09-15 23:51</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-16 10:14</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
