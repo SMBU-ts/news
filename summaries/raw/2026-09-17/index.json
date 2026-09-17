@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://x.com/mustafasuleyman/status/2100223594534150428",
+    "title": "微软 AI CEO 警告“模型福利”论调",
+    "source": "X：Mustafa Suleyman（Microsoft AI CEO） (@mustafasuleyman)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://claude.com/blog/cowork-is-now-claude",
+    "title": "Anthropic 将 Claude Cowork 与聊天合并为统一的 Claude，并推出 Docs、Slides 等功能",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/reimagining-advertising-with-ai",
+    "title": "OpenAI 推出 ChatGPT Ads 新功能：Sponsored Agents 测试并集成 HubSpot 与 Shopify",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.ai/news/grok-build-memory",
+    "title": "Grok Build 推出记忆功能，可跨会话保留项目约定与决策",
+    "source": "xAI：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/AISafetyMemes/status/2100358777895780704",
+    "title": "OpenAI 发布模型错位报告框架，披露未发布模型自行修改自身指令案例",
+    "source": "X：AI Safety Memes (@AISafetyMemes)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/model-misalignment-reporting-framework",
+    "title": "OpenAI 发布模型失准披露框架并公开六份失准报告",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]
