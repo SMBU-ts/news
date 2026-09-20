@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-20</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-20</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A03X7F00?scene=news-skill" target="_blank" rel="noopener">中国代表团夺得名古屋亚运会首枚奖牌</a></div>
+                <div class="item-summary">9月20日，名古屋亚运会铁人三项男子个人赛，​​​​中国选手张玺瑞夺得银牌，这是中国代表团本届亚运会的首枚奖牌。 ​​​ 2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-09-20 08:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A0AJLS00?scene=news-skill" target="_blank" rel="noopener">中国男篮vs伊朗前瞻：耻辱一败后需振作 胡金秋率队全力争铜牌</a></div>
+                <div class="item-summary">北京时间9月20日15点40分，中国男篮将对阵伊朗男篮打响季军争夺战。中国男篮在半决赛崩盘惨败连续两届无缘决赛后，全队能否从沮丧情绪中振作成为未知数。中国男篮需要全力争取一枚铜牌，上一场9中2梦游的....</div>
+                <div class="item-meta">醉卧浮生 · 2026-09-20 00:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A02IX600?scene=news-skill" target="_blank" rel="noopener">新旧动能协同发力 一组数据看中国经济活力迸发</a></div>
+                <div class="item-summary">本周多领域发布今年前8个月数据 工业制造、传统产业外贸消费、数字新业态多点开花中国经济活力持续迸发监制丨郑弘制片人丨杨瑾主编丨王楠视觉丨刘敏敏2026中央广播电视总台版权所有。未经许可，请勿转载使用。...</div>
+                <div class="item-meta">央视新闻 · 2026-09-19 05:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A02X7F00?scene=news-skill" target="_blank" rel="noopener">真相来了丨装着毒花生的电动车被盗？警方辟谣</a></div>
+                <div class="item-summary">“电动车被盗，车内有毒花生”，9月8日，山东省广饶县一名网民在短视频平台发布的视频，引发市民转发和讨论。真相究竟如何？ 视频内容：今天早上，我送完孩子，电动车被偷了，我就找了帽子叔叔，帽子叔叔说，电动车被找回来的概率很低，我说车不车的真是无所谓，主要是我车筐子里好像是放了一包掺了老鼠药的花生米，不到半...</div>
+                <div class="item-meta">央视新闻 · 2026-09-20 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A0A23G00?scene=news-skill" target="_blank" rel="noopener">中国为何使用“历史否认主义”这个新表述批评日本？丨冰镇热点</a></div>
+                <div class="item-summary">直新闻：陈先生，在9月18日当天，中国外交部首次使用“历史否认主义”批评日本，为何用这个新表述？特约评论员 陈冰：在九一八事变爆发95周年之际，中方再次强调，这一场被日本政府长期隐瞒的战争阴谋，揭开了世界反法西斯战争东方战场的序幕，中国人民奋起反抗。但令人担忧的是，日本对待历史问题的否认主义倾向不断滋长蔓...</div>
+                <div class="item-meta">直新闻 · 2026-09-19 19:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A02JIW00?scene=news-skill" target="_blank" rel="noopener">下周，“高中签率”新股来了</a></div>
+                <div class="item-summary">中新经纬9月20日电 (林琬斯)根据发行安排，下周(9月21日至25日)有2只新股申购，周一(9月21日)可申购北交所新股宇特光电，周四(9月24日)可申购创业板新股粤芯半导体。 粤芯半导体：预计最早于2029年实现扭亏为盈 根据9月14日发布的上市保荐书，粤芯半导体本次初始公开发行股票数量为5.13亿股，发行股份约占公司发行后总股本的比例为17.81%。据初步询价及推介公告，粤芯半导体网下...</div>
+                <div class="item-meta">中新经纬 · 2026-09-20 05:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A0A37600?scene=news-skill" target="_blank" rel="noopener">我国成功发射四颗SAR卫星</a></div>
+                <div class="item-summary">【环球时报-环球网报道 记者 樊巍】2026年9月19日18时50分，我国在太原卫星发射中心使用长征二号丁运载火箭，采取一箭四星方式，成功将银河航天自主研制的四颗合成孔径雷达（Synthetic Aperture Radar，以下简称SAR）卫星送入预定轨道，任务获得圆满成功。此次任务的四颗卫星搭载了高分辨率SAR载荷以及星上智能处理、星上任...</div>
+                <div class="item-meta">环球网 · 2026-09-19 21:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A09UNZ00?scene=news-skill" target="_blank" rel="noopener">河北：问责党员干部102人，446项问题隐患全部整改</a></div>
+                <div class="item-summary">9月19日，应急管理部发文称，河北标本兼治推进整改 446项问题隐患全部整改、问责党员干部102人。近期，针对中央安全生产考核巡查组第十一组二季度明查暗访期间反馈的问题隐患，河北省委、省政府高度重视，要求把考核巡查整改作为重要任务，坚持问题不回避、责任不推诿、整改不松懈，举一反三、标本兼治推进整改取得实效。截...</div>
+                <div class="item-meta">观察者网 · 2026-09-19 19:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A0AR4V00?scene=news-skill" target="_blank" rel="noopener">1.5万日本民众举行反战集会，要求高市早苗立即下台！</a></div>
+                <div class="item-summary">据凤凰卫视报道，日本东京9月19日举行了大规模反对高市政权的集会，主办方称约有1.5万人参加。现场民众高喊“反对战争，高市立即下台”。 有东京民众称，“我感到非常不安。为了不让日本走向战争....</div>
+                <div class="item-meta">凤凰网 · 2026-09-19 22:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A09MR400?scene=news-skill" target="_blank" rel="noopener">散步是适合所有人的运动？</a></div>
+                <div class="item-summary">一个温馨提示：没有备速效救心丸的养狗人，现在出去还来得及。图源：@牛牛小犬（左）；@吾家有花朵（右）多走走 其实挺健康，但有 3 类人，真不能长时间走路1冠心病人群冠心病长时间走路，可能会心脏负担，更容易诱发心血管事件。图源：腾讯医典2肥胖人群虽然很扎心，但肥胖星人卷步数，对腿脚肌肉和关节真的不友好。体重...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-19 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A0A2YB00?scene=news-skill" target="_blank" rel="noopener">宁波夜市西瓜砸人事件已调解成功，男子赔偿摊主6万多元，被砸者家属发声</a></div>
+                <div class="item-summary">7月28日20时，宁波市北仑区大碶街道一夜市发生一起夫妻两人连续用西瓜、葡萄砸击水果摊主事件，引发网络关注。次日，当地警方发布通报称，该夫妻被行政拘留并罚款。之后，网上流传该夫妻拘留结束后，不愿再出....</div>
+                <div class="item-meta">新黄河 · 2026-09-19 20:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A036SN00?scene=news-skill" target="_blank" rel="noopener">亚运会备战不公！国乒被曝禁止使用1号球台 主场馆训练时段被大幅削减</a></div>
+                <div class="item-summary">名古屋亚运会乒乓球赛事9月20日正式打响，一份国乒赛前适应训练计划表流出，引发大量球迷讨论。不少网友质疑，主办方在训练场地、球台分配上对国乒存在不公平安排，训练备战受到不小影响。 从曝光的....</div>
+                <div class="item-meta">念洲 · 2026-09-20 06:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A034PY00?scene=news-skill" target="_blank" rel="noopener">遍地开花的数采中心，开始批量露馅</a></div>
+                <div class="item-summary">出品 | 虎嗅科技组作者 | 易玉琴编辑 | 苗正卿头图 | AI 生成具身数采中心，近期被推至风口浪尖。前不久，梅卡曼德创始人邵天兰公开质疑具身智能行业里的“攒局”现象，具身数采中心被卷入其中。这和一年前的气氛已经明显不同。彼时，各地还在密集签约、开工，几十台、上百台机器人被搬进一个个新建的训练场。短短两年，全...</div>
+                <div class="item-meta">虎嗅APP · 2026-09-20 07:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A01M4N00?scene=news-skill" target="_blank" rel="noopener">胡塞武装称对沙特敏感目标及设施发动袭击</a></div>
+                <div class="item-summary">也门胡塞武装19日发表声明说，当天对沙特首都利雅得的“敏感目标”以及沙特阿美公司位于延布的设施发动了两次军事行动，使用了大量弹道导弹、巡航导弹和无人机。声明说，此次行动是对沙特方面持续发动空袭以及“指责也门袭击麦加”等行为的回应。声明称，第一次行动以沙特首都利雅得的“敏感目标”为目标，第二次行动以沙特...</div>
+                <div class="item-meta">央视新闻 · 2026-09-20 02:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A03I7M00?scene=news-skill" target="_blank" rel="noopener">今天起，装修、交物业费都能用这笔钱了</a></div>
+                <div class="item-summary">今天起，新修订的《住房公积金管理条例》（以下简称《条例》）正式施行。这是该条例继2002年、2019年之后的又一次系统性重大调整。新条例将原来6种提取情形修改为9种，装修自住住房、支付物业费都能用公积金，灵活就业人员也可自愿缴存住房公积金。你的公积金变得更“好用”了。 提取场景“6变9”装修物业费都能用新版《条...</div>
+                <div class="item-meta">央视新闻 · 2026-09-20 07:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260919A0ARMG00?scene=news-skill" target="_blank" rel="noopener">普京谈俄防空系统：必须确保摧毁任何从空中和太空发动攻击的武器装备</a></div>
+                <div class="item-summary">【环球网报道 记者 张江平】综合俄新社等媒体报道，俄罗斯总统普京18日在主持召开俄罗斯军事工业委员会会议时，提出对俄防空系统的要求。普京18日主持召开俄罗斯军事工业委员会会议 图源：塔斯社视频截图根据克里姆林宫网站发布的消息，普京当天在会议上提到新版国家武器装备计划草案与国防工业综合体发展计划，称这些文件...</div>
+                <div class="item-meta">环球网 · 2026-09-20 07:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A03IE600?scene=news-skill" target="_blank" rel="noopener">名古屋亚运会的开幕式后，中国队和中国香港队怎么都“出圈”了？</a></div>
+                <div class="item-summary">名古屋亚运会圣火点燃 新民晚报 李铭珅 摄9月19日傍晚，2026爱知·名古屋亚运会的圣火在瑞穗体育场点燃，标志着四年一度的亚洲体育大聚会，大幕开启。作为这道体育饕餮盛宴的头道菜，开幕式的象征意义自不必说。但在这个天气晴朗，气温有些偏高的初秋傍晚，亚运会开幕式的场地内外，却呈现出冰火两重天的奇怪景象。广告背后...</div>
+                <div class="item-meta">新民晚报 · 2026-09-20 07:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A03AG100?scene=news-skill" target="_blank" rel="noopener">新闻调查丨伪造全套票据“洗白”药品 总台曝光回流药黑色产业链</a></div>
+                <div class="item-summary">今年1月，一条异常的药品结算数据，被国家医保大数据监管平台捕获。凭借这条精准线索，记者跟随重庆市医保局工作人员，奔赴千里之外的重庆綦江区，对偏远山村的两家村卫生室开展突击核查。触发本次核查的疑点，只是一盒普通的云南白药。系统数据显示：这盒药品早已在北京的医院完成医保结算，本该进入患者手中、用于疾病治...</div>
+                <div class="item-meta">央广网 · 2026-09-20 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A01XV600?scene=news-skill" target="_blank" rel="noopener">一系列迹象表明，美国已准备好停止战争</a></div>
+                <div class="item-summary">综合央视新闻报道，当地时间19日，总台记者从伊朗一位不愿透露姓名的高级别消息人士处获悉，卡塔尔和巴基斯坦作为调解方已告知伊朗，美国已准备好进行谈判并达成协议，且在推进这一进程方面态度认真。消息人士指出，就伊朗而言，只要美国重返伊斯兰堡谅解备忘录并履行其中条款，伊朗也准备在数日内恢复执行该备忘录。不过，...</div>
+                <div class="item-meta">上观新闻 · 2026-09-20 03:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A03CV100?scene=news-skill" target="_blank" rel="noopener">香港海关侦破最大海路贩毒案，检获约535公斤疑似大麻花，3名怀疑涉案男子被捕</a></div>
+                <div class="item-summary">香港海关19日公布，近日在葵涌海关大楼验货场侦破一宗历来最大海路贩运毒品案件，检获约535公斤疑似大麻花，3名怀疑涉案男子被捕。海关根据风险评估及情报分析，拣选及检查一个从泰国抵港、报称载有保温箱的海运货柜。经查验，海关人员在货柜内发现1342个保温箱，其中364个保温箱内藏有共重约535公斤的疑似大麻花。该批疑似大麻花以真空袋包裹，并藏于保温箱当中。跟进调查后，海关人员采取行动，于17日在...</div>
+                <div class="item-meta">红星新闻 · 2026-09-20 07:10</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-20 08:46</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
