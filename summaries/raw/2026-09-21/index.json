@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://qwen.ai/blog?id=qwen-image-2.1",
+    "title": "Qwen 开源 Qwen-Image-2.1：7B 统一生成与编辑并原生支持透明图像",
+    "source": "Qwen：Blog Retrieval（API）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&mid=2247488120&idx=1&sn=8ba9ac7f0b36682d6262290677c665da",
+    "title": "阶跃星辰发布旗舰模型 Step 5 Preview，10 月 15 日开源权重",
+    "source": "公众号：阶跃星辰（Step）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/Alibaba_Qwen/status/2101670814953455780",
+    "title": "Qwen-Image-2.1 已支持 ComfyUI，开源权重开放下载",
+    "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector",
+    "title": "独立调查：ChatGPT 的 __obi 跨站 Cookie 可将站外浏览行为关联到 ChatGPT 账号",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  }
+]

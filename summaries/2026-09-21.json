@@ -1,0 +1,6 @@
+{
+ "https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&mid=2247488120&idx=1&sn=8ba9ac7f0b36682d6262290677c665da": "阶跃星辰发布旗舰基座模型 Step 5 Preview，采用稀疏 MoE 架构，总参数量 600B、每 Token 激活约 27B，支持 100 万 Token 上下文与文本、图像输入，面向编程与金融分析等长周期智能体场景。模型采用 92 层窄而深结构并引入 Sparse GQA，官方称可降低长上下文开销。Artificial Analysis 综合智能指数 44 分，居全球开源模型前三，单任务成本为 Claude Opus 5 的 1/8。",
+ "https://x.com/Alibaba_Qwen/status/2101670814953455780": "通义千问宣布 Qwen-Image-2.1 已原生支持 ComfyUI，权重开放下载。单个 7B checkpoint 同时承担图像生成与编辑，可输出原生 2K 图像并支持含 alpha 通道的 RGBA 输出，最多可基于 10 张参考图做指令编辑。Comfy-Org 已上架文生图与图像编辑两张工作流模板，Diffusers 以 QwenImage21Pipeline 接入。权重采用研究许可，商用须另行授权。",
+ "https://qwen.ai/blog?id=qwen-image-2.1": "Qwen 团队开源 Qwen-Image-2.1，把文生图与图像编辑合并进单一模型，视觉生成组件仅 7B 参数、32 层 Single-Stream DiT，并原生支持透明图像，可直接输出带 alpha 通道的 RGBA 结果，也能编辑透明层或从照片中提取主体。单次最多接入 10 张参考图，用圆圈、涂鸦或独立蒙版指定局部编辑。推理侧采用混合粒度注意力与 KV cache 复用降低显存占用。",
+ "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector": "作者复现并交叉验证了 OpenAI 的广告追踪机制：bzr.openai.com 会在 .openai.com 域下发 __obi Cookie，该标识由 ChatGPT 客户端申请 JWT 后写入，与用户账号或稳定匿名主体绑定。商家页面加载 OpenAI 像素 SDK 时，浏览器会随脚本请求一并送出该 Cookie，使 ChatGPT 账号能关联站外浏览、搜索与购买行为。作者在 1029 个主机名、936 个广告像素上观测到该链路。"
+}
