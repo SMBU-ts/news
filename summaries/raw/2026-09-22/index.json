@@ -1,0 +1,152 @@
+[
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=Mzk3NTkxMTM2NA%3D%3D&mid=2247484969&idx=1&sn=76c4757b26a2b646e1b690bf78c386d8",
+    "title": "小米发布并开源 MiMo-V2.6 系列，扩展强化学习规模迈向自我提升",
+    "source": "公众号：小米 MiMo",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.ai/news/grok-4-7",
+    "title": "xAI 发布 Grok 4.7，主打编码与知识工作",
+    "source": "xAI：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/XiaomiMiMo/status/2102138559952290106",
+    "title": "小米发布 MiMo-V2.6 Pro 与 Flash 全模态开源模型",
+    "source": "X：小米 MiMo (@XiaomiMiMo)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/ClementDelangue/status/2102141768674222323",
+    "title": "小米发布开放权重模型 MiMo-V2.6-Pro，登顶 Artificial Analysis 开放权重模型智能指数",
+    "source": "X：Clément Delangue（Hugging Face CEO） (@ClementDelangue)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/Alibaba_Qwen/status/2101866671900401913",
+    "title": "通义千问发布 Qwen-Image-2.1：7B 单检查点同时支持图像生成与编辑",
+    "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/arena/status/2102142912943489220",
+    "title": "小米 MiMo-V2.6-Pro 登上 Code Arena: WebDev 榜约第10名，开源权重中约第3",
+    "source": "X：Arena (@arena)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzkzMTY4NTIyNA%3D%3D&mid=2247484344&idx=1&sn=047cf702ff02ab334e3ea2ba8e34b4a6",
+    "title": "Kimi 发布 Kimi Code Desktop 1.0，macOS 与 Windows 版同步上线",
+    "source": "公众号：月之暗面（Kimi）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2102128625126605059",
+    "title": "不列颠哥伦比亚省起诉 OpenAI，指其未在枪击案前将 flagged ChatGPT 活动转介警方",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.ithome.com/1/005/418.htm",
+    "title": "亚马逊封禁 Meta Muse 智能体代用户购物，双方争端升级",
+    "source": "IT之家（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/elonmusk/status/2102082011233931762",
+    "title": "马斯克称 Grok 4.7 使 xAI 在智能体编码领域位列第三",
+    "source": "X：Elon Musk (@elonmusk, xAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+    "title": "Nathan Lambert 撰文分析开源模型的中美实力格局",
+    "source": "Nathan Lambert：Interconnects（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+    "title": "Artificial Analysis 评测 Grok 4.7：智能体知识工作跻身前沿，编码代理得分升至 56",
+    "source": "Artificial Analysis 完整文章（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647686509&idx=1&sn=1b5ee8ab30c5825eaff76083e1f8dbcc",
+    "title": "数字生命卡兹克访谈汉化组：AI 时代字幕组与漫画组的真实处境",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://tomtunguz.com/ai-comes-for-the-if-statement",
+    "title": "Tomer Tunguz 谈 AI 优化 if-then 判断：专用决策器把分类成本降近百倍",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://linear.app/now/ci-bottleneck-reworked",
+    "title": "Linear 重构 CI 流程应对 AI 编码带来的验证瓶颈，PR 等待时间从 6 分钟降至 5 分钟",
+    "source": "Linear：Now（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  }
+]

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-09-22</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 9 月 22 日 · 星期二</h1>
+      <div class="sub">共 15 条 · 生成于 北京时间 2026 年 09 月 22 日 08:53 · 数据覆盖 2026-09-21 ~ 2026-09-22</div>
+      <div class="stats">
+        <div class="stat"><div class="n">15</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">1</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">2</div><div class="l">行业动态</div></div><div class="stat"><div class="n">0</div><div class="l">论文研究</div></div><div class="stat"><div class="n">6</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 6</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 1</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 2</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 0</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 6</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">6</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">1</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">2</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">0</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">6</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">6</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">公众号：小米 MiMo</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s?__biz=Mzk3NTkxMTM2NA%3D%3D&amp;mid=2247484969&amp;idx=1&amp;sn=76c4757b26a2b646e1b690bf78c386d8" target="_blank" rel="noopener noreferrer">小米发布并开源 MiMo-V2.6 系列，扩展强化学习规模迈向自我提升</a>
+          </h3>
+          <p class="card-sum">Xiaomi MiMo 于今日正式发布并开源 MiMo-V2.6 系列模型，包含 Pro 与 Flash 两个原生全模…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s?__biz=Mzk3NTkxMTM2NA%3D%3D&amp;mid=2247484969&amp;idx=1&amp;sn=76c4757b26a2b646e1b690bf78c386d8" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>小米发布并开源 MiMo-V2.6 系列，含 Pro 与 Flash 两个原生全模态模型，称这是探索递归自我改进（RSI）的关键一步。Pro 在 Artificial Analysis 智能指数得 46 分，为开放权重模型中最高，较前代高 20 分，但仍低于同为 53 分的 Claude Fable 5.1 与 GPT-6。小米罕见公开训练账单：RL 训练不到 6 天，成本约 262 万与 85 万美元，权重与技术报告同步开源。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">xAI：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener noreferrer">xAI 发布 Grok 4.7，主打编码与知识工作</a>
+          </h3>
+          <p class="card-sum">xAI 发布 Grok 4.7，定位为其最强编码与知识工作模型，定价 $2/百万输入 token、$6/百万输出 to…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>xAI 发布 Grok 4.7，称其为最强编码与知识工作模型，价格与 4.6 持平：每百万 Token 输入 2 美元、输出 6 美元。但在 Artificial Analysis 智能指数上它得 46 分居中游，远低于同为 53 分的 Fable 5.1 与 GPT-6，编码短板明显，Terminal-Bench 4.0 仅 26%。不过 EEBench 达 64%、AA Briefcase 得 1657 Elo，xAI 强调其价格约为同级模型一半。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">3</span>
+            <span class="chip" style="--c:#3b82f6">X：小米 MiMo (@XiaomiMiMo)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/XiaomiMiMo/status/2102138559952290106" target="_blank" rel="noopener noreferrer">小米发布 MiMo-V2.6 Pro 与 Flash 全模态开源模型</a>
+          </h3>
+          <p class="card-sum">小米 MiMo 发布 MiMo-V2.6 Pro 与 Flash 两个全模态模型，通过规模化强化学习训练。Pro 在多…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/XiaomiMiMo/status/2102138559952290106" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>小米发布 MiMo-V2.6 Pro 与 Flash 两个全模态模型，经规模化 RL 训练。Pro 在多数 Agent 基准上与 Claude Opus 5 相当，在 Artificial Analysis 智能指数得 46 分，为开放权重模型中最高。Pro 总参数超 1T、激活 42B，Flash 约 309B 总参、15B 激活，均支持 100 万 Token 上下文。配套 MiMo Desktop 与 Pro-UltraSpeed 高速模式上线，权重全部开源。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">4</span>
+            <span class="chip" style="--c:#3b82f6">X：Clément Delangue（Hugging Face CEO） (@ClementDelangue)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/ClementDelangue/status/2102141768674222323" target="_blank" rel="noopener noreferrer">小米发布开放权重模型 MiMo-V2.6-Pro，登顶 Artificial Analysis 开放权重模型智能指数</a>
+          </h3>
+          <p class="card-sum">小米（Xiaomi）发布开放权重模型 MiMo-V2.6-Pro，在 Artificial Analysis Inte…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/ClementDelangue/status/2102141768674222323" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>小米发布开放权重模型 MiMo-V2.6-Pro，在 Artificial Analysis 智能指数 v4.3.2 中得分 46，超越前代的 26 分，成为该榜最高的开放权重模型，也高于 Kimi K3 的 44 分。小米称这是探索递归自我改进的关键一步，Pro 与 Flash 的 RL 训练均不到 6 天，成本约 262 万与 85 万美元。它与闭源旗舰仍有差距——头部闭源模型同榜成绩为 53 分，差距主要体现在成本一侧。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">5</span>
+            <span class="chip" style="--c:#3b82f6">X：通义千问 / Qwen (@Alibaba_Qwen)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/Alibaba_Qwen/status/2101866671900401913" target="_blank" rel="noopener noreferrer">通义千问发布 Qwen-Image-2.1：7B 单检查点同时支持图像生成与编辑</a>
+          </h3>
+          <p class="card-sum">通义千问发布 Qwen-Image-2.1，一个 7B 参数的原生图像生成与编辑模型，生成和编辑共用单一检查点，最多支…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/Alibaba_Qwen/status/2101866671900401913" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>通义千问发布 Qwen-Image-2.1，一个 7B 参数的原生图像生成与编辑模型，两者共用单一检查点，最多支持 10 张参考图。视觉生成部分为 32 层 Single-Stream DiT，采用混合粒度注意力与前缀 KV Cache 复用，在多图输入时显著降低推理成本与显存占用。新版本原生支持透明图像（RGBA）生成、图层编辑与照片抠图。模型已集成 diffusers 与 ComfyUI；采用研究许可，商用需另行授权。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">6</span>
+            <span class="chip" style="--c:#3b82f6">X：Arena (@arena)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/arena/status/2102142912943489220" target="_blank" rel="noopener noreferrer">小米 MiMo-V2.6-Pro 登上 Code Arena: WebDev 榜约第10名，开源权重中约第3</a>
+          </h3>
+          <p class="card-sum">小米发布 MiMo-V2.6-Pro 与 Flash 两款全模态模型，MiMo-V2.6-Pro 在 Code Are…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/arena/status/2102142912943489220" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>小米发布 MiMo-V2.6-Pro 后，第三方平台 Code Arena 榜单显示：MiMo-V2.6-Pro 在其 WebDev 榜以 1628 分位列约第 10 名，在开源权重（MIT）模型中约排第 3，较 MiMo-V2.5-Pro 的 1475 分上涨 153 分。同期它在 Artificial Analysis 智能指数拿到 46 分，为开放权重模型最高。小米同步公开训练成本：两款模型 RL 训练不到 6 天，分别约 262 万与 85 万美元。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">公众号：月之暗面（Kimi）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s?__biz=MzkzMTY4NTIyNA%3D%3D&amp;mid=2247484344&amp;idx=1&amp;sn=047cf702ff02ab334e3ea2ba8e34b4a6" target="_blank" rel="noopener noreferrer">Kimi 发布 Kimi Code Desktop 1.0，macOS 与 Windows 版同步上线</a>
+          </h3>
+          <p class="card-sum">Kimi（月之暗面）发布 Kimi Code Desktop 1.0，作为 Kimi Code 官方桌面客户端，mac…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s?__biz=MzkzMTY4NTIyNA%3D%3D&amp;mid=2247484344&amp;idx=1&amp;sn=047cf702ff02ab334e3ea2ba8e34b4a6" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>月之暗面发布 Kimi Code Desktop 1.0，这是 Kimi Code 的官方桌面客户端，macOS 与 Windows 版同步上线，可从 kimi.com/code 下载。用户通过对话让 AI Agent 读写代码、运行命令，并集中管理项目与配置。客户端内置终端、浏览器与 Git 视图，支持审阅代码改动与关联 PR 进度。它保留 CLI 任务，并提供 Plan、Goal、Swarm 与实验性 Tower 四种工作模式。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">8</span>
+            <span class="chip" style="--c:#f59e0b">X：Rohan Paul (@rohanpaul_ai)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/rohanpaul_ai/status/2102128625126605059" target="_blank" rel="noopener noreferrer">不列颠哥伦比亚省起诉 OpenAI，指其未在枪击案前将 flagged ChatGPT 活动转介警方</a>
+          </h3>
+          <p class="card-sum">不列颠哥伦比亚省在加州起诉 OpenAI，指 flagged 的 ChatGPT 活动本应在 2026 年 2 月 1…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/rohanpaul_ai/status/2102128625126605059" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>不列颠哥伦比亚省在加州起诉 OpenAI，指其在 Tumbler Ridge 枪击案前未将已标记的 ChatGPT 活动通报警方。2026 年 2 月 10 日，18 岁的枪手 Jesse Van Rootselaar 在杀害母亲与继兄后，于母校枪杀一名教育助理和五名学生并自杀，造成 8 人死亡（含 6 名儿童）、27 人受伤。诉讼称 OpenAI 曾于 2025 年内部标记该账号，建议报警被高层否决，停用后当事人又注册新账号继续策划。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">9</span>
+            <span class="chip" style="--c:#f59e0b">IT之家（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/1/005/418.htm" target="_blank" rel="noopener noreferrer">亚马逊封禁 Meta Muse 智能体代用户购物，双方争端升级</a>
+          </h3>
+          <p class="card-sum">亚马逊阻断了 Meta 个人 AI 智能体 Muse 代用户在其网站购物的访问权限，称从未许可该访问，并指 Muse …</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/1/005/418.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>亚马逊已阻断 Meta 全新个人 AI 智能体 Muse 代用户在亚马逊网站购物的权限，此前曾要求 Meta 主动在 Muse 中排除亚马逊但协商未果。亚马逊称从未许可该访问：Meta 事先未告知，Muse 浏览时不表明身份，且会采集并保存用户账号凭证，带来隐私与安全隐患；用 Muse 下单会弹出「未经授权的 AI 智能体继续访问本网站」提示。Meta 回应称 Muse 无法读取密码或支付信息，凭证进入安全存储区。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">6</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">10</span>
+            <span class="chip" style="--c:#ec4899">X：Elon Musk (@elonmusk, xAI)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/elonmusk/status/2102082011233931762" target="_blank" rel="noopener noreferrer">马斯克称 Grok 4.7 使 xAI 在智能体编码领域位列第三</a>
+          </h3>
+          <p class="card-sum">Elon Musk 引用 Artificial Analysis 评测称，Grok 4.7 使 xAI 在智能体编码上…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/elonmusk/status/2102082011233931762" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>马斯克引用 Artificial Analysis 评测称，Grok 4.7 使 xAI 在智能体编码排名第三，仅次于 Anthropic 与 OpenAI。该机构同日报告显示，Grok 4.7 智能指数得 46 分，较 4.6 提升 2 分；配合 Grok Build，其编码代理指数得 56 分、上升 9 分，原生框架中排第 4。不过其部分编码基准短板明显，Terminal-Bench 4.0 仅 26%。xAI 强调其价格仅为同级模型约一半。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">11</span>
+            <span class="chip" style="--c:#ec4899">Nathan Lambert：Interconnects（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.interconnects.ai/p/the-current-balance-of-power-in-open" target="_blank" rel="noopener noreferrer">Nathan Lambert 撰文分析开源模型的中美实力格局</a>
+          </h3>
+          <p class="card-sum">Nathan Lambert 发布其向美国国会汇报的开源模型现状综述，指出中国开源权重模型已在下载量、基准成绩和学术采…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.interconnects.ai/p/the-current-balance-of-power-in-open" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>Nathan Lambert 发布他面向美国国会汇报的开放模型现状综述。文章先厘清开放权重与开源模型的区别：前者公开权重与许可，后者还包含可复现所需的训练代码与数据。他指自 2025 年 4 月起中国 AI 公司已在开放权重模型上领先，2025 年 7 月以来在 Hugging Face 下载量上领先约 16 亿次，总量为美国的两倍；真正的开源模型多出自美国非营利机构，如 AI2 的 Olmo、EleutherAI 的 Pythia。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">Artificial Analysis 完整文章（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://artificialanalysis.ai/articles/benchmarking-grok-4-7" target="_blank" rel="noopener noreferrer">Artificial Analysis 评测 Grok 4.7：智能体知识工作跻身前沿，编码代理得分升至 56</a>
+          </h3>
+          <p class="card-sum">Artificial Analysis 发布 Grok 4.7 评测，该模型在 Intelligence Index …</p>
+          <div class="card-actions">
+            <a class="read" href="https://artificialanalysis.ai/articles/benchmarking-grok-4-7" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Artificial Analysis 发布 Grok 4.7 评测：该模型在智能指数 v4.3.2 得 46 分，较 4.6 高 2 分。它已跻身智能体知识工作前沿：在私有长程基准 AA-Briefcase 上较 4.6（high）提升 111 Elo 至 1657，仅次于 Opus 5 与 Fable 5.1。配合 Grok Build，其编码代理指数得 56 分、上升 9 分，原生框架中排第 4。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">13</span>
+            <span class="chip" style="--c:#ec4899">公众号：数字生命卡兹克</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647686509&amp;idx=1&amp;sn=1b5ee8ab30c5825eaff76083e1f8dbcc" target="_blank" rel="noopener noreferrer">数字生命卡兹克访谈汉化组：AI 时代字幕组与漫画组的真实处境</a>
+          </h3>
+          <p class="card-sum">作者访谈多位字幕组与漫画汉化组成员，发现他们并不抵触AI。Eliza 的字幕组把听写、打轴交给AI后，原本需要3到5小…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647686509&amp;idx=1&amp;sn=1b5ee8ab30c5825eaff76083e1f8dbcc" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-13" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-13" hidden>AI 博主卡兹克访谈多位字幕组与漫画汉化组成员后发现，他们并不抵触 AI。以堺雅人粉丝字幕组为例，Eliza 的团队把听写、打轴交给 AI 后，过去人工需 3 至 5 小时的打轴缩短到 20 分钟至 1 小时。程序员阵雨自研 AI 工具，单人完成两小时直播的中文字幕。漫画汉化组因 AI 直出在字体、排版、背景修补上达不到人工标准，仍坚持手工制作；作者认为汉化组本质是兴趣社团，若未来一键 AI 就能有信达雅内容，他们反而会高兴。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">14</span>
+            <span class="chip" style="--c:#ec4899">Tomer Tunguz 博客（VC 分析）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://tomtunguz.com/ai-comes-for-the-if-statement" target="_blank" rel="noopener noreferrer">Tomer Tunguz 谈 AI 优化 if-then 判断：专用决策器把分类成本降近百倍</a>
+          </h3>
+          <p class="card-sum">Tomer Tunguz 撰文提出最新一波 AI 正在接管软件中的 if-then 判断原语，Jev 与 SemIf …</p>
+          <div class="card-actions">
+            <a class="read" href="https://tomtunguz.com/ai-comes-for-the-if-statement" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-14" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-14" hidden>Tomer Tunguz 撰文指出，最新一波 AI 正在接管软件中最基础的 if-then 判断原语。Jev 2 与 SemIf 这类专用决策器在数百毫秒内返回结果，成本比传统生成式调用降低约两个数量级。作者在自己的 Agent 中替换了约四分之一的判断调用：在 98 条生产邮件线程上，专用决策器把分类准确率从生产模型的 47% 提升到 80% 以上。他据此提出 AI 经济的分化：用最大前沿模型做发现与架构，用窄模型做生产高频执行。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">15</span>
+            <span class="chip" style="--c:#ec4899">Linear：Now（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://linear.app/now/ci-bottleneck-reworked" target="_blank" rel="noopener noreferrer">Linear 重构 CI 流程应对 AI 编码带来的验证瓶颈，PR 等待时间从 6 分钟降至 5 分钟</a>
+          </h3>
+          <p class="card-sum">Linear 工程师分享如何解决 AI Agent 加速写代码后 CI 成为瓶颈的问题，PR 等待时间从 6 分钟以上…</p>
+          <div class="card-actions">
+            <a class="read" href="https://linear.app/now/ci-bottleneck-reworked" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-15" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-15" hidden>Linear 工程师撰文复盘 AI 编码加速后 CI 成为瓶颈的问题：开发提速后每个 PR 仍必须过 CI，推高了基础设施成本与等待时间。它以 PR 等待时长与 runner 耗时为指标做了四项优化：把负载从 GitHub Actions 迁到更快的第三方 runner；优化前置门禁任务；减少重复环境准备；提升测试执行效率。尽管测试套件较年初几乎翻了两番，PR 等待时间仍从 6 分多降至刚过 5 分钟，单项 runner 时间约减半。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>15</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

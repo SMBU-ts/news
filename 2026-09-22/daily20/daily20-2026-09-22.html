@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-22</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-22</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260922A01Z2Z00?scene=news-skill" target="_blank" rel="noopener">今天，亚运赛场将决出25金！冲金点一览</a></div>
+                <div class="item-summary">9月22日，亚运会赛场将产生25枚金牌中国女排力拼亚运三连冠盛李豪冲击个人“三冠王”中国射击队和游泳队争创更多佳绩中国队也将在击剑、马术等项目迎来本届亚运首秀上午的射击赛场将迎来10米气步枪混合团体决赛本届亚运会奥运冠军盛李豪保持不败接连拿下男子团体和个人两项冠军来到混合团体他将搭档女团冠军成员王子菲向个人“第三冠”发起冲击“盛李豪出战”=“夺冠”？让我们拭目以待！10:55 10米气步枪混...</div>
+                <div class="item-meta">央视新闻 · 2026-09-22 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A08TFE00?scene=news-skill" target="_blank" rel="noopener">明年正式发布实施！二手车鉴定国标将迎重大变化，事故车判定不再“一刀切”</a></div>
+                <div class="item-summary">每经记者：董天意 每经编辑：裴健如近日，《每日经济新闻》记者从中国汽车流通协会方面获悉，现行《二手车鉴定评估技术规范》国家标准（GB/T 30323-2013）将迎来修订，预计于今年年底前完成初稿编制，明年正式发布实施。现行《二手车鉴定评估技术规范》自2013年实施至今已超过十年。“十多年来，我国二手车市场规模持续扩大...</div>
+                <div class="item-meta">每日经济新闻 · 2026-09-21 16:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A09RVH00?scene=news-skill" target="_blank" rel="noopener">今年前8个月全国工业销售收入同比增长7.3%</a></div>
+                <div class="item-summary">国家税务总局发布的最新发票数据显示，今年前8个月，全国工业销售收入稳步增长，新质生产力加快培育，装备制造业、高技术产业销售收入增长明显。发票数据显示，1—8月份，工业经济稳中有进，工业销售收入同比增长7.3%，其中采矿业、制造业、电力热力燃气及水生产和供应业销售收入同比分别增长8.3%、7.5%和5%，均保持较快增长态势。装备制造业持续发挥“压舱石”作用，销售收入同比增长10.1%，特别是计...</div>
+                <div class="item-meta">央视新闻 · 2026-09-21 17:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260922A016W700?scene=news-skill" target="_blank" rel="noopener">铁翼破晓！歼-16夜训最新现场图</a></div>
+                <div class="item-summary">近日东部战区空军某部开展下半夜实战化飞行训练多架战机依次滑出、梯次升空在暗夜复杂环境开展空战对抗对海（地）面目标攻击等实战化课目训练全面检验部队全时作战能力（来源 中国军号）...</div>
+                <div class="item-meta">央视新闻 · 2026-09-22 02:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260922A01S0F00?scene=news-skill" target="_blank" rel="noopener">视频丨国内首个！八层楼高的“空中大气球”来了</a></div>
+                <div class="item-summary">9月21日，国家电网传来重磅突破，国内首个2吨级载重系留气球，在藏粤特高压直流输电工程西藏段成功完成试运行。不修路、不架索道，一个直径25米的大气球，把2吨重输电塔材，吊上海拔4000米的陡峭山脊。高海拔、深山区施工，从此有了“绿色空中通道”。 巨型气球登场：8层楼高，吊起2吨重工程物料在施工现场，一个直径25米、...</div>
+                <div class="item-meta">央视新闻 · 2026-09-22 04:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A06O4P00?scene=news-skill" target="_blank" rel="noopener">五部门印发通知严惩生态环境技术服务机构弄虚作假</a></div>
+                <div class="item-summary">新华社北京9月21日电（记者高敬）记者21日获悉，生态环境部联合最高人民法院、最高人民检察院、公安部、市场监管总局印发通知，持续加强生态环境技术服务机构监管，严惩数据弄虚作假行为。 通知强调，要坚持问题导向、技防优先，强化科技赋能与源头管控；坚持精准治理、常态化整治，健全长效监管机制；坚持协同联动、凝聚合...</div>
+                <div class="item-meta">新华社新闻 · 2026-09-21 14:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026090406706200?scene=news-skill" target="_blank" rel="noopener">2026年名古屋亚运会</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0BV8Y00?scene=news-skill" target="_blank" rel="noopener">多地重评、注销、冻结残疾人证</a></div>
+                <div class="item-summary">近期，多地正通过重评、注销和冻结的方式纠治残疾人残疾等级评定不精准问题。9月20日，甘肃积石山县残联发布公告称，对前期目测方式评定的77人启动重新评残，要求限期内前往指定医院重新评定，逾期不办将注销证件。稍早前的9月11日，甘肃成县对106名“人轻证重”残疾人、以及“智力、精神和视力一、二级持有驾驶证”人员拟...</div>
+                <div class="item-meta">中国经济网 · 2026-09-21 23:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260920A0D0HB00?scene=news-skill" target="_blank" rel="noopener">中国，又一批三四线“地铁城市”来了</a></div>
+                <div class="item-summary">文|凯风三四线城市，正在曲线建地铁。01三四线，为何也能建地铁？近日，连接厦门漳州的厦门6号线开启试乘，福建首条跨市地铁诞生，漳州迈入地铁时代。无独有偶，连接京冀的北京22号线开启试运行，河北“北三县”的三河将告别没有地铁的历史。一个值得注意的现象出现：地铁审批越来越紧，跨市地铁越来越多，三四线“地铁城市”接连涌现。事实上，无论地级市漳州，还是县级的北三县，都没资格建地铁。且不说经济、人口、...</div>
+                <div class="item-meta">国民经略 · 2026-09-21 11:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0A31D00?scene=news-skill" target="_blank" rel="noopener">吃素就能预防或治好脂肪肝？</a></div>
+                <div class="item-summary">这是一种常见误区。多吃蔬菜水果确实有助于降低脂肪肝风险，但只吃素并不能预防或治好脂肪肝。一项涵盖超过 26 万人群的系统综述和荟萃分析发现，水果和蔬菜摄入量与非酒精性脂肪肝（NAFLD）风险呈显著负相关——每天多吃 100 克蔬菜或水果，患脂肪肝的风险可分别降低约 12% 和 8% 。但研究同时指出，这种保护作用依赖于整...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-21 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://h5.news.qq.com/maker/prod/publish/M0dY3hg7zb01oiAdQl43f.html?scene=news-skill" target="_blank" rel="noopener">点击抽奖丨假期“发福”，趣玩不停</a></div>
+                <div class="item-summary">点击抽奖丨假期“发福”，趣玩不停</div>
+                <div class="item-meta">2026-09-20 12:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0A64Q00?scene=news-skill" target="_blank" rel="noopener">河北沧州婚车半路被拦下，男子骑三轮车堵路索要整条喜烟，网友怒了</a></div>
+                <div class="item-summary">近日，一段拍摄于河北沧州的接亲视频刷屏网络。画面中，一名男子骑着三轮车挡在迎亲车队前方，迎亲人员拿出零散的香烟，被男子当场拒绝，他坚持要一整条未拆封的喜烟，拿到烟才肯让路。视频一经发出，评论区瞬间吵翻，不少网友发表了自己的看法。很多网友对此十分气愤，认为这早已超出正常婚俗闹喜的范畴，属于拦路索要财物；不少网友发问，这样拦车要东西的行为是否涉嫌违法。为了解现场真实情况，9月20日记者联系到视频...</div>
+                <div class="item-meta">红星新闻 · 2026-09-21 18:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0BJHR00?scene=news-skill" target="_blank" rel="noopener">储户约8万存款疑遭盗刷，银行回应：公安无责证明不等同于银行担责，需司法裁决</a></div>
+                <div class="item-summary">银行卡就在身上，卡里约8万元钱却在几分钟内被分批转走。今年1月，湖北十堰郧西县周先生的妻子因患癌需要资金购药。2月12日中午，他查账时发现，自己存在工商银行卡内的资金已所剩无几——原本8.2万余元的余额，只剩下不到4000元。周先生立即向郧西县公安局报案。 ▲郧西县公安局刑侦大队开具的证明材料周先生的开户行是工...</div>
+                <div class="item-meta">红星新闻 · 2026-09-21 21:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0BMVY00?scene=news-skill" target="_blank" rel="noopener">巨头打架，手机总算要降价了</a></div>
+                <div class="item-summary">作者 | 荣智慧 编辑 | 向现 唯物的中国芯片产业深度观察 9月18日，据外媒援引三名知情人士消息，国内DRAM（内存芯片）龙头长鑫存储，正筹备进入NAND Flas....</div>
+                <div class="item-meta">南风窗 · 2026-09-21 21:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A080AQ00?scene=news-skill" target="_blank" rel="noopener">江苏一企业给每名员工发26样中秋礼品，不少人开三轮车来拉，董事长：公司发展依仗员工付出，多发些礼物大家能孝敬父母</a></div>
+                <div class="item-summary">极目新闻记者 丁伟近日，江苏徐州一家机车企业发放的中秋福利走红网络。网传视频显示，在公司大院内，每名员工面前都码放着一堆礼品——鸡、鱼、食用油、白酒、月饼、大米、石榴……粗看至少有20件，员工们正将奖品装上三轮车带回家。员工开三轮拉礼品（受访人提供）刷到上述视频的网友，纷纷表示羡慕，“老板格局大，这样...</div>
+                <div class="item-meta">极目新闻 · 2026-09-21 15:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0BD6600?scene=news-skill" target="_blank" rel="noopener">海南一男生逃避军训飞往上海旅游，有网友质疑其“做事不考虑后果”，本人发文致歉，校方回应：正在办理退学手续；目前其账号已被禁止关注</a></div>
+                <div class="item-summary">近日，海南外国语职业学院一新生在军训期间擅自离开学校，从三亚飞到上海旅游，还将整个过程拍成视频发到网上，致其辅导员和教官被罚，引发关注。记者搜索发现，目前其账号已被禁止关注。9月21日，潇湘晨报·晨视频记者致电校方，工作人员表示：“逃训是他个人的事情，他自己发的朋友圈，学校有学校的管理规定，才会去处罚...</div>
+                <div class="item-meta">潇湘晨报 · 2026-09-21 20:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921V07KDO00?scene=news-skill" target="_blank" rel="noopener">一高校宿舍起火，该校学生：有学生还在睡觉，宿管和同学呼喊疏散，消防回应</a></div>
+                <div class="item-summary">大连一高校宿舍起火，该校学生：有学生还在睡觉，宿管和同学呼喊疏散，消防：报警和救援都很及时 未造成人员伤亡</div>
+                <div class="item-meta">浪潮新闻 · 2026-09-21 15:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A064OM00?scene=news-skill" target="_blank" rel="noopener">特朗普突然宣布：改！</a></div>
+                <div class="item-summary">20日，美国总统特朗普突然发帖称，在美国军方的建议下，他已同意将“美国凯旋门”改造为军事设施。帖文称，该建筑可用于“存放及操作无人机、布置狙击点”。 “美国凯旋门”设计样图 据美....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-09-21 21:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0BRH500?scene=news-skill" target="_blank" rel="noopener">中国女篮主帅宫鲁鸣：会吸取男篮教训</a></div>
+                <div class="item-summary">据中国新闻网报道，当地时间9月21日，在爱知·名古屋亚运会女篮小组赛A组第二场比赛中，中国女篮以110:41大比分战胜印度尼西亚队拿下两连胜。此前，中国女篮在小组赛首轮以111:46大胜泰国队，取得开门红。赛后，中国女篮主教练宫鲁鸣表示：“预赛打好不叫好，淘汰赛、半决赛，争取在决赛中打好，这是我们的目标。”宫鲁鸣介...</div>
+                <div class="item-meta">观察者网 · 2026-09-21 21:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260921A0C1XV00?scene=news-skill" target="_blank" rel="noopener">“神股”狂飙，2天涨1200%</a></div>
+                <div class="item-summary">A股，出现了一只2天暴涨1200%的“神股”。 9月17日，头顶“年内最低发行价”标签的C沈鼓（沈鼓集团）登陆上交所主板，发行价4.39元。公司29.81倍发行市盈率，低于通用设备制造业4....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-09-22 07:08</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-22 08:31</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
