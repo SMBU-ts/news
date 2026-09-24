@@ -1,0 +1,192 @@
+[
+  {
+    "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech",
+    "title": "Google DeepMind 发布 Gemini 3.8 Flash TTS 与 Flash-Lite TTS 语音生成模型",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/Alibaba_Qwen/status/2102687258990026993",
+    "title": "Qwen 发布 Qwen-Audio-3.1 全家桶，ASR、TTS、Realtime 升级并新增 TTS-Next 与 ASR-Next",
+    "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://fireworks.ai/blog/ember-1",
+    "title": "Fireworks Research 发布 Ember-1，以更少推理 token 保持 Kimi K3 质量",
+    "source": "Fireworks AI（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/gdb/status/2102821706041819401",
+    "title": "Greg Brockman 宣布 GPT Voice 大幅升级，支持使用工具并登陆 ChatGPT Work",
+    "source": "X：Greg Brockman (@gdb)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk",
+    "title": "Antigravity SDK 支持本地模型，可完全离线运行智能体",
+    "source": "Google Developers Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+    "title": "OpenAI 向乌克兰政府开放 Daybreak 网络防御计划",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://claude.com/blog/claude-marketplace",
+    "title": "Anthropic 上线 Claude Marketplace，汇聚插件、智能体与服务伙伴",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://cursor.com/blog/rollouts-and-security-reviewer",
+    "title": "Cursor 发布 Rollouts 和 Security Reviewer 开发机器人",
+    "source": "Cursor Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.smh.com.au/politics/federal/openai-breaches-medicare-albanese-reveals-20260924-p6100u.html",
+    "title": "阿尔巴内塞披露 OpenAI 智能体未经授权访问澳大利亚 Medicare 系统",
+    "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+    "title": "Anthropic 宣布 Claude 自主发现类 CRISPR 的新型酶系统 ART",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/introducing-mentalhealthbench",
+    "title": "OpenAI 联合 80 多位心理健康专家发布开放基准 MentalHealthBench",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/ericzakariasson/status/2102853511637774551",
+    "title": "团队分享提升 Agent Harness Token 效率的提示词",
+    "source": "X：Eric Zakariasson (@ericzakariasson)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://claude.dev/blog/how-we-made-claude-ai-faster",
+    "title": "Anthropic 团队详解如何用 Claude 在两周内把 claude.ai 提速约 3 倍",
+    "source": "Hacker News：AI 热帖",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/arena/status/2102806554340974612",
+    "title": "Arena 实测：GPT-6 Sol (Max) 以 1689 分列 Code Arena: WebDev 第 4 名",
+    "source": "X：Arena (@arena)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://tomtunguz.com/the-most-important-market-in-ai-is-the-middle",
+    "title": "Tomer Tunguz：AI 最重要的市场在中段而非前沿模型",
+    "source": "Tomer Tunguz 博客（VC 分析）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "015.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/ArtificialAnlys/status/2102833926788288704",
+    "title": "MiMo-V2.6-Pro、Claude Opus 5.5、GPT-6 Luna/Sol 发布改变智能指数与成本 Pareto 前沿",
+    "source": "X：Artificial Analysis (@ArtificialAnlys)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openrouter.ai/blog/insights/best-embedding-models-2026",
+    "title": "OpenRouter 发布 2026 年最佳嵌入模型选型指南，覆盖 37 个目录条目",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "017.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://garymarcus.substack.com/p/historic-un-security-council-briefing",
+    "title": "AI 公司负责人在联合国安理会简报会上警告 AI 可能危及全人类",
+    "source": "Gary Marcus：The Road to AI We Can Trust（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects",
+    "title": "Anthropic 前线工程师分享 AI 驱动代码现代化项目的六步准备方法",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "019.txt",
+    "ok": true,
+    "round": 1
+  }
+]

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-09-24</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-09-24</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026092210271600?scene=news-skill" target="_blank" rel="noopener">习近平对美国进行国事访问</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A05R3Q00?scene=news-skill" target="_blank" rel="noopener">教育部：2027至2030年，“双一流”高校本科招生数还将扩容7.6万人</a></div>
+                <div class="item-summary">国务院新闻办公室9月23日举行“开局起步‘十五五’”系列主题新闻发布会，请教育部副部长杜江峰，教育部新闻发言人、副部长王光彦等介绍贯彻落实“十五五”规划，加快推进教育强国建设有关情况。 会....</div>
+                <div class="item-meta">政知见 · 2026-09-23 11:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A09VN300?scene=news-skill" target="_blank" rel="noopener">好评中国｜丰收节里，读懂“国之大者”的底气与担当</a></div>
+                <div class="item-summary">稻浪翻金，大豆摇铃，苹果压枝，蔗海飘香。“十五五”开局之年，我们迎来第九个中国农民丰收节，大江南北铺展多彩丰收图景。这丰收，是大地对耕耘的回报，更是粮食安全“国之大者”的生动注脚。粮安天下，农稳社稷。在丰收节里读懂“国之大者”，就要看清这份稳产保供的底气从何而来、向何处去。 粮食安全是“国之大者”，...</div>
+                <div class="item-meta">国际在线 · 2026-09-23 17:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260924A03G3L00?scene=news-skill" target="_blank" rel="noopener">亚运综合｜中国队单日16金，体操团体包揽</a></div>
+                <div class="item-summary">新华社日本名古屋9月23日电 23日的爱知·名古屋亚运会赛场，中国代表团在游泳、田径、体操等多个项目上全面开花，单日再揽16金7银2铜。31岁的徐嘉余与队友合作夺得男女4X100米混合泳接力冠军，超越王义夫成为获亚运金牌最多的中国运动员；中国体操队力克东道主日本队，如愿包揽团体金牌。9月23日，冠军中国队选手张怡涵、柯...</div>
+                <div class="item-meta">北京日报客户端 · 2026-09-24 07:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260924A031B200?scene=news-skill" target="_blank" rel="noopener">中方呼吁俄乌早日实现停火止战</a></div>
+                <div class="item-summary">新华社联合国9月23日电 中国常驻联合国代表傅聪23日在安理会乌克兰问题高级别会议上发言，呼吁早日实现停火止战。 傅聪说，乌克兰危机延宕四年多，冲突战事仍在持续，平民伤亡不断增加，危机造成的外溢影响还在扩大。有关各方和国际社会应共同努力，推动危机政治解决。他就此提出三点呼吁。 第一，要保持克制，早日实现停火...</div>
+                <div class="item-meta">新华社新闻 · 2026-09-24 05:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260924A03ECX00?scene=news-skill" target="_blank" rel="noopener">视频丨假期出行 12306的“隐藏福利”别错过</a></div>
+                <div class="item-summary">中秋国庆双节假期铁路运输开启！12306里有一些隐藏的福利和服务，赶快点赞收藏！积分兑换车票 旅客在12306注册成为铁路畅行会员之后就可以累积乘车积分，100积分可以抵扣1元车票款。购票查询时认准车次旁边带有“兑”字标记，就可以直接用积分支付车票。国铁南昌局宜春站副站长周扬介绍，积分有效期是12个月，到期会自动清零。如果想用自己账号的积分帮亲友兑换车票，需要提前添加受让人，完成验证后才能使...</div>
+                <div class="item-meta">央视新闻 · 2026-09-24 07:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026090406706200?scene=news-skill" target="_blank" rel="noopener">2026年名古屋亚运会</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A098CQ00?scene=news-skill" target="_blank" rel="noopener">视频丨1300+颗脉冲星、15.6万个星系……中国天眼这十年看见了什么</a></div>
+                <div class="item-summary">9月25日，“中国天眼”将迎来落成启用十周年。十年过去，FAST望远镜早已从大国重器，变成领跑世界射电天文的宇宙观测站。很多人会问，这十年，“中国天眼”到底看见了什么？究竟有什么用？通过一个短片，来看FAST十年征途的高光时刻。“滴滴滴滴”这是来自宇宙的声音！2017年8月22日夜里，落成还不满一年的FAST，就收到了属...</div>
+                <div class="item-meta">央视新闻 · 2026-09-23 16:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260924A001ST00?scene=news-skill" target="_blank" rel="noopener">车主留意！新一轮国内油价调整将至，预计将涨价0.6元/升</a></div>
+                <div class="item-summary">中新经纬9月24日电 (万可义)国内成品油新一轮调价窗口将在9月24日24时开启。机构预计，本轮成品油零售价将上调。 金联创分析师赵樱涵分析称，由于本轮调价周期前期原油涨幅已锁定，国内成品油零售价将上调，但随着近期国际原油价格连续下跌，最终上调幅度已较前期预期明显收窄。 据金联创测算，截至9月23日第九个工作日，参...</div>
+                <div class="item-meta">中新经纬 · 2026-09-24 07:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0ATPC00?scene=news-skill" target="_blank" rel="noopener">鸡蛋滚脸能祛痘？真相是......</a></div>
+                <div class="item-summary">qu流“鸡蛋滚脸能祛痘，蛋黄上的小颗粒是吸出来的毒素。”网上有不少帖子分享“鸡蛋滚脸祛痘”的经验，有人声称鸡蛋滚完脸后，蛋黄出现的小颗粒就是吸附出来的毒素。言流言分析这种说法没有科学依据。鸡蛋滚脸并不能把痘痘里的“毒素”“油脂”或所谓“痘根”吸出来。人体皮肤最外层的角质层本身就是一道屏障，皮脂、炎症产...</div>
+                <div class="item-meta">科学辟谣 · 2026-09-23 18:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0CLM700?scene=news-skill" target="_blank" rel="noopener">浙江男子花1440万买江景房，交付快一年还没过户，一查傻眼，房子竟有抵押：买房时对方从未告知，不然肯定不买；项目负责人拒绝回应</a></div>
+                <div class="item-summary">梅先生花1440万元在杭州买了一套江景大平层，房子交付快一年，因为涉及抵押，过户的事情一直没着落。梅先生在山东工作，是温州人，为了孩子在上海读书、回浙江方便，在杭州上城区万银双子中心40层选了一套房子。这套房子面积245平方米，单价近6万元，层高4.8米，卧室能直接看到钱塘江，精装修交付。梅先生提供的购房协议显...</div>
+                <div class="item-meta">大河报 · 2026-09-24 07:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260924A0009Z00?scene=news-skill" target="_blank" rel="noopener">用中国人修建世界第一高桥的投入，英国人修了个“地下通道”……</a></div>
+                <div class="item-summary">近日，英国牛津市一个给当地的火车站增加地下行车道的市政工程，终于完工。但让英国民众震惊的是，这么一个普通的工程项目，不仅耗时长达3年，耗资更是达到了惊人的2.37亿英镑（约合21亿元人民币）。 ....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-09-24 07:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0CDMH00?scene=news-skill" target="_blank" rel="noopener">湖北省纪委监委通报5起违反中央八项规定精神典型问题</a></div>
+                <div class="item-summary">新华社武汉9月23日电 23日，湖北省纪委监委通报5起违反中央八项规定精神典型问题。湖北省经济和信息化厅原党组成员、副厅长郭涛违规收受礼品、礼金，违规接受宴请等问题。2019年2月至2025年10月，郭涛多次违规收受管理和服务对象所送礼金及高档白酒；违规接受武汉某公司法定代表人宴请，餐费由对方支付。郭涛还存在其他严重...</div>
+                <div class="item-meta">新华网 · 2026-09-24 07:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0C9BZ00?scene=news-skill" target="_blank" rel="noopener">强度12级以上！台风“舒力基”即将生成，广东中秋还能赏月吗？</a></div>
+                <div class="item-summary">据最新消息新台风“舒力基”即将生成广东雷雨增多会影响中秋假期吗？一起来看台风“舒力基”即将生成未来可能登陆我国据中央气象台中期天气预报，未来10天南海及西北太平洋可能有1～2个的台风生成，其中1个29日前后有影响我国华南的可能性。据@中国天气 首席气象分析师分析，目前在关岛西侧的低压（原台风胚胎91W），正在不...</div>
+                <div class="item-meta">大湾区之声 · 2026-09-24 07:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0CE2700?scene=news-skill" target="_blank" rel="noopener">克宫：普京已准备好和特朗普会晤</a></div>
+                <div class="item-summary">据塔斯社报道，俄罗斯总统新闻秘书佩斯科夫9月23日表示，俄总统普京已准备好与美国总统特朗普会晤，但目前还没有任何具体消息。“目前没有任何有关高层会晤的具体消息。如果说的是俄美领导人会晤，那么总统已经做好准备。”佩斯科夫说。“普京总统和特朗普总统确实一直在电话交谈中强调，如果有必要，他们愿意在某个时候再...</div>
+                <div class="item-meta">观察者网 · 2026-09-24 07:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0BPSG00?scene=news-skill" target="_blank" rel="noopener">亚运会：国乒男团3-0大获全胜晋级决赛！中日争夺2项团体金牌</a></div>
+                <div class="item-summary">2026年9月23日，爱知·名古屋亚运会乒乓球比赛结束第二场男团半决赛，国乒选手王楚钦、林诗栋、温瑞博先后击败中国台北运动员林昀儒、冯翊新、郭冠宏，由此而助力本队晋级最后一轮，接下来国乒两队都将与日....</div>
+                <div class="item-meta">全言 · 2026-09-23 20:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0BS6800?scene=news-skill" target="_blank" rel="noopener">“请3休13”火了：有人抄底机票，有人挤进1600元一晚的县城酒店</a></div>
+                <div class="item-summary">文｜杨心玥 编辑｜刘鹏 AI告诉徐哲，像今年这样“请3休13的”超长假期机会，可能本世纪都不会再有了。 2026年的中秋和国庆之间，只隔着9月28日至30日三个工作日。....</div>
+                <div class="item-meta">腾讯财经 · 2026-09-24 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0AZ6Y00?scene=news-skill" target="_blank" rel="noopener">“喝着没什么奶味”，网友在纯牛奶里倒出透明的水，企业道歉：系工人操作失误</a></div>
+                <div class="item-summary">近日，有网友在社交平台发文称，“‘马三三’纯牛奶中倒出来的是水”，事件引发热议。9月23日，品牌所属企业新疆马三三疆纯乳业有限公司工作人员告诉南都N视频记者，“透明液体为无菌水，我们会用纯净水对设备....</div>
+                <div class="item-meta">南方都市报 · 2026-09-23 19:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0COVG00?scene=news-skill" target="_blank" rel="noopener">陕西一“桔子宾馆”被桔子酒店起诉索赔10万元 法院判决：侵犯注册商标专用权，赔偿8000元</a></div>
+                <div class="item-summary">陕西咸阳一家小宾馆取名“桔子宾馆”，被连锁品牌“桔子酒店”以商标侵权、不正当竞争告上法庭，索赔10万元。一审法院认定侵权成立，酌定赔偿8000元。宾馆方不服提起上诉，辩称自身并无攀附恶意，门店规模小不会造成消费者混淆。9月22日，咸阳市中级人民法院作出终审判决，驳回上诉，维持原判。▲资料图片 图据图虫创意兴平...</div>
+                <div class="item-meta">红星新闻 · 2026-09-24 07:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20260923A0BG2T00?scene=news-skill" target="_blank" rel="noopener">为什么这一次楼市将领先于消费复苏？</a></div>
+                <div class="item-summary">现房销售新政带来的机制变化最近几天，地产板块反弹，如下图所示，房地产指数在5个交易日内上涨了8%+。这是因为，市场在传形形色色的地产政策。然而，有趣的是，食品饮料板块在这一时间段仅仅上涨了1.13%。这一现象有悖于历史经验，以往地产有政策预期时，食品饮料板块也会有所作为。那么，是哪一机制变化导致历史经验失效...</div>
+                <div class="item-meta">华尔街见闻 · 2026-09-23 19:52</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-09-24 08:30</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
