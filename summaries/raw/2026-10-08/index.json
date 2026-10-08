@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://www.anthropic.com/claude-haiku-5-5",
+    "title": "Anthropic 发布 Claude Haiku 5.5，运行成本平均降低约 75%",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://openai.com/index/gpt-6-for-everyone/",
+    "title": "OpenAI 向全部 ChatGPT 用户推出 GPT-6 与 Intelligent UI",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/ClaudeDevs/status/2107895957933408429",
+    "title": "Anthropic 为 Claude Max 和 Team 套餐推出月度 Platform API 额度",
+    "source": "X：Claude Devs (@ClaudeDevs)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/thsottiaux/status/2107574912349303197",
+    "title": "OpenAI Decisions API 公测上线",
+    "source": "X：Tibo (@thsottiaux)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
+    "title": "Claude Code v2.1.293 发布：新增 Claude Haiku 5.5 并修复大量问题",
+    "source": "Claude Code：GitHub Releases（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/",
+    "title": "NVIDIA 与 Microsoft 发布 RTX Spark 及 DGX Station for Windows，推动 AI Agent 落地 Windows PC",
+    "source": "NVIDIA Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+    "title": "Google 推出实验性游戏平台 Playground，用提示词即可创建游戏",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.404media.co/undue-emotional-weight/",
+    "title": "亚利桑那州法院裁定 AI 生成受害者视频带有不当情感分量 将重新量刑",
+    "source": "404 Media（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://research.google/blog/does-better-work-always-mean-better-workers/",
+    "title": "Google Research 三个月专利起草实验发现AI辅助未必能培养初级律师的专业判断",
+    "source": "Google Research：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+    "title": "Microsoft Research Asia 开源 Agent Lightning v1.0：3,500 行代码的真实 harness 智能体 RL 训练框架",
+    "source": "Microsoft Research 博客（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/Google/status/2107836410254291345",
+    "title": "Google 开放 SynthID Detector 门户，可检测图片、视频和音频是否由 AI 生成",
+    "source": "X：Google (@Google)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.a16z.news/p/why-texas-is-making-data-centers",
+    "title": "a16z 解析德州为何让数据中心排队等电",
+    "source": "a16z：News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-08</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-08</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A02HNF00?scene=news-skill" target="_blank" rel="noopener">视频丨中国为什么一定要搞航天？他们用一生作答</a></div>
+                <div class="item-summary">今天是中国航天事业创建70周年纪念日。70年前的今天，国防部第五研究院成立，中国航天事业由此起步。70年来，从第一枚导弹、第一颗人造地球卫星，到载人航天、月球探测、火星探测，中国航天从无到有、从弱到强。站在70年的时间节点回望，当年的中国为什么一定要搞航天？“两弹一星”元勋用行动作答：“国家需要，就去干。”...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A029WO00?scene=news-skill" target="_blank" rel="noopener">视频丨寒露时节注意护好这四处 五大养生要点请收好</a></div>
+                <div class="item-summary">10月8日，迎来寒露节气此时节寒气渐重，常为昼暖夜凉寒露时节如何养生？饮食调理需注意什么？一起来了解寒露养生，注意这5点 寒露是秋季的第五个节气，也是二十四节气中第一个带“寒”字的节气。如果说“白露”是炎热向凉爽的过渡，那“寒露”就是凉爽向寒冷的过渡。寒露时节，早晚天气已有丝丝寒意，万物也开始逐渐萧...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 05:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A03C8X00?scene=news-skill" target="_blank" rel="noopener">欢度假期 乐享幸福生活</a></div>
+                <div class="item-summary">央视网消息（新闻联播）：这个国庆假期，祖国各地活动丰富多彩，处处洋溢着喜庆祥和的节日氛围，人们欣赏美景，礼赞幸福生活。这个国庆假期，秋高气爽，人们走进大自然，感受美好生活。在青海乌兰，10月的茶卡盐湖，水天一色，风景如画。自然风光搭配多彩文旅活动，让游客流连忘返。假期前五天，景区已经接待游客近15万人次。在陕西，秦岭主峰太白山漫山彩林，云海翻涌，远道而来的游客既可以远观巍巍秦岭“一山分南北”...</div>
+                <div class="item-meta">央视网 · 2026-10-07 09:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A0AN6Q00?scene=news-skill" target="_blank" rel="noopener">我国科学家研制成功核光钟</a></div>
+                <div class="item-summary">核光钟是利用激光精确驱动一种特殊放射性同位素“钍-229”实现其原子核内部的能级跃迁，并以这一核跃迁的频率作为基准的计时装置。我国科学家利用自主研制的148纳米连续波真空紫外激光以及掺钍-229氟化钙晶体，在国际上率先研制出核光钟并实现其稳定运行，将量子精密测量由电子跃迁拓展至原子核跃迁。该成果10月7日晚在线发...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-07 23:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A0AQNW00?scene=news-skill" target="_blank" rel="noopener">国庆假期中外旅游“双向奔赴”</a></div>
+                <div class="item-summary">新华社北京10月7日电 2026年国庆假期，中国游客走出国门，欣赏远方的风景；而外国游客从世界各地来到中国，感受中华大地的自然风光和人文历史。 免签政策持续扩容、国际航线越来越密、跨境支付更加便利……多重利好降低了跨境旅行的门槛。这个国庆假期，中外游客“双向奔赴”，在文旅交流中感知彼此的美好，在密切往来中收...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-07 23:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A0AFRG00?scene=news-skill" target="_blank" rel="noopener">海关提醒：这些“伴手礼”别带回国</a></div>
+                <div class="item-summary">近日，北京海关在1名进境旅客的行李中查获冻肉11千克，深圳海关在1名进境旅客的行李中查获藏匿在奶粉罐中的燕窝423克，重庆海关在1名进境旅客行李中查获龙宫果3.5千克，大连海关在1名进境旅客行李中查获柿子2.67千克。上述动植物产品来源不明，可能携带非洲猪瘟病毒、高致病性禽流感病毒等动物病原体，大洋臀纹粉蚧、地中海...</div>
+                <div class="item-meta">北京日报客户端 · 2026-10-08 07:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A00VIY00?scene=news-skill" target="_blank" rel="noopener">直击国庆高速免费最后1分钟：聪明车主不再“极限卡点”，“先下后上”省通行费</a></div>
+                <div class="item-summary">极目新闻记者 郑力强 黄达实习生 程韵钦10月7日24时，国庆假期高速公路免费通行正式结束。极目新闻记者在青郑高速武昌收费站看到，多辆小客车抢在免费车道落杆前通过。很多聪明车主不再“极限卡点”，而是选择“先下后上”省通行费。10月7日23时30分，极目新闻记者来到武昌收费站，有车辆陆续赶在免费通行结束前下高速。一...</div>
+                <div class="item-meta">极目新闻 · 2026-10-08 07:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A01OU100?scene=news-skill" target="_blank" rel="noopener">我驻肯尼亚大使馆提醒在肯中国公民关注埃博拉输入性疫情</a></div>
+                <div class="item-summary">就肯尼亚近期发生一例输入性本迪布焦型埃博拉病毒死亡病例的事件，我驻肯尼亚使馆提醒中国公民做好健康管理，避免前往疫区，全文如下：10月6日，肯尼亚卫生部通报一例输入性本迪布焦型埃博拉病毒死亡病例。该患者在刚果（金）感染埃博拉病毒，后经陆路抵乌干达坎帕拉，并于10月3日搭乘航班抵达内罗毕乔莫·肯雅塔国际机场，...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 02:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A02F8F00?scene=news-skill" target="_blank" rel="noopener">视频丨正确散步好处超多！4种走法每天各100步 简单无门槛</a></div>
+                <div class="item-summary">有一项延年益寿的运动非常简单老年人都能做从延寿角度来讲有可能比跑步、游泳、打球还要好这项运动就是散步研究发现规律散步能降低17%的全因死亡率这样做全因死亡风险可再降低19% 推荐4种走法每天各100步 帮你养护膝盖、改善腰肌劳损 散步被科学证实的“长寿第一运动”2026年哈佛大学研究团队发表在《英国医学杂志・医学》(BMJ Medicine) 上的一项大型队列研究，为散步的健康价值提供了强有...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 06:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A091HV00?scene=news-skill" target="_blank" rel="noopener">淘米次数越多越好？</a></div>
+                <div class="item-summary">这是一个常见误区。图库版权图片，转载使用可能引发版权纠纷米粒外表面的糊粉层中含有丰富的B族维生素、矿物质和膳食纤维等，这些营养物质（尤其是 B 族维生素）很容易溶于水。在反复用水淘洗的过程中，米粒表面的 B 族维生素，如维生素B1、B2、烟酸等的损失较多。且随着淘米次数、浸泡时间的延长、淘米水温度的升高，营养...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-07 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A0AH7V00?scene=news-skill" target="_blank" rel="noopener">4名务工人员外出购物时将41条香烟放入后备箱，被高某利用车辆干扰器屏蔽锁车信号后盗窃，高某被抓！</a></div>
+                <div class="item-summary">今年国庆节假期，山东省潍坊市临朐县公安局经过4天连续攻坚，成功侦破一起蹊跷的车内财物盗窃案，抓获嫌疑人高某，全额追回被盗香烟，同时带破跨区域同类盗窃案件10起。该案嫌疑人作案轨迹隐蔽、反侦查能力极强，警方凭借细致研判，破解了一场看似“无迹可寻”的盗窃案件。图为现场查获的部分被盗香烟存在13分钟时间空白9月...</div>
+                <div class="item-meta">法治日报 · 2026-10-08 07:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A07CXS00?scene=news-skill" target="_blank" rel="noopener">汽车离加油站20多米燃油耗尽，请加油员手动灌油被拒，无奈花350元叫拖车，加油站道歉：签字备案后可借散装油</a></div>
+                <div class="item-summary">极目新闻记者 王灿“车子燃油耗尽熄火，离加油站仅20多米却加不到油，不得不花钱叫拖车帮忙挪车。”10月6日，一名贵州游客发帖吐槽自己在贵黔高速黔西服务区的一次尴尬经历，引来众多网友议论。汽车离加油站仅20多米 （车主供图）10月7日，当事人黄先生告诉极目新闻记者，事情发生在10月3日晚上12点左右，他和朋友在贵阳游...</div>
+                <div class="item-meta">极目新闻 · 2026-10-07 16:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A0ABR700?scene=news-skill" target="_blank" rel="noopener">孙颖莎回应中国大满贯失利：处于发烧状态，近期首要任务是调理身体</a></div>
+                <div class="item-summary">10月7日晚，在WTT中国大满贯女单1/16决赛中，世界排名第一的孙颖莎以1比3不敌世界排名第101位的泰国选手帕拉南，爆出开赛以来最大冷门。赛后新闻发布会上，孙颖莎坦然面对失利，并表示对手发挥出色....</div>
+                <div class="item-meta">北青体育 · 2026-10-07 21:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007V041AQ00?scene=news-skill" target="_blank" rel="noopener">国庆档一电影太惊悚！孩子现场被吓哭，家长匆匆带离影厅，多地影院追加观影提示</a></div>
+                <div class="item-summary">《生化危机：爆发夜》太惊悚！孩子看电影被吓哭，家长匆匆带离影厅。多地影院追加观影提示：“未成年人谨慎选择观看。”</div>
+                <div class="item-meta">封面新闻 · 2026-10-07 11:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A01NYC00?scene=news-skill" target="_blank" rel="noopener">美国“龙”飞船载4名宇航员脱离空间站 启程返回地球</a></div>
+                <div class="item-summary">△俄罗斯宇航员安德烈·费佳耶夫、美国宇航员杰克·哈撒韦和杰茜卡·迈尔、欧洲航天局宇航员索菲·阿德诺（由左至右）搭载4名宇航员的美国太空探索技术公司“龙”飞船于美国东部时间7日脱离国际空间站，启程返回地球。据美国航空航天局介绍，“龙”飞船于美国东部时间7日8时05分（北京时间7日20时05分）脱离国际空间站，预...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 02:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A074NO00?scene=news-skill" target="_blank" rel="noopener">中方宣布：帕特鲁舍夫将访华</a></div>
+                <div class="item-summary">外交部网站10月7日消息，外交部发言人宣布：俄罗斯总统助理、海事委员会主席帕特鲁舍夫将于10月8日至13日访问中国，中共中央政治局委员、中央外办主任王毅将与其会谈交流。...</div>
+                <div class="item-meta">政事儿 · 2026-10-07 15:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A02H3P00?scene=news-skill" target="_blank" rel="noopener">山东临沂一动物园黑熊被园内装置“卡脖”后一动不动？园方回应：此熊经常“装死”，实则是在休息</a></div>
+                <div class="item-summary">近日，有网友发布视频称，在临沂宝山前野生动物园内看到一只熊被园内装置卡脖，一动不动，后向动物园方反映，动物园方称熊没有危险，其在“装死”，此前有多名游客反映过此类问题。10月7日，记者联系到当事人范女士及临沂宝山前野生动物园工作人员了解相关情况。范女士介绍，当日她们全家到临沂宝山前野生动物园游玩，参观...</div>
+                <div class="item-meta">潮新闻 · 2026-10-08 07:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007V0A13700?scene=news-skill" target="_blank" rel="noopener">武汉小伙结婚邀全国网友吃席：不用随礼带张嘴就行，130多名网友赶来，新郎临时加10桌</a></div>
+                <div class="item-summary">武汉小伙结婚邀全国网友吃席：不用随礼带张嘴就行。130多名网友赶来，新郎临时加10桌</div>
+                <div class="item-meta">九派新闻 · 2026-10-07 20:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A08GDB00?scene=news-skill" target="_blank" rel="noopener">就“东航空姐下跪”，广东一上市公司发声</a></div>
+                <div class="item-summary">近日，“东航空乘人员下跪道歉”事件广受关注，涉事乘客欧某某的身份引发公众讨论。其中，有人称，欧某某为广东万年青制药股份有限公司董事长欧先涛。10月7日，广东万年青制药股份有限公司发布《关于网络不实信息侵害公司及相关人员名誉的声明》称，该内容与事实严重不符，欧先涛先生及公司其他员工从未乘坐该航班。欧先涛...</div>
+                <div class="item-meta">长安街知事 · 2026-10-07 17:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261007A0A4HZ00?scene=news-skill" target="_blank" rel="noopener">连续地量，A股节后行情怎么走</a></div>
+                <div class="item-summary">A股休市的七天里，宏观消息面整体平静，境外市场尤其是美股的表现可圈可点。在美国9月非农就业仅新增2.9万人，美联储10月加息的市场定价概率压到约两成的背景下，纳斯达克综合指数连涨四个交易日并两度创下历史收盘新高；港股则在10月2日大跌2.60%后先扬后抑，假期末段再度回落，7日恒生指数收跌0.62%报2413.5点，A股休市期...</div>
+                <div class="item-meta">第一财经 · 2026-10-07 21:03</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-08 08:30</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
