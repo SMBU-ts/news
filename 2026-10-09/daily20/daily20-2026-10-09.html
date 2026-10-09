@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-09</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-09</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A0BYJ500?scene=news-skill" target="_blank" rel="noopener">焦点访谈丨跨越90年时空 伟大长征精神从未褪色</a></div>
+                <div class="item-summary">今年是红军长征胜利90周年。90年前，中国共产党领导中国工农红军战胜千难万险，付出巨大牺牲，完成了震撼世界的二万五千里长征，在绝境中蹚出了一条新生之路。这个国庆假期，很多人都来到中国人民革命军事博物馆，观看“伟大的远征——纪念中国工农红军长征胜利90周年主题展览”。从9月25日向社会公众开放至今，累计观展人...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 21:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A0BVAL00?scene=news-skill" target="_blank" rel="noopener">@2027年研考生！9日起考研网上预报名开始</a></div>
+                <div class="item-summary">2027年全国硕士研究生招生考试报名时间为2026年10月15日至10月24日（预报名时间为2026年10月9日至10月12日，相关工作安排由各省级教育招生考试机构确定并公布），每日9:00-22:00。报名流程详见研招网（https://yzst.chsi.com.cn/yzwb/index2.html）。(来源:人民日报微博)...</div>
+                <div class="item-meta">人民日报 · 2026-10-08 21:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A09GK500?scene=news-skill" target="_blank" rel="noopener">收藏！走进长征展览，一起重温“伟大远征”</a></div>
+                <div class="item-summary">资料来源：国家文物局网站《中央宣传部 中央网信办 退役军人事务部 国家文物局公布纪念中国工农红军长征胜利90周年主题陈列展览推介名单》、各大纪念场馆官方网站等制作：刘珂君 韩文鋆 范馨月 王威(来源:人民日报客户端)...</div>
+                <div class="item-meta">人民日报 · 2026-10-08 17:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A02HMS00?scene=news-skill" target="_blank" rel="noopener">中国科学家研制成功核光钟</a></div>
+                <div class="item-summary">据新华社北京电(记者魏梦佳)核光钟是利用激光精确驱动一种特殊放射性同位素“钍-229”实现其原子核内部的能级跃迁，并以这一核跃迁的频率作为基准的计时装置。中国科学家利用自主研制的148纳米连续波真空紫外激光以及掺钍-229氟化钙晶体，在国际上率先研制出核光钟并实现其稳定运行，将量子精密测量由电子跃迁拓展至原子核...</div>
+                <div class="item-meta">人民网 · 2026-10-09 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0555L00?scene=news-skill" target="_blank" rel="noopener">视频丨各地层林尽染换“秋装” 拍照打卡正当时</a></div>
+                <div class="item-summary">金秋时节，山东淄博、内蒙古兴安盟等地层林尽染，山林、草原换上了秋日盛装，吸引游客前来赏秋拍照。 山东淄博：红叶染山色 秋日好风光在山东淄博博山区的红叶柿岩景区，万亩红叶沿山峦绵延晕开，铺展成一幅壮阔的丹彩画卷，吸引众多游客登山打卡。游客 彭妮：今年红叶比去年红得要早一点，风景也挺好的，感觉每一年都有不...</div>
+                <div class="item-meta">央视新闻 · 2026-10-09 11:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/_B6Q5o7aptBDIFljY91yAA?mpshare=1&scene=1&srcid=1009S0o0uwSGO242LnRqgIqx&sharer_shareinfo=1b61370af74d23fd7a3f528562637535&sharer_shareinfo_first=7b2e914c2d484dbabcdc2ea8f0c8a1ff#rd&scene=news-skill" target="_blank" rel="noopener">净网专项行动 | 网传“成都一小区楼顶埋7岁男童”为谣言</a></div>
+                
+                <div class="item-meta">2026-10-09 12:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A04S6L00?scene=news-skill" target="_blank" rel="noopener">国家气候中心：超强厄尔尼诺已正式形成</a></div>
+                <div class="item-summary">据新华社消息，国家气候中心监测显示，2026年9月已正式形成一次超强厄尔尼诺事件。国家气候中心预计，未来三个月赤道中东太平洋海表温度将继续升高，在秋末冬初达到峰值，此次厄尔尼诺事件将成为有系统性监测以来最强厄尔尼诺事件。(记者刘诗平)编辑 李忆林子...</div>
+                <div class="item-meta">新京报 · 2026-10-09 11:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A049CU00?scene=news-skill" target="_blank" rel="noopener">国管住房公积金窗口正式落地雄安</a></div>
+                <div class="item-summary">今天（10月9日），中央国家机关住房资金管理中心住房公积金业务窗口在雄安新区住房公积金容东建行分理处正式设立，预计可服务5000多名疏解单位缴存职工。随着雄安新区疏解建设持续推进，辖区内众多中央驻区单位、疏解企业及职工存在大量国管公积金办理需求。以往相关业务需前往北京网点办理，跨城办事流程烦琐、成本较高，...</div>
+                <div class="item-meta">央视新闻 · 2026-10-09 10:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A055HV00?scene=news-skill" target="_blank" rel="noopener">唠“科”话丨流感季将至，流感疫苗如何打？</a></div>
+                <div class="item-summary">新华社北京10月9日电（记者侠克、李佳巍）进入10月，全国多地气温逐渐走低，昼夜温差加大，部分地区流感病毒活跃度上升，许多地方进入流感疫苗接种期。流感疫苗什么时候打？有哪些注意事项？记者采访了权威专....</div>
+                <div class="item-meta">北京青年报官网 · 2026-10-09 11:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A02ZRE00?scene=news-skill" target="_blank" rel="noopener">暴雨天躲进桥洞、涵洞或下穿隧道避雨，更安全？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-08 08:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A08FXI00?scene=news-skill" target="_blank" rel="noopener">打虎！张硕辅被查</a></div>
+                <div class="item-summary">中央纪委国家监委网站10月8日消息，广东省人大常委会党组成员、副主任张硕辅涉嫌严重违纪违法，目前正接受中央纪委国家监委纪律审查和监察调查。张硕辅（资料图）公开简历显示，张硕辅，男，汉族，1965年8月生，湖南长沙人，1988年6月参加工作，1984年6月入党，研究生学历，工学博士学位，高级工程师。他曾任广东省委常委、...</div>
+                <div class="item-meta">新京报 · 2026-10-08 16:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A0CJC000?scene=news-skill" target="_blank" rel="noopener">中国海警：正告菲方立即停止侵权挑衅和不实炒作</a></div>
+                <div class="item-summary">中国海警局新闻发言人姜略表示，10月8日，菲律宾海警4409号船赴仁爱礁附近海域，转运非法“坐滩”船只1名伤员。出于人道主义考虑，中方第一时间允许菲方采取小艇过驳方式转运伤员，中国海警依法依规处置，并提供必要便利。菲方有关言论罔顾事实、颠倒黑白，企图混淆视听。中国对包括仁爱礁在内的南沙群岛及其附近海域拥有无可争辩的主权。我们正告菲方立即停止侵权挑衅和不实炒作。（总台央视记者 国鹏） 2026...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 23:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A02PBT00?scene=news-skill" target="_blank" rel="noopener">“基辅进入生存应急模式”</a></div>
+                <div class="item-summary">央视新闻消息，当地时间10月8日，乌克兰能源部通报称，俄军袭击乌首都基辅供电电网设施，造成多处电网断电，基辅部分城区大范围停电，大量用户用电受影响，部分区域供电不稳。电力中断冲击城市公共交通，基辅地铁一度短暂停运，无轨电车等电动公交运行受限，城市通勤受到干扰。目前乌电力部门正抢修受损电网、恢复供电，全...</div>
+                <div class="item-meta">政事儿 · 2026-10-09 08:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A02PW800?scene=news-skill" target="_blank" rel="noopener">深圳市委、市政府决定，给予吴龙同志追记二等功</a></div>
+                <div class="item-summary">据深圳公安发布10月8日消息，近日，《中共深圳市委、深圳市人民政府关于给予吴龙同志追记二等功的决定》印发。吴龙，25岁，2022年参加公安工作，生前系深圳市公安局龙岗分局六约派出所案件队民警。2026年7月12日下午，吴龙同志带领辅警执行任务时，为保护群众安全，与持刀歹徒殊死搏斗，身负重伤，最终因失血过多，经抢救无...</div>
+                <div class="item-meta">长安街知事 · 2026-10-09 08:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A0BXK700?scene=news-skill" target="_blank" rel="noopener">这钱能花吗？女子在垃圾桶里捡到72张5元纸币，有折叠有染色，疑似被做成花束，耗时一个半小时拆开；银行、律师给出建议</a></div>
+                <div class="item-summary">10月7日，山东潍坊市民郑女士发布视频称：当天早晨扔垃圾时，在安丘市景芝镇一垃圾桶里捡到一袋疑似做花束后拆开的5元纸币。起初只看到一张5元人民币的一角，拿出来后是一个白色的塑料袋装着一包钱。一张钱上粘了两个胶带，缠了一根杆，做成类似花束的形状。郑女士带回家后，拆分整理了一个半小时。留下了72张纸币，一些染...</div>
+                <div class="item-meta">南国今报 · 2026-10-08 23:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A08LHF00?scene=news-skill" target="_blank" rel="noopener">视频丨平均54秒一趟车 国庆高铁织就流动消费图景</a></div>
+                <div class="item-summary">国庆假期结束，来自国铁集团的数据显示，七天假期，全国铁路累计发送旅客1.52亿人次，多项指标创历史新高。今年国庆假期，全国大部分地区天气晴好，旅游、探亲、休闲等出行需求旺盛，铁路客流保持高位运行。国庆假期首日，全国铁路旅客发送量达2520.4万人次，创单日旅客发送量历史新高，假期七天中，有六天单日客流超过200...</div>
+                <div class="item-meta">央视新闻 · 2026-10-08 16:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A03KV100?scene=news-skill" target="_blank" rel="noopener">杭州一小区儿童乐园区域发现捕兽夹，业主报警</a></div>
+                <div class="item-summary">近日，浙江省杭州市萧山区璞翠云集小区一名业主向记者反映，物业为捕捉流浪狗，在小区儿童乐园区域放置捕兽夹，他担心孩子误踩受伤。据该业主介绍，他于9月30日晚报警，涉事捕兽夹当晚已被物业收走。该业主称，捕兽夹最初由邻居发现，邻居用树枝触发机关后，将其移至隐蔽位置。9月30日晚，他从业主群得知此事，随后报警。记...</div>
+                <div class="item-meta">安徽商报 · 2026-10-09 09:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008A07Y0U00?scene=news-skill" target="_blank" rel="noopener">外媒称日方希望中方对高市早苗给予适当的尊重，外交部回应</a></div>
+                <div class="item-summary">10月8日，外交部发言人毛宁主持例行记者会。法新社记者提问，据报道，日本方面称，要求中国对其首相高市早苗给予适当的尊重。日方称，中国外交部在记者会上经常直接称呼高市早苗的名字，而没有增加任何的头衔。请问外交部对此有何评论？毛宁表示，中方已经多次阐明对当前中日关系的立场。来源：北京日报客户端记者：周经纬...</div>
+                <div class="item-meta">北京日报客户端 · 2026-10-08 15:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026100912600200?scene=news-skill" target="_blank" rel="noopener">《美人余》今晚开播</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261008V0BOCN00?scene=news-skill" target="_blank" rel="noopener">女子开了家迷你“养老院”，只收6个人，白天送来晚上接回去</a></div>
+                <div class="item-summary">一名女子在小区租房改造出迷你家庭式养老点，仅接收6位老人，主打日托模式，子女白天把老人送来接受照料、吃饭陪伴，晚上再接回家中。不同于传统大型养老院，这里规模小、氛围贴近家庭，方便子女随时探望，缓解家庭照护压力。这种新型家庭托老模式走红网络，也引发网友讨论，大家关注其服务质量、资质与安全保障等现实问题。</div>
+                <div class="item-meta">掌闻视讯 · 2026-10-08 20:55</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-09 13:07</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
