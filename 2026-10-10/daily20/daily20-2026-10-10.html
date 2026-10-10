@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-10</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-10</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A026IF00?scene=news-skill" target="_blank" rel="noopener">视频丨我国成功发射卫星互联网低轨27组卫星</a></div>
+                <div class="item-summary">今天（10月10日）3时27分，我国在海南商业航天发射场使用长征十二号运载火箭，成功将卫星互联网低轨27组卫星发射升空，卫星顺利进入预定轨道，发射任务获得圆满成功。（总台央视记者 崔霞 魏安） 2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-10-10 05:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A006AT00?scene=news-skill" target="_blank" rel="noopener">财政部：将实施更加积极的财政政策 加力扩大内需</a></div>
+                <div class="item-summary">财政部9日发布的2026年上半年中国财政政策执行情况报告显示，上半年，我国财政运行平稳向好，支出总体保持靠前发力，重点领域得到较好保障。下一步，将有力有效实施更加积极的财政政策，为实现“十五五”良好开局提供坚强保障。报告认为，上半年，我国财政运行平稳向好。我国经济坚韧前行、稳中有进，为财政平稳运行奠定基...</div>
+                <div class="item-meta">央广网 · 2026-10-10 00:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0ACXK00?scene=news-skill" target="_blank" rel="noopener">视频丨围绕五方面创新 我国出台19项举措推进新质生产力发展</a></div>
+                <div class="item-summary">今天，中共中央、国务院印发《关于发展新质生产力的意见》。《意见》围绕五方面创新，提出19项重点举措，为发展新质生产力确立了统一的思想和行动标尺。《意见》围绕科技创新、产业创新、发展方式创新、体制机制创新、人才工作机制创新五方面，提出19项重点举措，系统阐释了发展新质生产力的指导思想、方法路径和工作要求。《意见》提出，坚持“创新主导、改革为要、因地制宜、先立后破”。这是发展新质生产力的4条原则...</div>
+                <div class="item-meta">央视新闻 · 2026-10-09 18:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0B3Z600?scene=news-skill" target="_blank" rel="noopener">中欧贸易投资磋商机制第二次例会联合声明</a></div>
+                <div class="item-summary">2026年10月8—9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京举行中欧贸易投资磋商机制（以下简称机制）第二次例会。双方进行了务实、富有成效的讨论，并形成成果共识清单。双方重申，作为关键贸易伙伴，在世贸组织规则框架下，妥善处理双方分歧，致力于继续稳定双边经贸关系，并使其更加平衡。双方商定，将于2027年3月召开机制第三次例会，在此之前双方将保持密切沟通，包...</div>
+                <div class="item-meta">央视新闻 · 2026-10-09 19:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A02KNN00?scene=news-skill" target="_blank" rel="noopener">中小学春秋假，多地官宣！</a></div>
+                <div class="item-summary">秋高气爽，正是出游好时节。近日，多地陆续官宣中小学春秋假安排■ 广东10月9日，深圳市教育局发布全市中小学春秋假安排。深圳市全市义务教育阶段学校（含民办学校）统一实施春秋假，幼儿园参照执行。高中阶段学校根据实际情况自主确定。秋假时间为2026年11月17日（星期二）至11月20日（星期五）；春假时间为2027年4月1日...</div>
+                <div class="item-meta">央视新闻 · 2026-10-10 07:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A02ESH00?scene=news-skill" target="_blank" rel="noopener">视频丨机票降价、人少景美 节后错峰出游性价比满满</a></div>
+                <div class="item-summary">国庆假期结束，随着全国出行客流逐步回落，国内机票价格迎来明显下调。在浙江杭州，不少游客选择节后错峰出游，享受性价比更高的旅行体验。昨天上午十点，记者在杭州萧山国际机场T4航站楼内看到，不少老年旅客正在排队办理值机、安检手续，准备开启错峰出游。旅客 朱力红：应该大家上班了，所以我就选择这个时间出去。先武...</div>
+                <div class="item-meta">央视新闻 · 2026-10-10 07:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A02AE300?scene=news-skill" target="_blank" rel="noopener">我们离“数字分身”还有多远（唠“科”）</a></div>
+                <div class="item-summary">超 侠 电影《流浪地球2》里，科研人员将女儿的意识上传到量子计算机，让她以数字生命的形式获得新生。这一幕让无数观众动容，也让“数字分身”“数字生命”的概念不断走入大众视野。 科幻中早有设想，把人的意识复制一份封存在硬件里，让它替自己处理日程、管理生活，甚至在数字世界延续生命。从国产科幻片《错位》中诞生自...</div>
+                <div class="item-meta">人民网 · 2026-10-10 06:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A01OJP00?scene=news-skill" target="_blank" rel="noopener">新闻1+1丨超强厄尔尼诺已经形成 如何防备和应对？</a></div>
+                <div class="item-summary">国家气候中心监测显示，2026年9月，超强厄尔尼诺已形成。预计未来三个月，赤道中东太平洋海表温度还将继续升高，并在秋末冬初达到峰值。我们正在见证的，将会是1951年有系统监测以来最强的一次厄尔尼诺。究竟该怎样读懂这个罕见的气象信号？“超强”两个字到底意味着什么？又会带来什么影响？我们需要做好哪些防备和应对？...</div>
+                <div class="item-meta">央视新闻 · 2026-10-10 02:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0BBN200?scene=news-skill" target="_blank" rel="noopener">菲海警船转运非法“坐滩”船只伤员 中国海警依法提供人道主义帮助</a></div>
+                <div class="item-summary">10月8日早上7时许，菲律宾海警4409船非法闯入中国南沙群岛仁爱礁附近海域。中国海警船依法多次询问航行目的，菲方均未回复，并持续实施侵闯。在喊话警告无效的情况下，中国海警依法采取警示性水炮喷射等方式，实施有效管控。△中国海警执法力量依法跟监菲海警4409船△中国海警执法力量依法实施警示性水炮喷射在受到我海警力...</div>
+                <div class="item-meta">央视新闻 · 2026-10-09 19:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/-NK76mlxIn8Y5MkRrnENgQ?scene=news-skill" target="_blank" rel="noopener">护航求职季│西游“打工人”被骗，这次妖精不一般</a></div>
+                
+                <div class="item-meta">2026-10-09 17:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0D8K200?scene=news-skill" target="_blank" rel="noopener">河北沧州一女子花15元网购9斤蜜薯后申请仅退款，称有本事就过来拿，商家跨省驱车来回800公里连夜取回：最终只拿回3斤，就是为了出一口气</a></div>
+                <div class="item-summary">10月7日，河北省沧州市一名女子花15.31元网购9斤蜜薯后仅退款，商家从聊城驱车来回800公里连夜取回。商家左女士称自己店铺卖的是烟薯25，属于蜜薯的一个品种，顾客收到货后却称不是榴莲蜜薯，以假冒伪劣商品为由申请仅退款。左女士表示所售为山东烟薯25，并非榴莲蜜薯，沟通退货无果后，对方调侃有本事就过来拿，于是连夜驱...</div>
+                <div class="item-meta">大河报 · 2026-10-09 23:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0D8KD00?scene=news-skill" target="_blank" rel="noopener">武汉一男子钓到万元无人机，无视路人劝阻装袋离开，目击者：期间男子试图将无人机关机；机主：曾在桥下大喊未能拦截，已报警</a></div>
+                <div class="item-summary">10月8日17时许，湖北武汉一男子在杨泗港大桥“钓”到无人机，无视路人劝阻带着无人机匆匆离开。目击者称，当时桥下有水上飞人航拍，自己便用手机录像，没曾想拍下无人机被垂钓者收走的全过程，期间男子试图将无人机关机，大概10分钟左右离开现场。事后黄先生通过短视频联系上机主，并提供记录的画面便于机主寻找。无人机主...</div>
+                <div class="item-meta">大河报 · 2026-10-09 23:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0CHD600?scene=news-skill" target="_blank" rel="noopener">女子整租民宿后发现客厅内有监控，隐私画面被拍下；民宿回应：客厅为公共区域，已道歉并退还房费</a></div>
+                <div class="item-summary">10月1日，郭女士一行三人在福建平潭入住了一家三室一厅的民宿，订房信息为整租。但几个小时后，她发现客厅空调上放着一台亮着灯的监控， “入住前房东完全没告诉我有监控，而且我洗完澡没穿好衣服就经过了客厅，监控很可能拍到了我的隐私画面，我很害怕，当晚就退了房。事后我查看了监控视频，发现当时它确实对着客厅和厨房...</div>
+                <div class="item-meta">潮新闻 · 2026-10-09 23:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010V02C3400?scene=news-skill" target="_blank" rel="noopener">巴拿马发生7.6级强震：天花板掉落民众奔逃 大楼大桥震颤房屋成片倒塌</a></div>
+                <div class="item-summary">巴拿马发生7.6级强震：天花板掉落民众四散奔逃 大楼大桥震颤房屋成片倒塌</div>
+                <div class="item-meta">海客新闻 · 2026-10-10 06:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0421C00?scene=news-skill" target="_blank" rel="noopener">陈伟俊，受贿数额特别巨大</a></div>
+                <div class="item-summary">据新华社消息，记者10月9日从最高人民检察院获悉，新疆维吾尔自治区党委原常委、自治区政府原副主席陈伟俊涉嫌受贿一案，由国家监察委员会调查终结，移送检察机关审查起诉。最高人民检察院依法以涉嫌受贿罪对陈伟俊作出逮捕决定，并指定由安徽省滁州市人民检察院审查起诉。近日，滁州市人民检察院已向滁州市中级人民法院提...</div>
+                <div class="item-meta">长安街知事 · 2026-10-09 10:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009V05DQU00?scene=news-skill" target="_blank" rel="noopener">辽宁一工地里挖出10多吨钱，36种古钱堆成小山，网友：好家伙，按吨算也就咱了！</a></div>
+                <div class="item-summary">辽宁一工地里挖出10多吨钱，36种古钱堆成小山，网友：好家伙，按吨算也就咱了！</div>
+                <div class="item-meta">星视频 · 2026-10-09 11:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0CCRE00?scene=news-skill" target="_blank" rel="noopener">中秋国庆长假有人上门喂猫收入超2万：接单近200个，一天20多单，专家：老手吃香</a></div>
+                <div class="item-summary">中秋国庆“双节“假期，全民开启出游模式。对于很多养宠物的人，尤其是年轻人，愿意花钱请陌生人上门照顾猫狗，这项需求在长假期间集中爆发。假期结束后，各地全职兼职上门喂养的网友在社交平台分享讨论假期战绩，大部分人说赚几百几千，也有人13天连轴转，服务超百单收入过万，让大家羡慕不已。图/受访者提供。杭州律师兼职上门喂养，长假13天完成195单收入2.2万：主业耗精力，副业来“充电”杭州的黄女士告诉潇...</div>
+                <div class="item-meta">潇湘晨报 · 2026-10-09 23:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A00D1E00?scene=news-skill" target="_blank" rel="noopener">智利核心铜矿爆发罢工 全球铜供应再添变数</a></div>
+                <div class="item-summary">财联社10月10日讯（编辑 李莹）智利一座核心铜矿陷入停工风波，令本已高度紧张的全球铜供应再添变数。伦铜价格仍在历史高位附近徘徊，市场对供应缺口的担忧持续升温。据媒体当地时间10月7日报道，在政府主导的调解未能达成协议后，智利Centinela铜矿的Minera Esperanza和Distrito Centinela两个工会于当日上午8时开始罢工。...</div>
+                <div class="item-meta">财联社 · 2026-10-10 00:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A05FI600?scene=news-skill" target="_blank" rel="noopener">“床车大军”爆火！一家三口6天只花1600元，还有人6晚住宿费仅500元</a></div>
+                <div class="item-summary">放倒后排、铺上床垫，再打开显示屏播上一部电影，十分钟不到，普通家用车便可秒变“移动卧室”。国庆假期刚刚过去，网友纷纷在社交平台晒出“床车大军”的旅行账单：一家三口6天只花1600余元、6晚行程住宿费仅500元……从四川到福建，从甘南到青甘环线，近两年来，越来越多游客选择睡在车里，省下数千元住宿费。不少车企也...</div>
+                <div class="item-meta">新民晚报 · 2026-10-09 12:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A094KO00?scene=news-skill" target="_blank" rel="noopener">8亿人熬夜刷短剧，“短剧一哥”却还在亏钱</a></div>
+                <div class="item-summary">原创首发 | 金角财经（ID: F-Jinjiao) 作者 | 田羽 短剧有多让人上头，刷过的人大概都知道。本来只想看两分钟，等着主角翻身、反派倒霉，结果一集接一集，半个小时就过....</div>
+                <div class="item-meta">金角财经 · 2026-10-09 16:35</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-10 08:30</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
