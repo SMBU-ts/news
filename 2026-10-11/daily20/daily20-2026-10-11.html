@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-11</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-11</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261011A02MYM00?scene=news-skill" target="_blank" rel="noopener">目标占比35%！我国加速壮大技能劳动者队伍</a></div>
+                <div class="item-summary">10月10日，国新办“开局起步‘十五五’”系列主题发布会披露，今年1至9月，我国城镇新增就业1052万人，完成全年目标的87.7%，前8个月城镇调查失业率均值5.2%，整体就业形势保持稳定。“2个计划”+“5项行动”稳就业人社部表示，接下来将打出就业政策组合拳，实施高校毕业生等青年就业支持、灵活就业和新就业形态劳动者就业质量提升“2个计划”。同步开展“5项行动”，积极应对人工智能带来的就业变...</div>
+                <div class="item-meta">央视新闻 · 2026-10-11 05:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261011A02ZXA00?scene=news-skill" target="_blank" rel="noopener">视频丨9月我国共新开15条国际航空货运航线</a></div>
+                <div class="item-summary">记者今天（11日）从中国物流与采购联合会航空物流分会了解到，9月份全国共新开15条国际航空货运航线，每周往返航班量达到42个，我国国际航空货运网络加快织密。从航线布局看，这15条新航线包含亚洲航线9条、欧洲航线4条、北美洲航线2条。共有9家航空公司参与运营，其中8家为国内航司。承运货物以跨境电商、生鲜冷链及农产品...</div>
+                <div class="item-meta">央视新闻 · 2026-10-11 06:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A09DRS00?scene=news-skill" target="_blank" rel="noopener">前三季度全国城镇新增就业1052万人</a></div>
+                <div class="item-summary">新华社北京10月10日电（记者张晓洁、王聿昊）记者从国新办10月10日举行的“开局起步‘十五五’”系列主题新闻发布会上获悉，1至9月，全国城镇新增就业1052万人、完成全年目标任务的87.7%，前8个月城镇调查失业率均值为5.2%，就业形势总体稳定。 “接下来，我们将从稳岗扩容、服务提质、权益保障等方面综合施策。”人力资源...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-10 16:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261011A02TQW00?scene=news-skill" target="_blank" rel="noopener">视频丨东风-26夜间拉动！最新演练画面</a></div>
+                <div class="item-summary">驻守在祖国东南的火箭军某部官兵常年砺剑深山，守护大国长剑。节日期间，战备拉动警报骤然拉响，一场无预告、无预案的紧急战备拉动演练开始了。所有人员装备集结完毕后，分数个梯队夜间长距离转进。报告指挥员收到上级敌情通报十分钟后我作战区上空有雷达卫星过境明白各号注意，迅速组织隐蔽官兵搭设伪装、展开装备，有条不...</div>
+                <div class="item-meta">央视新闻 · 2026-10-11 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A09X7100?scene=news-skill" target="_blank" rel="noopener">江西摩托车高速路口被拦引争议 多方解读地方高速“禁摩”规定</a></div>
+                <div class="item-summary">央广网南昌10月10日消息（记者胡斐 郇康新）近日，江西赣州宁都一段“高速收费站工作人员持‘电锯’拦截摩托车骑手”的视频，引起广泛关注和讨论。当日，一辆摩托车进入宁都高速收费站时被工作人员拦截，现场有工作人员手持“电锯”要求骑手熄火停车。该事件迅速发酵，关于“摩托车能否进入高速公路”的话题引发大众讨论。...</div>
+                <div class="item-meta">央广网 · 2026-10-10 17:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A0A4OH00?scene=news-skill" target="_blank" rel="noopener">中央明确！发展新型研究型大学</a></div>
+                <div class="item-summary">高水平研究型大学在一体推进教育科技人才发展过程中发挥重要作用。 10月9日，中共中央、国务院印发《关于发展新质生产力的意见》（下称《意见》）。《意见》提到，以国家战略需求为导向，优化国家科研机构、高水平研究型大学、科技领军企业定位和布局。逐步建立激发创新活力、知识价值导向、管理规范有效、保障激励兼顾的高...</div>
+                <div class="item-meta">第一财经 · 2026-10-10 17:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A08BU700?scene=news-skill" target="_blank" rel="noopener">2两公蟹8元一只！节后螃蟹身价下跌</a></div>
+                <div class="item-summary">极目新闻记者 曹磊中秋、国庆双节假期过去以后的几天里，武汉螃蟹市场迎来明显的价格回落，不少中小规格螃蟹的价格跌到个位数，基本上8元就能买到一只2两至2两半的公蟹。这个秋天，市民在家就能轻松实现“螃蟹自由”。10月9日，记者来到汉口聚才路的露天菜市场，一家专营江苏螃蟹的摊位上有不少市民在挑选。“这两天螃蟹降...</div>
+                <div class="item-meta">极目新闻 · 2026-10-10 15:49</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A0BDYL00?scene=news-skill" target="_blank" rel="noopener">最新！全国各地最低工资标准公布</a></div>
+                <div class="item-summary">近日，人社部网站发布全国各省、自治区、直辖市最低工资标准情况（截至2026年10月1日）。在月最低工资标准方面，上海以2740元的标准居全国首位；在小时最低工资标准方面，北京以27.7元的标准居全国首位。...</div>
+                <div class="item-meta">央广网 · 2026-10-10 19:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A08ERG00?scene=news-skill" target="_blank" rel="noopener">10月需防范这几类传染病 中疾控发布健康提示</a></div>
+                <div class="item-summary">中国疾控中心提示，本月需重点关注新冠、流感等呼吸道传染病，登革热、基孔肯雅热、寨卡病毒病等蚊媒传染病，埃博拉病毒病，发热伴血小板减少综合征，猴痘；学校和托幼机构需要注意预防手足口病、水痘、诺如病毒胃肠炎、流感、新冠病毒感染等常见传染病。 新型冠状病毒感染、流感等呼吸道传染病当前我国新型冠状病毒感染疫情处于低水平流行，南方流感疫情有所上升。车站、机舱、景区、宴席等人群密集场所流感、新冠等呼吸道...</div>
+                <div class="item-meta">央视新闻 · 2026-10-10 15:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009A0AOPS00?scene=news-skill" target="_blank" rel="noopener">健康真知｜阿尔茨海默病一定会遗传？</a></div>
+                <div class="item-summary">“健康真知”栏目由科学辟谣与人民日报健康客户端共同打造，栏目聚焦常见疾病误区、流言、谣言，邀请公立三甲医院医生解析健康真相，助力疾病教育。目前，人民日报健康客户端查疾病已搭建1400+种疾病知识库，通过文字、视频、直播、问答等多媒体形式，给用户提供权威科学、通俗易懂的疾病防治科普知识，提供医学科普知识权...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-09 18:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A0ARVG00?scene=news-skill" target="_blank" rel="noopener">“最美逆行者”救护车司机工作13年，因拒转劳务派遣被辞退；医院拒不整改被罚，司机恢复工作必须签第三方</a></div>
+                <div class="item-summary">今年4月14日，华商报大风新闻报道了“曾获最美逆行者称号，河南一救护车司机工作13年因拒转劳务派遣被辞退；院方：系临时工，曾多次沟通”，引发关注。 10月10日，卢先生说，“尽管劳动监察部....</div>
+                <div class="item-meta">大风新闻 · 2026-10-10 19:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A0ANIY00?scene=news-skill" target="_blank" rel="noopener">两名中国男子国庆赴泰旅游失联，一名失联者的妻子接到电话被告知“我在里面很好”，家属：或被转至缅甸，大使馆称将督促警方依法办案</a></div>
+                <div class="item-summary">极目新闻记者 柳之萌10月8日，有网友在社交平台发帖求助，称两名中国男子于10月6日在泰国失联，疑似已被转至缅甸。10月10日，两名失联者的亲属宋先生向极目新闻记者讲述了事发经过。目前，家属已向泰国警方报警，并联系了中国驻泰国大使馆和中国驻缅甸大使馆。失联者家属发布的求助信息乘车照片的背景是树林家属发布的寻人...</div>
+                <div class="item-meta">极目新闻 · 2026-10-10 18:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261011A02U8T00?scene=news-skill" target="_blank" rel="noopener">视频丨沙特利雅得机场遭袭造成12人死亡309人受伤</a></div>
+                <div class="item-summary">沙特阿拉伯民航部门11日凌晨发布声明说，首都利雅得的国际机场10日遭袭造成12人死亡、309人受伤。声明说，死者包括4名沙特人、2名孟加拉国人，其余6人分别来自美国、埃及、约旦、叙利亚、巴勒斯坦和苏丹。当地时间10日，沙特阿拉伯民航总局发布声明称，当天下午，首都利雅得哈立德国王国际机场再次遭到袭击，造成多人受伤，目前伤亡情况仍在统计中。声明称，鉴于近期针对沙特民航设施的袭击持续发生，相关部门...</div>
+                <div class="item-meta">央视新闻 · 2026-10-11 05:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A0BBVZ00?scene=news-skill" target="_blank" rel="noopener">南京一男子805万元购两块汉代玉璧，鉴定实为现代仿品，代卖人因涉诈骗罪被诉，称曾花174万买同款玉璧，“如果是假的，就把家里房子扒了”</a></div>
+                <div class="item-summary">南京古玩商人韦某花费805万元从同行邱江（化名）手中购得两块号称汉代出廓玉璧，成交半年后，韦某发现买到的是现代仿制品，于是报警。作为玉璧代卖人的邱江被以诈骗罪提起公诉，公诉机关认为其知假售假虚构文物来历。邱江却对指控不认可，认为自己无罪，称不知道玉璧是赝品，并非主观故意欺骗。其辩护律师做无罪辩护，认为...</div>
+                <div class="item-meta">大河报 · 2026-10-10 19:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010V059V900?scene=news-skill" target="_blank" rel="noopener">女子街边38元买榴莲，摊主不让当场扒开，回家一开气笑了，网友：有土豆有年糕，就是没榴莲</a></div>
+                
+                <div class="item-meta">星视频 · 2026-10-10 12:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261011A0111I00?scene=news-skill" target="_blank" rel="noopener">中网女单决赛前瞻：郑钦文vs法网冠军安德列娃 谁将首夺中网冠军？</a></div>
+                <div class="item-summary">北京时间10月11日19点30，备受瞩目的中网女单决赛将打响，中国金花郑钦文迎战新科法网冠军米拉·安德列娃。两年前郑钦文曾经2-1逆转战胜米拉·安德列娃，如今两人均是生涯首次晋级中网女单决赛，郑钦文....</div>
+                <div class="item-meta">醉卧浮生 · 2026-10-11 01:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261011A02M7800?scene=news-skill" target="_blank" rel="noopener">勇士5年1.1亿美元续约波杰！ESPN评级为B-：合同年限拉低评分</a></div>
+                <div class="item-summary">北京时间10月11日，勇士和波杰姆斯基达成5年1.1亿美元的续约合同，随后ESPN给出了这笔签约的评级为B-。具体解析如下—— ESPN此前曾表示，波杰姆斯基有望入选下赛季的NBA百大球员....</div>
+                <div class="item-meta">罗说NBA · 2026-10-11 05:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A040Y000?scene=news-skill" target="_blank" rel="noopener">迈阿密会晤6小时，美欧乌谈出了啥</a></div>
+                <div class="item-summary">当地时间10月9日，美、欧、乌代表齐聚迈阿密，举行了六小时会谈。不过各方是否取得一致共识，目前仍不明朗。当天，美国总统特使威特科夫在社交平台X发文称，“今天，美国、E3（英法德）、欧盟委员会、乌克兰及北约的代表，在迈阿密会晤，就如何在冬季来临前缓和局势、结束俄乌战争并推动实现持久和平的潜在途径，进行了建设...</div>
+                <div class="item-meta">观察者网 · 2026-10-10 10:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261010A080WZ00?scene=news-skill" target="_blank" rel="noopener">“距加油站20多米求助灌油被拒”，加油站最新回应：可用油桶装油，两人值班非新员工</a></div>
+                <div class="item-summary">据新京报，10月10日，贵州黔西服务区加油站回应“车主距加油站20多米求助灌油被拒”事件，称按规定可以使用油桶加注散装燃油，目前正对事发具体情况开展内部核查，事发当日有两名人员值班，非新员工。10月3日，贵州一车主称，汽车在距加油站20多米处燃油耗尽，求助灌油被拒，无奈花费350元叫拖车。此前有媒体报道称，当日仅...</div>
+                <div class="item-meta">九派新闻 · 2026-10-10 15:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261009V08QAQ00?scene=news-skill" target="_blank" rel="noopener">男子连挖3天3夜山药，深近5米还没见底，这山药怕不是“成精”了？</a></div>
+                <div class="item-summary">男子连挖3天3夜山药，深近5米还没见底，这山药怕不是“成精”了？</div>
+                <div class="item-meta">星视频 · 2026-10-09 16:09</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-11 08:47</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
