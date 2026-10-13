@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-13</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-13</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261013A02LGR00?scene=news-skill" target="_blank" rel="noopener">视频丨全域出击！火箭军全流程实战演练 战力拉满</a></div>
+                <div class="item-summary">占领阵地、导弹起竖、精准发射、快打快撤……近日，两则关于火箭军的视频发布，展现了火箭军部队开展无预告、无预案的紧急战备拉动演练的情况，全方位呈现大国长剑随时能战、全域慑战的硬核实战能力。作为我国战略威慑的核心力量、国家安全的坚固基石，火箭军常年枕戈待旦。两场实打实的极限演练，从深山密林到戈壁荒原，从人员临战补位到高超声速导弹破防突击，全方位诠释了新时代火箭军的全域打击体系与实战底气。 无预告...</div>
+                <div class="item-meta">央视新闻 · 2026-10-13 06:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012V09EYB00?scene=news-skill" target="_blank" rel="noopener">欠缴社保，最高罚3倍！2026年11月1日起施行</a></div>
+                <div class="item-summary">欠缴社保，最高罚3倍！2026年11月1日起施行</div>
+                <div class="item-meta">抽屉视频 · 2026-10-12 17:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A02WEX00?scene=news-skill" target="_blank" rel="noopener">未来5年，卫生健康领域将迎这些发展！关键数字带你看</a></div>
+                <div class="item-summary">“十五五”开局起步之年，国务院印发‌《国民健康“十五五”规划》，为未来五年国民健康绘就“路线图”。从国民健康主要指标，到卫生健康服务体系现代化建设，一组数字带你了解未来五年重磅规划！ 民生保障更加完善科技创新、数字健康等新动能加速涌现锚定2035年，加速建设健康中国更好托举亿万人民稳稳的幸福与安康 总监制...</div>
+                <div class="item-meta">央视新闻 · 2026-10-12 08:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261013A02Q2F00?scene=news-skill" target="_blank" rel="noopener">视频丨硅谷要等几周，深圳只要一天！又一“中国造”全球爆单</a></div>
+                <div class="item-summary">近年来，广东深圳的机器人产品加速出海，科技优势正在加快转化为出口竞争力。深圳海关最新数据显示，今年前8个月，深圳税则单独列名的各类机器人合计出口同比激增12倍。 出海加速报关单上“机器人”越来越多深圳湾口岸的货运通道里，货柜车一辆接一辆驶入查验区。张俊城是一家国际物流代理公司的关务负责人，今年以来，他明显感受到一个变化——报关单上的“机器人”越来越多了。据他观察，目前每个月出口机器人的报关单...</div>
+                <div class="item-meta">央视新闻 · 2026-10-13 07:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A096H800?scene=news-skill" target="_blank" rel="noopener">中国国际商会：欧企将中国视为重要市场，近200家中企获欧企“想见”关注</a></div>
+                <div class="item-summary">【环球时报-环球网报道 记者 陈子帅】12日，《环球时报》记者从中国国际商会获悉，截至目前，已有超过100家欧洲企业报名参加第十九届中国—欧盟投资贸易科技合作洽谈会（简称“欧洽会”）。这一趋势显示，欧洲企业依然将中国视为重要市场，并持续致力于在华发掘机遇。作为欧盟成员国参与最多、欧方企业参与最广、中欧交流规...</div>
+                <div class="item-meta">环球网 · 2026-10-12 17:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261013A02R3Z00?scene=news-skill" target="_blank" rel="noopener">立人设、画大饼……拆解套路三步识破“假国安”骗局</a></div>
+                <div class="item-summary">记者从国家安全部了解到，由于国家安全机关履职具有特殊保密要求，部分群众对国家安全机关缺乏了解。工作发现，一些不法分子利用这一信息差，精心编造人设、冒充国安干警，大肆实施诈骗，扰乱正常社会秩序，侵害群众切身利益。结合两起典型案例以案释法，起底骗子套路，帮大家更好识破骗局，防止上当受骗。典型案例 案例一：谎称“国安领导”干预司法。谢某某编造“在国家安全机关工作多年”“深得领导器重”等谎言，虚构国...</div>
+                <div class="item-meta">央视新闻 · 2026-10-13 07:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261013A02RTU00?scene=news-skill" target="_blank" rel="noopener">增值税法施行后，文旅行业这些政策有变化</a></div>
+                <div class="item-summary">旅行社采购团餐能不能抵扣，景区免费开放日是否要缴税，索道、摆渡车收入适用哪类税目……今年增值税法及系列配套政策施行以来，文旅行业迎来新的政策变化，各地12366纳税缴费服务热线陆续收到一些来自文旅企业的政策咨询。针对普遍关心的问题，记者采访了业内专家。变化一：旅行社采购团餐，合规专票能抵扣过去，旅行社为...</div>
+                <div class="item-meta">新华网 · 2026-10-13 07:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://h5.news.qq.com/qqfile/tnewsh5/short-term/changzheng2026.html?disabletitlebar=1&from=xxx&scene=news-skill" target="_blank" rel="noopener">烽火长征路，邀你一起重返1934，踏上征途！</a></div>
+                
+                <div class="item-meta">2026-10-13 08:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261013A02SNH00?scene=news-skill" target="_blank" rel="noopener">认清网络金融营销这些坑</a></div>
+                <div class="item-summary">“保本高收益，稳赚不赔”“秒到账、低利率”……近年来，互联网逐渐成为金融产品营销的重要渠道，提高了金融服务效率和覆盖面，但部分平台也存在一些风险问题，比如进行虚假和误导宣传、营销行为涉嫌垄断和无序竞争、营销宣传内容违背社会公序良俗等。9月30日起，中国人民银行等8部门制定的《金融产品网络营销管理办法》（...</div>
+                <div class="item-meta">新华网 · 2026-10-13 07:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A0625K00?scene=news-skill" target="_blank" rel="noopener">脚后跟开裂是缺乏维生素或者胶原蛋白？</a></div>
+                <div class="item-summary">这种说法并不全面。版权图库图片，不授权转载脚后跟开裂可能由多种因素引起，除了缺乏维生素或胶原蛋白之外，还可能是以下原因：1. 环境因素：干燥的环境或气候条件可能导致皮肤失去水分，变得干燥和脆弱。2. 年龄：随着年龄的增长，皮肤自然失去弹性和水分，更容易出现干燥和开裂。3. 皮肤病：如湿疹、牛皮癣等皮肤病可能...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-12 13:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A0915U00?scene=news-skill" target="_blank" rel="noopener">上海一社区卫生院现“丁义珍式”窗口，老人半跪着挂号沟通，院方回应</a></div>
+                <div class="item-summary">近日，有上海市民通过社交平台发视频反映称，上海嘉定区江桥镇一社区卫生院挂号窗口设计过低，导致患者挂号时需要半蹲才能沟通，十分不便。因该窗口与热播影视剧《人民的名义》中的“丁义珍式”窗口颇为相似，引发....</div>
+                <div class="item-meta">大风新闻 · 2026-10-12 22:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A06HD800?scene=news-skill" target="_blank" rel="noopener">马杜罗最新表态</a></div>
+                <div class="item-summary">参考消息网10月12日报道 据拉美社10月11日报道，委内瑞拉总统尼古拉斯·马杜罗11日表示，他坚信，谎言与不公必将被战胜。报道说，马杜罗通过社交平台X账号发文称，他与妻子、议员西利娅·弗洛雷斯已在纽约监狱遭受不公正关押282天。10月滚滚向前，始终充盈着历史的力量，而这段历史，是“我们以无可辩驳的真理与不可抗拒的...</div>
+                <div class="item-meta">参考消息 · 2026-10-12 19:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A0AW8K00?scene=news-skill" target="_blank" rel="noopener">他被以色列禁止入境！网上吵翻，结局却反转……</a></div>
+                <div class="item-summary">北京时间10月12日凌晨，刚刚抵达以色列本·古里安国际机场的塞昆德・科尔马尼，突然被以方禁止入境。他的遭遇随即引起广泛的国际关注和争议。 那么，科尔马尼是谁呢？他为什么会被以色列禁止入境呢....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-10-12 23:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A09E4T00?scene=news-skill" target="_blank" rel="noopener">奇瑞汽车致歉</a></div>
+                <div class="item-summary">10月11日晚，奇瑞汽车股份有限公司发布关于马来西亚OMODA 5车辆问题的说明，称该车型可能存在后桥纵臂局部焊接位置焊接强度不足，已对受影响的8878辆OMODA 5车型启动召回。 并对给用户带来的不便，表示歉意。说明中称，近日，马来西亚发生一起2023款OMODA 5的车辆问题，未涉及人身伤害。奇瑞汽车高度重视，第一时间开展原因...</div>
+                <div class="item-meta">长安街知事 · 2026-10-12 23:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A08Q4Q00?scene=news-skill" target="_blank" rel="noopener">“选用100%狸花猫背部毛皮制作”，大量网友抵制！涉事女装网店道歉：立即下架，暂停生产</a></div>
+                <div class="item-summary">日前，女装店铺CHICYOU在其商品详情页显示，一款服饰使用了“猫毛皮”。 截图显示，该款服饰的花棕色面料成分标注为“100%狸花猫猫毛皮”，制作工艺介绍中还提到，“花棕色选用狸花猫背部毛....</div>
+                <div class="item-meta">南方都市报 · 2026-10-12 16:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A0BCYZ00?scene=news-skill" target="_blank" rel="noopener">山东一对新人结婚，66个拱门从新郎家摆到新娘家，绵延1.4公里，新郎：对妻子喜欢、重视，花费五六千元，村里帮忙充气供电</a></div>
+                <div class="item-summary">极目新闻记者 王鹏10月3日，山东菏泽曹县一对新人举办婚礼，新郎家门前摆放的充气拱门绵延了1.4公里，一直摆到了新娘家的视频引起热议。山东菏泽曹县一对新人结婚，现场摆了66个充气拱门（来源：受访者）10月12日，新郎陈先生告诉极目新闻记者，他和新娘是邻村的，拱门总数有66个，所有拱门都是租的，每个日租金80多元，总...</div>
+                <div class="item-meta">湖北头条 · 2026-10-12 22:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A0BJ5H00?scene=news-skill" target="_blank" rel="noopener">证监会最新部署</a></div>
+                <div class="item-summary">北交所下一步怎么走？证监会最新表态来了。10月12日，在2026金融街论坛年会新闻发布会上，证监会办公厅副主任王利表示，下一步证监会将按照“十五五”规划《纲要》部署，立足多层次资本市场建设整体格局，推动北交所、新三板一体化高质量发展，探索更加适配创新型中小企业的制度和实践，深化改革创新，丰富产品体系，强化功...</div>
+                <div class="item-meta">长安街知事 · 2026-10-12 23:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A05HLW00?scene=news-skill" target="_blank" rel="noopener">云南一老人替孙子尝“白桃饮料”后口腔食道灼烧，仔细一看竟是洁厕慕斯，被紧急送医洗胃：包装很像饮料，万幸没给孩子喝</a></div>
+                <div class="item-summary">近日，云南宾川县金牛镇一名老人因家中清洁剂瓶身与饮料相似，误将“白桃香氛洁厕慕斯”当成饮料尝了一口，随后出现口腔、咽喉麻涩及食道烧灼感。事发时，老人独自在家照看孙子。孩子从卫生间柜子里翻出一个粉色、印有水蜜桃图案的瓶子，以为是饮料想喝。老人因担心饮料过期，便想着先尝一口。没想到入口后感觉不对，戴上老花镜仔细查看才发现，瓶中装的是洁厕慕斯。家人得知后立即将老人送往宾川县人民医院急诊科，并带上涉...</div>
+                <div class="item-meta">红星新闻 · 2026-10-12 16:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A09YYW00?scene=news-skill" target="_blank" rel="noopener">女子使用智驾“离车泊入”功能倒车，过程中剐蹭上旁边一侧停放车辆，当事人：眼睁睁看它蹭上去，没办法让它立刻停下；律师发声</a></div>
+                <div class="item-summary">近日，济南新能源车主李女士向记者反映，她在一露天停车场使用车辆“离车泊入”功能时，车辆在自动倒库过程中一侧剐上旁边停放车辆，自己车辆的轮毂剐蹭严重，旁边车辆也留下明显伤痕。李女士回忆，当时车位不大，两侧停放的车又近，她像往常一样按下智驾系统里的“离车泊入”，准备下车让车辆自动完成最后一步。“我站定车外，隔着车身观望，车辆缓缓倒库，然后就蹭上了。”她说，“我只能眼睁睁看着它蹭上去，又没有办法让...</div>
+                <div class="item-meta">红星新闻 · 2026-10-12 19:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261012A0AUO300?scene=news-skill" target="_blank" rel="noopener">济南一七旬老人哭求“别拍卖我的养老房”，27.8万元借款背后有“隐形借款人”？</a></div>
+                <div class="item-summary">“乔法官，可不能拍卖我的养老房，我没有借钱，是另外一个小伙子借的钱……” 电话里，76岁的孔某声音急促。她担心，自己住了多年的房子，会因一笔27.8万元的借款面临被拍卖的风险....</div>
+                <div class="item-meta">新黄河 · 2026-10-12 20:19</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-13 08:30</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
