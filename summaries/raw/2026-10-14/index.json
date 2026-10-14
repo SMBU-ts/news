@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+    "title": "Google 发布 Gemini 4 Argon：面向复杂工程与科研任务的前沿模型",
+    "source": "Google Blog：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=Mzg3Mzg2MTg2NQ%3D%3D&mid=2247499456&idx=1&sn=03da7aed4dabbd4fca5c89ce88d4a90a",
+    "title": "面壁智能开源 MiniCPM-V 4.7，35B-A3B MoE 模型 3GB 内存端侧流畅运行",
+    "source": "公众号：面壁智能（MiniCPM）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+    "title": "Liquid AI 发布 LFM2.5-24B-A2B 端侧推理模型",
+    "source": "Liquid AI 模型与工程博客（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenRouter/status/2110044453977403412",
+    "title": "Google DeepMind 的 Gemini 4 Argon 上线 OpenRouter",
+    "source": "X：OpenRouter (@OpenRouter)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+    "title": "Apple 发布 7 英寸智能音箱 HomeView，售价 299 美元并搭载 Siri AI",
+    "source": "Apple：Newsroom（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates/",
+    "title": "NVIDIA 官宣 RTX Spark 软件生态就绪，10 月 16 日笔记本上市",
+    "source": "NVIDIA Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s?__biz=MzYzNDE5MDEwMQ%3D%3D&mid=2247489149&idx=1&sn=26d7fefe24bfb18efa4582467313b1eb",
+    "title": "千问发布AI眼镜N1/N1 Pro及首款AI耳夹式耳机并现货开售",
+    "source": "公众号：千问APP（阿里）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/",
+    "title": "Character.AI 成立五年后申请 Chapter 11 破产，部分资产以 2000 万美元出售给 Disney",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenAINewsroom/status/2110095403198849132",
+    "title": "OpenAI 办公室发现窃密录音装置，涉事员工被捕",
+    "source": "X：OpenAI Newsroom (@OpenAINewsroom)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/reach_vb/status/2110086935733833893",
+    "title": "XBOW 团队借助 OpenAI GPT-5.6 Sol 获 Google Chrome 25 万美元全链漏洞赏金",
+    "source": "X：Vaibhav Srivastav（OpenAI）(@reach_vb)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.anthropic.com/research/distillation-defenses",
+    "title": "Anthropic 强化针对蒸馏攻击的防御， reasoning token 提取量下降 10 到 100 倍",
+    "source": "Anthropic：Research（发表成果 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+    "title": "Anthropic 自研版本控制系统 Scion，五个月完成 monorepo 从 git 迁移",
+    "source": "Anthropic：Engineering（事故复盘 + 工程实践 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]
