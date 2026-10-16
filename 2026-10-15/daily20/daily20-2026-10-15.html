@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-15</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-15</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261015V02Q4X00?scene=news-skill" target="_blank" rel="noopener">杨利伟上太空已经23年了！50秒重温中国人首次从太空看地球珍贵影像</a></div>
+                <div class="item-summary">杨利伟上太空已经23年了！50秒重温中国人首次从太空看地球珍贵影像</div>
+                <div class="item-meta">海客新闻 · 2026-10-15 06:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261015A02BL500?scene=news-skill" target="_blank" rel="noopener">视频丨9分钟充好电！中国新能源车硬核实力横扫海外</a></div>
+                <div class="item-summary">2026年1至9月，我国整车出口820.5万辆，同比增长65.8%。中国新能源车已成为全球市场的焦点。 中国新能源车 世界瞩目今年8月，中国品牌仍拿下欧洲新车市场11.7%的份额，创历史新高。今年9月中国汽车出口‌105.3万辆‌，其中新能源车‌57.1万辆‌，同比增长1.6倍，这意味着每出口两辆中国车，就有一辆以上是新能源。英国广播...</div>
+                <div class="item-meta">央视新闻 · 2026-10-15 04:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A09BV700?scene=news-skill" target="_blank" rel="noopener">数说中国｜2026年前三季度我国外贸增势强劲</a></div>
+                <div class="item-summary">海关总署10月14日发布数据显示，2026年前三季度，我国货物贸易进出口39.94万亿元，同比增长18.8%，增长势头强劲，为全球经贸增长注入强大动能。 摄影：李紫恒 孟德龙 唐克 设计：赖思雨 编辑：林立平 李真 刘茜...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-14 16:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261015A026YE00?scene=news-skill" target="_blank" rel="noopener">中方呼吁打击海地武器贩运</a></div>
+                <div class="item-summary">新华社联合国10月14日电 中国常驻联合国副代表孙磊14日在安理会表决通过海地制裁授权延期决议后作解释性发言，呼吁从源头打击海地武器贩运。 孙磊表示，安理会针对海地黑帮的制裁机制是遏制黑帮暴力犯罪、改善海地安全局势的重要工具。在中方等安理会成员推动下，制裁机制不断发展完善，已形成较为全面的制度框架。但制裁机...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-15 04:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0CLFL00?scene=news-skill" target="_blank" rel="noopener">19岁全红婵正式回归跳水队！彻底击碎退役传闻</a></div>
+                <div class="item-summary">近日，19岁的跳水奥运冠军全红婵更新社交动态，晒出广东二沙训练基地的黄昏美景，正式官宣归队，宣告自己结束休整、全面回归训练体系。 过去一段时间，全红婵因为脚踝伤病进入长期的康复调整阶段，已....</div>
+                <div class="item-meta">念洲 · 2026-10-14 20:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261015A007J600?scene=news-skill" target="_blank" rel="noopener">喜讯！我国再添4处世界灌溉工程遗产</a></div>
+                <div class="item-summary">北京时间10月14日晚，在法国召开的国际灌排委员会第77届国际执行理事会会议上，2026年（第十三批）世界灌溉工程遗产名录正式公布，我国申报的河南沁河广利渠（五龙口）、甘肃讨赖河绿洲灌溉系统、江西上饶市广信黄沙渠、福建长泰龙津古陂灌溉工程全部成功入选。至此，我国世界灌溉工程遗产总数已达46项。沁河广利渠（五龙口）位于河南省西北部，于秦代初创，至今已有2200多年历史。自秦代开凿之后，历代持续...</div>
+                <div class="item-meta">人民日报 · 2026-10-15 00:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261015A02WMP00?scene=news-skill" target="_blank" rel="noopener">老年人也需要“数字防火墙”</a></div>
+                <div class="item-summary">微短剧理应成为丰富老年人精神文化生活的“一桌好菜”，绝不能异化为算计老人的一桌“鸿门宴”。近日，“老人为看短剧两年充值22万元”冲上热搜——新疆一名年近七旬的老人，2年内在多个短剧小程序累计充值4887笔，总额22.58万元。金额之巨，令人心惊。更该警惕的是，这并非老人爱看剧那么简单，而是一场瞄准银发族的精准围...</div>
+                <div class="item-meta">新华网 · 2026-10-15 07:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0CCOW00?scene=news-skill" target="_blank" rel="noopener">超强厄尔尼诺来了！今年冬天会更冷还是更暖？</a></div>
+                <div class="item-summary">国家气候中心10月9日通报，2026年9月已正式形成一次超强厄尔尼诺事件，海温暖中心位于赤道东太平洋。预计未来三个月，赤道中东太平洋海表温度还将继续升高，并在秋末冬初达到峰值。“厄尔尼诺来了，今年会是暖冬吗？是不是意味着冬天不会太冷？”这是大家很关心的问题，为此，我们邀请到了国家气候中心专家，推出系列解读，围绕冬季冷暖、全球大气环流、极端天气和降水分布等公众关心的问题，解读厄尔尼诺及其影响。...</div>
+                <div class="item-meta">央视网 · 2026-10-14 19:47</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261015A02SNI00?scene=news-skill" target="_blank" rel="noopener">减少重复填表、申报，以后办退休只需一张身份证</a></div>
+                <div class="item-summary">退休后第一个月能不能按时足额领到退休金？首先得看这件事： 10月10日，人社部宣布：将对临近退休人员全面推进“退休预服务”和“退休一件事”提速办，今后办退休只需一张身份证。这....</div>
+                <div class="item-meta">新黄河 · 2026-10-15 07:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/mOKPUBP5Et8RbFYY4leNQQ?color_scheme=light&scene=news-skill" target="_blank" rel="noopener">一张脸标价500块？小心“人脸授权”背后的陷阱</a></div>
+                
+                <div class="item-meta">2026-10-14 17:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0DU4E00?scene=news-skill" target="_blank" rel="noopener">32岁港中大女硕士从大厂辞职去大专教书，年薪25万元降至月薪数千元，本人回应</a></div>
+                <div class="item-summary">人大本科、港中文硕士，在北京媒体和大厂拿过20万元年薪，32岁这年，罗颖（化名）辞职回到老家合肥，考编上岸成了一所大专的老师，到手月薪数千元。她把自己的经历发到社交账号，评论两极分化，有人说“人大+港中文，去大专当老师，太可惜了”，也有人说“能进体制内找到一份稳定的工作已经很好了”。有人说她“浪费学历”...</div>
+                <div class="item-meta">封面新闻 · 2026-10-15 07:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0AFUK00?scene=news-skill" target="_blank" rel="noopener">一张“沉睡”30年的老存单，银行翻档逐页核验，一分不少兑付了</a></div>
+                <div class="item-summary">近日，一张“沉睡”30年的老存单，在柜台用了几分钟办完转存。70岁的魏大爷带着这张纸面发软、印章暗红的存单走进成都银行马鞍北路支行时，只是抱着“试一试”的心态——这张1996年的定期存单，金额壹万元，开具单位是早年的一家城市信用社。“机构都没了，这还能取不？”而他不知道的是，为了让这“试一试”不落空，成都银...</div>
+                <div class="item-meta">红星新闻 · 2026-10-14 19:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014V0BX6100?scene=news-skill" target="_blank" rel="noopener">天津一小学生被老师拽倒引热议，当地教育局：已努力照顾涉事学生</a></div>
+                <div class="item-summary">#媒体原创 天津一小学生被老师拽倒引发热议当地教育局：已努力照顾涉事学生 具体事件正在调查 近日，有网友发帖称，天津一...</div>
+                <div class="item-meta">荔枝新闻 · 2026-10-14 19:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0CEZQ00?scene=news-skill" target="_blank" rel="noopener">34岁女业主在小区内不幸坠井遇难，事发前井口铺有木板和假草皮，住户：入住一年多，不知这里有井</a></div>
+                <div class="item-summary">极目新闻记者 唐佳燕 见习记者 邓宝盈近日，广州一名居民向极目新闻记者反映，10月11日下午5时许，广州增城区石滩镇景业壹方天地小区内有一名女子不慎坠井身亡。12日，极目新闻记者从广州卓行物业管理有限公司物业管理工作人员和开发商处了解到，相关工作人员已到场处理。记者以居民身份反映情况，石滩镇政府平安法治办、应...</div>
+                <div class="item-meta">极目新闻 · 2026-10-14 19:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0DNIK00?scene=news-skill" target="_blank" rel="noopener">内塔尼亚胡，被起诉</a></div>
+                <div class="item-summary">CCTV国际时讯消息，据《以色列时报》等媒体10月14日报道，以色列国家安全局（辛贝特）前局长罗南·巴尔对总理内塔尼亚胡提起诽谤诉讼，索赔300万新谢克尔（约合670万人民币）。巴尔指控内塔尼亚胡散布不实言论，声称巴尔在2023年10月7日哈马斯发动大规模袭击前数小时便已知晓威胁，却故意对总理隐瞒。巴尔在起诉书中详细披...</div>
+                <div class="item-meta">政事儿 · 2026-10-14 21:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0DYHT00?scene=news-skill" target="_blank" rel="noopener">“北漂”白宫首秀，“惨不忍睹”</a></div>
+                <div class="item-summary">白宫新闻秘书一职空缺一个多月后，特朗普最近终于敲定了新人选。替他冲锋陷阵、充当“嘴替”的任务，如今落到了41岁的凯蒂·扎卡里亚肩上。但她交出的首份答卷，却有点“灾难”。 照稿宣读、紧张得磕....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-10-14 22:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0CRNO00?scene=news-skill" target="_blank" rel="noopener">浙江一处拆迁房，正紧急寻找继承人！房产所有人已死亡，妻子与女儿也已死亡</a></div>
+                <div class="item-summary">今天，一则寻找继承人的公告引起关注，发布公告的是绍兴市柯桥区福全街道兴联村村民委员会，因为被拆迁的房子联系不到继承人，所以公开征求信息，要求相关关系人在90天内提交继承手续材料。记者了解到，兴联村距离中国轻纺城5公里，2003年6月由帽山村、花近井村、王七墩村和禾丰村四个自然村合并而成，总面积2.24平方公里。因为鉴湖智创谷（兴联片区）项目建设需要，需要对兴联片区进行征收。根据方案，征收范围...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-10-14 21:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0DR8P00?scene=news-skill" target="_blank" rel="noopener">武网大爆冷！头号种子萨巴伦卡1-2惜败 挽救9赛点仍出局 创生涯最差</a></div>
+                <div class="item-summary">北京时间10月14日，2026年武网女单第二轮比赛，3届赛会冠军、头号种子萨巴伦卡对阵李吉妮。萨巴伦卡打满三盘比赛，具体比分是6-3、4-6和6-7（5），其中萨巴伦卡决胜盘在2-5落后情况下顽强反....</div>
+                <div class="item-meta">醉卧浮生 · 2026-10-14 21:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261015A02T8G00?scene=news-skill" target="_blank" rel="noopener">中央气象台发布暴雨蓝色预警 局地将有雷暴大风等强对流天气</a></div>
+                <div class="item-summary">中央气象台10月15日06时继续发布暴雨蓝色预警：预计，10月15日08时至16日08时，贵州东北部、湖南中北部、湖北东部、江西北部、安徽西南部等地部分地区有大雨，其中，湖南中北部、湖北东部、江西北部、安徽西南部等地部分地区有暴雨（50～90毫米）。上述部分地区伴有短时强降水（最大小时降雨量20～50毫米，局地可超过60毫米...</div>
+                <div class="item-meta">央视新闻 · 2026-10-15 07:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261014A0CGT500?scene=news-skill" target="_blank" rel="noopener">一岁男童误食毒鸡蛋中毒后邻居自首 警方以“投放危险物质”立案侦查</a></div>
+                <div class="item-summary">封面新闻记者 马嘉豪 今年8月15日，对贵阳市花溪区的颜先生一家来说，是一个噩梦般的日子。当天晚上，他年仅一岁的儿子周周（化名）突然浑身抽搐，被紧急送往医院后，血液中检出含有剧毒鼠药成分：....</div>
+                <div class="item-meta">封面新闻 · 2026-10-14 19:59</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-15 08:31</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
