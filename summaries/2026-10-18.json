@@ -1,0 +1,4 @@
+{
+ "https://api-docs.deepseek.com/zh-cn/updates/#deepseek-v41-flash-1017-更新": "DeepSeek 升级 V4.1 Flash 至 V4.1-Flash-1017，网页与 APP 同步，API 价格不变。基准提升：HLE 42.6、DeepSWE 77.0、Apex Bench 72.1，单任务成本由 3—4 元降至 1—2 元。模型基于自反馈强化学习，强化从零构建游戏、3D 项目的能力，并适配 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy。",
+ "https://api-docs.deepseek.com/zh-cn/updates/#开放自研搜索-api": "DeepSeek 开放自研搜索 API，新增 Search 与 Fetch 接口，均按 5 元/千次计费，仅对有效结果收费。Search 支持最长 128 字符查询、单次最多 50 条结果及 site:、lang: 运算符，返回标题、链接与摘要；Fetch 接收 URL，返回网页标题与 Markdown 正文。两接口各限 5 次/秒，引擎索引千亿级网页并过滤 SEO 作弊与低质 AIGC。"
+}

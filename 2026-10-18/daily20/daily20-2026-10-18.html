@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-18</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-18</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018V00DH800?scene=news-skill" target="_blank" rel="noopener">解放军4大登陆舰罕见实弹演练</a></div>
+                <div class="item-summary">解放军4大登陆舰罕见实弹演练（来源：央视网）</div>
+                <div class="item-meta">长安街知事 · 2026-10-18 07:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A02YUL00?scene=news-skill" target="_blank" rel="noopener">视频丨全球首个、业界首创！本周我国硬核成果密集上新</a></div>
+                <div class="item-summary">本周我国在航天、能源、交通等领域捷报频传从空间探索到工程建设硬核成果持续“上新”一箭十星朱雀二号改进型遥四运载火箭发射成功 10月14日19时40分，朱雀二号改进型遥四运载火箭在东风商业航天创新试验区发射升空，将搭载的国星宇航星时代-39、44～50星，光传-03、04星共10颗卫星顺利送入预定轨道，飞行试验任务取得圆满...</div>
+                <div class="item-meta">央视新闻 · 2026-10-18 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017V04TZO00?scene=news-skill" target="_blank" rel="noopener">AI时光机 带你穿越广交会70年</a></div>
+                <div class="item-summary">AI时光机 带你穿越广交会70年</div>
+                <div class="item-meta">央视网 · 2026-10-17 10:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A0377I00?scene=news-skill" target="_blank" rel="noopener">“中国只想造好产品，美国却在操弄局势”</a></div>
+                <div class="item-summary">【文/观察者网 于文凯】“中国更像是一个友好的市场。他们专注于自己的经济，只想生产好的产品，而美国却在操弄局势。他们入侵其他国家，让情况变得更糟。”据香港《南华早报》10月18日报道，哈萨克斯坦首都阿斯塔纳33岁的汽车经销商奥耶兹·卡布迪加利（Auyez Kabdygali）在谈及中美两国时，给出了上述评价。卡布迪加利正...</div>
+                <div class="item-meta">观察者网 · 2026-10-18 07:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017V0DL3G00?scene=news-skill" target="_blank" rel="noopener">路径公布！台风“蔷琵”已升级为强台风，奔向我国概率越来越大</a></div>
+                <div class="item-summary">路径公布！台风“蔷琵”已升级为强台风，奔向我国概率越来越大</div>
+                <div class="item-meta">浪潮新闻 · 2026-10-18 07:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A034YH00?scene=news-skill" target="_blank" rel="noopener">真相来了丨供暖季来了 “内部人员”代缴采暖费能打折是真的吗？</a></div>
+                <div class="item-summary">随着天气转冷，多地陆续进入供暖季。供暖缴费期间，您是否收到过类似“代缴有优惠”的“广告”？号称企业“内部人员”帮用户代缴采暖费，而且可以享受一定的费用优惠。这是真的吗？对此，北京供热企业提醒，如果有不法人员自称“内部人员”，打着“员工福利”“年底冲量”“系统测试”的幌子，诱导居民转账至个人账户，或扫描非官方二维码，就要当心了，谨防缴费中的诈骗陷阱。包括网上出现的一些低价代缴采暖费等信息，还有...</div>
+                <div class="item-meta">央视新闻 · 2026-10-18 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A02TWM00?scene=news-skill" target="_blank" rel="noopener">今起可享优惠！老年旅客买“敬”字票“折上折”</a></div>
+                <div class="item-summary">年满60周岁及以上老年人购买2026年10月18日（含）至12月30日（含）标注“敬”字车次的火车票将享受“折上折”票价优惠 适用于哪些人群？年满60周岁及以上且使用中华人民共和国居民身份证、港澳居民居住证、台湾居民居住证、港澳居民来往内地通行证、台湾居民来往大陆通行证、外国人永久居留身份证、临时身份证明及居民户口簿购票的老年人。 购票能优惠几折？符合上述条件的老年人，线上或线下购买开车时间...</div>
+                <div class="item-meta">央视新闻 · 2026-10-18 05:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A034YA00?scene=news-skill" target="_blank" rel="noopener">当心电动车“拧把即走” 下车时务必关闭电源</a></div>
+                <div class="item-summary">近日#骑电动车下车时务必关闭电源#话题登上社交媒体热搜为什么下车就需要关闭电动车电源？电动车的注意事项有哪些？一文带你了解 为何下车时务必关闭电动车电源？这些险情易发生近期多地出现电动车骑行者下车忘关电源导致车辆自行打转儿童误触引发冲撞等情况​失控原地打转 江苏徐州一男子忘记关闭电动车电源导致车辆自行...</div>
+                <div class="item-meta">央视新闻 · 2026-10-18 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A02VO400?scene=news-skill" target="_blank" rel="noopener">健康中国丨办公久坐族注意 两种情况下剧烈运动会伤心脏！</a></div>
+                <div class="item-summary">久坐族适合哪些运动？感冒初愈可以运动吗？一起来看医生建议⬇️长期不运动的办公久坐族，身体长期处于低负荷状态，突然剧烈运动，会加重心脏负担，引发心跳、血压剧烈波动。医生建议，久坐人群优先选择快走、拉伸这类低强度运动，循序渐进，保护心肺。医生表示，感冒或大病初愈的人群也不要马上剧烈运动。感冒后，我们的免...</div>
+                <div class="item-meta">央视新闻 · 2026-10-18 05:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0B09S00?scene=news-skill" target="_blank" rel="noopener">“漫”解谣言132期 | 白砂糖比果葡糖浆更健康？</a></div>
+                <div class="item-summary">用用事实说话，让真相发声。欢迎关注，留言举报！用...</div>
+                <div class="item-meta">济宁市全媒体辟谣平台 · 2026-10-16 17:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A00RVU00?scene=news-skill" target="_blank" rel="noopener">“被要求全脱光，长这么大没这么伤自尊”，京城大师赛道歉：系管理团队失职，已主动联系汤米家维致歉，已启动内部问责与全面整改</a></div>
+                <div class="item-summary">10月16日，“狼人杀选手汤米在京城大师赛中被举报作弊，被要求脱衣自证清白”“京城大师赛被曝裸检”等引发关注。今天（10月17日），@京城大师赛 发布致京城大师赛选手汤米家维及广大观众的公开道歉信：针对近日《京城大师赛》在处理赛事作弊举报过程中，对参赛选手采取不当身体检查方式一事，组委会在此向汤米家维先生致以最诚挚的歉意。维护赛事公平是我们的职责，但在此次事件中，由于赛事管理团队的失职，工作...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-10-18 08:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A0E0OD00?scene=news-skill" target="_blank" rel="noopener">DeepSeek的“崩后上新”：宕机5小时，掏出了更高效的大脑</a></div>
+                <div class="item-summary">10月15日早上8时许，准备开工的用户打开DeepSeek，却发现“服务器暂时不可用”，故障持续近5个小时。两天后，用户打开DeepSeek，看到的模型已经换成了新版本。10月17日，DeepSeek将V4.1 Flash更新为V4.1-Flash-1017，并开放自研搜索引擎的Search和Fetch API。这次的更新重点是在效率和成本上做出了优化。DeepSeek称，1017版...</div>
+                <div class="item-meta">财闻 · 2026-10-18 08:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A0DUZD00?scene=news-skill" target="_blank" rel="noopener">“生平没碰过女孩”，万米高空自杀式袭击揭秘</a></div>
+                <div class="item-summary">万米高空的巡航，原本是民航飞行员在飞行旅程中相对轻松的阶段。但就在这个时刻，副驾驶突然抄起斧头猛砍机长，随后推杆俯冲，飞机在30多秒内骤降5000米，尾翼的方向舵都因猛烈的操作而被撕扯掉落…… ....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-10-17 23:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A0CM6T00?scene=news-skill" target="_blank" rel="noopener">康佳，被谁打败了？</a></div>
+                <div class="item-summary">“000016”，是被誉为“彩电第一股”的康佳彩电的代码。遗憾的是，这个颇具历史感的股票代码，即将告别A股市场。10月16日，*ST康佳A发布的《关于收到股票终止上市决定的公告》称，公司收到深交所终止上市决定，股票将于5个交易日内摘牌。1992年上市的康佳，曾在2003年至2007年连续5年夺得中国彩电市场销量冠军。如今，这家...</div>
+                <div class="item-meta">政事儿 · 2026-10-17 23:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A0AMNK00?scene=news-skill" target="_blank" rel="noopener">成都一男子为儿子签学校回执单，因字迹稚嫩，和10岁儿子高度相似，被老师怀疑是孩子代签；妈妈：真是孩子爸爸签的，父子俩这字确实得练练</a></div>
+                <div class="item-summary">据先锋新闻10月17日消息，近日，四川成都。女子出差不在家，丈夫为儿子签学校回执单。结果因为字迹稚嫩，和10岁儿子高度相似，被老师怀疑是孩子代签。妈妈孙女士仔细核对后才确认：真是孩子爸爸签的。“觉得不好意思，父子俩这字确实得练练了。”网友：爸爸差点因为字丑失去家长身份。（来源：先锋新闻）更多精彩资讯请在应...</div>
+                <div class="item-meta">极目新闻 · 2026-10-18 08:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A03I8000?scene=news-skill" target="_blank" rel="noopener">演员吴越自曝遭AI假冒带货，凌晨发文怒斥：谁在利用AI替自己作恶，这位“花姐”你骗了多少人的钱请如数奉还，太恶劣</a></div>
+                <div class="item-summary">10月18日凌晨3时许，演员吴越发文：一觉醒来，谁在利用AI肆意抓人替自己作恶？这位“花姐”你骗了多少人的钱？请如数奉还！太恶劣！！！吴越上述微博提到的AI视频中，名为“花姐”的账号，发布以“明星同款、吴越推荐”为由头推荐一款护肤品，称吴越为了回馈老粉丝，居然联合厂家给大家送福利。音频为吴越的“声音”，“这个产品不是他们找我，是我找他们，因为我看了一些视频，哇我觉得有没有这么夸张啊，但是当我...</div>
+                <div class="item-meta">红星新闻 · 2026-10-18 08:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A037Q900?scene=news-skill" target="_blank" rel="noopener">放秋假不止多休几天</a></div>
+                <div class="item-summary">江苏省教育厅印发的《关于优化中小学假期安排的通知》，明确在全省范围内推行春秋假期制度。继今年春季学期首次试行春假后，秋季学期的假期安排多地现已确定。江苏各中小学可根据教学进度和季节特点，在10月至11月期间自主安排为期3天的秋假，与周末连休，秋假将再迎来5天小长假。春秋假是指在春季和秋季学期为中小学生增设...</div>
+                <div class="item-meta">经济日报 · 2026-10-18 07:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A03FGU00?scene=news-skill" target="_blank" rel="noopener">选情岌岌可危，白宫内部开始“互掐”</a></div>
+                <div class="item-summary">美国中期选举临近，共和党选情岌岌可危，白宫被曝内部开始上演“甩锅大战”。路透社10月17日报道，据三名了解内部讨论情况的知情人士透露，随着共和党为保住国会控制权而苦战，美国总统特朗普正将中期选举策略不奏效的责任归咎于高级幕僚和竞选顾问；幕僚之间也开始相互指责，试图撇清责任。报道称，大部分内部矛盾集中在特...</div>
+                <div class="item-meta">观察者网 · 2026-10-18 08:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A034K300?scene=news-skill" target="_blank" rel="noopener">视频丨俄国防部称大规模打击乌能源设施</a></div>
+                <div class="item-summary">当地时间17日凌晨，俄军对乌克兰多地为乌军方提供保障的相关企业和能源设施实施大规模打击。乌克兰总统泽连斯基当天表示，乌全国超过15处重要能源设施遭俄军袭击。俄国防部通报称，17日凌晨，俄军使用陆基、空基和海基高精度武器及攻击型无人机，对克里沃罗格、扎波罗热和日托米尔等地为乌军方提供相关保障的冶金企业、变压...</div>
+                <div class="item-meta">央视新闻 · 2026-10-18 06:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261018A03IQD00?scene=news-skill" target="_blank" rel="noopener">女子给孩子冲奶粉时，发现奶粉罐上覆满白色“粉末”，本以为是奶粉残留，细看竟是密密麻麻的小虫！网友科普：是粉螨，肉眼很难分辨</a></div>
+                <div class="item-summary">近日，广西贵港的辛女士准备给小朋友冲奶粉时，发现自家奶粉罐外壁布满了看似奶粉的白色粉末。凑近细看才发现，这些“粉末”竟是密密麻麻不停蠕动的粉螨，远看和奶粉几乎一模一样，难以分辨。该女士称，起初还以为是发霉，仔细查看后发现，不仅这个奶粉罐，其他奶粉罐和桌子上也全都是密密麻麻的粉螨。视频发布到网络后，引...</div>
+                <div class="item-meta">极目新闻 · 2026-10-18 08:29</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-18 11:01</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

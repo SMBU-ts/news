@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-17</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-17</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0CBN400?scene=news-skill" target="_blank" rel="noopener">视频丨铁路车次编排要“扩容”啦！新增X、T、K三个动车字头</a></div>
+                <div class="item-summary">时隔12年，全国铁路首次全面扩容车次编排，将分两批进行列车车次的字头字母、数字号段编排优化。铁路部门将持续打造层次清晰、辨识度高、便民友好的铁路运输产品体系。车次编排改了哪里？和我们的生活有哪些关联？为啥要改？主要是因为近些年，铁路网越织越密，列车越开越多。像五一、国庆这种出行高峰，G字头列车的车次资...</div>
+                <div class="item-meta">央视新闻 · 2026-10-16 19:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A033U700?scene=news-skill" target="_blank" rel="noopener">强对流天气蓝色预警发布！这些地区将有10级以上雷暴大风</a></div>
+                <div class="item-summary">中央气象台10月17日6时继续发布强对流天气蓝色预警：预计10月17日08时至18日08时，黄淮中部、江淮西部、江汉中东部、江南西部等地的部分地区将有8级以上雷暴大风或冰雹天气，其中，河南南部、湖北东部、湖南北部等地的部分地区将有10级以上雷暴大风，最大风力可达11级以上；东北地区南部、华北东部、黄淮、江淮、江汉、西南...</div>
+                <div class="item-meta">北京日报客户端 · 2026-10-17 07:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A09XF000?scene=news-skill" target="_blank" rel="noopener">千城百县看中国｜金风拂沃野 粮果共丰收</a></div>
+                <div class="item-summary">金秋时节，内蒙古、湖北、湖南等地秋收次第展开，沃野铺金、硕果垂枝，稻油轮作、特色果蔬种植、机械化采收等举措多点发力，南北大地绘就多彩丰收画卷。 湖南省衡阳市衡阳县西渡镇新桥村的中稻收割工作正有序推进。千亩稻田金黄遍野，成熟的中稻穗粒饱满、长势喜人。当地组织农机开展稻谷抢收，同步谋划秋冬农业生产，推动...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-16 16:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0DRB900?scene=news-skill" target="_blank" rel="noopener">技术出海迎来精准管控！40项关键技术拟纳入出口禁限目录，专家解读</a></div>
+                <div class="item-summary">红星资本局10月16日消息，商务部、科技部发布2026年第48号公告，就修订《中国禁止出口限制出口技术目录》（以下简称《目录》）公开征求意见，并对相关技术实施出口前登记的临时管理措施。近年来，人工智能、生物医药和光伏相关技术在敏感领域的应用不断拓展，各主要经济体均实施了不同程度的出口管控。商务部新闻发言人表示...</div>
+                <div class="item-meta">红星新闻 · 2026-10-17 07:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A02S5400?scene=news-skill" target="_blank" rel="noopener">异地求职必看！免费住宿等秋招福利手把手教你领取</a></div>
+                <div class="item-summary">当前正值秋招季想去异地求职的同学是不是在为住宿、交通预算发愁？你的求职大礼包上新啦！多地的青年驿站+铁路出行优惠承包你的异地求职食宿出行快来领取01解决“住宿焦虑”快来pick你的青年驿站 上海新增驿站点位30个、房源500间，后续将逐步扩容至5000间。可申请享受的单次免费住宿时长延长至15天，提前申请天数...</div>
+                <div class="item-meta">央视新闻 · 2026-10-17 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0EA6A00?scene=news-skill" target="_blank" rel="noopener">时空观察丨从医院到家庭 “上门护理”如何叫好又叫座?</a></div>
+                <div class="item-summary">现在我国已进入中度老龄化社会，我国的养老格局形成“9073”，就是90%左右的老年人都在居家养老，7%左右的老年人依托社区支持养老，3%的老年人入住机构养老。也就是说目前有超过2.7亿老人选择居家养老。近日国家卫生健康委、国家发展改革委联合印发《医疗康复护理扩容提升工程实施方案》，明确提出要规范发展网约护理、居家...</div>
+                <div class="item-meta">央视新闻 · 2026-10-16 22:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0EILV00?scene=news-skill" target="_blank" rel="noopener">三代人，为无名小红军守墓92年</a></div>
+                <div class="item-summary">‍‍‍‌‍‍‌1934年12月，中央红军突破湘江封锁线后西进，翻越长征途中第一座高山老山界（越城岭山脉）。3万余名将士在湘桂之交的大山里连夜行军，途经百步陡、雷公岩等险峻路段。越城岭部分位于湖南东安县境内，现存红军标语墙、无名红军墓等多处红色遗存。我怕离开后没人记得他了，我得守住这个承诺。——湖南永州东安...</div>
+                <div class="item-meta">人民日报 · 2026-10-16 23:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0EB1I00?scene=news-skill" target="_blank" rel="noopener">重庆辟谣“武隆一车辆从60米高架桥坠落”：网传信息不实，视频为剪辑拼接，警方正对造谣者展开调查</a></div>
+                <div class="item-summary">重庆辟谣官微10月16日消息，网传“武隆一车辆从60米高架桥坠落”系谣言。目前，警方正对造谣者展开调查。来源：潇湘晨报晨视频综合【来源：潇湘晨报】报料/民生求助通道：上晨视频APP搜索【晨意帮忙】一键解决难题，或拨打热线0731-85571188;如需商务合作请拨打电话0731-85572288。...</div>
+                <div class="item-meta">潇湘晨报 · 2026-10-16 23:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0D7J800?scene=news-skill" target="_blank" rel="noopener">“儿子一周没几节课，担心他每天懒觉睡到中午！”家长吐槽大学排课太少，有大一新生回应：到了大学，学习不仅仅靠上课</a></div>
+                <div class="item-summary">9月军训结束，经历过十一长假，杭州一位大学新生家长最近拿到了儿子的新学期课表，心里一惊：大学的课这么少么！新学期课表上，很多半天空着，有一天只有两节体育课。想想上半年紧张的高三冲刺期，“这也太少了吧！”“看了下儿子的课表，每天的课都没排满，有时一上午没课，感觉他会睡到吃午饭。”还有一位小王妈妈看到大...</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-10-16 22:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A04E0100?scene=news-skill" target="_blank" rel="noopener">地球是空心的？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-16 10:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0D6Q300?scene=news-skill" target="_blank" rel="noopener">热门餐厅一开门就有数百人取号排队，叫到号却没人进店，大量“空过”！上海警方一查：有人用AI抢了5万多个排队号，已刑拘！</a></div>
+                <div class="item-summary">热门寿司店刚开门，线上取号系统就显示前方已有数百人在排队，更反常的是，叫号屏上的号码不断滚动，对应的号码却无人响应进店用餐，大量号码在“空过”。这是怎么回事？ 今年9月，上海市公安局金山分....</div>
+                <div class="item-meta">扬眼 · 2026-10-16 23:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0E6JL00?scene=news-skill" target="_blank" rel="noopener">海南古树被警方扣押又遭转赠：时任林业局长被处理，赔偿申请已受理</a></div>
+                <div class="item-summary">封面新闻记者 周翼 今年7月，海南省白沙黎族自治县村民符彩轮向封面新闻记者投诉称，家中长辈种植的一棵百年重阳古树，在2010年遭盗挖后被警方扣押，移交县林业局后却在家人不知情的情况下，被赠....</div>
+                <div class="item-meta">封面新闻 · 2026-10-17 07:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A07KGQ00?scene=news-skill" target="_blank" rel="noopener">浙江一对新人结婚当天，婚房被烧了！老丈人十分后悔：突然接到电话，婚宴都顾不上直接往家赶</a></div>
+                <div class="item-summary">古人说 “洞房花烛”，红烛一亮，代表往后日子红红火火，长长久久。 谁能想到，这份寄托美好祝福的红烛，直接把婚房烧了！近日，浙江金华永康唐先镇潘先生家，正是女儿出嫁的大喜日子。亲朋好友热热闹闹地聚在一起，来村里大礼堂参加婚宴。潘先生正高兴着，突然接到邻居打来的紧急电话。“老潘！快回家！你家里冒烟着火了！”潘先生心里一紧，立刻往家里狂奔。 赶到家门口一看，三楼窗口滚滚浓烟往外冒。 好在潘先生十分...</div>
+                <div class="item-meta">红星新闻 · 2026-10-16 13:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A02V7D00?scene=news-skill" target="_blank" rel="noopener">上任5天，白宫发言人离职</a></div>
+                <div class="item-summary">据《华盛顿邮报》10月17日报道，两名白宫官员周五表示，新任白宫新闻秘书凯蒂·扎卡里亚（Katie Zacharia）上任仅五天便已离职，结束了短暂的任期。她上任之际，白宫西翼正陷入内部争斗，选民对共和党的不满情绪也在加剧，而距离中期选举仅剩数周。周五，在美国总统特朗普公开表示扎卡里亚应该考虑离职后仅几分钟，她离职的...</div>
+                <div class="item-meta">观察者网 · 2026-10-17 06:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A03AJY00?scene=news-skill" target="_blank" rel="noopener">“蔷琵”已加强为台风级，最新路径</a></div>
+                <div class="item-summary">据中央气象台消息，今年第30号台风“蔷琵”已于今天（17日）凌晨由强热带风暴级加强为台风级。今天早上5时，其中心位于距离关岛塞班东南方向约530公里的海面上，即北纬12.2度，东经149.5度。中心附近最大风力12级（35米/秒），中心最低气压为970百帕，七级风圈半径200~300公里，十级风圈半径90~100公里。预计，“蔷琵”将以...</div>
+                <div class="item-meta">央视新闻 · 2026-10-17 08:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261017A02Z4G00?scene=news-skill" target="_blank" rel="noopener">普京：继续打击乌军工企业</a></div>
+                <div class="item-summary">新华社莫斯科10月16日电（记者耿辉凰）俄罗斯总统普京16日表示，作为对乌克兰当局袭击俄工业企业和燃料能源综合体企业的回应，俄武装力量继续打击乌军工综合体企业以及相关设施。 俄总统网站16日发布消息称，普京当天视察俄联合部队集群一处辅助指挥所，与俄军总参谋部负责人及各部队指挥员就特别军事行动区域当前局势和近...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-17 06:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0DICD00?scene=news-skill" target="_blank" rel="noopener">2026年中国百强城市排行榜：京沪稳居前两位，吉安、孝感首次入围</a></div>
+                <div class="item-summary">中新网上海10月16日电 (记者 缪璐)2026年中国百强城市排行榜发布会16日在上海举办。这是华顿经济研究院自2015年以来连续第12年编制年度“中国百强城市排行榜”。榜单显示，北京、上海依旧稳居前两位，吉安、孝感首次入围。10月16日，2026年中国百强城市排行榜发布会在上海发布。(主办方供图) 榜单以上年度GDP(国内生产总值...</div>
+                <div class="item-meta">中国新闻网 · 2026-10-16 21:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0929A00?scene=news-skill" target="_blank" rel="noopener">尾号“8899999”手机号拍卖以28万余元成交，运营商客服：过户后需预存4万元话费，每月最低消费1000元，协议期20年</a></div>
+                <div class="item-summary">极目新闻记者 王鹏10月16日，极目新闻记者从阿里司法拍卖平台获悉，“15**8899999”手机号使用权以15.2万元的价格起拍，最终以282720元的价格成交。用户刘某于10月16日10时39分左右在公开竞价中，以最高应价胜出。联通客服工作人员告诉极目新闻记者，按照现行靓号协议，尾号“8899999”的手机号需要机主预存话费4万元，月最...</div>
+                <div class="item-meta">极目新闻 · 2026-10-16 16:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A07DKV00?scene=news-skill" target="_blank" rel="noopener">中介诱导重病老人三折出售上海房产，女儿得知后紧急回国</a></div>
+                <div class="item-summary">近日，虹口区人民法院审理了一起因老年人低价卖房引发的房屋买卖合同纠纷。张女士与李先生是一对年近八旬的老夫妻，李先生多年前即患有阿尔兹海默症，持有残疾证，因二人女儿李女士常年在国外，李先生日常由张女士照顾。2025年，张女士身患恶性肿瘤后卧病在床，只得由李先生照料。从事房产中介工作的何某、金某等人获知该情...</div>
+                <div class="item-meta">上观新闻 · 2026-10-16 13:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261016A0D4UX00?scene=news-skill" target="_blank" rel="noopener">三部门：同意京津冀等5个城市群开展氢能综合应用试点工作</a></div>
+                <div class="item-summary">工业和信息化部、财政部、国家发展改革委发布《关于同意京津冀等5个城市群开展氢能综合应用试点工作的通知》，原则同意京津冀、大湾区、东北（含蒙东）—长三角、新疆—成渝地区双城经济圈、黄河几字弯—中原等5个城市群试点工作方案，开展氢能综合应用试点工作，试点为期4年。工业和信息化部 财政部 国家发展改革委关于同...</div>
+                <div class="item-meta">界面新闻 · 2026-10-16 20:42</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-17 08:33</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

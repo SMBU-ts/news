@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://api-docs.deepseek.com/zh-cn/updates/#deepseek-v41-flash-1017-更新",
+    "title": "DeepSeek-V4.1-Flash-1017 发布，多基准成绩提升且 API 价格不变",
+    "source": "DeepSeek：API 更新日志",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://api-docs.deepseek.com/zh-cn/updates/#开放自研搜索-api",
+    "title": "DeepSeek 开放自研搜索 API",
+    "source": "DeepSeek：API 更新日志",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  }
+]
