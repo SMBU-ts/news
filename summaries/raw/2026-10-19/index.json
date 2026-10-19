@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://the-decoder.com/anthropic-has-nearly-stopped-hiring-junior-staff-because-ai-agents-now-work-six-times-as-many-hours/",
+    "title": "Anthropic 内部研究显示初级技术岗位占比下降，AI Agent 工时达员工六倍",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/",
+    "title": "德国两家法院先后裁定 Google 须为其 AI Overview 内容负责",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://browser-use.com/posts/browser-agents",
+    "title": "Browser Use 讲解浏览器智能体的工作原理与使用时机",
+    "source": "Browser Use",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  }
+]
