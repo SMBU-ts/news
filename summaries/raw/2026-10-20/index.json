@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://www.minimax.io/blog/minimax-m31f",
+    "title": "MiniMax 发布 M3.1 Flash，推理提速近三倍、用量成本降低 70%",
+    "source": "MiniMax：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://github.com/inclusionAI/Ming-3.0-tts",
+    "title": "蚂蚁 inclusionAI 开源 Ming-3.0-tts 语音合成模型",
+    "source": "蚂蚁 inclusionAI：GitHub 新仓库",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/low-resource-programming-languages",
+    "title": "OpenAI 发布 MultiLangBench 与 COBOL 迁移评测，GPT-6 系列大幅提升低资源编程语言能力",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/fal/status/2112251022047412492",
+    "title": "fal 联合 bfl_ai 发布后训练视频模型 FLUX 3 Max",
+    "source": "X：fal (@fal)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/OpenRouter/status/2112225779782398131",
+    "title": "Inception 扩散模型 Mercury 3 上线 OpenRouter",
+    "source": "X：OpenRouter (@OpenRouter)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/",
+    "title": "AWS 发布 TorchNeuron：Trainium 的原生 PyTorch 后端",
+    "source": "PyTorch：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.youtube.com/shorts/_Ui4ZkYm4ho",
+    "title": "Claude 推出 Dashboards 和 Motion 两款新工具并转正 Docs、Slides、Design",
+    "source": "Claude：YouTube（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://madrobot.blog/2026/10/19/us-bans-deepseek-federal-agencies-dhs-order-remove-third-party/",
+    "title": "美国国土安全部下令所有联邦文职机构移除 DeepSeek 及基于其开发的产品",
+    "source": "Hacker News：AI 热帖",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+    "title": "黑客用 AI 智能体入侵 John Deere、SharkNinja 等超 100 家网站",
+    "source": "The Verge：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/",
+    "title": "Meta 详解 Prometheus 吉瓦级超集群：一期已完成并用于训练 Muse 模型",
+    "source": "Meta Engineering Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
+    "title": "Meta 详解 Thin Orchestrator 模式：让路由少干活提升 AI 智能体可靠性",
+    "source": "Meta Engineering Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.n8n.io/n8n-nvidia-dgx-spark/",
+    "title": "n8n 教程：在 NVIDIA DGX Spark 上离线运行全套 AI 工作流",
+    "source": "n8n Blog",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 2
+  }
+]

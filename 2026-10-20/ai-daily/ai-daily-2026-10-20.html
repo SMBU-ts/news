@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-10-20</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 10 月 20 日 · 星期二</h1>
+      <div class="sub">共 12 条 · 生成于 北京时间 2026 年 10 月 20 日 08:00 · 数据覆盖 2026-10-19 ~ 2026-10-20</div>
+      <div class="stats">
+        <div class="stat"><div class="n">12</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">3</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">2</div><div class="l">行业动态</div></div><div class="stat"><div class="n">0</div><div class="l">论文研究</div></div><div class="stat"><div class="n">3</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 4</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 3</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 2</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 0</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 3</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">4</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">3</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">2</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">0</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">3</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">MiniMax：Blog（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.minimax.io/blog/minimax-m31f" target="_blank" rel="noopener noreferrer">MiniMax 发布 M3.1 Flash，推理提速近三倍、用量成本降低 70%</a>
+          </h3>
+          <p class="card-sum">MiniMax 发布 MiniMax M3.1 Flash，匿名模型 Space Bunny 是其早期版本，曾处理超过…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.minimax.io/blog/minimax-m31f" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>MiniMax 10 月 19 日发布 M3.1 Flash，此前匿名运行的 Space Bunny 处理超 200 万亿 token。官方称在线推理提速近三倍，智能体任务用量成本降低 70%。DeepSWE v1.1 达 73.7%，CyberGym 82%，Agents&#x27; Last Exam 提升 29.6 分，两项居国产模型首位。定价每百万 token 输入 0.15、输出 0.60 美元。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">蚂蚁 inclusionAI：GitHub 新仓库</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://github.com/inclusionAI/Ming-3.0-tts" target="_blank" rel="noopener noreferrer">蚂蚁 inclusionAI 开源 Ming-3.0-tts 语音合成模型</a>
+          </h3>
+          <p class="card-sum">蚂蚁 inclusionAI 在 GitHub 发布 Ming-3.0-tts，包含 0.5b dense 和基于 L…</p>
+          <div class="card-actions">
+            <a class="read" href="https://github.com/inclusionAI/Ming-3.0-tts" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>蚂蚁 inclusionAI 在 GitHub 开源 Ming-3.0-tts，含 0.5B 稠密模型与基于 Ling V3 的 tiny（总参 7.9B、激活 1.3B），MIT 协议。Artificial Analysis 10 月语音榜中，Controlled Voice 以 1069 Elo 居开源第一、总榜第 13，发音稳健性 93.2% 全场第一。支持中英德西法韩日等多语种。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">3</span>
+            <span class="chip" style="--c:#3b82f6">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/low-resource-programming-languages" target="_blank" rel="noopener noreferrer">OpenAI 发布 MultiLangBench 与 COBOL 迁移评测，GPT-6 系列大幅提升低资源编程语言能力</a>
+          </h3>
+          <p class="card-sum">OpenAI 宣布其最新模型在 COBOL、Fortran、Visual Basic 等低资源编程语言上的构建与迁移能…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/low-resource-programming-languages" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>OpenAI 10 月 19 日开源 MultiLangBench，让模型用 20 种语言各从零写一个兼容 SQLite 的数据库引擎。GPT-6 Astra 平均通过率 87.4%（前代 26.8%），COBOL 由 10.9% 升至 72.1%，19 种语言超 83%。另一项 COBOL 迁移评测要求输出逐字节一致，GPT-6.1 Sol 低推理档 86.6%、高推理档 97.9%。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">4</span>
+            <span class="chip" style="--c:#3b82f6">X：fal (@fal)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/fal/status/2112251022047412492" target="_blank" rel="noopener noreferrer">fal 联合 bfl_ai 发布后训练视频模型 FLUX 3 Max</a>
+          </h3>
+          <p class="card-sum">fal 发布与 @bfl_ai 合作的最新后训练视频模型 FLUX 3 Max，在第三方 image-to-video…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/fal/status/2112251022047412492" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>fal Research 与 Black Forest Labs 合作，在 FLUX 3 上后训练推出视频模型 FLUX 3 Max。10 秒 720p 视频约 12 秒生成，较原版 126 秒提速十倍以上，在 Artificial Analysis 图生视频初步评测中以约 1139 Elo 并列第一。提供文生视频、图生视频与关键帧端点，11 月 7 日前五折，720p 每秒 0.0425 美元。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">X：OpenRouter (@OpenRouter)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/OpenRouter/status/2112225779782398131" target="_blank" rel="noopener noreferrer">Inception 扩散模型 Mercury 3 上线 OpenRouter</a>
+          </h3>
+          <p class="card-sum">Inception 的扩散模型 Mercury 3 上线 OpenRouter，生成速度超 1,000 tok/s，支…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/OpenRouter/status/2112225779782398131" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>Inception 10 月 19 日发布扩散模型 Mercury 3，上线 OpenRouter。实测 1068 tok/s，上下文由 26 万扩至 100 万 token。其称在 IFBench、GPQA Diamond、SWE-Bench Atlas 上超过 GPT-6 Luna 与 Haiku 5.5。标价 $0.20/$0.70 每百万 token，上线五折至 $0.10/$0.35。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">6</span>
+            <span class="chip" style="--c:#10b981">PyTorch：Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/" target="_blank" rel="noopener noreferrer">AWS 发布 TorchNeuron：Trainium 的原生 PyTorch 后端</a>
+          </h3>
+          <p class="card-sum">AWS 发布 TorchNeuron，一个面向 AWS Trainium 的开源原生 PyTorch 后端，将于 10…</p>
+          <div class="card-actions">
+            <a class="read" href="https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>AWS 开源 TorchNeuron，面向 Trainium 的原生 PyTorch 后端，10 月 20 日以 Apache 2.0 开放公开 Beta。它基于 PrivateUse1 与 torch.accelerator 扩展点，支持 eager 执行、torch.compile 与 NKI 自定义内核，覆盖 Trainium2 与 3；现有代码改为 .to(&#x27;neuron&#x27;) 即可迁移。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">7</span>
+            <span class="chip" style="--c:#10b981">Claude：YouTube（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.youtube.com/shorts/_Ui4ZkYm4ho" target="_blank" rel="noopener noreferrer">Claude 推出 Dashboards 和 Motion 两款新工具并转正 Docs、Slides、Design</a>
+          </h3>
+          <p class="card-sum">Claude 宣布 Dashboards 和 Motion 进入 beta。Dashboards 可连接数据平台或 C…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.youtube.com/shorts/_Ui4ZkYm4ho" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>Anthropic 10 月 8 日为 Claude 上线两款 beta。Dashboards 可连接 BigQuery、Snowflake、Salesforce 等源，用自然语言生成自动刷新的实时看板，每个数字显示底层查询。Motion 把文字、图表与图片变成动画讲解短片，以代码方式生成、可改后导出 MP4，限 Team 与 Enterprise。Docs、Slides、Design 同时转正。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">8</span>
+            <span class="chip" style="--c:#f59e0b">Hacker News：AI 热帖</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://madrobot.blog/2026/10/19/us-bans-deepseek-federal-agencies-dhs-order-remove-third-party/" target="_blank" rel="noopener noreferrer">美国国土安全部下令所有联邦文职机构移除 DeepSeek 及基于其开发的产品</a>
+          </h3>
+          <p class="card-sum">美国国土安全部依据 2018 年供应链法发布 2026-01 号命令，要求所有联邦文职机构立即停止采购 DeepSee…</p>
+          <div class="card-actions">
+            <a class="read" href="https://madrobot.blog/2026/10/19/us-bans-deepseek-federal-agencies-dhs-order-remove-third-party/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>美国国土安全部依据 2018 年供应链法签发 2026-01 号命令，由部长 Markwayne Mullin 于 7 月 24 日签署，直至本周才公开，10 月 20 日刊登联邦公报，案卷号 DHS-2026-0628。命令要求所有联邦文职机构立即停止采购杭州深度求索及其关联方产品，并从 IT 系统移除 DeepSeek 及使用其实现的第三方产品与服务。命令不涵盖军事与情报系统。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">9</span>
+            <span class="chip" style="--c:#f59e0b">The Verge：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins" target="_blank" rel="noopener noreferrer">黑客用 AI 智能体入侵 John Deere、SharkNinja 等超 100 家网站</a>
+          </h3>
+          <p class="card-sum">AI 安全公司 Norforge 发现一名黑客用开源 AI 平台 Cairn 编排的智能体入侵了超过 100 个网站，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>AI 安全公司 Norforge 通过暴露在外的开源平台 Cairn 实例，发现一名黑客用智能体入侵超过 100 个网站，路透称受害方包括 John Deere、SharkNinja 与 Cummins。该攻击者用不足 100 个汉字列出首选入侵战术，单次得手约需 23 小时。Norforge 另发现 20 多个疑似恶意 Cairn 实例；Cairn 作者称平台从不是黑客工具。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">10</span>
+            <span class="chip" style="--c:#ec4899">Meta Engineering Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/" target="_blank" rel="noopener noreferrer">Meta 详解 Prometheus 吉瓦级超集群：一期已完成并用于训练 Muse 模型</a>
+          </h3>
+          <p class="card-sum">Meta 介绍其位于俄亥俄州 New Albany 的吉瓦级超集群 Prometheus，一期已建成并用于训练 Mus…</p>
+          <div class="card-actions">
+            <a class="read" href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>Meta 详解位于俄亥俄州 New Albany 的吉瓦级超集群 Prometheus，一期已建成并用于训练 Muse 系列基础模型，正朝约 100 万张 GPU 扩展。集群跨多栋楼、经数英里光纤互联并视作单机运行，采用闭环液冷。Muse Wonder 预训练 goodput 超 85%、强化学习超 90%，中断间隔约 4.7 万 GPU 小时，固件修复后逾 5.4 万。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">11</span>
+            <span class="chip" style="--c:#ec4899">Meta Engineering Blog（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener noreferrer">Meta 详解 Thin Orchestrator 模式：让路由少干活提升 AI 智能体可靠性</a>
+          </h3>
+          <p class="card-sum">Meta 工程团队介绍其数据管道智能体采用的瘦编排器（thin orchestrator）模式：一个约 1300 行的…</p>
+          <div class="card-actions">
+            <a class="read" href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>Meta 工程团队介绍数据管道智能体采用的瘦编排器模式：约 1300 行的编排器只负责意图分类、字段收集与可靠性检查，把 20 多个工作流分派给 14 个上下文隔离的专项子智能体，自身不做任何领域推理。此前单智能体装入全部知识，上生产后开始幻觉、跨子系统串用命名模式；拆分后固定 7 步协议中仅第 6 步涉及大模型推理。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">n8n Blog</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.n8n.io/n8n-nvidia-dgx-spark/" target="_blank" rel="noopener noreferrer">n8n 教程：在 NVIDIA DGX Spark 上离线运行全套 AI 工作流</a>
+          </h3>
+          <p class="card-sum">n8n 博客发布教程，讲解如何在一台 NVIDIA DGX Spark（128GB 统一内存）上部署七个本地模型，通过…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.n8n.io/n8n-nvidia-dgx-spark/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>n8n 博客发布教程，演示在单台 NVIDIA DGX Spark 上离线运行全套 AI 工作流。该机 128GB 统一内存、带宽 273GB/s，以 NVFP4 量化的 Qwen3.6-35B-A3B 承载文本任务，单用户 120 tok/s、八用户合计 359 tok/s。另配嵌入、重排、Whisper、GLM-OCR 等七个模型，均可商用，经 LiteLLM 统一为 OpenAI 兼容端点。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>12</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>
