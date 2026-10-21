@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-21</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-21</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A07IOD00?scene=news-skill" target="_blank" rel="noopener">视频丨核能“充电宝”来了！</a></div>
+                <div class="item-summary">一台核反应堆，能有多小？提到核能，往往与大型核电站联系在一起。如今，一种体积更小、部署方式更加灵活的核能装置，正在拓展核能应用的边界。作为先进核能的前沿方向，微型反应堆深度融合新能源、新材料与高端装备制造，是未来产业的重要赛道。 什么是微型反应堆？微型核反应堆是一种电功率不超过10兆瓦的先进核能装置。与传统核电站不同，它并非简单地将大型反应堆缩小，而是一种从设计之初就追求固有安全、极致小巧的...</div>
+                <div class="item-meta">央视新闻 · 2026-10-21 13:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021V09C3A00?scene=news-skill" target="_blank" rel="noopener">9岁，连枪都背不动的她，走完了长征</a></div>
+                <div class="item-summary">万曼琳，1933年8月，年仅7岁的她参加红军，是连队里唯一的女兵。1935年，她和队伍一起开启长征之路，她是如何走完长征的？这一路上，没有人告诉这个孩子还有多远的路，但总有一双双坚定的手，他们没有留下姓名，却托着她走向伟大的胜利。腾讯新闻联合学习强国，推出微电影《无名之手》。</div>
+                <div class="item-meta">腾讯新闻 · 2026-10-21 15:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A0614I00?scene=news-skill" target="_blank" rel="noopener">一组数字看震撼人心的伟大远征！</a></div>
+                <div class="item-summary">红军将士跨越近百条江河，攀越40余座高山险峰；红一方面军征途上，平均每300米有一名红军牺牲；长征队伍中，红军指挥员平均年龄不足25岁，红军士兵平均年龄不足20岁……一个个数字，记录了波澜壮阔的长征史诗。红军长征胜利90周年，继续走好我们的长征路！(来源:人民日报微博)...</div>
+                <div class="item-meta">人民日报 · 2026-10-21 11:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A06OX300?scene=news-skill" target="_blank" rel="noopener">视频丨谷神星一号海射型遥八运载火箭发射成功</a></div>
+                <div class="item-summary">北京时间2026年10月21日11时39分，我国太原卫星发射中心在山东日照附近海域成功发射谷神星一号海射型遥八运载火箭，搭载发射的西光肆号01星顺利进入预定轨道，飞行试验任务取得圆满成功。此次任务是谷神星一号运载火箭的第24次飞行。</div>
+                <div class="item-meta">央视新闻 · 2026-10-21 12:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021V07BCC00?scene=news-skill" target="_blank" rel="noopener">上班20分钟就挑衅闹事 央视揭新型黑恶劳务碰瓷</a></div>
+                <div class="item-summary">近日，山东潍坊的王先生招了8名临时工，他们进厂20分钟就开始滋事闹事，王先生赶到后有人倒地喊受伤、有人举手机录像。他们拒绝进行法医鉴定，只想索赔5000元医药费。警方一查，这伙人近一年在潍坊用同样手法作案10余起，专挑大企业，拿“怕影响生产”索赔。目前，11人已全部落网。</div>
+                <div class="item-meta">央视新闻 · 2026-10-21 12:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A039YX00?scene=news-skill" target="_blank" rel="noopener">@正在求职的你，警惕“央国企内推”骗局！</a></div>
+                <div class="item-summary">原标题：人力资源社会保障部等部门发布风险提示求职者，警惕“央国企内推”骗局！（服务窗）当前正处求职招聘旺季，一些不法分子冒用央国企名义发布虚假招聘信息引流，打着“内部推荐”“直签保录”等幌子，甚至伪造招聘录用材料，诱导求职者支付高额费用，严重侵害求职者合法权益，扰乱人力资源市场秩序。人力资源社会保障...</div>
+                <div class="item-meta">人民日报 · 2026-10-21 07:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A01GC800?scene=news-skill" target="_blank" rel="noopener">半年新增37所本科院校：职业教育的“学历升级”</a></div>
+                <div class="item-summary">2026年10月16日，世界职业技术教育发展大会在天津举行。（南方周末记者粟满莺｜摄）“2025年，全国高等职业教育毕业生582.04万人，中等职业教育毕业生521.82万人；近年年均向各行各业输送近千万名高素质劳动者和技能人才，新增劳动力平均受教育年限达14.35年。”这是《中国职业教育白皮书》披露的数据。2026年10月16日，由...</div>
+                <div class="item-meta">南方周末 · 2026-10-21 13:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A07ZMW00?scene=news-skill" target="_blank" rel="noopener">视频丨国风体验升温 外国游客爱上“中式生活”</a></div>
+                <div class="item-summary">昨天（20日），国家移民管理局介绍，三季度外国人入境达1160.1万人次，其中免签入境外国人899.2万人次，占总数的七成以上。免签政策让越来越多的外国人可以来一场说走就走的“中国游”。除了传统的看风景、品美食，一些特色体验项目也越来越受外国人欢迎。例如拍八虚、中式旅拍、中医药手作等沉浸式体验，正吸引着众多外国...</div>
+                <div class="item-meta">央视新闻 · 2026-10-21 13:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A083IM00?scene=news-skill" target="_blank" rel="noopener">法治在线丨买得多≠消费者 “进货式网购”不适用退一赔三</a></div>
+                <div class="item-summary">随着电商快速发展，不少人通过网购批量采购商品，再进行摆摊销售、直播带货等二次经营。这类“进货式网购”如果遭遇“货不对板”、虚假宣传等问题，能否像普通消费者一样主张“退一赔三”？近日，河南焦作审结的一起网络购物合同纠纷案，对处理这类问题给出了参考。“货不对板”能否主张“退一赔三”2025年，河南焦作居民范...</div>
+                <div class="item-meta">央视新闻 · 2026-10-21 14:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A0523L00?scene=news-skill" target="_blank" rel="noopener">不吃主食，能消除“碳水脸”？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-21 10:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A096W100?scene=news-skill" target="_blank" rel="noopener">跑不了了，中国“AI禁令”震动全球</a></div>
+                <div class="item-summary">作者 | 荣智慧 编辑 | 向现 唯物的中国芯片产业深度观察 10月16日，拟出台的“中国AI禁令”，震动全球科技界。中国商务部和科技部发布第48号公告，拟对人工智能（....</div>
+                <div class="item-meta">南风窗 · 2026-10-21 15:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A05TTW00?scene=news-skill" target="_blank" rel="noopener">中俄等18国发表联合声明：呼吁联合国秘书长组织审查“使用生化武器事件联合国秘书长调查机制”</a></div>
+                <div class="item-summary">【环球网报道 记者 闫珮云】据俄罗斯卫星通讯社报道，俄罗斯外交部当地时间20日在其官网上发布一份联合声明称，俄罗斯及另外17个国家呼吁联合国秘书长组织审查“使用生化武器事件联合国秘书长调查机制”。声明称，自1987年“使用生化武器事件联合国秘书长调查机制”成立、1990年其技术准则和程序获得批准以来，与该机制相关...</div>
+                <div class="item-meta">环球网 · 2026-10-21 11:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A06Y3X00?scene=news-skill" target="_blank" rel="noopener">军队有关部门看望慰问王扶之、侯克、郭瑞祥、鲍彦章、马章锁</a></div>
+                <div class="item-summary">《解放军报》10月21日消息，日前，军队有关部门赴辽宁大连、宁夏银川、青海西宁等地，看望慰问5位老红军，转达组织关心问候，发放补助金，向他们致以崇高敬意和美好祝福。这次看望慰问的5位老红军，分别为王扶之、侯克、郭瑞祥、鲍彦章、马章锁。他们均已年过百岁，采取住院和居家相结合的方式进行休养。相关服务保障单位坚...</div>
+                <div class="item-meta">政事儿 · 2026-10-21 12:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A033ZT00?scene=news-skill" target="_blank" rel="noopener">数字主权博弈骤然升级，欧洲四大巨头挑战“星链”，美国威胁“毁灭性反制”欧盟</a></div>
+                <div class="item-summary">【环球时报驻德国特约记者 青木】“一场围绕欧洲数字未来的跨大西洋冲突正在酝酿之中。”奥地利《信使报》19日以此为题报道称，随着欧盟近期酝酿出台新的无线电频段分配政策，美欧之间在太空通信及数字主权领域的博弈骤然升级。对于欧盟酝酿中的这一政策将对美国企业造成的限制，美国驻欧盟大使在接受英国《金融时报》采访时公开发出“毁灭性反制”警告。面对华盛顿的强硬施压，欧洲四大电信巨头迅速结盟，试图通过联合竞...</div>
+                <div class="item-meta">环球网 · 2026-10-21 14:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A048UV00?scene=news-skill" target="_blank" rel="noopener">多地中考改革宣布生物地理成绩不计入总分，背后有何考量？</a></div>
+                <div class="item-summary">2026年10月20日，江苏省徐州市教育部发布《关于初中学业水平考试地理、生物学科考查调整意见的通知》称，地理和生物成绩不再计入中考录取总分，但是会划定等级作为初中毕业认定、普通高中招生录取的依据。徐州市教育局明确，地理、生物两科单科成绩均须达到B等级及以上，方可录取到四星级普通高中。成绩评定为D等级的考生，...</div>
+                <div class="item-meta">界面新闻 · 2026-10-21 09:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021V0647C00?scene=news-skill" target="_blank" rel="noopener">夜读｜刘美含谈《兰香如故》：从今天起，世上对我最好的人就是我</a></div>
+                <div class="item-summary">中国首档黑白纪录体人物表达栏目《自话像》，带你倾听第52位对话者刘美含的故事——</div>
+                <div class="item-meta">自话像selfologue · 2026-10-21 17:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A08HY300?scene=news-skill" target="_blank" rel="noopener">沈阳去海南Z114次列车车票开售即售罄，网友称“提前半个月根本抢不到”，12306回应</a></div>
+                <div class="item-summary">10月20日，有博主在社交平台发帖称“进入10月起开票即售罄”，并晒出沈阳至海口Z114次列车的火车票查询截图。这位博主称，进入10月后，东北开往海南的列车车票十分紧俏，“每天两班车，运了一车又一车”，并好奇究竟还有多少东北人等着前往海南。相关帖子引发网友关注。有人表示：“因为Z114次到达时间刚刚好，东北三个省都...</div>
+                <div class="item-meta">上游新闻 · 2026-10-21 14:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021V05XLM00?scene=news-skill" target="_blank" rel="noopener">女乘客差2分钟没赶上高铁，跪地哀求工作人员放行</a></div>
+                <div class="item-summary">女乘客差2分钟没赶上高铁，跪地哀求工作人员放行 #迟到 #赶车 #下跪</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-10-21 11:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261021A03K6G00?scene=news-skill" target="_blank" rel="noopener">河南郑州脑瘫女孩被帅气男友求婚成功，被人说“配不上”，女孩回应：我并不比别人差，要相信自己值得被爱</a></div>
+                <div class="item-summary">近日，河南郑州，一名帅气小伙追求脑瘫女孩小凡（化名）半年后求婚成功。小凡表示，男友一开始就知道自己是残疾人，听到表白时仍十分意外，称男友外形干净阳光。男友介绍，他追小凡有半年时间，认为她坚强、精神独立自由，拥有很多人不具备的品质。小凡的身体状况在他看来并不是问题，生活中做不到的事情他可以帮忙完成，即便她不上班也无妨，自己月薪一万元足以承担生活开销。起初父母并不赞同这段感情，但他坚持非小凡不娶...</div>
+                <div class="item-meta">红星新闻 · 2026-10-21 08:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261020A09RO000?scene=news-skill" target="_blank" rel="noopener">美军先进导弹首次部署至冲绳，距中国台湾仅110公里，专家：美日“利剑”军演在演夺岛</a></div>
+                <div class="item-summary">日本和美国19日起在日本多地举行代号“利剑27”的大规模联合军演。“利剑27”演习将持续至29日，演练内容涉及陆、海、空、天、电、网等多个领域。“25式地对舰导弹”18日从驻地熊本县转移至横跨长崎县和佐贺县的大野原演习场，将参加对舰艇作战演训。此外，美军先进军事装备“海军/海军陆战队远征舰艇拦截系统”和“海上防...</div>
+                <div class="item-meta">大河报 · 2026-10-20 19:09</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-21 17:51</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
