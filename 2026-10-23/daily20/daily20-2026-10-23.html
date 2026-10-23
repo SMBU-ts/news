@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-23</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-23</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="http://view.inews.qq.com/a/UTR2026102239755700?scene=news-skill" target="_blank" rel="noopener">西藏那曲巴青县发生7.0级地震</a></div>
+                
+                <div class="item-meta">1970-01-01 08:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023A02IHM00?scene=news-skill" target="_blank" rel="noopener">第30号台风“蔷琵”向台湾东北部沿海靠近 强度缓慢减弱</a></div>
+                <div class="item-summary">中央气象台10月23日6时继续发布台风蓝色预警：今年第30号台风“蔷琵”（强台风级）的中心今天（23日）早晨5时位于台湾省台北市东南方向约405公里的洋面上，就是北纬22.2度，东经124.0度，中心附近最大风力14级（45米/秒），中心最低气压为950百帕，七级风圈半径350-500公里，十级风圈半径150-210公里，十二级风圈半径80-90...</div>
+                <div class="item-meta">央视新闻 · 2026-10-23 06:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A09QKJ00?scene=news-skill" target="_blank" rel="noopener">联播一瞬丨长征代代接力 答卷在时代展开</a></div>
+                <div class="item-summary">昔日长征开辟希望之路，先辈以血肉之躯蹚出通往光明的方向；今日建设铸就锦绣山河，建设者以智慧汗水续写新的跨越。长征精神从未走远，它正化作中国式现代化的磅礴力量，在星辰大海间薪火相传、生生不息。监制丨冯旭宏 李琳制片人丨姚勤 黄滨编导丨李伟 宋春瑶 隋卓馨 张雨妍剪辑丨胡天为音频丨任航 包装丨李超越 杨振洲统筹丨谷井洋协助拍摄丨江西总站 湖北总站 甘肃总站 上海总站 海南总站 2026中央广播电...</div>
+                <div class="item-meta">央视新闻 · 2026-10-22 16:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023A02JBM00?scene=news-skill" target="_blank" rel="noopener">乒乓球亚锦赛：国乒男团实现四连冠 女团屈居亚军</a></div>
+                <div class="item-summary">新华社塔什干10月22日电（记者包诺敏、郁思辉）2026年亚洲乒乓球锦标赛22日在乌兹别克斯坦首都塔什干结束了男、女团体项目的争夺。国乒男队在决赛中3:0战胜韩国队，实现亚锦赛男团四连冠；国乒女队则在决赛中2:3不敌日本队，无缘卫冕。 在当日早些时候进行的男团半决赛中，中国队3:1战胜中国台北队，韩国队爆冷击败由世界排...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-23 07:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023A02BAD00?scene=news-skill" target="_blank" rel="noopener">真相来了丨网红钛制品真能抑菌保鲜吗？先认准钛的“身份证”</a></div>
+                <div class="item-summary">从保温杯、汤锅到餐盘餐具，钛制生活用品热度持续走高。这些商品往往宣称具有抑菌、保鲜、活化食材等作用，各类养生概念铺天盖地。但是同样打着“钛”标签的产品，从一两百到一两千，价格却相差不少，普通消费者很难分辨材质真伪与宣传虚实。这些产品真有宣传那么好吗？电商平台直播间内，不少售卖钛水杯、锅具的主播，纷纷...</div>
+                <div class="item-meta">央视新闻 · 2026-10-23 06:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023A02O6E00?scene=news-skill" target="_blank" rel="noopener">寒潮来临暖气未到 取暖安全先“就位”</a></div>
+                <div class="item-summary">10月下旬冷空气接连席卷北方多地气温明显下降在“天冷了、暖气还没来”的空窗期里取暖设备陆续上岗用电用气风险增加这份取暖安全指南帮你把隐患挡在寒潮之前01用电要当心！别让取暖“神器”变安全“雷区” 寒潮一来小太阳、电暖风、踢脚线取暖器纷纷“上线”长时间高频使用要留心使用不当可能增加起火、漏电、电路过载等风...</div>
+                <div class="item-meta">央视新闻 · 2026-10-23 07:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A0E7OA00?scene=news-skill" target="_blank" rel="noopener">结婚随份子，最高100元？</a></div>
+                <div class="item-summary">“除近亲属外，倡导农村区域‘随礼’不超过100元，县城区域‘随礼’不超过200元。” 近日，广西柳州三江侗族自治县4部门联合发布《三江侗族自治县移风易俗倡导性标准》，将农村与县城的人情随礼....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-10-23 08:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023A02K3500?scene=news-skill" target="_blank" rel="noopener">救援物资运抵巴青灾区，1600余人投入抗震救灾一线</a></div>
+                <div class="item-summary">据中国地震台网正式测定，10月22日22时33分在西藏那曲市巴青县（北纬32.40度，东经93.79度）发生7.0级地震，震源深度10千米。地震发生后，那曲市各级各部门紧急调拨救援物资、集结救援力量，抗震救灾工作迅速展开。截至23日4时30分，中央、自治区、市、县四级调配的救灾物资已陆续运抵灾区，板房1000套、帐篷3239顶、折叠床...</div>
+                <div class="item-meta">界面新闻 · 2026-10-23 07:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023A0221700?scene=news-skill" target="_blank" rel="noopener">全国蛋价跌回“4元时代” 未来还会降吗？走势预测</a></div>
+                <div class="item-summary">鸡蛋是老百姓菜篮子里的刚需品，国庆节前还挺贵的鸡蛋，现在价格明显回落，不少市民买鸡蛋都感受到了实惠。农业农村部最新监测数据显示：10月12日至18日，全国鸡蛋批发均价每公斤9.64元，环比下跌4.3%，已经连续4周下滑，累计降幅13.7%。北京需求回落、供应增强鸡蛋价格下跌25% 作为北京最大的农产品集散地，新发地市场的鸡...</div>
+                <div class="item-meta">央视新闻 · 2026-10-23 04:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A03ZB600?scene=news-skill" target="_blank" rel="noopener">得了精神疾病，多运动就能不吃药了？真相是……</a></div>
+                <div class="item-summary">流“精神疾病不用吃药，多运动就能好。 ”网上有很多人说得了精神疾病不用吃药，多运动就好了，或者说运动才是治疗精神类疾病的良药。言流言分析这种说法以偏概全，存在误导。运动对精神健康确有帮助，这部分证据相当扎实。但如果把它极端化为“运动可以替代药物治疗精神类疾病”，既不符合诊疗指南，也可能让患者付出严重...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-22 10:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A0DP2700?scene=news-skill" target="_blank" rel="noopener">乒乓亚锦赛：国乒女团2-3输日本摘银！陈熠丢2分，王艺迪1胜1负</a></div>
+                <div class="item-summary">2026年10月22日晚，亚洲乒乓球锦标赛女团决赛落下帷幕，中日两队狭路相逢再次争夺金牌，结果双方打满5盘才分出胜负，国乒总比分2-3输日本无缘蝉联冠军，其中陈熠、王艺迪均败给削球手桥本帆乃香，此外....</div>
+                <div class="item-meta">全言 · 2026-10-22 22:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A09KXW00?scene=news-skill" target="_blank" rel="noopener">女子在上海看完演唱会叫顺风车回杭州，司机竟是自己，车费还照付！平台回应了</a></div>
+                <div class="item-summary">杭州的小郑姑娘求助媒体，她说前两天和姑姑去上海看林忆莲演唱会，结束后在上海叫了一辆顺风车回杭州。没想到，司机半路说自己困了，让她们来开车。最终两个多小时的路程，小郑的姑姑开了一个半小时，司机却睡到了目的地，车费还照收。小郑说，10月17日晚上10点，她在高德平台叫了一辆顺风车回杭州，预付了160多元车费。司...</div>
+                <div class="item-meta">新民晚报 · 2026-10-22 16:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023V016N800?scene=news-skill" target="_blank" rel="noopener">西藏巴青发生7.0级地震 监控实拍惊险一刻</a></div>
+                <div class="item-summary">10月22日22时33分，西藏那曲市巴青县发生7.0级地震。监控实拍地震来临惊险一刻。（视频来源：那曲融媒）</div>
+                <div class="item-meta">央视新闻 · 2026-10-23 01:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A0C1TP00?scene=news-skill" target="_blank" rel="noopener">菲律宾非法“坐滩”船只周边海域出现大量垃圾 中国海警组织打捞</a></div>
+                <div class="item-summary">近日，中国海警东安舰编队在仁爱礁附近海域执法巡查时，发现海面漂浮着大量垃圾。大型油桶、塑料瓶、包装纸、废弃缆绳等垃圾，在菲律宾非法“坐滩”我仁爱礁的“马德雷山号”周边海域出现。中国海警派出多艘小艇，在相关海域进行打捞。总台央视记者在仁爱礁潟湖内发现，一些礁盘区域，海水清澈见底，这里生活着大量的海洋生...</div>
+                <div class="item-meta">央视新闻 · 2026-10-22 19:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A09EPB00?scene=news-skill" target="_blank" rel="noopener">希拉里：普京手里有特朗普的把柄，可能是照片和视频</a></div>
+                <div class="item-summary">美俄近来达成柴油协议，美国总统特朗普还豁免了对俄部分制裁，同时还猛烈抨击乌克兰。美国民主党质疑特朗普有把柄在俄罗斯手里。 美国前国务卿希拉里10月21日在出席一档播客节目时说：“特朗普甘愿....</div>
+                <div class="item-meta">凤凰网 · 2026-10-22 16:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A0E7BD00?scene=news-skill" target="_blank" rel="noopener">“奔县游”，狂飙的流量接得住吗</a></div>
+                <div class="item-summary">在桂林走访5A景区期间，几家景区运营单位轮番吐苦水。在被网友吐槽、被主管部门点名的问题中，最难管理的是“没发生在景区围墙里的问题”，比如漓江沿岸的阳朔县城，拥堵与商业化过重。作为国际旅游名城周边的小....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-10-22 23:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A0DVEL00?scene=news-skill" target="_blank" rel="noopener">中国女留学生在韩国遇害案首次开庭！嫌疑男子曾同时交往两人</a></div>
+                <div class="item-summary">备受关注的25岁中国女留学生在韩国遇害案有新进展。10月22日，南都N视频记者获悉，该案日前在韩国大邱地方法院进行了首次庭审，31岁男子郑某被控涉嫌谋杀、损毁尸体、遗弃尸体、藏匿尸体以及以欺骗手段妨碍公务等罪名。检方指出，郑某此前曾因接近多名女留学生，受到过校方的警告。“被告人担心和留学生交往的事实败露后，...</div>
+                <div class="item-meta">南方都市报 · 2026-10-22 23:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A072NW00?scene=news-skill" target="_blank" rel="noopener">俄罗斯警告日本</a></div>
+                <div class="item-summary">CCTV国际时讯消息，10月21日，俄罗斯外交部发言人扎哈罗娃在例行记者会上，就日本公司向乌克兰交付一批“专门用于前线作战”的无人机发出警告。扎哈罗娃说，日方此举是公然的敌对行动，俄方将采取强硬回应措施。她强调，俄方已多次警告日方，此类行为不可接受，将给俄日关系造成负面影响。日方试图将本国公司与乌军合作解释...</div>
+                <div class="item-meta">政事儿 · 2026-10-22 13:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A09JWV00?scene=news-skill" target="_blank" rel="noopener">台风“蔷琵”靠近，浙江省气象局：不能完全排除在浙江登陆</a></div>
+                <div class="item-summary">2026年第30号台风“蔷琵”正向东南沿海靠近。浙江省气象局10月22日下午发布台风路径预报：“蔷琵”有可能擦过或登陆台湾，尔后紧擦浙江沿海北上（不能完全排除在浙江登陆）；也可能在台湾东北部洋面转向，并在浙江近海海面北上。浙江省气象台发布的台风未来路径概率预报图。“蔷琵”10月17日晚增强为超强台风级别，已维持该...</div>
+                <div class="item-meta">澎湃新闻 · 2026-10-22 16:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A0CZER00?scene=news-skill" target="_blank" rel="noopener">俄罗斯高层多人调整</a></div>
+                <div class="item-summary">新华社消息，俄罗斯总统普京22日签署一系列总统令，批准了包括副总理、政府部长和总统助理在内的多个岗位人事任命。根据俄法律文书网站上发布的相关总统令内容，普京任命安东·西卢安诺夫为副总理兼财政部长，任命伊琳娜·奥克拉德尼科娃为副总理兼政府办公厅主任，任命奥列格·科热米亚科为副总理兼俄总统驻远东联邦区全权...</div>
+                <div class="item-meta">政事儿 · 2026-10-22 21:41</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-23 08:30</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

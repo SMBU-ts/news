@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://openai.com/index/decisions-api",
+    "title": "OpenAI 正式发布 Decisions API，面向低延迟低成本小决策",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/claudeai/status/2113360845409583307",
+    "title": "Claude 网页、桌面和移动端将默认启用 auto mode",
+    "source": "X：Claude (@claudeai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://replit.com/blog/replit-monitoring-agent",
+    "title": "Replit 发布 Monitoring Agent，为应用提供可自动修复并部署的值班智能体",
+    "source": "Replit：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/Khazix0918/status/2113096414469464281",
+    "title": "AI 挖出潜伏十几年的 PHP 底层漏洞，PHP2Shell 事件全景复盘",
+    "source": "X：卡兹克 (@Khazix0918)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2113106318659928525",
+    "title": "Bloomberg 报道 DeepSeek 新一轮融资约 150 亿美元",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2113107154219741231",
+    "title": "WSJ：马斯克希望以 AI 为核心推动 SpaceX 与 Tesla 合并",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+    "title": "Anthropic 将 Agent Skills 开放标准捐赠给 Linux Foundation 旗下 Agentic AI Foundation",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.newcomer.co/p/the-story-of-anthropics-cap-table",
+    "title": "Anthropic 股权表内幕：风投迟到多年，如今无人持股超 2%",
+    "source": "Newcomer 新闻长文（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors",
+    "title": "Wiz 披露 ARTEX 智能体被 Storm-0940 用于攻击 IT 和软件厂商",
+    "source": "Wiz：Research（安全研究）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://microsoft.ai/news/building-medical-superintelligence/",
+    "title": "Microsoft AI 发布 SDBench 基准与 MAI-DxO 诊断系统，登 Science",
+    "source": "Microsoft AI：官方博客（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent",
+    "title": "METR 与 Redwood Research 红队测试 OpenAI 内部智能体监控系统，发现多个漏洞",
+    "source": "Redwood Research：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/research/formal-verification",
+    "title": "Anthropic 用 Claude 对 123 个开源库完成汇编级形式化安全证明",
+    "source": "Anthropic：Research（发表成果 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]
