@@ -13,6 +13,7 @@ from summary_lib import summarize, SUMMARY_FAIL, load_precomputed
 ROOT = Path(__file__).resolve().parent
 
 BASE = "https://aihot.virxact.com"
+BASE_V1 = "https://aihot.news"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
@@ -41,8 +42,52 @@ def fetch(path):
         return json.loads(r.read().decode("utf-8"))
 
 
+def fetch_v1(path):
+    """Fetch from the current AIHOT v1 API (response wraps the report)."""
+    req = urllib.request.Request(BASE_V1 + path, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        data = json.loads(r.read().decode("utf-8"))
+    return data.get("report", data) if isinstance(data, dict) else data
+
+
+def normalize_report(data):
+    """Map v1 field names onto the legacy v0.1 shape used below.
+
+    v1 uses item["links"]["original"] for the article URL and
+    item["source"]["name"] for the outlet, instead of sourceUrl/sourceName.
+    """
+    for sec in data.get("sections", []) or []:
+        for it in sec.get("items", []) or []:
+            if not it.get("sourceUrl"):
+                links = it.get("links") or {}
+                it["sourceUrl"] = links.get("original") or links.get("aihot")
+            if not it.get("sourceName"):
+                src = it.get("source")
+                if isinstance(src, dict):
+                    it["sourceName"] = src.get("name")
+    return data
+
+
 def load_daily(today):
-    """Try today's daily; fall back to latest available daily."""
+    """Try today's daily; fall back to latest available daily.
+
+    Prefers API v1 (https://aihot.news/api/v1) — the legacy /api/public/*
+    endpoints are scheduled to be disabled on 2026-10-31 — and falls back
+    to the legacy endpoints if v1 is unavailable.
+    """
+    try:
+        return normalize_report(fetch_v1(f"/api/v1/dailies/{today}")), today, False
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            try:
+                latest = normalize_report(fetch_v1("/api/v1/dailies/latest"))
+                return latest, latest["date"], True
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+    # Legacy fallback (sunset 2026-10-31).
     try:
         return fetch(f"/api/public/daily/{today}"), today, False
     except urllib.error.HTTPError as e:
