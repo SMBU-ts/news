@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-26</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-26</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261022A06YHA00?scene=news-skill" target="_blank" rel="noopener">新华视点丨“小钱包”变“大钱包” 住房公积金更好用了</a></div>
+                <div class="item-summary">新华社北京10月22日电 题：“小钱包”变“大钱包” 住房公积金更好用了新华社“新华视点”记者新修订的《住房公积金管理条例》自9月20日起施行。“新华视点”记者近期在全国多地调研发现，当前住房公积金的应用场景扩容、便利水平提升、覆盖灵活就业群体，正从老百姓的“小钱包”向“大钱包”转型。保障更多民生需求王先生...</div>
+                <div class="item-meta">新华网 · 2026-10-25 20:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261026A034KQ00?scene=news-skill" target="_blank" rel="noopener">中央气象台对台风“蔷琵”停止编号</a></div>
+                <div class="item-summary">据中央气象台消息，今年第30号台风“蔷琵”25日23时在东海东北部海面变性为温带气旋，中央气象台对其停止编号。（来源 中国天气网）...</div>
+                <div class="item-meta">央视新闻 · 2026-10-26 07:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A042QC00?scene=news-skill" target="_blank" rel="noopener">权威数读·观中国【10月18日—10月24日】</a></div>
+                <div class="item-summary">今年前三季度，我国国内生产总值（GDP）1071071亿元，按不变价格计算，同比增长4.6%；今年前三季度，我国制造业增加值占GDP的比重为25.7%，比上年同期提升0.6个百分点；中欧班列累计开行突破14万列，发送货值超5600亿美元……本周，这些数据值得关注。 文案：唐诗凝 制作：孙尉轩、闫建华...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-25 09:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A08VUL00?scene=news-skill" target="_blank" rel="noopener">新航季来了！新开288条国内航线，部分机场推出“公交化航班”</a></div>
+                <div class="item-summary">今天（25日），全国民航正式执行2026/2027年冬春航季航班计划，新航季将持续至2027年3月27日，共计154天。 冬春航季一方面是适配部分国家夏令时转冬令时的时间统一....</div>
+                <div class="item-meta">新黄河 · 2026-10-25 17:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261026A01WEP00?scene=news-skill" target="_blank" rel="noopener">视频丨占比超50% 年轻人正成为红色旅游主力军</a></div>
+                <div class="item-summary">今年7月，《旅游强国建设“十五五”规划》发布，对红色旅游提质升级行动作出部署。相关研究报告显示，今年上半年“红色旅游”相关产品搜索热度同比增长超130%，其中景区门票预订热度同比增长86%，旅游线路预订热度同比增长48%，实景任务、行进式演艺、夜游等新体验成为红色旅游市场亮点。在游客年龄构成方面，数据显示，今...</div>
+                <div class="item-meta">央视新闻 · 2026-10-26 03:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261026A01M2V00?scene=news-skill" target="_blank" rel="noopener">高清大图！歼-15红蓝对抗训练最新画面</a></div>
+                <div class="item-summary">近日，海军航空大学某部开展多课目跨昼夜飞行训练，检验了飞行员生理心理水平和战术能力。看歼-15红蓝对抗训练最新画面。近日，海军航空大学某部开展多课目跨昼夜飞行训练，检验了飞行员生理心理水平和战术能力。看歼-15红蓝对抗训练最新画面。（来源：中国军号）</div>
+                <div class="item-meta">央视新闻 · 2026-10-26 02:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A09ZSC00?scene=news-skill" target="_blank" rel="noopener">视频丨母子平安！西藏震后“地震宝宝”顺利出生</a></div>
+                <div class="item-summary">地震发生后，当地迅速开展震区重点人群专项排查，全力保障孕产妇就医需求。今天，巴青县人民医院顺利接生一名“地震宝宝”，母子平安。这名孕妇家住玛如乡三村，今天凌晨出现临盆症状。上午9点多，孕妇被转运至巴青县人民医院。接到孕妇后，医院妇产科、儿科医护人员全员在岗，第一时间做好接生救治准备工作。由于这名产妇...</div>
+                <div class="item-meta">央视新闻 · 2026-10-25 19:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A0780D00?scene=news-skill" target="_blank" rel="noopener">中国人均用电41年涨84倍</a></div>
+                <div class="item-summary">能源消费是居民生活变化的一面镜子。国家统计局编著出版的《中国统计年鉴2026》长时序数据，勾勒出1983年至2024年中国居民生活能源消费的演变脉络：41年里，居民用能总量稳步抬升，能源结构完成从“以煤为主”向电气化、清洁化的深刻转型，电力成为居民生活最核心的能源载体。 第一财经记者梳理数据发现，1983年全国人均生...</div>
+                <div class="item-meta">第一财经 · 2026-10-25 15:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261026A031PU00?scene=news-skill" target="_blank" rel="noopener">人民日报记者调查：声称能抗癌实为“三无”产品，净水器“坑老”</a></div>
+                <div class="item-summary">原标题：声称能治“三高”、能“抗癌”，实为“三无”产品对净水器“坑老”骗局说不（金台视线）营销人员向老年人宣传净水器“防癌抗癌”效果。影像中国许多家庭会购买净水器改善饮水品质。但有不法商家虚假宣传净水器的功效，声称处理后的水具有治“三高”、能“抗癌”等奇效，欺骗消费者。此类骗局并非新鲜事。有读者来信称，最近一段时间，不法商家通过“下乡、进社区”等方式，将老年消费者作为主要目标，虚假宣传，高价...</div>
+                <div class="item-meta">人民日报 · 2026-10-26 07:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261023A0BB2F00?scene=news-skill" target="_blank" rel="noopener">警方通报：为博眼球编造“猪瘟”谣言，乐山市沐川县一男子被处罚！</a></div>
+                <div class="item-summary">为博眼球、赚流量，竟将网上一张死猪图片“移花接木”，配上“猪瘟”谣言发布到抖音。近日，乐山市沐川县一男子蒋某（化姓）因散布不实信息，被公安机关依法行政处罚。网络不是法外之地，造谣传谣必将付出代价！案情回顾2026年10月19日，沐川一男子蒋某在网上刷视频时，刷到一张多头家猪死亡的图片。蒋某将该图片下载后，编辑文字“沐川沐溪镇又出现猪瘟，喂不得猪了”，随后上传至某抖音平台发布。该不实信息被沐川...</div>
+                <div class="item-meta">成都网络辟谣 · 2026-10-23 17:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261026A02PI500?scene=news-skill" target="_blank" rel="noopener">武契奇承认败选</a></div>
+                <div class="item-summary">据路透社10月25日报道，塞尔维亚前总统武契奇周日承认，他领导的“亚历山大·武契奇-团结的塞尔维亚”阵营，在议会选举中不敌学生团体推动的“学生名单-学生获胜”。 武契奇称：“最终结果还没有....</div>
+                <div class="item-meta">凤凰网 · 2026-10-26 06:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A0AI4P00?scene=news-skill" target="_blank" rel="noopener">我国家庭规模持续缩小，31省份平均家庭户规模公布</a></div>
+                <div class="item-summary">近年来，我国的家庭规模持续缩小。 今年5月公布的《2025年全国1%人口抽样调查主要数据公报》显示，全国共有家庭户51465万户，家庭户人口为129685万人。平均每个家庭户人口为2.52人。 在平均每个家庭户人口方面，与2000年第五次全国人口普查的3.44人相比，25年来减少0.92人。 分省份看，各个省份的家庭户规模又存在哪些差异...</div>
+                <div class="item-meta">第一财经 · 2026-10-25 20:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025V06Y4Z00?scene=news-skill" target="_blank" rel="noopener">妈妈给儿子准备40万元“结婚钱”，称两家年底见面谈婚事，女儿报警了：弟弟还在读大学啊</a></div>
+                <div class="item-summary">杭州一名母亲取出40万现金，声称是给还在读大学的儿子准备的结婚钱，说双方家长年底就要见面商谈婚事。女儿察觉不对劲，弟弟尚且在校读书，根本没到谈婚论嫁阶段，当即选择报警。经民警劝阻核实，母亲遭遇电信诈骗，编造结婚说辞是受骗子指示，准备把钱交给诈骗分子。在家人和民警劝说下，40万巨款成功保住，避免了重大财产损失。</div>
+                <div class="item-meta">掌闻视讯 · 2026-10-25 14:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A0AJPO00?scene=news-skill" target="_blank" rel="noopener">每天早上6点多就有一声巨响，住户寻声5个月，噪声来源竟在外墙……你敢信，噪音会“拐弯儿”</a></div>
+                <div class="item-summary">“快仨月没睡好觉了，一直在我耳边‘嗡嗡嗡’”“脑子要炸了，心脏也不舒服”“和邻居吵了十多回，为什么只有我能听到”……生活中的各类噪声污染中，低频噪声因源头隐蔽、穿透力强、传播路径不可预测等特点而被称为“隐形杀手”。虽然低频噪声不像装修声那样刺耳，但也可能干扰人们的生活，甚至会导致失眠、焦虑或抑郁等身心问题。那么，遭遇低频噪声困扰时，居民该如何解决？声学成像仪可以把声音转换成图像。困扰“怪声”...</div>
+                <div class="item-meta">红星新闻 · 2026-10-25 20:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A0AMOB00?scene=news-skill" target="_blank" rel="noopener">莫奈《鸢尾花》刷新法国拍卖纪录</a></div>
+                <div class="item-summary">参考消息网10月25日报道 据法新社10月22日报道，22日，法国印象派画家莫奈晚年创作的巨幅画作《鸢尾花》拍卖活动在巴黎落槌，含佣金成交价达5000万欧元，成为法国拍卖史上成交价最高的艺术品。在苏富比拍卖行内，竞拍者们通过电话激烈角逐，竞价过程持续了近45分钟。这幅巨幅画作(高1.60米、宽1.80米)此前一直收藏于施伦贝...</div>
+                <div class="item-meta">参考消息 · 2026-10-25 20:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025V0A02Q00?scene=news-skill" target="_blank" rel="noopener">24岁中国女子赴泰“奔现”落地就被绑走，监控曝光，前往泰缅边境途中跳车逃生</a></div>
+                <div class="item-summary">10月24日，泰国警方公布24岁中国女游客被骗赴泰遭绑架一案中女子在机场外被带走的监控。受害女子此前通过网络认识一名男子。9月28日，受害女子被该男子诱骗，乘机抵达曼谷素万那普机场，几名嫌疑人声称受男子委托把她接走。上车不到10分钟，女子被控制并抢走手机和财物。车辆驶至南奔府时，女子趁嫌疑人不备开门跳车受伤，向当地居民求助。该团伙通过“杀猪盘”式爱情诈骗受害者，警方抓获2名嫌疑人，正追查幕后主使。</div>
+                <div class="item-meta">世面 · 2026-10-25 19:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A08F3300?scene=news-skill" target="_blank" rel="noopener">亚洲最长地铁环线进入开通倒计时：没有传统终点站，坐一圈96分钟，同站进出只需2元</a></div>
+                <div class="item-summary">亚洲最长地铁环线即将在武汉真正成环。10月23日，武汉地铁12号线二期工程及12号线调整工程通过初期运营前安全评估，已具备初期运营开通条件。 12号线一期已于今年5月1日开通；二期由十里铺站延伸至科普公园站，开通后环线正式闭合。线路全长59.9公里，串联武汉7个中心城区，是武汉第二条全自动驾驶地铁线路。未来市民跨区出...</div>
+                <div class="item-meta">九派新闻 · 2026-10-25 16:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A09NL700?scene=news-skill" target="_blank" rel="noopener">背债骗贷模式升级，多地全链条集中围剿金融黑灰产</a></div>
+                <div class="item-summary">从“打单点”转向“打链条”，2026年以来，各地对于金融黑灰产的治理节奏持续升级：对“背债”骗贷沿着中介、包装、套现的链条向上追溯，不法贷款中介与助贷机构的违规展业被集中清理，反催收则在非法经营与敲诈勒索的罪名适用中失去“维权”外壳，非法荐股在平台资质核验与司法定性上同时收紧…… 第一财经梳理发现，多地...</div>
+                <div class="item-meta">第一财经 · 2026-10-25 20:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A04S7U00?scene=news-skill" target="_blank" rel="noopener">热播日剧公开抹黑中国，高市早苗点名要看：把中国人拍成施暴者，设计中方人员对日本情报人员实施切指、刺穿腹部情节</a></div>
+                <div class="item-summary">CCTV国际时讯报道，一线明星参演、每集高成本制作费、高市早苗点名要看——这就是日本TBS电视台最近热播的电视剧《Vivant》（《别班》）第二季，剧中把中国人拍成惨无人道的施暴者，把日本自卫队情报人员美化成正义反击者。央视新闻披露，剧中设计了中方人员对日本情报人员实施切指、刺穿腹部的情节，这些手段和侵华日军对中国抗日志士使用过的酷刑高度重合，而剧中则颠倒黑白，将其嫁接到现代中国人的形象之上...</div>
+                <div class="item-meta">红星新闻 · 2026-10-25 10:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261025A06QX200?scene=news-skill" target="_blank" rel="noopener">15岁高中生确诊甲状腺癌，且已转移！家长：从初中开始就没在凌晨一点前睡过觉；沪上专家：年轻患者增多，三大因素导致</a></div>
+                <div class="item-summary">近日，上海交通大学医学院附属瑞金医院甲状腺血管外科病区主任、副主任医师匡洁接诊了一名15岁的甲状腺癌患者。确诊甲状腺癌时，患者已经出现侧方淋巴结转移。问起孩子平时的作息，家长的回答让匡洁印象深刻：“从初中开始，就没有在凌晨一点前睡过觉。”原来，孩子就读于当地最好的初中和高中，学业压力下，长期晚睡成了生活常态。&nbsp;2026年10月21日，国家癌症中心公布的《2024年中国人群恶性肿瘤发...</div>
+                <div class="item-meta">红星新闻 · 2026-10-25 14:21</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-26 08:30</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
