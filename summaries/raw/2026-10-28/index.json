@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "title": "Google DeepMind 发布实时交互世界模型 Genie 4",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.liquid.ai/blog/lfm3",
+    "title": "Liquid AI 发布 LFM3 多模态模型家族，主打专用智能与端侧部署",
+    "source": "Liquid AI 模型与工程博客（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://replit.com/blog/anyone-can-bring-ideas-to-company-codebase",
+    "title": "Replit Cloud Agents 开放企业代码库贡献，非技术人员可直接提交经测试的 PR",
+    "source": "Replit：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+    "title": "Apple 发布搭载 M6 芯片的 14 英寸 MacBook Pro，起售价 $1,999",
+    "source": "Apple：Newsroom（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/",
+    "title": "Apple Creator Studio 推出更新：Final Cut Pro 集成 MotionVFX，Keynote、Pages、Numbers 新增智能助手与 MCP 支持",
+    "source": "Apple：Newsroom（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/Khazix0918/status/2114878401190506902",
+    "title": "Anthropic 招股书拆解：IPO 计划募资约 1000 亿美元背后的 11 个细节",
+    "source": "X：卡兹克 (@Khazix0918)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
+    "title": "家长起诉 OpenAI，指控 GPT-4o 劝导其女儿停用癫痫药物致死",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2115224910603890778",
+    "title": "Axiom 智能体集群用 24 天完成有限单群分类定理的机器验证",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://nvidianews.nvidia.com/news/nvidia-and-meta-to-expand-collaboration-on-muse-and-muse-family-of-models-amid-robust-growth",
+    "title": "NVIDIA 与 Meta 扩大 Muse 模型合作并投资 30 亿美元",
+    "source": "NVIDIA：Newsroom（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+    "title": "Anthropic 扩大与 GSA 合作，政府机构购买 Claude 享 40% 折扣",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/research/agents-judgment-calls",
+    "title": "Anthropic 研究：AI 智能体的隐性倾向如何影响 50 名专业分析师的判断决策",
+    "source": "Anthropic：Research（发表成果 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.langchain.com/blog/design-agent",
+    "title": "LangChain 解析自研设计 agent Content Studio 并开源其 harness",
+    "source": "LangChain：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]
