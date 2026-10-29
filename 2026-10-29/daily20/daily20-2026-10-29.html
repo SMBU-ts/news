@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-29</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-29</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A02S9M00?scene=news-skill" target="_blank" rel="noopener">视频丨多部舞台佳作回望远征岁月 红色旋律唱响时代新声</a></div>
+                <div class="item-summary">今年是中国工农红军长征胜利90周年。近期，多部红色舞台佳作在京推出，以民族管弦乐、戏曲等艺术形式回望远征岁月，以文艺之力礼赞不朽长征精神，赓续红色血脉。近日，民族管弦乐《永恒的红飘带》在国家大剧院音乐厅奏响。来自北京民族乐团、广东民族乐团等十家院团的演奏员联袂登台，乐曲汲取多地红色民歌素材，箫声伴诵《忆秦娥・娄山关》，琵琶奏响经典旋律《映山红》，唢呐与板胡和鸣《山丹丹开花红艳艳》，在丰富的器...</div>
+                <div class="item-meta">央视新闻 · 2026-10-29 07:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A02KIU00?scene=news-skill" target="_blank" rel="noopener">2.5亿人次已受益 多地以旧换新上新 最高补贴2000元</a></div>
+                <div class="item-summary">10月28日，商务部召开全国消费品以旧换新工作推进电视电话会议。数据显示，2026年以来，消费品以旧换新带动相关品类销售额超2万亿元，惠及超2.5亿人次。近日，河南、山西、天津、黑龙江、四川等地出台以旧换新自主品类补贴政策，将智能门锁、智能净水机、运动相机、助听器等智能家居、适老产品纳入补贴范围，部分产品最高补2000元。各地规则有什么不一样？哪些商品能享补贴？申领补贴要注意哪些问题？ 多省...</div>
+                <div class="item-meta">央视新闻 · 2026-10-29 06:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A02UEM00?scene=news-skill" target="_blank" rel="noopener">人民日报刊文：全面从严治党就在身边</a></div>
+                <div class="item-summary">全面从严治党，离老百姓远不远？ 答案，就在群众身边的一个个镜头里：天价月饼、豪华礼盒难觅踪影了；会所转型平价茶馆，对大众开放了；办事窗口“吃拿卡要”少了，一次性告知、限时办结成常态；村口公示栏前，村民们对着账目一笔一笔核：“修路花了多少、公益岗补贴谁领了，算好明白账心里亮堂。” 桩桩小事，连着民心。习...</div>
+                <div class="item-meta">人民日报 · 2026-10-28 07:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A02X3R00?scene=news-skill" target="_blank" rel="noopener">视频丨玩具安全新国标11月1日起正式实施</a></div>
+                <div class="item-summary">新版《玩具安全》系列强制性国家标准将自11月1日起正式实施。该系列标准在对标国际标准的基础上，对玩具产品质量安全技术要求和试验方法进行了全面升级。《玩具安全》系列强制性国家标准在化学安全方面，增加甲醛、总挥发性有机化合物、短链氯化石蜡、硼元素等10类有害物质限量要求，大幅增加玩具产品中化学类有害物质的覆盖类别。同时在机械物理安全方面，增加悠悠球、模拟食品玩具等新产品的技术要求，优化原标准中膨...</div>
+                <div class="item-meta">央视新闻 · 2026-10-29 07:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A0253K00?scene=news-skill" target="_blank" rel="noopener">特大暴雪！暴雨！新一轮冷空气将登场</a></div>
+                <div class="item-summary">据气象部门消息10月底开始新一轮冷空气将登场中东部大部地区将先后降温4℃至8℃南方局地降温可超过10℃此外，受孟加拉湾风暴影响明夜起西藏等地将现强降雪国家防灾减灾救灾委员会办公室应急管理部会商部署西藏强降雪天气防范应对工作 新一轮冷空气即将到来部分地区降温10℃本周影响我国的冷空气十分活跃。今天，我国北方地区仍将受弱冷空气影响，降温主要集中在华北北部到东北一带。临近月底，冷空气的势力又会有所...</div>
+                <div class="item-meta">央视新闻 · 2026-10-29 05:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A020Z200?scene=news-skill" target="_blank" rel="noopener">香港现日落奇观 网友：果然大湾区是一家</a></div>
+                <div class="item-summary">近日有网友在香港拍摄日落惊喜地发现镜头里竟然出现了珠海和澳门的建筑网友纷纷感叹“港珠澳又连在一起了”“果然大湾区是一家人”还有网友晒出同一视角的照片照片里能清晰地看见珠海中心大厦和澳门旅游塔的剪影出现在一轮红日中还有网友发出疑问“这真的不是海市蜃楼吗？”香港网友直接晒出地图证明“能见度好的时候刚好能...</div>
+                <div class="item-meta">央视新闻 · 2026-10-29 04:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A02RYD00?scene=news-skill" target="_blank" rel="noopener">外资企业坚定投资深圳、深耕中国</a></div>
+                <div class="item-summary">原标题：外资企业坚定投资深圳、深耕中国（见证·中国机遇）深圳前海，德国西门子医疗器械保税维修中心支持磁共振设备全球售后；芬兰通力电梯的数字化新设备快速发往大湾区市场；来自英国、新加坡等地的外资银行、金融机构纷纷入驻深港国际金融城……开放程度高、经济活力强，深圳作为全球投资热土的吸引力与竞争力不断提升...</div>
+                <div class="item-meta">人民日报 · 2026-10-29 07:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A01K9A00?scene=news-skill" target="_blank" rel="noopener">一组数据 看我国经济动能向新</a></div>
+                <div class="item-summary">国家统计局10月27日发布数据显示，今年1至9月份，全国规模以上工业企业实现利润总额60337.4亿元，同比增长15.5%，今年以来持续保持两位数增长。今年以来，随着各地因地制宜培育壮大新质生产力，新动能对工业企业效益的引领作用更为明显，前三季度，规模以上高技术制造业、电子行业利润均实现大幅增长。...</div>
+                <div class="item-meta">央视新闻 · 2026-10-28 02:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A02V3600?scene=news-skill" target="_blank" rel="noopener">多地拓展“车票+门票”等一站式出行服务 交通票根链接消费新场景</a></div>
+                <div class="item-summary">一出车站，乘车凭证换取景区“银票”，一张普通的火车票，瞬间变成通往景区、体验“北宋繁华”的入场券——得益于河南开封站联合万岁山武侠城等景区推出的特色活动，不少游客来了场“出站入‘江湖’”的新体验。交通运输部等四部门联合印发的《综合运输服务发展“十五五”规划》提出，拓展客运枢纽旅游服务功能，提供“车票...</div>
+                <div class="item-meta">新华网 · 2026-10-29 07:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A0C9FM00?scene=news-skill" target="_blank" rel="noopener">中小学秋假怎么放？注意这些误区（2026·10·28）</a></div>
+                <div class="item-summary">辟 谣中小学秋假安排需注意这些误区 详情：2025年9月，商务部等9部门印发《关于扩大服务消费的若干政策措施》，提出在放假总天数和教学时间总量不变的前提下，鼓励有条件的地方科学调整每学年的....</div>
+                <div class="item-meta">武汉辟谣 · 2026-10-28 19:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A0BCSD00?scene=news-skill" target="_blank" rel="noopener">刘延东同志逝世</a></div>
+                <div class="item-summary">新华社北京10月28日电 中国共产党的优秀党员，久经考验的忠诚的共产主义战士，我党统一战线工作和我国教育科技、医疗卫生、妇女儿童工作的杰出领导人，中国共产党第十七届、十八届中央政治局委员，中国人民政治协商会议第十届全国委员会副主席，原国务委员，国务院原副总理刘延东同志，因病于2026年10月28日14时53分在北京逝世，享年81岁。</div>
+                <div class="item-meta">新华社新闻 · 2026-10-28 18:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A0DQ5S00?scene=news-skill" target="_blank" rel="noopener">麻生太郎，有麻烦了</a></div>
+                <div class="item-summary">据新华社10月28日报道，日本执政党自由民主党副总裁麻生太郎近期被曝政治资金争议，其领导的派阀被指利用政治资金派对筹款约20亿日元（约合8454万元人民币），并将部分资金支付给一家私人会所。麻生太郎现年86岁，曾任日本首相、财务大臣等要职，是自民党内现存的唯一派阀“麻生派”领导人。按日本媒体说法，麻生太郎的支持...</div>
+                <div class="item-meta">长安街知事 · 2026-10-28 21:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A0CWQU00?scene=news-skill" target="_blank" rel="noopener">父子海钓时船突然翻了，手机进水彻底失联，父亲果断将两件救生衣捆作一处，海上漂流近11小时两人体力严重透支，被渔船发现后获救</a></div>
+                <div class="item-summary">近日，一对父子在茂名博贺港附近海域垂钓，因渔船翻沉不幸落水失联。茂名海警局持续开展海上搜救任务，成功救助因渔船翻沉落水失联的父子两人。至此，父子两人在波涛之中顽强漂流近11小时。“幸好救生衣上的安全绳把我们两个人绑在一起，父子两个相互鼓励，才等来了救援……”10月28日，有着丰富海上作业经验的德叔（化名）回忆起这场险境仍心有余悸。10月18日4时许，德叔父子驾驶渔船从广东茂名博贺港出发，前往...</div>
+                <div class="item-meta">红星新闻 · 2026-10-28 20:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261026A0DZCH00?scene=news-skill" target="_blank" rel="noopener">财经聚焦｜从前三季度用电量看经济发展新动能</a></div>
+                <div class="item-summary">国家能源局近日发布的今年前三季度用电数据显示，工业用电量达到50632亿千瓦时，同比增长4.3%。其中，高技术及装备制造业用电量9619亿千瓦时，同比增长8.7%。 电力数据是观察经济运行的重要窗口。大到产业布局调整，小到企业产能变化，最终都会体现在用电量的起伏波动里。透过前三季度的用电曲线可以发现，我国经济结构持续...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-26 22:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A02OPC00?scene=news-skill" target="_blank" rel="noopener">西班牙高铁事故关键录音曝光</a></div>
+                <div class="item-summary">据央视新闻援引西班牙卡斯蒂利亚-拉曼查自治区方面28日消息，当天上午在其首府托莱多发生的高速铁路列车相撞事故死亡人数上升至68人。同日，西班牙托莱多省高铁特大追尾事故的关键调度通话录音曝光。据悉，这三段核心通话录音包括控制中心与停在轨道上的伊尔约公司列车司机的两次通话，以及与后方追尾的西班牙国家铁路公司...</div>
+                <div class="item-meta">长安街知事 · 2026-10-29 06:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A099KF00?scene=news-skill" target="_blank" rel="noopener">美国压着不让韩国“独立”，有个秘密…</a></div>
+                <div class="item-summary">韩国希望在未来两年内从美国手中收回本国军队的战时指挥权，可是华盛顿拒绝承诺具体移交日期。双方争议的焦点是战时作战指挥权（OPCON）。自1950年朝鲜战争爆发后不久，美国便一直掌握着这一指挥权。按照现行安排，如果再次爆发战争，韩国指定部队将被编入由美国陆军上将泽维尔·布伦森领导的韩美联合司令部。这是一个负责...</div>
+                <div class="item-meta">观察者网 · 2026-10-28 22:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A0EFL800?scene=news-skill" target="_blank" rel="noopener">天津银行或迎最年轻董事长，56岁于建忠非退休离任</a></div>
+                <div class="item-summary">文 | 祝玉婷编辑 | 刘鹏天津银行（01578.HK）或将迎来历史上最年轻的董事长。此前，天津市委组织部发布的市管干部任前公示显示，天津农商银行党委副书记、行长杨毅，拟任市管企业党委书记，聘任为市管企业董事长。公示未公布具体任职企业，据多位知情人士消息称，杨毅或赴任天津银行，而该行原党委书记、董事长于建忠或已经提交辞呈离任。截至发稿，天津银行尚未就上述人事变动发布公告。资料显示，杨毅出生于...</div>
+                <div class="item-meta">腾讯财经 · 2026-10-29 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A09JYS00?scene=news-skill" target="_blank" rel="noopener">A股全线大反弹！能抄底了吗？</a></div>
+                <div class="item-summary">每经记者：叶峰 每经编辑：彭水萍10月28日，A股市场震荡反弹，创业板指涨超3%，深成指、科创50指数涨超2%。盘面上，热点快速轮动，人形机器人概念爆发，短剧概念表现活跃，创新药、CRO概念盘中走高；下跌方面，食品饮料板块震荡调整。全市场超4100只个股上涨。沪深两市成交额1.63万亿，较上一个交易日放量1675亿。A股三大指...</div>
+                <div class="item-meta">每日经济新闻 · 2026-10-28 16:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028A0D5J300?scene=news-skill" target="_blank" rel="noopener">日美防长会谈，将在日本新建导弹组装厂</a></div>
+                <div class="item-summary">10月28日，日本防卫大臣小泉进次郎在菲律宾与美国国防部长赫格塞思举行会谈。双方同意在日本国内新建一座用于F-35战斗机所搭载的“AMRAAM”（先进中程空对空导弹）的最终组装设施。日美两国将共同提高导弹生产能力。两人进行了约30分钟的会谈。此前，日美双方一直就加快导弹联合生产的方向达成共识。此次会谈还确认，为扩大...</div>
+                <div class="item-meta">观察者网 · 2026-10-28 20:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261028V0E3N400?scene=news-skill" target="_blank" rel="noopener">韩国AI眼镜作弊从大学蔓延至初高中：触碰镜腿拍摄题目 10秒内解出数学难题</a></div>
+                <div class="item-summary">今年以来，韩国查出多起考生佩戴AI眼镜作弊事件，涉案场景覆盖各类等级考试，甚至已从大学向初高中蔓延。A眼镜解题和给出答案仅耗时10秒。</div>
+                <div class="item-meta">海客新闻 · 2026-10-28 22:16</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-29 08:43</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
