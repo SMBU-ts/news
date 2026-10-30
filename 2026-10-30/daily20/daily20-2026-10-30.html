@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-30</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-30</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02U8Y00?scene=news-skill" target="_blank" rel="noopener">11月起，这些新规将影响你我生活</a></div>
+                <div class="item-summary">11月起，一批新规将正式施行，涉及社会民生多个领域，一起来了解“一车一池一充一码”电动自行车CCC认证要求更严格 市场监管总局今年全面升级CCC认证实施规则，电动自行车、玩具、童车三类产品CCC认证新规将于11月1日起实施。其中，电动自行车CCC认证新规要求严格实施“一车一池一充一码”，生产企业出厂时必须配齐全部必需部件；每辆车出厂都要随车附带一致性证书，内容和车辆登记要求完全匹配。玩具CC...</div>
+                <div class="item-meta">央视新闻 · 2026-10-30 07:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02MHK00?scene=news-skill" target="_blank" rel="noopener">“避寒游”“冰雪游”航线加密</a></div>
+                <div class="item-summary">近日在北京首都国际机场准备出行的旅客。本报记者 吉亚矫摄自2026年10月25日起，至2027年3月27日，全国民航正式执行2026/2027年冬春航季航班计划。新航季共有216家国内外航空公司计划每周安排客货运航班11.6万班。本次航班换季将有效提升供需匹配程度。冬春航季一方面适配部分国家夏令时转冬令时的时间统一转换要求，另一方...</div>
+                <div class="item-meta">经济日报 · 2026-10-30 06:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029V08SPR00?scene=news-skill" target="_blank" rel="noopener">矢志不渝为人民｜征途之上</a></div>
+                <div class="item-summary">矢志不渝为人民｜征途之上</div>
+                <div class="item-meta">新华社视频 · 2026-10-29 15:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02M1U00?scene=news-skill" target="_blank" rel="noopener">中国U17女足首次晋级世界杯八强</a></div>
+                <div class="item-summary">北京时间10月30日凌晨，在2026年国际足联U17女足世界杯八分之一决赛中，中国队常规时间0-0战平法国队，随后进入点球大战。点球大战中，中国队以4-3战胜法国队，历史上首次晋级U17女足世界杯八强！本场比赛，中国队门将牛子琪在常规时间高接抵挡，并在点球大战扑出2粒点球。...</div>
+                <div class="item-meta">央广网 · 2026-10-30 06:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030V02TKF00?scene=news-skill" target="_blank" rel="noopener">15公里暗夜行军！新兵开展战备基础综合训练</a></div>
+                <div class="item-summary">近日，北部战区海军某基地组织新兵开展战备基础综合训练。</div>
+                <div class="item-meta">人民日报 · 2026-10-30 07:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02T0500?scene=news-skill" target="_blank" rel="noopener">西藏巴青地震救援现场 | “我们是一家人”</a></div>
+                <div class="item-summary">原标题：西藏那曲市巴青县地震发生后，志愿者众志成城——“我们是一家人”（在现场） 西藏那曲市巴青县发生地震后，很多陌生面孔来到这里——有人燃起锅灶，有人架设线路，有人抬着火炉走进受灾群众的帐篷。大货车一趟趟运来物资，也送来全国人民的关心。 布扎是中国人寿财险那曲市中心支公司的员工。地震发生时，他正在休...</div>
+                <div class="item-meta">人民日报 · 2026-10-30 07:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02DA300?scene=news-skill" target="_blank" rel="noopener">视频丨以英雄为名！“文秀”“娇龙”月季上市</a></div>
+                <div class="item-summary">云南月季新品种“文秀”“娇龙”29日正式上市这两个品种分别以广西“大山的女儿”黄文秀新疆“马背上的女县长”贺娇龙的名字命名自10月29日起两款月季将通过电商平台面向全国发售据培育团队介绍该品种未来有望实现全年供应 黄色“文秀”致敬初心与奉献去年年底新品种黄色月季（编号775-1）公开征名时评论区被“文秀”刷屏云南省农科院花卉所研究员蔡艳飞深受触动在接受采访时她说“黄文秀扎根基层驻村我们科技助...</div>
+                <div class="item-meta">央视新闻 · 2026-10-30 05:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029V0EGE900?scene=news-skill" target="_blank" rel="noopener">便宜500元至1000元！ 九九新二手手机成抢手货</a></div>
+                <div class="item-summary">便宜500元至1000元！ 九九新二手手机成抢手货</div>
+                <div class="item-meta">大象新闻 · 2026-10-29 23:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02EFD00?scene=news-skill" target="_blank" rel="noopener">视频丨@老年人 别把易怒、多疑当“怪脾气” 警惕季节性情绪病</a></div>
+                <div class="item-summary">进入秋季以来，气温下降，昼夜温差加大。不少老年人会心情烦躁、情绪低落。为什么会出现这样的情况？难道情绪也会“换季”？又该如何应对？季节交替，不少老年人莫名烦躁、情绪低落，这是光照变化、气温波动、生理状态和环境等多重因素共同作用的结果。光照变化：换季日照时长缩短，会影响大脑血清素、褪黑素分泌。秋冬光照...</div>
+                <div class="item-meta">央视新闻 · 2026-10-30 05:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/eRWtHYrJhOljnkfM2KwO4g?scene=news-skill" target="_blank" rel="noopener">红军铁纪篇 | 打破“茅台洗脚”污名谣言</a></div>
+                
+                <div class="item-meta">2026-10-29 17:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A039X900?scene=news-skill" target="_blank" rel="noopener">东莞有学校小卖部只卖水、牛奶和面包？ 有市民证实，已存在多年；观点：校内买不到，学生会跑到校外买，呵护学生健康得校内外一起抓</a></div>
+                <div class="item-summary">近日，广东东莞多个中学公众号转发《一组海报读懂〈校园商超规范管理指导意见（试行）〉的通知》，引发当地网友热议。有网友称，学校小卖部饮品只卖牛奶和水了。对此，有市民证实，该现象已存在多年，小学基本没有....</div>
+                <div class="item-meta">南方都市报 · 2026-10-29 22:13</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02G7600?scene=news-skill" target="_blank" rel="noopener">486万美元！杨瀚森正式获得第三年保障合同 火速归队有望重返赛场</a></div>
+                <div class="item-summary">北京时间10月30日，杨瀚森正式获得NBA生涯第三年的保障合同，波特兰开拓者官方宣布，球队执行克林根新秀合同中2027-28赛季的球队选项（约955万美元），执行杨瀚森新秀合同中2027-28赛季的....</div>
+                <div class="item-meta">追球者 · 2026-10-30 05:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A0E3SC00?scene=news-skill" target="_blank" rel="noopener">洛阳一卤蛋店突然爆火，1.5元一个，开门半小时就卖光，老板跪求“别来了”：每天3点起床，3000个不够卖；老顾客现场忽悠“不好吃别来”</a></div>
+                <div class="item-summary">洛阳一家卤蛋店，最近突然火了。1.5元一个，每天卖3000多个，开门半小时就卖光。有顾客开车1个多小时来，一口气买30个。剥开一看，颜色渗进去了，腌得透透的，味道跟热乎的“乡巴佬”一个样。可老板反而有些“愁眉苦脸”：“别来了，现在每天3点都要起床，怕人来得太多。”店员累到连笑都笑不出来。一位吃了十多年的顾客对...</div>
+                <div class="item-meta">大河报 · 2026-10-29 22:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A09V8W00?scene=news-skill" target="_blank" rel="noopener">菲媒称中国航母“突入菲律宾心脏”，国防部答澎湃：“有关方不要自己给自己加戏”</a></div>
+                <div class="item-summary">10月29日下午，国防部举行例行记者会，国防部新闻发言人张晓刚大校答记者问。澎湃新闻（www.thepaper.cn）记者提问，据菲媒报道，中国海军辽宁舰航母编队穿越巴西兰海峡，“突入菲律宾心脏”，菲海军派出精锐力量进行跟踪监视。有外媒报道称，中国4艘071型船坞登陆舰组成的编队在南海进行训练，外国智库分析认为这是向菲律宾展示夺岛能力。请问对此有何评论？张晓刚表示，“首先我要奉劝有关方，不要...</div>
+                <div class="item-meta">澎湃新闻 · 2026-10-30 00:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A0DKNU00?scene=news-skill" target="_blank" rel="noopener">贺伟华任内蒙古自治区政府副主席</a></div>
+                <div class="item-summary">据内蒙古新闻联播消息，2026年10月29日下午，内蒙古自治区十四届人大常委会第三十一次会议在呼和浩特召开。会议表决通过了人事任免事项，任命王子联为自治区监察委员会副主任；决定任命贺伟华为自治区人民政府副主席。稍早前，巴彦淖尔市委书记贺伟华已出任内蒙古自治区政府党组成员。公开资料显示，贺伟华，男，汉族，196...</div>
+                <div class="item-meta">澎湃新闻 · 2026-10-29 21:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A0DAZY00?scene=news-skill" target="_blank" rel="noopener">三只松鼠，日赚不足1万元</a></div>
+                <div class="item-summary">三只松鼠的“百亿规模”如今要打上一个问号。10月28日盘后，三只松鼠（300783.SZ）发布2026年三季报。表面看，这份“成绩单”不算难看，前三季度营收73.22亿元，同比下滑5.63%；归母净利润2.57亿元，同比增长59.71%；扣非后的归母净利润1.92亿元，同比增速高达236.66%，利润大幅增长。但单季数据揭开了这家公司的另一面。第...</div>
+                <div class="item-meta">国际金融报 · 2026-10-29 21:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A090TY00?scene=news-skill" target="_blank" rel="noopener">两个月减重22斤，河南35岁男子吃凉土豆蘸辣椒减肥，“第一周效果明显，几乎一天掉一斤”，医生揭秘：关键是放凉了再吃</a></div>
+                <div class="item-summary">“有天早上照镜子，发现自己的脸又大又圆，肚子上也都是肥肉，就想去去‘登味儿’。”张先生笑着告诉记者减肥的初衷。今年8月中旬，35岁的他看着镜子里那张日渐圆润的脸，再想到体检报告上脂肪肝、痛风等不良指标，终于下定决心减肥。张先生说，自己的方法来自刷到的科普短视频：把蒸熟的土豆放凉了吃，代替主食。就这样吃...</div>
+                <div class="item-meta">大河报 · 2026-10-29 15:54</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029A0CWQW00?scene=news-skill" target="_blank" rel="noopener">伊朗：三艘油轮在霍尔木兹海峡触雷爆炸起火</a></div>
+                <div class="item-summary">据美国哥伦比亚广播公司（CBS）报道，当地时间10月29日，伊朗伊斯兰革命卫队表示，三艘油轮在试图经由霍尔木兹海峡 “未经授权的南部航道”通行时，撞上水雷，发生爆炸并起火。伊朗伊斯兰革命卫队海军公关办公室在一份声明中称，事故发生在过去24小时内，涉事船只随后搁浅在海峡南岸。美国一直鼓励航运企业使用霍尔木兹海峡...</div>
+                <div class="item-meta">观察者网 · 2026-10-29 20:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A02HBI00?scene=news-skill" target="_blank" rel="noopener">星光黯淡！巴西队公布26人大名单 9人效力非五大联赛</a></div>
+                <div class="item-summary">北京时间10月30日，巴西队主教练安切洛蒂公布了2026 年度最后一期国家队大名单，球队将于 11 月 14 日、17 日进行两场友谊赛，对手分别是日本和新加坡。在这份26人大名单之中，除了维尼修斯....</div>
+                <div class="item-meta">球事百科 · 2026-10-30 06:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261029V063ES00?scene=news-skill" target="_blank" rel="noopener">妻子一顿饭烧了5个菜，夫妻闹到要离婚，丈夫：一家三口吃太浪费</a></div>
+                <div class="item-summary">近日，杭州一名婚姻家庭指导师分享案例，一对夫妻因妻子一餐烧5个菜爆发矛盾，闹到准备离婚。丈夫认为一家三口吃五个菜太过浪费，背后是南北生活习惯差异，他只看到铺张，却忽略妻子精心准备饭菜，是久别重逢想要表达思念的心意。</div>
+                <div class="item-meta">掌闻视讯 · 2026-10-29 11:55</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-30 08:33</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

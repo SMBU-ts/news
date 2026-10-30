@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://huggingface.co/blog/mistral-large4",
+    "title": "Mistral Large 4（Le Chonk）登陆 Hugging Face：1T 参数 MoE 多模态开源权重模型",
+    "source": "Hugging Face 官方团队博客",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/Khazix0918/status/2115898252004622617",
+    "title": "Pika 基于MiniMax H3后训练并开源 Pika H3 Flex 视频生成模型",
+    "source": "X：卡兹克 (@Khazix0918)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/thsottiaux/status/2115850175868727621",
+    "title": "Codex 宣布即日起 Pro 及 Business Premium 各档位用量上限翻倍",
+    "source": "X：Tibo (@thsottiaux)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://factory.com/news/frontier-harness",
+    "title": "Factory 发布 Droid 1.0，以程序化工具调用构建企业级 Agent harness",
+    "source": "Factory 研究 / 产品（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/",
+    "title": "OpenRouter 重建默认路由算法：TTFT 降 16.9%、429 错误减少 67%",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/chinese-spies-targeted-nvidia-ceo-jensen-huang-according-to-the-new-york-times/",
+    "title": "纽约时报称中国情报人员瞄准英伟达 CEO 黄仁勋",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/",
+    "title": "Reddit 宣布转向以登录为主的体验，以应对 AI 搜索带来的流量下滑",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://the-decoder.com/googles-ai-search-problem-finally-shows-up-in-the-earnings-report-some-investors-believe/",
+    "title": "Google 三季度搜索增速不及预期，投资者担忧 AI 搜索变现拖累核心业务",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.404media.co/manifestos-fear-and-loser-thinking-inside-protons-ai-reckoning/",
+    "title": "404 Media 起底 Proton 内部 AI 转型之争：CEO Andy Yen 强推 AI 引发恐惧文化",
+    "source": "404 Media（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+    "title": "OpenAI 详解如何检测前沿模型失准行为",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://trakkr.ai/trakkr-research/zombie-stats",
+    "title": "Trakkr 研究：追踪 1285 条 AI 引用统计的溯源路径",
+    "source": "Hacker News：AI 热帖",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openrouter.ai/blog/tutorials/extract-tables-from-pdf-llm/",
+    "title": "OpenRouter 教程：用 LLM 从 PDF 中抽取表格",
+    "source": "OpenRouter：Announcements（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]

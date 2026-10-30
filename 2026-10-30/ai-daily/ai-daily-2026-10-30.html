@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-10-30</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 10 月 30 日 · 星期五</h1>
+      <div class="sub">共 12 条 · 生成于 北京时间 2026 年 10 月 30 日 08:00 · 数据覆盖 2026-10-29 ~ 2026-10-30</div>
+      <div class="stats">
+        <div class="stat"><div class="n">12</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">3</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">4</div><div class="l">行业动态</div></div><div class="stat"><div class="n">2</div><div class="l">论文研究</div></div><div class="stat"><div class="n">1</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 2</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 3</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 4</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 2</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 1</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">2</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">3</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">4</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">2</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">1</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">Hugging Face 官方团队博客</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://huggingface.co/blog/mistral-large4" target="_blank" rel="noopener noreferrer">Mistral Large 4（Le Chonk）登陆 Hugging Face：1T 参数 MoE 多模态开源权重模型</a>
+          </h3>
+          <p class="card-sum">Hugging Face 发布 Mistral Large 4（Le Chonk）的上线博客，模型为多模态多语言 Mo…</p>
+          <div class="card-actions">
+            <a class="read" href="https://huggingface.co/blog/mistral-large4" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Mistral 在 Hugging Face 放出 Large 4 权重，代号 Le Chonk。总参数约 1 万亿、每 token 激活 49B，原生多模态，上下文 100 万 token，提供 FP8 与 NVFP4 两版，主流推理框架首日支持。权重用 MIT 衍生的 Mistral 生态开放权重许可，做模型即服务需另行授权。AA 网络安全指数 82%，闭源模型因拒答多在同题接近零分。</div>
+        </article>
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">2</span>
+            <span class="chip" style="--c:#3b82f6">X：卡兹克 (@Khazix0918)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/Khazix0918/status/2115898252004622617" target="_blank" rel="noopener noreferrer">Pika 基于MiniMax H3后训练并开源 Pika H3 Flex 视频生成模型</a>
+          </h3>
+          <p class="card-sum">Pika Labs 在 MiniMax H3 上做后训练，推出并开源 Pika H3 Flex，采样步数从 50 步压…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/Khazix0918/status/2115898252004622617" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>Pika 在 MiniMax H3 上后训练出 H3 Flex，把采样从 50 步蒸馏到 6 步，一次可接受最多 12 个参考（图、视频、音频），生成 5 至 15 秒带立体声片段，原生 480p 或 768p，可上采样到 4K，API 可导出五条独立音轨。官方称 15 秒 768p 计算约 7 秒。开源的只是适配器与推理代码，底层 H3 约 210GB，许可排除欧盟、英国、韩国与美国。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">X：Tibo (@thsottiaux)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/thsottiaux/status/2115850175868727621" target="_blank" rel="noopener noreferrer">Codex 宣布即日起 Pro 及 Business Premium 各档位用量上限翻倍</a>
+          </h3>
+          <p class="card-sum">Tibo 宣布即日起将 Pro 100/200/500 档位与 Business Premium 的所有用量上限翻倍。…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/thsottiaux/status/2115850175868727621" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>OpenAI 即日起把 ChatGPT Pro 与 Business Premium 的 Work、Codex 额度翻倍：Pro 100、Pro 500 直接翻倍，并撤销 9 月 29 日的 Pro 200 降额计划，原本额度较低者一并提到同一上限，无需操作。公司提醒翻倍不等于能完成两倍任务；Fast 模式消耗约为标准模式 2.5 倍，Ultrafast 达 8 倍。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">Factory 研究 / 产品（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://factory.com/news/frontier-harness" target="_blank" rel="noopener noreferrer">Factory 发布 Droid 1.0，以程序化工具调用构建企业级 Agent harness</a>
+          </h3>
+          <p class="card-sum">Factory 发布 Droid 1.0，一个模型无关的 agent harness，主打程序化工具调用（PTC），模…</p>
+          <div class="card-actions">
+            <a class="read" href="https://factory.com/news/frontier-harness" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Factory 发布企业级 Agent 框架 Droid 1.0，核心是把工具调用改为程序化调用：模型先写一段程序，再一次调用跑完整个工作流，一个请求可完成数百次工具调用，不必每次把工具输出回灌上下文。Terminal-Bench 4 上配 GPT-6.1 Sol 得 57.6%、单任务 0.79 美元，高于 Codex 的 54.0%。它不绑定模型，由 Factory Router 择优调度。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/" target="_blank" rel="noopener noreferrer">OpenRouter 重建默认路由算法：TTFT 降 16.9%、429 错误减少 67%</a>
+          </h3>
+          <p class="card-sum">OpenRouter 宣布重建默认 provider 路由算法，从只按价格排序改为按 Routing Cost 综合 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>OpenRouter 重建默认路由算法，从只比价格改为按实时 Routing Cost 择优：把实际单价、等待时间与失败重试的代价合并计算，即一次尝试花多少钱、成功率多高，并按实测缓存命中率修正价格。官方称上线后首字延迟降 16.9%、吞吐升 16.3%、容量类错误减 46%，成本仅升 6%。平台约 77% 请求指向多家供应商承载的模型。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">6</span>
+            <span class="chip" style="--c:#f59e0b">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/chinese-spies-targeted-nvidia-ceo-jensen-huang-according-to-the-new-york-times/" target="_blank" rel="noopener noreferrer">纽约时报称中国情报人员瞄准英伟达 CEO 黄仁勋</a>
+          </h3>
+          <p class="card-sum">据《纽约时报》报道，美国情报机构认为英伟达 CEO 黄仁勋身边一名高管为中国提供情报，此人是新加坡数据中心运营商 Me…</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/chinese-spies-targeted-nvidia-ceo-jensen-huang-according-to-the-new-york-times/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>《纽约时报》报道称，美国情报机构认为英伟达 CEO 黄仁勋身边一名高管为中国提供情报，指向新加坡数据中心运营商 Megaspeed 的黄乐。报道说特朗普约一年前已听取简报但未行动。美方怀疑它协助中国获取英伟达芯片，其马来西亚姊妹公司 2024 年 6 月至 2026 年 2 月采购相关硬件至少 48 亿美元。英伟达称 CEO 会见客户属正常工作；Megaspeed 已启动内部调查。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">7</span>
+            <span class="chip" style="--c:#f59e0b">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/" target="_blank" rel="noopener noreferrer">Reddit 宣布转向以登录为主的体验，以应对 AI 搜索带来的流量下滑</a>
+          </h3>
+          <p class="card-sum">Reddit 在 Q3 财报中宣布将转向以登录为主的体验，以保护数据免受 AI 抓取并提升广告变现。10 月搜索流量平…</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>Reddit 在三季度财报会上宣布转向以登录为主的体验，理由是 AI 搜索让导流枯竭，登录化既能挡住 AI 抓取、便于签数据授权协议，也能提高广告变现。三季度全球日活 1.303 亿，美国日活从 5320 万降至 5070 万、同比减 2%；10 月搜索导流平均每周减少逾 100 万次，公司警告下季度日活或下滑百分之十几。同期营收 8.95 亿美元、增 53%，净利 2.83 亿美元、增 74%。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">8</span>
+            <span class="chip" style="--c:#f59e0b">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/googles-ai-search-problem-finally-shows-up-in-the-earnings-report-some-investors-believe/" target="_blank" rel="noopener noreferrer">Google 三季度搜索增速不及预期，投资者担忧 AI 搜索变现拖累核心业务</a>
+          </h3>
+          <p class="card-sum">Google 三季度搜索收入增长约 12%，低于分析师预期的 15%，市值一度缩水最多 10%。高管 Philipp …</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/googles-ai-search-problem-finally-shows-up-in-the-earnings-report-some-investors-believe/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>Alphabet 三季度搜索收入同比增 12%，低于预期的 15%，财报后股价一度跌 10%，市场担心 AI 搜索变现不及传统搜索。高管承认 AI 模式查询增长快但变现率更低。当季服务收入 963 亿美元、增 11%，营业利润 392 亿、利润率 40.7%。云收入 307 亿美元、增 103%，营业利润率 36.2%；单季资本开支 514 亿美元。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">9</span>
+            <span class="chip" style="--c:#f59e0b">404 Media（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.404media.co/manifestos-fear-and-loser-thinking-inside-protons-ai-reckoning/" target="_blank" rel="noopener noreferrer">404 Media 起底 Proton 内部 AI 转型之争：CEO Andy Yen 强推 AI 引发恐惧文化</a>
+          </h3>
+          <p class="card-sum">404 Media 采访九名现任与离职 Proton 员工并查阅内部文件，报道 CEO Andy Yen 强推 AI …</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.404media.co/manifestos-fear-and-loser-thinking-inside-protons-ai-reckoning/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>404 Media 依据 9 名员工访谈与内部记录，披露 Proton 内部的转型压力。有工程师建议新代码上线前留几天做渗透测试，CEO Andy Yen 在安全频道回复「这是废话和失败者思维」，要求停止手工打磨代码。公司还开设邮箱供员工举报阻碍 AI 的环节，称要无情铲除妨碍 AI 速度的东西，并在工作电脑装软件统计 AI 生成代码比例。本周公司表示将就 AI 使用重新面试员工。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">10</span>
+            <span class="chip" style="--c:#8b5cf6">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/how-we-detect-frontier-model-misalignment" target="_blank" rel="noopener noreferrer">OpenAI 详解如何检测前沿模型失准行为</a>
+          </h3>
+          <p class="card-sum">OpenAI 发布长文，详解其针对前沿模型失准行为的多层监测系统，包括激活探针、基于模型的审查、调查智能体和自动化调查…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/how-we-detect-frontier-model-misalignment" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>OpenAI 发文说明如何检测前沿模型失准，并把监控扩到训练、评估、内部使用与经改造的外部部署。体系分四层：激活探针、基于模型的审查器、可跨上下文取证并隔离运行代码的调查智能体，最后一层比对网络日志后决定是否呼叫人工；未标记流量仍随机抽 5% 复核。用新系统重放 7 月 Hugging Face 事件，可在智能体逃出沙箱约 30 分钟后告警，比实际入侵早 30 多小时。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">11</span>
+            <span class="chip" style="--c:#8b5cf6">Hacker News：AI 热帖</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://trakkr.ai/trakkr-research/zombie-stats" target="_blank" rel="noopener noreferrer">Trakkr 研究：追踪 1285 条 AI 引用统计的溯源路径</a>
+          </h3>
+          <p class="card-sum">Trakkr Research 向 ChatGPT、Perplexity、Gemini、Claude 和 Google…</p>
+          <div class="card-actions">
+            <a class="read" href="https://trakkr.ai/trakkr-research/zombie-stats" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>Trakkr 随机抽取 ChatGPT、Perplexity、Gemini、Claude 与 AI Overviews 引用的 1285 条统计数据，逐条溯源最多五层。结果仅 40% 能追到结论一致的研究，8% 虽找到原研究但数字或语境已变形，另 40% 断在没有研究支撑的页面。报告举例「44% 的销售员只跟进一次就放弃」：五个助手给出同一答案与引用，追到底却是一篇 2017 年的自由撰稿人范文。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">OpenRouter：Announcements（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openrouter.ai/blog/tutorials/extract-tables-from-pdf-llm/" target="_blank" rel="noopener noreferrer">OpenRouter 教程：用 LLM 从 PDF 中抽取表格</a>
+          </h3>
+          <p class="card-sum">OpenRouter 发布教程，讲解如何把 PDF 以文件形式连同严格 JSON schema 发给能读文件的模型，让…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openrouter.ai/blog/tutorials/extract-tables-from-pdf-llm/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>OpenRouter 发布教程，演示用 LLM 从 PDF 抽表格：把 PDF 与一份描述单行结构的严格 JSON Schema 一起提交，模型直接返回带类型的行，括号负数转成负值，跨页长表合并成一个列表。官方用 5 份 PDF（含 2 份扫描件）测 644 个单元格，能直接读 PDF 的模型全部答对；免费 cloudflare-ai 解析器处理扫描件会静默返回 0 行，长表则会撞上输出上限。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>12</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>
