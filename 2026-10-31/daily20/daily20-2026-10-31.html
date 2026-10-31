@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-10-31</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-10-31</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A02SCJ00?scene=news-skill" target="_blank" rel="noopener">视频丨多个领域捷报频传！本周我国硬核成果持续上新</a></div>
+                <div class="item-summary">本周我国在军事、能源、海洋科考、道路交通等多个领域捷报频传硬核成果持续上新我军首型舰载察打一体隐身无人机在四川舰成功起降 10月30日消息，10月下旬，我国首艘076型两栖攻击舰四川舰连续开展海上试验，我军首型舰载察打一体隐身无人机“攻击-21”首次在四川舰成功起降。这是我国两栖攻击舰发展历程上取得的又一次突破...</div>
+                <div class="item-meta">央视新闻 · 2026-10-31 06:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A03D2J00?scene=news-skill" target="_blank" rel="noopener">今天，纪念钱学森</a></div>
+                <div class="item-summary">‍‍‍‌‍‍‌五年归国路，十年两弹成。开创祖国航天事业，他是先行人。今年是红军长征胜利90周年，原来长征火箭的命名是钱学森提议的。如今，钱学森离开我们17年了，一代又一代航天人接续奋斗，便是对他最好的告慰！（人民日报原创新闻作品）(来源:人民日报微博)...</div>
+                <div class="item-meta">人民日报 · 2026-10-31 08:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A0E2KE00?scene=news-skill" target="_blank" rel="noopener">从“十五五”专项规划看“六张网”建设</a></div>
+                <div class="item-summary">原标题：强基赋能 夯实高质量发展底座——从“十五五”专项规划看“六张网”建设 新华社北京10月30日电 题：强基赋能 夯实高质量发展底座——从“十五五”专项规划看“六张网”建设 新华社记者戴小河、赵怡宁 输水“大动脉”穿山越岭，算力集群在戈壁荒漠上高速运转，城市地下管网纵横延伸……“十五五”开局之年，一张覆盖...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-30 21:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A030IM00?scene=news-skill" target="_blank" rel="noopener">中国麻将在美国爆火，成本 30 美元售价 400 美元,生产商:普通板材一周可交货，特殊板材和工艺复杂的麻将,定制需30天左右</a></div>
+                <div class="item-summary">近日，据媒体报道，中国制造的麻将在美国“意外”爆火。普通套装售价可达300至400美元，生产成本仅约30美元，价格翻了十倍不止。即便价格不菲，美国消费者排队抢购，国内生产厂商订单火爆。据悉，江苏省泰兴市是国内重要的麻将生产基地，为符合美国买家需求，当地生产商还革新了制作工艺。（图片来源：经视直播）据了解，江苏泰兴是国内重要的麻将生产基地，当地生产商为了适配美国买家需求，专门革新了制作工艺：把...</div>
+                <div class="item-meta">红星新闻 · 2026-10-31 07:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A05CAR00?scene=news-skill" target="_blank" rel="noopener">旅荷大熊猫幼崽“朗月”平安接返回国</a></div>
+                <div class="item-summary">根据中荷大熊猫保护国际合作协议规定，经双方友好协商，旅居荷兰欧维汉动物园的大熊猫幼崽“朗月”（雌性，2024年7月13日生）于10月31日10时30分平安运抵成都。为保障“朗月”安全顺利回国，我方选派经验丰富的兽医专家提前赴荷参与饲养护理，全面熟悉掌握它的生活习性与饲养情况，协助荷方专家共同开展行为训练、日常体检...</div>
+                <div class="item-meta">央视新闻 · 2026-10-31 10:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A07W7600?scene=news-skill" target="_blank" rel="noopener">未来五年，如何助力中小企业发展量质齐升？</a></div>
+                <div class="item-summary">原标题：我们的“十五五”｜未来五年，如何助力中小企业发展量质齐升？ 中小企业是推动创新、促进就业、改善民生的重要力量。 今年9月，工业和信息化部等十部门发布《促进中小企业发展“十五五”规划》，系统构建了“十五五”期间中小企业高质量发展的顶层架构、目标体系与实施路径。 规划提出，到2030年，我国中小企业整体...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-31 14:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A07P4V00?scene=news-skill" target="_blank" rel="noopener">11月1日起 未经培训的人员不得独立从事陪诊服务</a></div>
+                <div class="item-summary">《社会化陪同就医服务基本要求》(GB/T 47801—2026)将于 2026年11月1日正式实施。这是我国陪诊服务领域的首项国家标准，标志着陪诊行业从此有了统一的规范依据。 根据标准要求，陪诊服务人员应经过专业培训，掌握基础医学知识、医院就诊流程、沟通技巧、应急处理等内容，并取得相应的培训合格证明。未经培训的人员不得独立...</div>
+                <div class="item-meta">新华社新闻 · 2026-10-31 14:21</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A05JMX00?scene=news-skill" target="_blank" rel="noopener">视频丨横跨南北 解锁秋季赏菊的三种打开方式</a></div>
+                <div class="item-summary">秋日到来，菊花迎霜而开，自古以来，赏菊是我们中国人秋天特有的雅趣，各地的菊花也是各有千秋、特色鲜明，形成了一张横跨南北、各有绝活的赏菊地图。 一张横跨南北的赏菊地图从旅游体验角度来看，有三种中国的赏菊风格。一是古都型，以河南开封、北京等城市为代表，规模大、规格高。开封赏菊上千年，主打一个“满城尽带黄...</div>
+                <div class="item-meta">央视新闻 · 2026-10-31 11:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A052WV00?scene=news-skill" target="_blank" rel="noopener">我国首次载人登月任务乘组计划由三人组成，两人着陆月球表面</a></div>
+                <div class="item-summary">【环球时报-环球网报道 记者 樊巍】10月31日，第七届载人航天学术大会在北京航空航天大学举行。《环球时报》记者在本届大会上获悉，我国计划在2030年前实现中国人登陆月球，将采用“两次发射，一次登月”的方式实现载人登月。中国载人航天工程副总设计师兼月球探测工程总设计师王翔在本届大会上介绍称，我国首次载人月球探...</div>
+                <div class="item-meta">环球网 · 2026-10-31 10:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://mp.weixin.qq.com/s/Rfhk5ypNP7Z8d_MR6-JF-w?scene=news-skill" target="_blank" rel="noopener">红军破险篇 | 突围靠打不靠让，驳“放水论”</a></div>
+                
+                <div class="item-meta">2026-10-31 07:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A06T4800?scene=news-skill" target="_blank" rel="noopener">明天起这些个人收入将由单位代缴增值税</a></div>
+                <div class="item-summary">为了防止税收流失，简化纳税手续，中国首次引入的自然人增值税代扣代缴机制将于明日施行。根据财政部、税务总局公布的《境内单位代扣代缴自然人增值税管理办法》（下称《办法》），明天（11月1日）起，境内自然人提供七项服务，支付价款的境内单位为扣缴义务人，需按照《办法》规定代扣代缴增值税。这七项服务分别是研发服...</div>
+                <div class="item-meta">第一财经 · 2026-10-31 13:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A05LCQ00?scene=news-skill" target="_blank" rel="noopener">安徽这所大学明确将倒查6年学术论文，个⼈⾃查阶段已于昨日结束</a></div>
+                <div class="item-summary">近期，安徽建筑大学科技处在官网发布了《关于落实省教育厅进一步加强科研诚信与作风学风建设工作的通知》。根据这份通知，该校科研⼈员对2020年1⽉1日以来公开发表的学术论文逐⼀⾃查，重点排查图片重复、不当署名、论文买卖等学术不端⾏为。通知还要求，科研⼈员要对本人正在牵头或参与的科研项⽬进⾏全⾯梳理，重点自查科...</div>
+                <div class="item-meta">澎湃新闻 · 2026-10-31 11:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A054B200?scene=news-skill" target="_blank" rel="noopener">怪事！花80元只为运送两瓶喝剩的矿泉水？网约车司机径直将车开进派出所</a></div>
+                <div class="item-summary">“警察同志，有人打车后就让我给他送两瓶喝剩的矿泉水！”10月17日，网约车司机许师傅将车开到杨浦公安分局长海路派出所报警，称自己接到一笔可疑订单。民警检查后果然发现，矿泉水瓶其实是伪装，下单人真正要运送的是19张用于开展电信网络诈骗活动的电话卡。杨浦公安分局刑侦支队第一时间组织警力顺藤摸瓜，当天抓获7名涉...</div>
+                <div class="item-meta">新民晚报 · 2026-10-31 11:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A0738B00?scene=news-skill" target="_blank" rel="noopener">患者喉咙痛以为吃钙片卡住，结果是误吞豆浆机刀片，医生提醒：日常使用豆浆机、破壁机等电器前，记得检查刀头部件是否完好</a></div>
+                <div class="item-summary">“医生，我两个小时前吃钙片卡住了，现在喉咙很痛！”在云南大理大学第一附属医院耳鼻喉科接诊室里，一名患者面露痛苦地向接诊医师详细介绍自己的症状。接诊医师在听完患者的症状自述、仔细评估后，察觉异常，钙片遇人体体液可逐步溶解，一般很难持续性卡在咽喉部位，患者症状与主诉存在矛盾。于是决定为其紧急加做相关检查...</div>
+                <div class="item-meta">极目新闻 · 2026-10-31 09:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A0AE7900?scene=news-skill" target="_blank" rel="noopener">女子上午刚查出怀孕下午就遭车祸，近一个月后胎停流产，向肇事司机及其所属公司、保险公司索赔4.5万元，法院：司机全责，赔偿1.3万元</a></div>
+                <div class="item-summary">上午刚查出怀孕，下午便遭遇车祸。此后，女子多次前往医院检查，最终因胎儿停止发育接受流产手术。她认为，车祸给自己造成了身体和精神上的双重伤害，遂将肇事司机、司机所在公司及保险公司诉至法院，索赔4.5万余元。保险公司却认为，胎儿停止发育可能与胚胎自身染色体异常有关，不认可流产与交通事故存在因果关系。10月29日，大河报《看见》记者从中国裁判文书网获悉，北京市大兴区人民法院近日公布了该案民事判决书...</div>
+                <div class="item-meta">红星新闻 · 2026-10-30 17:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0629E00?scene=news-skill" target="_blank" rel="noopener">31省份人均收入排行榜揭晓，谁在领跑？</a></div>
+                <div class="item-summary">收入增长快于消费支出随着今年前三季度经济成绩单的公布，反映居民生活水平和消费状况的前三季度居民人均可支配收入、人均消费支出数据也同步发布。国家统计局数据显示，2026年前三季度，全国居民人均可支配收入34230元，比上年同期名义增长5.3%，扣除价格因素，实际增长4.4%；全国居民人均消费支出22354元，比上年同期名义...</div>
+                <div class="item-meta">城市进化论 · 2026-10-31 11:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0641I00?scene=news-skill" target="_blank" rel="noopener">女子乘火车遭上铺坠落手机砸伤眼部，最新进展：上铺乘客已给予23000元赔偿</a></div>
+                <div class="item-summary">10月30日，乘客闫女士称她28日乘坐K549次列车时，被上铺坠落的手机砸伤了眼部，满脸是血。闫女士称上铺乘客态度良好，目前已与她达成一致，一次性给予赔偿，后续治疗及可能出现的问题，她不再追究。列车的铁路部门人员曾答应协商，但未获处理。闫女士在网上发布一段现场拍摄的视频显示，她的眼睛下方有一处伤口，长度约有一...</div>
+                <div class="item-meta">九派新闻 · 2026-10-31 12:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030V089JS00?scene=news-skill" target="_blank" rel="noopener">追尾司机定责时拿豆包质疑交警，还让交警重学交规</a></div>
+                <div class="item-summary">追尾司机定责时拿豆包质疑交警，还让交警重学交规 #交警</div>
+                <div class="item-meta">都市快报橙柿互动 · 2026-10-30 14:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0686V00?scene=news-skill" target="_blank" rel="noopener">多餐饮品牌要求“消费才可入座”，合规吗？</a></div>
+                <div class="item-summary">日前，多家知名餐饮连锁品牌宣布，在全国门店施行消费入座，引起舆论热议。支持者认为，餐饮品牌承担着经营压力，没有义务必须免费向公众开放座位，而且“消费入座”能更好保障已消费顾客的合法权益。不过也有网友认为，这样的规定少了点人情味儿。商家给躲雨的人留个座，让路过的人发会儿呆，虽然暂时带不来收入，却能传递...</div>
+                <div class="item-meta">央广网 · 2026-10-31 12:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A053NX00?scene=news-skill" target="_blank" rel="noopener">50岁拉杠、60岁举铁，“存钱不如存肌肉”的时代来了</a></div>
+                <div class="item-summary">“人到中年，存钱不如存肌肉”，正在成为越来越多人的共识。不少30岁上下的人，一边吃肌酸和蛋白粉，一边操心起父母的肌肉量。而年纪稍长的女性，也悄悄闯入年轻人扎堆的举铁区。她们中有人52岁第一次触摸哑铃，有人被女儿拉进健身房，还有人在63岁那一年，站上体能比赛的起跑线。人生过半，她们像认识一个陌生人那样，重新认识自己的身体——包括但不限于重新学习如何呼吸，如何发力，甚至如何吃饭。她们练的是臀肌、...</div>
+                <div class="item-meta">每日人物 · 2026-10-31 10:59</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-10-31 15:39</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
