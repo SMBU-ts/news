@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-01</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-01</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261101A03LXJ00?scene=news-skill" target="_blank" rel="noopener">提醒！2027国考今起报名确认</a></div>
+                <div class="item-summary">2027国考通过用人单位资格审查345万人。国家公务员局郑重提醒，国考资格过审后记得确认，才能参加考试。11月1日至11月6日期间，登录“中央机关及其直属机构2027年度考试录用公务员专题网站”进行报名确认和缴费，后续再按规定时间打印准考证并参加考试。（人民日报原创新闻作品）(来源:人民日报微博)...</div>
+                <div class="item-meta">人民日报 · 2026-11-01 08:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261101A037I900?scene=news-skill" target="_blank" rel="noopener">WTT蒙彼利埃冠军赛：国乒赢下3场中日对决 包揽女单四强</a></div>
+                <div class="item-summary">北京时间11月1日，2026WTT蒙彼利埃冠军赛女单1/4决赛，陈熠4比0横扫佐藤瞳，晋级女单四强。在另外一场女单1/4决赛中，蒯曼4比2战胜张本美和，晋级女单四强。在先前结束的比赛中，王艺迪4比3战胜队友陈幸同，孙颖莎4比3战胜早田希娜。中国队的王艺迪、孙颖莎、蒯曼、陈熠会师女单半决赛，提前锁定女单冠亚军。 2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-11-01 07:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261030A0DYA600?scene=news-skill" target="_blank" rel="noopener">收藏！党的二十届五中全会学习手账来了</a></div>
+                <div class="item-summary">制作：王宇峰 陈泉伊 岳小乔 贾雪 冯慧文（人民日报客户端原创新闻作品）(来源:人民日报客户端)...</div>
+                <div class="item-meta">人民日报 · 2026-10-30 21:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261101A010X700?scene=news-skill" target="_blank" rel="noopener">视频丨让每一个想家的人看到家的方向 他助力140多次团圆</a></div>
+                <div class="item-summary">水有源，树有根，骨肉离散的痛苦，是哪一个家庭都无法承受的。2017年至今，四川广安邻水县的寻亲志愿者甘彪先后发布了6000多条公益寻亲信息，和志愿者团队帮助140多个家庭如愿团圆。九年前，甘彪只是一个靠烧烤生意谋生的普通人，起初只是为了帮一位失忆老人找到家，他从零开始学着拍短视频，一年半的时间，他接连发出426条...</div>
+                <div class="item-meta">央视新闻 · 2026-11-01 01:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261101A00YIC00?scene=news-skill" target="_blank" rel="noopener">视频丨团伙作案、冲动犯罪！未成年人别再拿年龄当 “免罚护身符”</a></div>
+                <div class="item-summary">近年来，部分未成年人犯罪尤其是低龄未成年人犯罪案件引发社会广泛关注。一些未成年人犯罪是从很小的违法行为开始，如果“惩”“救”不及时，容易走向严重刑事犯罪。那么，未成年人犯罪呈现出哪些新的特点？对于不同年龄段的未成年人，从心理层面该如何进行有效疏导？社会、学校、家庭又该怎样共同努力，保障未成年人健康成...</div>
+                <div class="item-meta">央视新闻 · 2026-11-01 01:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261101A0398B00?scene=news-skill" target="_blank" rel="noopener">视频丨互动体验解锁科学奥秘 科学节上还有这些新奇实验</a></div>
+                <div class="item-summary">这个周末，中国科学院第九届科学节正在举行。在北京主场活动期间，公众可以亲身体验各类新奇的科学实验，在互动体验中解锁科学奥秘。在本届科学节北京主场——国家植物园南园，科研人员准备了从基础科学原理小实验到前沿重大科技成果展示等丰富内容。伴随着人工智能技术的持续突破，各类机器人创新成果加速迭代。眼前的这个...</div>
+                <div class="item-meta">央视新闻 · 2026-11-01 07:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261101A0379100?scene=news-skill" target="_blank" rel="noopener">航天水稻，这里种了五万亩</a></div>
+                <div class="item-summary">原标题：广东河源持续探索，找到符合育种需求的突变体航天水稻，这里种了五万亩（秋收进行时·不一样的水稻品种）在广东省河源市东源县柳城镇的万绿智慧农场内，成片的航天水稻“华航香银针”已经进入收割期。航天水稻是通过航天育种和现代生物技术相结合育成的多基因优良品种。水稻种子搭乘航天器进入太空后，在宇宙射线、...</div>
+                <div class="item-meta">人民日报 · 2026-11-01 07:24</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0D34O00?scene=news-skill" target="_blank" rel="noopener">无锡队2-1常州队夺冠！苏超这2年，到底带来了什么改变？</a></div>
+                <div class="item-summary">无锡队2:1常州队！2026江苏省城市足球联赛决赛的比分最终定格在这里。10月31日晚间，南京奥体中心亮如白昼，62356名观众挤满看台。他们热情澎湃，挥舞着代表城市的旗帜，整齐地放声呐喊，震得顶棚微微发颤。去年苏超的slogan是戏谑的“比赛第一，友谊第十四”；今年慢慢换成一句更通透的概括：兄弟归兄弟，比赛归比赛。“十...</div>
+                <div class="item-meta">上观新闻 · 2026-10-31 21:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0CJTG00?scene=news-skill" target="_blank" rel="noopener">男子90万元美容美发卡，30多万里竟有“弹力烫发”，当事人：我是光头，这不扯淡吗；多方回应</a></div>
+                <div class="item-summary">近日，上海市民钱先生反映称在文峰美容美发门店累计充值近90万元申请退卡后商家扣留4.5万元余款仅靠一份手写清单作为扣费依据不少消费记录疑点重重大额充值后，退款被卡消费清单疑点丛生钱先生告诉记者，自己在文峰崮山路店主要消费项目包括精油开背、减脂塑形、四肢与颈部按摩、纹眉以及艾灸等。“充值频率很高的，他们到...</div>
+                <div class="item-meta">潮新闻 · 2026-10-31 22:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A04C2200?scene=news-skill" target="_blank" rel="noopener">感染 HPV 就等于得宫颈癌？</a></div>
+                <div class="item-summary">谣言举报点击底部“阅读原文”进入举报入口点亮“推荐”一起涨知识！...</div>
+                <div class="item-meta">科学辟谣 · 2026-10-31 10:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0AZ7400?scene=news-skill" target="_blank" rel="noopener">退休11年后，原中国石油化工集团公司党组书记、董事长被查</a></div>
+                <div class="item-summary">据央视新闻，原中国石油化工集团公司党组书记、董事长傅成玉涉嫌严重违纪违法，目前正接受中央纪委国家监委纪律审查和监察调查。傅成玉，1951年出生于黑龙江省，高级经济师，毕业于东北石油学院地质系，后获美国南加州大学石油工程硕士学位。1975年起在大庆、辽河等油田从事技术工作，1982年加入中国海洋石油总公司。1995年...</div>
+                <div class="item-meta">中国侨网 · 2026-10-31 18:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0DDR400?scene=news-skill" target="_blank" rel="noopener">“速成车”，被喊停</a></div>
+                <div class="item-summary">“天下武功，唯快不破”。但这条消费电子领域的竞争法则，放到汽车制造行业并不适用。 隐藏式门把手、行车零重力模式、异形方向盘、智驾小蓝灯、车内旋转座椅……近年来新车迭代持续提速，各类花哨配置....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-10-31 23:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0D4IG00?scene=news-skill" target="_blank" rel="noopener">奥运冠军冯雨，入职高校</a></div>
+                <div class="item-summary">10月28日，北京科技大学官方公众号发文称，花样游泳奥运冠军、巴黎奥运会开幕式旗手冯雨已入职该校体育学院，担任专职教师。本学期，冯雨教授面向游泳初学者的游泳课程。从熟悉水性到掌握基本泳姿，从呼吸配合到动作协调，她将多年专业训练经验融入课堂。图源：冯雨个人微博冯雨在教师寄语中表示，希望将自己多年的训练与参...</div>
+                <div class="item-meta">长安街知事 · 2026-10-31 21:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261101A0258P00?scene=news-skill" target="_blank" rel="noopener">教室采光照明新国标11月1日起实施 如何让学生们“看得舒适”？</a></div>
+                <div class="item-summary">11月1日，强制性国家标准《中小学校教室采光和照明卫生标准》正式实施。新标准增加了多项关键指标要求，例如，采光均匀度、冬至日满窗日照时间、玻璃颜色透射指数和可见光透射比、闪变指数、频闪效应可视度等。并且，对采光方向、采光系数、眩光控制、照明色温和显色指数、照明功率密度以及采光照明测量方法进行了修订和完善。此前发布的《儿童青少年“五健”促进行动计划（2026—2030年）》将儿童青少年视力健康...</div>
+                <div class="item-meta">央视新闻 · 2026-11-01 04:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A091YV00?scene=news-skill" target="_blank" rel="noopener">多家A股公司，拟重大资产重组</a></div>
+                <div class="item-summary">10月30日晚，多家公司发布筹划重大资产重组公告。 中国稀土：收到中国稀土集团通知，拟通过发行股份方式购买中稀（凉山）稀土有限公司股权并募集配套资金。本次交易预计构成重大资产重组，构成关联交易，不构成重组上市。公司股票自11月2日起停牌，预计在不超过10个交易日内披露交易方案。TCL中环：正筹划发行股份购买资产...</div>
+                <div class="item-meta">21世纪经济报道 · 2026-10-31 21:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0CP9F00?scene=news-skill" target="_blank" rel="noopener">地铁站台孩童随地便溺引发乘客纠纷，官方回应：已对家长进行教育</a></div>
+                <div class="item-summary">孩童站台就地小便引争执，上海地铁回应：第一时间劝解，已对家长进行教育。澎湃新闻编辑 徐亦嘉 何羽茜 视频来源 @园丁(00:27)近日，有网友发帖称，10月30日在上海地铁交通大学站，有老人带小孩在站台候车时，孩子尿急就地便溺。10月31日，澎湃新闻记者从上海地铁方面获悉，当天已对涉事家长进行教育。根据网友发布的视频，现场一名年轻乘客看到孩子就地小便，对家长进行指责，双方因此起了争执。对此，...</div>
+                <div class="item-meta">澎湃新闻 · 2026-10-31 20:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0E4W300?scene=news-skill" target="_blank" rel="noopener">重大转变！英国首相，松口了</a></div>
+                <div class="item-summary">据美国《纽约时报》10月31日报道，英国首相安迪·伯纳姆当地时间10月30日表示，他愿意考虑由英国政府为该国参与历史上的奴隶贸易正式道歉。这一表态标志着英国政府相关政策出现重大转变。 伯纳....</div>
+                <div class="item-meta">环球时报新媒体 · 2026-11-01 07:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0CFVG00?scene=news-skill" target="_blank" rel="noopener">特朗普抱怨：近期一直在奔波助选，28天连轴转，真是够了</a></div>
+                <div class="item-summary">美国中期选举本周末进入最后冲刺期。美国总统特朗普10月30日在佛罗里达州参加竞选集会时说，虽然疲惫不堪，但他将于11月1日前往艾奥瓦州和堪萨斯州参加竞选集会。特朗普还抱怨说，他近期一直在奔波助选，本来以为这场之后可以歇了，“接连28天，真是够了”。这两场集会原本已取消。共和党全国委员会10月29日发表声明说，鉴于该党在堪萨斯州和艾奥瓦州的优势稳固，将取消原定在这些州举办的线下集会，转而通过线...</div>
+                <div class="item-meta">红星新闻 · 2026-10-31 23:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0CBBO00?scene=news-skill" target="_blank" rel="noopener">刘和平：中方强势清场新动作，扩大黄岩岛防守区域！</a></div>
+                <div class="item-summary">直新闻：解放军南部战区与中国海警同时宣布，分别在黄岩岛周边海空域展开战备警巡和执法巡查。对此，您作何解读？特约评论员 刘和平：对于解放军南部战区与中国海警的这一动作，我们需要敲黑板、划重点、找关键词。第一，无论是南部战区还是海警的这次官宣，都没有再藏着掖着，而是将矛头直接指向了菲律宾，明确挑明“这是对菲方侵权挑衅行径的必要反制”；第二，南部战区说，这次行动是在黄岩岛的领海领空内同时进行。也就...</div>
+                <div class="item-meta">直新闻 · 2026-10-31 23:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261031A0DKTU00?scene=news-skill" target="_blank" rel="noopener">江苏省委书记信长星，为“苏超”冠军颁奖</a></div>
+                <div class="item-summary">据新华日报消息，10月31日晚，2026“苏超”迎来决赛。最终，无锡队2比1战胜常州队，成为2026“苏超”冠军。江苏卫视直播画面显示，江苏省委书记、省人大常委会主任信长星，为冠军无锡队颁奖。截图来源：江苏卫视...</div>
+                <div class="item-meta">长安街知事 · 2026-10-31 22:16</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-01 09:14</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

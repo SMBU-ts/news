@@ -1,0 +1,7 @@
+{
+ "https://www.figma.com/blog/the-tldr-on-figma-weave/": "Figma 10 月 31 日发布 Weave 创作平台，把 AI 生成与编辑工具串成可改、可复用的连线流程。画布以节点为基本单元，节点串成工作流，分支可从同一起点并行探索不同方向，整套流程还能打包成「Weave 工具」供他人在 Figma Design 中直接运行。同一提示词可交给不同模型并排比较。典型场景是免去二次拍摄生成产品图、把现有图像转成渠道物料或短视频镜头。",
+ "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/": "英伟达拟为 Nscale 西弗吉尼亚的 Anthropic 数据中心提供数十亿美元债务担保。据 The Information 报道，形式为残值担保：Nscale 若拖欠建设款，英伟达将暂时接管园区并协助找买家和租户，此前只覆盖租约与芯片采购。Anthropic 已为首栋 460 兆瓦建筑签约 446 亿美元。Nscale 拟以最高 350 亿美元估值上市，8 月却仅运行约 2.5 万块芯片。",
+ "https://www.ithome.com/1/020/632.htm": "彭博社 10 月 31 日统计，Alphabet、Meta、微软、亚马逊、甲骨文已承诺未来数年投入超 3 万亿美元。Alphabet 规模最大，合同承诺超 1 万亿美元，接近一年前八倍；Meta 超 8000 亿美元，近一半是尚未生效的数据中心租约。租赁付款承诺合计 1.3 万亿美元，其他采购承诺 1.9 万亿美元。甲骨文是首家因投建 AI 数据中心而现金流转负的巨头，预计 2028 年回正。",
+ "https://www.wiz.io/blog/black-october-for-ai-developer-platforms": "Wiz 10 月 30 日称，10 月至少 9 家 AI 开发者平台披露安全事件，含 Fireworks AI、Zeabur、Warp 等。多家根因指向凭证被窃，专门搜寻存有 AI 权限的变量，Fireworks、OpenCode、Warp 提到「智能体蜂群」攻击。Zeabur 因此关停。下游已现滥用：Railway 客户密钥被盗约 37.1 万美元，OpenCode 用户账单达数百至数千美元。",
+ "https://openrouter.ai/blog/tutorials/build-always-on-ai-agent/": "OpenRouter 10 月 31 日发布教程，用 TypeScript 与自有 SDK 搭常驻智能体，定时扫描 Hacker News 写摘要。需四个要件：定时循环、工具、跨重启的持久记忆、单次步数与花费上限。示例限制单次 6 步、5 美分；需审批的工具先暂停，批准后断点续跑。实测每次检查花费 0.0003 至 0.0012 美元，每 15 分钟一次约合月费 0.86 至 3.46 美元。"
+}
