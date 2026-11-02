@@ -1,0 +1,5 @@
+{
+  "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647688028&idx=1&sn=e509269da2e0e0b4d4dfbb121b42204b": "OpenAI 11月1日凌晨更新帮助文档：12月起 Plus、Pro、Business 的 ChatGPT 与 Codex 用量合并为同一额度池，统一按 Token 计量，消耗快慢取决于模型与任务复杂度，Instant 即时对话不占额度。可在设置→使用量查看剩余额度与重置时间；用尽只能等重置、升级套餐或购买 Credits。文档未公布各档 Token 总量与折算表，称多数人限流频率不会更高。",
+  "https://openrouter.ai/blog/tutorials/ai-code-review/": "OpenRouter 教程：用 Responses API 搭一个在 Linux 沙箱里实跑验证的代码审查脚本，仅 233 行、只用标准库。它把变更文件与 diff 传进托管容器，由模型跑命令复现问题并返回 V4A 补丁，也可挂进 pre-push 钩子或 CI，命中阈值即阻断。五处 bug 实测中，Haiku 5.5 单次 0.0153 美元，Sonnet 5.5 约 0.0447 美元全修完。",
+  "https://x.com/addyosmani/status/2116986087390486816": "Addy Osmani 分享 Claude Code 技巧：任务比预期更难时，直接敲 ultrathink，可把当前回合剩余部分的推理努力提到 xhigh。该能力来自 10 月 26 日发布的 2.1.311 版，适用于 Opus 5.5 等四款模型；此前该词只追加一句深入思考的指令。生效时该词在终端显示彩虹色，若仍是普通文字需重打在路径、命令之外；Bedrock 上要改用 /effort。"
+}
