@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-03</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-03</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102V0D4AW00?scene=news-skill" target="_blank" rel="noopener">机器狗第一视角带你登泰山</a></div>
+                <div class="item-summary">今天，首届CMG世界机器人登泰山大赛在山东泰安举行。戳视频，跟着机器狗沉浸式体验登泰山！（总台记者都昕竹 蔺凯丽）</div>
+                <div class="item-meta">央视新闻 · 2026-11-02 22:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0DKH900?scene=news-skill" target="_blank" rel="noopener">视频丨五级布局、考培分离、体教协同 中国足球青训体系全新升级</a></div>
+                <div class="item-summary">北京时间今天凌晨，2026年国际足联U17女足世界杯在摩洛哥进行了四分之一决赛的争夺。中国队1-2惜败给巴西队，最终无缘半决赛。上半场，巴西队多次制造威胁，中国队门将牛子琪接连化解险情，中国队则通过反击寻找机会。上半场结束前，吴逸晨突入禁区，射门得手，中国队1比0领先。这粒进球，吴逸晨敏锐地察觉到传球反弹后的落...</div>
+                <div class="item-meta">央视新闻 · 2026-11-02 23:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A06LQU00?scene=news-skill" target="_blank" rel="noopener">视频丨乌镇峰会年年刷屏 今年看什么？</a></div>
+                <div class="item-summary">乌镇峰会到底是干吗的？​很多观众心里一直有个疑问：国内大城市这么多，一场全球顶级的互联网盛会，为什么偏偏选在江南小镇乌镇？乌镇峰会到底是开会、看展，还是看热闹？一文说清楚 乌镇为什么是永久会址？根据国家网信办、世界互联网大会组委会公开介绍，当年专家组遴选永久会址，定下三条标准：能够代表中华传统文化...</div>
+                <div class="item-meta">央视新闻 · 2026-11-02 12:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102V0CQ9L00?scene=news-skill" target="_blank" rel="noopener">AI问诊 靠谱吗？AI问诊为何不能替代医生？</a></div>
+                <div class="item-summary">AI问诊 靠谱吗？AI问诊为何不能替代医生？</div>
+                <div class="item-meta">央视网 · 2026-11-02 21:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261103A02Z6100?scene=news-skill" target="_blank" rel="noopener">这所中学，有32名毕业生捐献“骨髓”</a></div>
+                <div class="item-summary">原标题：这所中学，有32名毕业生捐献“骨髓”（民生一线）造血干细胞被称为“生命的种子”，对血液病患者来说，这份“种子”，有时意味着重生。从2004年起至今，上海市晋元高级中学，有5603名师生加入中国造血干细胞捐献者资料库（中华骨髓库）。其中32名学生毕业后，向素未谋面的陌生人捐献了造血干细胞，为这些患者带去了...</div>
+                <div class="item-meta">人民日报 · 2026-11-03 07:25</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261103A02O1800?scene=news-skill" target="_blank" rel="noopener">视频丨小心！向陌生小程序授予位置权限，行踪可能被悄悄定位</a></div>
+                <div class="item-summary">近日，江苏扬州的陈先生前往辖区派出所报案称，自己和周某有个人纠纷，比较蹊跷的是，周某总是能轻易找到他的位置，所以陈先生怀疑自己身上被安装了定位器。警方调查发现，周某确实在某非法网站购买了定位软件，然后伪装成手机小程序链接发给陈先生，陈先生点击链接操作后，手机就相当于被安装了定位软件。据悉，周某还对外...</div>
+                <div class="item-meta">央视新闻 · 2026-11-03 06:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0A5D400?scene=news-skill" target="_blank" rel="noopener">上半年全国药店减少1.5万家</a></div>
+                <div class="item-summary">记者｜闫硕编辑｜季媛媛 强燕在经历连续两年的调整后，今年前三季度，医药零售赛道整体呈现边际回暖态势，但结构分化仍是主旋律。行业供给侧持续出清，叠加政策红利释放，这为体系能力更强的龙头连锁带来发展机遇。数据显示，今年上半年全国药店净减少1.5万家，从5月份到8月份医保门店减少约3万家。聚焦头部上市连锁，门店...</div>
+                <div class="item-meta">21世纪经济报道 · 2026-11-02 16:41</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A07XRX00?scene=news-skill" target="_blank" rel="noopener">划定7条红线，多地公立医院加速入局</a></div>
+                <div class="item-summary">推轮椅、取号、代缴费……陪诊师帮助行动不便的老年人、独自就医的外地患者，被称为医院里的“临时家人”。但一直以来，陪诊师未被纳入国家职业目录，行业也长期缺少全国性规范。11月1日，市场监管总局发布的《社会化陪同就医服务基本要求》（以下称《陪诊国标》）正式实施。这是陪诊行业首个国家标准，明确了服务边界和流程。行业智库陪诊有道创始人兼CEO张志援是该标准的主要起草人之一。他对《中国新闻周刊》介绍，...</div>
+                <div class="item-meta">中国新闻周刊 · 2026-11-02 14:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0822G00?scene=news-skill" target="_blank" rel="noopener">中国电动车出海，下一轮增量在哪里？</a></div>
+                <div class="item-summary">记者丨闫桂花从中国出口的电动车，正成为海外越来越多消费者的头号选择。国际能源署统计，2025年，在欧洲和美国以外的市场，从中国进口的纯电动和插电式混合动力乘用车，已占当地同类车型销量的55%，五年前这一比例还不足5%。接下来，全球电动汽车的增长空间将来自哪里？中国车企的机会又在哪？管理咨询公司理特咨询（Arth...</div>
+                <div class="item-meta">界面新闻 · 2026-11-02 16:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A048OS00?scene=news-skill" target="_blank" rel="noopener">从手机辐射到Wi‑Fi伤身，真的靠谱吗？揭开“电器辐射”的真相</a></div>
+                <div class="item-summary">“手机放枕边会致癌”“家里有 Wi-Fi，睡觉必须关路由器”“微波炉一开，旁边站久了会伤身体”“电器辐射会让孩子变笨、孕妇流产”……这些话在家族群、朋友圈和短视频里反复出现。很多人一听到“辐射”两个字，心里就咯噔一下，好像身边所有电器都成了健康杀手。先说答案：手机、Wi-Fi、微波炉、电吹风、电脑、电视等日常...</div>
+                <div class="item-meta">科学辟谣 · 2026-11-02 10:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261103A02UTG00?scene=news-skill" target="_blank" rel="noopener">中国汽车在欧洲卖得太好，在美车企急了：必须永久封杀</a></div>
+                <div class="item-summary">【文/观察者网 于文凯】面对中国汽车日益增强的国际竞争力，美国汽车巨头想出的办法不是与之公平竞争，而是要求政府彻底封杀。尽管美国早已对中国电动汽车征收超过100%的关税，并设置重重市场准入障碍，这些车企仍嫌不够，竟联手敦促国会立法，永久禁止中国汽车进入美国市场。据路透社当地时间11月2日报道，代表通用、福特...</div>
+                <div class="item-meta">观察者网 · 2026-11-03 07:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0D3U100?scene=news-skill" target="_blank" rel="noopener">男子失去大部分记忆，甚至叫不出孩子名字，半夜却总独自到校门口站岗，妻子问他为什么站在这里，他说“退伍多少年也要记住站岗这个事”</a></div>
+                <div class="item-summary">近日，一条退伍老兵深夜独自在学校门口站岗的视频感动了许多网友当妻子找到他问他为什么站在这里他说：“退伍多少年也要记住站岗这个事”这位老兵名叫周其兵去年因车祸失忆醒来后，他忘记了许多事情却仍记得自己是一个兵站岗是自己的职责周其兵2000年12月参军入伍在原武警重庆总队五支队（现武警重庆总队执勤第五支队）某中...</div>
+                <div class="item-meta">红网 · 2026-11-03 07:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0CXMF00?scene=news-skill" target="_blank" rel="noopener">伊总统：伊朗最高领袖已赋予政府在谈判领域一定的权力</a></div>
+                <div class="item-summary">△伊朗最高领袖穆杰塔巴（资料图）当地时间11月2日，伊朗总统佩泽希齐扬表示，政府正努力通过对话解决问题，在这方面，伊朗最高领袖也赋予了政府一定的权力。佩泽希齐扬强调，敌人无法通过战争让伊朗投降，“我们将坚决抵制他们的谎言和夸大其词，因此，我们必须努力增强人民的韧性，解决他们的关切和担忧”。佩泽希齐扬表...</div>
+                <div class="item-meta">央视新闻 · 2026-11-02 21:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261103A031QY00?scene=news-skill" target="_blank" rel="noopener">多收600元车费，乘客报警！官方通报：粤AE***57出租车司机涉嫌诈骗被行拘7天，已被企业清退</a></div>
+                <div class="item-summary">11月2日，“广州交通”官方微信公众号发布执法通报：近日，白云集团粤AE***57出租车司机阮某在广州白云机场T2航站楼出租车上客点搭载1名外籍乘客前往广州南站，到达目的地后，司机阮某向乘客索要高价车费，最终收取的车费比正常价格多六百元。乘客于10月22日报警。11月1日，公安机关对司机阮某涉嫌诈骗行为处以7天行政拘留。根据公安机关提供线索，广州市交通运输局将依法对司机阮某涉嫌违规收费营运违...</div>
+                <div class="item-meta">红星新闻 · 2026-11-03 07:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0B5BG00?scene=news-skill" target="_blank" rel="noopener">俄方公开感谢美方</a></div>
+                <div class="item-summary">据参考消息援引美国有线电视新闻网网站11月1日报道，俄罗斯联邦安全局1日宣布，在接到美方提供的线索后，俄当局逮捕了一名涉嫌策划恐怖袭击的嫌疑人。图源：央视军事俄联邦安全局说，“感谢美方提供的信息”，在这一信息的协助下，俄方成功逮捕了嫌疑人。此人尚未成年。美国驻莫斯科大使馆10月31日发布安全警报称，据可靠情...</div>
+                <div class="item-meta">长安街知事 · 2026-11-03 00:09</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0C2VO00?scene=news-skill" target="_blank" rel="noopener">“中国最赚钱高铁”，今年已经净赚百亿元</a></div>
+                <div class="item-summary">在三大航司前三季度纷纷亏损的情况下，与航空公司争夺商务出行市场的京沪高铁，却继续保持增长。 据京沪高铁近日披露的三季报，今年前9个月京沪高铁归属于上市公司股东的净利润为107.16亿元，同比增长4.02%。 这意味着，仅今年前三个季度，京沪高铁已经净赚超百亿元。 今年京沪高铁的公布票价也迎来新一轮上涨。5月，京沪高...</div>
+                <div class="item-meta">第一财经 · 2026-11-03 00:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0A4L300?scene=news-skill" target="_blank" rel="noopener">中国公务团组人员被瑞典警方拘押，中使馆提醒：切勿拍摄敏感设施及人员</a></div>
+                <div class="item-summary">近日，有中国公务团组人员在瑞典参访期间不慎拍摄当地敏感设施及人员，被瑞典警方拘押，对后续行程造成较大影响。在此，中国驻瑞典大使馆再次就中国公民在瑞期间拍照、摄像事宜提醒如下：一、请密切留意“禁止进入”（Förbud mot tillträde）和“禁止拍摄”（Förbud att fotografera）等警示标识（包括但不限于下图所示...</div>
+                <div class="item-meta">九派新闻 · 2026-11-02 17:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0BVAY00?scene=news-skill" target="_blank" rel="noopener">27岁中国女子赴泰见网友失联，好友：疑遭对方设计，行程与被骗进园区人员相同</a></div>
+                <div class="item-summary">11月2日，27岁广东女子符悦赴泰国见网友后失联已10天。好友周先生告诉记者，符悦于10月23日前往泰国，此行是为了见一名男网友，出发前并未告知亲友。周先生称，符悦失联前的行程与此前一些被骗至电诈园....</div>
+                <div class="item-meta">紧急呼叫 · 2026-11-02 20:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A04L0R00?scene=news-skill" target="_blank" rel="noopener">“三桶油”利润集体修复</a></div>
+                <div class="item-summary">界面新闻记者 | 田鹤琪国际油价上涨，重新为中国石油(601857.SH/00857.HK)、中国石化(600028.SH/00386.HK)和中国海油(00883.HK/600938.SH)带来业绩增长动力。截至目前，三家石油央企旗下上市公司均已披露三季度报告。今年前三季度，三家公司合计归母净利润约3139亿元，较上年同期增长约21.5%，不仅扭转了2025年的下滑态势，...</div>
+                <div class="item-meta">界面新闻 · 2026-11-02 17:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261102A0C28300?scene=news-skill" target="_blank" rel="noopener">“好想来”“老婆大人”母公司，被中国证监会立案</a></div>
+                <div class="item-summary">11月2日，万辰集团公告，公司于2026年11月2日收到中国证监会下发的《立案告知书》，因涉嫌未及时履行关联交易临时信息披露义务等信息披露违法违规事项，中国证监会决定对公司立案。万辰集团称，本次立案调查主要涉及未及时履行信息披露义务事项，与日常经营活动无关，相关信息披露事项已经整改完毕；目前公司经营秩序稳定，...</div>
+                <div class="item-meta">中国侨网 · 2026-11-03 07:41</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-03 08:34</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

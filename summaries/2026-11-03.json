@@ -1,0 +1,8 @@
+{
+  "https://claude.com/blog/message-threads": "Anthropic 在 Claude Platform 公测 message threads。Messages API 加 thread 参数后，首轮发全量对话建立线程，后续只传新消息与上轮响应 ID；线程仅驻内存加密保存，最后请求 5 分钟后过期。Claude 仍需每轮读完整上下文，token 不变，但 50 万至 100 万 token 请求的首 token 时间中位降约 35%。",
+  "https://the-decoder.com/anthropic-grows-revenue-twelvefold-but-posts-23-billion-loss/": "据 Bloomberg 与 The Information，Anthropic 该季度营收近 170 亿美元，为一年前十二倍，但运营成本 175 亿美元超过营收，净亏损 233 亿美元，去年同期 121 亿美元。成本激增主因是锁定 50 亿美元短期算力与 20 亿美元员工捐赠配捐。招股书显示算力与数据中心租约承诺达 8950 亿美元，IPO 或募资约 1000 亿美元。",
+  "https://alignment.openai.com/training-activation-classifiers/": "OpenAI 自 GPT-5.6 起在最强模型的内部与外部流量上部署激活分类器（probes），作为纵深防御的一层。探针是基于模型内部激活（通常取中间层残差流）的轻量模型，逐 token 同步打分，可在生成中途打断回复、阻断工具调用，并暂停输出交由推理模型复核。实验显示其对越狱攻击比更大的文本分类器更鲁棒，精度随被监控模型能力提升。局限是需标注数据、只能识别可显式训练的类型，换新基座模型须重训。",
+  "https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&mid=2247498763&idx=1&sn=279f8fb4e43a987fdc0aa2af0b0f7958": "腾讯混元 11 月 2 日发布 AI 科研系统 Hyra 2.0，把重点从用 AI 直接解题转向让通用 Agent 参与科学模型与工具的研发升级，主张工具收益可被下游复用，形成智能复利。Hyra 1.0 曾让开源模型解出加法组合学悬置五十余年的开放问题。系统分 Overall、Mission、Worker 三层，分别负责对齐目标与调配资源、长期负责单一问题并决定路线、独立读代码做实验并可质疑上层。",
+  "https://openai.com/index/grid-protectors-program": "OpenAI 推出全美范围的 Grid Protectors（电网守护者）计划，与电力公司、监管机构合作，让未来算力园区在电网承压时主动削减用电，条件允许时还可用现场发电或储能向电网供电。首站为佐治亚州 Effingham County 园区，OpenAI 承诺承担其基础设施与电力成本，与 Georgia Power 的协议含最高 1000 兆瓦灵活需求响应，约等于 70 万户家庭用电。",
+  "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647688060&idx=1&sn=e00d7e57b6f0e3670f0e267e677047df": "自媒体作者卡兹克分享搭建近一年的 Agent 自动化系统，核心是把任务起点从人移到事件。系统分四层：自动化中台用统一短消息格式接收飞书、邮件与告警，按 rules.json 决定交给哪个 Agent 并去重；执行层按能力分工，Claude Opus 5.5 主力开发、GPT-6.1 Sol 管运维审查；自建 CI 中台以五步流水线接管上线；只有删数据、花钱、改方向才推飞书卡片拍板。"
+}
