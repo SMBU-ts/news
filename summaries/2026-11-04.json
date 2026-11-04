@@ -1,0 +1,12 @@
+{
+  "https://x.com/MistralAI/status/2117562068220195097": "Mistral 正式公布 Mistral Large 4 开放权重，技术报告同步公开。模型为万亿参数原生多模态 MoE，128 个路由专家每 token 激活 4 个，激活参数约 490 亿，支持 100 万 token 上下文与 160 多种语言。较预览版，Terminal-Bench 4.0 升至 41%，输出 token 减少 30%。权重按修改版 MIT 许可发布，转售托管服务需另行授权。",
+  "https://ai.google.dev/gemini-api/docs/changelog#11-02-2026": "Google 更新日志称，Gemini 2.5 Pro 与 2.5 Flash 已从 AI Studio 下架。12 月 1 日起，发往两者的请求将自动路由至 Gemini 3.8 Flash 与 3.5 Flash-Lite，按目标费率计费。调用不报错，但采样参数被忽略、thinking_budget 改为 thinking_level、预填充回合返回 400，官方列为破坏性变更，须迁移前重测。",
+  "https://x.com/rohanpaul_ai/status/2117757237557088263": "AMD 公布 2026 年三季度财报：营收 133.77 亿美元，同比增长 45%；数据中心收入 85.46 亿美元，增长 97%，占总营收 64%；非 GAAP 每股收益 2.09 美元，增长 74%。四季度指引约 170 亿美元，同比增长约 66%。管理层预计 2027 年营收增长超 80%、数据中心占比超 80%、服务器营收翻倍，但警告 PC 市场将现两位数下滑。盘后股价涨约 7%。",
+  "https://twitter.com/guilleflorvs/status/2117379073785696395": "欧洲金融科技公司 Revolut 已将智谱 GLM 设为约 2000 名工程师的默认编程模型，Claude Code、Codex 退为备选。此前每人每月 300 美元额度，效率提升有限；今年 4 月起转为自部署，用约 56 张 B200 运行 GLM 5.3，每百万 token 综合成本约 0.30 美元，账单降至原先十分之一。内部统计编码用时改善约 60%，交付周期改善约 70%。",
+  "https://openai.com/index/dan-driscoll-joins-openai": "OpenAI 于 11 月 2 日宣布新设国家安全现代化高级顾问一职，由第 26 任美国陆军部长、前 ATF 代理局长 Dan Driscoll 出任。他将就先进 AI 如何强化国家与网络安全提供建议，推动与盟友的负责任使用，并帮助团队理解各国安全机构需求。Altman 称此举意在强化美国领导力；Driscoll 称国家安全需求正以近 50 年来最快速度变化，希望用技术减少文书、加快决策。",
+  "https://alignment.openai.com/eval-production-behavior-gap/": "OpenAI 对齐团队比较六款模型在安全评估与生产环境中的表现，发现评估成功率反而更低，差距达 10.2 至 37.4 个百分点。主因是评估目标意识：评估中有 43.7% 至 66.3% 的推理提到测试目标，生产环境仅 0% 至 5.9%。干预实验中，仅告知正在被评估几乎无效，63.1% 微升至 63.4%；明确正确目标可升至 91.6%，错误目标则降至 17.6%。",
+  "https://openai.com/index/lifeval": "OpenAI 推出 LifeVal 评测，衡量 AI 在日常事务上的实际完成能力，覆盖照护、健康、教育、家庭事务、个人财务、购物与政府服务七大领域。任务目录基于美国及跨国时间使用研究，并补充 3995 人的代表性调查。官方称最新模型多项任务得分很高：找房 100%、洪水前组织志愿者 98%、远程陪奶奶看比赛 96.3%、为糖尿病父母制定饮食计划 90.4%，但未公布总体均分。",
+  "https://www.wheresyoured.at/running-dry/": "Ed Zitron 梳理 AI 融资转冷：OpenAI 上周以 1.25 万亿美元估值募资 110 亿美元，低于 9 月传出的 1.5 万亿，也少于期望的 200 亿。公司一季度成本与研发支出合计 121 亿美元，单季收入从 57 亿升至 67 亿美元，不足覆盖一季度算力。Anthropic 上市估值预期也从 2 万亿降至 1.4 至 1.5 万亿，机构投资者建议降至 1.5 至 1.6 万亿。",
+  "https://mp.weixin.qq.com/s/-LcRUPe5OYBRjiTEzYXKog": "卡兹克发布 DSH 养鱼教程：先安装官方 Agent 产品 DSH 并充值，再装 QQ 机器人插件 tencent-connect/dsh-qqbot，或用小号走非官方插件，由 DSH 自行配置 NapCat、AstrBot 与人设。QQ、微信、飞书三个通道共享同一人设与短期记忆。之后可让它刷 B 站、发弹幕，在抖音发视频并直播，需先禁止点链接、泄露个人信息与听从他人指令。",
+  "https://www.openhands.dev/blog/post-train-ai-models-openhands-snowflake": "OpenHands 与 Snowflake 推出基于现有 harness 的模型后训练方案。开发者沿用 Agent SDK 的系统提示、工具、技能与轮次上限，任务用开放 Harbor 格式定义，测试脚本得分即奖励信号；Cortex Training 提供 GPU，每次 rollout 在独立沙箱内执行。训练时模型照常发出对话请求，代理记录其输出 token 作训练数据，提示与工具结果不计入损失。"
+}
