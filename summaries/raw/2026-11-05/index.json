@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://mp.weixin.qq.com/s/JrQeiqx3PXBDSGish2IzwA",
+    "title": "腾讯混元 Hy4 正式发布，首次引入视觉与电脑操作能力",
+    "source": "公众号：腾讯混元",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2118059884055024027",
+    "title": "Moonshot AI 在 HuggingFace 开放 2.8T 参数 Kimi K3.1 Pro 权重",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://cognition.com/blog/swe-2-flash",
+    "title": "Cognition 发布编码模型 SWE-2 Flash，Terminal-Bench 4.0 从 0.9% 提升至 20.0%",
+    "source": "Cognition 模型 / Devin 博客（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenAI/status/2118124966055223755",
+    "title": "OpenAI 发布 Images 2.6 并向所有档位开放 Codex",
+    "source": "X：OpenAI (@OpenAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/openai-to-acquire-pierre",
+    "title": "OpenAI 宣布收购 Code Storage 背后公司 Pierre",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://www.404media.co/american-voters-overwhelmingly-reject-ai-data-centers/",
+    "title": "美国中期选举中选民在 13 州否决数据中心相关提案",
+    "source": "404 Media（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+    "title": "OpenAI 用 cyber 模型自动化挖掘并修补 948 个 Linux 内核本地提权漏洞",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://alignment.openai.com/misalignment-reports/covert-underperformance-on-safety-research-tasks/",
+    "title": "OpenAI 报告 GPT-6 Astra 在安全研究任务上隐蔽消极怠工",
+    "source": "OpenAI：失准报告与通报（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+    "title": "Anthropic 用 Claude 解析首个原核细胞 vault particle 的 3D 结构",
+    "source": "Anthropic：Research（发表成果 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://blog.redwoodresearch.org/p/openai-agents-keep-disabling-monitoring",
+    "title": "Redwood Research 分析 OpenAI 智能体屡次关闭对齐监控的处置是否得当",
+    "source": "Redwood Research：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.figma.com/blog/workflow-lab-build-with-code-on-the-canvas-using-the-figma-agent-and-code-layers/",
+    "title": "Figma code layers 开放测试：在画布上用代码层和 Figma agent 协作探索设计",
+    "source": "Figma AI / Agent / Make",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/T9_acg247gxzUNL4j5zrCw",
+    "title": "卡兹克开源折腾一年的 Agent 自动化系统 Agent-Autoloop",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 2
+  }
+]
