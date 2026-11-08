@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-08</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-08</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0EIP900?scene=news-skill" target="_blank" rel="noopener">新闻多为度·南极科考｜中国第43次南极考察，起航</a></div>
+                <div class="item-summary">【简介】11月7日，由自然资源部组织的中国第43次南极考察队出征奔赴南极。此次考察由“雪龙”号、“雪龙2”号、“大洋号”三船共同保障，跟随“雪龙”号，历时近半年的南极考察之旅开启。策划：邹伟主编：许晟、安蓓记者：邹多为、戴锦镕、陈凯姿编导：栾若卉新华社国内部出品...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-07 22:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261108A037Y500?scene=news-skill" target="_blank" rel="noopener">大风+寒潮双预警！15省份部分地区降温超10℃</a></div>
+                <div class="item-summary">中央气象台11月8日6时继续发布大风蓝色预警和寒潮蓝色预警，详情如下： 大风蓝色预警预计，11月8日8时至9日8时，新疆东部、内蒙古中西部、宁夏、陕西北部、山西西南部、河北南部、山东、河南中北部、苏皖中北部、湖北中东部、湖南北部、广西中部等地的部分地区有5~6级风，阵风7~8级；渤海、渤海海峡、黄海海域、东海西部海域、台湾海峡、巴士海峡、南海北部和中部海域、北部湾将有7~8级、阵风9级的大风...</div>
+                <div class="item-meta">央视新闻 · 2026-11-08 06:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A097SO00?scene=news-skill" target="_blank" rel="noopener">数据新闻｜“数”读新时代全面从严治党成效</a></div>
+                <div class="item-summary">管党治党成效如何，人民最有发言权。从制度治党扎牢权力笼子，到正风肃纪涤荡作风顽疾；从反腐惩恶守护万家平安，到管党治党赋能民生发展……《人民至上——全面从严治党的价值取向》智库报告里，一组组数据彰显百年大党刀刃向内的自我革命精神，更是“得罪千百人、不负十四亿”的有力阐释。一起来解锁新时代全面从严治党的...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-07 15:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261108A033EQ00?scene=news-skill" target="_blank" rel="noopener">视频丨歼-15DT，已有效掌握“制电磁权”</a></div>
+                <div class="item-summary">11月5日，我国首艘电磁弹射型航母福建舰入列一周年。一年前，福建舰正式入列，人民海军迈入“三航母时代”。舰载机空警-600、歼-15DT对福建舰整体战斗力的提升有何作用？ 空警-600：预警千里眼+飞行指挥官 在福建舰的舰载机中，空警-600个头最大，气动外形也比较特殊，顶了一个圆盘状的雷达天线。它的弹射难度是不是相对大...</div>
+                <div class="item-meta">央视新闻 · 2026-11-08 06:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261108A03CNY00?scene=news-skill" target="_blank" rel="noopener">真相来了丨买棉服别踩坑！名字带棉不一定是棉花，重点看吊牌</a></div>
+                <div class="item-summary">天气转凉，不少人翻出棉服，或是准备买件新的御寒。然而最近有网友发现，买到手标注“棉服”“棉袄”的外套，一看吊牌，面料、里料、填充物全是100%聚酯纤维，一点棉花都没有，不少人直呼上当。买到手的“棉服”竟然没有棉花，这正常吗？没有棉花为啥还能保暖？太空棉、超轻棉、羽绒棉等等，名字噱头五花八门，消费者该如何...</div>
+                <div class="item-meta">央视新闻 · 2026-11-08 07:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0ESJK00?scene=news-skill" target="_blank" rel="noopener">石家庄发现火流星陨石</a></div>
+                <div class="item-summary">11月6日傍晚，一颗火流星飞过华北上空，北京、河北、山西、内蒙古等多地都有居民目击。火流星在低空爆炸后，碎片散落在河北。资深“陨石猎人”俞斌介绍，基本能确定陨石在石家庄平山县和鹿泉区一带。当地有多名农户捡到陨石，还有人家里屋顶被砸穿。俞斌计划收购一些陨石，并将其中部分样本无偿捐赠给中国科学院用作科研。...</div>
+                <div class="item-meta">政事儿 · 2026-11-07 23:34</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261108A033RG00?scene=news-skill" target="_blank" rel="noopener">真相来了丨AI生成负面动漫等 一批违法违规涉军“自媒体”账号被关闭</a></div>
+                <div class="item-summary">近期，网络平台出现多类涉军领域违法违规有害信息，扰乱网络传播秩序，损害军队军人形象。军地职能部门依法依规关闭一批问题严重的账号，并通报部分典型案例。利用AI生成涉军虚假信息。一些网络账号利用AI批量捏造“纠察被报复”“新兵打架打赢就没事”等负面涉军动漫，误导网民认知。虚假宣传违规开展“军考”培训。网络账...</div>
+                <div class="item-meta">央视新闻 · 2026-11-08 06:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261108A01W9V00?scene=news-skill" target="_blank" rel="noopener">视频丨4轮冷空气来袭！这类疾病不可掉以轻心</a></div>
+                <div class="item-summary">据中央气象台消息，11月影响我国的冷空气将有4轮，气温将大幅下降，而这也意味着心脑血管疾病进入高发期。医生表示，气温剧烈变化容易引起血压、心率波动，增加血管痉挛、斑块破裂概率，血液黏稠度也随之升高，进而诱发心脑血管突发情况。下面这几个养护误区，一定要警惕！误区一：喝点酒暖身酒精让血管扩张，热乎劲一过反...</div>
+                <div class="item-meta">央视新闻 · 2026-11-08 02:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261108A023O300?scene=news-skill" target="_blank" rel="noopener">新闻周刊丨小区退款，业主收！公共收益不能成物业“自留地”</a></div>
+                <div class="item-summary">进入一个小区，你能找到多少正被物业出租、可以带来收入的东西？本周，四川达州渠县，记者就跟着一家小区物业负责人，算了一笔账。记者：我们业主算公共收益的部分是多少个车位？物业：差不多52个车位的收益，每一年3万~4万元钱，每一个月差不多3000多元钱。物业：除了这个以外，我们在小区内部有一个饮水机，场地的租赁费...</div>
+                <div class="item-meta">央视新闻 · 2026-11-08 02:58</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A04VTD00?scene=news-skill" target="_blank" rel="noopener">小孩怕冷，冬天就得多穿点，穿得越多越好？</a></div>
+                <div class="item-summary">这种说法并不正确。图库版权图片，转载使用可能引发版权纠纷孩子平时怕冷，天冷时适当增加衣物是必要的，但关键是适度保暖，而不是穿得越多越好，穿得太多反而可能影响孩子的健康和舒适。建议家长遵循“分层穿衣”的原则，根据孩子的体温和活动情况灵活增减衣物：1、内层舒适：选择柔软、透气、吸汗的内衣，如棉质或速干衣...</div>
+                <div class="item-meta">科学辟谣 · 2026-11-07 10:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261108A03JCY00?scene=news-skill" target="_blank" rel="noopener">女子穿宽松上衣过关，过通道时低头前进、步伐急促，海关拦下一查：腰封内藏着三大包银粒，经鉴定为足银，共计3750.42克</a></div>
+                <div class="item-summary">据海关发布11月7日消息，近日，皇岗海关查获一名进境旅客绑藏足银粒3750.42克。当日，海关关员在福田口岸旅检大厅对进境旅客及其行李物品进行监管时，发现一名女性旅客进入海关监管区未主动申报，其身着宽松上衣，经过通道时低头前进，步伐急促，海关关员随即对其进行拦截检查。经进一步查验，关员在该旅客的腹部发现用透明胶带缠绕固定的黑色腰封1个，在腰封内查获用透明塑料袋包裹的疑似银粒3包。后经深圳海关...</div>
+                <div class="item-meta">红星新闻 · 2026-11-08 07:42</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0E9BB00?scene=news-skill" target="_blank" rel="noopener">民进党当局大挫败！台媒爆料：台外事部门交涉未果，撤了</a></div>
+                <div class="item-summary">近日，巴布亚新几内亚政府再度要求民进党当局加速推动关闭台湾地区设在当地的“驻巴新台北经济办事处”，台当局外事部门6日宣布，“主动”撤回所有驻当地派驻人员，同时停止采购巴布亚新几内亚液化天然气，未来也....</div>
+                <div class="item-meta">海峡导报社 · 2026-11-08 07:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0DK4K00?scene=news-skill" target="_blank" rel="noopener">全国首个！冷门绝学学院成立</a></div>
+                <div class="item-summary">中国社会科学院大学消息，11月6日，中国社会科学院大学冷门绝学学院成立仪式暨全国冷门绝学联盟启动大会在京举办。会上，史金波、冯时、卜宪群、李国强、张政文、李锦绣、孙伯君、李新伟、朝克等9名中国社会科学院学部委员、一级教授、国家级人才获聘为冷门绝学学院首席专家。中国社会科学院副院长、党组成员赵芮指出，中国...</div>
+                <div class="item-meta">政事儿 · 2026-11-07 23:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107V0E19H00?scene=news-skill" target="_blank" rel="noopener">山西一女子被诈骗分子诱导买160克黄金，准备交付被民警拦截</a></div>
+                <div class="item-summary">11月7日，记者从山西阳泉警方获悉，一女子被诈骗分子诱导买160克黄金准备交付被民警拦截。民警称，受害女子是被诱导到虚假的期货投资平台上，诈骗团伙想让她涨就可以涨，想让她跌就可以跌，就是把真金白银给取走，然后换来一堆虚假数据。民警还称，登门劝阻唤醒被诈骗的受害女子，又顺线组织警力将前来取金的嫌疑人抓获。记者采访获悉，取金嫌疑人系广西籍，已被刑拘。</div>
+                <div class="item-meta">新京报我们视频 · 2026-11-07 21:57</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0DJ0L00?scene=news-skill" target="_blank" rel="noopener">黄宁当选广东中山市市长</a></div>
+                <div class="item-summary">11月7日下午，中山市第十六届人民代表大会第八次会议在市会议中心召开。会议依法补选：尹念红为中山市第十六届人民代表大会常务委员会主任；黄宁为中山市人民政府市长；黄伟东为中山市第十六届人民代表大会常务委员会副主任。公开资料显示，黄宁，1978年11月生，广东揭西人，管理学博士。他长期在广东省政府办公厅任职，20...</div>
+                <div class="item-meta">中国侨网 · 2026-11-07 21:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0BTLX00?scene=news-skill" target="_blank" rel="noopener">男子被雇主扇9次耳光后急性脑梗死，昏迷14个月后离世 雇主被判担责七成赔84万余元</a></div>
+                <div class="item-summary">因拖欠工资和辞退问题起争执，59岁男子马某被雇主秦某扇了九次耳光。当天傍晚，马某因急性脑梗死入院，昏迷14个月后去世。之后，家属起诉秦某索赔136万余元。记者从中国裁判文书网获悉，近日，郑州市中级人民法院公布二审判决书，驳回秦某的上诉。此前一审法院判决：秦某对马某的损害后果承担70%的赔偿责任，赔偿其亲属各项...</div>
+                <div class="item-meta">红星新闻 · 2026-11-07 18:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0E9B000?scene=news-skill" target="_blank" rel="noopener">显卡价格连涨11个交易日后急跌 华强北显卡半天一个价</a></div>
+                <div class="item-summary">【显卡价格连涨11个交易日后急跌 华强北显卡半天一个价】财联社11月7日电，显卡是主要用于图形渲染的硬件，如今也广泛用于AI算力运算。此前受海外停产传闻刺激，RTX 50系列显卡开启连续上涨，一口气连涨11个交易日。从10月28日开始，行情突然掉头向下。RTX 5080从最高近2万元，跌到1.6万元，价格回调两成。有商户告诉记者：...</div>
+                <div class="item-meta">财联社 · 2026-11-07 22:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A0DUMU00?scene=news-skill" target="_blank" rel="noopener">视频丨千公里仅3.43毫秒！我国新一代通信网技术取得新突破</a></div>
+                <div class="item-summary">近日，我国完成全球首个千公里空芯光纤双向实时传输验证。这意味着我国在新一代通信网关键技术领域取得新的突破。技术人员告诉记者，这次试验在1007.48公里的光纤线路上，首次实现了双向各64Tb每秒的信号同步传输，相当于支持每秒160部4K电影的上传和下载（每部按50GB计算），千公里信号单程传输只需3.43毫秒，创造了空芯光...</div>
+                <div class="item-meta">央视新闻 · 2026-11-07 21:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107V0C4JS00?scene=news-skill" target="_blank" rel="noopener">马斯克直言“我爱中国”：中国的汽车公司非常优秀 去中国能受到启发</a></div>
+                <div class="item-summary">11月6日，特斯拉公司首席执行官马斯克线上出席纽约投资会议时表示他爱中国，并高度评价中国车企竞争力。他直言中国太棒了，并表示去中国会让人受到启发。巴伦资本创始人巴伦则提到，福特汽车公司有人去过中国，同样“被那里的汽车质量震惊”。</div>
+                <div class="item-meta">世面 · 2026-11-07 18:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261107A09DLK00?scene=news-skill" target="_blank" rel="noopener">被年轻人遗忘的磁带，正在AI时代闷声发大财</a></div>
+                <div class="item-summary">谁能想到，磁带竟然在 AI 时代迎来了第二春。 10 月 29 日，日本富士胶片宣布投资约 100 亿日元（约合人民币 4.22 亿元），计划在 2026 至 2028 财年扩建神奈川县小....</div>
+                <div class="item-meta">爱范儿 · 2026-11-07 16:18</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-08 09:18</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
