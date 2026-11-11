@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-11</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-11</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A0343400?scene=news-skill" target="_blank" rel="noopener">视频丨“玄龙”如何隐身？攻击-11更多硬核实力揭秘</a></div>
+                <div class="item-summary">11月11日，是人民空军77岁生日。在这个日子到来前夕，空军列装的先进装备也开始陆续曝光。人民空军9日发布了一段视频，展示了攻击-11隐身无人机，代号“玄龙”。视频配文说，这次“大大方方”展示。确实，从视频来看，“玄龙”各个角度的“标准证件照”一览无余，它最大的特点就是气动外形使用了大飞翼设计，也就是没有水平...</div>
+                <div class="item-meta">央视新闻 · 2026-11-11 06:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A03B3500?scene=news-skill" target="_blank" rel="noopener">视频丨我国持续推进市场多元化 外贸“朋友圈”持续扩大</a></div>
+                <div class="item-summary">近年来，我国持续推进市场多元化，降低对单一市场依赖，分散外部环境带来的风险，外贸“朋友圈”持续扩大。海关统计数据显示，今年前10个月，我国对180多个国家和地区进出口实现增长，其中，对东盟、拉美、非洲等新兴市场进出口分别增长24.2%、14.4%、17.6%，对欧盟、美国进出口分别增长8.5%、6.3%。同期，对APEC其他经济体...</div>
+                <div class="item-meta">央视新闻 · 2026-11-11 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A0AF7W00?scene=news-skill" target="_blank" rel="noopener">视频丨前10个月我国外贸保持强劲增长 民营外资国企协同共进</a></div>
+                <div class="item-summary">今年以来，我国外贸多元主体齐发力、同步向好，民营、外资、国企三类主体协同共进，结构韧性明显。 各类外贸经营主体协同共进海关统计数据显示，今年前10个月，我国民营企业进出口25.46万亿元，增长20.1%，占我国进出口总值的56.8%。同期，外商投资企业进出口13.15万亿元，增长20.4%；国有企业进出口6.12万亿元，增长19.1%。海关总署统计分析司司长 吕大良：前10个月，我国民营、外...</div>
+                <div class="item-meta">央视新闻 · 2026-11-10 16:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A03FWE00?scene=news-skill" target="_blank" rel="noopener">第一批新车次列车车票 今起陆续发售</a></div>
+                <div class="item-summary">全国铁路列车车次编排改革顺利推进，11月25日0时起始发开行的普速旅客列车、11月24日18时起始发开行的货物列车将正式使用新车次。第一批实行新车次的列车车票，今日起陆续发售。动车组列车车次此次变更暂时保持不变，将于12月下旬实施变更。按照2026版《列车车次编排规定》，普速旅客列车使用Z、N、V字头字母。Z按英文字母...</div>
+                <div class="item-meta">央视新闻 · 2026-11-11 07:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A038TH00?scene=news-skill" target="_blank" rel="noopener">你囤Token了吗？“双十一”AI消费套路避坑指南</a></div>
+                <div class="item-summary">今年“双十一”直播间里的一句“三、二、一，上链接”让算力第一次进了消费者的购物车半小时就能卖出10万份AI会员月卡、约2万亿Token“囤Token”成为讨论热词与此同时AI明星虚假直播、AI买家秀等消费骗局不断冒头“双十一”Token促销能不能囤？购物时怎么谨防“AI诈骗”？这份消费提示请收好 这个“双十一”你囤...</div>
+                <div class="item-meta">央视新闻 · 2026-11-11 06:45</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A0322S00?scene=news-skill" target="_blank" rel="noopener">视频丨昔时飞两遍，今朝镇长空！中国空军硬核作战力量大盘点</a></div>
+                <div class="item-summary">11月11日 是人民空军77岁生日历经七十余年建设发展“空天一体、攻防兼备”人民空军向着战略目标不断迈进一支机型谱系完备、分工清晰、协同高效的空中作战力量守护祖国万里长空 昔时飞两遍 今朝镇长空1949年开国大典受阅战机数量稀少只能往返飞行弥补阵容缺憾从一穷二白、艰难启航到空天一体、攻防兼备人民空军历经七十七载深耕建设完成了从勉强防空到全域戍空的华丽蜕变以全新的空天力量守护万里山河安宁 亮剑...</div>
+                <div class="item-meta">央视新闻 · 2026-11-11 06:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A03DXY00?scene=news-skill" target="_blank" rel="noopener">视频丨冬天洗澡 早上洗还是晚上洗？这些“坏习惯”赶紧改</a></div>
+                <div class="item-summary">冬季到来，天气渐冷洗澡需要注意啥？是早上洗澡好，还是晚上洗澡好？往下看，一起了解冬季这4种洗澡方式不可取 频率太高冬季气温低、温差大，皮肤容易出现粗糙、起皮屑等现象。洗澡频繁，会加速皮肤油脂与水分丢失，破坏皮肤角质层，皮肤就会变得更加干燥、脆弱，进而引发瘙痒，甚至可能感染细菌。冬季多久洗一次澡更...</div>
+                <div class="item-meta">央视新闻 · 2026-11-11 07:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A0067200?scene=news-skill" target="_blank" rel="noopener">中国足球职业联赛颁奖典礼举行 斯坦丘获中超金球奖</a></div>
+                <div class="item-summary">新华社广州11月10日电（记者赵紫羽、王浩明）2026赛季中国足球职业联赛颁奖典礼10日在广州举行，金球奖、金靴奖、金帅奖、金童奖等多个奖项揭晓。 大连英博外援斯坦丘荣膺中超金球奖，本赛季他作为球队的中场核心，出战27轮联赛，贡献10粒进球和5次助攻，帮助大连足球时隔21年再夺顶级联赛冠军。他表示，获得这一荣誉深感荣...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-11 00:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A036HV00?scene=news-skill" target="_blank" rel="noopener">真相来了丨“只吃粗粮等于健康”盛行网络 真的如此吗？</a></div>
+                <div class="item-summary">一段时间以来，网上有种观点非常盛行，那就是“只吃粗粮等于健康”。事实真的如此吗？全谷物、杂粮、粗粮类产品越来越多，三者是一回事吗？消费者该如何选择？ 全谷物、杂粮、粗粮是一回事吗？ 什么是全谷物？按照定义，谷类食物没有经过精加工，或者经过碾碎、压扁等粗加工，依然完整保留谷物天然的麸皮、胚乳、胚芽，才能...</div>
+                <div class="item-meta">央视新闻 · 2026-11-11 06:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A04Z6W00?scene=news-skill" target="_blank" rel="noopener">坐高铁时窗户打开，人会被气流直接吸出去？</a></div>
+                <div class="item-summary">流“坐高铁时窗户打开，人会被气流直接吸出去”好多人都注意到，高铁车窗是完全封死的。于是便有人说：肯定是因为高铁速度太快，一旦开窗，人会被气流直接吸出去。言流言分析这种说法毫无科学道理。其实大家这样觉得的很大一部分原因，是人们把高铁和飞机的情况混淆了。高铁运行在地面环境中，车厢内外的气压接近，没有巨大...</div>
+                <div class="item-meta">科学辟谣 · 2026-11-10 10:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A03DUR00?scene=news-skill" target="_blank" rel="noopener">贵州茅台，释放新动向</a></div>
+                <div class="item-summary">文｜卢卡 11月10日下午，贵州茅台党委副书记、董事、代总经理王莉在出席2026年三季度业绩说明会回答投资者提问时表示，i茅台将逐步由“定时抢购”转向面向消费者日常需求的常态售卖。 ....</div>
+                <div class="item-meta">腾讯新闻酒韵 · 2026-11-11 07:14</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A0DFDA00?scene=news-skill" target="_blank" rel="noopener">男子与第三者在客栈发生关系后猝死 妻子向第三者和客栈索赔超百万元，一审被驳回</a></div>
+                <div class="item-summary">去年12月20日，已婚的57岁男子张某（化姓）和情人胡某从上海前往嘉兴，并入住当地一家客栈。当晚吃饭时，张某曾饮用一瓶黄酒，又在酒吧喝了少量啤酒，之后和胡某返回客栈发生关系。随后，张某猝死。张某的妻子郑某等家属将胡某及客栈告上法庭，索赔1003830.94元。红星新闻记者从中国裁判文书网获悉，一审法院浙江省嘉兴市南...</div>
+                <div class="item-meta">红星新闻 · 2026-11-10 19:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A081PG00?scene=news-skill" target="_blank" rel="noopener">国家发改委：幼儿园、小学、初中学龄人口已经达峰</a></div>
+                <div class="item-summary">11月10日消息，国家发展改革委奋进“十五五”系列新闻发布会，介绍增进民生福祉有关情况。社会发展司副司长黄玮茹表示，从全国层面看，目前幼儿园、小学、初中学龄人口已经达峰，高中和高等教育学龄人口还在持续增长，对资源配置提出了新的要求。对此，发改委将会同教育部等有关部门，围绕“三个适应”积极开展工作，前瞻应...</div>
+                <div class="item-meta">界面新闻 · 2026-11-10 18:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A0E4WN00?scene=news-skill" target="_blank" rel="noopener">法国最新涉华表态</a></div>
+                <div class="item-summary">王毅同法国外长巴罗通电话新华社北京11月10日电 中共中央政治局委员、外交部长王毅10日应约同法国外长巴罗通电话。王毅表示，中法都是联合国创始会员国和安理会常任理事国，双方就国际形势发展变化保持沟通、加强协调，对于维护以联合国为核心的国际体系十分重要。中方愿同法方一道，履行好安理会常任理事国特殊责任，维护...</div>
+                <div class="item-meta">长安街知事 · 2026-11-11 07:26</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A0F0JL00?scene=news-skill" target="_blank" rel="noopener">甘孜公路两只羊“硬核对撞”火了！神同步跳起来能精准撞到对方的头，网友：这脑瓜子嗡嗡的</a></div>
+                <div class="item-summary">近日，四川甘孜的一段公路上，两只山羊上演了一场“教科书级”的顶角对决，画面被网友拍下后迅速走红网络。视频里，两只羊先是低头蓄力，随后几乎同时纵身跃起，犄角精准撞向对方的头部，动作整齐得像提前排练过一样。这一幕让不少网友直呼“太神奇”，还有网友调侃：“这哪是打架，明明是高原版‘双人蹦迪’，默契度满分！...</div>
+                <div class="item-meta">杭州日报 · 2026-11-10 23:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110V07HFK00?scene=news-skill" target="_blank" rel="noopener">玻璃幕墙再成“鸟类杀手”，重庆多只鸟类在商场门前坠地死亡</a></div>
+                <div class="item-summary">近日，重庆居民反映，万州一商场门口有多只鸟类因撞上玻璃幕墙坠地死亡。11月10日，记者从事发商场获悉，玻璃幕墙归属于相邻银行支行，已联系物业对接处理。银行员工称，鸟类尸体已由城管部门处理，银行内部相关部门正就避免鸟撞做安排。</div>
+                <div class="item-meta">新京报我们视频 · 2026-11-10 12:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A08XDP00?scene=news-skill" target="_blank" rel="noopener">董明珠：格力年底推“奢侈品”家电产品，10年后可按原价转手售出</a></div>
+                <div class="item-summary">凤凰网科技讯（作者/云飞） 11月10日，近日，格力电器董事长董明珠在一档节目中表示，AI不应是营销口号，对没有核心技术实力的企业而言，AI就是用来炒热度的概念游戏；对有扎实技术积累的企业来说，AI....</div>
+                <div class="item-meta">凤凰网 · 2026-11-10 14:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A0DZ5A00?scene=news-skill" target="_blank" rel="noopener">超强厄尔尼诺，最新消息</a></div>
+                <div class="item-summary">世界气象组织11月9日发布报告指出，超强厄尔尼诺预计将进一步加剧全球高温与极端天气。报告显示，太平洋正在发展的厄尔尼诺现象，将使全球气温额外升高0.1℃至0.2℃，导致未来几个月全球气温异常偏高。今年1月至9月，全球近地表平均气温较工业化前水平高出1.47℃，与2023年和2025年水平相当，2023年至2026年成为有记录以来最热的四年。世界气象组织还预计，本轮厄尔尼诺现象将持续至明年2月...</div>
+                <div class="item-meta">红星新闻 · 2026-11-10 20:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261111A03F0U00?scene=news-skill" target="_blank" rel="noopener">从儿孙绕膝到花钱雇个“孙子”：印度养老模式正在改变</a></div>
+                <div class="item-summary">苏尼尔·布迪拉贾的两个女儿都居住在美国。然而，当他和妻子前往新德里附近的古鲁格拉姆市集时，一位年轻男子走在他们旁边。他是26岁的罗尼·拉朱，他们的“雇佣孙子”。据半岛电视台11月8日报道，在印度各大城市，越来越多的公司开始提供过去由家庭提供的服务：照顾老人，包括陪同他们去寺庙、看病、玩牌，或者只是静静地...</div>
+                <div class="item-meta">澎湃新闻 · 2026-11-11 07:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261110A0E3EY00?scene=news-skill" target="_blank" rel="noopener">人民空军，生日快乐！</a></div>
+                <div class="item-summary">2026年11月11日人民空军成立77周年纪念日在战火中诞生，在战斗中成长人民空军的每一步足迹都镌刻着艰辛与荣耀 1949年10月1日，中华人民共和国开国大典阅兵，17架飞机组成的飞行编队飞过天安门广场上空。（资料照片）从开国大典仅有17架战机飞过天安门到如今成体系列阵长空的钢铁之翼 2026年5月12日，空军航空兵某团出动...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-10 20:45</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-11 09:55</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
