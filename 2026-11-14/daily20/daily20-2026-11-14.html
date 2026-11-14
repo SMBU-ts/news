@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-14</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-14</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A049V500?scene=news-skill" target="_blank" rel="noopener">视频丨外机超低空贴海面接近我领空，我飞行员极限距离逼退！现场画面</a></div>
+                <div class="item-summary">出发塔台，机组已经准备好开车。可以开车。塔台，机组请求起飞。可以起飞。在空军航空兵某旅，当战斗警报响起时，战备值班的步佳文和张敏捷，迅速驾机升空。空军某部 步佳文：外机飞行高度很低，超低空贴着海面过来，到了它想让自己暴露的位置的时候就突然上升高度。这个时候给我们的预警和反应时间就很短，需要我们接令之...</div>
+                <div class="item-meta">央视新闻 · 2026-11-14 06:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A047ET00?scene=news-skill" target="_blank" rel="noopener">多地优化停车收费！短时免费、夜间降价等</a></div>
+                <div class="item-summary">临时停车十分钟停车费不划算？夜间停车费用太贵？今年以来瞄准这些高频痛点各地停车福利大上新！包括短时免费、夜间降价包月费用下调等通过精细化收费调整让停车更划算、更省心 设置短时免费停车时段方便临时办事和接送人员 上海实施15分钟内限次免费工作日每日可享受两次11月11日，上海市发展改革委等部门发布《关于优化我...</div>
+                <div class="item-meta">央视新闻 · 2026-11-14 06:20</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0923T00?scene=news-skill" target="_blank" rel="noopener">（图表）2026年10月高频数据折射中国经济稳中向好态势</a></div>
+                <div class="item-summary">新华社图表，北京，2026年11月13日 记者11月13日从国家发展改革委国家信息中心了解到，2026年10月份，消费、外贸、投资等领域多项高频数据显示，随着存量政策与增量政策的协同发力，中国经济发展的含金量、含新量不断提升，稳中向好态势进一步巩固。 新华社发 宋博 制图...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-13 15:10</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0DOJC00?scene=news-skill" target="_blank" rel="noopener">中国队青奥会双第一收官</a></div>
+                <div class="item-summary">2026年达喀尔青奥会中国体育代表团以18金8银7铜收官，位列金牌榜、奖牌榜首位。...</div>
+                <div class="item-meta">界面新闻 · 2026-11-13 20:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A04FQR00?scene=news-skill" target="_blank" rel="noopener">全美航班停飞，上上次还是“9·11”</a></div>
+                <div class="item-summary">美国联邦航空管理局（FAA）周五下午下令全美所有航班停飞，原因是各地区空中交通管制中心出现通信故障。美国联邦航空管理局发布的通知称，此次停飞是“鉴于特殊情况并出于安全考虑”而采取的措施。美国交通部长肖恩·达菲表示，通信故障影响了全美22个地区空中交通管制中心。这些中心负责指挥在全国各机场之间飞行的飞机。...</div>
+                <div class="item-meta">观察者网 · 2026-11-14 06:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A04I4I00?scene=news-skill" target="_blank" rel="noopener">视频丨一袋垃圾能给手机充电50次？中国方案吸引外宾扎堆打卡</a></div>
+                <div class="item-summary">在深圳，一袋生活垃圾可以发成电，把你的手机充满50次！据介绍，焚烧一抓斗垃圾，发电量够一个人用一两年！今年以来，这座把垃圾变电能的园区，已经接待了1200多名境外访客前来考察。中国方案吸引外宾扎堆打卡，一度电，点亮亚太合作之光。（总台央视记者 岳群 刘颖 郭茜 金晓曦 张博） 2026中央广播电视总台版权所有。未...</div>
+                <div class="item-meta">央视新闻 · 2026-11-14 07:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A00KGU00?scene=news-skill" target="_blank" rel="noopener">攀岩老将战胜世界纪录保持者 “还想代表国家出征”</a></div>
+                <div class="item-summary">新华社重庆11月13日电（记者王沁鸥、谷训）一度连全国前八都进不了的老将，触底反弹后战胜了比自己年轻9岁的世界纪录保持者，重上全国锦标赛领奖台——这戏剧性的一幕13日发生在了攀岩全国锦标赛男子速度项目现场。 龙金宝（右）和赵一程在半决赛后。主办方供图 当晚的四强战中，26岁的巴黎奥运会选手龙金宝在半决赛中爬出...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-14 00:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A04HR600?scene=news-skill" target="_blank" rel="noopener">视频丨全网最大“榫卯木蜗牛”火了 手搓作品为何频频出圈</a></div>
+                <div class="item-summary">一只一米多长的木蜗牛，关节全是榫卯结构，不用一颗钉子、一滴胶水，孩子牵着它在村里遛弯，就像牵着一只走得慢吞吞的宠物。最近这只“很有意思”的木蜗牛火了，网友评论“好想要一个，牵着去散步”“蜗牛活灵活现”。做这只蜗牛的人叫陈孝东，湖北宜昌点军区土城乡土城村人，从事根雕十多年。万万没想到，他给娃做的动物玩...</div>
+                <div class="item-meta">央视新闻 · 2026-11-14 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A049V000?scene=news-skill" target="_blank" rel="noopener">别把腹泻都当“吃坏肚子” 感染性休克早期信号要知道</a></div>
+                <div class="item-summary">腹泻是生活中很常见的症状，多数情况只是肠胃短暂不适，休息、补水后就能慢慢好转。不过在临床中，少数免疫力偏弱、有基础疾病的人，发生感染后病情变化会更快，腹泻有可能是身体发出的早期信号。央视新闻特邀北京大学人民医院消化内科主任、主任医师陈宁，为大家梳理腹泻和感染性休克之间的关联，教你理性判断：何时可以安...</div>
+                <div class="item-meta">央视新闻 · 2026-11-14 06:30</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261112V0E72900?scene=news-skill" target="_blank" rel="noopener">赶紧转发提醒！芹菜降压苦瓜降糖都是谣言！</a></div>
+                <div class="item-summary">赶紧转发提醒！芹菜降压苦瓜降糖都是谣言！</div>
+                <div class="item-meta">长江云说法 · 2026-11-12 21:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0EKMJ00?scene=news-skill" target="_blank" rel="noopener">成都一花店老板接到4781元订单，客人要求用百元大钞做“现金花束”，老板直接报警，获重大线索奖</a></div>
+                <div class="item-summary">一束普通的鲜花，平时只要几十块钱。而这次客户的要求格外“浪漫”，要用百元大钞来做。近日，成都金牛区荷花池街道辖区一家鲜花店接到这样一笔网络订单，老板没有急着接单，而是拨通了荷花池派出所电话，两小时内，4名嫌疑人全部落网。当天，荷花池派出所接到辖区某鲜花店经营者张先生报警：有人通过网络下单，要求用现金...</div>
+                <div class="item-meta">杭州日报 · 2026-11-13 22:03</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261114A04BPD00?scene=news-skill" target="_blank" rel="noopener">唱衰中国AI，美媒逻辑太荒唐</a></div>
+                <div class="item-summary">【环球时报记者 张蔚蓝 陈子帅 环球时报特约记者 文远】美媒借着英伟达首席执行官黄仁勋辞职，又翻出“中国成最大输家”的陈词滥调。美国彭博社12日的一篇文章展现了极为荒唐的逻辑：由于中国AI企业的技术优势都是靠“走私美国芯片”和“蒸馏美国技术”实现的，所以作为美国对华芯片限制的“漏洞”、硅谷开源模式最有力的倡...</div>
+                <div class="item-meta">环球网 · 2026-11-14 06:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0D1NR00?scene=news-skill" target="_blank" rel="noopener">两国宣布：禁止俄运动员入境</a></div>
+                <div class="item-summary">参考消息网11月13日报道 据法新社11月12日报道，芬兰和挪威12日宣布，只要俄乌冲突仍在继续，它们将禁止俄罗斯运动员入境参加比赛。报道称，芬兰方面表示，将拒绝向俄罗斯运动员发放签证，并称他们“没理由”出现在芬兰。几小时后，挪威也发布了类似声明，并明确指出该措施将“很快”生效。芬兰将主办2027年世界花样滑冰锦...</div>
+                <div class="item-meta">参考消息 · 2026-11-13 19:44</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A06A7A00?scene=news-skill" target="_blank" rel="noopener">今年前10月个税收入预计超去年全年，原因揭秘</a></div>
+                <div class="item-summary">今年全国个人所得税收入创历史新高基本没有悬念。近日，第一财经记者从税务总局了解到，受绝大多数纳税人积极申报缴纳离岸信托收益个人所得税（下称“个税”）影响，带动了全国10月份个人所得税收入增长近90%。结合财政部此前公开披露的数据计算，2026年10月份全国个税收入预计约0.29万亿元。2026年1月至10月全国个税收入预...</div>
+                <div class="item-meta">第一财经 · 2026-11-13 17:22</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0C9V500?scene=news-skill" target="_blank" rel="noopener">特惠车、一口价，逼“疯”网约车司机</a></div>
+                <div class="item-summary">最近，山东省济南市的网约车司机王磊（化名）正为接单发愁。在临近晚高峰时段，没开接单特惠车选项的他出车3.5个小时后只接到了一单，流水5.8元。在王磊看来，网约车司机正陷入一个“无解的循环”：“不开特惠，单子会被流走；但开了特惠，就会不断接到低价单。”近期，中国新闻网《民生调查局》采访了多地多位网约车司机，...</div>
+                <div class="item-meta">中国新闻网 · 2026-11-13 18:36</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A09UG500?scene=news-skill" target="_blank" rel="noopener">菲律宾防长妄言“中方若试图武力接管台湾将得不偿失”，国防部：敦促菲方严格约束个别政客的危险言行</a></div>
+                <div class="item-summary">据新华社消息，11月13日下午，国防部新闻发言人陈曦大校就近期涉军问题发布消息。记者：据报道，菲律宾防长近日在接受采访时称，考虑到有20万菲侨民在台湾生活，菲正为各种可能情势作准备。中方若试图武力接管台湾，将是得不偿失的选项。请问对此有何评论？陈曦大校 图源：国防部发布陈曦：台湾问题纯属中国内政，如何解决...</div>
+                <div class="item-meta">极目新闻 · 2026-11-13 16:04</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0CZV400?scene=news-skill" target="_blank" rel="noopener">永州一处路边现多箱药品“腹膜透析液”，包装未拆封也未过期，镇政府：病逝村民生前所用药物被遗弃，已按流程收集处置</a></div>
+                <div class="item-summary">极目新闻记者 丁伟11月11日，有网友在社交平台发布视频称，在湖南永州祁阳市一地的乡村道路旁，发现大量遗弃的医疗药品——腹膜透析液，这些药品从何而来？为何被遗弃在野外？11月13日，当地镇政府工作人员对此进行了回应。据视频发布者介绍，11月11日，他在祁阳市文富市镇一乡村道路旁看到大量医疗药品，而且大部分都是成...</div>
+                <div class="item-meta">极目新闻 · 2026-11-13 19:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0D3VN00?scene=news-skill" target="_blank" rel="noopener">央行出手！2000亿元买断式逆回购来了</a></div>
+                <div class="item-summary">记者 辛圆11月13日，中国人民银行发布公开市场买断式逆回购招标公告称，为保持银行体系流动性充裕，2026年11月16日，将以固定数量、利率招标、多重价位中标方式开展2000亿元买断式逆回购操作，期限为6个月（180天），到期日为2027年5月15日（遇节假日顺延）。由于本月有3000亿元6个月期买断式逆回购到期，11月16日操作后将...</div>
+                <div class="item-meta">界面新闻 · 2026-11-13 19:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0DLL300?scene=news-skill" target="_blank" rel="noopener">61万养老钱被“热心员工”搬空 老人追问：养老院“门内失守”，谁之过？｜追踪到底</a></div>
+                <div class="item-summary">封面新闻记者 杨芮雯 赵奕 邹阿江 摄影报道 卖掉唯一的房子，搬进月费不菲的养老公寓，八十多岁的李婆婆和张爷爷图的就是安稳。 可他们谁也没想到，“热心”工作人员李委取得信任后，在....</div>
+                <div class="item-meta">封面新闻 · 2026-11-13 20:29</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261113A0DLWT00?scene=news-skill" target="_blank" rel="noopener">于东来回应“洗发水疑云”：将拿出详细调研报告</a></div>
+                <div class="item-summary">11月13日，胖东来创始人于东来在社交平台账号上发文表示，针对目前出现的关于洗发水的问题，胖东来公司已经安排成立专项工作团队展开更详细的调查，会给社会拿出详细的调研报告。“即便是万一有问题，胖东来也会拿出让顾客满意的解决方案。”近期，胖东来在售的一款名为卡蓓诺（CABELO）的洗发水引发争议。卡蓓诺声称“原装日本进口”，但相关网传视频质疑其产地造假，为“假洋牌”。此番指控迅速引发大范围讨论。...</div>
+                <div class="item-meta">北京日报客户端 · 2026-11-13 20:29</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-14 09:35</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+    "title": "Edge0 开源 145B 端侧模型，可在笔记本本地运行",
+    "source": "Hacker News：AI 热帖",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://api-docs.deepseek.com/zh-cn/updates/#发布全家桶应用-api",
+    "title": "DeepSeek 开放全家桶应用 API：联网搜索、文件输入、阅读链接等能力面向开发者",
+    "source": "DeepSeek：API 更新日志",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/ChatGPT/status/2121283151729496235",
+    "title": "ChatGPT 推出 ChatGPT Wallet，dot 可在用户批准下代为完成购买",
+    "source": "X：ChatGPT (@ChatGPT)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/ClementDelangue/status/2121260104913768931",
+    "title": "llama.cpp v1.0.0 发布，本地运行 AI 模型迎来首个稳定大版本",
+    "source": "X：Clément Delangue（Hugging Face CEO） (@ClementDelangue)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+    "title": "Google 展示 Antigravity /teamwork 多智能体协作成果并开放给研究者使用",
+    "source": "Google Research：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://sierra.ai/blog/releasing-poppy",
+    "title": "Sierra 发布 Personal Agent Protocol（Poppy）v1.0",
+    "source": "Sierra：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil/",
+    "title": "Nvidia 领导层变动引发以色列科技界关注，投资人认为挑战者或有机会",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/AnthropicAI/status/2121272083863011714",
+    "title": "Anthropic 直播 Dario Amodei 与 JPMorgan CEO Jamie Dimon 炉边谈话并披露 SEC 注册声明",
+    "source": "X：Anthropic (@AnthropicAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2121135206342275529",
+    "title": "Nvidia 内部建议箱帖文获超 1600 条评论，多数员工请愿黄仁勋回归",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2121354165352096179",
+    "title": "NVIDIA 副总裁 Bryan Catanzaro 澄清要求恢复 Jensen 职务的信件系伪造",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+    "title": "研究报告称中国最强 AI 模型使用了被禁出口的 Nvidia Blackwell 芯片训练",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://alignment.openai.com/misalignment-reports/stopping-a-running-alignment-evaluation/",
+    "title": "OpenAI 披露 GPT-6 Astra 误停运行中对齐评估的失准事故",
+    "source": "OpenAI：失准报告与通报（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]
