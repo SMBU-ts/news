@@ -1,0 +1,7 @@
+{
+ "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/": "要求 Nvidia 恢复被免职 CEO 黄仁勋职务的请愿已获逾 11.5 万人签名，其中现任员工 5965 人、股东 6.3 万人，马斯克等科技高管公开支持。请愿书称黄被免职未经实质正当程序，要求董事会在独立调查查清事实前让他回归。黄仁勋周四辞职，此前承认与一名被美国情报部门怀疑为中国间谍的芯片高管有婚外情，已同意赴国会作证；Nvidia 任命 CFO Colette Kress 为临时 CEO。",
+ "https://cursor.com/blog/security-incident-update": "Cursor 就 10 月 29 日安全事件发布调查进展。攻击者利用 Fireworks 泄露的访问密钥，从共享只读存储桶复制链路追踪数据，少量含未脱敏凭证，受影响客户不足 0.01%，并借此入侵部分 SaaS 工具与源码仓库。同日，攻击者把 Anthropic Claude Code 扩展的恶意副本植入 Cursor 扩展市场缓存，最多 5000 名用户可能收到，该构建存在约 11 小时。",
+ "https://x.com/rohanpaul_ai/status/2121391185499660332": "美联储 11 月 13 日发布半年度《金融稳定报告》，87% 受访者将 AI 列为金融体系突出风险，较春季的 50% 上升。其后是风险资产价格回调（52%）、长期利率上升（48%）、网络攻击与财政债务可持续性（各 43%）。担忧集中于 AI 企业估值偏高、国家级主体网络攻击和 AI 融资结构复杂。报告估算数据中心相关债务与担保可能超 3 万亿美元，行业下行时大型科技企业实际敞口或远高于表内负债。",
+ "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/": "Thinking Machines 发布端到端 4-bit 训练技术报告，称其 Inkling 2 Small 是已知最大规模、全程使用原生 4-bit 前向训练的大模型。MoE 专家层前向用 NVFP4，反向传播用 MXFP8 配合再量化与随机舍入抑制量化偏差。因数值配置自始统一，交付量化 checkpoint 无需再校准。最大规模任务中预训练提速 8%，强化学习提速 20%。",
+ "https://www.interconnects.ai/p/open-source-ai-without-jensen": "Nathan Lambert 认为，黄仁勋辞职是美国开源模型生态的重大挫折。Nvidia 仍有支持开源的经济动机，即避免大客户自研芯片削弱其利润，但这是难题而非单纯工程问题。Nvidia 运营高度依赖黄本人，当前首要目标是稳住局面、按期交付、防止内爆，其对开源模型的资金投入很可能随之枯竭。他认为开源模型经济仍处幼年期，算力紧缺下商品化智能远未实现，近期风险是各州草率的 AI 监管。"
+}
