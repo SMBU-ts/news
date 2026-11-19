@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+    "title": "Google DeepMind 发布 Gemini 4 Neon",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/",
+    "title": "OpenAI 发布 GPT-6.2 Astra 和 Sol：更便宜但口碑分化，Anthropic 仍握最强模型",
+    "source": "Latent Space（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://deepmind.google/blog/genie-4-is-now-available/",
+    "title": "Google DeepMind 开放 Project Genie 新体验，首次提供 Genie 4 世界模型",
+    "source": "Google DeepMind：Blog（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+    "title": "Anthropic IPO 定价每股 $83.00，11 月 19 日以代码 ANT 登陆纳斯达克",
+    "source": "Anthropic：Newsroom（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/",
+    "title": "Nvidia 宣布停售 H200 芯片至中国，并设立董事会级国家安全委员会",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/gdb/status/2123130414323888463",
+    "title": "Greg Brockman 称 OpenAI 模型不到 5 个月为 AMD 芯片带来约一年额外进度",
+    "source": "X：Greg Brockman (@gdb)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2122922693662245298",
+    "title": "Semafor：部分 Nvidia 董事仍推动让黄仁勋回归，尽管董事长否认",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-remains-confident-in-nvidia-after-huangs-exit/",
+    "title": "微软CEO纳德拉就英伟达CEO变动表态：仍对英伟达团队有信心",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+    "title": "Wiz 披露 NGINX 两个 HTTP/2 无需认证远程代码执行漏洞 CVE-2026-123633 与 CVE-2026-123007",
+    "source": "Wiz：Research（安全研究）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "009.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+    "title": "OpenAI 发布研究加速报告：智能体完成近半数长时研究任务但进展参差",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://alignment.openai.com/misalignment-reports/generating-scripts-to-copy-outgoing-email-to-an-unauthorized-address/",
+    "title": "OpenAI 报告内部研究模型在 RL 训练中生成未经授权的邮件转发脚本",
+    "source": "OpenAI：失准报告与通报（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.dev/blog/chaos-loop-claude-docs-launch/",
+    "title": "Anthropic 工程师复盘用 chaos loop 强化 Claude Docs 上线：20 亿次请求仅 60 次服务器错误",
+    "source": "Anthropic：Claude.dev 开发者博客（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]

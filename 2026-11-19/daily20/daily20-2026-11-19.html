@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-19</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-19</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261118A0G04500?scene=news-skill" target="_blank" rel="noopener">新华图讯 | 习近平和彭丽媛为出席亚太经合组织第三十三次领导人非正式会议的来宾举行欢迎宴会</a></div>
+                <div class="item-summary">11月18日晚，国家主席习近平和夫人彭丽媛在深圳国际交流中心举行宴会，欢迎出席亚太经合组织第三十三次领导人非正式会议的来宾。宴会开始前，习近平主席夫妇同各经济体领导人、代表及配偶集体合影。记者：李响编辑：侯俊 毕晓洋 卢烨 翟一凡...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-18 20:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A00RAZ00?scene=news-skill" target="_blank" rel="noopener">俄罗斯总统普京参访深圳北理莫斯科大学</a></div>
+                <div class="item-summary">11月18日，俄罗斯总统普京在出席亚太经合组织（APEC）第三十三次领导人非正式会议期间参访深圳北理莫斯科大学并发表演讲。他表示，俄中两国师生们为俄中睦邻友好关系做出了重要贡献。（记者：白瑜、郑冬睿）...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-19 00:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261118A0D6OW00?scene=news-skill" target="_blank" rel="noopener">从北京到深圳：APEC十二年间有哪些新变化？</a></div>
+                <div class="item-summary">2014年，APEC会议期间，“APEC蓝”成为人们津津乐道的话题。12年后的今天，蓝天已成为北京城市生活的常态。2025年，北京空气质量优良天数达到311天。今年，中国时隔12年再次担任APEC东道主。11月18日至19日，亚太经合组织（APEC）第三十三次领导人非正式会议在深圳举行。从北京到深圳，12年间，亚太地区的发展与合作发生了哪些变化？跟随我们的镜头，从贸易、互联互通到创新，带你读...</div>
+                <div class="item-meta">人民网 · 2026-11-18 16:49</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03P6P00?scene=news-skill" target="_blank" rel="noopener">二〇二六年亚太经合组织工商领导人峰会深圳倡议</a></div>
+                <div class="item-summary">2026年11月17日至18日，亚太工商界领袖相聚中国深圳，出席亚太经合组织(APEC)工商领导人峰会(以下简称工商峰会)，围绕“共促繁荣、共赢未来”的峰会主题，深入探讨亚太区域开放合作、繁荣发展大计。 结合工商峰会的广泛讨论与APEC工商咨询理事会(ABAC)今年取得的丰硕成果，特发起本项倡议，凝聚亚太工商界的共同心声与期盼...</div>
+                <div class="item-meta">人民网 · 2026-11-19 06:35</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261118V0GAMW00?scene=news-skill" target="_blank" rel="noopener">外媒记者在APEC会议周：中国不是威胁，是强大的经济伙伴</a></div>
+                <div class="item-summary">外媒记者在APEC会议周：中国不是威胁，是强大的经济伙伴</div>
+                <div class="item-meta">南方都市报 · 2026-11-18 20:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03UO300?scene=news-skill" target="_blank" rel="noopener">视频丨活力、友好、非凡！APEC时间 外媒记者点赞深圳</a></div>
+                <div class="item-summary">亚太经合组织（APEC）第三十三次领导人非正式会议于11月18日至19日在深圳举行。位于深圳会展中心（福田）2号馆的APEC领导人会议周新闻中心聚集了大批外国媒体记者。总台记者在现场采访了多位外媒记者，谈及深圳，他们不吝赞美，活力、友好、非凡，这是他们对这座城市最真切的感受。APEC进行时，他们已为此进入紧锣密鼓的工...</div>
+                <div class="item-meta">央视新闻 · 2026-11-19 07:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A0002U00?scene=news-skill" target="_blank" rel="noopener">欢迎晚宴开始前 APEC来宾寒暄交流 体验中国科技产品</a></div>
+                <div class="item-summary">记者：邓华、毛思倩视频：史晨渲</div>
+                <div class="item-meta">新华网 · 2026-11-19 00:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261118A0DW3000?scene=news-skill" target="_blank" rel="noopener">全球媒体聚焦 | “以开放稳定促亚太繁荣”</a></div>
+                <div class="item-summary">11月18日上午，国家主席习近平在深圳前海国际会议中心出席2026年亚太经合组织工商领导人峰会开幕式，并发表题为《坚定信心，勇毅前行 共创亚太光明未来》的主旨演讲。外媒高度关注习近平主席在峰会开幕式上的主旨演讲。多家媒体认为，在全球经济增长承压、贸易保护主义抬头的背景下，中方释放出进一步扩大开放、深化区域合...</div>
+                <div class="item-meta">央视新闻 · 2026-11-18 16:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261118A0FFMW00?scene=news-skill" target="_blank" rel="noopener">俄美专机在中国机场同框</a></div>
+                <div class="item-summary">#俄美专机在中国机场同框 #伊尔-96与空军一号同场相望11月18日至19日，亚太经合组织（APEC）第三十三次领导人非正式会议在深圳举行。俄罗斯政府专机伊尔-96、美国政府专机“空军一号”在深圳宝安国际机场同框。</div>
+                <div class="item-meta">玉渊谭天 · 2026-11-18 19:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261118A06EEZ00?scene=news-skill" target="_blank" rel="noopener">钙片和维生素D“白吃了”，对降低骨折风险作用不大？并非如此</a></div>
+                <div class="item-summary">流“钙片和维生素D‘白吃了’，对降低骨折风险作用不大”最近，网上有很多文章分享了一个发表于《英国医学杂志》（BMJ）的研究，称研究分析显示“对于大多数受试者，常规服用钙、维生素D，或者两者一起服用，都难以明显降低骨折和跌倒的风险。”言流言分析这种说法是对科学研究结论的过度解读。关于“《英国医学杂志》（BM...</div>
+                <div class="item-meta">科学辟谣 · 2026-11-18 10:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03UCY00?scene=news-skill" target="_blank" rel="noopener">我国成功发射实践二十四号卫星</a></div>
+                <div class="item-summary">新华社太原11月19日电（李国利、李宸）11月19日6时51分，我国在太原卫星发射中心使用长征二号丁运载火箭，成功将实践二十四号卫星发射升空，卫星顺利进入预定轨道，发射任务取得圆满成功。这次任务是长征系列运载火箭的第678次飞行。...</div>
+                <div class="item-meta">新华网 · 2026-11-19 07:17</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03WHG00?scene=news-skill" target="_blank" rel="noopener">中方强调国际司法机制不应受政治因素干扰</a></div>
+                <div class="item-summary">新华社联合国11月18日电 中国常驻联合国副代表孙磊18日在安理会审议国际刑事法院涉利比亚问题时发言，强调国际司法机制不应受政治因素干扰，不应成为选择性施压的工具。 孙磊指出，国际司法机制在惩治国际罪行、打击有罪不罚等方面有着重要作用，必须始终以独立、客观、公正履职守护国际公信力这一生命线。国际刑事法院无论...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-19 07:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03S1900?scene=news-skill" target="_blank" rel="noopener">全球最大无人货运飞机技术验证试飞</a></div>
+                <div class="item-summary">本报呼和浩特电(记者张枨)11月14日，由白鲸航线研发制造的全球最大的无人货运飞机W5000，在内蒙古自治区鄂尔多斯市鄂托克前旗通用机场成功完成技术验证试飞。 当天，W5000以8度襟翼、起落架放下构型满推力起飞，滑跑约600米后离地，随后以约220公里每小时表速、每秒5米爬升率，上升至海拔约2000米高度。在全程约30分钟的试...</div>
+                <div class="item-meta">人民网 · 2026-11-19 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03SUF00?scene=news-skill" target="_blank" rel="noopener">爆单！“咨询量增长100%”！外籍客商，扎堆打卡</a></div>
+                <div class="item-summary">2026年APEC会议周进行之际，深圳南油服装批发市场迎来境外客商的“时尚采购”热。来自APEC经济体的买手与游客趁会议周窗口集中入场，南油正成为外国客商眼中“空箱来、满箱走”的深圳新体验。咨询量、订单量大增外籍客商扎堆打卡南油记者在南油走访看到，档口前不少外国客商正在挑款、摸面料、试版型。随着APEC会议周进入会期，其中不乏APEC经济体的客商专程飞来选款下单。俄罗斯客商维罗妮卡就是其中之...</div>
+                <div class="item-meta">红星新闻 · 2026-11-19 07:06</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03PYF00?scene=news-skill" target="_blank" rel="noopener">APEC新机遇，年轻人如何“接接接”？（财米油盐）</a></div>
+                <div class="item-summary">人民网记者 申佳平 时隔12年，中国再次担任亚太经合组织(APEC)东道主。 年轻人能从亚太合作中接住哪些实在机遇？日前，“财米油盐”栏目面向APEC成员经济体，收集到一些年轻人关心的问题。带着这些“青年之问”，栏目对话与会嘉宾。 技术变革，新赛道机会在哪？ 面对“AI(人工智能)越来越强，年轻人的机会在哪里”这一提问...</div>
+                <div class="item-meta">金台资讯 · 2026-11-19 06:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03VAX00?scene=news-skill" target="_blank" rel="noopener">我国外贸六成生意在亚太</a></div>
+                <div class="item-summary">【开 栏 语】从上海到北京，再到深圳，25载风云激荡，APEC三次落子中国，这次直指粤港澳大湾区。这不仅是中国开放的新实践，更是“亚太共同体”宏伟蓝图的硬核落地。南都湾财社推出【数读APEC】栏目，看数据亮剑：广东对APEC贸易达6.16万亿，全国每4元APEC贸易，就有1元来自广东；跨境电商占全国三分之一，集成电路、无人机...</div>
+                <div class="item-meta">南方都市报 · 2026-11-19 07:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119V03XOE00?scene=news-skill" target="_blank" rel="noopener">横屏看！这是深圳的极致震撼夜景</a></div>
+                <div class="item-summary">入夜的深圳，未来感溢出屏幕。（来源：航拍摄影家ShawnWang）</div>
+                <div class="item-meta">人民日报 · 2026-11-19 07:39</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03PYN00?scene=news-skill" target="_blank" rel="noopener">从一颗车厘子看跨境贸易便利化</a></div>
+                <div class="item-summary">本报记者 欧阳洁 王东辉 近日，2026至2027产季首批智利车厘子到达深圳，已上市销售。智利已连续多年稳居中国进口车厘子的第一大来源地。深圳口岸正是这份“南半球的鲜甜”进入中国的主要通道。 车厘子进境主要有三种方式，分别为经海运到达香港后，再通过陆路口岸进境，仅需4小时摆上市场货架；从智利出发，通过空运直接抵...</div>
+                <div class="item-meta">金台资讯 · 2026-11-19 06:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03S2Q00?scene=news-skill" target="_blank" rel="noopener">劳动教育不宜任由AI代劳</a></div>
+                <div class="item-summary">本报记者 孙亚慧 在陕西延安，延安市新区第二小学学生在参与分拣土豆。 在宁夏银川，西夏区华西希望小学学生体验葡萄绑滕。 江苏省扬州市梅岭中学学生围绕职业主题进行小组汇报。 本版照片均由校方提供 泥土带着潮气，针线磨出薄茧，这些只有亲手试过才懂的感受，算法目前很难复刻。 前不久，“人工智能时代的劳动教育传承...</div>
+                <div class="item-meta">人民网 · 2026-11-19 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261119A03UO700?scene=news-skill" target="_blank" rel="noopener">别让你的骨头比你先老 预防骨质疏松记住“3+4”</a></div>
+                <div class="item-summary">很多人觉得骨质疏松不是大事这是一个很大的误区事实上骨质疏松会让骨骼脆性增加一旦跌倒极易发生骨折骨折后可能致残严重时甚至危及生命报告单上的指标到底是什么意思？我们应该如何科学对待骨质疏松？3个方法发现骨质疏松4个关键应对骨质疏松一起来看～01骨质在无声无息中流失 人群普遍规律30～35岁：骨量达到峰值36～49岁...</div>
+                <div class="item-meta">央视新闻 · 2026-11-19 07:19</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-19 08:36</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
