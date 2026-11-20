@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-11-20</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 11 月 20 日 · 星期五</h1>
+      <div class="sub">共 12 条 · 生成于 北京时间 2026 年 11 月 20 日 08:00 · 数据覆盖 2026-11-19 ~ 2026-11-20</div>
+      <div class="stats">
+        <div class="stat"><div class="n">12</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">0</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">2</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">8</div><div class="l">行业动态</div></div><div class="stat"><div class="n">1</div><div class="l">论文研究</div></div><div class="stat"><div class="n">1</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 0</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 2</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 8</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 1</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 1</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">0</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">2</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">8</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">1</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">1</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">0</span>
+      </h2>
+      <div class="empty">本版块今日暂无条目</div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">1</span>
+            <span class="chip" style="--c:#10b981">X：Josh Woodward (@joshwoodward, Google Labs VP)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/joshwoodward/status/2123534862569324703" target="_blank" rel="noopener noreferrer">Mac 版 Gemini 应用上线计算机操作功能，可代用户执行跨应用任务</a>
+          </h3>
+          <p class="card-sum">Google Labs VP Josh Woodward 宣布 Mac 版 Gemini 应用新增 computer …</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/joshwoodward/status/2123534862569324703" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Google 11 月 19 日为 macOS 版 Gemini 上线“电脑操控”功能。用户下达自然语言任务后，Gemini 在隔离的后台窗口内翻找本地文件夹、打开软件与网页，主屏幕与鼠标不受干扰。演示中它读取儿童蝴蝶草图，在 Blender 完成建模与绑定。功能面向美国区 AI Plus/Pro/Ultra 用户，需 Apple Silicon 与 macOS Sequoia 15.0 以上。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">2</span>
+            <span class="chip" style="--c:#10b981">Google Blog：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/" target="_blank" rel="noopener noreferrer">Google 在 Gemini API 推出 Tool Retrieval 预览</a>
+          </h3>
+          <p class="card-sum">Google 在 Gemini API 的 Interactions API 中以预览形式推出 Tool Retrie…</p>
+          <div class="card-actions">
+            <a class="read" href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>Google 在 Gemini API 的 Interactions API 中以预览形式推出 Tool Retrieval：开发者无需每次请求发送完整工具库 schema，改为让工具库待命、按需加载参数，降低输入 token 与延迟，并在工具增多时保持选择准确。请求中加入 tool_search 并将 defer_loading 设为 true 即可启用，支持 Gemini 3.6 及后续模型。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">8</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">3</span>
+            <span class="chip" style="--c:#f59e0b">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/" target="_blank" rel="noopener noreferrer">Anthropic 登陆纳斯达克，开盘价 111 美元较发行价高出 33%</a>
+          </h3>
+          <p class="card-sum">Anthropic 在纳斯达克完成 IPO，开盘几分钟内股价达 111.50 美元，较 83 美元发行价高出 33%，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>Anthropic 11 月 19 日在纳斯达克挂牌，开盘报 111.50 美元，较 83 美元发行价高出 33%，发行价已超出 70 至 78 美元的预期区间。本次募资超 810 亿美元，叠加私募融资后现金储备预计达 2200 亿美元。按开盘价计市值突破 2 万亿美元，超过 Meta、Tesla 与沃尔玛。CEO Dario Amodei 在敲钟前致辞强调安全承诺。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">4</span>
+            <span class="chip" style="--c:#f59e0b">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/" target="_blank" rel="noopener noreferrer">Nadella 解释向 6 万员工提供买断的原因：转型为 AI 优先的组织而非裁员</a>
+          </h3>
+          <p class="card-sum">Microsoft CEO Satya Nadella 在 DealBook Summit 上解释，10 月向 6 万…</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Microsoft CEO Satya Nadella 在 DealBook 峰会上解释，10 月向 6 万名员工提供买断，是为让员工在转型中拥有选择权，而非用 AI 取代员工。他称软件工程经历了从“AI 做不了”到“全都能做”再到“工程仍兴旺但换了坐标”的摇摆，目标是让每个人都变成智能体的管理者。他举例 Cowork 智能体团队仅 11 名开发者，不直接做产品，而是搭建生产产品的“软件工厂”。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">5</span>
+            <span class="chip" style="--c:#f59e0b">The Decoder：AI News（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://the-decoder.com/chinese-tech-firms-face-a-double-hit-as-chip-shipments-stop-and-overseas-cloud-access-disappears/" target="_blank" rel="noopener noreferrer">芯片停运叠加海外云通道关闭，中国科技公司面临双重冲击</a>
+          </h3>
+          <p class="card-sum">美国商务部收紧AI芯片出口管制并关闭第三方国家云算力通道后，亚洲多笔大型AI数据中心交易开始瓦解。Moonshot A…</p>
+          <div class="card-actions">
+            <a class="read" href="https://the-decoder.com/chinese-tech-firms-face-a-double-hit-as-chip-shipments-stop-and-overseas-cloud-access-disappears/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>美国关闭 AI 芯片第三国云算力通道后，亚洲多笔 AI 数据中心交易开始瓦解。Moonshot AI 已取消与印尼云服务商 1.5 亿美元合同，原计划明年租英伟达 Blackwell Ultra B300 集群训练 Kimi K4，并同意预付约 50%，远高于行业惯例。许可门槛仅约 300 颗 AI 芯片，中国实验室通常需数千颗；台积电与三星已暂停向部分中国客户交付处理器。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">6</span>
+            <span class="chip" style="--c:#f59e0b">The Verge：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.theverge.com/ai-artificial-intelligence/1038063/nvidia-stock-market-price-earnings" target="_blank" rel="noopener noreferrer">Nvidia 股价近期波动复盘：财报强劲但股价较 10 月高点跌近 40%</a>
+          </h3>
+          <p class="card-sum">The Verge 梳理 Nvidia 近期股价波动：第三季度营收同比翻倍至 1158 亿美元，数据中心业务增长 11…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.theverge.com/ai-artificial-intelligence/1038063/nvidia-stock-market-price-earnings" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>The Verge 复盘英伟达股价：第三季度营收同比翻倍至 1158 亿美元，数据中心业务增长 110%，新平台 Vera Rubin 贡献近 200 亿美元，为史上最快爬坡。但受芯片股抛售与前 CEO 黄仁勋因婚外情及间谍传闻辞职影响，股价一度跌至约 150 美元，较 10 月 6 日高点回落近 40%。新任董事长 Harvey Jones 称不打算让其复职，已委托猎头寻继任者。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">7</span>
+            <span class="chip" style="--c:#f59e0b">IT之家·人工智能</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.ithome.com/1/029/265.htm" target="_blank" rel="noopener noreferrer">彭博社：黄仁勋离任英伟达 CEO 后日本 AI 股首当其冲</a>
+          </h3>
+          <p class="card-sum">彭博社 11 月 19 日报道称，英伟达管理层变动及黄仁勋离任引发全球 AI 概念股新一轮抛售，日本相关股票首当其冲，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.ithome.com/1/029/265.htm" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>彭博社 11 月 19 日报道，英伟达管理层变动与创始人黄仁勋突然离任引发全球 AI 概念股新一轮抛售，日本相关股票首当其冲，市场风向从“AI 溢价”转向“AI 折价”。自其辞职以来，存储芯片厂商铠侠与测试设备商爱德万测试跌幅均超 9%，明显跑输东证指数约 2.9% 的跌幅。分析人士概括为三重打击：AI 盈利恶化担忧、中期选举后监管趋严预期、领导层动荡冲击信心。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">8</span>
+            <span class="chip" style="--c:#f59e0b">X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/AravSrinivas/status/2123480966459174920" target="_blank" rel="noopener noreferrer">Perplexity CEO Aravind Srinivas 祝贺 Anthropic IPO，称 Opus 5.5 仍是业界最佳模型</a>
+          </h3>
+          <p class="card-sum">Perplexity CEO Aravind Srinivas 发推祝贺 Anthropic 当日 IPO，称其展示了…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/AravSrinivas/status/2123480966459174920" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>Perplexity CEO Aravind Srinivas 在 X 上祝贺 Anthropic 完成 IPO，称这展示了专注、高信念、品味驱动的团队能在短时间内达成什么。他表示 Opus 5.5 仍以明显优势是业界最佳模型，并称 Perplexity 作为其客户感到高兴。表态出现在 Anthropic 以 83 美元定价、市值突破 2 万亿美元当天，被视为对模型竞争格局的公开站队。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">9</span>
+            <span class="chip" style="--c:#f59e0b">X：Karina Nguyen（@karinanguyen）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/karinanguyen/status/2123509936475001310" target="_blank" rel="noopener noreferrer">Karina Nguyen 发文祝贺投资人 Sol 庆祝 Anthropic IPO</a>
+          </h3>
+          <p class="card-sum">Karina Nguyen 发文感谢投资人 Sol，回忆早期在办公室一起讨论模型评测和后训练难题的经历，并称赞他是唯一…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/karinanguyen/status/2123509936475001310" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>Anthropic 研究员 Karina Nguyen 发文感谢投资人 Sol，回忆早期在办公室一起讨论模型评测与后训练难题的经历，称他是唯一真正理解 scaling laws 的风险投资人。她引用的是 Sol 祝贺 Anthropic IPO 的推文，后者感谢 LP 以及 GM 养老金、ICONIQ、Coatue、Lightspeed 等伙伴在最差的时期仍押注 Anthropic。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">10</span>
+            <span class="chip" style="--c:#f59e0b">X：X.PIN (@thexpin)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/thexpin/status/2123199944903581803" target="_blank" rel="noopener noreferrer">黄仁勋相关传闻核查：美商务部与司法部就Megaspeed发联合声明，未认定违规芯片销售</a>
+          </h3>
+          <p class="card-sum">围绕英伟达前高管黄仁勋及AI芯片转运传闻，美国商务部与司法部就Megaspeed发布联合声明，未认定存在违规芯片销售，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/thexpin/status/2123199944903581803" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>美国商务部与司法部 11 月 16 日罕见就新加坡云算力公司 Megaspeed 发表联合声明：商务部 2024 年监测到敏感半导体可能被转运后立案，2025 年 5 月要求英伟达提供销售记录，6 月英伟达将其列入禁售名单，BIS 与新加坡警方同月开展现场核查并约谈时任 CEO Alice Huang，此后由司法部主导刑事调查。声明未指控英伟达违法，也未认定 Megaspeed 违规。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">11</span>
+            <span class="chip" style="--c:#8b5cf6">Stanford HAI News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://hai.stanford.edu/news/ai-might-be-flooding-state-court-houses-but-proving-it-is-another-matter" target="_blank" rel="noopener noreferrer">Stanford RegLab 发布 PhantomDocket 基准，追踪美国州法院诉讼文书中的 AI 辅助写作</a>
+          </h3>
+          <p class="card-sum">Stanford HAI 与 RegLab 研究者发布论文 Detection Objection 和 Phantom…</p>
+          <div class="card-actions">
+            <a class="read" href="https://hai.stanford.edu/news/ai-might-be-flooding-state-court-houses-but-proving-it-is-another-matter" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>Stanford HAI 与 RegLab 推出基于幻觉判例的 PhantomDocket 基准，检测美国州法院诉状中的 AI 辅助写作，并用 ScoreMix 方法校准检测器、估计使用比例。结果显示，圣克拉拉县法院 AI 起草迹象从 2022 年近乎为零升至 2026 年超三分之一；而同一批文书换参数后，检测器判定比例在 10% 至 98% 之间。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast" target="_blank" rel="noopener noreferrer">OpenAI 详解 Codex 驱动的 Performance Factory 如何自动保持 ChatGPT 高性能</a>
+          </h3>
+          <p class="card-sum">OpenAI 官方详解其 Performance Factory 系统，用 Codex 智能体在云端自动排查并修复 C…</p>
+          <div class="card-actions">
+            <a class="read" href="https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>OpenAI 详解 Performance Factory：工程师用 Markdown 定义流程，调度循环把任务交给云端 Codex 智能体，后者可访问代码、指标、日志与性能快照，定位回归根因。Regression Workflow 上线三个多月已跟踪超 1700 次调查、定位 600 多个根因，日均 17 次；对 100 条建议复审显示 70% 准确。一起图像下载故障中，对抗评审纠正了错误结论。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>12</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>
