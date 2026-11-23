@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://x.com/OpenBMB/status/2124464239670964531",
+    "title": "MiniCPM 8B 成为老挝国家模型，端侧小模型加速落地多国",
+    "source": "X：面壁智能 OpenBMB (@OpenBMB)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/perplexity-and-intelligence",
+    "title": "OpenAI 提议以困惑度作为行业共享指标并公开内部预训练测量数据",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/OpenBMB/status/2124461770043785636",
+    "title": "用户实测用 MiniCPM5-2B 在 Mac 上本地跑通体检报告分析",
+    "source": "X：面壁智能 OpenBMB (@OpenBMB)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]

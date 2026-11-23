@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-22</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-22</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261122A03KPX00?scene=news-skill" target="_blank" rel="noopener">今日开启商业首航！“爱达·花城号”最新乘船攻略来了</a></div>
+                <div class="item-summary">今天（22日），第二艘国产大型邮轮“爱达·花城号”将开启6天5晚的商业首航，从广州南沙国际邮轮母港驶向中国香港与越南顺化。2024年10月25日，第二艘国产大型邮轮在广州举行命名仪式，正式命名为“爱达·花城号”。2026年3月20日，“爱达·花城号”完成出坞，转入码头调试。2026年11月6日，在上海正式交付。其建造周期比首...</div>
+                <div class="item-meta">央视新闻 · 2026-11-22 05:05</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261122A02QRM00?scene=news-skill" target="_blank" rel="noopener">视频丨月牙泉“胖”回来了！水域面积超32亩 创20多年新高</a></div>
+                <div class="item-summary">眼下，甘肃敦煌月牙泉水波丰盈、芦苇摇曳。月牙泉，有“沙漠第一泉”之称，它因水面形如弯月得名，是大漠里罕见的天然绿洲。最新监测显示，今年，月牙泉水域面积超过32亩，创20多年来新高。然而，在20世纪80年代，月牙泉曾濒临消失。接下来，我们就跟随记者一起去看看，这弯曾一度“消瘦”到濒临干涸的大漠清泉，是怎样重新...</div>
+                <div class="item-meta">央视新闻 · 2026-11-22 07:46</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A03U5900?scene=news-skill" target="_blank" rel="noopener">视频丨从深圳出发 APEC开启经贸合作新空间</a></div>
+                <div class="item-summary">2026年APEC领导人会议周相关活动已落下帷幕，但会场上凝聚的合作共识，正从深圳向着中国与世界延伸。不少参会的全球工商界代表走出会场，走进产业一线，在持续升级的中国产业生态里，开辟更深层次、更加广阔的合作空间。 从深圳出发APEC开启经贸合作新空间最近一周，来自新西兰的企业高管凯文・莫里斯的日程表排得满满当当。除了在深圳参加会议，他还跟着商务代表团走进东莞多家工厂，看产能、找配套、谈合作。...</div>
+                <div class="item-meta">央视新闻 · 2026-11-21 08:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261122A03Z4A00?scene=news-skill" target="_blank" rel="noopener">视频丨今起新一轮雨雪和冷空气将至 注意防范</a></div>
+                <div class="item-summary">11月21日白天，中东部多地气温回升，东北地区未来几天升温显著。预计未来10天，影响我国的冷空气活动较为频繁。今天开始，在冷暖气流交汇下，南方地区又将迎来一轮降雨过程。 新一轮冷空气来袭多地雨雪降温将至今天起，冷空气将自北向南影响我国中东部地区。内蒙古东部、东北地区大部有小到中雪，吉林东部的部分地区有中到大雪，局地暴雪；西南地区东部、江南及华南大部有小到中雨，部分地区有大雨。今天，新疆伊犁河...</div>
+                <div class="item-meta">央视新闻 · 2026-11-22 06:32</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261122V02USM00?scene=news-skill" target="_blank" rel="noopener">中国侦察兵硬核“悬崖”训练</a></div>
+                <div class="item-summary">“不是消除恐惧，而是训练在恐惧下自控。”看中国侦察兵硬核“悬崖”训练。2026中央广播电视总台版权所有。未经许可，请勿转载使用。</div>
+                <div class="item-meta">央视新闻 · 2026-11-22 03:12</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261122A03HWQ00?scene=news-skill" target="_blank" rel="noopener">一问到底丨正值流感季 今年毒株有何特点？能自行服用抗生素吗？</a></div>
+                <div class="item-summary">中国疾控中心发布的最新监测显示，全国流感活动整体已进入中流行水平，北方流感阳性率上升势头显著，南方维持波动流行状态，聚集性疫情数量较前期有所增加。今年流感季毒株有何特点？不同人群如何精准防护？孩子得了流感为什么反复高烧？服用抗病毒药物后症状未缓解是怎么回事？ 今年流感季 流感毒株有何特点？今年流感季，...</div>
+                <div class="item-meta">央视新闻 · 2026-11-22 04:48</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0EC3A00?scene=news-skill" target="_blank" rel="noopener">亚投行将在香港设立办公室</a></div>
+                <div class="item-summary">中华人民共和国政府与亚洲基础设施投资银行（亚投行）21日在香港签署《中华人民共和国政府与亚洲基础设施投资银行关于在中华人民共和国香港特别行政区设立办公室的协定》，为亚投行在香港开设办公室奠定基础。中华人民共和国政府与亚投行分别由财政部部长蓝佛安和亚投行行长邹加怡代表签署协定。该协定确定亚投行于香港设立...</div>
+                <div class="item-meta">央视新闻 · 2026-11-21 22:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A07FGU00?scene=news-skill" target="_blank" rel="noopener">高铁15元盒饭要消失了？12306回应：不同车次餐食种类及价格不同</a></div>
+                <div class="item-summary">11月20日，有博主在社交平台发帖称“以后高铁的‘15元盒饭’貌似就要消失了”，并同步晒出高铁列车餐食订购页面截图。博主称，上海局高铁盒饭价格已调整为19元、29元、39元、49元、59元等档位。相关帖子引发网友关注，有网友表示：“19号还有，今天就没了。”也有人对此表示不解。还有网友认为，不能仅凭部分列车的订餐页面...</div>
+                <div class="item-meta">上游新闻 · 2026-11-21 13:02</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0EM5O00?scene=news-skill" target="_blank" rel="noopener">时隔6年新版国际高血压指南发布：血压在这一区间，要尽早干预</a></div>
+                <div class="item-summary">​​很多人拿到体检报告，看到血压显示130/80毫米汞柱，往往觉得自己的血压“很正常”——毕竟还没到140/90毫米汞柱的高血压诊断门槛。现在，这个认知可要更新了。2026年10月，国际高血压学会发布《2026版全球高血压实践指南》，完成了时隔6年的重要更新。其中最值得警惕的变化在于：以往大家口中的“正常高值”，也就是血...</div>
+                <div class="item-meta">北京日报客户端 · 2026-11-22 07:07</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121V0C8GX00?scene=news-skill" target="_blank" rel="noopener">真相来了 网传互联网按25%交税？证监会暂缓IPO？</a></div>
+                <div class="item-summary">真相来了：网传互联网按25%交税？证监会暂缓IPO？</div>
+                <div class="item-meta">央视新闻 · 2026-11-21 18:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261122A03X2U00?scene=news-skill" target="_blank" rel="noopener">创历史！中国球员首次在五大联赛戴帽！30岁女足国脚法甲14分钟3球</a></div>
+                <div class="item-summary">在北京时间11月22日结束的女足法甲联赛第10轮比赛中，南特女足在客场4-2力挫勒阿弗尔女足。而本场比赛，30岁的中国女足国脚吴澄舒替补登场，上演了帽子戏法。 本场比赛，吴澄舒没有进入首发....</div>
+                <div class="item-meta">我爱英超 · 2026-11-22 06:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A09FZY00?scene=news-skill" target="_blank" rel="noopener">普京向乌克兰军人“喊话”</a></div>
+                <div class="item-summary">参考消息网11月21日报道 据俄新社11月20日报道，俄罗斯总统普京呼吁乌克兰人多为子女的未来着想，并呼吁乌克兰军人站到历史正确的一边。他在塞尔维亚著名导演库斯图里察为庆祝俄罗斯东正教大牧首基里尔80寿辰拍摄的影片中说：“如果谈及乌克兰人，我希望他们能听到这番话——无论当下发生什么，无论正在上演何种悲剧，都要...</div>
+                <div class="item-meta">参考消息 · 2026-11-22 07:08</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0CZU100?scene=news-skill" target="_blank" rel="noopener">半年时间，总理总统接连辞职</a></div>
+                <div class="item-summary">2026年11月19日下午，蒙古国国家大呼拉尔（议会）以92.3%的历史性高票，通过了蒙古国总统乌赫那·呼日勒苏赫的辞职请求。 11月17日，呼日勒苏赫宣布辞职。政府办公厅主任巴特图木尔·....</div>
+                <div class="item-meta">中国新闻周刊 · 2026-11-21 23:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0E89P00?scene=news-skill" target="_blank" rel="noopener">“女生刷视频找到失散20年双胞胎姐妹”被质疑是剧本，最新：经DNA鉴定确为亲姐妹，两人户籍所在地均证实两人身份，现同在深圳生活</a></div>
+                <div class="item-summary">一句“这个女孩跟你好像”，牵出一段跨越20年的重逢。近日，博主“Sum”和“阿Co”发布的“失散20年双胞胎生日重逢”视频引发全网关注。故事要从一个深夜开始说起。妹妹小罗当时已经休息了，哥哥突然给她发来一条私信说：“这个女孩子跟你长得很像。”小罗说，其实她从小就怀疑自己不是亲生的，是被抱走的。所以她直接去问...</div>
+                <div class="item-meta">封面新闻 · 2026-11-22 07:16</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0AYK600?scene=news-skill" target="_blank" rel="noopener">韩国高考出了一道中国历史“坑题”，9成考生都错了</a></div>
+                <div class="item-summary">据《韩国经济》报道，今年韩国高考世界历史部分的一道题引发争议，该题超过90%的考生作答错误。一些学生质疑题目可能存在错误，并指出就连人工智能模型给出的答案也与韩国教育课程评价院的官方答案不同。 ....</div>
+                <div class="item-meta">凤凰网 · 2026-11-21 23:15</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0C4W200?scene=news-skill" target="_blank" rel="noopener">白某某：我想尝尝拘留所的饭菜；上海警方：安排</a></div>
+                <div class="item-summary">近日，一条寻物启事在网络传播——一块价值1900万元的奢侈品手表，在上海某商场遗失，捡拾者可得一套268平方米精装修套房作为酬谢……11月19日，上海闵行警方在网络巡查中发现，上述自媒体账号发布寻物启事次日发声，称“手表已找到”。面对网友质疑，该账号还说“我想尝尝拘留所的饭菜”。11月21日，上海市公安局闵行分局...</div>
+                <div class="item-meta">长安街知事 · 2026-11-21 18:59</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121V0771X00?scene=news-skill" target="_blank" rel="noopener">从深圳回国后，特朗普坐不住了：看看人家，再看看我们！</a></div>
+                <div class="item-summary">11月20日，美国总统特朗普在白宫记者会上高度评价了亚太经合组织第三十三次领导人非正式会议的主办城市深圳，“城市很干净、一切都很完美。”特朗普同时表示，美国有一些城市的发展与治理，“让人汗颜”。特朗普说，“再看看我们自己，城市又脏，我必须说，很多都是‘蓝州’，路上很脏，都是坑洼，轨道也是破损的，什么都是生锈的，让人恶心，犯罪率也很高。”</div>
+                <div class="item-meta">世面 · 2026-11-21 12:40</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0DRKK00?scene=news-skill" target="_blank" rel="noopener">蛋白粉越来越贵 健身人盯上蟑螂粉</a></div>
+                <div class="item-summary">文｜杨心玥编辑｜刘鹏一桶蛋白粉贵到让人打起蟑螂的主意，成了今年健身圈最魔幻的消费故事。电商平台上，250克蟑螂粉只卖约9元，商家宣称蛋白质含量高达70%—80%，价格却不到普通乳清蛋白粉的十分之一。有人研究如何研磨、调味，长沙一名健身博主喝下一口便干呕，最终将剩下的全部扔掉。还有网友形容，入口仿佛带着细小昆虫倒刺。但蟑螂粉未必能让健身人如愿长出一块漂亮的肌肉。西南大学食品科学学院副教授周鸿媛...</div>
+                <div class="item-meta">腾讯财经 · 2026-11-22 07:53</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261121A0DY4P00?scene=news-skill" target="_blank" rel="noopener">3天内，新央企与2个省级政府签约</a></div>
+                <div class="item-summary">近日，新央企国家数据集团有限公司先后与河北省政府、宁夏回族自治区政府签署合作框架协议。据国家数据集团报道，11月18日，河北省人民政府与国家数据集团有限公司在石家庄签署合作框架协议。河北省代省长赵辰昕、国家数据集团董事长简勤出席签约仪式并共同见证签约。河北省副省长赵大春、国家数据集团总经理陈荣辉分别代表...</div>
+                <div class="item-meta">政事儿 · 2026-11-21 22:01</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261122A0429800?scene=news-skill" target="_blank" rel="noopener">U17国足0分净胜球-5！排名12个小组第三垫底 战摩洛哥输不起</a></div>
+                <div class="item-summary">U17世界杯小组赛首轮结束，U17国足排名H组第三，在所有小组第三的比拼中垫底！ 本届赛事共有48支球队，分为12个小组，各组前两名和成绩最好的8个小组第三晋级32强。 首轮比赛....</div>
+                <div class="item-meta">念洲 · 2026-11-22 06:52</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-22 09:43</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>

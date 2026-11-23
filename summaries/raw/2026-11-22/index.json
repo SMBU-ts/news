@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://www.together.ai/blog/qwen4-max",
+    "title": "Qwen4 Max 上线 Together AI，单次调用修复 Tornado 整仓 bug",
+    "source": "Together AI 研究与产品博客（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+    "title": "Together AI 通报 2026 年 6-7 月 serverless 推理服务提示词泄露事件",
+    "source": "Together AI 研究与产品博客（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/",
+    "title": "Anthropic 数学家称与 Claude 完成黎曼猜想证明，斯坦福数小时后发布纯人类竞争草稿",
+    "source": "The Decoder：AI News（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+    "title": "研究者向 AI 供应链埋入 200 万个金丝雀，揭露敏感数据泄露",
+    "source": "Ars Technica：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2124213113583174076",
+    "title": "Columbia 与 MIT 论文展示 Claude 发现的算法突破 3SUM 与 APSP 长期速度上限",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openai.com/index/introducing-medchembench",
+    "title": "OpenAI 发布 MedChemBench：评估 AI 模型解读分子结构与实验数据的能力",
+    "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  }
+]

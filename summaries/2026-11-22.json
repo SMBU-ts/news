@@ -1,0 +1,8 @@
+{
+  "https://www.together.ai/blog/qwen4-max": "阿里旗舰模型 Qwen4 Max 上线 Together AI，支持 100 万 token 上下文。官方把 Tornado 全仓 344 文件、65 万 token 加 bug 报告一次投喂，72 秒出补丁，通过维护者测试与全套 1673 项测试，成本 0.69 美元，还找到 iostream.py 的同类先例。模型 2.4 万亿参数、每 token 激活 710 亿，11 月 22 日前七折。",
+  "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026": "Together AI 通报提示词泄露：测试样本存于私有 Hugging Face 仓库，涉及 MiniMax M3、GLM-5.2、Kimi K2.6，采集于 6 至 7 月。开发公开仓库时，一个 AI 编程代理把访问凭证提交入库，虽被扫描发现并回滚，仍被未授权方取得，用于下载样本并检索其中其他密钥，5 个为 Dragos 金丝雀。公司已联合取证机构与警方调查，并把零数据留存设为新账户默认。",
+  "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/": "Anthropic 数学家 Alpöge 称与 Claude 共同证明黎曼猜想，并进一步解决广义黎曼猜想，成果以 Lean 分 14 个数据包发布，打印逾 25 万页。数小时后，斯坦福教授 Vakil 紧急公布 Masullo 的 940 页纯人类草稿，称完全没有 AI，此前经 Conrad 数月审阅；他随后更新称多人已借助其他模型指出多处问题。Alpöge 承认部分子领域已超出自己理解。",
+  "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/": "Dragos 首席研究官 HD Moore 在 7 至 11 月向近 200 万条提示词各埋入唯一可追踪的金丝雀密钥，含未使用的 AWS 密钥、SSH 口令与私有 URL。至少 3 家托管商被攻破，被盗密钥被调用数万次，用于翻查 S3、添加 IAM 用户；部分转售商低价引流后开启日志留存；某中国实验室抓取了一半以上提示词中的秘密 URL，含约三分之二标注零数据留存者。",
+  "https://x.com/rohanpaul_ai/status/2124213113583174076": "哥伦比亚大学 Alman 与 MIT Vassilevska Williams 论文称，Claude 单次无人类输入会话耗约 1600 万 token，发现快速求瘦长矩阵乘积特定元素的新算法，把 3SUM 降至 O(n^1.9992)、全对最短路径降至 O(n^2.9995)，幅度虽小却推翻这两项长期猜想。算法源自 Anthropic 内部模型核查密码学构造，整数结果已用 Lean 4 验证。",
+  "https://openai.com/index/introducing-medchembench": "OpenAI 发布 MedChemBench，用 99 道来自 117 篇论文与专利、涵盖 761 个分子结构的题目，考察模型能否把结构与实验证据联系起来。GPT-6.2 Astra 在最高档拿下 84.5% 可用分数，GPT-5.6 Sol 仅 58.2%；结构重建达 95.4%，化合物选择与数值预测只拿到约一半。空间推理中 Astra 十次全对，另两者十次全败。"
+}
