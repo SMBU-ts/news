@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日20条 · 时政精要 — 2026-11-24</title>
+<style>
+:root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --ink: #1e1e2e;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --brand: #8b5cf6;
+    --brand-light: #ede9fe;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7c3aed 50%, #6d28d9 100%);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    position: relative;
+}
+.hero .sub {
+    font-size: 14px;
+    opacity: .8;
+    margin-top: 6px;
+    position: relative;
+}
+.hero .date-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 16px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: .03em;
+    position: relative;
+}
+
+/* ── Layout ── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── Backline ── */
+.backline {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+.backline a {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+}
+.backline a:hover { color: var(--brand); }
+
+/* ── List ── */
+.list {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.03);
+    margin: 8px 0 40px;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background .15s;
+}
+.item:last-child { border-bottom: none; }
+.item:hover { background: #fafbff; }
+
+.num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-light);
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+/* 前三名特殊样式 */
+.item:nth-child(1) .num { background: var(--brand); color: #fff; }
+.item:nth-child(2) .num { background: #c4b5fd; color: #5b21b6; }
+.item:nth-child(3) .num { background: #ddd6fe; color: #6d28d9; }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .15s;
+}
+.item-title a:hover { color: var(--brand); }
+
+.item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--brand); }
+
+/* ── Empty State ── */
+.empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+}
+.empty .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+    .hero { padding: 36px 16px 30px; }
+    .hero h1 { font-size: 22px; }
+    .item { padding: 14px 16px; gap: 12px; }
+    .item-title { font-size: 15px; }
+    .num { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-icon">📋</div>
+    <h1>每日20条 · 时政精要</h1>
+    <div class="sub">一天大事，二十条尽览</div>
+    <div class="date-tag">2026-11-24</div>
+</header>
+
+<div class="backline">
+    <a href="../../archive.html">← 返回汇总</a>
+</div>
+
+<div class="container">
+    <div class="list">
+        <div class="item">
+            <span class="num">01</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0G0OS00?scene=news-skill" target="_blank" rel="noopener">事关河南、湖北、安徽、湖南、江西、山西中部六省！时隔两年，这一重要会议召开</a></div>
+                <div class="item-summary">11月21日至23日，第十四届中部投资贸易博览会在河南省郑州市举行。 11月21日，第十四届中博会开幕。全国政协副主席、全国工商联主席高云龙致辞并宣布大会开幕。 除了河南省委书记....</div>
+                <div class="item-meta">政知见 · 2026-11-23 22:55</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">02</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A034BW00?scene=news-skill" target="_blank" rel="noopener">中国新能源汽车是给世界“做蛋糕”</a></div>
+                <div class="item-summary">衡量中国新能源汽车对世界的影响，既要看出口了多少产品，也要看催生、带动了多少产业机遇近期的几场展会上，中国新能源汽车产业备受瞩目。巴黎国际车展，16家中国车企携25个品牌参展，约占全部参展汽车品牌的四成，并集中展示动力电池、超快充、智能驾驶等领域的创新成果。第二十六届武汉国际车展，主流品牌“上新”车型、...</div>
+                <div class="item-meta">新华网 · 2026-11-24 07:28</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">03</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A052G800?scene=news-skill" target="_blank" rel="noopener">加强能源保供 全力保障群众温暖过冬</a></div>
+                <div class="item-summary">央视网消息（新闻联播）：我国北方地区已经全面开启冬季供暖，煤炭、天然气以及清洁电能等能源供应协同发力，全力保障群众温暖过冬。早晨8点多，在山东海阳核电供热站，值班人员正根据室外温度调整供热参数，将核电回收的余热通过热水管道送往烟台、威海两地，保障40万居民冬季采暖。作为冬季供暖主力，煤炭产能也在加快释放。在内蒙古鄂尔多斯神东煤炭生产基地，19座煤矿正开足马力组织生产，10月以来产量已达270...</div>
+                <div class="item-meta">央视网 · 2026-11-23 09:51</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">04</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0GFPF00?scene=news-skill" target="_blank" rel="noopener">第二艘国产大型邮轮“爱达·花城号”首航抵港</a></div>
+                <div class="item-summary">新华社香港11月23日电（谢妞）第二艘全新国产大型邮轮“爱达·花城号”23日顺利驶抵香港启德邮轮码头，并在邮轮上举办香港首访欢迎仪式。 “爱达·花城号”于11月22日从广州正式启航，开启6天5晚前往香港、越南顺化的首航旅程。作为中国首艘国产大型邮轮“爱达·魔都号”的姊妹船，“爱达·花城号”吨位更大、外形更修长。...</div>
+                <div class="item-meta">新华社新闻 · 2026-11-23 23:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">05</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A02I8Z00?scene=news-skill" target="_blank" rel="noopener">中方呼吁确保黑海重要民生物资的正常流通</a></div>
+                <div class="item-summary">新华社联合国11月23日电 中国常驻联合国代表傅聪23日在“保护关键能源基础设施和全球粮食供应黑海生命线”安理会高级别会议上发言，呼吁确保黑海重要民生物资的正常流通。傅聪说，乌克兰危机仍在延宕，冲突持续升级，不仅给当事方造成沉痛苦难，还引发地区甚至全球范围的负面外溢影响。当事方和国际社会应努力防止局势升级...</div>
+                <div class="item-meta">新华网 · 2026-11-24 05:33</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">06</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A0359N00?scene=news-skill" target="_blank" rel="noopener">AI创作绝不允许盗脸、偷声、魔改</a></div>
+                <div class="item-summary">如果AI侵权套利成为常态，粗暴掠夺创作权益，无偿窃取劳动成果，肆意消解文化记忆，势必挫伤创作热情和行业信心，最终殃及文化创新的源头活水近日，AI（人工智能）内容创作侵权再度引发广泛关注和批评。一部“黛玉重生”AI短剧，一次性盗用了87版电视剧《红楼梦》中17名演员的“脸”，演员们30多年前独创性表演中的神情与气韵，被毫不客气地拿来就用。不仅如此，该剧还用爽剧复仇套路篡改经典，“林黛玉当街掌嘴...</div>
+                <div class="item-meta">新华网 · 2026-11-24 07:31</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">07</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A01OW000?scene=news-skill" target="_blank" rel="noopener">能运动也能上课！看地铁里的新消费</a></div>
+                <div class="item-summary">下班换乘间隙打一场匹克球，通勤路上参与夜校课堂，出站就吃上热乎家常菜……如今，不少城市的地铁站，早已不仅是通行通道，一个个“轨道上的生活圈”正在地下悄然成型。近期，交通运输部等八部门印发《综合交通枢纽发展“十五五”规划》，提出鼓励依托客运枢纽拓展购物、文旅、商务等多元功能，推动综合客运枢纽向城市综合...</div>
+                <div class="item-meta">央视新闻 · 2026-11-24 02:27</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">08</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A02Z9P00?scene=news-skill" target="_blank" rel="noopener">真相来了丨极其不靠谱！用AI技术识别蘑菇是否有毒风险很高</a></div>
+                <div class="item-summary">很多人都知道误食了毒蘑菇会中毒，于是就有不少人选择借助AI工具来识别。但是今年7月，贵州有居民用AI识别野生蘑菇，在得到“无毒”的结果后，将蘑菇烹饪食用，随后一家三口全部中毒。拍张照片让AI识别毒蘑菇，这件事儿到底靠不靠谱？北京邮电大学计算机学院副教授 徐鹏：靠AI来判定毒蘑菇这件事情极其不靠谱，因为本质上A...</div>
+                <div class="item-meta">央视新闻 · 2026-11-24 07:00</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">09</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A0294D00?scene=news-skill" target="_blank" rel="noopener">视频丨睡前别再刷手机了！抓住养生黄金时间，做好这4件事</a></div>
+                <div class="item-summary">睡觉前，别再躺着刷手机了做好这4件事让你气血充足、血管健康、睡眠好、消化好往下看，快来掌握知识点泡脚拥有一晚好睡眠冬季天气寒冷，睡前1个小时，可以用温水泡脚15～20分钟。有助于扩张脚部血管，促进血液循环，让身体得到放松。使入睡更容易，睡眠质量也会更好。冬季泡脚可以怎么“搭”？不同配方都有啥功效？...</div>
+                <div class="item-meta">央视新闻 · 2026-11-24 04:38</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">10</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://www.piyao.org.cn/20261123/0def0159b29d4264afa4fde6c62e2ef5/c.html?scene=news-skill" target="_blank" rel="noopener">“大模型经过中医类别医师资格考试试题测试”不实（2026·11·23）</a></div>
+                
+                <div class="item-meta">2026-11-23 18:11</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">11</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0FY0A00?scene=news-skill" target="_blank" rel="noopener">女子称陌生人私自和幼童拍合影：事发时自己距离不足一米，对方自称是机关单位人员，拍照是为“讨彩头”；已报警</a></div>
+                <div class="item-summary">11月22日，浙江温州，有陌生人在未经许可的情况下，走到婴儿车旁与幼童拍照合影。11月23日，记者联系孩子母亲了解到，事发时她在餐桌旁离婴儿车不足一米，一群人未经许可走到婴儿车旁边给宝宝拍照。孩子母亲立刻制止，对方却自称是机关单位人员，并表示给孩子拍照是为“讨彩头”。目前孩子母亲已报警，并将相关视频提交警方。来源：动静贵州</div>
+                <div class="item-meta">红星新闻 · 2026-11-23 22:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">12</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0E3P600?scene=news-skill" target="_blank" rel="noopener">中国女首富，入局芯片</a></div>
+                <div class="item-summary">近日，天眼查信息显示，微科聚源股权投资基金（无锡）合伙企业（有限合伙）完成注册设立。该基金总规模1.2亿元，由中芯聚源担任执行事务合伙人，蓝思科技创始人周群飞旗下长沙群欣投资咨询有限公司为第一大出资人，同时集合地方国资、市场化母基金等主体。公开资料显示，中芯聚源由中芯国际与资深投资团队共同发起，管理资产规模超330亿元，已投企业超300家。值得注意的是，10月27日，胡润研究院发布《2026...</div>
+                <div class="item-meta">红星新闻 · 2026-11-23 23:56</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">13</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0CEX200?scene=news-skill" target="_blank" rel="noopener">浙江绍兴一女子自费7.3万给对面楼栋刷漆，物业：在她房子视线内，太老旧了她看不惯</a></div>
+                <div class="item-summary">近日，浙江绍兴一小区一女业主自费为其他楼栋刷墙的事情引发关注：一栋楼外立面的腰线老旧，隔壁一楼栋女业主沈女士出资7.3万，对其刷漆翻新。很多人为她点赞，也有人不太赞同，认为让那栋的人自己搞才合适。11月23日，小区物业工作人员告诉潇湘晨报·晨视频记者，给楼体刷漆属于纯美化项目不涉及基础使用，该栋业主对于动...</div>
+                <div class="item-meta">潇湘晨报 · 2026-11-23 17:52</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">14</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0BOTU00?scene=news-skill" target="_blank" rel="noopener">U17世界杯综述：6队出线1队出局！越南绝平 国足小组第3排名暂倒3</a></div>
+                <div class="item-summary">北京时间11月24日，U17世界杯结束了第5比赛日的争夺。在小组赛第2轮E组到H组的8场对决中，U17国足一度2-0领先情况下，被摩洛哥连追2球并且补时第9分钟被绝平，遗憾无缘首胜。 目前....</div>
+                <div class="item-meta">我爱英超 · 2026-11-24 01:43</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">15</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0DZLH00?scene=news-skill" target="_blank" rel="noopener">网传“多啃苹果、玉米就能让牙齿变整齐” 医生：只说对一半</a></div>
+                <div class="item-summary">最近，社交平台上流传起一种说法：“多让孩子啃苹果、啃玉米，牙齿就能变整齐，还能省下一大笔正畸费。 还有网友调侃：“省下的正畸费，都够买一个大金镯子了。”啃咬硬物真能帮孩子把牙齿“啃”整齐吗？“有益咀嚼”和“过度磨损”到底怎么把握？孩子的牙齿出现哪些症状需尽早看医生？ 啃硬物能矫正牙齿？只说对了一半牙齿...</div>
+                <div class="item-meta">央视新闻 · 2026-11-23 19:50</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">16</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123V0DTA200?scene=news-skill" target="_blank" rel="noopener">在APEC会议期间，特朗普乘车掀开窗帘细看深圳街景，直言这里道路平整完好，连修补痕迹都难以见到，台湾时事评论员唐湘龙表示，不止特朗普，包括普京在内的众多与会政要，都对这座快速成长的都市给出高度评价</a></div>
+                <div class="item-summary">在APEC会议期间，特朗普乘车掀开窗帘细看深圳街景，直言这里道路平整完好，连修补痕迹都难以见到。台湾时事评论员唐湘龙表示，...</div>
+                <div class="item-meta">直新闻 · 2026-11-23 19:37</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">17</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0BX3400?scene=news-skill" target="_blank" rel="noopener">懂车帝回应“测试内容大调整”：信息多处失实</a></div>
+                <div class="item-summary">有微博博主爆料称，懂车帝内部对公开测试发布了四项要求，包括不再开放对比类内容、想要发布公开测试类内容的账号必须有资质等。对此，懂车帝内容运营人员表示，此轮变化系平台严格按照《网络测评活动规范》要求，对汽车创作者在平台发布部分场景内容的规则更新。网传“内容大调整”“行业受影响”等信息多处失实，部分内容...</div>
+                <div class="item-meta">界面新闻 · 2026-11-23 17:23</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">18</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261123A0EAIP00?scene=news-skill" target="_blank" rel="noopener">菲律宾：对中国公民14天免签入境政策延长一年</a></div>
+                <div class="item-summary">“菲律宾国家旅游局”公众号11月23日消息，菲律宾外交部宣布，针对中国公民的十四（14）天免签入境政策将延长一年，新一轮政策有效期为2027年1月16日起至2028年1月15日，现行相关安全保障措施也将继续执行。此次免签入境延长政策遵循总统指示，旨在促进菲律宾国际游客到访量与投资增长，同时确保现行移民管理与国家安全保障措施有效落实。根据该政策，中国公民可免签入境菲律宾，每次停留不超过十四（1...</div>
+                <div class="item-meta">红星新闻 · 2026-11-23 20:18</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">19</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A000YT00?scene=news-skill" target="_blank" rel="noopener">17家车企迎公开大考！60天账期，为什么国家非管不可？</a></div>
+                <div class="item-summary">2025年6月，比亚迪、一汽、上汽等17家重点车企陆续承诺，向供应商支付货款的账期不超过60天。一年多后，这项承诺迎来了一次检验。11月16日，中国汽车工业协会发布通知：受工信部委托，将对这17家车企向供应商支付货款的情况进行年度评估，结果向社会公开。此前，工信部和市场监管总局已经明确：对应付账款规模大、故意拉长...</div>
+                <div class="item-meta">秦朔朋友圈 · 2026-11-24 07:19</div>
+            </div>
+        </div>
+        <div class="item">
+            <span class="num">20</span>
+            <div class="item-body">
+                <div class="item-title"><a href="https://view.inews.qq.com/a/20261124A02VTL00?scene=news-skill" target="_blank" rel="noopener">贸易协议迟迟无果，防务关系再现裂痕！卡尼公开吐槽特朗普，美媒震惊</a></div>
+                <div class="item-summary">【环球时报特约记者 柳雯】陷入低谷的美加关系上演戏剧性一幕。在当地时间21日举行的加拿大年度议会记者团晚宴上，加拿大总理马克·卡尼吐槽美国总统特朗普是“新室内设计师”，以此讽刺后者醉心于对白宫椭圆形办公室的奢华改造。一名特朗普的模仿者则调侃称特朗普是“胆小鬼”。 美国舆论惊呼，在美加关系正经受考验的时期...</div>
+                <div class="item-meta">环球网 · 2026-11-24 06:41</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>数据来源：<a href="https://news.qq.com/" target="_blank" rel="noopener">腾讯新闻</a> · 生成时间 2026-11-24 08:33</p>
+    <p style="margin-top:4px">Powered by <a href="https://github.com/SMBU-ts/news" target="_blank" rel="noopener">每日新闻站</a></p>
+</footer>
+
+</body>
+</html>
