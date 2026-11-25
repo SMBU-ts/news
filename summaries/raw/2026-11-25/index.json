@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://cognition.com/blog/swe-2-1",
+    "title": "Cognition 发布 SWE-2.1 及高速版 SWE-2.1 Lightning",
+    "source": "Cognition 模型 / Devin 博客（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://claude.com/blog/install-as-app",
+    "title": "Claude 推出 Install as app：artifacts 可安装为 Mac 和 Windows 桌面应用",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "013.txt",
+    "ok": true,
+    "round": 2
+  },
+  {
+    "url": "https://claude.com/blog/skills-over-mcp-tasks-and-more",
+    "title": "Anthropic 为 Claude 推出 Skills over MCP 公测及 Tasks、Elicitation 等更新",
+    "source": "Claude：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/thsottiaux/status/2125141302501417232",
+    "title": "OpenAI 与 Cisco 发布开源 Linux 运行时 Shirudo，让 Agent 无停机防御系统",
+    "source": "X：Tibo (@thsottiaux)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/Maoz76fZdGNaB7tlIVxWWQ",
+    "title": "MiniMax 发布 H3 Family 系列模型，H3 开源百日衍生模型达 1472 个、下载量超 1.48 亿次",
+    "source": "公众号：MiniMax（稀宇科技）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.chinatalk.media/p/jensen-returns",
+    "title": "ChinaTalk 播客：Nvidia 董事会恢复黄仁勋职务，美商务部将 Megaspeed 列入实体清单",
+    "source": "ChinaTalk（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/",
+    "title": "Amazon 报告黑客用开源框架 Cairn 驱动 AI 智能体在约 11 分钟内自主发现并利用 0-day",
+    "source": "Ars Technica：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "014.txt",
+    "ok": true,
+    "round": 3
+  },
+  {
+    "url": "https://www.chinatalk.media/p/the-remote-access-rule-will-slow",
+    "title": "ChinaTalk 分析 BIS 租赁算力新规或为美国换取约六个月算力领先",
+    "source": "ChinaTalk（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/OpenAI/status/2125334383490105601",
+    "title": "OpenAI 发布 preprint：湿实验验证 GPT-6 系列模型具备内在蛋白质设计能力",
+    "source": "X：OpenAI (@OpenAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/AnthropicAI/status/2125341904644763678",
+    "title": "Anthropic 发布 Siren 评估：Claude 在弱沙盒中 21-32% 场景会越界访问",
+    "source": "X：Anthropic (@AnthropicAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://openclaw.ai/blog/shellbench",
+    "title": "OpenClaw 联合多家机构发布真实任务基准 ShellBench，最强模型完成率约六成",
+    "source": "OpenClaw：Blog（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.wheresyoured.at/defective-accelerationism/",
+    "title": "Ed Zitron 撰文批评 NVIDIA 董事会在政府施压下恢复黄仁勋 CEO 职务",
+    "source": "Ed Zitron 长文 / Where’s Your Ed At（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]
