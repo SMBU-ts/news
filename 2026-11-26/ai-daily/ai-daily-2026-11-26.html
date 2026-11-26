@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI HOT 日报 · 2026-11-26</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+    --line:#e7e9f0; --brand:#6366f1;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",
+      system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+  }
+  a { color:inherit; text-decoration:none; }
+
+  /* Hero */
+  .hero {
+    background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#ec4899 100%);
+    color:#fff; padding:46px 24px 40px;
+  }
+  .hero-inner { max-width:1080px; margin:0 auto; }
+  .kicker {
+    font-size:13px; letter-spacing:2px; opacity:.85; text-transform:uppercase;
+    font-weight:600;
+  }
+  .hero h1 {
+    margin:6px 0 4px; font-size:clamp(28px,5vw,42px); font-weight:800; line-height:1.2;
+  }
+  .hero .sub { opacity:.92; font-size:15px; }
+  .stats { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+  .stat {
+    background:rgba(255,255,255,.15); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25); border-radius:14px;
+    padding:14px 18px; min-width:120px;
+  }
+  .stat .n { font-size:30px; font-weight:800; line-height:1; }
+  .stat .l { font-size:12.5px; opacity:.9; margin-top:6px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; font-size:13.5px; font-weight:600;
+  }
+  .pill i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+
+  .fallback {
+    max-width:1080px; margin:14px auto 0; background:#fef3c7; color:#92400e;
+    border:1px solid #fde68a; border-radius:10px; padding:10px 14px; font-size:13.5px;
+  }
+
+  /* Nav */
+  nav {
+    position:sticky; top:0; z-index:20; background:rgba(246,247,251,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:10px 16px;
+  }
+  nav .nav-inner { max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-link {
+    display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:7px 13px; transition:.15s;
+  }
+  .nav-link:hover { border-color:var(--c); color:var(--c); }
+  .nav-count {
+    background:var(--c); color:#fff; font-size:11.5px; font-weight:700;
+    border-radius:999px; padding:1px 8px;
+  }
+
+  /* Body */
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 60px; }
+  .section { margin-bottom:38px; scroll-margin-top:64px; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; font-size:20px; font-weight:800;
+    margin:0 0 16px; padding-bottom:10px; border-bottom:2px solid var(--line);
+  }
+  .section-title .dot { width:12px; height:12px; border-radius:4px; }
+  .section-count {
+    margin-left:auto; font-size:14px; font-weight:700; color:var(--muted);
+    background:#eef0f6; border-radius:999px; padding:2px 12px;
+  }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; display:flex; flex-direction:column; gap:10px;
+    box-shadow:0 1px 2px rgba(15,23,42,.04); transition:.18s;
+    border-top:3px solid var(--c);
+  }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(15,23,42,.10); }
+  .card-top { display:flex; align-items:center; gap:10px; }
+  .num {
+    color:#fff; font-weight:800; font-size:14px; min-width:26px; height:26px;
+    border-radius:8px; display:inline-flex; align-items:center; justify-content:center; padding:0 6px;
+  }
+  .chip {
+    font-size:12px; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    border:1px solid color-mix(in srgb,var(--c) 30%,#fff);
+    border-radius:999px; padding:3px 10px; overflow:hidden; text-overflow:ellipsis;
+    white-space:nowrap; max-width:100%;
+  }
+  .card-title { margin:0; font-size:16.5px; font-weight:700; line-height:1.4; }
+  .card-title a:hover { color:var(--c); text-decoration:underline; }
+  .card-sum { margin:0; color:var(--muted); font-size:14px; flex:1; }
+  .read {
+    align-self:flex-start; font-size:13.5px; font-weight:700; color:var(--c);
+    border:1px solid color-mix(in srgb,var(--c) 35%,#fff); border-radius:10px;
+    padding:6px 12px; transition:.15s;
+  }
+  .read:hover { background:var(--c); color:#fff; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; align-self:flex-start; margin-top:2px; }
+  .summary-btn { font-family:inherit; line-height:inherit; background:transparent; cursor:pointer; margin:0; appearance:none; -webkit-appearance:none; }
+  .summary-btn:focus-visible { outline:2px solid var(--c); outline-offset:2px; }
+  .summary { margin-top:10px; padding:12px 14px; background:#f8fafc;
+      border-left:3px solid var(--c); border-radius:0 10px 10px 0;
+      font-size:13.5px; color:var(--ink); line-height:1.7; }
+  .empty {
+    background:var(--card); border:1px dashed var(--line); border-radius:16px;
+    padding:28px; text-align:center; color:var(--muted); font-size:14px;
+  }
+
+  /* Footer */
+  footer {
+    max-width:1080px; margin:0 auto; padding:22px 16px 50px; color:var(--muted);
+    font-size:13px; border-top:1px solid var(--line); text-align:center;
+  }
+  footer a { color:var(--brand); font-weight:600; }
+  @media (max-width:560px) {
+    .stat { min-width:calc(50% - 7px); }
+    .grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">AI HOT 日报</div>
+      <h1>2026 年 11 月 26 日 · 星期四</h1>
+      <div class="sub">共 12 条 · 生成于 北京时间 2026 年 11 月 26 日 08:00 · 数据覆盖 2026-11-25 ~ 2026-11-26</div>
+      <div class="stats">
+        <div class="stat"><div class="n">12</div><div class="l">今日总条数</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">固定版块</div></div>
+        <div class="stat"><div class="n">1</div><div class="l">模型发布/更新</div></div><div class="stat"><div class="n">4</div><div class="l">产品发布/更新</div></div><div class="stat"><div class="n">2</div><div class="l">行业动态</div></div><div class="stat"><div class="n">3</div><div class="l">论文研究</div></div><div class="stat"><div class="n">2</div><div class="l">技巧与观点</div></div>
+      </div>
+      <div class="pills">
+        <span class="pill" style="--c:#3b82f6"><i style="background:#3b82f6"></i>模型发布/更新 · 1</span><span class="pill" style="--c:#10b981"><i style="background:#10b981"></i>产品发布/更新 · 4</span><span class="pill" style="--c:#f59e0b"><i style="background:#f59e0b"></i>行业动态 · 2</span><span class="pill" style="--c:#8b5cf6"><i style="background:#8b5cf6"></i>论文研究 · 3</span><span class="pill" style="--c:#ec4899"><i style="background:#ec4899"></i>技巧与观点 · 2</span>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-inner"><a class="nav-link" href="#sec-0" style="--c:#3b82f6">模型发布/更新<span class="nav-count">1</span></a><a class="nav-link" href="#sec-1" style="--c:#10b981">产品发布/更新<span class="nav-count">4</span></a><a class="nav-link" href="#sec-2" style="--c:#f59e0b">行业动态<span class="nav-count">2</span></a><a class="nav-link" href="#sec-3" style="--c:#8b5cf6">论文研究<span class="nav-count">3</span></a><a class="nav-link" href="#sec-4" style="--c:#ec4899">技巧与观点<span class="nav-count">2</span></a></div>
+  </nav>
+  <main>
+    <section id="sec-0" class="section">
+      <h2 class="section-title" style="--c:#3b82f6">
+        <span class="dot" style="background:#3b82f6"></span>模型发布/更新
+        <span class="section-count">1</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#3b82f6">
+          <div class="card-top">
+            <span class="num" style="background:#3b82f6">1</span>
+            <span class="chip" style="--c:#3b82f6">公众号：数字生命卡兹克</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/JkZM9s6tC_Wz5MKeYcccxw" target="_blank" rel="noopener noreferrer">Sand.ai 发布 480B 视频模型 MAGI-2，作者实测称质量接近 Seedance 2.3 水准且价格仅为其 1/10</a>
+          </h3>
+          <p class="card-sum">Sand.ai 凌晨发布 480B 全模态视频模型 MAGI-2，作者实测后认为其质量达到 Seedance 2.3 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/JkZM9s6tC_Wz5MKeYcccxw" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-1" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-1" hidden>Sand.ai 发布 480B 全模态视频模型 MAGI-2，实测质量接近 Seedance 2.3 水准（当前 SOTA 为 2.5）。模型支持单次 20 个图片、音频、视频素材参考与最长 30 秒生成，1080P 下每秒 0.5 元，约为 Seedance 2.5 的十分之一。实测运镜大胆利落、提示词遵循与物理表现强、废片率低，音频约相当于 Seedance 2.0，画质仍逊于 2.5。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-1" class="section">
+      <h2 class="section-title" style="--c:#10b981">
+        <span class="dot" style="background:#10b981"></span>产品发布/更新
+        <span class="section-count">4</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">2</span>
+            <span class="chip" style="--c:#10b981">Fireworks AI（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://fireworks.ai/blog/hy4-flash-on-fireworks/" target="_blank" rel="noopener noreferrer">腾讯开源模型 Hy4 Flash 上线 Fireworks serverless</a>
+          </h3>
+          <p class="card-sum">腾讯新开源模型 Hy4 Flash 现已在 Fireworks serverless 上可用。该模型为 MoE 架构，…</p>
+          <div class="card-actions">
+            <a class="read" href="https://fireworks.ai/blog/hy4-flash-on-fireworks/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-2" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-2" hidden>腾讯开源模型 Hy4 Flash 上线 Fireworks serverless，总参数约 220B、每 token 激活约 12B，上下文 1M（首发 512K），每百万输入 token 0.07 美元。Fireworks 称其在 Epiq CorporateBench 得 75.9%，略高于 Claude Opus 5.5 的 75.4%，单任务成本 0.013 美元对 2.80 美元。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">3</span>
+            <span class="chip" style="--c:#10b981">公众号：千问APP（阿里）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://mp.weixin.qq.com/s/jZumD5cprhI7bgmOI7mUEw" target="_blank" rel="noopener noreferrer">千问APP免费开放千问Go打电话服务，经授权可代打电话和定时来电</a>
+          </h3>
+          <p class="card-sum">千问APP宣布千问Go打电话服务免费开放，用户告知打给谁、要办什么事并经授权后，AI可代为拨打电话、沟通需求。文中示例…</p>
+          <div class="card-actions">
+            <a class="read" href="https://mp.weixin.qq.com/s/jZumD5cprhI7bgmOI7mUEw" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-3" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-3" hidden>千问 APP 宣布千问 Go 打电话服务免费开放，用户告知打给谁、办什么事并授权后，AI 可代为拨号沟通。文中示例包括定时提醒朋友带饮料、定时来电叫醒、代订包间、询问快递等。据媒体报道，该服务此前处于邀测阶段，现已向所有用户开放，遇占线或无人接听最多自动重拨两次；每次外呼均需逐次授权，接通后主动表明 AI 助手身份，并向用户返回沟通明细与录音。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">4</span>
+            <span class="chip" style="--c:#10b981">Pydantic AI 官方文章</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://pydantic.dev/articles/pax-harness-beta" target="_blank" rel="noopener noreferrer">Pydantic AI 发布终端编码智能体 Pax 与 Harness beta，迈向 1.0</a>
+          </h3>
+          <p class="card-sum">Pydantic AI 发布终端编码智能体 Pax（pydantic-ai-pax），基于 Harness SDK，全…</p>
+          <div class="card-actions">
+            <a class="read" href="https://pydantic.dev/articles/pax-harness-beta" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-4" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-4" hidden>Pydantic AI 发布终端智能体 Pax 与 Harness beta。Harness 是内置 100+ 能力的官方库，约一月后发 1.0。Pax 基于该 SDK，功能皆为插件，可用 /plugins 开关 coder、sandbox、MCP 等，可用 --agent 换成任意 Agent。官方称在 Harness-Bench SWE81 中平均分居四框架之首，成本不到 Codex 的一半。</div>
+        </article>
+        <article class="card" style="--c:#10b981">
+          <div class="card-top">
+            <span class="num" style="background:#10b981">5</span>
+            <span class="chip" style="--c:#10b981">X：OpenClaw (@openclaw)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/openclaw/status/2125591827600531554" target="_blank" rel="noopener noreferrer">OpenClaw 2026.11.10 发布，新增 Deep Research、Knowledge 记忆系统与 Browser handoff</a>
+          </h3>
+          <p class="card-sum">OpenClaw 发布 2026.11.10 版本，新增聊天内 Deep Research、新的 OpenClaw 记…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/openclaw/status/2125591827600531554" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-5" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-5" hidden>OpenClaw 发布 2026.11.10 正式版，含 7671 个 PR。三项旗舰功能：聊天内 Deep Research 默认开启，跨网络与本地文档生成带引用报告，来源冲突时并排引用原文，报告存七天；Knowledge 记忆插件需手动启用，把对话与会议沉淀为 Markdown 知识库，靠关键词检索、Git 记录修订；Browser handoff 允许在验证码或登录时人工接管浏览器。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-2" class="section">
+      <h2 class="section-title" style="--c:#f59e0b">
+        <span class="dot" style="background:#f59e0b"></span>行业动态
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">6</span>
+            <span class="chip" style="--c:#f59e0b">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/" target="_blank" rel="noopener noreferrer">42 州总检察长介入 Character.AI 破产程序，反对拍卖用户私密聊天记录</a>
+          </h3>
+          <p class="card-sum">42 州总检察长介入 Character.AI 的破产程序，试图阻止其拍卖用户私密聊天数据。相关声明称数据集包含超过 …</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-6" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-6" hidden>42 州总检察长介入 Character.AI 破产程序，反对其拍卖用户私密聊天。声明称待售数据集含超 2100 万美国账户的聊天记录，其中逾 210 万属于未成年人。唯一披露的竞拍方是 11 月 13 日在特拉华州注册的 Smirks and Pangs Acquisition LLC，拍卖定于 12 月 1 日。总检察长们指出买家无须遵守其隐私政策，公司此前却承诺数据不会被出售。</div>
+        </article>
+        <article class="card" style="--c:#f59e0b">
+          <div class="card-top">
+            <span class="num" style="background:#f59e0b">7</span>
+            <span class="chip" style="--c:#f59e0b">TechCrunch：AI（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/" target="_blank" rel="noopener noreferrer">黄仁勋回归后 Nvidia 仍面临 Megaspeed 芯片出口合规调查</a>
+          </h3>
+          <p class="card-sum">TechCrunch 分析指出，黄仁勋回归 Nvidia CEO 后，公司仍面临多方对其 GPU 出口合规问题的调查。…</p>
+          <div class="card-actions">
+            <a class="read" href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-7" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-7" hidden>TechCrunch 分析指出，黄仁勋回归 CEO 未平息 Nvidia 的出口合规审查。新加坡数据中心运营商 Megaspeed 被指将先进 GPU 转运至中国，美国 2024 年立案，加州总检察长与 SEC 亦在跟进。美国政府本周一已将 Megaspeed 及关联公司列入贸易限制名单，Nvidia 宣布停止向中国销售许可芯片，并计划设立首席合规官与董事会出口管制委员会。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-3" class="section">
+      <h2 class="section-title" style="--c:#8b5cf6">
+        <span class="dot" style="background:#8b5cf6"></span>论文研究
+        <span class="section-count">3</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">8</span>
+            <span class="chip" style="--c:#8b5cf6">X：Greg Brockman (@gdb)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/gdb/status/2125418102049628201" target="_blank" rel="noopener noreferrer">矩阵乘法指数被证明精确为 9/4</a>
+          </h3>
+          <p class="card-sum">Greg Brockman 转发 OpenAI 的 Sebastien Bubeck 消息：在 10 月 6 日发布给…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/gdb/status/2125418102049628201" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-8" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-8" hidden>OpenAI 的 Sebastien Bubeck 宣布：继 10 月给出 9/4 上界后，模型继续攻下界并证明 9/4 是紧的，此前下界毫无已知结果。OpenAI 11 月 25 日提交预印本，称两个 n×n 矩阵乘积的算术电路至少需 n^{9/4}/2 个乘除法门。他说这是有生之年没想过的结果，并指出据 Yin Tat Lee 等人旧结果，线性规划可在 n^{9/4} 时间内求解。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">9</span>
+            <span class="chip" style="--c:#8b5cf6">X：Rohan Paul (@rohanpaul_ai)</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://x.com/rohanpaul_ai/status/2125461932111229203" target="_blank" rel="noopener noreferrer">MIT 与 Microsoft 论文：GitHub Copilot 使初级软件工程师招聘下降约 40%</a>
+          </h3>
+          <p class="card-sum">MIT 和 Microsoft 的新论文《AI-Assisted Programming and Labor Dema…</p>
+          <div class="card-actions">
+            <a class="read" href="https://x.com/rohanpaul_ai/status/2125461932111229203" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-9" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-9" hidden>MIT 与微软新论文《AI-Assisted Programming and Labor Demand》以 5414 家跨国公司的 GitHub 合同审查时点为自然实验，覆盖约 38% 美国程序员。研究显示企业采用 Copilot 一年后未裁员，但季度整体技术招聘同比下降 29%，其中初级软件工程师招聘下降约 40%，资深者几乎未受冲击，需求转向复合岗。</div>
+        </article>
+        <article class="card" style="--c:#8b5cf6">
+          <div class="card-top">
+            <span class="num" style="background:#8b5cf6">10</span>
+            <span class="chip" style="--c:#8b5cf6">Thinking Machines Lab：News（网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://thinkingmachines.ai/news/training-a-scalable-forecasting-agent/" target="_blank" rel="noopener noreferrer">Mantic 与 Thinking Machines 训练可扩展预测智能体，成本降 15 倍</a>
+          </h3>
+          <p class="card-sum">Mantic 与 Thinking Machines 在 Tinker 上对 Inkling 2 Small 做后训练…</p>
+          <div class="card-actions">
+            <a class="read" href="https://thinkingmachines.ai/news/training-a-scalable-forecasting-agent/" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-10" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-10" hidden>Mantic 与 Thinking Machines 在 Tinker 上对 Inkling 2 Small 做后训练，得到端到端研究预测智能体，准确度约等于 Fable 5.2（medium），单次成本降 15 倍。因高质量预测题稀缺，团队用大模型从新闻生成 4.5 万道合成题，并自建只返回提问前信息的时点工具。它曾为标普 500 公司在 50 种情景下生成 10 万条营收与每股收益预测。</div>
+        </article>
+        </div>
+    </section>
+    <section id="sec-4" class="section">
+      <h2 class="section-title" style="--c:#ec4899">
+        <span class="dot" style="background:#ec4899"></span>技巧与观点
+        <span class="section-count">2</span>
+      </h2>
+      <div class="grid">
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">11</span>
+            <span class="chip" style="--c:#ec4899">Anthropic：Research（发表成果 · 网页）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://www.anthropic.com/research/migrating-api-to-rust" target="_blank" rel="noopener noreferrer">Anthropic 复盘 Messages API 从 Python 迁移到 Rust 的校验方法</a>
+          </h3>
+          <p class="card-sum">Anthropic 介绍如何将 Messages API 从 Python 迁移到 Rust，并把生产系统本身当作校验…</p>
+          <div class="card-actions">
+            <a class="read" href="https://www.anthropic.com/research/migrating-api-to-rust" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-11" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-11" hidden>Anthropic 复盘 Messages API 从 Python 迁移到 Rust。流量从 2024 年初至 2026 年秋增 1800 倍，Claude 一周写出核心路径，难点在验证：4 月测试通过率约 98%，生产流量输入一致率却仅约四分之一。团队让模型只调用一次，把输出回放给 Rust 版比对，仅记录差异位置与长度。迁移后每请求 CPU 降 70%，首 token 中位时延降约 20%。</div>
+        </article>
+        <article class="card" style="--c:#ec4899">
+          <div class="card-top">
+            <span class="num" style="background:#ec4899">12</span>
+            <span class="chip" style="--c:#ec4899">Google AI：DEV 作者专属（RSS）</span>
+          </div>
+          <h3 class="card-title">
+            <a href="https://dev.to/googleai/how-context-drift-impacts-your-ai-agents-1iph" target="_blank" rel="noopener noreferrer">上下文漂移如何影响你的 AI Agent：470 项实验与一个免费的 MCP 解法</a>
+          </h3>
+          <p class="card-sum">Google AI 开发者 Patrick Kelly 通过 470 个任务实测区分 context rot 与 co…</p>
+          <div class="card-actions">
+            <a class="read" href="https://dev.to/googleai/how-context-drift-impacts-your-ai-agents-1iph" target="_blank" rel="noopener noreferrer">阅读原文 →</a>
+            <button type="button" class="read summary-btn" data-target="sum-12" aria-expanded="false">原文概括</button>
+          </div>
+          <div class="summary" id="sum-12" hidden>Google AI 的 Patrick Kelly 用 470 个任务在 Gemini 3.8 Flash 与 Pro 沙盒中区分腐烂与漂移。塞 5 万 token 无关历史未违规，但文件冲突时模型在 73% 的运行中察觉矛盾，110 次测试中 0% 主动告知用户；95% 至 100% 时任务级 skill 文件静默覆盖 AGENTS.md 的强制规则。加一行要求报告分歧后 16 次全部生效。</div>
+        </article>
+        </div>
+    </section>
+  </main>
+  <footer>
+    本日报共 <strong>12</strong> 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a>
+    
+  </footer>
+  <script>
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.summary-btn'); if(!b) return;
+    var el = document.getElementById(b.getAttribute('data-target')); if(!el) return;
+    var open = el.hasAttribute('hidden');
+    if(open){ el.removeAttribute('hidden'); } else { el.setAttribute('hidden',''); }
+    b.setAttribute('aria-expanded', String(open));
+  });
+  </script>
+</body>
+</html>

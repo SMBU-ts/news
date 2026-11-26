@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://mp.weixin.qq.com/s/JkZM9s6tC_Wz5MKeYcccxw",
+    "title": "Sand.ai 发布 480B 视频模型 MAGI-2，作者实测称质量接近 Seedance 2.3 水准且价格仅为其 1/10",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "001.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://fireworks.ai/blog/hy4-flash-on-fireworks/",
+    "title": "腾讯开源模型 Hy4 Flash 上线 Fireworks serverless",
+    "source": "Fireworks AI（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/jZumD5cprhI7bgmOI7mUEw",
+    "title": "千问APP免费开放千问Go打电话服务，经授权可代打电话和定时来电",
+    "source": "公众号：千问APP（阿里）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "003.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://pydantic.dev/articles/pax-harness-beta",
+    "title": "Pydantic AI 发布终端编码智能体 Pax 与 Harness beta，迈向 1.0",
+    "source": "Pydantic AI 官方文章",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/openclaw/status/2125591827600531554",
+    "title": "OpenClaw 2026.11.10 发布，新增 Deep Research、Knowledge 记忆系统与 Browser handoff",
+    "source": "X：OpenClaw (@openclaw)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
+    "title": "42 州总检察长介入 Character.AI 破产程序，反对拍卖用户私密聊天记录",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "006.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/",
+    "title": "黄仁勋回归后 Nvidia 仍面临 Megaspeed 芯片出口合规调查",
+    "source": "TechCrunch：AI（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "007.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/gdb/status/2125418102049628201",
+    "title": "矩阵乘法指数被证明精确为 9/4",
+    "source": "X：Greg Brockman (@gdb)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2125461932111229203",
+    "title": "MIT 与 Microsoft 论文：GitHub Copilot 使初级软件工程师招聘下降约 40%",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://thinkingmachines.ai/news/training-a-scalable-forecasting-agent/",
+    "title": "Mantic 与 Thinking Machines 训练可扩展预测智能体，成本降 15 倍",
+    "source": "Thinking Machines Lab：News（网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "010.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+    "title": "Anthropic 复盘 Messages API 从 Python 迁移到 Rust 的校验方法",
+    "source": "Anthropic：Research（发表成果 · 网页）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "011.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://dev.to/googleai/how-context-drift-impacts-your-ai-agents-1iph",
+    "title": "上下文漂移如何影响你的 AI Agent：470 项实验与一个免费的 MCP 解法",
+    "source": "Google AI：DEV 作者专属（RSS）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "012.txt",
+    "ok": true,
+    "round": 1
+  }
+]
