@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design",
+    "title": "蚂蚁 inclusionAI 开源 Ming-Image-0.2-Design 图像生成模型",
+    "source": "蚂蚁 inclusionAI：HuggingFace 新模型",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/gdb/status/2125824585027272727",
+    "title": "OpenAI 测试私有推理功能",
+    "source": "X：Greg Brockman (@gdb)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/rohanpaul_ai/status/2125847124600656142",
+    "title": "FT 报道 Nvidia 暂停向东南亚四国发运服务器",
+    "source": "X：Rohan Paul (@rohanpaul_ai)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://calif.io/research/oempocalypse-part-2",
+    "title": "OEMpocalypse Part 2：利用 Knox DualDAR 漏洞链 root Galaxy S23 与 S26 旗舰机",
+    "source": "Calif：Research（AI 漏洞研究）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "004.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://calif.io/research/tortilla-with-onion",
+    "title": "Calif 披露 Tor Browser 15.0.22 UAF 漏洞链可致真实 IP 泄露",
+    "source": "Calif：Research（AI 漏洞研究）",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "005.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/elonmusk/status/2125669066388209784",
+    "title": "Dario Amodei 澄清不主张向 AI 交出人类自由意志",
+    "source": "X：Elon Musk (@elonmusk, xAI)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://x.com/adocomplete/status/2125994186252161315",
+    "title": "Karpathy 用 Claude Code 和 Opus 5.5 把美国真实数据做成文明风格游戏地图",
+    "source": "X：Ado Kukic（Anthropic 开发者关系，Claude Code） (@adocomplete)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/d-MoIMsMdxtR9qw3dn-8sg",
+    "title": "卡兹克把《人生意义设计课》做成AI Prompt，帮你设计人生的意义",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "008.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/_philschmid/status/2125945282072297794",
+    "title": "Philipp Schmid 撰文解释为何在 Skills 与 CLI 兴起后仍更看好 MCP",
+    "source": "X：Philipp Schmid（Google DeepMind 开发者体验） (@_philschmid)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]

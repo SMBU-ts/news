@@ -1,0 +1,11 @@
+{
+  "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design": "蚂蚁 Ling 团队 11 月 26 日开源 Ming-Image-0.2-Design，6B DiT、MIT 许可，在 AA 文生图榜以 1095 Elo 居开源权重第一。模型改进复杂构图、光影与文字渲染，可生成电商主图、UI 设计稿和空间效果图，并能配合 Ling-3.2-flash 把设计稿转成可交互网页。可拆透明图层的 Design-Layer 版计划下周开源。",
+  "https://x.com/gdb/status/2125824585027272727": "OpenAI 开始向一小批客户开放 Private Inference（私有推理）测试，属 Private Intelligence 企业方案。它把机密计算与可验证控制结合，模型处理提示词和响应期间数据处于硬件隔离环境，服务商人员也无法直接读取；配合零数据留存与私有安全处理，可在不接触底层内容的前提下完成自动安全审查。目前为 Alpha 与 API 预览，定价、上线时间与支持模型均未公布。",
+  "https://x.com/rohanpaul_ai/status/2125847124600656142": "据 FT 报道，英伟达已通知戴尔、超微等伙伴暂停向马来西亚、新加坡、泰国、印尼发运搭载其芯片的服务器，恢复时间未明。美国 11 月 19 日生效的新规要求向这四国及巴西出口先进 AI 芯片须获许可，云厂商有 90 天补证窗口但缺执行指引。2025 年英伟达经新加坡子公司入账 1040 亿美元、同比增 72%，业界担忧 GPU 积压与美国市场过剩。",
+  "https://calif.io/research/oempocalypse-part-2": "Calif 发布 OEMpocalypse 第二篇，把 Knox DualDAR 的 confused-deputy 沙箱逃逸与内核驱动页 UAF 串成两阶段链，从零权限应用在 Galaxy S23 与 S26 系列四款机型上高可靠取得 root。6 月 17 日上报三星，两个漏洞分别于 8 月、9 月修复（CVE-2026-21102）。作者称其他骁龙与 Exynos 机型同样受影响。",
+  "https://calif.io/research/tortilla-with-onion": "Calif 在 OpenAI 资助项目下披露：恶意网站可绕过 Tor Browser 15.0.22 默认防护泄露真实 IP。需用户点击一次，利用 BYOB 读取中的 UAF（CVE-2026-92027），先用 64MiB 定位 libxul 基址、再以 512MiB 控制被释放内存，伪造对象触发 ROP，再由特权 DevTools 页直连 socket，accept() 即暴露公网 IP。",
+  "https://x.com/elonmusk/status/2125669066388209784": "Dario Amodei 11 月 25 日在 X 发长文，否认主张向 AI 交出人类自由意志，称此说「荒谬」。他区分治理权让渡与具体任务自动化，强调政治与治理决策须由具合法性的民主程序作出，不能为效率或安全牺牲正当性与自决权；并列出四类需谨慎场景：递归自我改进、大规模就业冲击、对齐研究结果可信度、人类自身意愿。文末批评同行只喊口号。",
+  "https://x.com/adocomplete/status/2125994186252161315": "Karpathy 让 Claude Code 桌面版配 Opus 5.5（开 ultracode）自主使用 31 个美国公开数据源，7 小时写出 4.5 万行代码，做成《文明》风格策略地图，上线 karpathy.ai/usaciv。GDP 记为金币产出、城市按真实产业分城区、市民按真实职业构成；含 19 种透镜、524 个都市视图与 3,100 县联动散点图。Claude 自行跳过若干州与领地。",
+  "https://mp.weixin.qq.com/s/d-MoIMsMdxtR9qw3dn-8sg": "公众号作者卡兹克把斯坦福《人生意义设计课》的方法改编成多轮对话 Prompt：分四个阶段问 6 到 9 个问题，约 20 到 30 分钟，最终生成 5000 到 7000 字的《个人意义设计手册》。手册覆盖此刻状态、早已拥有却被忽略的意义来源、人生罗盘与价值观、本月可完成的意义时刻等。他推荐用 ChatGPT 网页版 GPT-6.2、思考强度调至 Extra High 实测。",
+  "https://x.com/_philschmid/status/2125945282072297794": "Schmid 解释为何在 Skills 与 CLI 兴起后仍看好 MCP：Linear 与 Notion 的 agent 每周创建约 240 万条 issue 和页面，Notion 的 MCP 流量增长 60 倍；Atlassian 每个工作日 MCP 工具调用超 500 万次，其中 44% 用户来自软件团队之外。他称 Code Mode 与 Skills 并入 MCP 正把客户端变成完整运行时。"
+}
