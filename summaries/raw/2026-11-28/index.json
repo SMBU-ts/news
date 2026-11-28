@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://x.com/OpenBMB/status/2126308118741323853",
+    "title": "OpenBMB 点评 InternLM 基于 MiniCPM-o 4.5 打造的 Sage-Interaction",
+    "source": "X：面壁智能 OpenBMB (@OpenBMB)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/x7Yt237NPL-sLvkUJlwESw",
+    "title": "实测支付宝 SkillPay：手把手教你怎么把 Skill 挂上去卖钱",
+    "source": "公众号：数字生命卡兹克",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "002.txt",
+    "ok": true,
+    "round": 1
+  },
+  {
+    "url": "https://x.com/Khazix0918/status/2126294658431201385",
+    "title": "Antigravity 实用技巧：在 GEMINI.md 加一句话让模型边干活边汇报",
+    "source": "X：卡兹克 (@Khazix0918)",
+    "date": "",
+    "category": "ai-daily",
+    "rawfile": "",
+    "ok": false,
+    "round": 3
+  }
+]
